@@ -14,9 +14,17 @@ function monthLabel(key: string): string {
   return `${MONTHS_NOMINATIVE[Number(month) - 1] ?? month} ${year}`;
 }
 
-// Group by YYYY-MM of dateStart; upcomingEvents is already sorted chronologically.
+// Events already started (but not yet ended) go into a "Сейчас идёт" section so
+// they don't render under a past-month heading. Future events group by start month.
+// upcomingEvents is already filtered to dateEnd >= today and sorted by dateStart.
+const todayISO = new Date().toISOString().slice(0, 10);
+const ongoing = upcomingEvents
+  .filter((e) => e.dateStart < todayISO)
+  .sort((a, b) => a.dateEnd.localeCompare(b.dateEnd));
+const future = upcomingEvents.filter((e) => e.dateStart >= todayISO);
+
 const groups: { key: string; events: Event[] }[] = [];
-for (const event of upcomingEvents) {
+for (const event of future) {
   const key = event.dateStart.slice(0, 7);
   const last = groups[groups.length - 1];
   if (last && last.key === key) {
@@ -34,16 +42,28 @@ for (const event of upcomingEvents) {
   {upcomingEvents.length === 0 ? (
     <p class="muted">Будущих событий пока нет.</p>
   ) : (
-    groups.map((group) => (
-      <section class="month">
-        <h2>{monthLabel(group.key)}</h2>
-        <div class="grid-cards">
-          {group.events.map((event) => (
-            <EventCard event={event} />
-          ))}
-        </div>
-      </section>
-    ))
+    <>
+      {ongoing.length > 0 && (
+        <section class="month">
+          <h2>Сейчас идёт</h2>
+          <div class="grid-cards">
+            {ongoing.map((event) => (
+              <EventCard event={event} />
+            ))}
+          </div>
+        </section>
+      )}
+      {groups.map((group) => (
+        <section class="month">
+          <h2>{monthLabel(group.key)}</h2>
+          <div class="grid-cards">
+            {group.events.map((event) => (
+              <EventCard event={event} />
+            ))}
+          </div>
+        </section>
+      ))}
+    </>
   )}
 </Base>
 
