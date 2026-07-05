@@ -20,10 +20,6 @@ const { kind, detailPrefix, hrefBase, mapId, points } = Astro.props;
   <div class="filter-bar-top">
     <slot name="filters" />
     <div class="toolbar">
-      <label class="sam">
-        <input type="checkbox" data-search-as-move checked />
-        <span>Искать при перемещении карты</span>
-      </label>
       <span class="count muted" data-count></span>
       <div class="view-toggle" role="group" aria-label="Вид">
         <button type="button" class="btn view-btn" data-view="list" aria-pressed="true">Список</button>
@@ -71,18 +67,6 @@ const { kind, detailPrefix, hrefBase, mapId, points } = Astro.props;
     align-items: center;
     gap: var(--space-3);
     margin-left: auto;
-  }
-  .sam {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    font-size: 13px;
-    color: var(--text-secondary);
-    cursor: pointer;
-    white-space: nowrap;
-  }
-  .sam input {
-    accent-color: var(--accent);
   }
   .count {
     font-size: 13px;
@@ -199,7 +183,7 @@ const { kind, detailPrefix, hrefBase, mapId, points } = Astro.props;
   /* Mobile: single column, toggle between list and map. */
   @media (max-width: 760px) {
     .explorer-root {
-      height: calc(100dvh - 120px);
+      height: calc(100dvh - 110px);
     }
     .map-explorer {
       grid-template-columns: 1fr;
@@ -213,8 +197,33 @@ const { kind, detailPrefix, hrefBase, mapId, points } = Astro.props;
     .explorer-root.show-map .pane-map {
       display: block;
     }
+    /* Leave room for the floating toggle so the last card isn't hidden. */
+    .list-scroll {
+      padding-bottom: 72px;
+    }
+    .toolbar {
+      margin-left: 0;
+      width: 100%;
+    }
+    /* Airbnb-style floating list/map switch, centered at the bottom. */
     .view-toggle {
       display: inline-flex;
+      position: fixed;
+      left: 50%;
+      bottom: calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
+      transform: translateX(-50%);
+      z-index: 50;
+      gap: 0;
+      padding: 4px;
+      background: var(--surface-2);
+      border: 0.5px solid var(--border-strong);
+      border-radius: var(--radius-pill);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+    }
+    .view-btn {
+      border: 0;
+      border-radius: var(--radius-pill);
+      padding: var(--space-2) var(--space-4);
     }
   }
 </style>

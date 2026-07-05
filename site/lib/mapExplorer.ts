@@ -46,7 +46,6 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   const emptyEl = root.querySelector<HTMLElement>('[data-empty]')!;
   const countEl = root.querySelector<HTMLElement>('[data-count]');
   const mapEl = root.querySelector<HTMLElement>('[data-map]')!;
-  const samCheckbox = root.querySelector<HTMLInputElement>('[data-search-as-move]');
   const cards = Array.from(root.querySelectorAll<HTMLElement>('[data-item-card]'));
   const groups = Array.from(root.querySelectorAll<HTMLElement>('[data-group]'));
 
@@ -69,9 +68,10 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   const markerById = new Map<string, L.Marker>();
 
   const detailUrl = (id: string) => `${hrefBase}${detailPrefix}${id}/`;
-  // Only filter by viewport when the map is actually laid out — on mobile it is
-  // created inside a display:none pane (size 0), whose bounds would hide everything.
-  const boundsMode = () => Boolean(map && samCheckbox?.checked && map.getSize().x > 0);
+  // The list is always filtered to the map's viewport. Guard on a laid-out map:
+  // on mobile it is created inside a display:none pane (size 0), whose bounds
+  // would otherwise hide everything.
+  const boundsMode = () => Boolean(map && map.getSize().x > 0);
 
   // ---- List visibility (filters ∩ optional viewport) -----------------------
 
@@ -194,7 +194,6 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     b.addEventListener('click', () => setView(b.dataset.view as 'list' | 'map')),
   );
 
-  samCheckbox?.addEventListener('change', updateListVisibility);
   document.addEventListener('visited:changed', updateListVisibility);
 
   // Lock the explorer to the remaining viewport height so the list gets its own

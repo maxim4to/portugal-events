@@ -103,7 +103,49 @@ const points = places.map((p) => ({
 
     const matches = (el: HTMLElement) => matchesFilter(cardData(el), readState());
     const explorer = initMapExplorer(root, { matches });
-    const onFilterChange = () => explorer.rerender();
+
+    function setGroupCount(key: string, n: number) {
+      const group = root!.querySelector<HTMLElement>(`[data-fgroup="${key}"]`);
+      if (!group) return;
+      group.classList.toggle('active', n > 0);
+      const badge = group.querySelector<HTMLElement>('[data-fcount]');
+      if (badge) badge.textContent = n > 0 ? String(n) : '';
+    }
+
+    function onFilterChange() {
+      const s = readState();
+      setGroupCount('type', s.types.length);
+      setGroupCount('region', s.region ? 1 : 0);
+      setGroupCount('tags', s.tags.length);
+      setGroupCount('drive', s.maxDrive !== 240 ? 1 : 0);
+      setGroupCount('more', (s.freeWithResidency ? 1 : 0) + (s.visited !== 'all' ? 1 : 0));
+      explorer.rerender();
+    }
+
+    // Mobile dropdowns: the summary pill toggles its group open; one at a time;
+    // tap outside closes. On desktop the summary is inert (pointer-events:none)
+    // and every group's chips are shown inline, so none of this runs.
+    const groups = Array.from(root.querySelectorAll<HTMLElement>('.fgroup'));
+    groups.forEach((g) => {
+      const btn = g.querySelector<HTMLButtonElement>('[data-fgroup-toggle]');
+      btn?.addEventListener('click', () => {
+        const willOpen = !g.classList.contains('open');
+        groups.forEach((o) => {
+          o.classList.toggle('open', o === g && willOpen);
+          o.querySelector('[data-fgroup-toggle]')?.setAttribute(
+            'aria-expanded',
+            String(o === g && willOpen),
+          );
+        });
+      });
+    });
+    document.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).closest('.fgroup')) return;
+      groups.forEach((g) => {
+        g.classList.remove('open');
+        g.querySelector('[data-fgroup-toggle]')?.setAttribute('aria-expanded', 'false');
+      });
+    });
 
     // Multi-select toggles: types and tags.
     [...typeChips, ...tagChips].forEach((c) =>

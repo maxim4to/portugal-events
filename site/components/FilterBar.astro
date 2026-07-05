@@ -15,45 +15,66 @@ const drivePresets = [
 ];
 ---
 <div class="filter-bar">
-  <div class="fgroup">
-    <span class="flabel">Тип</span>
-    {typeEntries.map(([key, label]) => (
-      <button type="button" class="chip" data-type={key} aria-pressed="false">{label}</button>
-    ))}
+  <div class="fgroup" data-fgroup="type">
+    <button type="button" class="fgroup-summary" data-fgroup-toggle aria-expanded="false">
+      <span class="flabel">Тип</span><span class="fcount" data-fcount></span>
+    </button>
+    <div class="fgroup-menu">
+      {typeEntries.map(([key, label]) => (
+        <button type="button" class="chip" data-type={key} aria-pressed="false">{label}</button>
+      ))}
+    </div>
   </div>
 
-  <div class="fgroup">
-    <span class="flabel">Регион</span>
-    {regions.map((r) => (
-      <button type="button" class="chip" data-region={r} aria-pressed="false">{r}</button>
-    ))}
+  <div class="fgroup" data-fgroup="region">
+    <button type="button" class="fgroup-summary" data-fgroup-toggle aria-expanded="false">
+      <span class="flabel">Регион</span><span class="fcount" data-fcount></span>
+    </button>
+    <div class="fgroup-menu">
+      {regions.map((r) => (
+        <button type="button" class="chip" data-region={r} aria-pressed="false">{r}</button>
+      ))}
+    </div>
   </div>
 
-  <div class="fgroup">
-    <span class="flabel">Теги</span>
-    {tags.map((t) => (
-      <button type="button" class="chip" data-tag={t} aria-pressed="false">{t}</button>
-    ))}
+  <div class="fgroup" data-fgroup="tags">
+    <button type="button" class="fgroup-summary" data-fgroup-toggle aria-expanded="false">
+      <span class="flabel">Теги</span><span class="fcount" data-fcount></span>
+    </button>
+    <div class="fgroup-menu">
+      {tags.map((t) => (
+        <button type="button" class="chip" data-tag={t} aria-pressed="false">{t}</button>
+      ))}
+    </div>
   </div>
 
-  <div class="fgroup">
-    <span class="flabel">В пути</span>
-    {drivePresets.map((p) => (
-      <button
-        type="button"
-        class="chip"
-        data-drive={p.value}
-        aria-pressed={p.value === 240 ? 'true' : 'false'}
-      >{p.label}</button>
-    ))}
+  <div class="fgroup" data-fgroup="drive">
+    <button type="button" class="fgroup-summary" data-fgroup-toggle aria-expanded="false">
+      <span class="flabel">В пути</span><span class="fcount" data-fcount></span>
+    </button>
+    <div class="fgroup-menu">
+      {drivePresets.map((p) => (
+        <button
+          type="button"
+          class="chip"
+          data-drive={p.value}
+          aria-pressed={p.value === 240 ? 'true' : 'false'}
+        >{p.label}</button>
+      ))}
+    </div>
   </div>
 
-  <div class="fgroup">
-    <button type="button" class="chip" data-residency aria-pressed="false">Бесплатно с ВНЖ</button>
-    <span class="visited-group" data-visited-control data-filter="visited" hidden>
-      <button type="button" class="chip" data-visited-opt="visited" aria-pressed="false">Посещённые</button>
-      <button type="button" class="chip" data-visited-opt="unvisited" aria-pressed="false">Непосещённые</button>
-    </span>
+  <div class="fgroup" data-fgroup="more">
+    <button type="button" class="fgroup-summary" data-fgroup-toggle aria-expanded="false">
+      <span class="flabel">Ещё</span><span class="fcount" data-fcount></span>
+    </button>
+    <div class="fgroup-menu">
+      <button type="button" class="chip" data-residency aria-pressed="false">Бесплатно с ВНЖ</button>
+      <span class="visited-group" data-visited-control data-filter="visited" hidden>
+        <button type="button" class="chip" data-visited-opt="visited" aria-pressed="false">Посещённые</button>
+        <button type="button" class="chip" data-visited-opt="unvisited" aria-pressed="false">Непосещённые</button>
+      </span>
+    </div>
   </div>
 </div>
 
@@ -65,16 +86,38 @@ const drivePresets = [
     flex-wrap: wrap;
     gap: var(--space-2) var(--space-4);
   }
+
+  /* --- Desktop: label + inline chips, always visible. --- */
   .fgroup {
+    position: relative;
     display: inline-flex;
     align-items: center;
-    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  .fgroup-summary {
+    display: inline-flex;
+    align-items: center;
     gap: var(--space-1);
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    cursor: default;
+    pointer-events: none;
   }
   .flabel {
     font-size: 12px;
     color: var(--text-muted);
-    margin-right: var(--space-1);
+  }
+  .fcount {
+    display: none;
+  }
+  .fgroup-menu {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-1);
   }
   .visited-group {
     display: inline-flex;
@@ -83,9 +126,87 @@ const drivePresets = [
   .visited-group[hidden] {
     display: none;
   }
-  /* Compact chips — base .chip styles come from base.css; tighten here. */
   .filter-bar .chip {
     padding: 3px var(--space-2);
     font-size: 12px;
+  }
+
+  /* --- Mobile: each group collapses into a dropdown pill. --- */
+  @media (max-width: 760px) {
+    .filter-bar {
+      gap: var(--space-2);
+    }
+    .fgroup {
+      flex: 0 0 auto;
+    }
+    .fgroup-summary {
+      pointer-events: auto;
+      cursor: pointer;
+      height: 36px;
+      padding: 0 var(--space-3);
+      border: 0.5px solid var(--border-strong);
+      border-radius: var(--radius-pill);
+      background: var(--surface-2);
+    }
+    .fgroup-summary::after {
+      content: '▾';
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-left: 2px;
+    }
+    .flabel {
+      font-size: 13px;
+      color: var(--text-primary);
+    }
+    .fcount {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 16px;
+      height: 16px;
+      padding: 0 4px;
+      border-radius: var(--radius-pill);
+      background: var(--accent);
+      color: var(--surface-2);
+      font-size: 11px;
+    }
+    .fcount:empty {
+      display: none;
+    }
+    .fgroup.active .fgroup-summary {
+      border-color: var(--accent);
+      color: var(--accent-text);
+      background: var(--accent-bg);
+    }
+    .fgroup-menu {
+      display: none;
+      position: absolute;
+      z-index: 1000;
+      top: calc(100% + var(--space-1));
+      left: 0;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      width: max-content;
+      max-width: 80vw;
+      max-height: 60vh;
+      overflow-y: auto;
+      padding: var(--space-3);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface-2);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+    }
+    .fgroup.open .fgroup-menu {
+      display: flex;
+    }
+    .visited-group {
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+    .filter-bar .chip {
+      padding: 6px var(--space-3);
+      font-size: 13px;
+    }
   }
 </style>
