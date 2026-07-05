@@ -88,7 +88,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Palacio_Nacional_da_Pena,_Sintra,_Portugal,_2019-05-25,_DD_131.jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "quinta-da-regaleira",
@@ -109,7 +109,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Quinta_da_Regaleira,_Sintra,_Portugal,_2019-05-25,_DD_56.jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "palacio-de-monserrate",
@@ -130,7 +130,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monserrate_Palace_(52526640315).jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "palacio-nacional-de-sintra",
@@ -151,7 +151,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Palacio_Nacional,_Sintra,_Portugal,_2019-05-25,_DD_08.jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "convento-dos-capuchos",
@@ -172,7 +172,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Convento_dos_capuchos_(Sintra)_-_Claustro.jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "peninha",
@@ -187,7 +187,7 @@
     "tags": ["закат", "виды", "бесплатно"],
     "links": [],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "praia-da-adraga",
@@ -208,7 +208,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_adraga_portugal.jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "boca-do-inferno",
@@ -229,7 +229,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Boca_do_Inferno,_Cascais.jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "cabo-raso",
@@ -250,7 +250,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:O_Farol_do_Cabo_Raso,_Cascais,_Portugal.jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "cascais",
@@ -271,7 +271,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Faro_de_Santa_Marta,_Cascais,_Portugal,_2022-07-25,_DD_13-15_HDR.jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "ericeira",
@@ -292,7 +292,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ericeira_March_2013-3.jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "praia-dos-coxos",
@@ -307,7 +307,7 @@
     "tags": ["сёрфинг", "виды", "бесплатно"],
     "links": [],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "mafra",
@@ -322,7 +322,7 @@
     "tags": ["история", "с детьми"],
     "links": [],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "palacio-de-mafra",
@@ -343,7 +343,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mafra_-_Palace_of_Mafra_-_20191230180805.jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "praia-grande-colares",
@@ -364,7 +364,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_Grande_do_Rod%C3%ADzio_02.jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "praia-das-macas",
@@ -385,6 +385,6 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_das_Macas.jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   }
 ]

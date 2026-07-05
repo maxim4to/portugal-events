@@ -46,7 +46,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:PORTINHO_DA_ARRABIDA_2.jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "serra-da-arrabida",
@@ -67,7 +67,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parque_Natural_da_Arrábida,_Setúbal,_Portugal,_2012-05-11,_DD_02.JPG"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "sesimbra",
@@ -88,7 +88,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sesimbra_March_2015-2a.jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "setubal",
@@ -109,7 +109,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Iglesia_de_San_Julián,_Setúbal,_Portugal,_2021-09-08,_DD_07-09_HDR.jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "castelo-de-palmela",
@@ -130,7 +130,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Palmela_20.jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "azeitao",
@@ -151,7 +151,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pelourinho_de_Vila_Nogueira_de_Azeição_-_Portugal_(33922519618).jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "cristo-rei",
@@ -172,7 +172,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cristo_Rei,_Lisboa,_Portugal,_2012-05-12,_DD_02.JPG"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "costa-da-caparica",
@@ -193,7 +193,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caparica_December_2011-1a.jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "praia-do-meco",
@@ -214,7 +214,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Meco_I.jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "lagoa-de-albufeira",
@@ -235,7 +235,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lagoa_Albufeira_March_2015-1.jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "convento-da-arrabida",
@@ -256,6 +256,6 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Convento_da_Arrabida.jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   }
 ]
