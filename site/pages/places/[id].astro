@@ -36,6 +36,10 @@ const cover = place.photos[0];
       <span><Icon name="calendar" size={14} /> {place.bestSeason}</span>
     </div>
 
+    {place.freeWithResidency === true && (
+      <span class="residency-pill">Бесплатно с ВНЖ</span>
+    )}
+
     <div class="description">
       {paragraphs.map((p) => <p>{p}</p>)}
     </div>
@@ -98,6 +102,15 @@ const cover = place.photos[0];
   }
   .region {
     margin: 0;
+  }
+  .residency-pill {
+    align-self: flex-start;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 3px var(--space-3);
+    border-radius: var(--radius-pill);
+    background: var(--type-hike);
+    color: var(--type-hike-text);
   }
   .description {
     margin-top: var(--space-2);

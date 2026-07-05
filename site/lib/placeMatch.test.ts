@@ -66,6 +66,16 @@ describe('matchesFilter', () => {
     expect(matchesFilter(base, { ...emptyState, visited: 'unvisited' })).toBe(true);
   });
 
+  it('filters by freeWithResidency when the flag is on', () => {
+    const free = { ...base, freeWithResidency: true };
+    // Flag off: both match regardless of the card's flag.
+    expect(matchesFilter(base, emptyState)).toBe(true);
+    expect(matchesFilter(free, emptyState)).toBe(true);
+    // Flag on: only cards with freeWithResidency true match.
+    expect(matchesFilter(free, { ...emptyState, freeWithResidency: true })).toBe(true);
+    expect(matchesFilter(base, { ...emptyState, freeWithResidency: true })).toBe(false);
+  });
+
   it('combines filters with AND', () => {
     expect(matchesFilter(base, { ...emptyState, types: ['beach'], maxDrive: 30 })).toBe(false);
     expect(matchesFilter(base, { ...emptyState, types: ['beach'], maxDrive: 90 })).toBe(true);

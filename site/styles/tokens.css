@@ -39,6 +39,18 @@
   --type-town-text: #9c4634;
   --type-nature: #e2eed7;       /* soft green-2 */
   --type-nature-text: #4f6b2c;
+  --type-museum: #e2e0f4;       /* soft indigo */
+  --type-museum-text: #45409a;
+  --type-park: #f7dcec;         /* soft magenta/pink */
+  --type-park-text: #a13070;
+  --type-garden: #d9edd9;       /* soft leaf green */
+  --type-garden-text: #337a4a;
+  --type-karting: #fbe3cd;      /* soft orange */
+  --type-karting-text: #a55a1a;
+  --type-cablecar: #dfe4ea;     /* soft slate/steel */
+  --type-cablecar-text: #445468;
+  --type-thermal: #d3ecee;      /* soft aqua */
+  --type-thermal-text: #14707a;
   --type-other: #e9e7e1;        /* soft gray */
   --type-other-text: #61605a;
 
@@ -92,6 +104,18 @@
   --type-town-text: #e5b0a4;
   --type-nature: #263519;
   --type-nature-text: #b3ce93;
+  --type-museum: #29264a;
+  --type-museum-text: #c0bbe8;
+  --type-park: #3d1c30;
+  --type-park-text: #eba9cf;
+  --type-garden: #1c3524;
+  --type-garden-text: #a3d0ac;
+  --type-karting: #3c2913;
+  --type-karting-text: #e8bd8a;
+  --type-cablecar: #262d36;
+  --type-cablecar-text: #b3c1d1;
+  --type-thermal: #143336;
+  --type-thermal-text: #9dcdd1;
   --type-other: #302f2a;
   --type-other-text: #c0beb6;
 }
@@ -129,6 +153,18 @@
     --type-town-text: #e5b0a4;
     --type-nature: #263519;
     --type-nature-text: #b3ce93;
+    --type-museum: #29264a;
+    --type-museum-text: #c0bbe8;
+    --type-park: #3d1c30;
+    --type-park-text: #eba9cf;
+    --type-garden: #1c3524;
+    --type-garden-text: #a3d0ac;
+    --type-karting: #3c2913;
+    --type-karting-text: #e8bd8a;
+    --type-cablecar: #262d36;
+    --type-cablecar-text: #b3c1d1;
+    --type-thermal: #143336;
+    --type-thermal-text: #9dcdd1;
     --type-other: #302f2a;
     --type-other-text: #c0beb6;
   }

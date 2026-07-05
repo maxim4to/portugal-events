@@ -6,6 +6,7 @@ export interface PlaceFilter {
   tags?: string[];
   maxDriveMinutes?: number;
   query?: string;
+  freeWithResidency?: boolean;
 }
 
 export function filterPlaces(places: Place[], f: PlaceFilter): Place[] {
@@ -15,6 +16,7 @@ export function filterPlaces(places: Place[], f: PlaceFilter): Place[] {
     if (f.regions?.length && !f.regions.includes(p.region)) return false;
     if (f.tags?.length && !f.tags.some((t) => p.tags.includes(t))) return false;
     if (f.maxDriveMinutes != null && p.driveMinutesFromLisbon > f.maxDriveMinutes) return false;
+    if (f.freeWithResidency && p.freeWithResidency !== true) return false;
     if (q && !(`${p.name} ${p.region}`.toLowerCase().includes(q))) return false;
     return true;
   });

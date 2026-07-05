@@ -13,6 +13,7 @@ const make = (over: Partial<Place>): Place => ({
 
 const beach = make({ id: 'b', type: 'beach', name: 'Урса', driveMinutesFromLisbon: 45, tags: ['закат'] });
 const castle = make({ id: 'c', type: 'castle', name: 'Замок', region: 'Оэште', driveMinutesFromLisbon: 90 });
+const museum = make({ id: 'm', type: 'museum', name: 'Музей', freeWithResidency: true });
 
 describe('filterPlaces', () => {
   const all = [beach, castle];
@@ -36,5 +37,8 @@ describe('filterPlaces', () => {
   });
   test('combines filters with AND', () => {
     expect(filterPlaces(all, { types: ['beach'], maxDriveMinutes: 30 })).toEqual([]);
+  });
+  test('filters by freeWithResidency', () => {
+    expect(filterPlaces([beach, castle, museum], { freeWithResidency: true })).toEqual([museum]);
   });
 });

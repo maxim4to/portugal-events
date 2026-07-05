@@ -44,6 +44,7 @@ const mapData = places.map((p) => ({
         data-drive={p.driveMinutesFromLisbon}
         data-tags={p.tags.join('|')}
         data-name={p.name}
+        data-residency={p.freeWithResidency ? 'true' : 'false'}
       >
         <VisitedButton placeId={p.id} variant="card" />
         <PlaceCard place={p} href={`${hrefBase}/places/${p.id}/`} />
@@ -197,6 +198,7 @@ const mapData = places.map((p) => ({
     const tagBoxes = Array.from(root.querySelectorAll<HTMLInputElement>('input[data-tag]'));
     const tagsSummary = root.querySelector<HTMLElement>('[data-tags-summary]');
     const visitedSelect = root.querySelector<HTMLSelectElement>('[data-filter="visited"]');
+    const residencyCheckbox = root.querySelector<HTMLInputElement>('[data-filter="residency"]');
 
     const PIN_HTML =
       '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 7 11.6 7.3 11.9a1 1 0 0 0 1.4 0C13 21.6 20 15.4 20 10c0-4.4-3.6-8-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>';
@@ -219,6 +221,7 @@ const mapData = places.map((p) => ({
         maxDrive: Number(driveInput.value),
         query: searchInput.value,
         visited: (visitedSelect?.value as VisitedFilter) || 'all',
+        freeWithResidency: residencyCheckbox?.checked,
       };
     }
 
@@ -230,6 +233,7 @@ const mapData = places.map((p) => ({
         tags: (el.dataset.tags || '').split('|').filter(Boolean),
         name: el.dataset.name!,
         visited: el.dataset.visited === 'true',
+        freeWithResidency: el.dataset.residency === 'true',
       };
     }
 
@@ -311,6 +315,7 @@ const mapData = places.map((p) => ({
     driveInput.addEventListener('input', render);
     tagBoxes.forEach((b) => b.addEventListener('change', render));
     visitedSelect?.addEventListener('change', render);
+    residencyCheckbox?.addEventListener('change', render);
     // Re-run filtering when the shared visited state arrives/updates.
     document.addEventListener('visited:changed', render);
     typeChips.forEach((c) =>

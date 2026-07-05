@@ -20,6 +20,9 @@ const { place, href } = Astro.props;
   <div class="body">
     <h3>{place.name}</h3>
     <p class="desc">{place.description}</p>
+    {place.freeWithResidency === true && (
+      <span class="residency-pill">Бесплатно с ВНЖ</span>
+    )}
     <div class="meta-row">
       <span><Icon name="clock" size={13} /> {place.driveMinutesFromLisbon} мин</span>
       <span><Icon name="hourglass" size={13} /> ~{place.visitDurationHours} ч</span>
@@ -70,6 +73,15 @@ const { place, href } = Astro.props;
     overflow: hidden;
     /* Always reserve two lines so every card body is the same height. */
     min-height: 3.2em;
+  }
+  .residency-pill {
+    align-self: flex-start;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-pill);
+    background: var(--type-hike);
+    color: var(--type-hike-text);
   }
   .meta-row {
     /* Push the meta to the bottom so cards of equal height align their footers. */

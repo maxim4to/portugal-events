@@ -11,6 +11,12 @@ export const PLACE_TYPES = [
   'viewpoint',
   'town',
   'nature',
+  'museum',
+  'park',
+  'garden',
+  'karting',
+  'cablecar',
+  'thermal',
   'other',
 ] as const;
 
@@ -40,6 +46,7 @@ export const PlaceSchema = z.object({
   photos: z.array(PhotoSchema).default([]),
   collections: z.array(slug).default([]),
   status: z.enum(['candidate', 'approved']),
+  freeWithResidency: z.boolean().optional(),
 });
 export type Place = z.infer<typeof PlaceSchema>;
 

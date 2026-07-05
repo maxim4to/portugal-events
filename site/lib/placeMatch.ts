@@ -6,6 +6,8 @@ export interface PlaceCardData {
   name: string;
   /** Shared "visited" mark; undefined when the feature is unconfigured. */
   visited?: boolean;
+  /** Whether entry is free for residency-permit holders. */
+  freeWithResidency?: boolean;
 }
 
 /** Tri-state visited filter: any place / only visited / only not visited. */
@@ -18,6 +20,7 @@ export interface ExplorerFilterState {
   maxDrive: number;
   query: string;
   visited: VisitedFilter;
+  freeWithResidency?: boolean;
 }
 
 /**
@@ -34,5 +37,6 @@ export function matchesFilter(place: PlaceCardData, state: ExplorerFilterState):
   if (q && !`${place.name} ${place.region}`.toLowerCase().includes(q)) return false;
   if (state.visited === 'visited' && !place.visited) return false;
   if (state.visited === 'unvisited' && place.visited) return false;
+  if (state.freeWithResidency && !place.freeWithResidency) return false;
   return true;
 }

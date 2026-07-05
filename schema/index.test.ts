@@ -78,6 +78,18 @@ describe('PlaceSchema', () => {
   test('accepts collections as slug array', () => {
     expect(PlaceSchema.safeParse({ ...validPlace, collections: ['beaches-day-trip'] }).success).toBe(true);
   });
+  test('accepts a place with type museum', () => {
+    expect(PlaceSchema.safeParse({ ...validPlace, type: 'museum' }).success).toBe(true);
+  });
+  test('rejects an unknown type', () => {
+    expect(PlaceSchema.safeParse({ ...validPlace, type: 'volcano' }).success).toBe(false);
+  });
+  test('accepts a place with freeWithResidency true', () => {
+    expect(PlaceSchema.safeParse({ ...validPlace, freeWithResidency: true }).success).toBe(true);
+  });
+  test('accepts a place without freeWithResidency (optional)', () => {
+    expect(PlaceSchema.safeParse(validPlace).success).toBe(true);
+  });
 });
 
 describe('CollectionSchema', () => {
