@@ -11,7 +11,7 @@
     "bestSeason": "круглый год",
     "tags": ["с детьми"],
     "links": [{ "title": "Официальный сайт", "url": "https://lisboa.kidzania.com/pt-pt" }],
-    "photos": [],
+    "photos": [{ "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Dolce_Vita_Tejo_-_Amadora_-_Portugal_%284140684092%29.jpg/1280px-Dolce_Vita_Tejo_-_Amadora_-_Portugal_%284140684092%29.jpg", "author": "Vitor Oliveira from Torres Vedras, PORTUGAL", "license": "CC BY-SA 2.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dolce_Vita_Tejo_-_Amadora_-_Portugal_(4140684092).jpg" }],
     "collections": [],
     "status": "approved"
   },
@@ -142,7 +142,7 @@
     "bestSeason": "круглый год",
     "tags": ["с детьми"],
     "links": [{ "title": "Официальный сайт", "url": "https://www.kip.pt/en" }],
-    "photos": [],
+    "photos": [{ "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Regional_Karting_Palmela_KIP_Mar%C3%A7o_2010_%284470664429%29.jpg", "author": "Diogo Duarte from Portugal", "license": "CC BY-SA 2.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Regional_Karting_Palmela_KIP_Mar%C3%A7o_2010_(4470664429).jpg" }],
     "collections": [],
     "status": "approved"
   },

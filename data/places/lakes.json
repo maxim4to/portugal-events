@@ -163,6 +163,14 @@
     "links": [
       { "title": "Praia fluvial de Santa Clara — Visit Portugal", "url": "https://www.visitportugal.com/en/content/praia-fluvial-de-santa-clara" }
     ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Barragem_de_Santa_Clara_Alentejo_%282264826229%29.jpg",
+        "author": "Guy MOLL from Faro, Portugal",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Barragem_de_Santa_Clara_Alentejo_(2264826229).jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -304,6 +312,14 @@
     "tags": ["купание", "с детьми", "природа"],
     "links": [
       { "title": "Praia Fluvial da Lapa dos Dinheiros — Visit Seia", "url": "https://visitseia.pt/praias/praia-1/" }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Praia_fluvial_da_Lapa_dos_Dinheiros_%282%29.jpg/1280px-Praia_fluvial_da_Lapa_dos_Dinheiros_%282%29.jpg",
+        "author": "Hipersyl",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_fluvial_da_Lapa_dos_Dinheiros_(2).jpg"
+      }
     ],
     "collections": [],
     "status": "approved"

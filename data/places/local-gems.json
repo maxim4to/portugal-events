@@ -57,7 +57,7 @@
     "bestSeason": "круглый год",
     "tags": ["история", "бесплатно"],
     "links": [{ "title": "Roteiro do Alqueva", "url": "https://www.roteirodoalqueva.com/poi/olaria-de-sao-pedro-do-corval" }],
-    "photos": [],
+    "photos": [{ "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/S%C3%A3o_Pedro_do_Corval_-_Portugal_%2827557297711%29.jpg/1280px-S%C3%A3o_Pedro_do_Corval_-_Portugal_%2827557297711%29.jpg", "author": "Vitor Oliveira from Torres Vedras, PORTUGAL", "license": "CC BY-SA 2.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:S%C3%A3o_Pedro_do_Corval_-_Portugal_(27557297711).jpg" }],
     "collections": [],
     "status": "approved"
   },
@@ -602,7 +602,7 @@
     "bestSeason": "сентябрь-октябрь",
     "tags": ["вино", "виды"],
     "links": [{ "title": "Quinta do Cardo", "url": "https://www.portugalvineyards.com/en/brand/487_quinta-do-cardo" }],
-    "photos": [],
+    "photos": [{ "url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Port%C3%A3o_da_Quinta_do_Cardo_ou_de_Santo_Ant%C3%B3nio_-_2012-02-20_-_Image_114734.jpg", "author": "José Lemos Silva", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Port%C3%A3o_da_Quinta_do_Cardo_ou_de_Santo_Ant%C3%B3nio_-_2012-02-20_-_Image_114734.jpg" }],
     "collections": [],
     "status": "approved"
   }
