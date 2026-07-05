@@ -1,0 +1,311 @@
+[
+  {
+    "id": "albufeira-do-alqueva-monsaraz",
+    "name": "Алкева — озеро у Монсараша",
+    "type": "lake",
+    "region": "Алентежу",
+    "coords": { "lat": 38.4345, "lon": -7.3504 },
+    "description": "Алкева — крупнейшее искусственное озеро Западной Европы, образованное плотиной на реке Гвадиана. У подножия средневекового Монсараша обустроен речной пляж с голубым флагом, кристально чистой водой и прокатом каяков. Приезжайте на закате — вода здесь спокойная, а вечером открывается один из лучших звёздных небосводов Португалии.",
+    "driveMinutesFromLisbon": 150,
+    "visitDurationHours": 4,
+    "bestSeason": "май–сентябрь",
+    "tags": ["купание", "природа", "виды", "закат"],
+    "links": [
+      { "title": "Roteiro do Alqueva — Monsaraz river beach", "url": "https://www.roteirodoalqueva.com/en/poi/monsaraz-river-beach" }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Praia_Fluvial_de_Reguengos_de_Monsaraz_-_Portugal_%2851031456183%29.jpg/1280px-Praia_Fluvial_de_Reguengos_de_Monsaraz_-_Portugal_%2851031456183%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_Fluvial_de_Reguengos_de_Monsaraz_-_Portugal_(51031456183).jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "barragem-de-castelo-de-bode",
+    "name": "Каштелу-де-Боде",
+    "type": "lake",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 39.5427, "lon": -8.3195 },
+    "description": "Обширное водохранилище на реке Зезере снабжает питьевой водой Лиссабон и славится десятками чистых речных пляжей — от Дорнеша до Каштаньейры. Вода бирюзовая и тёплая летом, вокруг лесистые холмы, работает прокат байдарок и вейкборда. Лучше выбрать пляж поближе к Томару, чтобы совместить купание с осмотром города тамплиеров.",
+    "driveMinutesFromLisbon": 100,
+    "visitDurationHours": 4,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["купание", "природа", "виды"],
+    "links": [
+      { "title": "Praia Fluvial de Dornes", "url": "https://evendo.com/locations/portugal/beira-litoral/landmark/praia-fluvial-de-dornes" }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Barragem_de_Castelo_de_Bode_by_Juntas_1.jpg/1280px-Barragem_de_Castelo_de_Bode_by_Juntas_1.jpg",
+        "author": "Juntas",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Barragem_de_Castelo_de_Bode_by_Juntas_1.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "barragem-da-aguieira",
+    "name": "Агейра",
+    "type": "lake",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 40.3455, "lon": -8.1885 },
+    "description": "Водохранилище на реке Мондегу с изрезанными зелёными берегами и несколькими речными пляжами в районе Пенакова и Мортагуа. Место популярно у любителей парусного спорта и рыбалки, а панорама с плотины впечатляет масштабом. Хорошая база для однодневной поездки вместе с Коимброй.",
+    "driveMinutesFromLisbon": 130,
+    "visitDurationHours": 3,
+    "bestSeason": "май–сентябрь",
+    "tags": ["купание", "природа", "виды"],
+    "links": [
+      { "title": "Barragem da Aguieira — Turismo Centro Portugal", "url": "https://turismodocentro.pt/artigo/barragem-da-aguieira-uma-das-mais-imponentes-barragens-de-portugal/" }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Barragem_da_Aguieira.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Barragem_da_Aguieira.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "lagoa-comprida-serra-da-estrela",
+    "name": "Лагоа-Комприда",
+    "type": "lake",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 40.4167, "lon": -7.6167 },
+    "description": "Самое крупное озеро-водохранилище Серра-да-Эштрела лежит на высоте около 1600 метров в ледниковой котловине — говорят, это самый высокогорный пляж Португалии. Вода ледяная даже летом, зато виды на вересковые склоны и гранитные валуны запоминаются надолго. Берите тёплую одежду — погода в горах меняется быстро даже в июле.",
+    "driveMinutesFromLisbon": 210,
+    "visitDurationHours": 2,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["природа", "виды", "фото"],
+    "links": [
+      { "title": "Serra da Estrela — Lagoa Comprida", "url": "https://www.serradaestrela.info/serra-da-estrela/lagoas/lagoa-comprida" }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Lagoa_Comprida%2C_Serra_da_Estrela_%2832339620197%29.jpg/1280px-Lagoa_Comprida%2C_Serra_da_Estrela_%2832339620197%29.jpg",
+        "author": "Pedro Silva from Vila do Conde",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lagoa_Comprida,_Serra_da_Estrela_(32339620197).jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "pateira-de-fermentelos",
+    "name": "Патейра-де-Ферментелуш",
+    "type": "lake",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 40.5758, "lon": -8.5355 },
+    "description": "Крупнейшая природная лагуна Пиренейского полуострова, окружённая рисовыми полями и заболоченными лесами возле Агеды. Место скорее для наблюдения за птицами и неспешных прогулок на лодке, чем для купания — площадь озера сильно меняется по сезонам. Приезжайте на закате, когда вода становится зеркальной.",
+    "driveMinutesFromLisbon": 210,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": ["природа", "виды", "закат", "фото"],
+    "links": [
+      { "title": "Pateira de Fermentelos — Center of Portugal", "url": "https://www.centerofportugal.com/poi/pateira-de-fermentelos" }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Pateira_de_Fermentelos_Geral.jpg/1280px-Pateira_de_Fermentelos_Geral.jpg",
+        "author": "Carla Valongo",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pateira_de_Fermentelos_Geral.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "barragem-do-alvito",
+    "name": "Алвито (водохранилище Одивелаш)",
+    "type": "lake",
+    "region": "Алентежу",
+    "coords": { "lat": 38.2536, "lon": -7.8966 },
+    "description": "Тихое водохранилище на реке Одивелаш посреди алентежских равнин, куда почти не добираются туристы. Берега поросли пробковыми дубами, вода спокойная — хорошее место для рыбалки и уединённого пикника. Инфраструктуры немного, так что стоит взять с собой всё необходимое.",
+    "driveMinutesFromLisbon": 130,
+    "visitDurationHours": 2,
+    "bestSeason": "май–сентябрь",
+    "tags": ["природа", "бесплатно", "виды"],
+    "links": [
+      { "title": "Barragem do Alvito — CNPGB", "url": "https://cnpgb.apambiente.pt/content/alvito" }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Barragem_de_Odivelas.jpg/1280px-Barragem_de_Odivelas.jpg",
+        "author": "Duarte Nuno LC",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Barragem_de_Odivelas.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "barragem-de-santa-clara",
+    "name": "Санта-Клара",
+    "type": "lake",
+    "region": "Алентежу",
+    "coords": { "lat": 37.5168, "lon": -8.4438 },
+    "description": "Одно из крупнейших водохранилищ Португалии на юго-западе Алентежу, окружённое пробковыми лесами. Речной пляж у плотины — единственный в округе Одемира с голубым флагом, с двумя оборудованными зонами купания и чистой пресной водой. Удобно сочетать с поездкой на дикие пляжи Ваш-да-Кошта неподалёку.",
+    "driveMinutesFromLisbon": 165,
+    "visitDurationHours": 3,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["купание", "природа", "бесплатно"],
+    "links": [
+      { "title": "Praia fluvial de Santa Clara — Visit Portugal", "url": "https://www.visitportugal.com/en/content/praia-fluvial-de-santa-clara" }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "barragem-da-bravura",
+    "name": "Бравура",
+    "type": "lake",
+    "region": "Алентежу",
+    "coords": { "lat": 37.2015, "lon": -8.6985 },
+    "description": "Живописное водохранилище в холмах над Лагушем, окружённое эвкалиптовыми и пробковыми лесами — одно из немногих мест в Алгарве с пресноводным озером. Вокруг проложены пешие маршруты, встречаются выдры и цапли, есть смотровые площадки на плотину. Купание неофициальное, зато почти всегда немноголюдно.",
+    "driveMinutesFromLisbon": 180,
+    "visitDurationHours": 2.5,
+    "bestSeason": "апрель–октябрь",
+    "tags": ["природа", "виды", "бесплатно"],
+    "links": [
+      { "title": "Barragem da Bravura — Walk Algarve", "url": "https://www.walkalgarve.com/algarve-walking-sightseeing-birding-routes/barragem-da-bravura-trail-walks-in-lagos" }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Barragem_Bravura-34.jpg/1280px-Barragem_Bravura-34.jpg",
+        "author": "Lacobrigo",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Barragem_Bravura-34.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "barragem-do-cabril",
+    "name": "Кабрил",
+    "type": "lake",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 39.9213, "lon": -8.1331 },
+    "description": "Глубокое водохранилище на реке Зезере в лесистых горах между Сертã и Педрогау-Гранди с одним из самых живописных речных пляжей региона. Вода холоднее, чем в Каштелу-де-Боде, зато пейзаж драматичнее — крутые склоны спускаются прямо к воде. Место для тех, кто ищет тишину вдали от туристических троп.",
+    "driveMinutesFromLisbon": 165,
+    "visitDurationHours": 3,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["купание", "природа", "виды"],
+    "links": [
+      { "title": "Praia Fluvial do Cabril — Câmara de Pedrógão Grande", "url": "https://www.cm-pedrogaogrande.pt/visitar/praias-fluviais/poi/praia-fluvial-do-cabril" }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Barragem_do_Cabril_-_Portugal_%2816188443118%29.jpg/1280px-Barragem_do_Cabril_-_Portugal_%2816188443118%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Barragem_do_Cabril_-_Portugal_(16188443118).jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "barragem-de-montargil",
+    "name": "Монтаржил",
+    "type": "lake",
+    "region": "Алентежу",
+    "coords": { "lat": 39.0537, "lon": -8.1721 },
+    "description": "Водохранилище на реке Сор в округе Понте-де-Сор с песчаными дикими пляжами без спасателей и инфраструктуры. Популярно у виндсёрферов и любителей вейкборда благодаря стабильному ветру, вокруг — сосновые леса и пастбища. Хороший вариант для тех, кто едет в Алентежу и хочет искупаться по дороге.",
+    "driveMinutesFromLisbon": 105,
+    "visitDurationHours": 3,
+    "bestSeason": "май–сентябрь",
+    "tags": ["купание", "природа", "бесплатно"],
+    "links": [
+      { "title": "Praia Fluvial de Montargil — Info Beach", "url": "https://www.infobeach.pt/pt/praias/portalegre/ponte-de-sor/praia-fluvial-de-montargil" }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Montargil_Reservoir_waterline_in_the_early_morning%2C_Montargil_Reservoir%2C_Portugal_julesvernex2.jpg/1280px-Montargil_Reservoir_waterline_in_the_early_morning%2C_Montargil_Reservoir%2C_Portugal_julesvernex2.jpg",
+        "author": "Jules Verne Times Two",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Montargil_Reservoir_waterline_in_the_early_morning,_Montargil_Reservoir,_Portugal_julesvernex2.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "lagoas-de-bertiandos",
+    "name": "Лагоаш-де-Бертиандуш",
+    "type": "lake",
+    "region": "Норте",
+    "coords": { "lat": 41.7650, "lon": -8.6442 },
+    "description": "Охраняемый ландшафт с системой стариц реки Лима возле Понте-де-Лима — уникальная для Португалии пресноводная экосистема с богатым птичьим миром. По территории проложены деревянные настилы и тропы от 1,6 до 12,5 км, работает эко-ферма для детей. Купание не предусмотрено — это парк для прогулок и наблюдения за природой.",
+    "driveMinutesFromLisbon": 260,
+    "visitDurationHours": 2.5,
+    "bestSeason": "апрель–октябрь",
+    "tags": ["природа", "с детьми", "бесплатно", "фото"],
+    "links": [
+      { "title": "Lagoas de Bertiandos e São Pedro d'Arcos", "url": "https://lagoas.cm-pontedelima.pt/" }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Lagoas_de_Bertiandos_%281%29.jpg/1280px-Lagoas_de_Bertiandos_%281%29.jpg",
+        "author": "Joseolgon",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lagoas_de_Bertiandos_(1).jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "albufeira-do-ermal",
+    "name": "Албуфейра-ду-Эрмал",
+    "type": "lake",
+    "region": "Норте",
+    "coords": { "lat": 41.5918, "lon": -8.1269 },
+    "description": "Живописное водохранилище в горах Жереш возле Виейра-ду-Минью с речным пляжем на маленьком острове Илья-ду-Эрмал, соединённом с берегом пешеходным мостом. Вода чистая и прохладная, вокруг — гранитные скалы и сосновые леса национального парка. Одно из самых красивых мест для купания на севере страны.",
+    "driveMinutesFromLisbon": 260,
+    "visitDurationHours": 3,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["купание", "природа", "виды", "фото"],
+    "links": [
+      { "title": "Praia Fluvial do Ermal — igogo.pt", "url": "https://www.igogo.pt/praia-fluvial-do-ermal/" }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Praia_Fluvial_da_Albufeira_do_Ermal_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_%2854841802407%29.jpg/1280px-Praia_Fluvial_da_Albufeira_do_Ermal_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_%2854841802407%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, Portugal",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_Fluvial_da_Albufeira_do_Ermal_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_(54841802407).jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "praia-fluvial-lapa-dos-dinheiros",
+    "name": "Речной пляж Лапа-душ-Диньейруш",
+    "type": "lake",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 40.3853, "lon": -7.6970 },
+    "description": "Речной пляж на ручье Канисе у подножия Серра-да-Эштрела, отмеченный голубым флагом — вода собирается в естественный каменный бассейн среди валунов. Место компактное и тенистое, хорошо подходит для семей с детьми в жаркий день. Рядом — одноимённая гранитная деревня с узкими улочками.",
+    "driveMinutesFromLisbon": 220,
+    "visitDurationHours": 2,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["купание", "с детьми", "природа"],
+    "links": [
+      { "title": "Praia Fluvial da Lapa dos Dinheiros — Visit Seia", "url": "https://visitseia.pt/praias/praia-1/" }
+    ],
+    "collections": [],
+    "status": "candidate"
+  }
+]
