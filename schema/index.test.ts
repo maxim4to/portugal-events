@@ -46,23 +46,33 @@ describe('PlaceSchema', () => {
   test('rejects unknown status', () => {
     expect(PlaceSchema.safeParse({ ...validPlace, status: 'draft' }).success).toBe(false);
   });
-  test('accepts an optional photo', () => {
-    const withPhoto = {
+  test('accepts a place with a photos array', () => {
+    const withPhotos = {
       ...validPlace,
-      photo: {
-        url: 'https://upload.wikimedia.org/x.jpg',
-        author: 'Jane Doe',
-        license: 'CC BY-SA 4.0',
-        sourceUrl: 'https://commons.wikimedia.org/wiki/File:x.jpg',
-      },
+      photos: [
+        {
+          url: 'https://upload.wikimedia.org/x.jpg',
+          author: 'Jane Doe',
+          license: 'CC BY-SA 4.0',
+          sourceUrl: 'https://commons.wikimedia.org/wiki/File:x.jpg',
+        },
+      ],
     };
-    expect(PlaceSchema.safeParse(withPhoto).success).toBe(true);
+    expect(PlaceSchema.safeParse(withPhotos).success).toBe(true);
   });
-  test('accepts a place with no photo', () => {
-    expect(PlaceSchema.safeParse(validPlace).success).toBe(true);
+  test('defaults photos to an empty array when absent', () => {
+    const result = PlaceSchema.safeParse(validPlace);
+    expect(result.success).toBe(true);
+    if (result.success) expect(result.data.photos).toEqual([]);
   });
-  test('rejects a photo missing its license', () => {
-    const bad = { ...validPlace, photo: { url: 'https://x/y.jpg', author: 'A', sourceUrl: 'https://x' } };
+  test('accepts an explicitly empty photos array', () => {
+    expect(PlaceSchema.safeParse({ ...validPlace, photos: [] }).success).toBe(true);
+  });
+  test('rejects a photo in the array missing its license', () => {
+    const bad = {
+      ...validPlace,
+      photos: [{ url: 'https://x/y.jpg', author: 'A', sourceUrl: 'https://x' }],
+    };
     expect(PlaceSchema.safeParse(bad).success).toBe(false);
   });
   test('accepts collections as slug array', () => {

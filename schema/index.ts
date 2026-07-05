@@ -37,7 +37,7 @@ export const PlaceSchema = z.object({
   bestSeason: z.string().min(1),
   tags: z.array(z.string()),
   links: z.array(z.object({ title: z.string().min(1), url: z.string().url() })),
-  photo: PhotoSchema.optional(),
+  photos: z.array(PhotoSchema).default([]),
   collections: z.array(slug).default([]),
   status: z.enum(['candidate', 'approved']),
 });

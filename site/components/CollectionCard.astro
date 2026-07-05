@@ -11,16 +11,19 @@ const covers = places.slice(0, 3);
 ---
 <a href={href} class="card collection-card">
   <div class="covers">
-    {covers.map((place) => (
-      <div
-        class="cover-tile"
-        style={place.photo ? undefined : `background: var(--type-${place.type});`}
-      >
-        {place.photo && (
-          <img src={place.photo.url} alt={place.name} loading="lazy" />
-        )}
-      </div>
-    ))}
+    {covers.map((place) => {
+      const cover = place.photos[0];
+      return (
+        <div
+          class="cover-tile"
+          style={cover ? undefined : `background: var(--type-${place.type});`}
+        >
+          {cover && (
+            <img src={cover.url} alt={place.name} loading="lazy" />
+          )}
+        </div>
+      );
+    })}
   </div>
   <div class="body">
     <h3>{collection.title}</h3>

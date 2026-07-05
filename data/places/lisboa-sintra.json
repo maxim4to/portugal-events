@@ -11,12 +11,14 @@
     "bestSeason": "май–октябрь",
     "tags": ["закат", "бесплатно", "дикая природа"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Praia_da_Ursa_-_Parque_Natural_Sintra-Cascais.jpg/1280px-Praia_da_Ursa_-_Parque_Natural_Sintra-Cascais.jpg",
-      "author": "Erico Reis Junior",
-      "license": "CC BY-SA 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Ursa_-_Parque_Natural_Sintra-Cascais.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Praia_da_Ursa_-_Parque_Natural_Sintra-Cascais.jpg/1280px-Praia_da_Ursa_-_Parque_Natural_Sintra-Cascais.jpg",
+        "author": "Erico Reis Junior",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Ursa_-_Parque_Natural_Sintra-Cascais.jpg"
+      }
+    ],
     "status": "approved"
   },
   {
@@ -31,12 +33,14 @@
     "bestSeason": "круглый год",
     "tags": ["закат", "бесплатно"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Cabo_da_Roca_Lighthouse%2C_20250606_1514_0234.jpg/1280px-Cabo_da_Roca_Lighthouse%2C_20250606_1514_0234.jpg",
-      "author": "Jakub Hałun",
-      "license": "CC BY 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cabo_da_Roca_Lighthouse,_20250606_1514_0234.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Cabo_da_Roca_Lighthouse%2C_20250606_1514_0234.jpg/1280px-Cabo_da_Roca_Lighthouse%2C_20250606_1514_0234.jpg",
+        "author": "Jakub Hałun",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cabo_da_Roca_Lighthouse,_20250606_1514_0234.jpg"
+      }
+    ],
     "status": "approved"
   },
   {
@@ -51,12 +55,14 @@
     "bestSeason": "круглый год",
     "tags": ["история", "виды"],
     "links": [{ "title": "Билеты", "url": "https://www.parquesdesintra.pt" }],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Castelo_dos_Mouros%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_112-121_PAN.jpg/1280px-Castelo_dos_Mouros%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_112-121_PAN.jpg",
-      "author": "Diego Delso",
-      "license": "CC BY-SA 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_dos_Mouros,_Sintra,_Portugal,_2019-05-25,_DD_112-121_PAN.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Castelo_dos_Mouros%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_112-121_PAN.jpg/1280px-Castelo_dos_Mouros%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_112-121_PAN.jpg",
+        "author": "Diego Delso",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_dos_Mouros,_Sintra,_Portugal,_2019-05-25,_DD_112-121_PAN.jpg"
+      }
+    ],
     "status": "approved"
   },
   {
@@ -71,12 +77,14 @@
     "bestSeason": "июнь–сентябрь",
     "tags": ["сёрфинг", "бесплатно"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Guincho_June_2013-1.jpg/1280px-Guincho_June_2013-1.jpg",
-      "author": "Alvesgaspar",
-      "license": "CC BY-SA 3.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guincho_June_2013-1.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Guincho_June_2013-1.jpg/1280px-Guincho_June_2013-1.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guincho_June_2013-1.jpg"
+      }
+    ],
     "status": "approved"
   },
   {
@@ -91,12 +99,14 @@
     "bestSeason": "круглый год",
     "tags": ["фото", "ресторан"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Azenhas_do_Mar.jpg/1280px-Azenhas_do_Mar.jpg",
-      "author": "F nando",
-      "license": "CC BY-SA 3.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Azenhas_do_Mar.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Azenhas_do_Mar.jpg/1280px-Azenhas_do_Mar.jpg",
+        "author": "F nando",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Azenhas_do_Mar.jpg"
+      }
+    ],
     "status": "approved"
   },
   {
@@ -111,12 +121,14 @@
     "bestSeason": "круглый год",
     "tags": ["история", "виды", "фото"],
     "links": [{ "title": "Билеты", "url": "https://www.parquesdesintra.pt" }],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Palacio_Nacional_da_Pena%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_131.jpg/1280px-Palacio_Nacional_da_Pena%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_131.jpg",
-      "author": "Diego Delso",
-      "license": "CC BY-SA 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Palacio_Nacional_da_Pena,_Sintra,_Portugal,_2019-05-25,_DD_131.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Palacio_Nacional_da_Pena%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_131.jpg/1280px-Palacio_Nacional_da_Pena%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_131.jpg",
+        "author": "Diego Delso",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Palacio_Nacional_da_Pena,_Sintra,_Portugal,_2019-05-25,_DD_131.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -132,12 +144,14 @@
     "bestSeason": "круглый год",
     "tags": ["история", "фото", "природа"],
     "links": [{ "title": "Сайт", "url": "https://www.regaleira.pt" }],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Quinta_da_Regaleira%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_56.jpg/1280px-Quinta_da_Regaleira%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_56.jpg",
-      "author": "Diego Delso",
-      "license": "CC BY-SA 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Quinta_da_Regaleira,_Sintra,_Portugal,_2019-05-25,_DD_56.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Quinta_da_Regaleira%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_56.jpg/1280px-Quinta_da_Regaleira%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_56.jpg",
+        "author": "Diego Delso",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Quinta_da_Regaleira,_Sintra,_Portugal,_2019-05-25,_DD_56.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -153,12 +167,14 @@
     "bestSeason": "круглый год",
     "tags": ["история", "природа", "фото"],
     "links": [{ "title": "Билеты", "url": "https://www.parquesdesintra.pt" }],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Monserrate_Palace_%2852526640315%29.jpg/1280px-Monserrate_Palace_%2852526640315%29.jpg",
-      "author": "Jocelyn Erskine-Kellie from London, UK",
-      "license": "CC BY-SA 2.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monserrate_Palace_(52526640315).jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Monserrate_Palace_%2852526640315%29.jpg/1280px-Monserrate_Palace_%2852526640315%29.jpg",
+        "author": "Jocelyn Erskine-Kellie from London, UK",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monserrate_Palace_(52526640315).jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -174,12 +190,14 @@
     "bestSeason": "круглый год",
     "tags": ["история", "фото"],
     "links": [{ "title": "Билеты", "url": "https://www.parquesdesintra.pt" }],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Palacio_Nacional%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_08.jpg/1280px-Palacio_Nacional%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_08.jpg",
-      "author": "Diego Delso",
-      "license": "CC BY-SA 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Palacio_Nacional,_Sintra,_Portugal,_2019-05-25,_DD_08.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Palacio_Nacional%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_08.jpg/1280px-Palacio_Nacional%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_08.jpg",
+        "author": "Diego Delso",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Palacio_Nacional,_Sintra,_Portugal,_2019-05-25,_DD_08.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -195,12 +213,14 @@
     "bestSeason": "круглый год",
     "tags": ["история", "природа"],
     "links": [{ "title": "Билеты", "url": "https://www.parquesdesintra.pt" }],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Convento_dos_capuchos_%28Sintra%29_-_Claustro.jpg/1280px-Convento_dos_capuchos_%28Sintra%29_-_Claustro.jpg",
-      "author": "Tagido",
-      "license": "Public domain",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Convento_dos_capuchos_(Sintra)_-_Claustro.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Convento_dos_capuchos_%28Sintra%29_-_Claustro.jpg/1280px-Convento_dos_capuchos_%28Sintra%29_-_Claustro.jpg",
+        "author": "Tagido",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Convento_dos_capuchos_(Sintra)_-_Claustro.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -216,12 +236,14 @@
     "bestSeason": "круглый год",
     "tags": ["закат", "виды", "бесплатно"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Sanctuary_of_Peninha_-_Santu%C3%A1rio_da_Peninha_-_Sintra-Cascais_Natural_Park%2C_Portugal.jpg/1280px-Sanctuary_of_Peninha_-_Santu%C3%A1rio_da_Peninha_-_Sintra-Cascais_Natural_Park%2C_Portugal.jpg",
-      "author": "Gerrit Sonka",
-      "license": "CC BY-SA 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sanctuary_of_Peninha_-_Santu%C3%A1rio_da_Peninha_-_Sintra-Cascais_Natural_Park,_Portugal.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Sanctuary_of_Peninha_-_Santu%C3%A1rio_da_Peninha_-_Sintra-Cascais_Natural_Park%2C_Portugal.jpg/1280px-Sanctuary_of_Peninha_-_Santu%C3%A1rio_da_Peninha_-_Sintra-Cascais_Natural_Park%2C_Portugal.jpg",
+        "author": "Gerrit Sonka",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sanctuary_of_Peninha_-_Santu%C3%A1rio_da_Peninha_-_Sintra-Cascais_Natural_Park,_Portugal.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -237,12 +259,14 @@
     "bestSeason": "июнь–сентябрь",
     "tags": ["купание", "виды", "ресторан"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Praia_da_adraga_portugal.jpg/1280px-Praia_da_adraga_portugal.jpg",
-      "author": "Contaminadas",
-      "license": "CC BY-SA 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_adraga_portugal.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Praia_da_adraga_portugal.jpg/1280px-Praia_da_adraga_portugal.jpg",
+        "author": "Contaminadas",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_adraga_portugal.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -258,12 +282,14 @@
     "bestSeason": "круглый год",
     "tags": ["виды", "бесплатно", "фото"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Boca_do_Inferno%2C_Cascais.jpg/1280px-Boca_do_Inferno%2C_Cascais.jpg",
-      "author": "Carlos SGP",
-      "license": "CC0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Boca_do_Inferno,_Cascais.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Boca_do_Inferno%2C_Cascais.jpg/1280px-Boca_do_Inferno%2C_Cascais.jpg",
+        "author": "Carlos SGP",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Boca_do_Inferno,_Cascais.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -279,12 +305,14 @@
     "bestSeason": "круглый год",
     "tags": ["закат", "виды", "бесплатно"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/O_Farol_do_Cabo_Raso%2C_Cascais%2C_Portugal.jpg/1280px-O_Farol_do_Cabo_Raso%2C_Cascais%2C_Portugal.jpg",
-      "author": "JoaoLamares",
-      "license": "CC BY-SA 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:O_Farol_do_Cabo_Raso,_Cascais,_Portugal.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/O_Farol_do_Cabo_Raso%2C_Cascais%2C_Portugal.jpg/1280px-O_Farol_do_Cabo_Raso%2C_Cascais%2C_Portugal.jpg",
+        "author": "JoaoLamares",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:O_Farol_do_Cabo_Raso,_Cascais,_Portugal.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -300,12 +328,14 @@
     "bestSeason": "круглый год",
     "tags": ["ресторан", "купание", "виды"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Faro_de_Santa_Marta%2C_Cascais%2C_Portugal%2C_2022-07-25%2C_DD_13-15_HDR.jpg/1280px-Faro_de_Santa_Marta%2C_Cascais%2C_Portugal%2C_2022-07-25%2C_DD_13-15_HDR.jpg",
-      "author": "Diego Delso",
-      "license": "CC BY-SA 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Faro_de_Santa_Marta,_Cascais,_Portugal,_2022-07-25,_DD_13-15_HDR.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Faro_de_Santa_Marta%2C_Cascais%2C_Portugal%2C_2022-07-25%2C_DD_13-15_HDR.jpg/1280px-Faro_de_Santa_Marta%2C_Cascais%2C_Portugal%2C_2022-07-25%2C_DD_13-15_HDR.jpg",
+        "author": "Diego Delso",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Faro_de_Santa_Marta,_Cascais,_Portugal,_2022-07-25,_DD_13-15_HDR.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -321,12 +351,14 @@
     "bestSeason": "май–октябрь",
     "tags": ["сёрфинг", "ресторан", "закат"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ericeira_March_2013-3.jpg/1280px-Ericeira_March_2013-3.jpg",
-      "author": "Alvesgaspar",
-      "license": "CC BY-SA 3.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ericeira_March_2013-3.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ericeira_March_2013-3.jpg/1280px-Ericeira_March_2013-3.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ericeira_March_2013-3.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -342,12 +374,14 @@
     "bestSeason": "сентябрь–апрель (сёрф)",
     "tags": ["сёрфинг", "виды", "бесплатно"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Praia_dos_Coxos_-_Portugal_%2851870552936%29.jpg/1280px-Praia_dos_Coxos_-_Portugal_%2851870552936%29.jpg",
-      "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
-      "license": "CC BY-SA 2.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_dos_Coxos_-_Portugal_(51870552936).jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Praia_dos_Coxos_-_Portugal_%2851870552936%29.jpg/1280px-Praia_dos_Coxos_-_Portugal_%2851870552936%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_dos_Coxos_-_Portugal_(51870552936).jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -363,12 +397,14 @@
     "bestSeason": "круглый год",
     "tags": ["история", "с детьми"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Mafra_May_2013-2.jpg/1280px-Mafra_May_2013-2.jpg",
-      "author": "Alvesgaspar",
-      "license": "CC BY-SA 3.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mafra_May_2013-2.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Mafra_May_2013-2.jpg/1280px-Mafra_May_2013-2.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mafra_May_2013-2.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -384,12 +420,14 @@
     "bestSeason": "круглый год",
     "tags": ["история", "фото"],
     "links": [{ "title": "Сайт", "url": "https://www.palaciomafra.gov.pt" }],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Mafra_-_Palace_of_Mafra_-_20191230180805.jpg/1280px-Mafra_-_Palace_of_Mafra_-_20191230180805.jpg",
-      "author": "Telmo França Pedrosa",
-      "license": "CC BY-SA 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mafra_-_Palace_of_Mafra_-_20191230180805.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Mafra_-_Palace_of_Mafra_-_20191230180805.jpg/1280px-Mafra_-_Palace_of_Mafra_-_20191230180805.jpg",
+        "author": "Telmo França Pedrosa",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mafra_-_Palace_of_Mafra_-_20191230180805.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -405,12 +443,14 @@
     "bestSeason": "июнь–сентябрь",
     "tags": ["купание", "сёрфинг", "с детьми"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Praia_Grande_do_Rod%C3%ADzio_02.jpg/1280px-Praia_Grande_do_Rod%C3%ADzio_02.jpg",
-      "author": "Simon Burchell",
-      "license": "CC BY-SA 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_Grande_do_Rod%C3%ADzio_02.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Praia_Grande_do_Rod%C3%ADzio_02.jpg/1280px-Praia_Grande_do_Rod%C3%ADzio_02.jpg",
+        "author": "Simon Burchell",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_Grande_do_Rod%C3%ADzio_02.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -426,12 +466,14 @@
     "bestSeason": "июнь–сентябрь",
     "tags": ["купание", "с детьми", "закат"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Praia_das_Macas.jpg/1280px-Praia_das_Macas.jpg",
-      "author": "Sheila1988",
-      "license": "CC BY-SA 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_das_Macas.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Praia_das_Macas.jpg/1280px-Praia_das_Macas.jpg",
+        "author": "Sheila1988",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_das_Macas.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -447,12 +489,14 @@
     "bestSeason": "июнь–сентябрь",
     "tags": ["купание", "сёрфинг", "с детьми"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Praia_da_Foz_do_Lizandro_-_Portugal_%2825858162947%29.jpg/1280px-Praia_da_Foz_do_Lizandro_-_Portugal_%2825858162947%29.jpg",
-      "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
-      "license": "CC BY-SA 2.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Foz_do_Lizandro_-_Portugal_(25858162947).jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Praia_da_Foz_do_Lizandro_-_Portugal_%2825858162947%29.jpg/1280px-Praia_da_Foz_do_Lizandro_-_Portugal_%2825858162947%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Foz_do_Lizandro_-_Portugal_(25858162947).jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   }

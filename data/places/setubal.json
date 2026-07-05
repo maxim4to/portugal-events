@@ -11,12 +11,14 @@
     "bestSeason": "июнь–сентябрь",
     "tags": ["купание", "природа"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Galapinhos_2017001.jpg/1280px-Galapinhos_2017001.jpg",
-      "author": "Anual",
-      "license": "CC BY-SA 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Galapinhos_2017001.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Galapinhos_2017001.jpg/1280px-Galapinhos_2017001.jpg",
+        "author": "Anual",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Galapinhos_2017001.jpg"
+      }
+    ],
     "status": "approved"
   },
   {
@@ -31,12 +33,14 @@
     "bestSeason": "круглый год",
     "tags": ["закат", "бесплатно", "динозавры"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Faro_de_cabo_Espichel%2C_Portugal%2C_2012-08-18%2C_DD_01.JPG/1280px-Faro_de_cabo_Espichel%2C_Portugal%2C_2012-08-18%2C_DD_01.JPG",
-      "author": "Diego Delso",
-      "license": "CC BY-SA 3.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Faro_de_cabo_Espichel,_Portugal,_2012-08-18,_DD_01.JPG"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Faro_de_cabo_Espichel%2C_Portugal%2C_2012-08-18%2C_DD_01.JPG/1280px-Faro_de_cabo_Espichel%2C_Portugal%2C_2012-08-18%2C_DD_01.JPG",
+        "author": "Diego Delso",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Faro_de_cabo_Espichel,_Portugal,_2012-08-18,_DD_01.JPG"
+      }
+    ],
     "status": "approved"
   },
   {
@@ -51,12 +55,14 @@
     "bestSeason": "июнь–сентябрь",
     "tags": ["купание", "природа", "виды"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/PORTINHO_DA_ARRABIDA_2.jpg/1280px-PORTINHO_DA_ARRABIDA_2.jpg",
-      "author": "Pemanuelp",
-      "license": "CC BY-SA 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:PORTINHO_DA_ARRABIDA_2.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/PORTINHO_DA_ARRABIDA_2.jpg/1280px-PORTINHO_DA_ARRABIDA_2.jpg",
+        "author": "Pemanuelp",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:PORTINHO_DA_ARRABIDA_2.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -72,12 +78,14 @@
     "bestSeason": "апрель–октябрь",
     "tags": ["природа", "виды", "фото"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Parque_Natural_da_Arr%C3%A1bida%2C_Set%C3%BAbal%2C_Portugal%2C_2012-05-11%2C_DD_02.JPG/1280px-Parque_Natural_da_Arr%C3%A1bida%2C_Set%C3%BAbal%2C_Portugal%2C_2012-05-11%2C_DD_02.JPG",
-      "author": "Diego Delso",
-      "license": "CC BY-SA 3.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parque_Natural_da_Arrábida,_Setúbal,_Portugal,_2012-05-11,_DD_02.JPG"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Parque_Natural_da_Arr%C3%A1bida%2C_Set%C3%BAbal%2C_Portugal%2C_2012-05-11%2C_DD_02.JPG/1280px-Parque_Natural_da_Arr%C3%A1bida%2C_Set%C3%BAbal%2C_Portugal%2C_2012-05-11%2C_DD_02.JPG",
+        "author": "Diego Delso",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parque_Natural_da_Arrábida,_Setúbal,_Portugal,_2012-05-11,_DD_02.JPG"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -93,12 +101,14 @@
     "bestSeason": "май–октябрь",
     "tags": ["ресторан", "купание", "история"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Sesimbra_March_2015-2a.jpg/1280px-Sesimbra_March_2015-2a.jpg",
-      "author": "Alvesgaspar",
-      "license": "CC BY-SA 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sesimbra_March_2015-2a.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Sesimbra_March_2015-2a.jpg/1280px-Sesimbra_March_2015-2a.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sesimbra_March_2015-2a.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -114,12 +124,14 @@
     "bestSeason": "круглый год",
     "tags": ["ресторан", "природа", "история"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Iglesia_de_San_Juli%C3%A1n%2C_Set%C3%BAbal%2C_Portugal%2C_2021-09-08%2C_DD_07-09_HDR.jpg/1280px-Iglesia_de_San_Juli%C3%A1n%2C_Set%C3%BAbal%2C_Portugal%2C_2021-09-08%2C_DD_07-09_HDR.jpg",
-      "author": "Diego Delso",
-      "license": "CC BY-SA 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Iglesia_de_San_Julián,_Setúbal,_Portugal,_2021-09-08,_DD_07-09_HDR.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Iglesia_de_San_Juli%C3%A1n%2C_Set%C3%BAbal%2C_Portugal%2C_2021-09-08%2C_DD_07-09_HDR.jpg/1280px-Iglesia_de_San_Juli%C3%A1n%2C_Set%C3%BAbal%2C_Portugal%2C_2021-09-08%2C_DD_07-09_HDR.jpg",
+        "author": "Diego Delso",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Iglesia_de_San_Julián,_Setúbal,_Portugal,_2021-09-08,_DD_07-09_HDR.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -135,12 +147,14 @@
     "bestSeason": "круглый год",
     "tags": ["история", "виды", "вино"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Castelo_de_Palmela_20.jpg/1280px-Castelo_de_Palmela_20.jpg",
-      "author": "GualdimG",
-      "license": "CC BY-SA 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Palmela_20.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Castelo_de_Palmela_20.jpg/1280px-Castelo_de_Palmela_20.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Palmela_20.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -156,12 +170,14 @@
     "bestSeason": "круглый год",
     "tags": ["вино", "ресторан", "история"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Pelourinho_de_Vila_Nogueira_de_Azeição_-_Portugal_%2833922519618%29.jpg/1280px-Pelourinho_de_Vila_Nogueira_de_Azeição_-_Portugal_%2833922519618%29.jpg",
-      "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
-      "license": "CC BY-SA 2.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pelourinho_de_Vila_Nogueira_de_Azeição_-_Portugal_(33922519618).jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Pelourinho_de_Vila_Nogueira_de_Azeição_-_Portugal_%2833922519618%29.jpg/1280px-Pelourinho_de_Vila_Nogueira_de_Azeição_-_Portugal_%2833922519618%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pelourinho_de_Vila_Nogueira_de_Azeição_-_Portugal_(33922519618).jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -177,12 +193,14 @@
     "bestSeason": "круглый год",
     "tags": ["виды", "фото", "история"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Cristo_Rei%2C_Lisboa%2C_Portugal%2C_2012-05-12%2C_DD_02.JPG/1280px-Cristo_Rei%2C_Lisboa%2C_Portugal%2C_2012-05-12%2C_DD_02.JPG",
-      "author": "Diego Delso",
-      "license": "CC BY-SA 3.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cristo_Rei,_Lisboa,_Portugal,_2012-05-12,_DD_02.JPG"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Cristo_Rei%2C_Lisboa%2C_Portugal%2C_2012-05-12%2C_DD_02.JPG/1280px-Cristo_Rei%2C_Lisboa%2C_Portugal%2C_2012-05-12%2C_DD_02.JPG",
+        "author": "Diego Delso",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cristo_Rei,_Lisboa,_Portugal,_2012-05-12,_DD_02.JPG"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -198,12 +216,14 @@
     "bestSeason": "июнь–сентябрь",
     "tags": ["купание", "сёрфинг", "с детьми"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Caparica_December_2011-1a.jpg/1280px-Caparica_December_2011-1a.jpg",
-      "author": "Alvesgaspar",
-      "license": "CC BY-SA 3.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caparica_December_2011-1a.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Caparica_December_2011-1a.jpg/1280px-Caparica_December_2011-1a.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caparica_December_2011-1a.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -219,12 +239,14 @@
     "bestSeason": "июнь–сентябрь",
     "tags": ["закат", "купание", "бесплатно"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Praia_do_Meco_I.jpg/1280px-Praia_do_Meco_I.jpg",
-      "author": "F nando",
-      "license": "CC BY-SA 3.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Meco_I.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Praia_do_Meco_I.jpg/1280px-Praia_do_Meco_I.jpg",
+        "author": "F nando",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Meco_I.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -240,12 +262,14 @@
     "bestSeason": "июнь–сентябрь",
     "tags": ["купание", "с детьми", "природа"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Lagoa_Albufeira_March_2015-1.jpg/1280px-Lagoa_Albufeira_March_2015-1.jpg",
-      "author": "Alvesgaspar",
-      "license": "CC BY-SA 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lagoa_Albufeira_March_2015-1.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Lagoa_Albufeira_March_2015-1.jpg/1280px-Lagoa_Albufeira_March_2015-1.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lagoa_Albufeira_March_2015-1.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -261,12 +285,14 @@
     "bestSeason": "апрель–октябрь",
     "tags": ["история", "виды", "природа"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Convento_da_Arrabida.jpg/1280px-Convento_da_Arrabida.jpg",
-      "author": "Silvia Sequeira",
-      "license": "CC BY 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Convento_da_Arrabida.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Convento_da_Arrabida.jpg/1280px-Convento_da_Arrabida.jpg",
+        "author": "Silvia Sequeira",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Convento_da_Arrabida.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   }

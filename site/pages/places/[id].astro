@@ -15,11 +15,12 @@ const { place } = Astro.props as { place: Place };
 const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
 const directions = `https://www.google.com/maps/dir/?api=1&destination=${place.coords.lat},${place.coords.lon}`;
 const paragraphs = place.description.split(/\n\n+/).map((s) => s.trim()).filter(Boolean);
+const cover = place.photos[0];
 ---
 <Base title={place.name} description={place.description.slice(0, 150)}>
   <article class="detail">
-    <div class="hero" style={place.photo ? undefined : `background: var(--type-${place.type});`}>
-      {place.photo && <img src={place.photo.url} alt={place.name} />}
+    <div class="hero" style={cover ? undefined : `background: var(--type-${place.type});`}>
+      {cover && <img src={cover.url} alt={place.name} />}
       <span class="badge-overlay">
         <TypeBadge type={place.type} />
       </span>
@@ -62,9 +63,9 @@ const paragraphs = place.description.split(/\n\n+/).map((s) => s.trim()).filter(
 
     <MiniMap lat={place.coords.lat} lon={place.coords.lon} name={place.name} />
 
-    {place.photo && (
+    {cover && (
       <p class="muted attribution">
-        Фото: <a href={place.photo.sourceUrl} target="_blank" rel="noopener">{place.photo.author}, {place.photo.license}</a>
+        Фото: <a href={cover.sourceUrl} target="_blank" rel="noopener">{cover.author}, {cover.license}</a>
       </p>
     )}
 

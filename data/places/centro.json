@@ -11,12 +11,14 @@
     "bestSeason": "апрель–октябрь",
     "tags": ["история", "фото", "природа"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Pi%C3%B3d%C3%A3o_Arganil.jpg/1280px-Pi%C3%B3d%C3%A3o_Arganil.jpg",
-      "author": "Xdiogo",
-      "license": "CC BY-SA 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pi%C3%B3d%C3%A3o_Arganil.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Pi%C3%B3d%C3%A3o_Arganil.jpg/1280px-Pi%C3%B3d%C3%A3o_Arganil.jpg",
+        "author": "Xdiogo",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pi%C3%B3d%C3%A3o_Arganil.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -32,12 +34,14 @@
     "bestSeason": "апрель–ноябрь",
     "tags": ["история", "природа", "фото"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Talasnal_%40_Lous%C3%A3_mountain.jpg/1280px-Talasnal_%40_Lous%C3%A3_mountain.jpg",
-      "author": "Nuno Simão Gonçalves",
-      "license": "CC BY-SA 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Talasnal_@_Lous%C3%A3_mountain.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Talasnal_%40_Lous%C3%A3_mountain.jpg/1280px-Talasnal_%40_Lous%C3%A3_mountain.jpg",
+        "author": "Nuno Simão Gonçalves",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Talasnal_@_Lous%C3%A3_mountain.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -53,12 +57,14 @@
     "bestSeason": "май–сентябрь",
     "tags": ["история", "купание", "природа"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Janeiro_de_Cima_-_Portugal_%2852816759064%29.jpg/1280px-Janeiro_de_Cima_-_Portugal_%2852816759064%29.jpg",
-      "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
-      "license": "CC BY-SA 2.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Janeiro_de_Cima_-_Portugal_(52816759064).jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Janeiro_de_Cima_-_Portugal_%2852816759064%29.jpg/1280px-Janeiro_de_Cima_-_Portugal_%2852816759064%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Janeiro_de_Cima_-_Portugal_(52816759064).jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -74,12 +80,14 @@
     "bestSeason": "июнь–сентябрь",
     "tags": ["купание", "природа", "виды"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/The_River_beach_of_Fragas_de_S%C3%A3o_Sim%C3%A3o.jpg/1280px-The_River_beach_of_Fragas_de_S%C3%A3o_Sim%C3%A3o.jpg",
-      "author": "Threeohsix",
-      "license": "CC BY-SA 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_River_beach_of_Fragas_de_S%C3%A3o_Sim%C3%A3o.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/The_River_beach_of_Fragas_de_S%C3%A3o_Sim%C3%A3o.jpg/1280px-The_River_beach_of_Fragas_de_S%C3%A3o_Sim%C3%A3o.jpg",
+        "author": "Threeohsix",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_River_beach_of_Fragas_de_S%C3%A3o_Sim%C3%A3o.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -95,12 +103,14 @@
     "bestSeason": "июнь–сентябрь",
     "tags": ["купание", "с детьми", "природа"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Praia_Fluvial_de_Lou%C3%A7ainha_-_Portugal_%2825330842562%29.jpg/1280px-Praia_Fluvial_de_Lou%C3%A7ainha_-_Portugal_%2825330842562%29.jpg",
-      "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
-      "license": "CC BY-SA 2.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_Fluvial_de_Lou%C3%A7ainha_-_Portugal_(25330842562).jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Praia_Fluvial_de_Lou%C3%A7ainha_-_Portugal_%2825330842562%29.jpg/1280px-Praia_Fluvial_de_Lou%C3%A7ainha_-_Portugal_%2825330842562%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_Fluvial_de_Lou%C3%A7ainha_-_Portugal_(25330842562).jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -116,12 +126,14 @@
     "bestSeason": "круглый год",
     "tags": ["природа", "история", "фото"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Mata_do_Bussaco_%2853489108398%29.jpg/1280px-Mata_do_Bussaco_%2853489108398%29.jpg",
-      "author": "ines s.",
-      "license": "CC BY 2.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mata_do_Bussaco_(53489108398).jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Mata_do_Bussaco_%2853489108398%29.jpg/1280px-Mata_do_Bussaco_%2853489108398%29.jpg",
+        "author": "ines s.",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mata_do_Bussaco_(53489108398).jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -137,12 +149,14 @@
     "bestSeason": "май–октябрь",
     "tags": ["природа", "виды", "фото"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Cov%C3%A3o_dos_Conchos.jpg/1280px-Cov%C3%A3o_dos_Conchos.jpg",
-      "author": "PauloSeia",
-      "license": "CC BY-SA 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cov%C3%A3o_dos_Conchos.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Cov%C3%A3o_dos_Conchos.jpg/1280px-Cov%C3%A3o_dos_Conchos.jpg",
+        "author": "PauloSeia",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cov%C3%A3o_dos_Conchos.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -158,12 +172,14 @@
     "bestSeason": "весна и осень",
     "tags": ["природа", "виды", "фото"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Po%C3%A7o_do_Inferno%2C_Manteigas%2C_Cora%C3%A7%C3%A3o_da_Serra_da_Estrela.jpg/1280px-Po%C3%A7o_do_Inferno%2C_Manteigas%2C_Cora%C3%A7%C3%A3o_da_Serra_da_Estrela.jpg",
-      "author": "Ncletorosa",
-      "license": "CC BY-SA 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Po%C3%A7o_do_Inferno,_Manteigas,_Cora%C3%A7%C3%A3o_da_Serra_da_Estrela.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Po%C3%A7o_do_Inferno%2C_Manteigas%2C_Cora%C3%A7%C3%A3o_da_Serra_da_Estrela.jpg/1280px-Po%C3%A7o_do_Inferno%2C_Manteigas%2C_Cora%C3%A7%C3%A3o_da_Serra_da_Estrela.jpg",
+        "author": "Ncletorosa",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Po%C3%A7o_do_Inferno,_Manteigas,_Cora%C3%A7%C3%A3o_da_Serra_da_Estrela.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -179,12 +195,14 @@
     "bestSeason": "июль–сентябрь",
     "tags": ["купание", "природа", "виды"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Praia_Fluvial_de_Loriga_-_Portugal_%2816170365944%29.jpg/1280px-Praia_Fluvial_de_Loriga_-_Portugal_%2816170365944%29.jpg",
-      "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
-      "license": "CC BY-SA 2.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_Fluvial_de_Loriga_-_Portugal_(16170365944).jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Praia_Fluvial_de_Loriga_-_Portugal_%2816170365944%29.jpg/1280px-Praia_Fluvial_de_Loriga_-_Portugal_%2816170365944%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_Fluvial_de_Loriga_-_Portugal_(16170365944).jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
@@ -200,12 +218,14 @@
     "bestSeason": "апрель–октябрь",
     "tags": ["история", "виды", "фото"],
     "links": [],
-    "photo": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Aldeia_de_Sortelha.jpg/1280px-Aldeia_de_Sortelha.jpg",
-      "author": "Nmmacedo",
-      "license": "CC BY-SA 3.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aldeia_de_Sortelha.jpg"
-    },
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Aldeia_de_Sortelha.jpg/1280px-Aldeia_de_Sortelha.jpg",
+        "author": "Nmmacedo",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aldeia_de_Sortelha.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   }
