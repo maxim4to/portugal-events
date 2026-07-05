@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import CollectionCard from '../components/CollectionCard.astro';
+import { collections, approvedPlaces } from '../lib/data.ts';
+import { resolveCollection } from '../lib/collections.ts';
+const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
+---
+<Base
+  title="Подборки — Португалия"
+  description="Тематические подборки мест: пляжи на день, замки и дворцы, и другое."
+>
+  <h1>Подборки</h1>
+  <p class="muted intro">Тематические маршруты и списки мест — от пляжей на день до замков и дворцов.</p>
+  {collections.length === 0 ? (
+    <p class="muted">Подборок пока нет.</p>
+  ) : (
+    <div class="grid-cards">
+      {collections.map((collection) => {
+        const places = resolveCollection(collection, approvedPlaces);
+        return (
+          <CollectionCard
+            collection={collection}
+            places={places}
+            href={href('/collections/' + collection.id + '/')}
+          />
+        );
+      })}
+    </div>
+  )}
+</Base>
+
+<style>
+  .intro {
+    margin-top: 0;
+    margin-bottom: var(--space-4);
+  }
+</style>

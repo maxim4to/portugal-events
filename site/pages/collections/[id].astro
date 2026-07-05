@@ -1,0 +1,46 @@
+---
+import Base from '../../layouts/Base.astro';
+import PlaceCard from '../../components/PlaceCard.astro';
+import { collections, approvedPlaces } from '../../lib/data.ts';
+import { resolveCollection } from '../../lib/collections.ts';
+import type { Collection } from '../../../schema/index.ts';
+
+export function getStaticPaths() {
+  return collections.map((collection) => ({ params: { id: collection.id }, props: { collection } }));
+}
+const { collection } = Astro.props as { collection: Collection };
+const places = resolveCollection(collection, approvedPlaces);
+const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
+const hrefBase = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<Base title={collection.title + ' — Португалия'} description={collection.description}>
+  <p class="back"><a href={href('/collections/')}>← Ко всем подборкам</a></p>
+  <h1>{collection.title}</h1>
+  <p class="description">{collection.description}</p>
+  <p class="muted count">{places.length} мест</p>
+  {places.length === 0 ? (
+    <p class="muted">В этой подборке пока нет мест.</p>
+  ) : (
+    <div class="grid-cards">
+      {places.map((place) => (
+        <PlaceCard place={place} href={hrefBase + '/places/' + place.id + '/'} />
+      ))}
+    </div>
+  )}
+</Base>
+
+<style>
+  .back {
+    margin: 0 0 var(--space-2);
+  }
+  .back a {
+    color: var(--accent);
+  }
+  .description {
+    margin: 0 0 var(--space-2);
+    color: var(--text-secondary);
+  }
+  .count {
+    margin: 0 0 var(--space-4);
+  }
+</style>
