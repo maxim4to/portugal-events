@@ -9,6 +9,7 @@
     "venue": "Casa de Serralves",
     "price": "от 12 €",
     "url": "https://www.serralves.pt/en/ciclo-serralves/2602-joan-miro/",
+    "image": "https://cdn.bndlyr.com/nsa343pdfl/_assets/ne8udkbqgwnusl1usnc8u.jpg?fit=pad&w=1200&h=630&bg=ffffff",
     "description": "Диалог живописи Жоана Миро 1960–70-х с современным искусством из коллекции Серралвеша: 24 работы Миро и 53 произведения современных авторов на двух этажах Casa de Serralves.",
     "sourceId": "websearch",
     "dedupeHash": "elective affinities joan miró|2026-02-13|porto"
@@ -23,6 +24,7 @@
     "venue": "MAAT Central",
     "price": "по билетам",
     "url": "https://maat.pt/en/event/turn-around-look-edp-foundation-art-collection",
+    "image": "https://maat.pt/sites/default/files/2026-04/123_1.gif",
     "description": "Крупнейший показ коллекции Fundação EDP к 10-летию MAAT: около 90 работ 58 португальских художников с 1960-х до наших дней в историческом здании электростанции.",
     "sourceId": "websearch",
     "dedupeHash": "turn around edp foundation|2026-02-11|lisboa"

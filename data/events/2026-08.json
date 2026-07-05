@@ -9,6 +9,7 @@
     "venue": "Quinta do Ega",
     "price": "по билетам",
     "url": "https://vagosmetalfest.com/",
+    "image": "https://vagosmetalfest.com/wp-content/uploads/2026/06/VMF26-SiteWEB-2048x1152.jpg",
     "description": "Главный метал-фестиваль Португалии в лесной Quinta do Ega под Авейру. Пять дней тяжёлой музыки, кемпинг и мощный интернациональный лайнап.",
     "sourceId": "websearch",
     "dedupeHash": "vagos metal fest|2026-08-05|vagos"
@@ -23,6 +24,7 @@
     "venue": "Campo de Viriato",
     "price": "вход свободный, концерты по билетам",
     "url": "https://feirasaomateus.pt/",
+    "image": "https://feirasaomateus.pt/images/og-image.jpg",
     "description": "Одна из старейших ярмарок Пиренейского полуострова: 31 день гастрономии, ремёсел и концертов в Визеу. В программе Calema, Plutónio, Fernando Daniel и другие.",
     "sourceId": "websearch",
     "dedupeHash": "feira de são mateus|2026-08-06|viseu"
@@ -37,6 +39,7 @@
     "venue": "Aldeia de Cem Soldos",
     "price": "по билетам",
     "url": "https://www.bonssons.pt/",
+    "image": "https://www.bonssons.pt/share/bonssons2026.jpg",
     "description": "Фестиваль исключительно португальской музыки в перекрытой для этого деревне Сен-Солдуш. В 2026-м отмечает 20-летие — сцены прямо на улицах и площадях.",
     "sourceId": "websearch",
     "dedupeHash": "bons sons|2026-08-06|tomar"
@@ -51,6 +54,7 @@
     "venue": "Jardim Pescador Olhanense",
     "price": "вход по билетам",
     "url": "https://www.amoteolhao.com/festival-do-marisco/",
+    "image": "https://www.amoteolhao.com/wp-content/uploads/2025/11/festival-do-marisco-seafood-festival-2026-amo-te-olhao.jpg",
     "description": "Гастрономический фестиваль морепродуктов на набережной Олгана: свежие дары Риа-Формоза и вечерние концерты. Отличный повод заглянуть в Алгарве в августе.",
     "sourceId": "websearch",
     "dedupeHash": "festival do marisco de olhão|2026-08-10|olhão"
@@ -65,6 +69,7 @@
     "venue": "Praia Fluvial do Taboão",
     "price": "по билетам",
     "url": "https://www.vodafoneparedesdecoura.com/en/",
+    "image": "https://cdn.bndlyr.com/sueubktqqdqiimdl/_assets/opg-02.png?fit=pad&w=1200&h=630&bg=ffffff",
     "description": "Легендарный инди-фестиваль в долине реки Коура на севере страны, признанный Rolling Stone одним из лучших в Европе. Купание в речном пляже днём и концерты вечером.",
     "sourceId": "websearch",
     "dedupeHash": "vodafone paredes de coura|2026-08-12|paredes de coura"
@@ -93,6 +98,7 @@
     "venue": "Vilar de Mouros",
     "price": "по билетам",
     "url": "https://www.visitportugal.com/en/content/vilar-de-mouros-festival",
+    "image": "https://cdn.visitportugal.com/sites/default/files/styles/large/public/mediateca/Vilar%20de%20Mouos_660x371.jpg?itok=nBYkGYxi",
     "description": "Старейший рок-фестиваль Португалии в живописной деревне Вилар-де-Моуруш на севере страны. Легендарная атмосфера у реки и мельниц, классический рок-лайнап.",
     "sourceId": "websearch",
     "dedupeHash": "vilar de mouros|2026-08-19|caminha"
@@ -107,6 +113,7 @@
     "venue": "Baía de Cascais",
     "price": "бесплатно",
     "url": "https://www.cascais.pt/en/evento/festas-do-mar-sea-festival",
+    "image": "https://www.visitlisboa.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MzE3NjIsInB1ciI6ImJsb2JfaWQifX0=--344ae5266db75d782ef98134a684d6b9e65c2ae9/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJyZXNpemUiOiIxMjAweDEyMDBcdTAwM2UifSwicHVyIjoidmFyaWF0aW9uIn19--19d67177a9879edd8f885ce80c29da2d57a5e00e/cascais.jpg",
     "description": "Городские праздники моря в бухте Кашкайша: бесплатные концерты каждый вечер, ярмарки и гастрономия. Финал лета на побережье под Лиссабоном.",
     "sourceId": "websearch",
     "dedupeHash": "festas do mar cascais|2026-08-20|cascais"
@@ -121,6 +128,7 @@
     "venue": "Parque da Bela Vista",
     "price": "по билетам",
     "url": "https://meokalorama.pt/en/",
+    "image": "https://meokalorama.pt/wp-content/uploads/2026/04/MEO_KLR_BILLING_1080x1350_NO_LOGOS.jpg",
     "description": "Городской фестиваль конца лета в парке Бела-Виста, 5-е издание. Сплав музыки, искусства и устойчивого развития; в лайнапе Deftones, Robbie Williams, Turnstile и Interpol.",
     "sourceId": "websearch",
     "dedupeHash": "meo kalorama|2026-08-28|lisboa"
