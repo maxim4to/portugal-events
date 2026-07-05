@@ -1,0 +1,164 @@
+/* Global primitives. No page- or component-family-specific rules. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--surface-0);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 28px;
+  margin: 0 0 var(--space-4);
+}
+
+h2 {
+  font-size: 20px;
+  margin: 0 0 var(--space-3);
+}
+
+h3 {
+  font-size: 17px;
+  margin: 0 0 var(--space-2);
+}
+
+p {
+  font-weight: 400;
+  margin: 0 0 var(--space-3);
+}
+
+/* Layout */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* --- Reusable primitives --- */
+
+/* Chip — filter pill */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.chip[aria-pressed="true"] {
+  background: var(--accent-bg);
+  color: var(--accent-text);
+  border-color: var(--border);
+}
+
+/* Badge — small pill for type labels */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: var(--surface-1);
+  text-decoration: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--surface-2);
+  border-color: transparent;
+}
+
+.btn-primary:hover {
+  background: var(--accent);
+}
+
+/* Card */
+.card {
+  background: var(--surface-2);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Card grid */
+.grid-cards {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+/* Helpers */
+.muted {
+  color: var(--text-muted);
+}
+
+.meta-row {
+  display: flex;
+  gap: var(--space-4);
+  font-size: 13px;
+  color: var(--text-muted);
+}

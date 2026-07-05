@@ -1,0 +1,135 @@
+/* Design tokens — light mode defaults on :root, dark overrides below.
+   Explicit [data-theme] always wins; system preference applies when unset. */
+
+:root {
+  /* Surfaces */
+  --surface-0: #faf9f7;
+  --surface-1: #f1efe8;
+  --surface-2: #ffffff;
+
+  /* Text */
+  --text-primary: #1a1a18;
+  --text-secondary: #5f5e5a;
+  --text-muted: #8a8880;
+
+  /* Borders */
+  --border: rgba(0, 0, 0, 0.10);
+  --border-strong: rgba(0, 0, 0, 0.18);
+
+  /* Accent */
+  --accent: #185fa5;
+  --accent-bg: #e6f1fb;
+  --accent-text: #0c447c;
+
+  /* Danger (favorite heart) */
+  --danger: #d84a3f;
+
+  /* Place-type cover tints (soft bg + darker same-hue on-tint text) */
+  --type-beach: #dcebf6;        /* soft blue */
+  --type-beach-text: #1f5a86;
+  --type-hike: #dfeede;         /* soft green */
+  --type-hike-text: #2f6b3d;
+  --type-castle: #e8e2f2;       /* soft purple */
+  --type-castle-text: #5a4a86;
+  --type-lake: #d8ecec;         /* soft teal */
+  --type-lake-text: #1f6b6b;
+  --type-viewpoint: #f6ecd6;    /* soft amber */
+  --type-viewpoint-text: #8a6414;
+  --type-town: #f6dfda;         /* soft coral */
+  --type-town-text: #9c4634;
+  --type-nature: #e2eed7;       /* soft green-2 */
+  --type-nature-text: #4f6b2c;
+  --type-other: #e9e7e1;        /* soft gray */
+  --type-other-text: #61605a;
+
+  /* Radii */
+  --radius: 10px;
+  --radius-pill: 100px;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  /* Font */
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Dark values, shared by explicit dark theme and system-preference dark. */
+:root[data-theme="dark"] {
+  --surface-0: #1a1a18;
+  --surface-1: #242320;
+  --surface-2: #2c2b27;
+
+  --text-primary: #f1efe8;
+  --text-secondary: #b4b2a9;
+  --text-muted: #888780;
+
+  --border: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.20);
+
+  --accent: #85b7eb;
+  --accent-bg: #0c2b47;
+  --accent-text: #b5d4f4;
+
+  --danger: #f09595;
+
+  /* Muted deep versions of the same hues with a light same-hue text color */
+  --type-beach: #1c3247;
+  --type-beach-text: #a9cbe8;
+  --type-hike: #1f3626;
+  --type-hike-text: #a7cfae;
+  --type-castle: #2e2842;
+  --type-castle-text: #c3b6e0;
+  --type-lake: #17332f;
+  --type-lake-text: #9dcecb;
+  --type-viewpoint: #3a3018;
+  --type-viewpoint-text: #dcc487;
+  --type-town: #3d221c;
+  --type-town-text: #e5b0a4;
+  --type-nature: #263519;
+  --type-nature-text: #b3ce93;
+  --type-other: #302f2a;
+  --type-other-text: #c0beb6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface-0: #1a1a18;
+    --surface-1: #242320;
+    --surface-2: #2c2b27;
+
+    --text-primary: #f1efe8;
+    --text-secondary: #b4b2a9;
+    --text-muted: #888780;
+
+    --border: rgba(255, 255, 255, 0.12);
+    --border-strong: rgba(255, 255, 255, 0.20);
+
+    --accent: #85b7eb;
+    --accent-bg: #0c2b47;
+    --accent-text: #b5d4f4;
+
+    --danger: #f09595;
+
+    --type-beach: #1c3247;
+    --type-beach-text: #a9cbe8;
+    --type-hike: #1f3626;
+    --type-hike-text: #a7cfae;
+    --type-castle: #2e2842;
+    --type-castle-text: #c3b6e0;
+    --type-lake: #17332f;
+    --type-lake-text: #9dcecb;
+    --type-viewpoint: #3a3018;
+    --type-viewpoint-text: #dcc487;
+    --type-town: #3d221c;
+    --type-town-text: #e5b0a4;
+    --type-nature: #263519;
+    --type-nature-text: #b3ce93;
+    --type-other: #302f2a;
+    --type-other-text: #c0beb6;
+  }
+}
