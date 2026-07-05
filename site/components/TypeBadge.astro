@@ -1,0 +1,10 @@
+---
+import { TYPE_LABELS } from '../lib/labels.ts';
+interface Props {
+  type: string;
+}
+const { type } = Astro.props;
+---
+<span class="badge" style={`background: var(--type-${type}); color: var(--type-${type}-text);`}>
+  {TYPE_LABELS[type] ?? type}
+</span>

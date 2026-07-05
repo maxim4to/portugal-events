@@ -1,0 +1,85 @@
+---
+import type { Place } from '../../schema/index.ts';
+import TypeBadge from './TypeBadge.astro';
+import Icon from './Icon.astro';
+
+interface Props {
+  place: Place;
+  href: string;
+}
+const { place, href } = Astro.props;
+---
+<a href={href} class="card place-card">
+  <div
+    class="cover"
+    style={place.photo ? undefined : `background: var(--type-${place.type});`}
+    title={place.photo ? `Фото: ${place.photo.author}` : undefined}
+  >
+    {place.photo && (
+      <img src={place.photo.url} alt={place.name} loading="lazy" />
+    )}
+    <span class="badge-overlay">
+      <TypeBadge type={place.type} />
+    </span>
+  </div>
+  <div class="body">
+    <h3>{place.name}</h3>
+    <p class="desc">{place.description}</p>
+    <div class="meta-row">
+      <span><Icon name="clock" size={13} /> {place.driveMinutesFromLisbon} мин</span>
+      <span><Icon name="hourglass" size={13} /> ~{place.visitDurationHours} ч</span>
+      <span><Icon name="calendar" size={13} /> {place.bestSeason}</span>
+    </div>
+  </div>
+</a>
+
+<style>
+  .place-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s ease;
+  }
+  .place-card:hover {
+    border-color: var(--border-strong);
+    text-decoration: none;
+  }
+  .cover {
+    position: relative;
+    aspect-ratio: 16 / 10;
+  }
+  .cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .badge-overlay {
+    position: absolute;
+    top: var(--space-2);
+    left: var(--space-2);
+  }
+  .body {
+    padding: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .body h3 {
+    margin: 0;
+  }
+  .desc {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-secondary);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .meta-row span {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+  }
+</style>

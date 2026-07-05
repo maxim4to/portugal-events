@@ -1,0 +1,133 @@
+---
+import Icon from './Icon.astro';
+
+const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
+
+const links = [
+  { path: '/', label: 'Выходные' },
+  { path: '/places/', label: 'Места' },
+  { path: '/events/', label: 'Афиша' },
+  { path: '/collections/', label: 'Подборки' },
+];
+
+// Astro.url.pathname includes the base (e.g. /portugal-events/places/).
+// Normalise both sides (strip trailing slash, treat empty as '/') and match by suffix.
+const current = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isActive = (p: string) => {
+  const target = href(p).replace(/\/$/, '') || '/';
+  return current === target;
+};
+---
+<header class="site-header">
+  <div class="container inner">
+    <a href={href('/')} class="brand">Португалия</a>
+    <nav class="nav">
+      {links.map((l) => (
+        <a href={href(l.path)} class:list={['nav-link', { active: isActive(l.path) }]}>
+          {l.label}
+        </a>
+      ))}
+      <button class="btn theme-toggle" id="theme-toggle" aria-label="Переключить тему">
+        <span class="icon-sun"><Icon name="sun" /></span>
+        <span class="icon-moon"><Icon name="moon" /></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--surface-0);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    padding-top: var(--space-3);
+    padding-bottom: var(--space-3);
+  }
+  .brand {
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--text-primary);
+  }
+  .brand:hover {
+    text-decoration: none;
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+  .nav-link {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-secondary);
+  }
+  .nav-link:hover {
+    text-decoration: none;
+    color: var(--text-primary);
+  }
+  .nav-link.active {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+  .theme-toggle {
+    padding: var(--space-2);
+    line-height: 0;
+  }
+  /* Show moon in light mode (offer switch to dark), sun in dark mode. */
+  .icon-moon {
+    display: inline-flex;
+  }
+  .icon-sun {
+    display: none;
+  }
+  :global(:root[data-theme='dark']) .icon-moon {
+    display: none;
+  }
+  :global(:root[data-theme='dark']) .icon-sun {
+    display: inline-flex;
+  }
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme='light'])) .icon-moon {
+      display: none;
+    }
+    :global(:root:not([data-theme='light'])) .icon-sun {
+      display: inline-flex;
+    }
+  }
+  @media (max-width: 480px) {
+    .nav {
+      gap: var(--space-3);
+    }
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var root = document.documentElement;
+      var current = root.dataset.theme;
+      if (!current) {
+        // No explicit theme yet: derive from what's actually shown.
+        var isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        current = isDark ? 'dark' : 'light';
+      }
+      var next = current === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = next;
+      try {
+        localStorage.setItem('theme', next);
+      } catch (e) {}
+    });
+  })();
+</script>
