@@ -1,0 +1,306 @@
+---
+import type { Place } from '../../schema/index.ts';
+import FilterBar from './FilterBar.astro';
+import PlaceCard from './PlaceCard.astro';
+
+interface Props {
+  places: Place[];
+  regions: string[];
+  tags: string[];
+  hrefBase: string;
+}
+const { places, regions, tags, hrefBase } = Astro.props;
+
+const mapData = places.map((p) => ({
+  id: p.id,
+  name: p.name,
+  type: p.type,
+  lat: p.coords.lat,
+  lon: p.coords.lon,
+  drive: p.driveMinutesFromLisbon,
+}));
+---
+<section class="explorer" data-explorer data-href-base={hrefBase}>
+  <FilterBar regions={regions} tags={tags} />
+
+  <div class="toolbar">
+    <div class="view-toggle" role="group" aria-label="Вид">
+      <button type="button" class="btn view-btn" data-view="list" aria-pressed="true">Список</button>
+      <button type="button" class="btn view-btn" data-view="map" aria-pressed="false">Карта</button>
+    </div>
+    <span class="count muted" data-count>{places.length} мест</span>
+  </div>
+
+  <div class="grid-cards" data-list>
+    {places.map((p) => (
+      <div
+        data-place-card
+        data-id={p.id}
+        data-type={p.type}
+        data-region={p.region}
+        data-drive={p.driveMinutesFromLisbon}
+        data-tags={p.tags.join('|')}
+        data-name={p.name}
+      >
+        <PlaceCard place={p} href={`${hrefBase}/places/${p.id}/`} />
+      </div>
+    ))}
+  </div>
+
+  <p class="empty" data-empty hidden>Ничего не найдено.</p>
+
+  <div data-map-wrap hidden>
+    <div id="places-map" style="height: 70vh; min-height: 420px;"></div>
+  </div>
+
+  <script type="application/json" data-places set:html={JSON.stringify(mapData)}></script>
+</section>
+
+<style>
+  .explorer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  .toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+  }
+  .view-toggle {
+    display: inline-flex;
+    gap: var(--space-1);
+  }
+  .view-btn[aria-pressed='true'] {
+    background: var(--accent-bg);
+    color: var(--accent-text);
+    border-color: var(--border-strong);
+  }
+  .count {
+    font-size: 13px;
+  }
+  .empty {
+    padding: var(--space-6) 0;
+    text-align: center;
+    color: var(--text-muted);
+  }
+  #places-map {
+    width: 100%;
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  /* Leaflet legibility with design tokens (esp. dark mode). */
+  :global(.leaflet-container) {
+    background: var(--surface-1);
+    font: inherit;
+  }
+  :global(.leaflet-popup-content-wrapper),
+  :global(.leaflet-popup-tip) {
+    background: var(--surface-2);
+    color: var(--text-primary);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+  :global(.leaflet-popup-content) {
+    margin: var(--space-2) var(--space-3);
+    font-size: 14px;
+  }
+  :global(.leaflet-popup-content a) {
+    color: var(--accent);
+    font-weight: 500;
+  }
+  :global(.leaflet-bar a),
+  :global(.leaflet-bar a:hover) {
+    background: var(--surface-2);
+    color: var(--text-primary);
+    border-color: var(--border);
+  }
+  :global(.leaflet-control-attribution) {
+    background: color-mix(in srgb, var(--surface-2) 80%, transparent);
+    color: var(--text-muted);
+  }
+  :global(.leaflet-control-attribution a) {
+    color: var(--accent);
+  }
+  :global(.place-pin) {
+    color: var(--accent);
+  }
+  :global(.place-pin svg) {
+    display: block;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+  }
+</style>
+
+<script>
+  import 'leaflet/dist/leaflet.css';
+  import L from 'leaflet';
+  import {
+    matchesFilter,
+    type ExplorerFilterState,
+    type PlaceCardData,
+  } from '../lib/placeMatch.ts';
+
+  interface MapPlace {
+    id: string;
+    name: string;
+    type: string;
+    lat: number;
+    lon: number;
+    drive: number;
+  }
+
+  const root = document.querySelector<HTMLElement>('[data-explorer]');
+  if (root) {
+    const hrefBase = root.dataset.hrefBase ?? '';
+    const listEl = root.querySelector<HTMLElement>('[data-list]')!;
+    const emptyEl = root.querySelector<HTMLElement>('[data-empty]')!;
+    const countEl = root.querySelector<HTMLElement>('[data-count]')!;
+    const mapWrap = root.querySelector<HTMLElement>('[data-map-wrap]')!;
+    const cards = Array.from(root.querySelectorAll<HTMLElement>('[data-place-card]'));
+    const mapData: MapPlace[] = JSON.parse(
+      root.querySelector<HTMLElement>('[data-places]')?.textContent || '[]',
+    );
+
+    const searchInput = root.querySelector<HTMLInputElement>('[data-filter="query"]')!;
+    const regionSelect = root.querySelector<HTMLSelectElement>('[data-filter="region"]')!;
+    const driveInput = root.querySelector<HTMLInputElement>('[data-filter="maxDrive"]')!;
+    const driveOut = root.querySelector<HTMLElement>('[data-out="maxDrive"]')!;
+    const typeChips = Array.from(root.querySelectorAll<HTMLButtonElement>('.chip[data-type]'));
+    const tagBoxes = Array.from(root.querySelectorAll<HTMLInputElement>('input[data-tag]'));
+
+    const PIN_HTML =
+      '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 7 11.6 7.3 11.9a1 1 0 0 0 1.4 0C13 21.6 20 15.4 20 10c0-4.4-3.6-8-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>';
+    const pinIcon = L.divIcon({
+      className: 'place-pin',
+      html: PIN_HTML,
+      iconSize: [24, 24],
+      iconAnchor: [12, 22],
+      popupAnchor: [0, -20],
+    });
+
+    let map: L.Map | null = null;
+    let markerLayer: L.LayerGroup | null = null;
+
+    function readState(): ExplorerFilterState {
+      return {
+        types: typeChips.filter((c) => c.getAttribute('aria-pressed') === 'true').map((c) => c.dataset.type!),
+        region: regionSelect.value,
+        tags: tagBoxes.filter((b) => b.checked).map((b) => b.dataset.tag!),
+        maxDrive: Number(driveInput.value),
+        query: searchInput.value,
+      };
+    }
+
+    function cardData(el: HTMLElement): PlaceCardData {
+      return {
+        type: el.dataset.type!,
+        region: el.dataset.region!,
+        drive: Number(el.dataset.drive),
+        tags: (el.dataset.tags || '').split('|').filter(Boolean),
+        name: el.dataset.name!,
+      };
+    }
+
+    function updateDriveOut(v: number) {
+      driveOut.textContent = v >= 240 ? 'любое время' : `до ${v} мин`;
+    }
+
+    function render() {
+      const state = readState();
+      updateDriveOut(state.maxDrive);
+      const visibleIds = new Set<string>();
+      let visible = 0;
+      for (const el of cards) {
+        const ok = matchesFilter(cardData(el), state);
+        el.hidden = !ok;
+        if (ok) {
+          visible++;
+          visibleIds.add(el.dataset.id!);
+        }
+      }
+      countEl.textContent = `${visible} мест`;
+      emptyEl.hidden = visible !== 0;
+      if (map) refreshMarkers(visibleIds);
+    }
+
+    function refreshMarkers(visibleIds: Set<string>) {
+      if (!map) return;
+      if (!markerLayer) markerLayer = L.layerGroup().addTo(map);
+      markerLayer.clearLayers();
+      const pts: L.LatLngExpression[] = [];
+      for (const p of mapData) {
+        if (!visibleIds.has(p.id)) continue;
+        const latlng: L.LatLngExpression = [p.lat, p.lon];
+        pts.push(latlng);
+        L.marker(latlng, { icon: pinIcon, title: p.name })
+          .bindPopup(`<a href="${hrefBase}/places/${p.id}/">${p.name}</a>`)
+          .addTo(markerLayer);
+      }
+      if (pts.length) {
+        map.fitBounds(L.latLngBounds(pts), { padding: [40, 40], maxZoom: 12 });
+      } else {
+        map.setView([39.5, -8.0], 6);
+      }
+    }
+
+    function ensureMap() {
+      if (map) return;
+      map = L.map('places-map', { scrollWheelZoom: false });
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors',
+        maxZoom: 19,
+      }).addTo(map);
+      map.setView([39.5, -8.0], 6);
+      const visibleIds = new Set(cards.filter((c) => !c.hidden).map((c) => c.dataset.id!));
+      refreshMarkers(visibleIds);
+    }
+
+    function setView(view: 'list' | 'map') {
+      const isMap = view === 'map';
+      mapWrap.hidden = !isMap;
+      listEl.hidden = isMap;
+      if (isMap) emptyEl.hidden = true;
+      else render();
+      root!.querySelectorAll<HTMLButtonElement>('[data-view]').forEach((b) => {
+        b.setAttribute('aria-pressed', String(b.dataset.view === view));
+      });
+      if (isMap) {
+        ensureMap();
+        setTimeout(() => map?.invalidateSize(), 0);
+      }
+    }
+
+    // Wire controls.
+    searchInput.addEventListener('input', render);
+    regionSelect.addEventListener('change', render);
+    driveInput.addEventListener('input', render);
+    tagBoxes.forEach((b) => b.addEventListener('change', render));
+    typeChips.forEach((c) =>
+      c.addEventListener('click', () => {
+        c.setAttribute('aria-pressed', c.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+        render();
+      }),
+    );
+    root.querySelectorAll<HTMLButtonElement>('[data-view]').forEach((b) =>
+      b.addEventListener('click', () => setView(b.dataset.view as 'list' | 'map')),
+    );
+
+    // Preload filters from URL query params (links from place detail pages).
+    const params = new URLSearchParams(location.search);
+    const preType = params.get('type');
+    if (preType) {
+      const chip = typeChips.find((c) => c.dataset.type === preType);
+      if (chip) chip.setAttribute('aria-pressed', 'true');
+    }
+    const preTag = params.get('tag');
+    if (preTag) {
+      const box = tagBoxes.find((b) => b.dataset.tag === preTag);
+      if (box) box.checked = true;
+    }
+
+    render();
+  }
+</script>
