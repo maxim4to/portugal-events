@@ -1,0 +1,509 @@
+[
+  {
+    "id": "museu-nacional-de-arte-antiga",
+    "name": "Национальный музей старинного искусства (MNAA)",
+    "type": "museum",
+    "region": "Лиссабон и Синтра",
+    "coords": { "lat": 38.7050, "lon": -9.1611 },
+    "description": "Главный художественный музей Португалии с крупнейшей в стране коллекцией живописи XV–XIX веков, включая триптих Босха «Искушение святого Антония» и восточные ширмы намбан. Расположен во дворце XVII века с видом на реку Тежу. Стоит выделить минимум полдня и не спешить в залах золота и серебра.",
+    "driveMinutesFromLisbon": 15,
+    "visitDurationHours": 2.5,
+    "bestSeason": "круглый год",
+    "tags": ["история", "фото"],
+    "links": [{ "title": "Официальный сайт", "url": "https://www.museudearteantiga.pt/" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Museu_Nacional_de_Arte_antiga-Lisboa.jpg/1280px-Museu_Nacional_de_Arte_antiga-Lisboa.jpg",
+        "author": "Ana Correia 28",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Museu_Nacional_de_Arte_antiga-Lisboa.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate",
+    "freeWithResidency": true
+  },
+  {
+    "id": "museu-calouste-gulbenkian",
+    "name": "Музей Калуста Гюльбенкяна",
+    "type": "museum",
+    "region": "Лиссабон и Синтра",
+    "coords": { "lat": 38.7354, "lon": -9.1530 },
+    "description": "Частное собрание нефтяного магната Калуста Гюльбенкяна — от египетских древностей до Рене Лалика и импрессионистов — в тихом парке в центре Лиссабона. Отдельное здание «Современная коллекция» рядом показывает португальское искусство XX века. На момент планирования поездки уточняйте расписание — часть залов может закрываться на реконструкцию.",
+    "driveMinutesFromLisbon": 15,
+    "visitDurationHours": 3,
+    "bestSeason": "круглый год",
+    "tags": ["история", "виды"],
+    "links": [{ "title": "Официальный сайт", "url": "https://gulbenkian.pt/museu/" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Figura_Museu_Calouste_Gulbenkian.jpg/1280px-Figura_Museu_Calouste_Gulbenkian.jpg",
+        "author": "Alegna13",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Figura_Museu_Calouste_Gulbenkian.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate",
+    "freeWithResidency": false
+  },
+  {
+    "id": "maat-lisboa",
+    "name": "MAAT — Музей искусства, архитектуры и технологий",
+    "type": "museum",
+    "region": "Лиссабон и Синтра",
+    "coords": { "lat": 38.6958, "lon": -9.1949 },
+    "description": "Волнообразное здание из белой керамической плитки на берегу Тежу в Белене, спроектированное британским бюро Amanda Levete Architects. Внутри — временные выставки современного искусства и технологий, а на крыше — смотровая площадка с видом на реку и мост 25 Абриля. Билет в MAAT также открывает вход в соседнюю бывшую электростанцию Central Tejo.",
+    "driveMinutesFromLisbon": 20,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": ["виды", "фото"],
+    "links": [{ "title": "Официальный сайт", "url": "https://www.maat.pt/en" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Building_of_the_Museum_of_Art%2C_Architecture_and_Technology_in_Lisbon%2C_20250604_2006_9600.jpg/1280px-Building_of_the_Museum_of_Art%2C_Architecture_and_Technology_in_Lisbon%2C_20250604_2006_9600.jpg",
+        "author": "Jakub Hałun",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Building_of_the_Museum_of_Art,_Architecture_and_Technology_in_Lisbon,_20250604_2006_9600.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate",
+    "freeWithResidency": false
+  },
+  {
+    "id": "museu-nacional-do-azulejo",
+    "name": "Национальный музей азулежу",
+    "type": "museum",
+    "region": "Лиссабон и Синтра",
+    "coords": { "lat": 38.7250, "lon": -9.1139 },
+    "description": "Музей истории португальской изразцовой плитки азулежу, размещённый в бывшем монастыре Мадре де Деус XVI века с богато украшенной барочной церковью. Главный экспонат — панно длиной 23 метра с панорамой Лиссабона до землетрясения 1755 года. Находится немного в стороне от туристических маршрутов — добираться удобнее на трамвае или автобусе.",
+    "driveMinutesFromLisbon": 20,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["история", "фото"],
+    "links": [{ "title": "Официальный сайт", "url": "https://museunacionaldoazulejo.gov.pt/" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Small_cloister_%28Claustrim%29%2C_Museu_Nacional_do_Azulejo%2C_Lisbon%2C_Portugal_julesvernex2.jpg/1280px-Small_cloister_%28Claustrim%29%2C_Museu_Nacional_do_Azulejo%2C_Lisbon%2C_Portugal_julesvernex2.jpg",
+        "author": "Jules Verne Times Two",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Small_cloister_(Claustrim),_Museu_Nacional_do_Azulejo,_Lisbon,_Portugal_julesvernex2.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate",
+    "freeWithResidency": true
+  },
+  {
+    "id": "museu-nacional-dos-coches",
+    "name": "Национальный музей карет",
+    "type": "museum",
+    "region": "Лиссабон и Синтра",
+    "coords": { "lat": 38.6966, "lon": -9.1982 },
+    "description": "Одна из крупнейших в мире коллекций королевских карет XVI–XIX веков, включая роскошные позолоченные экипажи папского посольства 1716 года. Современное здание 2015 года в Белене стоит напротив старого манежа, где начиналась коллекция. Хорошее место для детей — размеры и убранство карет впечатляют без долгих объяснений.",
+    "driveMinutesFromLisbon": 20,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["история", "с детьми"],
+    "links": [{ "title": "Официальный сайт", "url": "https://www.museudoscoches-ipmuseus.pt/" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Museu_Nacional_dos_Coches_in_2016_%281%29.jpg/1280px-Museu_Nacional_dos_Coches_in_2016_%281%29.jpg",
+        "author": "Joseolgon",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Museu_Nacional_dos_Coches_in_2016_(1).jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate",
+    "freeWithResidency": true
+  },
+  {
+    "id": "museu-de-marinha-lisboa",
+    "name": "Морской музей",
+    "type": "museum",
+    "region": "Лиссабон и Синтра",
+    "coords": { "lat": 38.6975, "lon": -9.2065 },
+    "description": "Музей морской истории Португалии в западном крыле монастыря Жеронимуш — макеты каравелл, навигационные приборы эпохи Великих географических открытий и королевские яхты. Управляется португальским военно-морским флотом, а не государственной сетью музеев DGPC. Хорошо сочетается с посещением самого монастыря и Беленской башни в один день.",
+    "driveMinutesFromLisbon": 20,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["история", "с детьми"],
+    "links": [{ "title": "Официальный сайт", "url": "https://cultura.marinha.pt/pt/museu" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Museu_de_Marinha_Lissabon_Eingang_September_2014.jpg/1280px-Museu_de_Marinha_Lissabon_Eingang_September_2014.jpg",
+        "author": "Felix König",
+        "license": "CC BY 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Museu_de_Marinha_Lissabon_Eingang_September_2014.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate",
+    "freeWithResidency": false
+  },
+  {
+    "id": "pavilhao-do-conhecimento",
+    "name": "Павильон знаний (Ciência Viva)",
+    "type": "museum",
+    "region": "Лиссабон и Синтра",
+    "coords": { "lat": 38.7624, "lon": -9.0956 },
+    "description": "Интерактивный научный музей в парке Parque das Nações, где почти все экспонаты можно трогать руками — от мыльных пузырей в человеческий рост до симулятора землетрясения. Один из лучших вариантов для семейного дня в Лиссабоне, особенно в дождливую погоду. Рядом — океанариум и набережная реки Тежу.",
+    "driveMinutesFromLisbon": 20,
+    "visitDurationHours": 2.5,
+    "bestSeason": "круглый год",
+    "tags": ["с детьми"],
+    "links": [{ "title": "Официальный сайт", "url": "https://www.pavconhecimento.pt/" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pavilh%C3%A3o_do_Conhecimento_01.jpg/1280px-Pavilh%C3%A3o_do_Conhecimento_01.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pavilh%C3%A3o_do_Conhecimento_01.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate",
+    "freeWithResidency": false
+  },
+  {
+    "id": "museu-do-oriente",
+    "name": "Музей Востока",
+    "type": "museum",
+    "region": "Лиссабон и Синтра",
+    "coords": { "lat": 38.7030, "lon": -9.1710 },
+    "description": "Музей фонда Fundação Oriente на набережной Алкантары рассказывает о присутствии Португалии в Азии и хранит коллекцию театральных масок и ритуальных предметов Kwok On. Здание бывшего склада вяленой трески превращено в строгое современное пространство. Хорошая альтернатива, если MAAT или Гюльбенкян переполнены туристами.",
+    "driveMinutesFromLisbon": 15,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["история", "фото"],
+    "links": [{ "title": "Официальный сайт", "url": "https://www.museudooriente.pt/" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Museu_do_Oriente_-_Lisboa_-_14.jpg/1280px-Museu_do_Oriente_-_Lisboa_-_14.jpg",
+        "author": "Reis Quarteu",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Museu_do_Oriente_-_Lisboa_-_14.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate",
+    "freeWithResidency": false
+  },
+  {
+    "id": "museu-do-fado",
+    "name": "Музей фаду",
+    "type": "museum",
+    "region": "Лиссабон и Синтра",
+    "coords": { "lat": 38.7111, "lon": -9.1276 },
+    "description": "Небольшой интерактивный музей в самом сердце района Алфама, посвящённый истории лиссабонского фаду — от таверн начала XX века до Амалии Родригеш. Аудиогид с записями знаменитых исполнителей включён в билет. После музея логично поужинать где-то поблизости, где вечером поют фаду вживую.",
+    "driveMinutesFromLisbon": 15,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["история"],
+    "links": [{ "title": "Официальный сайт", "url": "https://www.museudofado.pt/" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Museu_do_Fado_-_Lisboa_-_Portugal_%2851532759851%29.jpg/1280px-Museu_do_Fado_-_Lisboa_-_Portugal_%2851532759851%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Museu_do_Fado_-_Lisboa_-_Portugal_(51532759851).jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate",
+    "freeWithResidency": false
+  },
+  {
+    "id": "museu-nacional-de-arte-contemporanea-chiado",
+    "name": "Национальный музей современного искусства — Музей Шиаду",
+    "type": "museum",
+    "region": "Лиссабон и Синтра",
+    "coords": { "lat": 38.7072, "lon": -9.1410 },
+    "description": "Первый в Португалии музей современного искусства, основанный в 1911 году, размещён в бывшем монастыре Сан-Франсиску в квартале Шиаду. Собрание охватывает португальскую живопись и скульптуру от романтизма до 1960-х годов. Удобно совместить с прогулкой по Шиаду и Байрру-Алту.",
+    "driveMinutesFromLisbon": 15,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["история", "фото"],
+    "links": [{ "title": "Официальный сайт", "url": "http://www.museuartecontemporanea.gov.pt/" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Cristo_Crucificado_-_Columbano_Bordalo_Pinheiro_%28Museu_do_Chiado%29.png",
+        "author": "Columbano Bordalo Pinheiro (1857-1929)",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cristo_Crucificado_-_Columbano_Bordalo_Pinheiro_(Museu_do_Chiado).png"
+      }
+    ],
+    "collections": [],
+    "status": "candidate",
+    "freeWithResidency": true
+  },
+  {
+    "id": "casa-das-historias-paula-rego",
+    "name": "Дом историй Паулы Регу",
+    "type": "museum",
+    "region": "Лиссабон и Синтра",
+    "coords": { "lat": 38.6975, "lon": -9.4193 },
+    "description": "Музей в Кашкайше, спроектированный архитектором Эдуарду Соуту де Моурой специально для работ художницы Паулы Регу — узнаваемое здание с двумя красными пирамидальными башнями. Внутри — мрачноватая и очень личная живопись и графика одной из главных португальских художниц XX века. Хорошо сочетается с прогулкой по набережной Кашкайша.",
+    "driveMinutesFromLisbon": 35,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["фото", "история"],
+    "links": [{ "title": "Официальный сайт", "url": "https://www.fundacaodomluis.pt/paula-rego" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Casa_das_Hist%C3%B3rias_Paula_Rego.JPG/1280px-Casa_das_Hist%C3%B3rias_Paula_Rego.JPG",
+        "author": "L'Éclipse",
+        "license": "CC BY 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Casa_das_Hist%C3%B3rias_Paula_Rego.JPG"
+      }
+    ],
+    "collections": [],
+    "status": "candidate",
+    "freeWithResidency": false
+  },
+  {
+    "id": "museu-nacional-soares-dos-reis",
+    "name": "Национальный музей Суареша дус Рейша",
+    "type": "museum",
+    "region": "Норте",
+    "coords": { "lat": 41.1477, "lon": -8.6216 },
+    "description": "Старейший публичный музей Португалии (основан в 1833 году), расположенный во дворце Карранкаш в центре Порту. Коллекция сосредоточена на португальской живописи и скульптуре XIX века, включая работы скульптора Антониу Соареша дус Рейша, в честь которого назван музей. Компактный и уютный — на осмотр хватит полутора-двух часов.",
+    "driveMinutesFromLisbon": 180,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["история", "фото"],
+    "links": [{ "title": "Официальный сайт", "url": "https://museusoaresdosreis.gov.pt/" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Museu_Nacional_de_Soares_dos_Reis_%281%29.JPG/1280px-Museu_Nacional_de_Soares_dos_Reis_%281%29.JPG",
+        "author": "Joseolgon",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Museu_Nacional_de_Soares_dos_Reis_(1).JPG"
+      }
+    ],
+    "collections": [],
+    "status": "candidate",
+    "freeWithResidency": true
+  },
+  {
+    "id": "museu-serralves",
+    "name": "Музей современного искусства Серралвеш",
+    "type": "museum",
+    "region": "Норте",
+    "coords": { "lat": 41.1601, "lon": -8.6598 },
+    "description": "Музей современного искусства работы архитектора Алвару Сизы Виейры, окружённый парком в 18 гектаров с розовой виллой в стиле ар-деко. Один из самых посещаемых музеев Португалии — временные выставки меняются несколько раз в год. Билет в парк можно купить отдельно от музея, если интересуют только сады.",
+    "driveMinutesFromLisbon": 185,
+    "visitDurationHours": 3,
+    "bestSeason": "круглый год",
+    "tags": ["природа", "фото", "виды"],
+    "links": [{ "title": "Официальный сайт", "url": "https://www.serralves.pt/en/" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Serralves_museum_fa%C3%A7ade.jpg",
+        "author": "Leaandroh1",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Serralves_museum_façade.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate",
+    "freeWithResidency": false
+  },
+  {
+    "id": "wow-world-of-wine",
+    "name": "WOW — World of Wine",
+    "type": "museum",
+    "region": "Норте",
+    "coords": { "lat": 41.1355, "lon": -8.6136 },
+    "description": "Культурный квартал в винных погребах Вила-Нова-де-Гая с семью тематическими музеями — от истории портвейна до шоколада и пробки. Открыт в 2020 году в отреставрированных зданиях с видом на исторический центр Порту через реку Дору. Каждый музей продаётся отдельным билетом, поэтому стоит заранее выбрать 1–2 темы.",
+    "driveMinutesFromLisbon": 185,
+    "visitDurationHours": 2.5,
+    "bestSeason": "круглый год",
+    "tags": ["вино", "виды", "ресторан"],
+    "links": [{ "title": "Официальный сайт", "url": "https://www.wow.pt/en/" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Ramos_Pinto_Port_Wine_Cellars_Entrance%2C_Vila_Nova_de_Gaia%2C_Porto_%2854814198436%29.jpg/1280px-Ramos_Pinto_Port_Wine_Cellars_Entrance%2C_Vila_Nova_de_Gaia%2C_Porto_%2854814198436%29.jpg",
+        "author": "Dale Cruse - 10M views from San Francisco, CA, USA",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ramos_Pinto_Port_Wine_Cellars_Entrance,_Vila_Nova_de_Gaia,_Porto_(54814198436).jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate",
+    "freeWithResidency": false
+  },
+  {
+    "id": "museu-do-carro-electrico-porto",
+    "name": "Музей трамвая в Порту",
+    "type": "museum",
+    "region": "Норте",
+    "coords": { "lat": 41.1475, "lon": -8.6328 },
+    "description": "Небольшой музей транспортной компании STCP в здании старой электростанции на набережной Дору — старинные трамваи начала XX века, часть из которых до сих пор на ходу. Хорошее дополнение к поездке на историческом трамвае №1 вдоль реки. Интересен и детям, и любителям индустриальной архитектуры.",
+    "driveMinutesFromLisbon": 185,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": ["с детьми", "история"],
+    "links": [{ "title": "Официальный сайт", "url": "https://www.museudocarroelectrico.pt/" }],
+    "photos": [],
+    "collections": [],
+    "status": "candidate",
+    "freeWithResidency": false
+  },
+  {
+    "id": "museu-d-diogo-de-sousa",
+    "name": "Музей археологии Д. Диогу де Соуза",
+    "type": "museum",
+    "region": "Норте",
+    "coords": { "lat": 41.5470, "lon": -8.4280 },
+    "description": "Главный археологический музей севера Португалии в Браге — находки от палеолита до Средневековья, с сильным разделом по римской Бракаре Августе. Экспозиция хорошо структурирована по эпохам и снабжена понятными пояснениями. Подходит как дополнение к прогулке по римским и барочным памятникам Браги.",
+    "driveMinutesFromLisbon": 220,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["история"],
+    "links": [{ "title": "Официальный сайт", "url": "https://www.museuddiogodesousa.gov.pt/" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Museu_D._Diogo_de_Sousa_in_2016_%282%29.JPG/1280px-Museu_D._Diogo_de_Sousa_in_2016_%282%29.JPG",
+        "author": "Joseolgon",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Museu_D._Diogo_de_Sousa_in_2016_(2).JPG"
+      }
+    ],
+    "collections": [],
+    "status": "candidate",
+    "freeWithResidency": true
+  },
+  {
+    "id": "museu-nacional-machado-de-castro",
+    "name": "Национальный музей Машаду де Каштру",
+    "type": "museum",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 40.2089, "lon": -8.4253 },
+    "description": "Музей в Коимбре построен прямо над римским криптопортиком I века — подземными галереями, которые можно осмотреть отдельно от основной экспозиции скульптуры и живописи. Коллекция средневековой скульптуры считается одной из лучших в стране. С террасы музея открывается вид на крыши старого города.",
+    "driveMinutesFromLisbon": 120,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": ["история", "виды"],
+    "links": [{ "title": "Официальный сайт", "url": "https://www.museusemonumentos.pt/pt/museus-e-monumentos/museu-nacional-de-machado-de-castro" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Cristo_Negro_s%C3%A9c._14_%28Museu_Machado_Castro%29_Mar%C3%A7o_2022-2.jpg/1280px-Cristo_Negro_s%C3%A9c._14_%28Museu_Machado_Castro%29_Mar%C3%A7o_2022-2.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cristo_Negro_séc._14_(Museu_Machado_Castro)_Março_2022-2.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate",
+    "freeWithResidency": true
+  },
+  {
+    "id": "museu-de-aveiro-santa-joana",
+    "name": "Музей Авейру / Санта-Жоана",
+    "type": "museum",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 40.6339, "lon": -8.6202 },
+    "description": "Музей размещён в бывшем женском доминиканском монастыре, где провела последние годы принцесса Жоана, впоследствии причисленная к лику блаженных. Главная достопримечательность — её надгробие из инкрустированного мрамора работы XVIII века. Хорошо сочетается с прогулкой вдоль каналов Авейру на цветной лодке молисейру.",
+    "driveMinutesFromLisbon": 165,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["история"],
+    "links": [{ "title": "Официальный сайт", "url": "https://www.cm-aveiro.pt/visitantes/museus-de-aveiro/museu-de-aveiro-santa-joana" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Entrada_do_Museu_de_Santa_Joana_-_Aveiro_-_Portugal.jpg/1280px-Entrada_do_Museu_de_Santa_Joana_-_Aveiro_-_Portugal.jpg",
+        "author": "CardosoSousa1988",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Entrada_do_Museu_de_Santa_Joana_-_Aveiro_-_Portugal.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate",
+    "freeWithResidency": false
+  },
+  {
+    "id": "museu-de-evora",
+    "name": "Музей Эворы (Национальный музей Фрей Мануэл ду Сенакулу)",
+    "type": "museum",
+    "region": "Алентежу",
+    "coords": { "lat": 38.5715, "lon": -7.9057 },
+    "description": "Музей в бывшем архиепископском дворце рядом с римским храмом и кафедральным собором Эворы — археология, средневековая скульптура и панель фламандской живописи XVI века «Жизнь Девы Марии». Компактная экспозиция удобно вписывается в прогулку по историческому центру города. Само здание с внутренним двориком тоже стоит внимания.",
+    "driveMinutesFromLisbon": 90,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["история", "виды"],
+    "links": [{ "title": "Официальный сайт", "url": "https://www.museusemonumentos.pt/pt/museus-e-monumentos/museu-nacional-frei-manuel-do-cenaculo-e-igreja-de-nossa-senhora-das-merces" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Evora_Museum-01.jpg/1280px-Evora_Museum-01.jpg",
+        "author": "Retogenes",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Evora_Museum-01.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate",
+    "freeWithResidency": true
+  },
+  {
+    "id": "museu-municipal-de-faro",
+    "name": "Муниципальный музей Фару",
+    "type": "museum",
+    "region": "Алгарве",
+    "coords": { "lat": 37.0155, "lon": -7.9322 },
+    "description": "Музей в ренессансном монастыре XVI века в старом еврейском квартале Фару — археологические находки от эпохи неолита до Древнего Рима, включая крупную напольную мозаику с изображением Нептуна. Двухэтажный клуатр монастыря сам по себе один из самых красивых в Алгарве. Логично совместить с прогулкой по крепостным стенам старого города.",
+    "driveMinutesFromLisbon": 180,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["история"],
+    "links": [{ "title": "Официальный сайт", "url": "https://www.cm-faro.pt/pt/menu/1802/museu-municipal-de-faro.aspx" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Convento_de_Nossa_Senhora_da_Assump%C3%A7%C3%A3o%2C_Faro.jpg/1280px-Convento_de_Nossa_Senhora_da_Assump%C3%A7%C3%A3o%2C_Faro.jpg",
+        "author": "Sónia Lopes",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Convento_de_Nossa_Senhora_da_Assumpção,_Faro.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate",
+    "freeWithResidency": false
+  },
+  {
+    "id": "museu-do-traje-sao-bras-de-alportel",
+    "name": "Музей костюма в Сан-Браш-де-Алпортел",
+    "type": "museum",
+    "region": "Алгарве",
+    "coords": { "lat": 37.1526, "lon": -7.8859 },
+    "description": "Небольшой этнографический музей в глубине Алгарве рассказывает о традиционной сельской жизни региона — костюмах, ремёслах и производстве пробки. Экспозиция размещена в старинном особняке зажиточной семьи XIX века с сохранившимися интерьерами. Хороший повод заехать в тихий городок Сан-Браш-де-Алпортел вдали от пляжей побережья.",
+    "driveMinutesFromLisbon": 190,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": ["история"],
+    "links": [{ "title": "Официальный сайт", "url": "https://museu-sbras.com/" }],
+    "photos": [],
+    "collections": [],
+    "status": "candidate",
+    "freeWithResidency": false
+  },
+  {
+    "id": "museu-de-portimao",
+    "name": "Музей Портимана",
+    "type": "museum",
+    "region": "Алгарве",
+    "coords": { "lat": 37.1383, "lon": -8.5376 },
+    "description": "Музей в здании бывшего консервного завода на набережной реки Аради рассказывает историю города через рыболовство и консервное производство, включая сохранённые промышленные цеха. Экспозиция также охватывает археологию региона от эпохи ислама до римского времени. Один из самых современных и хорошо оформленных небольших музеев Алгарве.",
+    "driveMinutesFromLisbon": 170,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["история", "с детьми"],
+    "links": [{ "title": "Официальный сайт", "url": "https://www.museudeportimao.pt/" }],
+    "photos": [],
+    "collections": [],
+    "status": "candidate",
+    "freeWithResidency": false
+  }
+]
