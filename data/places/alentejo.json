@@ -59,7 +59,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cromlech_of_Almendres_(1)_-_Apr_2011.jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "anta-grande-do-zambujeiro",
@@ -80,7 +80,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anta_Grande_do_Zambujeiro_-_1.jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "monsaraz",
@@ -101,7 +101,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monsaraz_(43788573801).jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "marvao",
@@ -122,7 +122,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Marv%C3%A3o_atardecer.jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "castelo-de-vide",
@@ -143,6 +143,6 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Vide_-_Portugal_(30351368277).jpg"
     },
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   }
 ]
