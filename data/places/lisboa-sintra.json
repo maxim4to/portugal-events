@@ -11,6 +11,12 @@
     "bestSeason": "май–октябрь",
     "tags": ["закат", "бесплатно", "дикая природа"],
     "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Praia_da_Ursa_-_Parque_Natural_Sintra-Cascais.jpg/1280px-Praia_da_Ursa_-_Parque_Natural_Sintra-Cascais.jpg",
+      "author": "Erico Reis Junior",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Ursa_-_Parque_Natural_Sintra-Cascais.jpg"
+    },
     "status": "approved"
   },
   {
@@ -25,6 +31,12 @@
     "bestSeason": "круглый год",
     "tags": ["закат", "бесплатно"],
     "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Cabo_da_Roca_Lighthouse%2C_20250606_1514_0234.jpg/1280px-Cabo_da_Roca_Lighthouse%2C_20250606_1514_0234.jpg",
+      "author": "Jakub Hałun",
+      "license": "CC BY 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cabo_da_Roca_Lighthouse,_20250606_1514_0234.jpg"
+    },
     "status": "approved"
   },
   {
@@ -39,6 +51,12 @@
     "bestSeason": "круглый год",
     "tags": ["история", "виды"],
     "links": [{ "title": "Билеты", "url": "https://www.parquesdesintra.pt" }],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Castelo_dos_Mouros%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_112-121_PAN.jpg/1280px-Castelo_dos_Mouros%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_112-121_PAN.jpg",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_dos_Mouros,_Sintra,_Portugal,_2019-05-25,_DD_112-121_PAN.jpg"
+    },
     "status": "approved"
   },
   {
@@ -53,6 +71,12 @@
     "bestSeason": "июнь–сентябрь",
     "tags": ["сёрфинг", "бесплатно"],
     "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Guincho_June_2013-1.jpg/1280px-Guincho_June_2013-1.jpg",
+      "author": "Alvesgaspar",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guincho_June_2013-1.jpg"
+    },
     "status": "approved"
   },
   {
@@ -67,6 +91,12 @@
     "bestSeason": "круглый год",
     "tags": ["фото", "ресторан"],
     "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Azenhas_do_Mar.jpg/1280px-Azenhas_do_Mar.jpg",
+      "author": "F nando",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Azenhas_do_Mar.jpg"
+    },
     "status": "approved"
   },
   {
@@ -186,6 +216,12 @@
     "bestSeason": "круглый год",
     "tags": ["закат", "виды", "бесплатно"],
     "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Sanctuary_of_Peninha_-_Santu%C3%A1rio_da_Peninha_-_Sintra-Cascais_Natural_Park%2C_Portugal.jpg/1280px-Sanctuary_of_Peninha_-_Santu%C3%A1rio_da_Peninha_-_Sintra-Cascais_Natural_Park%2C_Portugal.jpg",
+      "author": "Gerrit Sonka",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sanctuary_of_Peninha_-_Santu%C3%A1rio_da_Peninha_-_Sintra-Cascais_Natural_Park,_Portugal.jpg"
+    },
     "collections": [],
     "status": "approved"
   },
@@ -306,6 +342,12 @@
     "bestSeason": "сентябрь–апрель (сёрф)",
     "tags": ["сёрфинг", "виды", "бесплатно"],
     "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Praia_dos_Coxos_-_Portugal_%2851870552936%29.jpg/1280px-Praia_dos_Coxos_-_Portugal_%2851870552936%29.jpg",
+      "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+      "license": "CC BY-SA 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_dos_Coxos_-_Portugal_(51870552936).jpg"
+    },
     "collections": [],
     "status": "approved"
   },
@@ -321,6 +363,12 @@
     "bestSeason": "круглый год",
     "tags": ["история", "с детьми"],
     "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Mafra_May_2013-2.jpg/1280px-Mafra_May_2013-2.jpg",
+      "author": "Alvesgaspar",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mafra_May_2013-2.jpg"
+    },
     "collections": [],
     "status": "approved"
   },
@@ -386,5 +434,26 @@
     },
     "collections": [],
     "status": "approved"
+  },
+  {
+    "id": "praia-foz-do-lizandro",
+    "name": "Прайя-да-Фож-ду-Лизандру",
+    "type": "beach",
+    "region": "Лиссабон и Синтра",
+    "coords": { "lat": 38.9430, "lon": -9.4181 },
+    "description": "Широкий песчаный пляж южнее Эрисейры в устье реки Лизандру, где река образует мелкую тёплую лагуну рядом с океанским прибоем. Отличное место для начинающих сёрферов и семей: спокойная вода со стороны реки и волны со стороны моря. Есть парковка, кафе и променад; закаты над устьем очень живописны.",
+    "driveMinutesFromLisbon": 50,
+    "visitDurationHours": 3,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["купание", "сёрфинг", "с детьми"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Praia_da_Foz_do_Lizandro_-_Portugal_%2825858162947%29.jpg/1280px-Praia_da_Foz_do_Lizandro_-_Portugal_%2825858162947%29.jpg",
+      "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+      "license": "CC BY-SA 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Foz_do_Lizandro_-_Portugal_(25858162947).jpg"
+    },
+    "collections": [],
+    "status": "candidate"
   }
 ]

@@ -11,6 +11,12 @@
     "bestSeason": "июнь–сентябрь",
     "tags": ["купание", "природа"],
     "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Galapinhos_2017001.jpg/1280px-Galapinhos_2017001.jpg",
+      "author": "Anual",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Galapinhos_2017001.jpg"
+    },
     "status": "approved"
   },
   {
@@ -25,6 +31,12 @@
     "bestSeason": "круглый год",
     "tags": ["закат", "бесплатно", "динозавры"],
     "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Faro_de_cabo_Espichel%2C_Portugal%2C_2012-08-18%2C_DD_01.JPG/1280px-Faro_de_cabo_Espichel%2C_Portugal%2C_2012-08-18%2C_DD_01.JPG",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Faro_de_cabo_Espichel,_Portugal,_2012-08-18,_DD_01.JPG"
+    },
     "status": "approved"
   },
   {

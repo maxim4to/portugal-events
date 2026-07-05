@@ -11,6 +11,12 @@
     "bestSeason": "сентябрь–июнь (летом жара)",
     "tags": ["история", "вино"],
     "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Evora_-_Roman_Temple_-_Backside.jpg/1280px-Evora_-_Roman_Temple_-_Backside.jpg",
+      "author": "Ingo Mehling",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Evora_-_Roman_Temple_-_Backside.jpg"
+    },
     "status": "approved"
   },
   {
@@ -33,5 +39,110 @@
     },
     "collections": [],
     "status": "approved"
+  },
+  {
+    "id": "cromeleque-dos-almendres",
+    "name": "Кромлех Алмендриш",
+    "type": "other",
+    "region": "Алентежу",
+    "coords": { "lat": 38.5575, "lon": -8.0615 },
+    "description": "Крупнейший на Пиренейском полуострове мегалитический комплекс из почти сотни менгиров, старше Стоунхенджа — его начали ставить около 6000 г. до н. э. среди пробковых дубов под Эворой. Считается, что круги служили древней обсерваторией, ориентированной на солнцестояние. Вход свободный; последний участок дороги грунтовый, но проезжий.",
+    "driveMinutesFromLisbon": 105,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год (весной цветут дубравы)",
+    "tags": ["история", "бесплатно", "фото"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Cromlech_of_Almendres_%281%29_-_Apr_2011.jpg/1280px-Cromlech_of_Almendres_%281%29_-_Apr_2011.jpg",
+      "author": "Ken & Nyetta",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cromlech_of_Almendres_(1)_-_Apr_2011.jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "anta-grande-do-zambujeiro",
+    "name": "Анта-Гранде-ду-Замбужейру",
+    "type": "other",
+    "region": "Алентежу",
+    "coords": { "lat": 38.5392, "lon": -8.0144 },
+    "description": "Крупнейший дольмен Европы недалеко от Эворы: погребальная камера высотой около 6 метров из семи огромных плит, накрытых сверху покровным камнем. Мегалит стоит в поле под открытым небом и датируется 4000–3000 гг. до н. э. Совмещается с кромлехом Алмендриш; к дольмену ведёт грунтовая дорога.",
+    "driveMinutesFromLisbon": 105,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": ["история", "бесплатно", "фото"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Anta_Grande_do_Zambujeiro_-_1.jpg/1280px-Anta_Grande_do_Zambujeiro_-_1.jpg",
+      "author": "Ingo Mehling",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anta_Grande_do_Zambujeiro_-_1.jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "monsaraz",
+    "name": "Монсараш",
+    "type": "town",
+    "region": "Алентежу",
+    "coords": { "lat": 38.4424, "lon": -7.3787 },
+    "description": "Укреплённая средневековая деревушка на вершине холма с белёными домами, брусчаткой и замком, откуда открывается вид на бескрайнее озеро Алкева — крупнейшее в Европе искусственное водохранилище. Одно из лучших мест страны для наблюдения за звёздами: район отмечен как заповедник тёмного неба. Приезжайте к закату и оставайтесь на ночь ради Млечного Пути.",
+    "driveMinutesFromLisbon": 150,
+    "visitDurationHours": 3,
+    "bestSeason": "круглый год (летом жарко)",
+    "tags": ["история", "виды", "закат"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Monsaraz_%2843788573801%29.jpg/1280px-Monsaraz_%2843788573801%29.jpg",
+      "author": "Jeremy Weate from London, UK",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monsaraz_(43788573801).jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "marvao",
+    "name": "Марван",
+    "type": "town",
+    "region": "Алентежу",
+    "coords": { "lat": 39.3947, "lon": -7.3778 },
+    "description": "«Орлиное гнездо» на гранитном утёсе у самой границы с Испанией: почти нетронутые стены XIII века и замок, откуда видны бескрайние равнины Алентежу. Крошечная деревня внутри стен живёт своей неспешной жизнью, а закаты и рассветы здесь фантастические. Совмещается с соседним Каштелу-де-Виде.",
+    "driveMinutesFromLisbon": 210,
+    "visitDurationHours": 3,
+    "bestSeason": "апрель–октябрь",
+    "tags": ["история", "виды", "фото"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Castelo_de_Marv%C3%A3o_atardecer.jpg/1280px-Castelo_de_Marv%C3%A3o_atardecer.jpg",
+      "author": "Mentxuwiki",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Marv%C3%A3o_atardecer.jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "castelo-de-vide",
+    "name": "Каштелу-де-Виде",
+    "type": "town",
+    "region": "Алентежу",
+    "coords": { "lat": 39.4153, "lon": -7.4553 },
+    "description": "Атмосферный горный городок у Серра-де-Сан-Мамеде с одним из лучших сохранившихся еврейских кварталов Португалии и средневековой синагогой. Узкие улочки с цветами, готические дверные проёмы и родник Фонте-да-Вила делают прогулку очень фотогеничной. Часто соединяют с Марваном в один маршрут по северному Алентежу.",
+    "driveMinutesFromLisbon": 215,
+    "visitDurationHours": 2.5,
+    "bestSeason": "апрель–октябрь",
+    "tags": ["история", "фото", "виды"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Castelo_de_Vide_-_Portugal_%2830351368277%29.jpg/1280px-Castelo_de_Vide_-_Portugal_%2830351368277%29.jpg",
+      "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+      "license": "CC BY-SA 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Vide_-_Portugal_(30351368277).jpg"
+    },
+    "collections": [],
+    "status": "candidate"
   }
 ]

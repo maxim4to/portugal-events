@@ -1,0 +1,44 @@
+[
+  {
+    "id": "fornea",
+    "name": "Форнеа",
+    "type": "nature",
+    "region": "Эштремадура",
+    "coords": { "lat": 39.5544, "lon": -8.8093 },
+    "description": "Гигантский природный амфитеатр диаметром около 500 м и высотой 200 м в парке Серраш-де-Айре-и-Кандеейруш, куда после дождей срывается сезонный водопад. Тропа из деревни Алкария приводит к подножию отвесных известняковых стен и пещере Кова-да-Велья. Идите весной или после дождя, летом водопад пересыхает.",
+    "driveMinutesFromLisbon": 110,
+    "visitDurationHours": 3,
+    "bestSeason": "ноябрь–апрель (после дождей)",
+    "tags": ["природа", "виды", "фото"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/F%C3%B3rnea_in_2019.jpg/1280px-F%C3%B3rnea_in_2019.jpg",
+      "author": "Threeohsix",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:F%C3%B3rnea_in_2019.jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "grutas-mira-de-aire",
+    "name": "Пещеры Мира-де-Айре",
+    "type": "nature",
+    "region": "Эштремадура",
+    "coords": { "lat": 39.5378, "lon": -8.7025 },
+    "description": "Крупнейшие оборудованные пещеры Португалии в парке Серраш-де-Айре-и-Кандеейруш: подземный маршрут с озёрами, сталактитами и залами до 60 м высотой. Спуск в 683 ступени, наверх поднимает лифт. Отличный вариант в жару или дождь; внутри прохладно, возьмите кофту.",
+    "driveMinutesFromLisbon": 100,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["с детьми", "природа", "фото"],
+    "links": [{ "title": "Сайт", "url": "https://www.grutasmiradaire.com" }],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Grutas_de_Mira_de_Aire_%2811%29.jpg/1280px-Grutas_de_Mira_de_Aire_%2811%29.jpg",
+      "author": "Joseolgon",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grutas_de_Mira_de_Aire_(11).jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "fisgas-de-ermelo",
+    "name": "Фишгаш-де-Эрмелу",
+    "type": "nature",
+    "region": "Север",
+    "coords": { "lat": 41.3775, "lon": -7.8674 },
+    "description": "Один из самых высоких водопадов Португалии в природном парке Алван: вода срывается многоступенчатым каскадом по гранитному склону над деревней Эрмелу. Тропа PR3 из Мондин-де-Башту ведёт через дубовые леса к смотровым над каскадом. Далеко от Лиссабона, поэтому совмещайте с поездкой в долину Дору.",
+    "driveMinutesFromLisbon": 230,
+    "visitDurationHours": 4,
+    "bestSeason": "апрель–июнь (полноводье)",
+    "tags": ["природа", "виды", "фото"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/202305_Fisgas_de_Ermelo_1.jpg/1280px-202305_Fisgas_de_Ermelo_1.jpg",
+      "author": "o_andras",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:202305_Fisgas_de_Ermelo_1.jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  }
+]

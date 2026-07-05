@@ -1,0 +1,212 @@
+[
+  {
+    "id": "piodao",
+    "name": "Пиодан",
+    "type": "town",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 40.2292, "lon": -7.8249 },
+    "description": "Сланцевая деревня-презепио, каскадом сбегающая по склону Серра-ду-Асор: тёмные дома из шифера с синими дверями и белая церковь в центре. Одна из самых фотогеничных и уединённых аллейш-ду-шишту, куда стоит ехать ради тишины и звёздного неба. Дорога серпантинная — закладывайте время и не спешите.",
+    "driveMinutesFromLisbon": 210,
+    "visitDurationHours": 3,
+    "bestSeason": "апрель–октябрь",
+    "tags": ["история", "фото", "природа"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Pi%C3%B3d%C3%A3o_Arganil.jpg/1280px-Pi%C3%B3d%C3%A3o_Arganil.jpg",
+      "author": "Xdiogo",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pi%C3%B3d%C3%A3o_Arganil.jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "talasnal",
+    "name": "Таласнал",
+    "type": "town",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 40.0817, "lon": -8.2119 },
+    "description": "Заброшенная и заново оживающая сланцевая деревня на склоне Серра-да-Лоуза, до которой можно дойти только пешком по лесной тропе. Каменные домики, крошечные таверны и полная тишина делают её идеальной для короткого хайка с обедом. Оставьте машину в Казал-Нову или на верхней парковке и спускайтесь по тропе.",
+    "driveMinutesFromLisbon": 180,
+    "visitDurationHours": 3,
+    "bestSeason": "апрель–ноябрь",
+    "tags": ["история", "природа", "фото"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Talasnal_%40_Lous%C3%A3_mountain.jpg/1280px-Talasnal_%40_Lous%C3%A3_mountain.jpg",
+      "author": "Nuno Simão Gonçalves",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Talasnal_@_Lous%C3%A3_mountain.jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "janeiro-de-cima",
+    "name": "Жанейру-де-Сима",
+    "type": "town",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 40.0139, "lon": -7.8306 },
+    "description": "Тихая сланцевая деревня на берегу реки Зезере, где фасады домов украшены гладкой белой галькой из русла реки. Помимо самобытной архитектуры здесь есть речной пляж и старинная традиция переправы на лодке «О да барка». Хорошая база, чтобы почувствовать неспешный ритм Аллейш-ду-Шишту.",
+    "driveMinutesFromLisbon": 165,
+    "visitDurationHours": 2,
+    "bestSeason": "май–сентябрь",
+    "tags": ["история", "купание", "природа"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Janeiro_de_Cima_-_Portugal_%2852816759064%29.jpg/1280px-Janeiro_de_Cima_-_Portugal_%2852816759064%29.jpg",
+      "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+      "license": "CC BY-SA 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Janeiro_de_Cima_-_Portugal_(52816759064).jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "fragas-de-sao-simao",
+    "name": "Фрагаш-де-Сан-Симан",
+    "type": "beach",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 39.9158, "lon": -8.3170 },
+    "description": "Речной пляж в ущелье с изумрудной водой, зажатый между отвесными сланцевыми скалами, к которому ведёт живописный настил-пассадису. Вода прохладная и чистая, а с высоты скал открывается драматичный вид на каньон. Идеально для купания в жаркий летний день; приезжайте пораньше, парковка небольшая.",
+    "driveMinutesFromLisbon": 165,
+    "visitDurationHours": 3,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["купание", "природа", "виды"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/The_River_beach_of_Fragas_de_S%C3%A3o_Sim%C3%A3o.jpg/1280px-The_River_beach_of_Fragas_de_S%C3%A3o_Sim%C3%A3o.jpg",
+      "author": "Threeohsix",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_River_beach_of_Fragas_de_S%C3%A3o_Sim%C3%A3o.jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "praia-fluvial-loucainha",
+    "name": "Речной пляж Лоусайнья",
+    "type": "beach",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 40.0262, "lon": -8.3040 },
+    "description": "Уютный речной пляж у деревни Эшпиньял на краю Серра-да-Лоуза с запрудой, зелёными лужайками и тенью деревьев. Прекрасное спокойное место для семейного купания вдали от океанских толп. Рядом кафе и парковка; вода бодрящая даже летом.",
+    "driveMinutesFromLisbon": 175,
+    "visitDurationHours": 2.5,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["купание", "с детьми", "природа"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Praia_Fluvial_de_Lou%C3%A7ainha_-_Portugal_%2825330842562%29.jpg/1280px-Praia_Fluvial_de_Lou%C3%A7ainha_-_Portugal_%2825330842562%29.jpg",
+      "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+      "license": "CC BY-SA 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_Fluvial_de_Lou%C3%A7ainha_-_Portugal_(25330842562).jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "mata-do-bucaco",
+    "name": "Национальный лес Бусаку",
+    "type": "nature",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 40.3760, "lon": -8.3660 },
+    "description": "Заповедный лес, который кармелиты веками засаживали экзотическими деревьями со всего мира, с неоманюэлинским дворцом-отелем в центре и тропами к скрытым фонтанам и капеллам. Прохладная зелёная передышка от жары с романтичными аллеями и водопадом Фонте-Фрия. Совмещается с термами Лузу у подножия горы.",
+    "driveMinutesFromLisbon": 150,
+    "visitDurationHours": 3,
+    "bestSeason": "круглый год",
+    "tags": ["природа", "история", "фото"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Mata_do_Bussaco_%2853489108398%29.jpg/1280px-Mata_do_Bussaco_%2853489108398%29.jpg",
+      "author": "ines s.",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mata_do_Bussaco_(53489108398).jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "covao-dos-conchos",
+    "name": "Ковау-душ-Коншуш",
+    "type": "lake",
+    "region": "Центр (Серра-да-Эштрела)",
+    "coords": { "lat": 40.3639, "lon": -7.6109 },
+    "description": "Горное озеро в Серра-да-Эштрела с гипнотическим «колодцем-воронкой» — круглым водосбросом 1955 года, куда с шумом уходит вода. Дойти можно только пешком по 4-километровой тропе от Лагоа-Комприда среди камней и вереска. Возьмите воду и удобную обувь; в туман тропа теряется, идите в ясную погоду.",
+    "driveMinutesFromLisbon": 210,
+    "visitDurationHours": 3,
+    "bestSeason": "май–октябрь",
+    "tags": ["природа", "виды", "фото"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Cov%C3%A3o_dos_Conchos.jpg/1280px-Cov%C3%A3o_dos_Conchos.jpg",
+      "author": "PauloSeia",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cov%C3%A3o_dos_Conchos.jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "poco-do-inferno",
+    "name": "Посу-ду-Инферну",
+    "type": "nature",
+    "region": "Центр (Серра-да-Эштрела)",
+    "coords": { "lat": 40.3736, "lon": -7.5176 },
+    "description": "Живописный водопад в глубоком ущелье Серра-да-Эштрела над долиной Мантейгаш, где ручей Леандриш падает с десятиметровой скалы в тёмный омут. Особенно эффектен весной при таянии снега и зимой, когда струи местами замерзают. Есть смотровая площадка у самой дороги, спуск к воде короткий.",
+    "driveMinutesFromLisbon": 215,
+    "visitDurationHours": 1.5,
+    "bestSeason": "весна и осень",
+    "tags": ["природа", "виды", "фото"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Po%C3%A7o_do_Inferno%2C_Manteigas%2C_Cora%C3%A7%C3%A3o_da_Serra_da_Estrela.jpg/1280px-Po%C3%A7o_do_Inferno%2C_Manteigas%2C_Cora%C3%A7%C3%A3o_da_Serra_da_Estrela.jpg",
+      "author": "Ncletorosa",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Po%C3%A7o_do_Inferno,_Manteigas,_Cora%C3%A7%C3%A3o_da_Serra_da_Estrela.jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "praia-fluvial-loriga",
+    "name": "Речной пляж Лорига",
+    "type": "beach",
+    "region": "Центр (Серра-да-Эштрела)",
+    "coords": { "lat": 40.3272, "lon": -7.6785 },
+    "description": "Единственный в Португалии речной пляж в ледниковой долине: кристально чистая горная вода Серра-да-Эштрела течёт по каскаду бассейнов на высоте около 800 м. Вокруг видны следы древнего ледника, вырезавшего долину Лорига. Вода ледяная и бодрящая; есть кафе, спасатели и парковка.",
+    "driveMinutesFromLisbon": 210,
+    "visitDurationHours": 3,
+    "bestSeason": "июль–сентябрь",
+    "tags": ["купание", "природа", "виды"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Praia_Fluvial_de_Loriga_-_Portugal_%2816170365944%29.jpg/1280px-Praia_Fluvial_de_Loriga_-_Portugal_%2816170365944%29.jpg",
+      "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+      "license": "CC BY-SA 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_Fluvial_de_Loriga_-_Portugal_(16170365944).jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "sortelha",
+    "name": "Сортелья",
+    "type": "town",
+    "region": "Центр (Серра-да-Эштрела)",
+    "coords": { "lat": 40.3308, "lon": -7.2119 },
+    "description": "Подлинная средневековая деревня из гранита, полностью опоясанная хорошо сохранившейся крепостной стеной, по которой можно пройти. Дома срослись с огромными валунами, а с башни замка открывается вид на дикие горные просторы. Заночуйте поблизости, чтобы увидеть деревню без туристов на рассвете.",
+    "driveMinutesFromLisbon": 230,
+    "visitDurationHours": 2,
+    "bestSeason": "апрель–октябрь",
+    "tags": ["история", "виды", "фото"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Aldeia_de_Sortelha.jpg/1280px-Aldeia_de_Sortelha.jpg",
+      "author": "Nmmacedo",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aldeia_de_Sortelha.jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  }
+]

@@ -11,6 +11,12 @@
     "bestSeason": "круглый год",
     "tags": ["история", "с детьми"],
     "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/%C3%93bidos_October_2014-4.jpg/1280px-%C3%93bidos_October_2014-4.jpg",
+      "author": "Alvesgaspar",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%C3%93bidos_October_2014-4.jpg"
+    },
     "status": "approved"
   },
   {
@@ -25,6 +31,54 @@
     "bestSeason": "октябрь–март (большие волны)",
     "tags": ["сёрфинг", "виды"],
     "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Farol_da_Nazar%C3%A9_Forte_de_S%C3%A3o_Miguel_Arcanjo_01.jpg/1280px-Farol_da_Nazar%C3%A9_Forte_de_S%C3%A3o_Miguel_Arcanjo_01.jpg",
+      "author": "Pedro Pacheco Coelho",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Farol_da_Nazar%C3%A9_Forte_de_S%C3%A3o_Miguel_Arcanjo_01.jpg"
+    },
     "status": "approved"
+  },
+  {
+    "id": "lagoa-de-obidos",
+    "name": "Лагуна Обидуш (Фож-ду-Арелью)",
+    "type": "lake",
+    "region": "Оэште",
+    "coords": { "lat": 39.4308, "lon": -9.2192 },
+    "description": "Крупнейшая прибрежная лагуна Португалии у деревни Фож-ду-Арелью: мелкая тёплая вода с одной стороны косы и открытый океанский пляж с другой. Спокойная сторона идеальна для детей, каякинга и виндсёрфинга, а закаты над водой особенно красивы. Есть кафе, прокат сапов и большие парковки.",
+    "driveMinutesFromLisbon": 80,
+    "visitDurationHours": 3,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["купание", "с детьми", "закат"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Foz_do_Arelho_-_Portugal_%2851354471616%29.jpg/1280px-Foz_do_Arelho_-_Portugal_%2851354471616%29.jpg",
+      "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+      "license": "CC BY-SA 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Foz_do_Arelho_-_Portugal_(51354471616).jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "berlenga-grande",
+    "name": "Остров Берленга-Гранди",
+    "type": "nature",
+    "region": "Оэште",
+    "coords": { "lat": 39.4108, "lon": -9.5069 },
+    "description": "Гранитный остров-заповедник в 10 км от Пенише с прозрачной водой, морскими гротами, форт-островком Сан-Жуан-Баптишта и колониями морских птиц — биосферный резерват ЮНЕСКО. Кораблик из Пенише идёт 30–45 минут; на день можно взять снорклинг или лодочный тур по пещерам. Билеты и въезд лимитированы (март–октябрь), бронируйте заранее.",
+    "driveMinutesFromLisbon": 90,
+    "visitDurationHours": 6,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["природа", "купание", "виды"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Berlenga_grande.JPG/1280px-Berlenga_grande.JPG",
+      "author": "Joseolgon",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Berlenga_grande.JPG"
+    },
+    "collections": [],
+    "status": "candidate"
   }
 ]
