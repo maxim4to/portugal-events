@@ -1,38 +1,123 @@
 ---
 import Base from '../layouts/Base.astro';
-import { approvedPlaces, upcomingEvents } from '../lib/data.ts';
-import { nextWeekend, overlapsDay } from '../lib/dates.ts';
+import EventCard from '../components/EventCard.astro';
+import PlaceCard from '../components/PlaceCard.astro';
+import { approvedPlaces, upcomingEvents, collections } from '../lib/data.ts';
+import { nextWeekend, overlapsDay, formatDateRu } from '../lib/dates.ts';
 
 const { sat, sun } = nextWeekend(new Date());
 const weekendEvents = upcomingEvents.filter(
   (e) => overlapsDay(e, sat) || overlapsDay(e, sun),
 );
-const ideas = approvedPlaces.slice(0, 4);
+const ideas = approvedPlaces.slice(0, 6);
+const featuredCollections = collections.slice(0, 3);
+const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
 ---
-<Base title="Выходные в Португалии">
-  <h1>Выходные {sat} — {sun}</h1>
+<Base
+  title="Выходные в Португалии"
+  description="Куда поехать и чем заняться в ближайшие выходные."
+>
+  <header class="hero">
+    <h1>Ближайшие выходные</h1>
+    <p class="muted hero-dates">{formatDateRu(sat)} — {formatDateRu(sun)}</p>
+  </header>
 
-  <h2>События</h2>
-  {weekendEvents.length === 0 ? (
-    <p>На эти выходные событий пока нет.</p>
-  ) : (
-    <ul>
-      {weekendEvents.map((e) => (
-        <li>
-          <a href={e.url}>{e.title}</a> — {e.city}, {e.venue}
-          {e.dateStart !== e.dateEnd ? ` (${e.dateStart} – ${e.dateEnd})` : ''}, {e.price}
-        </li>
-      ))}
-    </ul>
-  )}
+  <section class="block">
+    <h2>События на выходных</h2>
+    {weekendEvents.length === 0 ? (
+      <p class="muted">На эти выходные событий пока нет — посмотрите места ниже.</p>
+    ) : (
+      <div class="grid-cards">
+        {weekendEvents.map((event) => (
+          <EventCard event={event} />
+        ))}
+      </div>
+    )}
+  </section>
 
-  <h2>Куда поехать</h2>
-  <ul>
-    {ideas.map((p) => (
-      <li>
-        <strong>{p.name}</strong> ({p.region}) — {p.driveMinutesFromLisbon} мин на машине.
-        {p.description}
-      </li>
-    ))}
-  </ul>
+  <section class="block">
+    <div class="block-head">
+      <h2>Куда поехать</h2>
+      <a class="more" href={href('/places/')}>Все места →</a>
+    </div>
+    {ideas.length === 0 ? (
+      <p class="muted">Мест пока нет.</p>
+    ) : (
+      <div class="grid-cards">
+        {ideas.map((place) => (
+          <PlaceCard place={place} href={href('/places/' + place.id + '/')} />
+        ))}
+      </div>
+    )}
+  </section>
+
+  <section class="block">
+    <div class="block-head">
+      <h2>Подборки</h2>
+      <a class="more" href={href('/collections/')}>Все подборки →</a>
+    </div>
+    {featuredCollections.length === 0 ? (
+      <p class="muted">Подборок пока нет.</p>
+    ) : (
+      <div class="collections-strip">
+        {featuredCollections.map((collection) => (
+          <a class="card collection-chip" href={href('/collections/' + collection.id + '/')}>
+            <span class="collection-title">{collection.title}</span>
+            <span class="muted collection-count">{collection.placeIds.length} мест</span>
+          </a>
+        ))}
+      </div>
+    )}
+  </section>
 </Base>
+
+<style>
+  .hero {
+    margin-bottom: var(--space-6);
+  }
+  .hero h1 {
+    margin-bottom: var(--space-1);
+  }
+  .hero-dates {
+    margin: 0;
+    font-size: 16px;
+  }
+  .block {
+    margin-bottom: var(--space-6);
+  }
+  .block-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-3);
+  }
+  .more {
+    font-size: 14px;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .collections-strip {
+    display: grid;
+    gap: var(--space-3);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  .collection-chip {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: var(--space-4);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s ease;
+  }
+  .collection-chip:hover {
+    border-color: var(--border-strong);
+    text-decoration: none;
+  }
+  .collection-title {
+    font-weight: 500;
+  }
+  .collection-count {
+    font-size: 13px;
+  }
+</style>

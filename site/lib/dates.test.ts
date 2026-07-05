@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { nextWeekend, overlapsDay } from './dates.ts';
+import { formatDateRu, nextWeekend, overlapsDay } from './dates.ts';
 
 describe('nextWeekend', () => {
   test('mid-week returns the upcoming weekend', () => {
@@ -33,5 +33,17 @@ describe('overlapsDay', () => {
   });
   test('false outside the range', () => {
     expect(overlapsDay(event, '2026-07-13')).toBe(false);
+  });
+});
+
+describe('formatDateRu', () => {
+  test('formats a July date with genitive month', () => {
+    expect(formatDateRu('2026-07-11')).toBe('11 июля');
+  });
+  test('strips a leading zero from the day', () => {
+    expect(formatDateRu('2026-01-05')).toBe('5 января');
+  });
+  test('formats December', () => {
+    expect(formatDateRu('2026-12-31')).toBe('31 декабря');
   });
 });

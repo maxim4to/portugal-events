@@ -1,19 +1,54 @@
 ---
 import Base from '../layouts/Base.astro';
+import EventCard from '../components/EventCard.astro';
 import { upcomingEvents } from '../lib/data.ts';
+import type { Event } from '../../schema/index.ts';
+
+const MONTHS_NOMINATIVE = [
+  'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+  'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь',
+];
+
+function monthLabel(key: string): string {
+  const [year, month] = key.split('-');
+  return `${MONTHS_NOMINATIVE[Number(month) - 1] ?? month} ${year}`;
+}
+
+// Group by YYYY-MM of dateStart; upcomingEvents is already sorted chronologically.
+const groups: { key: string; events: Event[] }[] = [];
+for (const event of upcomingEvents) {
+  const key = event.dateStart.slice(0, 7);
+  const last = groups[groups.length - 1];
+  if (last && last.key === key) {
+    last.events.push(event);
+  } else {
+    groups.push({ key, events: [event] });
+  }
+}
 ---
-<Base title="Афиша — Португалия">
+<Base
+  title="Афиша — Португалия"
+  description="Концерты, фестивали и события в Португалии."
+>
   <h1>Афиша</h1>
   {upcomingEvents.length === 0 ? (
-    <p>Будущих событий нет.</p>
+    <p class="muted">Будущих событий пока нет.</p>
   ) : (
-    <ul>
-      {upcomingEvents.map((e) => (
-        <li>
-          {e.dateStart}{e.dateEnd !== e.dateStart ? ` – ${e.dateEnd}` : ''}:
-          <a href={e.url}>{e.title}</a> — {e.city}, {e.venue}, {e.price}
-        </li>
-      ))}
-    </ul>
+    groups.map((group) => (
+      <section class="month">
+        <h2>{monthLabel(group.key)}</h2>
+        <div class="grid-cards">
+          {group.events.map((event) => (
+            <EventCard event={event} />
+          ))}
+        </div>
+      </section>
+    ))
   )}
 </Base>
+
+<style>
+  .month {
+    margin-bottom: var(--space-6);
+  }
+</style>
