@@ -1,0 +1,183 @@
+---
+import type { Event } from '../../schema/index.ts';
+import type { MapPoint } from '../lib/mapExplorer.ts';
+import MapShell from './MapShell.astro';
+import { EVENT_TYPE_LABELS } from '../lib/labels.ts';
+import { formatDateRu } from '../lib/dates.ts';
+
+interface Props {
+  events: Event[];
+  points: MapPoint[];
+  hrefBase: string;
+}
+const { events, points, hrefBase } = Astro.props;
+
+const MONTHS_NOMINATIVE = [
+  'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+  'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь',
+];
+function monthLabel(key: string): string {
+  const [year, month] = key.split('-');
+  return `${MONTHS_NOMINATIVE[Number(month) - 1] ?? month} ${year}`;
+}
+
+const todayISO = new Date().toISOString().slice(0, 10);
+const ongoing = events
+  .filter((e) => e.dateStart < todayISO)
+  .sort((a, b) => a.dateEnd.localeCompare(b.dateEnd));
+const future = events.filter((e) => e.dateStart >= todayISO);
+
+const groups: { key: string; label: string; events: Event[] }[] = [];
+if (ongoing.length > 0) groups.push({ key: 'ongoing', label: 'Сейчас идёт', events: ongoing });
+for (const event of future) {
+  const key = event.dateStart.slice(0, 7);
+  const last = groups[groups.length - 1];
+  if (last && last.key === key) last.events.push(event);
+  else groups.push({ key, label: monthLabel(key), events: [event] });
+}
+
+function dateLabel(e: Event): string {
+  return e.dateStart === e.dateEnd
+    ? formatDateRu(e.dateStart)
+    : `${formatDateRu(e.dateStart)} – ${formatDateRu(e.dateEnd)}`;
+}
+---
+<MapShell kind="events" detailPrefix="/events/" hrefBase={hrefBase} mapId="events-map" points={points}>
+  <div class="event-filters" slot="filters">
+    <input
+      type="search"
+      class="search-input"
+      data-filter="query"
+      placeholder="Поиск по названию, городу или площадке"
+      aria-label="Поиск событий"
+    />
+  </div>
+
+  <div class="event-list" slot="list">
+    {events.length === 0 ? (
+      <p class="muted">Будущих событий пока нет.</p>
+    ) : (
+      groups.map((group) => (
+        <section class="month" data-group>
+          <h2 data-group-label>{group.label}</h2>
+          <div class="grid-cards">
+            {group.events.map((event) => (
+              <a
+                class="card event-card"
+                href={`${hrefBase}/events/${event.id}/`}
+                data-item-card
+                data-id={event.id}
+                data-name={`${event.title} ${event.city} ${event.venue}`}
+                data-card-link
+              >
+                <div class="cover">
+                  {event.image && (
+                    <img src={event.image} alt={event.title} loading="lazy" referrerpolicy="no-referrer" />
+                  )}
+                  <span class="badge event-badge">{EVENT_TYPE_LABELS[event.type] ?? 'Событие'}</span>
+                </div>
+                <div class="body">
+                  <span class="date muted">{dateLabel(event)}</span>
+                  <h3>{event.title}</h3>
+                  <p class="place muted">{event.city}, {event.venue}</p>
+                  {event.price && <p class="price">{event.price}</p>}
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))
+    )}
+  </div>
+</MapShell>
+
+<style>
+  .event-filters {
+    display: flex;
+  }
+  .search-input {
+    width: 100%;
+    max-width: 420px;
+    padding: var(--space-2) var(--space-3);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface-2);
+    color: var(--text-primary);
+    font: inherit;
+  }
+  .search-input::placeholder {
+    color: var(--text-muted);
+  }
+  .month {
+    margin-bottom: var(--space-5);
+  }
+  .event-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s ease;
+  }
+  .event-card:hover {
+    border-color: var(--border-strong);
+    text-decoration: none;
+  }
+  .cover {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--accent-bg);
+  }
+  .cover img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .event-badge {
+    position: absolute;
+    top: var(--space-2);
+    left: var(--space-2);
+    z-index: 4;
+    background: var(--accent-bg);
+    color: var(--accent-text);
+  }
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    flex: 1;
+  }
+  .date {
+    font-size: 13px;
+  }
+  .body h3 {
+    margin: 0;
+  }
+  .place,
+  .price {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+</style>
+
+<script>
+  import { initMapExplorer } from '../lib/mapExplorer.ts';
+
+  const root = document.querySelector<HTMLElement>('[data-explorer]');
+  if (root) {
+    const searchInput = root.querySelector<HTMLInputElement>('[data-filter="query"]');
+
+    const matches = (el: HTMLElement) => {
+      const q = (searchInput?.value || '').trim().toLowerCase();
+      if (!q) return true;
+      return (el.dataset.name || '').toLowerCase().includes(q);
+    };
+
+    const explorer = initMapExplorer(root, { matches });
+    searchInput?.addEventListener('input', () => explorer.rerender());
+  }
+</script>

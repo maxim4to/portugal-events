@@ -1,0 +1,220 @@
+---
+import type { MapPoint } from '../lib/mapExplorer.ts';
+
+interface Props {
+  kind: 'places' | 'events';
+  detailPrefix: string;
+  hrefBase: string;
+  mapId: string;
+  points: MapPoint[];
+}
+const { kind, detailPrefix, hrefBase, mapId, points } = Astro.props;
+---
+<section
+  class="explorer-root"
+  data-explorer
+  data-kind={kind}
+  data-detail-prefix={detailPrefix}
+  data-href-base={hrefBase}
+>
+  <div class="filter-bar-top">
+    <slot name="filters" />
+    <div class="toolbar">
+      <label class="sam">
+        <input type="checkbox" data-search-as-move checked />
+        <span>Искать при перемещении карты</span>
+      </label>
+      <span class="count muted" data-count></span>
+      <div class="view-toggle" role="group" aria-label="Вид">
+        <button type="button" class="btn view-btn" data-view="list" aria-pressed="true">Список</button>
+        <button type="button" class="btn view-btn" data-view="map" aria-pressed="false">Карта</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-explorer">
+    <div class="pane pane-list">
+      <div class="list-scroll" data-list-scroll>
+        <slot name="list" />
+        <p class="empty" data-empty hidden>Ничего не найдено.</p>
+      </div>
+    </div>
+
+    <div class="pane pane-map">
+      <div class="map" id={mapId} data-map></div>
+    </div>
+  </div>
+
+  <script type="application/json" data-points set:html={JSON.stringify(points)}></script>
+</section>
+
+<style>
+  .explorer-root {
+    display: flex;
+    flex-direction: column;
+    height: calc(100dvh - 150px);
+    min-height: 520px;
+  }
+
+  /* Compact full-width filter bar above the two panes. */
+  .filter-bar-top {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+    padding: var(--space-2) 0 var(--space-3);
+  }
+  .toolbar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-left: auto;
+  }
+  .sam {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: 13px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .sam input {
+    accent-color: var(--accent);
+  }
+  .count {
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  .view-toggle {
+    display: none;
+    gap: var(--space-1);
+  }
+  .view-btn[aria-pressed='true'] {
+    background: var(--accent-bg);
+    color: var(--accent-text);
+    border-color: var(--border-strong);
+  }
+
+  .map-explorer {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .pane {
+    min-width: 0;
+    min-height: 0;
+  }
+  .pane-list {
+    display: flex;
+    flex-direction: column;
+    border-right: 0.5px solid var(--border);
+  }
+  .list-scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--space-3);
+  }
+  .empty {
+    padding: var(--space-6) 0;
+    text-align: center;
+    color: var(--text-muted);
+  }
+  .pane-map {
+    position: relative;
+    z-index: 0;
+  }
+  .map {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Active states for list↔map sync. Covers both the places layout (a .card
+     nested inside the [data-item-card] wrapper) and events (where the
+     [data-item-card] element is itself the .card). */
+  :global(.explorer-root [data-item-card].is-active),
+  :global(.explorer-root [data-item-card].is-active .card) {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px var(--accent);
+  }
+  :global(.place-pin) {
+    color: var(--accent);
+  }
+  :global(.place-pin svg) {
+    display: block;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+    transition: transform 0.12s ease;
+    transform-origin: bottom center;
+  }
+  /* Highlight: scale the inner <svg>, not .place-pin itself — Leaflet owns the
+     pin element's transform for positioning, so a transform there is ignored. */
+  :global(.place-pin.pin-active) {
+    color: var(--danger);
+    z-index: 1000 !important;
+  }
+  :global(.place-pin.pin-active svg) {
+    transform: scale(1.5);
+  }
+
+  /* Leaflet legibility with design tokens (esp. dark mode). */
+  :global(.leaflet-container) {
+    background: var(--surface-1);
+    font: inherit;
+  }
+  :global(.leaflet-popup-content-wrapper),
+  :global(.leaflet-popup-tip) {
+    background: var(--surface-2);
+    color: var(--text-primary);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+  :global(.leaflet-popup-content) {
+    margin: var(--space-2) var(--space-3);
+    font-size: 14px;
+  }
+  :global(.leaflet-popup-content a) {
+    color: var(--accent);
+    font-weight: 500;
+  }
+  :global(.leaflet-bar a),
+  :global(.leaflet-bar a:hover) {
+    background: var(--surface-2);
+    color: var(--text-primary);
+    border-color: var(--border);
+  }
+  :global(.leaflet-control-attribution) {
+    background: color-mix(in srgb, var(--surface-2) 80%, transparent);
+    color: var(--text-muted);
+  }
+  :global(.leaflet-control-attribution a) {
+    color: var(--accent);
+  }
+
+  /* Mobile: single column, toggle between list and map. */
+  @media (max-width: 760px) {
+    .explorer-root {
+      height: calc(100dvh - 120px);
+    }
+    .map-explorer {
+      grid-template-columns: 1fr;
+    }
+    .pane-map {
+      display: none;
+    }
+    .explorer-root.show-map .pane-list {
+      display: none;
+    }
+    .explorer-root.show-map .pane-map {
+      display: block;
+    }
+    .view-toggle {
+      display: inline-flex;
+    }
+  }
+</style>

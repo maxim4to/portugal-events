@@ -4,7 +4,6 @@ import PlacesExplorer from '../components/PlacesExplorer.astro';
 import { approvedPlaces, regions, allTags } from '../lib/data.ts';
 const hrefBase = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
-<Base title="Места — Португалия" description="Каталог мест Португалии: пляжи, замки, хайкинг, виды.">
-  <h1>Места</h1>
+<Base title="Места — Португалия" description="Каталог мест Португалии: пляжи, замки, хайкинг, виды." wide>
   <PlacesExplorer places={approvedPlaces} regions={regions} tags={allTags} hrefBase={hrefBase} />
 </Base>

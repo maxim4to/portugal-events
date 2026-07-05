@@ -7,202 +7,85 @@ interface Props {
 }
 const { regions, tags } = Astro.props;
 const typeEntries = Object.entries(TYPE_LABELS);
+const drivePresets = [
+  { value: 60, label: 'до 1 ч' },
+  { value: 120, label: 'до 2 ч' },
+  { value: 180, label: 'до 3 ч' },
+  { value: 240, label: 'любое' },
+];
 ---
 <div class="filter-bar">
-  <div class="row search-row">
-    <input
-      type="search"
-      class="search-input"
-      data-filter="query"
-      placeholder="Поиск по названию или региону"
-      aria-label="Поиск по названию или региону"
-    />
-  </div>
-
-  <div class="row chips-row" role="group" aria-label="Типы мест">
+  <div class="fgroup">
+    <span class="flabel">Тип</span>
     {typeEntries.map(([key, label]) => (
       <button type="button" class="chip" data-type={key} aria-pressed="false">{label}</button>
     ))}
   </div>
 
-  <div class="row controls-row">
-    <label class="control">
-      <span class="control-label">Регион</span>
-      <select class="select" data-filter="region" aria-label="Регион">
-        <option value="">Все регионы</option>
-        {regions.map((r) => (
-          <option value={r}>{r}</option>
-        ))}
-      </select>
-    </label>
+  <div class="fgroup">
+    <span class="flabel">Регион</span>
+    {regions.map((r) => (
+      <button type="button" class="chip" data-region={r} aria-pressed="false">{r}</button>
+    ))}
+  </div>
 
-    <label class="control range-control">
-      <span class="control-label">Время в пути</span>
-      <span class="range-wrap">
-        <input
-          type="range"
-          data-filter="maxDrive"
-          min="20"
-          max="240"
-          step="10"
-          value="240"
-          aria-label="Максимальное время в пути"
-        />
-        <span class="range-out" data-out="maxDrive">любое время</span>
-      </span>
-    </label>
+  <div class="fgroup">
+    <span class="flabel">Теги</span>
+    {tags.map((t) => (
+      <button type="button" class="chip" data-tag={t} aria-pressed="false">{t}</button>
+    ))}
+  </div>
 
-    <div class="control tags-control">
-      <span class="control-label">Теги</span>
-      <details class="tags-details">
-        <summary class="select summary" data-tags-summary>Любые</summary>
-        <div class="tags-menu">
-          {tags.map((t) => (
-            <label class="tag-item"><input type="checkbox" data-tag={t} /> {t}</label>
-          ))}
-        </div>
-      </details>
-    </div>
+  <div class="fgroup">
+    <span class="flabel">В пути</span>
+    {drivePresets.map((p) => (
+      <button
+        type="button"
+        class="chip"
+        data-drive={p.value}
+        aria-pressed={p.value === 240 ? 'true' : 'false'}
+      >{p.label}</button>
+    ))}
+  </div>
 
-    <label class="control" data-visited-control hidden>
-      <span class="control-label">Отметки</span>
-      <select class="select" data-filter="visited" aria-label="Посещённые места">
-        <option value="all">Все</option>
-        <option value="visited">Посещённые</option>
-        <option value="unvisited">Непосещённые</option>
-      </select>
-    </label>
-
-    <label class="control checkbox-control">
-      <span class="checkbox-line">
-        <input type="checkbox" data-filter="residency" aria-label="Бесплатно с ВНЖ" />
-        <span>Бесплатно с ВНЖ</span>
-      </span>
-    </label>
+  <div class="fgroup">
+    <button type="button" class="chip" data-residency aria-pressed="false">Бесплатно с ВНЖ</button>
+    <span class="visited-group" data-visited-control data-filter="visited" hidden>
+      <button type="button" class="chip" data-visited-opt="visited" aria-pressed="false">Посещённые</button>
+      <button type="button" class="chip" data-visited-opt="unvisited" aria-pressed="false">Непосещённые</button>
+    </span>
   </div>
 </div>
 
 <style>
   .filter-bar {
+    flex: 1 1 100%;
     display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-    margin-bottom: var(--space-4);
-  }
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
     align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-4);
   }
-  .search-input {
-    width: 100%;
-    max-width: 420px;
-    padding: var(--space-2) var(--space-3);
-    border: 0.5px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--surface-2);
-    color: var(--text-primary);
-    font: inherit;
-  }
-  .search-input::placeholder {
-    color: var(--text-muted);
-  }
-  .controls-row {
-    gap: var(--space-4);
-    align-items: flex-end;
-    row-gap: var(--space-3);
-  }
-  .control {
+  .fgroup {
     display: inline-flex;
-    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
     gap: var(--space-1);
   }
-  .control-label {
+  .flabel {
     font-size: 12px;
     color: var(--text-muted);
+    margin-right: var(--space-1);
   }
-  .select,
-  .summary {
-    height: 36px;
-    padding: 0 var(--space-3);
-    border: 0.5px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--surface-2);
-    color: var(--text-primary);
-    font: inherit;
-    cursor: pointer;
-  }
-  .summary {
+  .visited-group {
     display: inline-flex;
-    align-items: center;
-    list-style: none;
-    user-select: none;
+    gap: var(--space-1);
   }
-  .summary::-webkit-details-marker {
+  .visited-group[hidden] {
     display: none;
   }
-  .range-wrap {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    height: 36px;
-  }
-  .range-control input[type='range'] {
-    accent-color: var(--accent);
-    width: 160px;
-  }
-  .range-out {
-    font-size: 13px;
-    color: var(--text-secondary);
-    min-width: 92px;
-  }
-  .tags-details {
-    position: relative;
-  }
-  .tags-menu {
-    position: absolute;
-    z-index: 500;
-    margin-top: var(--space-1);
-    max-height: 260px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-1);
-    padding: var(--space-3);
-    border: 0.5px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--surface-2);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    min-width: 200px;
-  }
-  .tag-item {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    font-size: 14px;
-    color: var(--text-secondary);
-    cursor: pointer;
-  }
-  .tag-item input {
-    accent-color: var(--accent);
-  }
-  .checkbox-control {
-    /* Align the checkbox line to the same baseline as the other controls,
-       whose inputs sit 36px tall at the bottom of the flex-end row. */
-    justify-content: flex-end;
-  }
-  .checkbox-line {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    height: 36px;
-    font-size: 14px;
-    color: var(--text-secondary);
-    cursor: pointer;
-    white-space: nowrap;
-  }
-  .checkbox-line input {
-    accent-color: var(--accent);
+  /* Compact chips — base .chip styles come from base.css; tighten here. */
+  .filter-bar .chip {
+    padding: 3px var(--space-2);
+    font-size: 12px;
   }
 </style>

@@ -10,7 +10,7 @@ interface Props {
 }
 const { place, href } = Astro.props;
 ---
-<a href={href} class="card place-card">
+<a href={href} class="card place-card" data-card-link>
   <div class="cover">
     <PhotoGallery photos={place.photos} alt={place.name} variant="card" type={place.type} />
     <span class="badge-overlay">
