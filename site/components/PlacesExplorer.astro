@@ -86,6 +86,14 @@ const mapData = places.map((p) => ({
     text-align: center;
     color: var(--text-muted);
   }
+  /* The hidden attribute must always collapse these, even when a class
+     (e.g. .grid-cards { display: grid }) sets a display value that would
+     otherwise beat the low-specificity UA [hidden] { display: none } rule. */
+  [data-list][hidden],
+  [data-map-wrap][hidden],
+  [data-empty][hidden] {
+    display: none !important;
+  }
   #places-map {
     width: 100%;
     border: 0.5px solid var(--border);
