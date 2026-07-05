@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { PlaceSchema, EventSchema, SourceSchema, CitySchema } from './index.ts';
+import { PlaceSchema, EventSchema, SourceSchema, CitySchema, CollectionSchema } from './index.ts';
 
 const validPlace = {
   id: 'praia-da-ursa',
@@ -45,6 +45,43 @@ describe('PlaceSchema', () => {
   });
   test('rejects unknown status', () => {
     expect(PlaceSchema.safeParse({ ...validPlace, status: 'draft' }).success).toBe(false);
+  });
+  test('accepts an optional photo', () => {
+    const withPhoto = {
+      ...validPlace,
+      photo: {
+        url: 'https://upload.wikimedia.org/x.jpg',
+        author: 'Jane Doe',
+        license: 'CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:x.jpg',
+      },
+    };
+    expect(PlaceSchema.safeParse(withPhoto).success).toBe(true);
+  });
+  test('accepts a place with no photo', () => {
+    expect(PlaceSchema.safeParse(validPlace).success).toBe(true);
+  });
+  test('rejects a photo missing its license', () => {
+    const bad = { ...validPlace, photo: { url: 'https://x/y.jpg', author: 'A', sourceUrl: 'https://x' } };
+    expect(PlaceSchema.safeParse(bad).success).toBe(false);
+  });
+  test('accepts collections as slug array', () => {
+    expect(PlaceSchema.safeParse({ ...validPlace, collections: ['beaches-day-trip'] }).success).toBe(true);
+  });
+});
+
+describe('CollectionSchema', () => {
+  test('accepts a valid collection', () => {
+    const c = {
+      id: 'beaches-day-trip',
+      title: 'Пляжи на день из Лиссабона',
+      description: 'Океанские пляжи в пределах часа езды.',
+      placeIds: ['praia-da-ursa', 'praia-do-guincho'],
+    };
+    expect(CollectionSchema.safeParse(c).success).toBe(true);
+  });
+  test('rejects a non-slug id', () => {
+    expect(CollectionSchema.safeParse({ id: 'Beaches', title: 'x', description: 'y', placeIds: [] }).success).toBe(false);
   });
 });
 

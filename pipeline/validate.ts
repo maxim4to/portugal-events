@@ -2,7 +2,7 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { z } from 'zod';
-import { CitySchema, EventSchema, PlaceSchema, SourceSchema } from '../schema/index.ts';
+import { CitySchema, CollectionSchema, EventSchema, PlaceSchema, SourceSchema } from '../schema/index.ts';
 
 export function collectErrors(dataDir: string): string[] {
   const errors: string[] = [];
@@ -44,6 +44,15 @@ export function collectErrors(dataDir: string): string[] {
       const seenIn = placeIds.get(place.id);
       if (seenIn) errors.push(`${file}: duplicate place id "${place.id}" (also in ${seenIn})`);
       else placeIds.set(place.id, file);
+    }
+  }
+
+  const collections = check(join(dataDir, 'collections.json'), z.array(CollectionSchema));
+  for (const c of collections ?? []) {
+    for (const pid of c.placeIds) {
+      if (!placeIds.has(pid)) {
+        errors.push(`collections.json: collection "${c.id}" references unknown place "${pid}"`);
+      }
     }
   }
 

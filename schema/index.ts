@@ -14,6 +14,14 @@ export const PLACE_TYPES = [
   'other',
 ] as const;
 
+export const PhotoSchema = z.object({
+  url: z.string().url(),
+  author: z.string().min(1),
+  license: z.string().min(1),
+  sourceUrl: z.string().url(),
+});
+export type Photo = z.infer<typeof PhotoSchema>;
+
 export const PlaceSchema = z.object({
   id: slug,
   name: z.string().min(1),
@@ -29,6 +37,8 @@ export const PlaceSchema = z.object({
   bestSeason: z.string().min(1),
   tags: z.array(z.string()),
   links: z.array(z.object({ title: z.string().min(1), url: z.string().url() })),
+  photo: PhotoSchema.optional(),
+  collections: z.array(slug).default([]),
   status: z.enum(['candidate', 'approved']),
 });
 export type Place = z.infer<typeof PlaceSchema>;
@@ -79,3 +89,11 @@ export const CitySchema = z.object({
   lon: z.number().min(-180).max(180),
 });
 export type City = z.infer<typeof CitySchema>;
+
+export const CollectionSchema = z.object({
+  id: slug,
+  title: z.string().min(1),
+  description: z.string().min(1),
+  placeIds: z.array(slug),
+});
+export type Collection = z.infer<typeof CollectionSchema>;

@@ -60,4 +60,15 @@ describe('collectErrors', () => {
     const errors = collectErrors(dir);
     expect(errors.some((e) => e.includes('duplicate place id'))).toBe(true);
   });
+
+  test('reports a collection referencing an unknown place', () => {
+    const dir = makeDataDir();
+    writeFileSync(join(dir, 'places', 'oeste.json'), JSON.stringify([validPlace]));
+    writeFileSync(
+      join(dir, 'collections.json'),
+      JSON.stringify([{ id: 'x', title: 't', description: 'd', placeIds: ['does-not-exist'] }]),
+    );
+    const errors = collectErrors(dir);
+    expect(errors.some((e) => e.includes('unknown place'))).toBe(true);
+  });
 });
