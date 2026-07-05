@@ -82,5 +82,33 @@
     "description": "24-е издание фестиваля возвращается «к истокам» в сады Кришталского дворца в Порту со свободным входом. Два вечера концертов португальских артистов на закате над рекой Дору.",
     "sourceId": "websearch",
     "dedupeHash": "noites ritual|2026-09-25|porto"
+  },
+  {
+    "id": "festa-vindimas-palmela-2026",
+    "title": "Festa das Vindimas de Palmela 2026",
+    "type": "festival",
+    "dateStart": "2026-09-03",
+    "dateEnd": "2026-09-08",
+    "city": "Palmela",
+    "venue": "Centro histórico de Palmela",
+    "price": "вход свободный",
+    "url": "https://festadasvindimas.pt/",
+    "description": "61-е издание одного из главных праздников сбора винограда в Португалии: пешая давка винограда, дегустации вин региона Палмела, ремесленные ярмарки и фольклорные шествия.",
+    "sourceId": "websearch",
+    "dedupeHash": "festa das vindimas de palmela|2026-09-03|palmela"
+  },
+  {
+    "id": "feiras-novas-ponte-de-lima-2026",
+    "title": "Feiras Novas de Ponte de Lima 2026",
+    "type": "festival",
+    "dateStart": "2026-09-09",
+    "dateEnd": "2026-09-14",
+    "city": "Ponte de Lima",
+    "venue": "Arcos e centro histórico de Ponte de Lima",
+    "price": "вход свободный",
+    "url": "https://www.feirasnovas.pt/",
+    "description": "Одна из старейших и самых красочных ярмарок севера Португалии в самом старом городе страны: фейерверки, шествия, концерты и традиционная ярмарка на берегу реки Лима.",
+    "sourceId": "websearch",
+    "dedupeHash": "feiras novas de ponte de lima|2026-09-09|ponte de lima"
   }
 ]

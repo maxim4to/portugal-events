@@ -20,5 +20,12 @@
   { "name": "Matosinhos", "lat": 41.1826, "lon": -8.6890 },
   { "name": "Paredes de Coura", "lat": 41.9106, "lon": -8.5606 },
   { "name": "Seixal", "lat": 38.6403, "lon": -9.1030 },
-  { "name": "Caminha", "lat": 41.8752, "lon": -8.8386 }
+  { "name": "Caminha", "lat": 41.8752, "lon": -8.8386 },
+  { "name": "Peniche", "lat": 39.3558, "lon": -9.3811 },
+  { "name": "Viana do Castelo", "lat": 41.6932, "lon": -8.8329 },
+  { "name": "Ponte de Lima", "lat": 41.7672, "lon": -8.5839 },
+  { "name": "Silves", "lat": 37.1892, "lon": -8.4382 },
+  { "name": "Crato", "lat": 39.2879, "lon": -7.6461 },
+  { "name": "Vila Nova de Cerveira", "lat": 41.9331, "lon": -8.7453 },
+  { "name": "Palmela", "lat": 38.5683, "lon": -8.9013 }
 ]

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "edp-maratona-lisboa-2026",
+    "title": "EDP Maratona de Lisboa 2026",
+    "type": "sport",
+    "dateStart": "2026-10-10",
+    "dateEnd": "2026-10-11",
+    "city": "Lisboa",
+    "venue": "Старт в Кашкайше/Кошта-де-Капарика, финиш на Praça do Comércio",
+    "price": "от 70 €",
+    "url": "https://maratonaclubedeportugal.com/en/prova/edp-lisbon-marathon-2026/",
+    "description": "Главный марафонский уикенд Португалии: марафон в субботу 10 октября, а в воскресенье — Hyundai Meia Maratona и EDP 8K с финишем на площади Праса-ду-Комерсиу.",
+    "sourceId": "websearch",
+    "dedupeHash": "edp maratona de lisboa|2026-10-10|lisboa"
+  },
+  {
+    "id": "peregrinacao-fatima-outubro-2026",
+    "title": "Peregrinação Internacional de Outubro a Fátima",
+    "type": "other",
+    "dateStart": "2026-10-12",
+    "dateEnd": "2026-10-13",
+    "city": "Fátima",
+    "venue": "Santuário de Fátima",
+    "price": "вход свободный",
+    "url": "https://www.fatima.pt/pt/events",
+    "description": "Последняя большая международная годовщинная паломничество года в честь явления Богоматери детям-пастушкам: ночное шествие со свечами и международная месса утром 13 октября.",
+    "sourceId": "websearch",
+    "dedupeHash": "peregrinacao internacional de outubro a fátima|2026-10-12|fátima"
+  },
+  {
+    "id": "gt-world-challenge-portimao-2026",
+    "title": "GT World Challenge Europe — финал сезона в Портимане",
+    "type": "sport",
+    "dateStart": "2026-10-17",
+    "dateEnd": "2026-10-18",
+    "city": "Portimão",
+    "venue": "Autódromo Internacional do Algarve",
+    "price": "по билетам",
+    "url": "https://www.gt-world-challenge-europe.com/calendar",
+    "description": "Финал сезона GT World Challenge Europe Endurance Cup впервые с 2015 года возвращается на трассу Алгарве в Портимане: гонки GT3 на знаменитом волнистом треке.",
+    "sourceId": "websearch",
+    "dedupeHash": "gt world challenge europe portimão|2026-10-17|portimão"
+  },
+  {
+    "id": "meo-rip-curl-pro-portugal-2026",
+    "title": "MEO Rip Curl Pro Portugal 2026",
+    "type": "sport",
+    "dateStart": "2026-10-16",
+    "dateEnd": "2026-10-25",
+    "city": "Peniche",
+    "venue": "Praia de Supertubos",
+    "price": "вход свободный",
+    "url": "https://www.worldsurfleague.com/events/2026/ct/445/meo-rip-curl-pro-portugal/main",
+    "description": "Этап Championship Tour Мировой лиги серфинга на одной из самых мощных пляжных волн Европы — Супертубуш в Пенише. Бесплатный вход для зрителей прямо с пляжа.",
+    "sourceId": "websearch",
+    "dedupeHash": "meo rip curl pro portugal|2026-10-16|peniche"
+  }
+]
