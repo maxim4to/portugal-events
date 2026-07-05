@@ -195,6 +195,7 @@ const mapData = places.map((p) => ({
     const driveOut = root.querySelector<HTMLElement>('[data-out="maxDrive"]')!;
     const typeChips = Array.from(root.querySelectorAll<HTMLButtonElement>('.chip[data-type]'));
     const tagBoxes = Array.from(root.querySelectorAll<HTMLInputElement>('input[data-tag]'));
+    const tagsSummary = root.querySelector<HTMLElement>('[data-tags-summary]');
     const visitedSelect = root.querySelector<HTMLSelectElement>('[data-filter="visited"]');
 
     const PIN_HTML =
@@ -239,6 +240,9 @@ const mapData = places.map((p) => ({
     function render() {
       const state = readState();
       updateDriveOut(state.maxDrive);
+      if (tagsSummary) {
+        tagsSummary.textContent = state.tags.length === 0 ? 'Любые' : `${state.tags.length} выбрано`;
+      }
       const visibleIds = new Set<string>();
       let visible = 0;
       for (const el of cards) {

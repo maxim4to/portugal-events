@@ -158,7 +158,9 @@ img {
 
 .meta-row {
   display: flex;
-  gap: var(--space-4);
+  flex-wrap: wrap;
+  column-gap: var(--space-4);
+  row-gap: var(--space-1);
   font-size: 13px;
   color: var(--text-muted);
 }
