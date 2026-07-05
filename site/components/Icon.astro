@@ -2,7 +2,7 @@
 // Tiny inline-SVG icon set. Keep this under ~10 icons; prefer reuse.
 // All icons are 24x24 viewBox, stroke-based, currentColor.
 interface Props {
-  name: 'sun' | 'moon' | 'clock' | 'hourglass' | 'calendar';
+  name: 'sun' | 'moon' | 'clock' | 'hourglass' | 'calendar' | 'chevron-left' | 'chevron-right';
   size?: number;
   class?: string;
 }
@@ -47,4 +47,6 @@ const { name, size = 16, class: className } = Astro.props;
       <path d="M3 9h18M8 2v4M16 2v4" />
     </>
   )}
+  {name === 'chevron-left' && <path d="M15 18l-6-6 6-6" />}
+  {name === 'chevron-right' && <path d="M9 18l6-6-6-6" />}
 </svg>
