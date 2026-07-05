@@ -12,5 +12,26 @@
     "tags": ["история", "вино"],
     "links": [],
     "status": "approved"
+  },
+  {
+    "id": "praia-da-comporta",
+    "name": "Прайя-да-Компорта",
+    "type": "beach",
+    "region": "Алентежу",
+    "coords": { "lat": 38.3792, "lon": -8.7889 },
+    "description": "Бескрайний белый песчаный пляж среди рисовых полей и дюн, визитная карточка модного Компорта. Вода прохладная и открытая океану, атмосфера расслабленно-дизайнерская; на обед — рыбные рестораны в деревне.",
+    "driveMinutesFromLisbon": 90,
+    "visitDurationHours": 4,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["купание", "ресторан", "природа"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Praia_da_Comporta_-_Portugal_%2849800392663%29.jpg/1280px-Praia_da_Comporta_-_Portugal_%2849800392663%29.jpg",
+      "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+      "license": "CC BY-SA 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Comporta_-_Portugal_(49800392663).jpg"
+    },
+    "collections": [],
+    "status": "candidate"
   }
 ]

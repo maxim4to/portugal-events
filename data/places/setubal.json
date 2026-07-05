@@ -26,5 +26,236 @@
     "tags": ["закат", "бесплатно", "динозавры"],
     "links": [],
     "status": "approved"
+  },
+  {
+    "id": "portinho-da-arrabida",
+    "name": "Прайя-ду-Портинью-да-Аррабида",
+    "type": "beach",
+    "region": "Сетубал и Аррабида",
+    "coords": { "lat": 38.4830, "lon": -8.9770 },
+    "description": "Открыточный пляж с прозрачной бирюзовой водой у подножия зелёных склонов Аррабиды и белого форта. Летом доступ на машине ограничен — приезжайте рано утром или на автобусе от Сетубала.",
+    "driveMinutesFromLisbon": 55,
+    "visitDurationHours": 4,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["купание", "природа", "виды"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/PORTINHO_DA_ARRABIDA_2.jpg/1280px-PORTINHO_DA_ARRABIDA_2.jpg",
+      "author": "Pemanuelp",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:PORTINHO_DA_ARRABIDA_2.jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "serra-da-arrabida",
+    "name": "Природный парк Аррабида",
+    "type": "nature",
+    "region": "Сетубал и Аррабида",
+    "coords": { "lat": 38.4800, "lon": -9.0100 },
+    "description": "Горный хребет над океаном с ароматными зарослями, скрытыми пляжами и панорамной дорогой N379-1. Идеально для прогулок и поездки по гребню с остановками на смотровых; по пути стоит заглянуть в монастырь Аррабида.",
+    "driveMinutesFromLisbon": 50,
+    "visitDurationHours": 4,
+    "bestSeason": "апрель–октябрь",
+    "tags": ["природа", "виды", "фото"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Parque_Natural_da_Arr%C3%A1bida%2C_Set%C3%BAbal%2C_Portugal%2C_2012-05-11%2C_DD_02.JPG/1280px-Parque_Natural_da_Arr%C3%A1bida%2C_Set%C3%BAbal%2C_Portugal%2C_2012-05-11%2C_DD_02.JPG",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parque_Natural_da_Arrábida,_Setúbal,_Portugal,_2012-05-11,_DD_02.JPG"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "sesimbra",
+    "name": "Сезимбра",
+    "type": "town",
+    "region": "Сетубал и Аррабида",
+    "coords": { "lat": 38.4444, "lon": -9.1017 },
+    "description": "Живописный рыбацкий городок в бухте между Аррабидой и мысом Эшпишел, известный свежайшей рыбой и мавританским замком на холме. Отсюда можно доехать до скрытых пляжей вроде Рибейру-ду-Кавалу.",
+    "driveMinutesFromLisbon": 45,
+    "visitDurationHours": 4,
+    "bestSeason": "май–октябрь",
+    "tags": ["ресторан", "купание", "история"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Sesimbra_March_2015-2a.jpg/1280px-Sesimbra_March_2015-2a.jpg",
+      "author": "Alvesgaspar",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sesimbra_March_2015-2a.jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "setubal",
+    "name": "Сетубал",
+    "type": "town",
+    "region": "Сетубал и Аррабида",
+    "coords": { "lat": 38.5244, "lon": -8.8882 },
+    "description": "Портовый город в устье реки Саду, отправная точка к Аррабиде и наблюдению за дельфинами. Славится жареной каракатицей (choco frito) и живым рыбным рынком; сюда же ходит паром на песчаный полуостров Троя.",
+    "driveMinutesFromLisbon": 45,
+    "visitDurationHours": 3,
+    "bestSeason": "круглый год",
+    "tags": ["ресторан", "природа", "история"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Iglesia_de_San_Juli%C3%A1n%2C_Set%C3%BAbal%2C_Portugal%2C_2021-09-08%2C_DD_07-09_HDR.jpg/1280px-Iglesia_de_San_Juli%C3%A1n%2C_Set%C3%BAbal%2C_Portugal%2C_2021-09-08%2C_DD_07-09_HDR.jpg",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Iglesia_de_San_Julián,_Setúbal,_Portugal,_2021-09-08,_DD_07-09_HDR.jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "castelo-de-palmela",
+    "name": "Замок Палмела",
+    "type": "castle",
+    "region": "Сетубал и Аррабида",
+    "coords": { "lat": 38.5686, "lon": -8.9033 },
+    "description": "Средневековый замок ордена Сантьяго на вершине холма с круговой панорамой на равнину, Сетубал и Аррабиду. Внутри стен работает историческая поузада; в ясный день видно аж до Лиссабона.",
+    "driveMinutesFromLisbon": 40,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["история", "виды", "вино"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Castelo_de_Palmela_20.jpg/1280px-Castelo_de_Palmela_20.jpg",
+      "author": "GualdimG",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Palmela_20.jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "azeitao",
+    "name": "Азейтан",
+    "type": "town",
+    "region": "Сетубал и Аррабида",
+    "coords": { "lat": 38.5122, "lon": -9.0175 },
+    "description": "Уютные деревни у подножия Аррабиды, сердце винного региона Сетубал с мускателем и старинными винодельнями. Обязательно попробуйте местный овечий сыр и азулежу-мастерские; удобно совмещать с поездкой в горы.",
+    "driveMinutesFromLisbon": 40,
+    "visitDurationHours": 3,
+    "bestSeason": "круглый год",
+    "tags": ["вино", "ресторан", "история"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Pelourinho_de_Vila_Nogueira_de_Azeição_-_Portugal_%2833922519618%29.jpg/1280px-Pelourinho_de_Vila_Nogueira_de_Azeição_-_Portugal_%2833922519618%29.jpg",
+      "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+      "license": "CC BY-SA 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pelourinho_de_Vila_Nogueira_de_Azeição_-_Portugal_(33922519618).jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "cristo-rei",
+    "name": "Кришту-Рей",
+    "type": "viewpoint",
+    "region": "Сетубал и Аррабида",
+    "coords": { "lat": 38.6786, "lon": -9.1712 },
+    "description": "Гигантская статуя Христа на постаменте в Алмаде, с обзорной площадкой на 110-метровой высоте. Отсюда открывается лучший вид на мост 25 Апреля и весь Лиссабон на другом берегу Тежу; наверх поднимает лифт.",
+    "driveMinutesFromLisbon": 25,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["виды", "фото", "история"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Cristo_Rei%2C_Lisboa%2C_Portugal%2C_2012-05-12%2C_DD_02.JPG/1280px-Cristo_Rei%2C_Lisboa%2C_Portugal%2C_2012-05-12%2C_DD_02.JPG",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cristo_Rei,_Lisboa,_Portugal,_2012-05-12,_DD_02.JPG"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "costa-da-caparica",
+    "name": "Кошта-да-Капарика",
+    "type": "beach",
+    "region": "Сетубал и Аррабида",
+    "coords": { "lat": 38.6417, "lon": -9.2372 },
+    "description": "Длинная полоса песчаных пляжей сразу за мостом от Лиссабона — самый близкий океанский пляж к столице. Летом вдоль дюн ходит мини-поезд к более диким южным участкам; есть кафе, зонты и хороший сёрф.",
+    "driveMinutesFromLisbon": 25,
+    "visitDurationHours": 4,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["купание", "сёрфинг", "с детьми"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Caparica_December_2011-1a.jpg/1280px-Caparica_December_2011-1a.jpg",
+      "author": "Alvesgaspar",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caparica_December_2011-1a.jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "praia-do-meco",
+    "name": "Прайя-ду-Меку",
+    "type": "beach",
+    "region": "Сетубал и Аррабида",
+    "coords": { "lat": 38.4553, "lon": -9.1858 },
+    "description": "Широкий дикий пляж с золотыми скалами южнее Лагоа-де-Албуфейра, популярный у любителей заката и нудистов на дальнем конце. Инфраструктуры мало, зато простор и мощный океан.",
+    "driveMinutesFromLisbon": 40,
+    "visitDurationHours": 3,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["закат", "купание", "бесплатно"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Praia_do_Meco_I.jpg/1280px-Praia_do_Meco_I.jpg",
+      "author": "F nando",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Meco_I.jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "lagoa-de-albufeira",
+    "name": "Лагоа-де-Албуфейра",
+    "type": "lake",
+    "region": "Сетубал и Аррабида",
+    "coords": { "lat": 38.4867, "lon": -9.1750 },
+    "description": "Прибрежная лагуна, отделённая от океана песчаной косой: с одной стороны спокойная тёплая вода для детей и кайтсёрфинга, с другой — открытый пляж. Отличное место на целый день с семьёй.",
+    "driveMinutesFromLisbon": 40,
+    "visitDurationHours": 4,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["купание", "с детьми", "природа"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Lagoa_Albufeira_March_2015-1.jpg/1280px-Lagoa_Albufeira_March_2015-1.jpg",
+      "author": "Alvesgaspar",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lagoa_Albufeira_March_2015-1.jpg"
+    },
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "convento-da-arrabida",
+    "name": "Монастырь Аррабида",
+    "type": "other",
+    "region": "Сетубал и Аррабида",
+    "coords": { "lat": 38.4831, "lon": -8.9908 },
+    "description": "Белый францисканский монастырь XVI века, живописно раскинувшийся по зелёному склону Аррабиды с видом на океан. Посещение только с экскурсией от фонда Оривентеш; место тихое и созерцательное.",
+    "driveMinutesFromLisbon": 50,
+    "visitDurationHours": 1.5,
+    "bestSeason": "апрель–октябрь",
+    "tags": ["история", "виды", "природа"],
+    "links": [],
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Convento_da_Arrabida.jpg/1280px-Convento_da_Arrabida.jpg",
+      "author": "Silvia Sequeira",
+      "license": "CC BY 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Convento_da_Arrabida.jpg"
+    },
+    "collections": [],
+    "status": "candidate"
   }
 ]
