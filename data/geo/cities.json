@@ -8,5 +8,17 @@
   { "name": "Óbidos", "lat": 39.3606, "lon": -9.1575 },
   { "name": "Nazaré", "lat": 39.6012, "lon": -9.0700 },
   { "name": "Coimbra", "lat": 40.2033, "lon": -8.4103 },
-  { "name": "Faro", "lat": 37.0194, "lon": -7.9322 }
+  { "name": "Faro", "lat": 37.0194, "lon": -7.9322 },
+  { "name": "Portimão", "lat": 37.1366, "lon": -8.5379 },
+  { "name": "Sines", "lat": 37.9560, "lon": -8.8697 },
+  { "name": "Viseu", "lat": 40.6566, "lon": -7.9122 },
+  { "name": "Tomar", "lat": 39.6033, "lon": -8.4103 },
+  { "name": "Vagos", "lat": 40.5578, "lon": -8.6817 },
+  { "name": "Reguengos de Monsaraz", "lat": 38.4256, "lon": -7.5361 },
+  { "name": "Olhão", "lat": 37.0286, "lon": -7.8411 },
+  { "name": "Idanha-a-Nova", "lat": 39.9200, "lon": -7.2400 },
+  { "name": "Matosinhos", "lat": 41.1826, "lon": -8.6890 },
+  { "name": "Paredes de Coura", "lat": 41.9106, "lon": -8.5606 },
+  { "name": "Seixal", "lat": 38.6403, "lon": -9.1030 },
+  { "name": "Caminha", "lat": 41.8752, "lon": -8.8386 }
 ]

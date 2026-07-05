@@ -1,0 +1,30 @@
+[
+  {
+    "id": "serralves-joan-miro-2026",
+    "title": "Elective Affinities: Joan Miró and Contemporary Art",
+    "type": "exhibition",
+    "dateStart": "2026-02-13",
+    "dateEnd": "2027-01-10",
+    "city": "Porto",
+    "venue": "Casa de Serralves",
+    "price": "от 12 €",
+    "url": "https://www.serralves.pt/en/ciclo-serralves/2602-joan-miro/",
+    "description": "Диалог живописи Жоана Миро 1960–70-х с современным искусством из коллекции Серралвеша: 24 работы Миро и 53 произведения современных авторов на двух этажах Casa de Serralves.",
+    "sourceId": "websearch",
+    "dedupeHash": "elective affinities joan miró|2026-02-13|porto"
+  },
+  {
+    "id": "maat-turn-around-edp-2026",
+    "title": "Turn around. A Look at the EDP Foundation Art Collection",
+    "type": "exhibition",
+    "dateStart": "2026-02-11",
+    "dateEnd": "2027-01-31",
+    "city": "Lisboa",
+    "venue": "MAAT Central",
+    "price": "по билетам",
+    "url": "https://maat.pt/en/event/turn-around-look-edp-foundation-art-collection",
+    "description": "Крупнейший показ коллекции Fundação EDP к 10-летию MAAT: около 90 работ 58 португальских художников с 1960-х до наших дней в историческом здании электростанции.",
+    "sourceId": "websearch",
+    "dedupeHash": "turn around edp foundation|2026-02-11|lisboa"
+  }
+]
