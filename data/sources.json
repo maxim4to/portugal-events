@@ -1,10 +1,66 @@
 [
   {
+    "id": "viralagenda",
+    "name": "Viral Agenda (агрегатор событий Португалии)",
+    "type": "website",
+    "url": "https://www.viralagenda.com/pt",
+    "hint": "выбирай город (Lisboa, Porto, Faro, Coimbra, Évora), смотри концерты, выставки, фестивали по датам",
+    "enabled": true
+  },
+  {
     "id": "agenda-lx",
     "name": "Agenda LX (афиша Лиссабона)",
     "type": "website",
     "url": "https://www.agendalx.pt",
-    "hint": "события на главной и в разделах по датам",
-    "enabled": false
+    "hint": "события Лиссабона: музыка, выставки, ярмарки; есть разделы по датам",
+    "enabled": true
+  },
+  {
+    "id": "timeout-lisboa",
+    "name": "Time Out Lisboa",
+    "type": "website",
+    "url": "https://www.timeout.pt/lisboa/pt/coisas-para-fazer",
+    "hint": "редакционные подборки «что делать в этом месяце/на выходных» по Лиссабону",
+    "enabled": true
+  },
+  {
+    "id": "lisboa-secreta",
+    "name": "Lisboa Secreta",
+    "type": "website",
+    "url": "https://lisboasecreta.co/agenda/",
+    "hint": "анонсы концертов, фестивалей, выставок и сезонных событий в Лиссабоне",
+    "enabled": true
+  },
+  {
+    "id": "visitportugal-eventos",
+    "name": "Visit Portugal — события",
+    "type": "website",
+    "url": "https://www.visitportugal.com/pt-pt/eventos",
+    "hint": "официальный туристический портал: крупные фестивали и события по всей стране",
+    "enabled": true
+  },
+  {
+    "id": "bol",
+    "name": "BOL — Bilheteira Online",
+    "type": "website",
+    "url": "https://www.bol.pt",
+    "hint": "билетный агрегатор: концерты, спектакли, фестивали по городам и датам",
+    "enabled": true
+  },
+  {
+    "id": "ticketline",
+    "name": "Ticketline",
+    "type": "website",
+    "url": "https://ticketline.sapo.pt",
+    "hint": "билетная платформа: крупные концерты и туры по Португалии",
+    "enabled": true
+  },
+  {
+    "id": "songkick-lisbon",
+    "name": "Songkick — Лиссабон",
+    "type": "website",
+    "url": "https://www.songkick.com/metro-areas/31428-portugal-lisbon",
+    "hint": "концерты по датам в Лиссабоне и окрестностях; есть страницы других городов Португалии",
+    "enabled": true
   }
 ]
