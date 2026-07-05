@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import { upcomingEvents } from '../lib/data.ts';
+---
+<Base title="Афиша — Португалия">
+  <h1>Афиша</h1>
+  {upcomingEvents.length === 0 ? (
+    <p>Будущих событий нет.</p>
+  ) : (
+    <ul>
+      {upcomingEvents.map((e) => (
+        <li>
+          {e.dateStart}{e.dateEnd !== e.dateStart ? ` – ${e.dateEnd}` : ''}:
+          <a href={e.url}>{e.title}</a> — {e.city}, {e.venue}, {e.price}
+        </li>
+      ))}
+    </ul>
+  )}
+</Base>

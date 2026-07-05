@@ -1,7 +1,38 @@
 ---
+import Base from '../layouts/Base.astro';
+import { approvedPlaces, upcomingEvents } from '../lib/data.ts';
+import { nextWeekend, overlapsDay } from '../lib/dates.ts';
+
+const { sat, sun } = nextWeekend(new Date());
+const weekendEvents = upcomingEvents.filter(
+  (e) => overlapsDay(e, sat) || overlapsDay(e, sun),
+);
+const ideas = approvedPlaces.slice(0, 4);
 ---
-<html lang="ru">
-  <body>
-    <h1>Португалия: места и события</h1>
-  </body>
-</html>
+<Base title="Выходные в Португалии">
+  <h1>Выходные {sat} — {sun}</h1>
+
+  <h2>События</h2>
+  {weekendEvents.length === 0 ? (
+    <p>На эти выходные событий пока нет.</p>
+  ) : (
+    <ul>
+      {weekendEvents.map((e) => (
+        <li>
+          <a href={e.url}>{e.title}</a> — {e.city}, {e.venue}
+          {e.dateStart !== e.dateEnd ? ` (${e.dateStart} – ${e.dateEnd})` : ''}, {e.price}
+        </li>
+      ))}
+    </ul>
+  )}
+
+  <h2>Куда поехать</h2>
+  <ul>
+    {ideas.map((p) => (
+      <li>
+        <strong>{p.name}</strong> ({p.region}) — {p.driveMinutesFromLisbon} мин на машине.
+        {p.description}
+      </li>
+    ))}
+  </ul>
+</Base>

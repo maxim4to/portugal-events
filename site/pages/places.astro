@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import { approvedPlaces } from '../lib/data.ts';
+import type { Place } from '../../schema/index.ts';
+
+const byRegion = new Map<string, Place[]>();
+for (const p of approvedPlaces) {
+  const list = byRegion.get(p.region) ?? [];
+  list.push(p);
+  byRegion.set(p.region, list);
+}
+---
+<Base title="Места — Португалия">
+  <h1>Места</h1>
+  {[...byRegion.entries()].map(([region, places]) => (
+    <section>
+      <h2>{region}</h2>
+      <ul>
+        {places.map((p) => (
+          <li>
+            <strong>{p.name}</strong> — {p.driveMinutesFromLisbon} мин, ~{p.visitDurationHours} ч на месте.
+            {p.description} <em>Сезон: {p.bestSeason}.</em>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</Base>
