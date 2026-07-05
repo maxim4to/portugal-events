@@ -1,0 +1,30 @@
+[
+  {
+    "id": "obidos",
+    "name": "Обидуш",
+    "type": "town",
+    "region": "Оэште",
+    "coords": { "lat": 39.3606, "lon": -9.1575 },
+    "description": "Средневековый городок внутри крепостных стен, по которым можно пройти по кругу. Джинжинья в шоколадной рюмке обязательна.",
+    "driveMinutesFromLisbon": 65,
+    "visitDurationHours": 3,
+    "bestSeason": "круглый год",
+    "tags": ["история", "с детьми"],
+    "links": [],
+    "status": "approved"
+  },
+  {
+    "id": "nazare-farol",
+    "name": "Назаре: маяк и гигантские волны",
+    "type": "viewpoint",
+    "region": "Оэште",
+    "coords": { "lat": 39.6045, "lon": -9.0852 },
+    "description": "Форт Сан-Мигел и смотровая над каньоном Назаре. Зимой здесь катаются на волнах до 30 метров.",
+    "driveMinutesFromLisbon": 90,
+    "visitDurationHours": 3,
+    "bestSeason": "октябрь–март (большие волны)",
+    "tags": ["сёрфинг", "виды"],
+    "links": [],
+    "status": "approved"
+  }
+]

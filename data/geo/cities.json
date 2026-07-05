@@ -1,0 +1,12 @@
+[
+  { "name": "Lisboa", "lat": 38.7223, "lon": -9.1393 },
+  { "name": "Porto", "lat": 41.1579, "lon": -8.6291 },
+  { "name": "Sintra", "lat": 38.8029, "lon": -9.3817 },
+  { "name": "Cascais", "lat": 38.6979, "lon": -9.4215 },
+  { "name": "Setúbal", "lat": 38.5244, "lon": -8.8882 },
+  { "name": "Évora", "lat": 38.5714, "lon": -7.9135 },
+  { "name": "Óbidos", "lat": 39.3606, "lon": -9.1575 },
+  { "name": "Nazaré", "lat": 39.6012, "lon": -9.0700 },
+  { "name": "Coimbra", "lat": 40.2033, "lon": -8.4103 },
+  { "name": "Faro", "lat": 37.0194, "lon": -7.9322 }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "praia-da-ursa",
+    "name": "Прайя-да-Урса",
+    "type": "beach",
+    "region": "Лиссабон и Синтра",
+    "coords": { "lat": 38.7954, "lon": -9.4826 },
+    "description": "Дикий пляж со скалами-останцами рядом с мысом Рока. Спуск крутой, зато людей мало даже летом.",
+    "driveMinutesFromLisbon": 45,
+    "visitDurationHours": 3,
+    "bestSeason": "май–октябрь",
+    "tags": ["закат", "бесплатно", "дикая природа"],
+    "links": [],
+    "status": "approved"
+  },
+  {
+    "id": "cabo-da-roca",
+    "name": "Мыс Рока",
+    "type": "viewpoint",
+    "region": "Лиссабон и Синтра",
+    "coords": { "lat": 38.7803, "lon": -9.4989 },
+    "description": "Самая западная точка континентальной Европы. Маяк, обрывы, океан до горизонта.",
+    "driveMinutesFromLisbon": 40,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": ["закат", "бесплатно"],
+    "links": [],
+    "status": "approved"
+  },
+  {
+    "id": "castelo-dos-mouros",
+    "name": "Замок мавров",
+    "type": "castle",
+    "region": "Лиссабон и Синтра",
+    "coords": { "lat": 38.7926, "lon": -9.3893 },
+    "description": "Крепостная стена IX века на гребне гор Синтры с видами на океан и дворец Пена.",
+    "driveMinutesFromLisbon": 35,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": ["история", "виды"],
+    "links": [{ "title": "Билеты", "url": "https://www.parquesdesintra.pt" }],
+    "status": "approved"
+  },
+  {
+    "id": "praia-do-guincho",
+    "name": "Прайя-ду-Гинчу",
+    "type": "beach",
+    "region": "Лиссабон и Синтра",
+    "coords": { "lat": 38.7330, "lon": -9.4730 },
+    "description": "Широкий океанский пляж между Кашкайшем и Синтрой, столица виндсёрфинга. Ветрено почти всегда.",
+    "driveMinutesFromLisbon": 35,
+    "visitDurationHours": 4,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["сёрфинг", "бесплатно"],
+    "links": [],
+    "status": "approved"
+  },
+  {
+    "id": "azenhas-do-mar",
+    "name": "Азеньяш-ду-Мар",
+    "type": "town",
+    "region": "Лиссабон и Синтра",
+    "coords": { "lat": 38.8376, "lon": -9.4610 },
+    "description": "Белая деревня, стекающая по скале к океану. Смотровая, природный бассейн и рыбный ресторан у воды.",
+    "driveMinutesFromLisbon": 45,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": ["фото", "ресторан"],
+    "links": [],
+    "status": "approved"
+  }
+]

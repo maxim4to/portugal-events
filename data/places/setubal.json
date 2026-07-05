@@ -1,0 +1,30 @@
+[
+  {
+    "id": "praia-dos-galapinhos",
+    "name": "Прайя-душ-Галапиньюш",
+    "type": "beach",
+    "region": "Сетубал и Аррабида",
+    "coords": { "lat": 38.4870, "lon": -8.9930 },
+    "description": "Бирюзовая вода и сосны парка Аррабида. Летом доступ на машине ограничен — ехать рано утром или на автобусе от Сетубала.",
+    "driveMinutesFromLisbon": 50,
+    "visitDurationHours": 4,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["купание", "природа"],
+    "links": [],
+    "status": "approved"
+  },
+  {
+    "id": "cabo-espichel",
+    "name": "Мыс Эшпишел",
+    "type": "viewpoint",
+    "region": "Сетубал и Аррабида",
+    "coords": { "lat": 38.4147, "lon": -9.2158 },
+    "description": "Пустынный мыс с маяком, заброшенным святилищем и следами динозавров на скалах.",
+    "driveMinutesFromLisbon": 50,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": ["закат", "бесплатно", "динозавры"],
+    "links": [],
+    "status": "approved"
+  }
+]

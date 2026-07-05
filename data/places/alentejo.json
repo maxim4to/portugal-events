@@ -1,0 +1,16 @@
+[
+  {
+    "id": "evora",
+    "name": "Эвора",
+    "type": "town",
+    "region": "Алентежу",
+    "coords": { "lat": 38.5714, "lon": -7.9135 },
+    "description": "Римский храм, капелла из костей и целый город-музей под охраной ЮНЕСКО. Хорошо совмещается с винодельнями по дороге.",
+    "driveMinutesFromLisbon": 90,
+    "visitDurationHours": 5,
+    "bestSeason": "сентябрь–июнь (летом жара)",
+    "tags": ["история", "вино"],
+    "links": [],
+    "status": "approved"
+  }
+]

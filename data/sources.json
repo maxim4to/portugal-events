@@ -1,0 +1,10 @@
+[
+  {
+    "id": "agenda-lx",
+    "name": "Agenda LX (афиша Лиссабона)",
+    "type": "website",
+    "url": "https://www.agendalx.pt",
+    "hint": "события на главной и в разделах по датам",
+    "enabled": false
+  }
+]
