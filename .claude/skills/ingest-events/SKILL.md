@@ -48,6 +48,11 @@ verify it, skip it.
 - `venue` — the place/hall (e.g. "Passeio Marítimo de Algés", "Altice Arena").
 - `price` — free text (e.g. "от 45 €", "бесплатно", "по билетам"); empty string if unknown.
 - `url` — a real link to the event or its tickets (validate it looks right).
+- `image` — optional absolute https image URL. When writing an event, try to
+  capture a representative image: `WebFetch` the event's page (its `url`) and read
+  the `og:image` (or `twitter:image`) meta tag; store that absolute URL in `image`.
+  Skip `image` if none is found or it isn't an absolute https URL. Prefer images on
+  stable CDNs; never fabricate a URL.
 - `description` — 1–2 sentences in Russian: what it is and why it's worth going.
 - `sourceId` — the `id` of the source you found it through (or `"websearch"` for
   a general search find, or `"manual"` if hand-added).

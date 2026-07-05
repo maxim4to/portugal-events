@@ -66,6 +66,7 @@ export const EventSchema = z
     description: z.string(),
     sourceId: z.string().min(1),
     dedupeHash: z.string().min(1),
+    image: z.string().url().optional(),
   })
   .refine((e) => e.dateEnd >= e.dateStart, {
     message: 'dateEnd must be on or after dateStart',

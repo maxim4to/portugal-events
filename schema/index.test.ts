@@ -109,6 +109,16 @@ describe('EventSchema', () => {
       EventSchema.safeParse({ ...validEvent, dateStart: '10.07.2026' }).success,
     ).toBe(false);
   });
+  test('accepts an event with an image url', () => {
+    expect(
+      EventSchema.safeParse({ ...validEvent, image: 'https://example.com/x.jpg' }).success,
+    ).toBe(true);
+  });
+  test('rejects a non-url image', () => {
+    expect(
+      EventSchema.safeParse({ ...validEvent, image: 'not a url' }).success,
+    ).toBe(false);
+  });
 });
 
 describe('SourceSchema', () => {
