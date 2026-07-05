@@ -13,7 +13,7 @@
     "links": [{ "title": "Официальный сайт", "url": "https://lisboa.kidzania.com/pt-pt" }],
     "photos": [],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "badoca-safari-park",
@@ -36,7 +36,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "zoomarine-algarve",
@@ -59,7 +59,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "aquashow-park",
@@ -82,7 +82,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "slide-and-splash",
@@ -105,7 +105,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "aqualand-algarve",
@@ -128,7 +128,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "kartodromo-palmela",
@@ -144,7 +144,7 @@
     "links": [{ "title": "Официальный сайт", "url": "https://www.kip.pt/en" }],
     "photos": [],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "kartodromo-leiria",
@@ -160,7 +160,7 @@
     "links": [{ "title": "NDML", "url": "https://www.ndml.pt/" }],
     "photos": [],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "kartodromo-baltar",
@@ -183,7 +183,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "teleferico-parque-das-nacoes",
@@ -206,7 +206,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "teleferico-de-gaia",
@@ -229,7 +229,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "termas-sao-pedro-do-sul",
@@ -252,7 +252,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "termas-de-monfortinho",
@@ -275,7 +275,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "termas-de-chaves",
@@ -298,7 +298,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "termas-do-luso",
@@ -321,7 +321,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "jardim-botanico-de-lisboa",
@@ -344,7 +344,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "parque-eduardo-vii",
@@ -367,7 +367,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "jardim-botanico-do-porto",
@@ -390,7 +390,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "quinta-das-lagrimas",
@@ -413,7 +413,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "parque-florestal-de-monsanto",
@@ -436,6 +436,6 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   }
 ]

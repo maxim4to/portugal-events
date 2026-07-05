@@ -20,7 +20,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "anta-capela-livramento-escoural",
@@ -43,7 +43,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "sao-pedro-do-corval",
@@ -59,7 +59,7 @@
     "links": [{ "title": "Roteiro do Alqueva", "url": "https://www.roteirodoalqueva.com/poi/olaria-de-sao-pedro-do-corval" }],
     "photos": [],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "cacela-velha",
@@ -82,7 +82,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "aldeia-da-pedralva",
@@ -105,7 +105,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "fontes-de-alte",
@@ -128,7 +128,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "querenca",
@@ -151,7 +151,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "praia-dos-arrifes",
@@ -174,7 +174,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "praia-do-carvalho",
@@ -197,7 +197,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "pedra-do-urso-estrela",
@@ -220,7 +220,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "ponte-de-trajano-chaves",
@@ -243,7 +243,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "capela-senhora-da-lapa-vieira-do-minho",
@@ -266,7 +266,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "cais-palafitico-carrasqueira",
@@ -289,7 +289,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "escaroupim",
@@ -312,7 +312,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "miradouro-penedo-durao",
@@ -335,7 +335,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "casa-do-penedo-fafe",
@@ -358,7 +358,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "moinho-de-vento-odeceixe",
@@ -381,7 +381,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "idanha-a-velha",
@@ -404,7 +404,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "belmonte-judiaria",
@@ -427,7 +427,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "miradouro-alto-do-trevim",
@@ -450,7 +450,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "rocha-da-pena",
@@ -473,7 +473,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "arte-rupestre-penascosa-foz-coa",
@@ -496,7 +496,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "pegadas-dinossauros-pedra-da-mua",
@@ -519,7 +519,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "miradouro-sao-leonardo-galafura",
@@ -542,7 +542,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "linhares-da-beira",
@@ -565,7 +565,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "sabugueiro",
@@ -588,7 +588,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "quinta-do-cardo-figueira-castelo-rodrigo",
@@ -604,6 +604,6 @@
     "links": [{ "title": "Quinta do Cardo", "url": "https://www.portugalvineyards.com/en/brand/487_quinta-do-cardo" }],
     "photos": [],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   }
 ]

@@ -20,7 +20,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate",
+    "status": "approved",
     "freeWithResidency": true
   },
   {
@@ -44,7 +44,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate",
+    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -68,7 +68,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate",
+    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -92,7 +92,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate",
+    "status": "approved",
     "freeWithResidency": true
   },
   {
@@ -116,7 +116,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate",
+    "status": "approved",
     "freeWithResidency": true
   },
   {
@@ -140,7 +140,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate",
+    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -164,7 +164,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate",
+    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -188,7 +188,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate",
+    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -212,7 +212,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate",
+    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -236,7 +236,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate",
+    "status": "approved",
     "freeWithResidency": true
   },
   {
@@ -260,7 +260,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate",
+    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -284,7 +284,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate",
+    "status": "approved",
     "freeWithResidency": true
   },
   {
@@ -308,7 +308,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate",
+    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -332,7 +332,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate",
+    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -349,7 +349,7 @@
     "links": [{ "title": "Официальный сайт", "url": "https://www.museudocarroelectrico.pt/" }],
     "photos": [],
     "collections": [],
-    "status": "candidate",
+    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -373,7 +373,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate",
+    "status": "approved",
     "freeWithResidency": true
   },
   {
@@ -397,7 +397,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate",
+    "status": "approved",
     "freeWithResidency": true
   },
   {
@@ -421,7 +421,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate",
+    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -445,7 +445,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate",
+    "status": "approved",
     "freeWithResidency": true
   },
   {
@@ -469,7 +469,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate",
+    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -486,7 +486,7 @@
     "links": [{ "title": "Официальный сайт", "url": "https://museu-sbras.com/" }],
     "photos": [],
     "collections": [],
-    "status": "candidate",
+    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -503,7 +503,7 @@
     "links": [{ "title": "Официальный сайт", "url": "https://www.museudeportimao.pt/" }],
     "photos": [],
     "collections": [],
-    "status": "candidate",
+    "status": "approved",
     "freeWithResidency": false
   }
 ]

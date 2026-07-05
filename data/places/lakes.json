@@ -22,7 +22,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "barragem-de-castelo-de-bode",
@@ -47,7 +47,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "barragem-da-aguieira",
@@ -72,7 +72,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "lagoa-comprida-serra-da-estrela",
@@ -97,7 +97,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "pateira-de-fermentelos",
@@ -122,7 +122,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "barragem-do-alvito",
@@ -147,7 +147,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "barragem-de-santa-clara",
@@ -164,7 +164,7 @@
       { "title": "Praia fluvial de Santa Clara — Visit Portugal", "url": "https://www.visitportugal.com/en/content/praia-fluvial-de-santa-clara" }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "barragem-da-bravura",
@@ -189,7 +189,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "barragem-do-cabril",
@@ -214,7 +214,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "barragem-de-montargil",
@@ -239,7 +239,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "lagoas-de-bertiandos",
@@ -264,7 +264,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "albufeira-do-ermal",
@@ -289,7 +289,7 @@
       }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   },
   {
     "id": "praia-fluvial-lapa-dos-dinheiros",
@@ -306,6 +306,6 @@
       { "title": "Praia Fluvial da Lapa dos Dinheiros — Visit Seia", "url": "https://visitseia.pt/praias/praia-1/" }
     ],
     "collections": [],
-    "status": "candidate"
+    "status": "approved"
   }
 ]
