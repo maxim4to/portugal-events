@@ -1,0 +1,609 @@
+[
+  {
+    "id": "capela-do-calvario-ferreira",
+    "name": "Капела ду Калвариу",
+    "type": "other",
+    "region": "Алентежу",
+    "coords": { "lat": 38.0546, "lon": -8.1173 },
+    "description": "Возможно, самая странная часовня Португалии: маленькое белое цилиндрическое здание с жёлтой полосой и десятками необработанных гранитных камней, вросших в стены. Причина такого декора точно не известна — эта загадка и делает её местной достопримечательностью. Загляните на пять минут по дороге через Ферейра-ду-Алентежу.",
+    "driveMinutesFromLisbon": 130,
+    "visitDurationHours": 0.5,
+    "bestSeason": "круглый год",
+    "tags": ["история", "бесплатно", "фото"],
+    "links": [{ "title": "Wikipedia", "url": "https://pt.wikipedia.org/wiki/Capela_do_Calv%C3%A1rio_(Ferreira_do_Alentejo)" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Capela-calvario-ferreira-alentejo.jpg/1280px-Capela-calvario-ferreira-alentejo.jpg",
+        "author": "Garsd",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Capela-calvario-ferreira-alentejo.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "anta-capela-livramento-escoural",
+    "name": "Дольмен-часовня Носса-Сеньора-ду-Ливраменту",
+    "type": "other",
+    "region": "Алентежу",
+    "coords": { "lat": 38.5246, "lon": -8.1295 },
+    "description": "Мегалитический дольмен возрастом 5-6 тысяч лет, который в XVII веке превратили в христианскую часовню, просто побелив стены и оставив опорные камни на виду. Внутри — статуя Богоматери среди доисторических плит, редкое сочетание эпох в одном маленьком здании. Находится у деревни Сан-Бриссуш рядом с Сантьягу-ду-Эшкорал.",
+    "driveMinutesFromLisbon": 110,
+    "visitDurationHours": 0.5,
+    "bestSeason": "круглый год",
+    "tags": ["история", "бесплатно", "фото"],
+    "links": [{ "title": "Junta de Freguesia", "url": "https://www.jf-santiagodoescoural.pt/roteiro-arqueologico/capela-de-nossa-senhora-do-livramento" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Anta_capela_de_S%C3%A3o_Brissos1357.jpg/1280px-Anta_capela_de_S%C3%A3o_Brissos1357.jpg",
+        "author": "João Carvalho",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anta_capela_de_São_Brissos1357.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "sao-pedro-do-corval",
+    "name": "Сан-Педру-ду-Корвал",
+    "type": "other",
+    "region": "Алентежу",
+    "coords": { "lat": 38.4467, "lon": -7.4647 },
+    "description": "Деревня с наибольшей концентрацией гончарных мастерских в Португалии — больше двадцати печей и лавок на несколько улиц. Можно зайти прямо в мастерскую и посмотреть, как расписывают традиционную алентежскую керамику, а заодно купить что-то у самого гончара. Рядом — интерпретационный центр Casa do Barro.",
+    "driveMinutesFromLisbon": 145,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["история", "бесплатно"],
+    "links": [{ "title": "Roteiro do Alqueva", "url": "https://www.roteirodoalqueva.com/poi/olaria-de-sao-pedro-do-corval" }],
+    "photos": [],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "cacela-velha",
+    "name": "Касела-Велья",
+    "type": "town",
+    "region": "Алгарве",
+    "coords": { "lat": 37.1529, "lon": -7.5427 },
+    "description": "Крошечная деревушка на обрыве над лагуной Риа-Формоза — всего десяток беленых домиков, старая крепость и церковь, без единого отеля или сувенирной толпы. Вид на песчаную косу и лагуну отсюда один из лучших в восточном Алгарве, особенно на закате. К пляжу внизу можно дойти вброд при отливе или переправиться на лодке.",
+    "driveMinutesFromLisbon": 210,
+    "visitDurationHours": 1,
+    "bestSeason": "апрель-октябрь",
+    "tags": ["закат", "виды", "история"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Cacela_Velha_Church_R01.jpg/1280px-Cacela_Velha_Church_R01.jpg",
+        "author": "Marc Ryckaert",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cacela_Velha_Church_R01.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "aldeia-da-pedralva",
+    "name": "Педралва",
+    "type": "town",
+    "region": "Алгарве",
+    "coords": { "lat": 37.1417, "lon": -8.8617 },
+    "description": "Деревня внутреннего Алгарве, которую покидали десятилетиями — к 2006 году осталось всего 9 жителей — а потом полностью отреставрировали дом за домом, сохранив облик традиционного посёлка. Сегодня здесь тихие мощёные улочки, общая печь и маленький ресторан, а вокруг — нетуристический Алгарве в пятнадцати минутах от Сагреша.",
+    "driveMinutesFromLisbon": 200,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": ["история", "бесплатно", "фото"],
+    "links": [{ "title": "Aldeia da Pedralva", "url": "https://www.aldeiadapedralva.com/en/" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Pedralva_Portugal.JPG/1280px-Pedralva_Portugal.JPG",
+        "author": "Herbert wie",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pedralva_Portugal.JPG"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "fontes-de-alte",
+    "name": "Фонтес-ди-Алти",
+    "type": "nature",
+    "region": "Алгарве",
+    "coords": { "lat": 37.2131, "lon": -8.1177 },
+    "description": "Два родника в деревне Алти, вокруг которых веками стирали бельё и поливали огороды — сейчас это тенистый парк с природным бассейном почти на сто метров, где можно искупаться в холодной прозрачной воде. Место совсем не туристическое, любимо в основном местными на пикник в выходной день.",
+    "driveMinutesFromLisbon": 220,
+    "visitDurationHours": 1,
+    "bestSeason": "май-сентябрь",
+    "tags": ["купание", "природа", "бесплатно"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Fontes_do_Alte_8_May_2015_%2811%29.JPG/1280px-Fontes_do_Alte_8_May_2015_%2811%29.JPG",
+        "author": "Kolforn",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fontes_do_Alte_8_May_2015_(11).JPG"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "querenca",
+    "name": "Керенса",
+    "type": "town",
+    "region": "Алгарве",
+    "coords": { "lat": 37.2258, "lon": -8.0453 },
+    "description": "Беленая деревушка на холме внутреннего Алгарве с заметным арабским наследием в планировке улиц. Здесь ещё живо ремесло — плетение корзин, тряпичные куклы, мёд и медронью — и почти нет туристов. Маленькая церковь XVI века и музей воды займут не больше часа.",
+    "driveMinutesFromLisbon": 215,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": ["история", "бесплатно"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Portugal_Querenca_Igreja_matriz.JPG/1280px-Portugal_Querenca_Igreja_matriz.JPG",
+        "author": "CTHOE",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portugal_Querenca_Igreja_matriz.JPG"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "praia-dos-arrifes",
+    "name": "Прая-дус-Аррифеш (Треш-Пенекуш)",
+    "type": "beach",
+    "region": "Алгарве",
+    "coords": { "lat": 37.0761, "lon": -8.2774 },
+    "description": "Крошечная бухта в Албуфейре, которую местные называют Треш-Пенекуш из-за трёх скал-останцов прямо у берега. Пляж совсем маленький, с арками в скалах и природными бассейнами, и легко теряется в тени соседних раскрученных пляжей побольше. Лучше приходить рано утром — места на песке немного.",
+    "driveMinutesFromLisbon": 155,
+    "visitDurationHours": 1,
+    "bestSeason": "май-сентябрь",
+    "tags": ["купание", "виды", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/145PT_13_November_2013_Praia_dos_Arrifes.JPG/1280px-145PT_13_November_2013_Praia_dos_Arrifes.JPG",
+        "author": "Beeston",
+        "license": "CC BY 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:145PT_13_November_2013_Praia_dos_Arrifes.JPG"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "praia-do-carvalho",
+    "name": "Прая-ду-Карвалью",
+    "type": "beach",
+    "region": "Алгарве",
+    "coords": { "lat": 37.0868, "lon": -8.4320 },
+    "description": "Один из самых спрятанных пляжей Алгарве: попасть на песок можно только через полувековой туннель, прорубленный вручную в известняковой скале, где видны окаменелости морских ракушек. Сама бухта совсем маленькая — зажата между охристыми стенами с одинокой скалой-исполином посередине.",
+    "driveMinutesFromLisbon": 200,
+    "visitDurationHours": 1,
+    "bestSeason": "май-сентябрь",
+    "tags": ["купание", "виды", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Praia_do_Carvalho_-_Lagoa_%28113906418%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Carvalho_-_Lagoa_(113906418).jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "pedra-do-urso-estrela",
+    "name": "Педра-ду-Урсу",
+    "type": "other",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 40.3016, "lon": -7.5341 },
+    "description": "Гранитная скала на склоне Серра-да-Эштрела, издалека похожая на сидящего медведя — отсюда и название. Рядом хорошо промаркированные тропы и небольшая парковка, а вид особенно эффектен на рассвете или закате. Заезд по пути на Пеньяш-да-Сауде из Ковильяна.",
+    "driveMinutesFromLisbon": 240,
+    "visitDurationHours": 0.5,
+    "bestSeason": "май-октябрь",
+    "tags": ["виды", "фото", "бесплатно"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Pedra_do_Urso_-_Serra_da_Estrela.jpg/1280px-Pedra_do_Urso_-_Serra_da_Estrela.jpg",
+        "author": "JTRL78",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pedra_do_Urso_-_Serra_da_Estrela.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "ponte-de-trajano-chaves",
+    "name": "Римский мост Трояна в Шавише",
+    "type": "other",
+    "region": "Норте",
+    "coords": { "lat": 41.7384, "lon": -7.4673 },
+    "description": "Мост через реку Тамега, построенный на рубеже I-II веков нашей эры на римской дороге из Браги в Асторгу — до сих пор используется пешеходами и виден с латинскими надписями на двух опорных колоннах. Двенадцать сохранившихся арок тянутся на сто метров прямо в историческом центре города.",
+    "driveMinutesFromLisbon": 260,
+    "visitDurationHours": 0.5,
+    "bestSeason": "круглый год",
+    "tags": ["история", "бесплатно", "фото"],
+    "links": [{ "title": "Wikipedia", "url": "https://pt.wikipedia.org/wiki/Ponte_de_Trajano" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Ponte_de_Trajano_Chaves.jpg/1280px-Ponte_de_Trajano_Chaves.jpg",
+        "author": "Tânia Sousa",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ponte_de_Trajano_Chaves.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "capela-senhora-da-lapa-vieira-do-minho",
+    "name": "Часовня Носса-Сеньора-да-Лапа",
+    "type": "other",
+    "region": "Норте",
+    "coords": { "lat": 39.5391, "lon": -8.0818 },
+    "description": "Часовня 1694 года, встроенная прямо под гранитную скалу на склоне горы Пеньямоуринью — по легенде, здесь пастушке явилась Богородица. Место паломничества до сих пор, но в будни совершенно безлюдно и удивительно тихо. Само сочетание скалы и алтаря стоит короткой остановки.",
+    "driveMinutesFromLisbon": 300,
+    "visitDurationHours": 0.5,
+    "bestSeason": "круглый год",
+    "tags": ["история", "бесплатно", "виды"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Santu%C3%A1rio_Nossa_Senhora_da_Lapa-Vieira_do_Minho_%281%29.jpg/1280px-Santu%C3%A1rio_Nossa_Senhora_da_Lapa-Vieira_do_Minho_%281%29.jpg",
+        "author": "Joseolgon",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Santuário_Nossa_Senhora_da_Lapa-Vieira_do_Minho_(1).jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "cais-palafitico-carrasqueira",
+    "name": "Свайный причал Каррашкейры",
+    "type": "other",
+    "region": "Сетубал и Аррабида",
+    "coords": { "lat": 38.4129, "lon": -8.7563 },
+    "description": "Деревянный причал на хрупких на вид сваях, построенный местными рыбаками в 1950-60-х и до сих пор используемый по прямому назначению — доступ к лодкам даже при отливе через илистые протоки эстуария Саду. Считается крупнейшим сооружением такого типа в Европе. Соседняя Комporта рядом, но сама Каррашкейра почти не тронута туризмом.",
+    "driveMinutesFromLisbon": 100,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": ["история", "бесплатно", "фото"],
+    "links": [{ "title": "Visit Alentejo", "url": "https://www.visitalentejo.pt/en/catalogue/what-to-do/museums-and-places-to-visit/cais-palafitico-da-carrasqueira/" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/CAIS_PALAFITICO_CARRASQUEIRA.jpg/1280px-CAIS_PALAFITICO_CARRASQUEIRA.jpg",
+        "author": "AJSL48",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:CAIS_PALAFITICO_CARRASQUEIRA.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "escaroupim",
+    "name": "Эскароупим",
+    "type": "town",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 39.0733, "lon": -8.7539 },
+    "description": "Рыбацкая деревня авейруш на сваях у реки Тежу с яркими деревянными домиками, защищёнными от паводков. Место почти не изменилось за десятилетия и живёт своей жизнью без туристических автобусов — просто тихая прогулка вдоль воды в час от Лиссабона.",
+    "driveMinutesFromLisbon": 65,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": ["виды", "бесплатно", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Escaroupim_04.jpg/1280px-Escaroupim_04.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Escaroupim_04.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "miradouro-penedo-durao",
+    "name": "Мирадору-ду-Пенеду-Дуран",
+    "type": "viewpoint",
+    "region": "Норте",
+    "coords": { "lat": 41.0463, "lon": -6.8184 },
+    "description": "Смотровая площадка на краю отвесного обрыва над рекой Дору, недалеко от Фрейшу-де-Эшпада-а-Синта — вид на международный участок реки и испанскую плотину Саусель, редко попадающий в обычные маршруты по Дору. Пейзаж среди виноградников и оливковых рощ, почти без других туристов.",
+    "driveMinutesFromLisbon": 300,
+    "visitDurationHours": 0.5,
+    "bestSeason": "март-октябрь",
+    "tags": ["виды", "закат", "бесплатно"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Miradouro_do_Penedo_Dur%C3%A3o.jpg/1280px-Miradouro_do_Penedo_Dur%C3%A3o.jpg",
+        "author": "VetK2O3",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Miradouro_do_Penedo_Durão.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "casa-do-penedo-fafe",
+    "name": "Каза-ду-Пенеду",
+    "type": "other",
+    "region": "Норте",
+    "coords": { "lat": 41.4881, "lon": -8.0677 },
+    "description": "Дом 1974 года, построенный прямо между четырьмя огромными валунами, которые служат ему стенами, полом и крышей — журналисты прозвали его «домом Флинтстоунов». Внутри крошечная жилая комната с примитивной мебелью, а вокруг — горные пейзажи Серраш-де-Фафе. Заезд ненадолго, но фотографии выходят исключительные.",
+    "driveMinutesFromLisbon": 280,
+    "visitDurationHours": 0.5,
+    "bestSeason": "круглый год",
+    "tags": ["фото", "бесплатно", "виды"],
+    "links": [{ "title": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Casa_do_Penedo" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Casa_da_Pedra_em_Fafe_02.jpg/1280px-Casa_da_Pedra_em_Fafe_02.jpg",
+        "author": "Feliciano Guimarães",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Casa_da_Pedra_em_Fafe_02.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "moinho-de-vento-odeceixe",
+    "name": "Ветряная мельница Одесейше",
+    "type": "other",
+    "region": "Алентежу",
+    "coords": { "lat": 37.4313, "lon": -8.7717 },
+    "description": "Мельница 1898 года на самой высокой точке деревни Одесейше, превращённая в маленький музей помола зерна. С площадки у мельницы открывается панорама на беленые крыши деревни и извилистую речку Сейше — вид, который не найти на обычных туристических фото Rota Vicentina.",
+    "driveMinutesFromLisbon": 190,
+    "visitDurationHours": 0.5,
+    "bestSeason": "июнь-сентябрь",
+    "tags": ["виды", "история", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Moinho_de_Odeceixe.jpg/1280px-Moinho_de_Odeceixe.jpg",
+        "author": "Kuasimudo",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Moinho_de_Odeceixe.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "idanha-a-velha",
+    "name": "Иданья-а-Велья",
+    "type": "town",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 39.9962, "lon": -7.1097 },
+    "description": "Крошечное поселение на месте римской Эгитании, где до сих пор среди пастбищ стоят обломки римских колонн, вестготский собор и средневековые крепостные стены — без единого сувенирного магазина. Одна из самых нетуристических исторических деревень Португалии, зажатая между рекой Понсул и тремя холмами.",
+    "driveMinutesFromLisbon": 250,
+    "visitDurationHours": 1,
+    "bestSeason": "апрель-октябрь",
+    "tags": ["история", "бесплатно", "фото"],
+    "links": [{ "title": "Aldeias Históricas de Portugal", "url": "https://aldeiashistoricasdeportugal.com/en/aldeia/idanha-a-velha/" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Idanha-a-Velha_April_2015-2.jpg/1280px-Idanha-a-Velha_April_2015-2.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Idanha-a-Velha_April_2015-2.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "belmonte-judiaria",
+    "name": "Старая жудиария Белмонте",
+    "type": "town",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 40.3597, "lon": -7.3506 },
+    "description": "Квартал маленьких гранитных домов, где веками тайно от инквизиции жила еврейская община — обряды передавались из поколения в поколение и сохранились до наших дней. На площади Пелоуринью стоит гигантская девятирожковая ханука, а рядом работает небольшой еврейский музей. Компактный и совсем не туристический уголок исторического города.",
+    "driveMinutesFromLisbon": 260,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": ["история", "бесплатно"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Castelo_Belmonte%2C_Portugal_-_Apr_2011.jpg/1280px-Castelo_Belmonte%2C_Portugal_-_Apr_2011.jpg",
+        "author": "Ken & Nyetta",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_Belmonte,_Portugal_-_Apr_2011.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "miradouro-alto-do-trevim",
+    "name": "Мирадору Алту-ду-Тревин",
+    "type": "viewpoint",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 40.0897, "lon": -8.1792 },
+    "description": "Высшая точка Серра-да-Лоуза (1205 м) с почти круговой панорамой на сланцевые деревни и долины внизу — популярна у местных парапланеристов, но малоизвестна туристам за пределами региона. В ясный день видно далеко за пределы гор Лоуза и Асор.",
+    "driveMinutesFromLisbon": 220,
+    "visitDurationHours": 0.5,
+    "bestSeason": "апрель-октябрь",
+    "tags": ["виды", "закат", "бесплатно"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Alto_do_Trevim.jpg/1280px-Alto_do_Trevim.jpg",
+        "author": "Diogo Matias",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alto_do_Trevim.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "rocha-da-pena",
+    "name": "Роша-да-Пена",
+    "type": "nature",
+    "region": "Алгарве",
+    "coords": { "lat": 37.2503, "lon": -8.0978 },
+    "description": "Известняковый массив между деревнями Салир и Бенафин с остатками доисторической оборонительной стены железного века и пещерой Алгар-душ-Моуруш. С обзорной площадки на краю плато видна вся барроккальская часть Алгарве — редкий ракурс без моря в кадре.",
+    "driveMinutesFromLisbon": 220,
+    "visitDurationHours": 1.5,
+    "bestSeason": "март-май, сентябрь-ноябрь",
+    "tags": ["природа", "виды", "бесплатно"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Rocha_da_Pena%2C_Portugal.jpg/1280px-Rocha_da_Pena%2C_Portugal.jpg",
+        "author": "McGrain",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rocha_da_Pena,_Portugal.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "arte-rupestre-penascosa-foz-coa",
+    "name": "Наскальные гравюры Пенашкоза",
+    "type": "other",
+    "region": "Норте",
+    "coords": { "lat": 41.0167, "lon": -7.1000 },
+    "description": "Один из трёх открытых для посещения участков палеолитического искусства долины Коа — тысячи гравюр лошадей, быков и козлов возрастом более 20 тысяч лет, вырезанных прямо на береговых скалах реки. Попасть можно только с гидом по предварительной записи через центр в Каштелу-Мелор, что делает визит камерным и не туристически-массовым.",
+    "driveMinutesFromLisbon": 340,
+    "visitDurationHours": 1.5,
+    "bestSeason": "апрель-октябрь",
+    "tags": ["история", "фото"],
+    "links": [{ "title": "Foz Côa Museum", "url": "https://www.arte-coa.pt/" }],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Penascosa_3.jpg/1280px-Penascosa_3.jpg",
+        "author": "Duca696",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Penascosa_3.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "pegadas-dinossauros-pedra-da-mua",
+    "name": "Следы динозавров на Педра-да-Муа",
+    "type": "other",
+    "region": "Сетубал и Аррабида",
+    "coords": { "lat": 38.4222, "lon": -9.2161 },
+    "description": "Плоские прибрежные плиты у мыса Эшпишел хранят десятки настоящих следов динозавров возрастом около 140 миллионов лет — теропод и завроподов, включая редкую цепочку следов детёнышей. По легенде, местные веками считали их отпечатками мула Богородицы, отсюда и название скалы. Пять минут ходьбы от главной дороги к маяку.",
+    "driveMinutesFromLisbon": 55,
+    "visitDurationHours": 0.5,
+    "bestSeason": "круглый год",
+    "tags": ["история", "бесплатно", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Monumento_Natural_da_Pedra_da_Mua_-_Cabo_Espichel_-_Portugal_%2850956808651%29.jpg/1280px-Monumento_Natural_da_Pedra_da_Mua_-_Cabo_Espichel_-_Portugal_%2850956808651%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monumento_Natural_da_Pedra_da_Mua_-_Cabo_Espichel_-_Portugal_(50956808651).jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "miradouro-sao-leonardo-galafura",
+    "name": "Мирадору Сан-Леонарду-да-Галафура",
+    "type": "viewpoint",
+    "region": "Норте",
+    "coords": { "lat": 41.1727, "lon": -7.6721 },
+    "description": "Один из самых впечатляющих, но не самых раскрученных смотровых пунктов над долиной Дору — терраса на высоте 640 метров с видом на реку, петляющую среди виноградных террас. Рядом маленькая часовня Сан-Леонарду. Добираться нужно по местной дороге через деревню Галафура, отчего сюда заезжают немногие.",
+    "driveMinutesFromLisbon": 260,
+    "visitDurationHours": 0.5,
+    "bestSeason": "апрель-октябрь",
+    "tags": ["виды", "закат", "вино"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Miradouro_de_S%C3%A3o_Leonardo_da_Galafura_-_Portugal_%287339251762%29.jpg/1280px-Miradouro_de_S%C3%A3o_Leonardo_da_Galafura_-_Portugal_%287339251762%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Miradouro_de_São_Leonardo_da_Galafura_-_Portugal_(7339251762).jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "linhares-da-beira",
+    "name": "Линьяреш-да-Бейра",
+    "type": "castle",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 40.5413, "lon": -7.4612 },
+    "description": "Замок XIII века на скалистом холме 820 метров над долиной Мондегу, вокруг которого выросла крошечная историческая деревня — одна из самых малоизвестных в сети \"Aldeias Históricas\". В ясные дни над замком парят парапланеристы, что придаёт месту неожиданный контраст древности и современности.",
+    "driveMinutesFromLisbon": 270,
+    "visitDurationHours": 1,
+    "bestSeason": "апрель-октябрь",
+    "tags": ["история", "виды", "бесплатно"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Castelo_de_Linhares_da_Beira.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Linhares_da_Beira.jpg"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "sabugueiro",
+    "name": "Сабугейру",
+    "type": "town",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 40.4139, "lon": -7.6136 },
+    "description": "Самая высокогорная деревня материковой Португалии (около 1100-1200 м), выросшая из пастушьих хижин Серра-да-Эштрела. Каменные дома, шерстяные изделия местных мастеров и зимой — единственные в стране настоящие снегопады прямо в деревне. Маленькая остановка по пути к вершине Эштрелы.",
+    "driveMinutesFromLisbon": 250,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": ["виды", "природа", "бесплатно"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Aldeia_de_Sabugueiro_01.png/1280px-Aldeia_de_Sabugueiro_01.png",
+        "author": "Portalviseu.pt",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aldeia_de_Sabugueiro_01.png"
+      }
+    ],
+    "collections": [],
+    "status": "candidate"
+  },
+  {
+    "id": "quinta-do-cardo-figueira-castelo-rodrigo",
+    "name": "Кинта-ду-Карду",
+    "type": "other",
+    "region": "Норте",
+    "coords": { "lat": 40.8975, "lon": -6.9628 },
+    "description": "Небольшая винодельня Бейра-Интериор у исторической деревни Каштелу-Родригу, где виноградники растут на высоте 750 метров под защитой гор Марофа. Вина отсюда получаются нетипично свежими для южной Португалии — стоит заглянуть на дегустацию по пути в саму деревню Каштелу-Родригу.",
+    "driveMinutesFromLisbon": 320,
+    "visitDurationHours": 1.5,
+    "bestSeason": "сентябрь-октябрь",
+    "tags": ["вино", "виды"],
+    "links": [{ "title": "Quinta do Cardo", "url": "https://www.portugalvineyards.com/en/brand/487_quinta-do-cardo" }],
+    "photos": [],
+    "collections": [],
+    "status": "candidate"
+  }
+]
