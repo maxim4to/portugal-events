@@ -38,7 +38,6 @@ and promote later.
 | `tags` | array of 2–4 tags from the controlled vocabulary below. |
 | `links` | array of `{ title, url }` (both required, `url` must be a valid URL). May be `[]`. |
 | `photo` | OPTIONAL object `{ url, author, license, sourceUrl }` — **all four required when present**. Omit the whole field if you have no free photo. |
-| `collections` | always `[]` — curation assigns collections later. |
 | `status` | always `"candidate"` for everything you generate. |
 
 ## Controlled tag vocabulary (use ONLY these)
@@ -122,7 +121,7 @@ From the response, per page under `query.pages[*].imageinfo[0]`:
 - Append to the matching existing region file, or create a new
   `data/places/<region-slug>.json`. Each file must be a **valid JSON array** of
   places.
-- Set `status: "candidate"` and `collections: []` on everything.
+- Set `status: "candidate"` on everything.
 
 ## Mandatory before finishing
 

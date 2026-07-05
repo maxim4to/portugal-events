@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { PlaceSchema, EventSchema, SourceSchema, CitySchema, CollectionSchema } from './index.ts';
+import { PlaceSchema, EventSchema, SourceSchema, CitySchema } from './index.ts';
 
 const validPlace = {
   id: 'praia-da-ursa',
@@ -75,9 +75,6 @@ describe('PlaceSchema', () => {
     };
     expect(PlaceSchema.safeParse(bad).success).toBe(false);
   });
-  test('accepts collections as slug array', () => {
-    expect(PlaceSchema.safeParse({ ...validPlace, collections: ['beaches-day-trip'] }).success).toBe(true);
-  });
   test('accepts a place with type museum', () => {
     expect(PlaceSchema.safeParse({ ...validPlace, type: 'museum' }).success).toBe(true);
   });
@@ -89,21 +86,6 @@ describe('PlaceSchema', () => {
   });
   test('accepts a place without freeWithResidency (optional)', () => {
     expect(PlaceSchema.safeParse(validPlace).success).toBe(true);
-  });
-});
-
-describe('CollectionSchema', () => {
-  test('accepts a valid collection', () => {
-    const c = {
-      id: 'beaches-day-trip',
-      title: 'Пляжи на день из Лиссабона',
-      description: 'Океанские пляжи в пределах часа езды.',
-      placeIds: ['praia-da-ursa', 'praia-do-guincho'],
-    };
-    expect(CollectionSchema.safeParse(c).success).toBe(true);
-  });
-  test('rejects a non-slug id', () => {
-    expect(CollectionSchema.safeParse({ id: 'Beaches', title: 'x', description: 'y', placeIds: [] }).success).toBe(false);
   });
 });
 

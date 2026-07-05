@@ -44,7 +44,6 @@ export const PlaceSchema = z.object({
   tags: z.array(z.string()),
   links: z.array(z.object({ title: z.string().min(1), url: z.string().url() })),
   photos: z.array(PhotoSchema).default([]),
-  collections: z.array(slug).default([]),
   status: z.enum(['candidate', 'approved']),
   freeWithResidency: z.boolean().optional(),
 });
@@ -97,11 +96,3 @@ export const CitySchema = z.object({
   lon: z.number().min(-180).max(180),
 });
 export type City = z.infer<typeof CitySchema>;
-
-export const CollectionSchema = z.object({
-  id: slug,
-  title: z.string().min(1),
-  description: z.string().min(1),
-  placeIds: z.array(slug),
-});
-export type Collection = z.infer<typeof CollectionSchema>;

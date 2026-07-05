@@ -37,14 +37,12 @@ pass; fix the data.
   `candidate` is a staging state for human review before promotion.
 - `data/events/<YYYY-MM>.json` — one file per month, array of `Event`. Past events move
   to `data/events/archive/` (not shown on the site, kept for history).
-- `data/collections.json` — curated lists of place ids (`Collection.placeIds` must
-  reference existing places; `validate.ts` checks this).
 - `data/sources.json` / `data/geo/cities.json` — event-source registry and a city →
   coordinates lookup used to place events on the map.
 
 `site/lib/data.ts` uses `import.meta.glob(..., { eager: true })` to slurp every JSON file
 under `data/` at build time, parses it through the zod schemas, and exports plain arrays
-(`allPlaces`, `approvedPlaces`, `upcomingEvents`, `collections`, `regions`, `allTags`).
+(`allPlaces`, `approvedPlaces`, `upcomingEvents`, `regions`, `allTags`).
 Pages and components consume these exports directly — there's no runtime data fetching
 for site content.
 

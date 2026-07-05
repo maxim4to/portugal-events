@@ -4,10 +4,8 @@ import Icon from './Icon.astro';
 const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
 
 const links = [
-  { path: '/', label: 'Выходные' },
   { path: '/places/', label: 'Места' },
   { path: '/events/', label: 'Афиша' },
-  { path: '/collections/', label: 'Подборки' },
 ];
 
 // Astro.url.pathname includes the base (e.g. /portugal-events/places/).

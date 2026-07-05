@@ -1,26 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { formatDateRu, nextWeekend, overlapsDay } from './dates.ts';
-
-describe('nextWeekend', () => {
-  test('mid-week returns the upcoming weekend', () => {
-    expect(nextWeekend(new Date('2026-07-01T12:00:00Z'))).toEqual({
-      sat: '2026-07-04',
-      sun: '2026-07-05',
-    });
-  });
-  test('on Saturday returns the current weekend', () => {
-    expect(nextWeekend(new Date('2026-07-04T12:00:00Z'))).toEqual({
-      sat: '2026-07-04',
-      sun: '2026-07-05',
-    });
-  });
-  test('on Sunday still returns the current weekend', () => {
-    expect(nextWeekend(new Date('2026-07-05T12:00:00Z'))).toEqual({
-      sat: '2026-07-04',
-      sun: '2026-07-05',
-    });
-  });
-});
+import { formatDateRu, overlapsDay } from './dates.ts';
 
 describe('overlapsDay', () => {
   const event = { dateStart: '2026-07-10', dateEnd: '2026-07-12' };
