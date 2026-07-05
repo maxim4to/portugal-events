@@ -9,10 +9,9 @@ interface Props {
   href: string;
 }
 const { place, href } = Astro.props;
-const cover = place.photos[0];
 ---
 <a href={href} class="card place-card">
-  <div class="cover" title={cover ? `Фото: ${cover.author}` : undefined}>
+  <div class="cover">
     <PhotoGallery photos={place.photos} alt={place.name} variant="card" type={place.type} />
     <span class="badge-overlay">
       <TypeBadge type={place.type} />
