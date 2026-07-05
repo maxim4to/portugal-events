@@ -176,6 +176,13 @@ const mapData = places.map((p) => ({
     const listEl = root.querySelector<HTMLElement>('[data-list]')!;
     const emptyEl = root.querySelector<HTMLElement>('[data-empty]')!;
     const countEl = root.querySelector<HTMLElement>('[data-count]')!;
+    const placesWord = (n: number): string => {
+      const d = n % 10;
+      const dd = n % 100;
+      if (d === 1 && dd !== 11) return 'место';
+      if (d >= 2 && d <= 4 && (dd < 12 || dd > 14)) return 'места';
+      return 'мест';
+    };
     const mapWrap = root.querySelector<HTMLElement>('[data-map-wrap]')!;
     const cards = Array.from(root.querySelectorAll<HTMLElement>('[data-place-card]'));
     const mapData: MapPlace[] = JSON.parse(
@@ -242,7 +249,7 @@ const mapData = places.map((p) => ({
           visibleIds.add(el.dataset.id!);
         }
       }
-      countEl.textContent = `${visible} мест`;
+      countEl.textContent = `${visible} ${placesWord(visible)}`;
       emptyEl.hidden = visible !== 0;
       if (map) refreshMarkers(visibleIds);
     }

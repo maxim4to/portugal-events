@@ -23,8 +23,12 @@ const isActive = (p: string) => {
     <a href={href('/')} class="brand">Португалия</a>
     <nav class="nav">
       {links.map((l) => (
-        <a href={href(l.path)} class:list={['nav-link', { active: isActive(l.path) }]}>
-          {l.label}
+        <a
+          href={href(l.path)}
+          class:list={['nav-link', { active: isActive(l.path) }]}
+          data-label={l.label}
+        >
+          <span class="nav-link-text">{l.label}</span>
         </a>
       ))}
       <button class="btn theme-toggle" id="theme-toggle" aria-label="Переключить тему">
@@ -67,9 +71,23 @@ const isActive = (p: string) => {
     flex-wrap: wrap;
   }
   .nav-link {
+    display: inline-grid;
     font-size: 14px;
     font-weight: 400;
     color: var(--text-secondary);
+  }
+  /* Reserve the bold (active) width on every link so toggling font-weight
+     between pages never changes the link's width and shifts its neighbours. */
+  .nav-link::after {
+    content: attr(data-label);
+    grid-area: 1 / 1;
+    font-weight: 500;
+    height: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .nav-link-text {
+    grid-area: 1 / 1;
   }
   .nav-link:hover {
     text-decoration: none;
