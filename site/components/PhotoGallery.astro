@@ -313,6 +313,33 @@ const attribData = photos.map((p) => ({
           },
           { passive: true },
         );
+
+        // Trackpad swipe (two-finger horizontal gesture -> wheel deltaX).
+        let wheelAccumX = 0;
+        let wheelLocked = false;
+        let wheelResetTimer: number | undefined;
+        root.addEventListener(
+          'wheel',
+          (e) => {
+            if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return; // vertical scroll: ignore
+            if (e.cancelable) e.preventDefault();
+            if (wheelLocked) return;
+            wheelAccumX += e.deltaX;
+            clearTimeout(wheelResetTimer);
+            wheelResetTimer = window.setTimeout(() => {
+              wheelAccumX = 0;
+            }, 200);
+            if (Math.abs(wheelAccumX) > 50) {
+              show(current + (wheelAccumX > 0 ? 1 : -1));
+              wheelAccumX = 0;
+              wheelLocked = true;
+              window.setTimeout(() => {
+                wheelLocked = false;
+              }, 350);
+            }
+          },
+          { passive: false },
+        );
       } catch (err) {
         /* Never throw. */
       }
