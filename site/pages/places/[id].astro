@@ -3,6 +3,8 @@ import Base from '../../layouts/Base.astro';
 import TypeBadge from '../../components/TypeBadge.astro';
 import Icon from '../../components/Icon.astro';
 import MiniMap from '../../components/MiniMap.astro';
+import VisitedButton from '../../components/VisitedButton.astro';
+import VisitedController from '../../components/VisitedController.astro';
 import { approvedPlaces } from '../../lib/data.ts';
 import type { Place } from '../../../schema/index.ts';
 
@@ -55,6 +57,7 @@ const paragraphs = place.description.split(/\n\n+/).map((s) => s.trim()).filter(
     <div class="actions">
       <a class="btn btn-primary" href={directions} target="_blank" rel="noopener">Маршрут в Google Maps</a>
       <button class="btn" data-fav-id={place.id} aria-pressed="false">В избранное</button>
+      <VisitedButton placeId={place.id} variant="detail" />
     </div>
 
     <MiniMap lat={place.coords.lat} lon={place.coords.lon} name={place.name} />
@@ -67,6 +70,8 @@ const paragraphs = place.description.split(/\n\n+/).map((s) => s.trim()).filter(
 
     <p class="back"><a href={href('/places/')}>← Ко всем местам</a></p>
   </article>
+
+  <VisitedController />
 </Base>
 
 <style>

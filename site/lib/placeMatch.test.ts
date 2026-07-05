@@ -15,6 +15,7 @@ const emptyState: ExplorerFilterState = {
   tags: [],
   maxDrive: 240,
   query: '',
+  visited: 'all',
 };
 
 describe('matchesFilter', () => {
@@ -46,6 +47,23 @@ describe('matchesFilter', () => {
     expect(matchesFilter(base, { ...emptyState, query: 'creiro' })).toBe(true);
     expect(matchesFilter(base, { ...emptyState, query: 'setúbal' })).toBe(true);
     expect(matchesFilter(base, { ...emptyState, query: 'sintra' })).toBe(false);
+  });
+
+  it('filters by visited state (tri-state)', () => {
+    const visited = { ...base, visited: true };
+    const unvisited = { ...base, visited: false };
+    // "all" ignores visited entirely.
+    expect(matchesFilter(visited, { ...emptyState, visited: 'all' })).toBe(true);
+    expect(matchesFilter(unvisited, { ...emptyState, visited: 'all' })).toBe(true);
+    // "visited" keeps only visited places.
+    expect(matchesFilter(visited, { ...emptyState, visited: 'visited' })).toBe(true);
+    expect(matchesFilter(unvisited, { ...emptyState, visited: 'visited' })).toBe(false);
+    // "unvisited" keeps only not-visited places.
+    expect(matchesFilter(visited, { ...emptyState, visited: 'unvisited' })).toBe(false);
+    expect(matchesFilter(unvisited, { ...emptyState, visited: 'unvisited' })).toBe(true);
+    // Missing visited flag counts as not-visited.
+    expect(matchesFilter(base, { ...emptyState, visited: 'visited' })).toBe(false);
+    expect(matchesFilter(base, { ...emptyState, visited: 'unvisited' })).toBe(true);
   });
 
   it('combines filters with AND', () => {

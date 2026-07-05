@@ -60,6 +60,15 @@ const typeEntries = Object.entries(TYPE_LABELS);
         ))}
       </div>
     </details>
+
+    <label class="control" data-visited-control hidden>
+      <span class="control-label">Отметки</span>
+      <select class="select" data-filter="visited" aria-label="Посещённые места">
+        <option value="all">Все</option>
+        <option value="visited">Посещённые</option>
+        <option value="unvisited">Непосещённые</option>
+      </select>
+    </label>
   </div>
 </div>
 

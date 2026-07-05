@@ -2,6 +2,8 @@
 import type { Place } from '../../schema/index.ts';
 import FilterBar from './FilterBar.astro';
 import PlaceCard from './PlaceCard.astro';
+import VisitedButton from './VisitedButton.astro';
+import VisitedController from './VisitedController.astro';
 
 interface Props {
   places: Place[];
@@ -34,6 +36,7 @@ const mapData = places.map((p) => ({
   <div class="grid-cards" data-list>
     {places.map((p) => (
       <div
+        class="card-wrap"
         data-place-card
         data-id={p.id}
         data-type={p.type}
@@ -42,6 +45,7 @@ const mapData = places.map((p) => ({
         data-tags={p.tags.join('|')}
         data-name={p.name}
       >
+        <VisitedButton placeId={p.id} variant="card" />
         <PlaceCard place={p} href={`${hrefBase}/places/${p.id}/`} />
       </div>
     ))}
@@ -55,6 +59,8 @@ const mapData = places.map((p) => ({
 
   <script type="application/json" data-places set:html={JSON.stringify(mapData)}></script>
 </section>
+
+<VisitedController />
 
 <style>
   .explorer {
@@ -85,6 +91,9 @@ const mapData = places.map((p) => ({
     padding: var(--space-6) 0;
     text-align: center;
     color: var(--text-muted);
+  }
+  .card-wrap {
+    position: relative;
   }
   /* The hidden attribute must always collapse these, even when a class
      (e.g. .grid-cards { display: grid }) sets a display value that would
@@ -149,6 +158,7 @@ const mapData = places.map((p) => ({
     matchesFilter,
     type ExplorerFilterState,
     type PlaceCardData,
+    type VisitedFilter,
   } from '../lib/placeMatch.ts';
 
   interface MapPlace {
@@ -178,6 +188,7 @@ const mapData = places.map((p) => ({
     const driveOut = root.querySelector<HTMLElement>('[data-out="maxDrive"]')!;
     const typeChips = Array.from(root.querySelectorAll<HTMLButtonElement>('.chip[data-type]'));
     const tagBoxes = Array.from(root.querySelectorAll<HTMLInputElement>('input[data-tag]'));
+    const visitedSelect = root.querySelector<HTMLSelectElement>('[data-filter="visited"]');
 
     const PIN_HTML =
       '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 7 11.6 7.3 11.9a1 1 0 0 0 1.4 0C13 21.6 20 15.4 20 10c0-4.4-3.6-8-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>';
@@ -199,6 +210,7 @@ const mapData = places.map((p) => ({
         tags: tagBoxes.filter((b) => b.checked).map((b) => b.dataset.tag!),
         maxDrive: Number(driveInput.value),
         query: searchInput.value,
+        visited: (visitedSelect?.value as VisitedFilter) || 'all',
       };
     }
 
@@ -209,6 +221,7 @@ const mapData = places.map((p) => ({
         drive: Number(el.dataset.drive),
         tags: (el.dataset.tags || '').split('|').filter(Boolean),
         name: el.dataset.name!,
+        visited: el.dataset.visited === 'true',
       };
     }
 
@@ -286,6 +299,9 @@ const mapData = places.map((p) => ({
     regionSelect.addEventListener('change', render);
     driveInput.addEventListener('input', render);
     tagBoxes.forEach((b) => b.addEventListener('change', render));
+    visitedSelect?.addEventListener('change', render);
+    // Re-run filtering when the shared visited state arrives/updates.
+    document.addEventListener('visited:changed', render);
     typeChips.forEach((c) =>
       c.addEventListener('click', () => {
         c.setAttribute('aria-pressed', c.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');

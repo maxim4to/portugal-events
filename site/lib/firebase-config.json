@@ -1,0 +1,9 @@
+{
+  "apiKey": "REPLACE_ME",
+  "authDomain": "portugal-events.firebaseapp.com",
+  "databaseURL": "https://portugal-events-default-rtdb.europe-west1.firebasedatabase.app",
+  "projectId": "portugal-events",
+  "storageBucket": "portugal-events.appspot.com",
+  "messagingSenderId": "REPLACE_ME",
+  "appId": "REPLACE_ME"
+}

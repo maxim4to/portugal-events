@@ -1,0 +1,77 @@
+---
+interface Props {
+  placeId: string;
+  variant?: 'card' | 'detail';
+}
+const { placeId, variant = 'detail' } = Astro.props;
+---
+<button
+  type="button"
+  class:list={['visited-btn', `visited-btn--${variant}`]}
+  data-visited-id={placeId}
+  aria-pressed="false"
+  hidden
+>
+  <svg
+    class="visited-icon"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M20 6 9 17l-5-5" />
+  </svg>
+  <span class="visited-label">Был здесь</span>
+</button>
+
+<style>
+  .visited-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface-2);
+    color: var(--text-secondary);
+    font: inherit;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+  }
+  .visited-btn:hover {
+    border-color: var(--border-strong);
+  }
+  /* Pressed = visited: success/teal tint built from the lake tokens. */
+  .visited-btn[aria-pressed='true'] {
+    background: var(--type-lake);
+    color: var(--type-lake-text);
+    border-color: var(--type-lake-text);
+  }
+  .visited-icon {
+    flex: none;
+  }
+
+  /* Compact overlay button for catalog cards. */
+  .visited-btn--card {
+    position: absolute;
+    top: var(--space-2);
+    right: var(--space-2);
+    z-index: 2;
+    padding: var(--space-1) var(--space-2);
+    font-size: 12px;
+    background: color-mix(in srgb, var(--surface-2) 88%, transparent);
+    backdrop-filter: blur(2px);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+  }
+  .visited-btn--card .visited-label {
+    display: none;
+  }
+  .visited-btn--card[aria-pressed='true'] .visited-label {
+    display: inline;
+  }
+</style>

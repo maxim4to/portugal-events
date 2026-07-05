@@ -4,7 +4,12 @@ export interface PlaceCardData {
   drive: number;
   tags: string[];
   name: string;
+  /** Shared "visited" mark; undefined when the feature is unconfigured. */
+  visited?: boolean;
 }
+
+/** Tri-state visited filter: any place / only visited / only not visited. */
+export type VisitedFilter = 'all' | 'visited' | 'unvisited';
 
 export interface ExplorerFilterState {
   types: string[];
@@ -12,6 +17,7 @@ export interface ExplorerFilterState {
   tags: string[];
   maxDrive: number;
   query: string;
+  visited: VisitedFilter;
 }
 
 /**
@@ -26,5 +32,7 @@ export function matchesFilter(place: PlaceCardData, state: ExplorerFilterState):
   if (place.drive > state.maxDrive) return false;
   const q = state.query.trim().toLowerCase();
   if (q && !`${place.name} ${place.region}`.toLowerCase().includes(q)) return false;
+  if (state.visited === 'visited' && !place.visited) return false;
+  if (state.visited === 'unvisited' && place.visited) return false;
   return true;
 }
