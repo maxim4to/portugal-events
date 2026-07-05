@@ -1,0 +1,62 @@
+---
+interface Props {
+  lat: number;
+  lon: number;
+  name: string;
+}
+const { lat, lon, name } = Astro.props;
+---
+<div class="minimap" data-lat={lat} data-lon={lon} data-name={name}></div>
+
+<style>
+  .minimap {
+    height: 260px;
+    width: 100%;
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  /* Scoped container bg so tiles load onto a token-aware surface (dark mode).
+     Global Leaflet popup/control overrides already live in the catalog. */
+  .minimap :global(.leaflet-container) {
+    background: var(--surface-1);
+    font: inherit;
+  }
+  .minimap :global(.place-pin) {
+    color: var(--accent);
+  }
+  .minimap :global(.place-pin svg) {
+    display: block;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+  }
+</style>
+
+<script>
+  import 'leaflet/dist/leaflet.css';
+  import L from 'leaflet';
+
+  const el = document.querySelector<HTMLElement>('.minimap');
+  if (el && !el.dataset.ready) {
+    el.dataset.ready = '1';
+    const lat = Number(el.dataset.lat);
+    const lon = Number(el.dataset.lon);
+    const name = el.dataset.name || '';
+
+    const PIN_HTML =
+      '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 7 11.6 7.3 11.9a1 1 0 0 0 1.4 0C13 21.6 20 15.4 20 10c0-4.4-3.6-8-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>';
+    const pinIcon = L.divIcon({
+      className: 'place-pin',
+      html: PIN_HTML,
+      iconSize: [24, 24],
+      iconAnchor: [12, 22],
+      popupAnchor: [0, -20],
+    });
+
+    const map = L.map(el, { scrollWheelZoom: false }).setView([lat, lon], 12);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+      maxZoom: 19,
+    }).addTo(map);
+    L.marker([lat, lon], { icon: pinIcon, title: name }).addTo(map);
+  }
+</script>

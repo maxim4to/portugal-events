@@ -1,0 +1,192 @@
+---
+import Base from '../../layouts/Base.astro';
+import TypeBadge from '../../components/TypeBadge.astro';
+import Icon from '../../components/Icon.astro';
+import MiniMap from '../../components/MiniMap.astro';
+import { approvedPlaces } from '../../lib/data.ts';
+import type { Place } from '../../../schema/index.ts';
+
+export function getStaticPaths() {
+  return approvedPlaces.map((place) => ({ params: { id: place.id }, props: { place } }));
+}
+const { place } = Astro.props as { place: Place };
+const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
+const directions = `https://www.google.com/maps/dir/?api=1&destination=${place.coords.lat},${place.coords.lon}`;
+const paragraphs = place.description.split(/\n\n+/).map((s) => s.trim()).filter(Boolean);
+---
+<Base title={place.name} description={place.description.slice(0, 150)}>
+  <article class="detail">
+    <div class="hero" style={place.photo ? undefined : `background: var(--type-${place.type});`}>
+      {place.photo && <img src={place.photo.url} alt={place.name} />}
+      <span class="badge-overlay">
+        <TypeBadge type={place.type} />
+      </span>
+    </div>
+
+    <h1>{place.name}</h1>
+    <p class="muted region">{place.region}</p>
+
+    <div class="meta-row">
+      <span><Icon name="clock" size={14} /> {place.driveMinutesFromLisbon} мин на машине</span>
+      <span><Icon name="hourglass" size={14} /> ~{place.visitDurationHours} ч на месте</span>
+      <span><Icon name="calendar" size={14} /> {place.bestSeason}</span>
+    </div>
+
+    <div class="description">
+      {paragraphs.map((p) => <p>{p}</p>)}
+    </div>
+
+    {place.tags.length > 0 && (
+      <div class="tags">
+        {place.tags.map((tag) => (
+          <a class="badge tag" href={href('/places/?tag=' + encodeURIComponent(tag))}>{tag}</a>
+        ))}
+      </div>
+    )}
+
+    {place.links.length > 0 && (
+      <ul class="links">
+        {place.links.map((link) => (
+          <li><a href={link.url} target="_blank" rel="noopener">{link.title}</a></li>
+        ))}
+      </ul>
+    )}
+
+    <div class="actions">
+      <a class="btn btn-primary" href={directions} target="_blank" rel="noopener">Маршрут в Google Maps</a>
+      <button class="btn" data-fav-id={place.id} aria-pressed="false">В избранное</button>
+    </div>
+
+    <MiniMap lat={place.coords.lat} lon={place.coords.lon} name={place.name} />
+
+    {place.photo && (
+      <p class="muted attribution">
+        Фото: <a href={place.photo.sourceUrl} target="_blank" rel="noopener">{place.photo.author}, {place.photo.license}</a>
+      </p>
+    )}
+
+    <p class="back"><a href={href('/places/')}>← Ко всем местам</a></p>
+  </article>
+</Base>
+
+<style>
+  .detail {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    max-width: 760px;
+  }
+  .hero {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--surface-1);
+  }
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .badge-overlay {
+    position: absolute;
+    top: var(--space-3);
+    left: var(--space-3);
+  }
+  .detail h1 {
+    margin: var(--space-3) 0 0;
+  }
+  .region {
+    margin: 0;
+  }
+  .description {
+    margin-top: var(--space-2);
+  }
+  .description p:last-child {
+    margin-bottom: 0;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  .tag {
+    background: var(--surface-2);
+    border: 0.5px solid var(--border);
+    color: var(--text-secondary);
+    text-decoration: none;
+  }
+  .tag:hover {
+    border-color: var(--border-strong);
+    text-decoration: none;
+  }
+  .links {
+    margin: 0;
+    padding-left: var(--space-4);
+    font-size: 14px;
+  }
+  .links a {
+    color: var(--accent);
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin: var(--space-2) 0;
+  }
+  .actions [data-fav-id][aria-pressed='true'] {
+    background: var(--accent-bg);
+    color: var(--accent-text);
+    border-color: var(--border-strong);
+  }
+  .attribution {
+    font-size: 12px;
+    margin: 0;
+  }
+  .attribution a {
+    color: inherit;
+    text-decoration: underline;
+  }
+  .back {
+    margin-top: var(--space-3);
+  }
+  .back a {
+    color: var(--accent);
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var KEY = 'favorites';
+    function read() {
+      try {
+        return JSON.parse(localStorage.getItem(KEY) || '[]');
+      } catch (e) {
+        return [];
+      }
+    }
+    function write(list) {
+      try {
+        localStorage.setItem(KEY, JSON.stringify(list));
+      } catch (e) {}
+    }
+    var favs = read();
+    var buttons = document.querySelectorAll('[data-fav-id]');
+    buttons.forEach(function (btn) {
+      var id = btn.getAttribute('data-fav-id');
+      function reflect(on) {
+        btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+        btn.textContent = on ? 'Добавлено' : 'В избранное';
+      }
+      reflect(favs.indexOf(id) !== -1);
+      btn.addEventListener('click', function () {
+        favs = read();
+        var i = favs.indexOf(id);
+        if (i === -1) favs.push(id);
+        else favs.splice(i, 1);
+        write(favs);
+        reflect(favs.indexOf(id) !== -1);
+      });
+    });
+  })();
+</script>
