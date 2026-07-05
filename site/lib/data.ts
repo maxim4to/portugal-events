@@ -1,5 +1,12 @@
 import { z } from 'zod';
-import { EventSchema, PlaceSchema, type Event, type Place } from '../../schema/index.ts';
+import {
+  CollectionSchema,
+  EventSchema,
+  PlaceSchema,
+  type Collection,
+  type Event,
+  type Place,
+} from '../../schema/index.ts';
 
 const placeFiles = import.meta.glob('../../data/places/*.json', {
   eager: true,
@@ -19,3 +26,14 @@ export const upcomingEvents: Event[] = Object.values(eventFiles)
   .flatMap((v) => z.array(EventSchema).parse(v))
   .filter((e) => e.dateEnd >= todayISO)
   .sort((a, b) => a.dateStart.localeCompare(b.dateStart));
+
+const collectionFiles = import.meta.glob('../../data/collections.json', {
+  eager: true,
+  import: 'default',
+});
+export const collections: Collection[] = Object.values(collectionFiles).flatMap((v) =>
+  z.array(CollectionSchema).parse(v),
+);
+
+export const regions: string[] = [...new Set(approvedPlaces.map((p) => p.region))].sort();
+export const allTags: string[] = [...new Set(approvedPlaces.flatMap((p) => p.tags))].sort();
