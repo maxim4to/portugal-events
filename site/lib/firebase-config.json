@@ -1,9 +1,9 @@
 {
-  "apiKey": "REPLACE_ME",
+  "apiKey": "AIzaSyBDwC8_-1rFQW3VsrbPZeJwxYrfpWXnX8o",
   "authDomain": "portugal-events.firebaseapp.com",
   "databaseURL": "https://portugal-events-default-rtdb.europe-west1.firebasedatabase.app",
   "projectId": "portugal-events",
-  "storageBucket": "portugal-events.appspot.com",
-  "messagingSenderId": "REPLACE_ME",
-  "appId": "REPLACE_ME"
+  "storageBucket": "portugal-events.firebasestorage.app",
+  "messagingSenderId": "470634483032",
+  "appId": "1:470634483032:web:fc230eecc03d5348bfe92d"
 }
