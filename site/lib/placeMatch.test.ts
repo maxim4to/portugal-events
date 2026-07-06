@@ -14,7 +14,6 @@ const emptyState: ExplorerFilterState = {
   region: '',
   tags: [],
   maxDrive: 240,
-  query: '',
   visited: 'all',
 };
 
@@ -41,12 +40,6 @@ describe('matchesFilter', () => {
   it('filters by max drive time', () => {
     expect(matchesFilter(base, { ...emptyState, maxDrive: 40 })).toBe(false);
     expect(matchesFilter(base, { ...emptyState, maxDrive: 60 })).toBe(true);
-  });
-
-  it('filters by query across name and region, case-insensitive', () => {
-    expect(matchesFilter(base, { ...emptyState, query: 'creiro' })).toBe(true);
-    expect(matchesFilter(base, { ...emptyState, query: 'setúbal' })).toBe(true);
-    expect(matchesFilter(base, { ...emptyState, query: 'sintra' })).toBe(false);
   });
 
   it('filters by visited state (tri-state)', () => {

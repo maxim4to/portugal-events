@@ -20,7 +20,6 @@ export interface ExplorerFilterState {
   region: string;
   tags: string[];
   maxDrive: number;
-  query: string;
   visited: VisitedFilter;
   /** When true, keep only favorited places. */
   onlyFavorites?: boolean;
@@ -37,8 +36,6 @@ export function matchesFilter(place: PlaceCardData, state: ExplorerFilterState):
   if (state.region && place.region !== state.region) return false;
   if (state.tags.length && !state.tags.some((t) => place.tags.includes(t))) return false;
   if (place.drive > state.maxDrive) return false;
-  const q = state.query.trim().toLowerCase();
-  if (q && !`${place.name} ${place.region}`.toLowerCase().includes(q)) return false;
   if (state.visited === 'visited' && !place.visited) return false;
   if (state.visited === 'unvisited' && place.visited) return false;
   if (state.onlyFavorites && !place.favorite) return false;

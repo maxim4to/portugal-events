@@ -17,19 +17,6 @@ export interface MapExplorerOptions {
 const PIN_HTML =
   '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 7 11.6 7.3 11.9a1 1 0 0 0 1.4 0C13 21.6 20 15.4 20 10c0-4.4-3.6-8-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>';
 
-function pluralWord(kind: string, n: number): string {
-  const d = n % 10;
-  const dd = n % 100;
-  if (kind === 'events') {
-    if (d === 1 && dd !== 11) return 'событие';
-    if (d >= 2 && d <= 4 && (dd < 12 || dd > 14)) return 'события';
-    return 'событий';
-  }
-  if (d === 1 && dd !== 11) return 'место';
-  if (d >= 2 && d <= 4 && (dd < 12 || dd > 14)) return 'места';
-  return 'мест';
-}
-
 /**
  * Wires the two-pane (list + map) explorer: marker/list synchronisation,
  * "search as I move the map" viewport filtering, and the in-place detail
@@ -41,10 +28,8 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   const matches = options.matches ?? (() => true);
   const hrefBase = root.dataset.hrefBase ?? '';
   const detailPrefix = root.dataset.detailPrefix ?? '/places/';
-  const kind = root.dataset.kind ?? 'places';
 
   const emptyEl = root.querySelector<HTMLElement>('[data-empty]')!;
-  const countEl = root.querySelector<HTMLElement>('[data-count]');
   const mapEl = root.querySelector<HTMLElement>('[data-map]')!;
   const cards = Array.from(root.querySelectorAll<HTMLElement>('[data-item-card]'));
   const groups = Array.from(root.querySelectorAll<HTMLElement>('[data-group]'));
@@ -93,7 +78,6 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     for (const g of groups) {
       g.hidden = !g.querySelector<HTMLElement>('[data-item-card]:not([hidden])');
     }
-    if (countEl) countEl.textContent = `${visible} ${pluralWord(kind, visible)}`;
     emptyEl.hidden = visible !== 0;
   }
 

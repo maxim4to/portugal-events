@@ -32,9 +32,6 @@ describe('filterPlaces', () => {
   test('filters by tag', () => {
     expect(filterPlaces(all, { tags: ['закат'] })).toEqual([beach]);
   });
-  test('search matches name case-insensitively', () => {
-    expect(filterPlaces(all, { query: 'урс' })).toEqual([beach]);
-  });
   test('combines filters with AND', () => {
     expect(filterPlaces(all, { types: ['beach'], maxDriveMinutes: 30 })).toEqual([]);
   });

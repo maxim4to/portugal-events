@@ -16,17 +16,6 @@ const drivePresets = [
 ];
 ---
 <div class="filter-bar">
-  <label class="search" aria-label="Поиск по названию или региону">
-    <span class="search-icon" aria-hidden="true"><Icon name="search" size={16} /></span>
-    <input
-      type="search"
-      class="search-input"
-      data-filter="query"
-      placeholder="Поиск места"
-      autocomplete="off"
-    />
-  </label>
-
   <button type="button" class="fav-toggle" data-favorites aria-pressed="false" aria-label="Показать избранное">
     <span class="fav-heart" aria-hidden="true"><Icon name="heart" size={15} /></span>
     <span class="flabel">Избранное</span><span class="fcount" data-fav-count></span>
@@ -154,13 +143,5 @@ const drivePresets = [
   }
   .fav-toggle .fcount {
     background: var(--danger);
-  }
-
-  @media (max-width: 760px) {
-    .search {
-      flex: 1 1 100%;
-      order: -1;
-      min-width: 0;
-    }
   }
 </style>

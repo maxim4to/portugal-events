@@ -21,7 +21,6 @@ const { kind, detailPrefix, hrefBase, mapId, points } = Astro.props;
     <slot name="filters" />
     <div class="toolbar">
       <slot name="toolbar" />
-      <span class="count muted" data-count></span>
       <div class="view-toggle" role="group" aria-label="Вид">
         <button type="button" class="btn view-btn" data-view="list" aria-pressed="true">Список</button>
         <button type="button" class="btn view-btn" data-view="map" aria-pressed="false">Карта</button>
@@ -73,10 +72,6 @@ const { kind, detailPrefix, hrefBase, mapId, points } = Astro.props;
     align-items: center;
     gap: var(--space-3);
     margin-left: auto;
-  }
-  .count {
-    font-size: 13px;
-    white-space: nowrap;
   }
   .view-toggle {
     display: none;
@@ -226,7 +221,6 @@ const { kind, detailPrefix, hrefBase, mapId, points } = Astro.props;
     }
     .toolbar {
       margin-left: 0;
-      width: 100%;
     }
     /* Airbnb-style floating list/map switch, centered at the bottom. */
     .view-toggle {

@@ -203,47 +203,6 @@ img {
 
 /* --- Filter primitives (shared by the places & events explorers) --- */
 
-/* Search field styled as a pill, matching the filter-group pills. */
-.search {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  height: 36px;
-  padding: 0 var(--space-3);
-  border: 0.5px solid var(--border-strong);
-  border-radius: var(--radius-pill);
-  background: var(--surface-2);
-  color: var(--text-muted);
-  min-width: 200px;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
-}
-.search:focus-within {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-bg);
-}
-.search-icon {
-  display: inline-flex;
-  flex: none;
-}
-.search-input {
-  flex: 1;
-  min-width: 0;
-  border: 0;
-  background: none;
-  color: var(--text-primary);
-  font: inherit;
-  font-size: 14px;
-}
-.search-input:focus {
-  outline: none;
-}
-.search-input::placeholder {
-  color: var(--text-muted);
-}
-.search-input::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-}
-
 /* Filter group: a pill that opens a dropdown of chips. */
 .fgroup {
   position: relative;

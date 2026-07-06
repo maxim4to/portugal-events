@@ -27,16 +27,6 @@ const points = places.map((p) => ({
 <MapShell kind="places" detailPrefix="/places/" hrefBase={hrefBase} mapId="places-map" points={points}>
   <FilterBar slot="filters" regions={regions} tags={tags} />
 
-  <label class="sort" slot="toolbar" aria-label="Сортировка">
-    <span class="sort-label">Сортировка</span>
-    <select class="sort-select" data-sort>
-      <option value="default">по умолчанию</option>
-      <option value="drive-asc">ближе к Лиссабону</option>
-      <option value="drive-desc">дальше от Лиссабона</option>
-      <option value="name">по названию</option>
-    </select>
-  </label>
-
   <div class="grid-cards" slot="list">
     {places.map((p) => (
       <div
@@ -78,37 +68,7 @@ const points = places.map((p) => ({
     align-items: flex-end;
     gap: var(--space-1);
   }
-  .sort {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    white-space: nowrap;
-  }
-  .sort-label {
-    font-size: 13px;
-    color: var(--text-muted);
-  }
-  .sort-select {
-    height: 32px;
-    padding: 0 var(--space-2);
-    border: 0.5px solid var(--border-strong);
-    border-radius: var(--radius);
-    background: var(--surface-2);
-    color: var(--text-primary);
-    font: inherit;
-    font-size: 13px;
-    cursor: pointer;
-  }
-  .sort-select:focus-visible {
-    outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px var(--accent-bg);
-  }
-  @media (max-width: 760px) {
-    .sort-label {
-      display: none;
-    }
-  }
+
 </style>
 
 <script>
@@ -131,11 +91,8 @@ const points = places.map((p) => ({
     const visitedChips = Array.from(
       root.querySelectorAll<HTMLButtonElement>('.chip[data-visited-opt]'),
     );
-    const searchInput = root.querySelector<HTMLInputElement>('[data-filter="query"]');
     const favToggle = root.querySelector<HTMLButtonElement>('[data-favorites]');
-    const sortSelect = root.querySelector<HTMLSelectElement>('[data-sort]');
     const resetButtons = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-reset]'));
-    const grid = root.querySelector<HTMLElement>('.grid-cards');
 
     const isOn = (el: Element | null) => el?.getAttribute('aria-pressed') === 'true';
     const press = (el: Element, on: boolean) =>
@@ -147,7 +104,6 @@ const points = places.map((p) => ({
         region: regionChips.find(isOn)?.dataset.region ?? '',
         tags: tagChips.filter(isOn).map((c) => c.dataset.tag!),
         maxDrive: Number(driveChips.find(isOn)?.dataset.drive ?? 240),
-        query: searchInput?.value ?? '',
         visited: (visitedChips.find(isOn)?.dataset.visitedOpt as VisitedFilter) || 'all',
         onlyFavorites: isOn(favToggle),
         freeWithResidency: isOn(residencyChip),
@@ -170,33 +126,6 @@ const points = places.map((p) => ({
     const matches = (el: HTMLElement) => matchesFilter(cardData(el), readState());
     const explorer = initMapExplorer(root, { matches });
 
-    // ---- Sorting: reorder the list DOM (markers/visibility are order-agnostic). --
-    const cardWraps = grid
-      ? Array.from(grid.querySelectorAll<HTMLElement>('[data-item-card]'))
-      : [];
-    const originalOrder = cardWraps.slice();
-    const collator = new Intl.Collator('ru');
-
-    function applySort() {
-      if (!grid) return;
-      const mode = sortSelect?.value ?? 'default';
-      let ordered = originalOrder;
-      if (mode === 'drive-asc') {
-        ordered = originalOrder
-          .slice()
-          .sort((a, b) => Number(a.dataset.drive) - Number(b.dataset.drive));
-      } else if (mode === 'drive-desc') {
-        ordered = originalOrder
-          .slice()
-          .sort((a, b) => Number(b.dataset.drive) - Number(a.dataset.drive));
-      } else if (mode === 'name') {
-        ordered = originalOrder
-          .slice()
-          .sort((a, b) => collator.compare(a.dataset.name || '', b.dataset.name || ''));
-      }
-      for (const el of ordered) grid.appendChild(el);
-    }
-
     // ---- URL <-> filter state sync ------------------------------------------
     function anyActive(s: ExplorerFilterState): boolean {
       return Boolean(
@@ -204,7 +133,6 @@ const points = places.map((p) => ({
           s.region ||
           s.tags.length ||
           s.maxDrive !== 240 ||
-          s.query.trim() ||
           s.visited !== 'all' ||
           s.onlyFavorites ||
           s.freeWithResidency,
@@ -213,7 +141,6 @@ const points = places.map((p) => ({
 
     function writeUrl(s: ExplorerFilterState) {
       const params = new URLSearchParams();
-      if (s.query.trim()) params.set('q', s.query.trim());
       if (s.types.length) params.set('type', s.types.join(','));
       if (s.region) params.set('region', s.region);
       if (s.tags.length) params.set('tag', s.tags.join(','));
@@ -221,8 +148,6 @@ const points = places.map((p) => ({
       if (s.visited !== 'all') params.set('visited', s.visited);
       if (s.onlyFavorites) params.set('fav', '1');
       if (s.freeWithResidency) params.set('residency', '1');
-      const sort = sortSelect?.value ?? 'default';
-      if (sort !== 'default') params.set('sort', sort);
       const qs = params.toString();
       history.replaceState(null, '', qs ? `?${qs}` : location.pathname);
     }
@@ -292,16 +217,7 @@ const points = places.map((p) => ({
       if (isOn(favToggle)) explorer.rerender();
     });
 
-    // Search: filter as you type.
-    searchInput?.addEventListener('input', onFilterChange);
-
-    // Sort: pure reorder, no re-filter needed.
-    sortSelect?.addEventListener('change', () => {
-      applySort();
-      writeUrl(readState());
-    });
-
-    // Reset: clear every filter and the search box.
+    // Reset: clear every filter.
     resetButtons.forEach((b) =>
       b.addEventListener('click', () => {
         [...typeChips, ...tagChips, ...visitedChips].forEach((c) => press(c, false));
@@ -309,7 +225,6 @@ const points = places.map((p) => ({
         if (residencyChip) press(residencyChip, false);
         if (favToggle) press(favToggle, false);
         driveChips.forEach((c) => press(c, c.dataset.drive === '240'));
-        if (searchInput) searchInput.value = '';
         onFilterChange();
       }),
     );
@@ -323,7 +238,6 @@ const points = places.map((p) => ({
         if (wanted.has(c.dataset[key]!)) press(c, true);
       });
     };
-    if (searchInput && params.get('q')) searchInput.value = params.get('q')!;
     setMulti(typeChips, 'type', params.get('type'));
     setMulti(tagChips, 'tag', params.get('tag'));
     const preRegion = params.get('region');
@@ -342,10 +256,7 @@ const points = places.map((p) => ({
     }
     if (params.get('residency') === '1' && residencyChip) press(residencyChip, true);
     if (params.get('fav') === '1' && favToggle) press(favToggle, true);
-    const preSort = params.get('sort');
-    if (sortSelect && preSort) sortSelect.value = preSort;
 
-    applySort();
     onFilterChange();
   }
 </script>
