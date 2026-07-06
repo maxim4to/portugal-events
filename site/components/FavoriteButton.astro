@@ -1,0 +1,92 @@
+---
+// Private "favorite / shortlist" toggle backed by localStorage (see
+// FavoriteController). Unlike VisitedButton it is always available — no config,
+// no network — so it renders visible by default.
+interface Props {
+  placeId: string;
+  variant?: 'card' | 'detail';
+}
+const { placeId, variant = 'detail' } = Astro.props;
+---
+<button
+  type="button"
+  class:list={['favorite-btn', `favorite-btn--${variant}`]}
+  data-favorite-id={placeId}
+  aria-pressed="false"
+  aria-label="В избранное"
+>
+  <svg class="favorite-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+    <path
+      d="M12 20s-7-4.6-9.3-9A4.9 4.9 0 0 1 12 6a4.9 4.9 0 0 1 9.3 5C19 15.4 12 20 12 20z"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+  <span class="favorite-label">В избранное</span>
+</button>
+
+<style>
+  .favorite-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    border: 0.5px solid var(--border-strong);
+    border-radius: var(--radius);
+    background: var(--surface-2);
+    color: var(--text-secondary);
+    font: inherit;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+  }
+  .favorite-btn:hover {
+    border-color: var(--text-secondary);
+  }
+  .favorite-btn:focus-visible {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-bg);
+  }
+  .favorite-btn[aria-pressed='true'] {
+    color: var(--danger);
+    border-color: var(--danger);
+  }
+  .favorite-btn[aria-pressed='true'] .favorite-icon path {
+    fill: var(--danger);
+  }
+  .favorite-icon {
+    flex: none;
+  }
+
+  /* Compact circular overlay for catalog cards (Airbnb-style heart). */
+  .favorite-btn--card {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    justify-content: center;
+    border-radius: var(--radius-pill);
+    color: var(--text-primary);
+    background: color-mix(in srgb, var(--surface-2) 82%, transparent);
+    backdrop-filter: blur(2px);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.22);
+  }
+  .favorite-btn--card .favorite-label {
+    display: none;
+  }
+  .favorite-btn--card .favorite-icon {
+    width: 17px;
+    height: 17px;
+  }
+  .favorite-btn--card[aria-pressed='true'] {
+    color: var(--danger);
+    border-color: var(--border-strong);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .favorite-btn {
+      transition: none;
+    }
+  }
+</style>

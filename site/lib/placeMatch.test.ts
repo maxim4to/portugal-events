@@ -66,6 +66,16 @@ describe('matchesFilter', () => {
     expect(matchesFilter(base, { ...emptyState, visited: 'unvisited' })).toBe(true);
   });
 
+  it('filters by favorites when onlyFavorites is on', () => {
+    const fav = { ...base, favorite: true };
+    // Off: both match regardless of the card's favorite flag.
+    expect(matchesFilter(base, emptyState)).toBe(true);
+    expect(matchesFilter(fav, emptyState)).toBe(true);
+    // On: only favorited cards match.
+    expect(matchesFilter(fav, { ...emptyState, onlyFavorites: true })).toBe(true);
+    expect(matchesFilter(base, { ...emptyState, onlyFavorites: true })).toBe(false);
+  });
+
   it('filters by freeWithResidency when the flag is on', () => {
     const free = { ...base, freeWithResidency: true };
     // Flag off: both match regardless of the card's flag.

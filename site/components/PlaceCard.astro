@@ -37,11 +37,18 @@ const { place, href } = Astro.props;
     flex-direction: column;
     text-decoration: none;
     color: inherit;
-    transition: border-color 0.15s ease;
+    transition: border-color 0.15s ease, box-shadow 0.2s ease, transform 0.2s ease;
   }
   .place-card:hover {
     border-color: var(--border-strong);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
     text-decoration: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .place-card:hover {
+      transform: none;
+    }
   }
   .cover {
     position: relative;

@@ -24,6 +24,29 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Consistent keyboard-focus ring. Components that want a softer inset ring set
+   `outline: none` + a box-shadow themselves; their higher specificity wins. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Respect reduced-motion: neutralise transitions, animations and smooth scroll. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Headings */
 h1,
 h2,
@@ -156,6 +179,19 @@ img {
   color: var(--text-muted);
 }
 
+/* Visually hidden but available to screen readers. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .meta-row {
   display: flex;
   flex-wrap: wrap;
@@ -163,4 +199,161 @@ img {
   row-gap: var(--space-1);
   font-size: 13px;
   color: var(--text-muted);
+}
+
+/* --- Filter primitives (shared by the places & events explorers) --- */
+
+/* Search field styled as a pill, matching the filter-group pills. */
+.search {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  height: 36px;
+  padding: 0 var(--space-3);
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  min-width: 200px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.search:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+.search-icon {
+  display: inline-flex;
+  flex: none;
+}
+.search-input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: none;
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 14px;
+}
+.search-input:focus {
+  outline: none;
+}
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+.search-input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+/* Filter group: a pill that opens a dropdown of chips. */
+.fgroup {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+.fgroup-summary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  height: 36px;
+  padding: 0 var(--space-3);
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+  color: var(--text-primary);
+  font: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+.fgroup-summary:hover {
+  border-color: var(--text-secondary);
+}
+.fgroup-summary:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+.fgroup-summary::after {
+  content: '▾';
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-left: 2px;
+  transition: transform 0.15s ease;
+}
+.fgroup.open .fgroup-summary::after {
+  transform: rotate(180deg);
+}
+.flabel {
+  font-size: 14px;
+}
+.fcount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+}
+.fcount:empty {
+  display: none;
+}
+.fgroup.active .fgroup-summary {
+  border-color: var(--accent);
+  color: var(--accent-text);
+  background: var(--accent-bg);
+}
+.fgroup-menu {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  top: calc(100% + var(--space-1));
+  left: 0;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  width: max-content;
+  max-width: min(80vw, 420px);
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: var(--space-3);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+.fgroup.open .fgroup-menu {
+  display: flex;
+}
+.fgroup-menu .chip {
+  padding: 6px var(--space-3);
+  font-size: 13px;
+}
+.chip:focus-visible,
+.fgroup-menu .chip:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+/* "Clear all" text button — shown only when a filter is active. */
+.reset-btn {
+  height: 36px;
+  padding: 0 var(--space-3);
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: var(--radius-pill);
+}
+.reset-btn:hover {
+  text-decoration: underline;
+}
+.reset-btn[hidden] {
+  display: none;
 }

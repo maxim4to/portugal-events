@@ -5,5 +5,6 @@ import { approvedPlaces, regions, allTags } from '../lib/data.ts';
 const hrefBase = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <Base title="Места — Португалия" description="Каталог мест Португалии: пляжи, замки, хайкинг, виды." wide>
+  <h1 class="sr-only">Места Португалии</h1>
   <PlacesExplorer places={approvedPlaces} regions={regions} tags={allTags} hrefBase={hrefBase} />
 </Base>

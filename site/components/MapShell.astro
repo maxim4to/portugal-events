@@ -20,6 +20,7 @@ const { kind, detailPrefix, hrefBase, mapId, points } = Astro.props;
   <div class="filter-bar-top">
     <slot name="filters" />
     <div class="toolbar">
+      <slot name="toolbar" />
       <span class="count muted" data-count></span>
       <div class="view-toggle" role="group" aria-label="Вид">
         <button type="button" class="btn view-btn" data-view="list" aria-pressed="true">Список</button>
@@ -32,7 +33,11 @@ const { kind, detailPrefix, hrefBase, mapId, points } = Astro.props;
     <div class="pane pane-list">
       <div class="list-scroll" data-list-scroll>
         <slot name="list" />
-        <p class="empty" data-empty hidden>Ничего не найдено.</p>
+        <div class="empty" data-empty hidden>
+          <p class="empty-title">Ничего не найдено</p>
+          <p class="empty-hint">Попробуйте изменить фильтры или подвинуть карту.</p>
+          <button type="button" class="btn empty-reset" data-reset>Сбросить фильтры</button>
+        </div>
       </div>
     </div>
 
@@ -107,9 +112,29 @@ const { kind, detailPrefix, hrefBase, mapId, points } = Astro.props;
     padding: var(--space-3);
   }
   .empty {
-    padding: var(--space-6) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-6) var(--space-4);
     text-align: center;
     color: var(--text-muted);
+  }
+  .empty[hidden] {
+    display: none;
+  }
+  .empty-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+  .empty-hint {
+    margin: 0;
+    font-size: 14px;
+  }
+  .empty-reset {
+    margin-top: var(--space-2);
   }
   .pane-map {
     position: relative;

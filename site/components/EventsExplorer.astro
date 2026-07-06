@@ -2,6 +2,7 @@
 import type { Event } from '../../schema/index.ts';
 import type { MapPoint } from '../lib/mapExplorer.ts';
 import MapShell from './MapShell.astro';
+import Icon from './Icon.astro';
 import { EVENT_TYPE_LABELS } from '../lib/labels.ts';
 import { formatDateRu } from '../lib/dates.ts';
 
@@ -41,16 +42,55 @@ function dateLabel(e: Event): string {
     ? formatDateRu(e.dateStart)
     : `${formatDateRu(e.dateStart)} – ${formatDateRu(e.dateEnd)}`;
 }
+
+// Filter option sets, derived from the events actually present.
+const presentTypes = [...new Set(events.map((e) => e.type))]
+  .map((t) => [t, EVENT_TYPE_LABELS[t] ?? 'Событие'] as const)
+  .sort((a, b) => a[1].localeCompare(b[1], 'ru'));
+const presentCities = [...new Set(events.map((e) => e.city))].sort((a, b) =>
+  a.localeCompare(b, 'ru'),
+);
 ---
 <MapShell kind="events" detailPrefix="/events/" hrefBase={hrefBase} mapId="events-map" points={points}>
   <div class="event-filters" slot="filters">
-    <input
-      type="search"
-      class="search-input"
-      data-filter="query"
-      placeholder="Поиск по названию, городу или площадке"
-      aria-label="Поиск событий"
-    />
+    <label class="search" aria-label="Поиск по названию, городу или площадке">
+      <span class="search-icon" aria-hidden="true"><Icon name="search" size={16} /></span>
+      <input
+        type="search"
+        class="search-input"
+        data-filter="query"
+        placeholder="Поиск события"
+        autocomplete="off"
+      />
+    </label>
+
+    {presentTypes.length > 1 && (
+      <div class="fgroup" data-fgroup="type">
+        <button type="button" class="fgroup-summary" data-fgroup-toggle aria-expanded="false">
+          <span class="flabel">Тип</span><span class="fcount" data-fcount></span>
+        </button>
+        <div class="fgroup-menu">
+          {presentTypes.map(([key, label]) => (
+            <button type="button" class="chip" data-type={key} aria-pressed="false">{label}</button>
+          ))}
+        </div>
+      </div>
+    )}
+
+    {presentCities.length > 1 && (
+      <div class="fgroup" data-fgroup="city">
+        <button type="button" class="fgroup-summary" data-fgroup-toggle aria-expanded="false">
+          <span class="flabel">Город</span><span class="fcount" data-fcount></span>
+        </button>
+        <div class="fgroup-menu">
+          {presentCities.map((c) => (
+            <button type="button" class="chip" data-city={c} aria-pressed="false">{c}</button>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <button type="button" class="reset-btn" data-reset hidden>Сбросить</button>
   </div>
 
   <div class="event-list" slot="list">
@@ -68,6 +108,8 @@ function dateLabel(e: Event): string {
                 data-item-card
                 data-id={event.id}
                 data-name={`${event.title} ${event.city} ${event.venue}`}
+                data-type={event.type}
+                data-city={event.city}
                 data-card-link
               >
                 <div class="cover">
@@ -93,20 +135,11 @@ function dateLabel(e: Event): string {
 
 <style>
   .event-filters {
+    flex: 1 1 100%;
     display: flex;
-  }
-  .search-input {
-    width: 100%;
-    max-width: 420px;
-    padding: var(--space-2) var(--space-3);
-    border: 0.5px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--surface-2);
-    color: var(--text-primary);
-    font: inherit;
-  }
-  .search-input::placeholder {
-    color: var(--text-muted);
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-2);
   }
   .month {
     margin-bottom: var(--space-5);
@@ -116,11 +149,18 @@ function dateLabel(e: Event): string {
     flex-direction: column;
     text-decoration: none;
     color: inherit;
-    transition: border-color 0.15s ease;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
   }
   .event-card:hover {
     border-color: var(--border-strong);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
     text-decoration: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .event-card:hover {
+      transform: none;
+    }
   }
   .cover {
     position: relative;
@@ -162,22 +202,108 @@ function dateLabel(e: Event): string {
     font-size: 14px;
     color: var(--text-secondary);
   }
+
+  @media (max-width: 760px) {
+    .event-filters .search {
+      flex: 1 1 100%;
+      order: -1;
+      min-width: 0;
+    }
+  }
 </style>
 
 <script>
   import { initMapExplorer } from '../lib/mapExplorer.ts';
+  import { initFilterGroups, setGroupCount } from '../lib/filterGroups.ts';
 
   const root = document.querySelector<HTMLElement>('[data-explorer]');
   if (root) {
     const searchInput = root.querySelector<HTMLInputElement>('[data-filter="query"]');
+    const typeChips = Array.from(root.querySelectorAll<HTMLButtonElement>('.chip[data-type]'));
+    const cityChips = Array.from(root.querySelectorAll<HTMLButtonElement>('.chip[data-city]'));
+    const resetButtons = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-reset]'));
+
+    const isOn = (el: Element | null) => el?.getAttribute('aria-pressed') === 'true';
+    const press = (el: Element, on: boolean) =>
+      el.setAttribute('aria-pressed', on ? 'true' : 'false');
+
+    const state = () => ({
+      query: (searchInput?.value || '').trim().toLowerCase(),
+      types: typeChips.filter(isOn).map((c) => c.dataset.type!),
+      city: cityChips.find(isOn)?.dataset.city ?? '',
+    });
 
     const matches = (el: HTMLElement) => {
-      const q = (searchInput?.value || '').trim().toLowerCase();
-      if (!q) return true;
-      return (el.dataset.name || '').toLowerCase().includes(q);
+      const s = state();
+      if (s.query && !(el.dataset.name || '').toLowerCase().includes(s.query)) return false;
+      if (s.types.length && !s.types.includes(el.dataset.type || '')) return false;
+      if (s.city && el.dataset.city !== s.city) return false;
+      return true;
     };
 
     const explorer = initMapExplorer(root, { matches });
-    searchInput?.addEventListener('input', () => explorer.rerender());
+    initFilterGroups(root);
+
+    function anyActive() {
+      const s = state();
+      return Boolean(s.query || s.types.length || s.city);
+    }
+
+    function writeUrl() {
+      const s = state();
+      const params = new URLSearchParams();
+      if (searchInput?.value.trim()) params.set('q', searchInput.value.trim());
+      if (s.types.length) params.set('type', s.types.join(','));
+      if (s.city) params.set('city', s.city);
+      const qs = params.toString();
+      history.replaceState(null, '', qs ? `?${qs}` : location.pathname);
+    }
+
+    function onFilterChange() {
+      const s = state();
+      setGroupCount(root!, 'type', s.types.length);
+      setGroupCount(root!, 'city', s.city ? 1 : 0);
+      resetButtons.forEach((b) => (b.hidden = !anyActive()));
+      writeUrl();
+      explorer.rerender();
+    }
+
+    typeChips.forEach((c) =>
+      c.addEventListener('click', () => {
+        press(c, !isOn(c));
+        onFilterChange();
+      }),
+    );
+    cityChips.forEach((c) =>
+      c.addEventListener('click', () => {
+        const was = isOn(c);
+        cityChips.forEach((o) => press(o, false));
+        press(c, !was);
+        onFilterChange();
+      }),
+    );
+    searchInput?.addEventListener('input', onFilterChange);
+    resetButtons.forEach((b) =>
+      b.addEventListener('click', () => {
+        [...typeChips, ...cityChips].forEach((c) => press(c, false));
+        if (searchInput) searchInput.value = '';
+        onFilterChange();
+      }),
+    );
+
+    // Restore from URL.
+    const params = new URLSearchParams(location.search);
+    if (searchInput && params.get('q')) searchInput.value = params.get('q')!;
+    const preTypes = new Set((params.get('type') || '').split(',').map((s) => s.trim()).filter(Boolean));
+    typeChips.forEach((c) => {
+      if (preTypes.has(c.dataset.type!)) press(c, true);
+    });
+    const preCity = params.get('city');
+    if (preCity) {
+      const chip = cityChips.find((c) => c.dataset.city === preCity);
+      if (chip) press(chip, true);
+    }
+
+    onFilterChange();
   }
 </script>

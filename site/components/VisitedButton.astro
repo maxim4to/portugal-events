@@ -56,12 +56,9 @@ const { placeId, variant = 'detail' } = Astro.props;
     flex: none;
   }
 
-  /* Compact overlay button for catalog cards. */
+  /* Compact overlay button for catalog cards. Positioned by the enclosing
+     .card-actions stack, so it stays static itself. */
   .visited-btn--card {
-    position: absolute;
-    top: var(--space-2);
-    right: var(--space-2);
-    z-index: 2;
     padding: var(--space-1) var(--space-2);
     font-size: 12px;
     background: color-mix(in srgb, var(--surface-2) 88%, transparent);

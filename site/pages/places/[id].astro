@@ -5,6 +5,8 @@ import Icon from '../../components/Icon.astro';
 import MiniMap from '../../components/MiniMap.astro';
 import VisitedButton from '../../components/VisitedButton.astro';
 import VisitedController from '../../components/VisitedController.astro';
+import FavoriteButton from '../../components/FavoriteButton.astro';
+import FavoriteController from '../../components/FavoriteController.astro';
 import PhotoGallery from '../../components/PhotoGallery.astro';
 import { approvedPlaces } from '../../lib/data.ts';
 import type { Place } from '../../../schema/index.ts';
@@ -20,6 +22,10 @@ const cover = place.photos[0];
 ---
 <Base title={place.name} description={place.description.slice(0, 150)}>
   <article class="detail">
+    <a class="back-top" href={href('/places/')}>
+      <Icon name="arrow-left" size={16} /> Ко всем местам
+    </a>
+
     <div class="hero">
       <PhotoGallery photos={place.photos} alt={place.name} variant="detail" type={place.type} />
       <span class="badge-overlay">
@@ -28,7 +34,9 @@ const cover = place.photos[0];
     </div>
 
     <h1>{place.name}</h1>
-    <p class="muted region">{place.region}</p>
+    <p class="muted region">
+      <a href={href('/places/?region=' + encodeURIComponent(place.region))}>{place.region}</a>
+    </p>
 
     <div class="meta-row">
       <span><Icon name="clock" size={14} /> {place.driveMinutesFromLisbon} мин на машине</span>
@@ -62,7 +70,7 @@ const cover = place.photos[0];
 
     <div class="actions">
       <a class="btn btn-primary" href={directions} target="_blank" rel="noopener">Маршрут в Google Maps</a>
-      <button class="btn" data-fav-id={place.id} aria-pressed="false">В избранное</button>
+      <FavoriteButton placeId={place.id} variant="detail" />
       <VisitedButton placeId={place.id} variant="detail" />
     </div>
 
@@ -78,6 +86,7 @@ const cover = place.photos[0];
   </article>
 
   <VisitedController />
+  <FavoriteController />
 </Base>
 
 <style>
@@ -101,8 +110,29 @@ const cover = place.photos[0];
   .detail h1 {
     margin: var(--space-3) 0 0;
   }
+  .back-top {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    align-self: flex-start;
+    color: var(--text-secondary);
+    font-size: 14px;
+  }
+  .back-top:hover {
+    color: var(--text-primary);
+    text-decoration: none;
+  }
   .region {
     margin: 0;
+  }
+  .region a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-color: var(--border-strong);
+  }
+  .region a:hover {
+    color: var(--text-secondary);
   }
   .residency-pill {
     align-self: flex-start;
@@ -148,11 +178,6 @@ const cover = place.photos[0];
     gap: var(--space-3);
     margin: var(--space-2) 0;
   }
-  .actions [data-fav-id][aria-pressed='true'] {
-    background: var(--accent-bg);
-    color: var(--accent-text);
-    border-color: var(--border-strong);
-  }
   .attribution {
     font-size: 12px;
     margin: 0;
@@ -168,39 +193,3 @@ const cover = place.photos[0];
     color: var(--accent);
   }
 </style>
-
-<script is:inline>
-  (function () {
-    var KEY = 'favorites';
-    function read() {
-      try {
-        return JSON.parse(localStorage.getItem(KEY) || '[]');
-      } catch (e) {
-        return [];
-      }
-    }
-    function write(list) {
-      try {
-        localStorage.setItem(KEY, JSON.stringify(list));
-      } catch (e) {}
-    }
-    var favs = read();
-    var buttons = document.querySelectorAll('[data-fav-id]');
-    buttons.forEach(function (btn) {
-      var id = btn.getAttribute('data-fav-id');
-      function reflect(on) {
-        btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-        btn.textContent = on ? 'Добавлено' : 'В избранное';
-      }
-      reflect(favs.indexOf(id) !== -1);
-      btn.addEventListener('click', function () {
-        favs = read();
-        var i = favs.indexOf(id);
-        if (i === -1) favs.push(id);
-        else favs.splice(i, 1);
-        write(favs);
-        reflect(favs.indexOf(id) !== -1);
-      });
-    });
-  })();
-</script>

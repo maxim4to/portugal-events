@@ -4,6 +4,8 @@ import FilterBar from './FilterBar.astro';
 import PlaceCard from './PlaceCard.astro';
 import VisitedButton from './VisitedButton.astro';
 import VisitedController from './VisitedController.astro';
+import FavoriteButton from './FavoriteButton.astro';
+import FavoriteController from './FavoriteController.astro';
 import MapShell from './MapShell.astro';
 
 interface Props {
@@ -25,11 +27,22 @@ const points = places.map((p) => ({
 <MapShell kind="places" detailPrefix="/places/" hrefBase={hrefBase} mapId="places-map" points={points}>
   <FilterBar slot="filters" regions={regions} tags={tags} />
 
+  <label class="sort" slot="toolbar" aria-label="Сортировка">
+    <span class="sort-label">Сортировка</span>
+    <select class="sort-select" data-sort>
+      <option value="default">по умолчанию</option>
+      <option value="drive-asc">ближе к Лиссабону</option>
+      <option value="drive-desc">дальше от Лиссабона</option>
+      <option value="name">по названию</option>
+    </select>
+  </label>
+
   <div class="grid-cards" slot="list">
     {places.map((p) => (
       <div
         class="card-wrap"
         data-item-card
+        data-place-card
         data-id={p.id}
         data-type={p.type}
         data-region={p.region}
@@ -38,7 +51,10 @@ const points = places.map((p) => ({
         data-name={p.name}
         data-residency={p.freeWithResidency ? 'true' : 'false'}
       >
-        <VisitedButton placeId={p.id} variant="card" />
+        <div class="card-actions">
+          <FavoriteButton placeId={p.id} variant="card" />
+          <VisitedButton placeId={p.id} variant="card" />
+        </div>
         <PlaceCard place={p} href={`${hrefBase}/places/${p.id}/`} />
       </div>
     ))}
@@ -46,15 +62,58 @@ const points = places.map((p) => ({
 </MapShell>
 
 <VisitedController />
+<FavoriteController />
 
 <style>
   .card-wrap {
     position: relative;
   }
+  .card-actions {
+    position: absolute;
+    top: var(--space-2);
+    right: var(--space-2);
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--space-1);
+  }
+  .sort {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    white-space: nowrap;
+  }
+  .sort-label {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .sort-select {
+    height: 32px;
+    padding: 0 var(--space-2);
+    border: 0.5px solid var(--border-strong);
+    border-radius: var(--radius);
+    background: var(--surface-2);
+    color: var(--text-primary);
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .sort-select:focus-visible {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-bg);
+  }
+  @media (max-width: 760px) {
+    .sort-label {
+      display: none;
+    }
+  }
 </style>
 
 <script>
   import { initMapExplorer } from '../lib/mapExplorer.ts';
+  import { initFilterGroups, setGroupCount } from '../lib/filterGroups.ts';
   import {
     matchesFilter,
     type ExplorerFilterState,
@@ -72,6 +131,11 @@ const points = places.map((p) => ({
     const visitedChips = Array.from(
       root.querySelectorAll<HTMLButtonElement>('.chip[data-visited-opt]'),
     );
+    const searchInput = root.querySelector<HTMLInputElement>('[data-filter="query"]');
+    const favToggle = root.querySelector<HTMLButtonElement>('[data-favorites]');
+    const sortSelect = root.querySelector<HTMLSelectElement>('[data-sort]');
+    const resetButtons = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-reset]'));
+    const grid = root.querySelector<HTMLElement>('.grid-cards');
 
     const isOn = (el: Element | null) => el?.getAttribute('aria-pressed') === 'true';
     const press = (el: Element, on: boolean) =>
@@ -83,8 +147,9 @@ const points = places.map((p) => ({
         region: regionChips.find(isOn)?.dataset.region ?? '',
         tags: tagChips.filter(isOn).map((c) => c.dataset.tag!),
         maxDrive: Number(driveChips.find(isOn)?.dataset.drive ?? 240),
-        query: '',
+        query: searchInput?.value ?? '',
         visited: (visitedChips.find(isOn)?.dataset.visitedOpt as VisitedFilter) || 'all',
+        onlyFavorites: isOn(favToggle),
         freeWithResidency: isOn(residencyChip),
       };
     }
@@ -97,6 +162,7 @@ const points = places.map((p) => ({
         tags: (el.dataset.tags || '').split('|').filter(Boolean),
         name: el.dataset.name!,
         visited: el.dataset.visited === 'true',
+        favorite: el.dataset.favorite === 'true',
         freeWithResidency: el.dataset.residency === 'true',
       };
     }
@@ -104,48 +170,77 @@ const points = places.map((p) => ({
     const matches = (el: HTMLElement) => matchesFilter(cardData(el), readState());
     const explorer = initMapExplorer(root, { matches });
 
-    function setGroupCount(key: string, n: number) {
-      const group = root!.querySelector<HTMLElement>(`[data-fgroup="${key}"]`);
-      if (!group) return;
-      group.classList.toggle('active', n > 0);
-      const badge = group.querySelector<HTMLElement>('[data-fcount]');
-      if (badge) badge.textContent = n > 0 ? String(n) : '';
+    // ---- Sorting: reorder the list DOM (markers/visibility are order-agnostic). --
+    const cardWraps = grid
+      ? Array.from(grid.querySelectorAll<HTMLElement>('[data-item-card]'))
+      : [];
+    const originalOrder = cardWraps.slice();
+    const collator = new Intl.Collator('ru');
+
+    function applySort() {
+      if (!grid) return;
+      const mode = sortSelect?.value ?? 'default';
+      let ordered = originalOrder;
+      if (mode === 'drive-asc') {
+        ordered = originalOrder
+          .slice()
+          .sort((a, b) => Number(a.dataset.drive) - Number(b.dataset.drive));
+      } else if (mode === 'drive-desc') {
+        ordered = originalOrder
+          .slice()
+          .sort((a, b) => Number(b.dataset.drive) - Number(a.dataset.drive));
+      } else if (mode === 'name') {
+        ordered = originalOrder
+          .slice()
+          .sort((a, b) => collator.compare(a.dataset.name || '', b.dataset.name || ''));
+      }
+      for (const el of ordered) grid.appendChild(el);
+    }
+
+    // ---- URL <-> filter state sync ------------------------------------------
+    function anyActive(s: ExplorerFilterState): boolean {
+      return Boolean(
+        s.types.length ||
+          s.region ||
+          s.tags.length ||
+          s.maxDrive !== 240 ||
+          s.query.trim() ||
+          s.visited !== 'all' ||
+          s.onlyFavorites ||
+          s.freeWithResidency,
+      );
+    }
+
+    function writeUrl(s: ExplorerFilterState) {
+      const params = new URLSearchParams();
+      if (s.query.trim()) params.set('q', s.query.trim());
+      if (s.types.length) params.set('type', s.types.join(','));
+      if (s.region) params.set('region', s.region);
+      if (s.tags.length) params.set('tag', s.tags.join(','));
+      if (s.maxDrive !== 240) params.set('drive', String(s.maxDrive));
+      if (s.visited !== 'all') params.set('visited', s.visited);
+      if (s.onlyFavorites) params.set('fav', '1');
+      if (s.freeWithResidency) params.set('residency', '1');
+      const sort = sortSelect?.value ?? 'default';
+      if (sort !== 'default') params.set('sort', sort);
+      const qs = params.toString();
+      history.replaceState(null, '', qs ? `?${qs}` : location.pathname);
     }
 
     function onFilterChange() {
       const s = readState();
-      setGroupCount('type', s.types.length);
-      setGroupCount('region', s.region ? 1 : 0);
-      setGroupCount('tags', s.tags.length);
-      setGroupCount('drive', s.maxDrive !== 240 ? 1 : 0);
-      setGroupCount('more', (s.freeWithResidency ? 1 : 0) + (s.visited !== 'all' ? 1 : 0));
+      setGroupCount(root, 'type', s.types.length);
+      setGroupCount(root, 'region', s.region ? 1 : 0);
+      setGroupCount(root, 'tags', s.tags.length);
+      setGroupCount(root, 'drive', s.maxDrive !== 240 ? 1 : 0);
+      setGroupCount(root, 'more', (s.freeWithResidency ? 1 : 0) + (s.visited !== 'all' ? 1 : 0));
+      resetButtons.forEach((b) => (b.hidden = !anyActive(s)));
+      writeUrl(s);
       explorer.rerender();
     }
 
-    // Mobile dropdowns: the summary pill toggles its group open; one at a time;
-    // tap outside closes. On desktop the summary is inert (pointer-events:none)
-    // and every group's chips are shown inline, so none of this runs.
-    const groups = Array.from(root.querySelectorAll<HTMLElement>('.fgroup'));
-    groups.forEach((g) => {
-      const btn = g.querySelector<HTMLButtonElement>('[data-fgroup-toggle]');
-      btn?.addEventListener('click', () => {
-        const willOpen = !g.classList.contains('open');
-        groups.forEach((o) => {
-          o.classList.toggle('open', o === g && willOpen);
-          o.querySelector('[data-fgroup-toggle]')?.setAttribute(
-            'aria-expanded',
-            String(o === g && willOpen),
-          );
-        });
-      });
-    });
-    document.addEventListener('click', (e) => {
-      if ((e.target as HTMLElement).closest('.fgroup')) return;
-      groups.forEach((g) => {
-        g.classList.remove('open');
-        g.querySelector('[data-fgroup-toggle]')?.setAttribute('aria-expanded', 'false');
-      });
-    });
+    // The summary pill toggles its group open (one at a time; tap outside closes).
+    initFilterGroups(root);
 
     // Multi-select toggles: types and tags.
     [...typeChips, ...tagChips].forEach((c) =>
@@ -184,19 +279,73 @@ const points = places.map((p) => ({
       }),
     );
 
-    // Preload filters from URL query params (links from detail pages).
-    const params = new URLSearchParams(location.search);
-    const preType = params.get('type');
-    if (preType) {
-      const chip = typeChips.find((c) => c.dataset.type === preType);
-      if (chip) press(chip, true);
-    }
-    const preTag = params.get('tag');
-    if (preTag) {
-      const chip = tagChips.find((c) => c.dataset.tag === preTag);
-      if (chip) press(chip, true);
-    }
+    // Favorites toggle.
+    favToggle?.addEventListener('click', () => {
+      press(favToggle, !isOn(favToggle));
+      onFilterChange();
+    });
 
+    // Re-filter only when the favorites filter is active (e.g. un-hearting a
+    // place while viewing favorites). Otherwise a toggle changes nothing shown,
+    // so we avoid a needless map refit.
+    document.addEventListener('favorites:changed', () => {
+      if (isOn(favToggle)) explorer.rerender();
+    });
+
+    // Search: filter as you type.
+    searchInput?.addEventListener('input', onFilterChange);
+
+    // Sort: pure reorder, no re-filter needed.
+    sortSelect?.addEventListener('change', () => {
+      applySort();
+      writeUrl(readState());
+    });
+
+    // Reset: clear every filter and the search box.
+    resetButtons.forEach((b) =>
+      b.addEventListener('click', () => {
+        [...typeChips, ...tagChips, ...visitedChips].forEach((c) => press(c, false));
+        regionChips.forEach((c) => press(c, false));
+        if (residencyChip) press(residencyChip, false);
+        if (favToggle) press(favToggle, false);
+        driveChips.forEach((c) => press(c, c.dataset.drive === '240'));
+        if (searchInput) searchInput.value = '';
+        onFilterChange();
+      }),
+    );
+
+    // ---- Restore state from the URL on load. --------------------------------
+    const params = new URLSearchParams(location.search);
+    const setMulti = (chips: HTMLButtonElement[], key: string, raw: string | null) => {
+      if (!raw) return;
+      const wanted = new Set(raw.split(',').map((s) => s.trim()).filter(Boolean));
+      chips.forEach((c) => {
+        if (wanted.has(c.dataset[key]!)) press(c, true);
+      });
+    };
+    if (searchInput && params.get('q')) searchInput.value = params.get('q')!;
+    setMulti(typeChips, 'type', params.get('type'));
+    setMulti(tagChips, 'tag', params.get('tag'));
+    const preRegion = params.get('region');
+    if (preRegion) {
+      const chip = regionChips.find((c) => c.dataset.region === preRegion);
+      if (chip) press(chip, true);
+    }
+    const preDrive = params.get('drive');
+    if (preDrive && driveChips.some((c) => c.dataset.drive === preDrive)) {
+      driveChips.forEach((c) => press(c, c.dataset.drive === preDrive));
+    }
+    const preVisited = params.get('visited');
+    if (preVisited === 'visited' || preVisited === 'unvisited') {
+      const chip = visitedChips.find((c) => c.dataset.visitedOpt === preVisited);
+      if (chip) press(chip, true);
+    }
+    if (params.get('residency') === '1' && residencyChip) press(residencyChip, true);
+    if (params.get('fav') === '1' && favToggle) press(favToggle, true);
+    const preSort = params.get('sort');
+    if (sortSelect && preSort) sortSelect.value = preSort;
+
+    applySort();
     onFilterChange();
   }
 </script>

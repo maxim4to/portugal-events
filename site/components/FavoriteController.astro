@@ -1,0 +1,80 @@
+---
+// Client controller for the private "favorites" feature. Include once on any
+// page that renders FavoriteButton(s) or the favorites filter. State lives in
+// localStorage under `favorites` (an array of place ids) — no auth, no network,
+// always available. It:
+//  - reflects the saved set onto every .favorite-btn and [data-place-card]
+//  - keeps [data-fav-count] badges in sync with the number of favorites
+//  - toggles on click (guarding against the enclosing card <a> navigating)
+//  - dispatches `favorites:changed` so an explorer can re-run its filter
+---
+<script is:inline>
+  (function () {
+    var KEY = 'favorites';
+
+    function read() {
+      try {
+        var v = JSON.parse(localStorage.getItem(KEY) || '[]');
+        return Array.isArray(v) ? v : [];
+      } catch (e) {
+        return [];
+      }
+    }
+    function write(list) {
+      try {
+        localStorage.setItem(KEY, JSON.stringify(list));
+      } catch (e) {}
+    }
+
+    var buttons = Array.prototype.slice.call(
+      document.querySelectorAll('.favorite-btn'),
+    );
+    var countEls = Array.prototype.slice.call(
+      document.querySelectorAll('[data-fav-count]'),
+    );
+
+    function reflect() {
+      var favs = read();
+      var set = {};
+      for (var i = 0; i < favs.length; i++) set[favs[i]] = true;
+
+      buttons.forEach(function (btn) {
+        var id = btn.getAttribute('data-favorite-id');
+        var on = !!set[id];
+        btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+        btn.setAttribute('aria-label', on ? 'Убрать из избранного' : 'В избранное');
+        var label = btn.querySelector('.favorite-label');
+        if (label) label.textContent = on ? 'В избранном' : 'В избранное';
+      });
+
+      // Reflect onto catalog card wrappers so the explorer filter can read it.
+      document.querySelectorAll('[data-place-card]').forEach(function (wrap) {
+        var id = wrap.getAttribute('data-id');
+        wrap.dataset.favorite = set[id] ? 'true' : 'false';
+      });
+
+      countEls.forEach(function (el) {
+        el.textContent = favs.length ? String(favs.length) : '';
+      });
+
+      document.dispatchEvent(new CustomEvent('favorites:changed'));
+    }
+
+    reflect();
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        // Card buttons live inside an <a>; never navigate.
+        e.preventDefault();
+        e.stopPropagation();
+        var id = btn.getAttribute('data-favorite-id');
+        var favs = read();
+        var idx = favs.indexOf(id);
+        if (idx === -1) favs.push(id);
+        else favs.splice(idx, 1);
+        write(favs);
+        reflect();
+      });
+    });
+  })();
+</script>
