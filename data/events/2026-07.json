@@ -26,7 +26,8 @@
     "url": "https://www.being-gathering.org/",
     "description": "Камерное «мини-Boom» между большими изданиями Boom Festival: музыка, велнес и семейные воркшопы на берегу озера Идання. Идеально для спокойного длинного уикенда на природе.",
     "sourceId": "websearch",
-    "dedupeHash": "being gathering|2026-07-01|idanha-a-nova"
+    "dedupeHash": "being gathering|2026-07-01|idanha-a-nova",
+    "image": "https://cdn.prod.website-files.com/6581fb15f9842cb191e4681e/69bd24375865bce8c02387de_BG26_CartazCompleto_Website_Mobile.jpg"
   },
   {
     "id": "ageas-cooljazz-2026",
@@ -40,7 +41,8 @@
     "url": "https://ageascooljazz.pt/",
     "description": "Летний джаз- и поп-фестиваль в парке Кашкайша: в программе Gilberto Gil, David Byrne, Jamiroquai, Diana Krall, Franz Ferdinand и другие. Концерты под открытым небом весь июль.",
     "sourceId": "websearch",
-    "dedupeHash": "ageas cooljazz|2026-07-08|cascais"
+    "dedupeHash": "ageas cooljazz|2026-07-08|cascais",
+    "image": "https://artesonora.pt/wp-content/uploads/2026/05/cooljazz.jpg"
   },
   {
     "id": "nos-alive-2026",
@@ -99,7 +101,8 @@
     "url": "https://www.fmmsines.pt/pages/965",
     "description": "26-е издание фестиваля мировой музыки: 38 концертов музыкантов с четырёх континентов в исторических уголках Синеша и деревни Порту-Ковуш. Многие концерты бесплатные.",
     "sourceId": "websearch",
-    "dedupeHash": "festival músicas do mundo|2026-07-17|sines"
+    "dedupeHash": "festival músicas do mundo|2026-07-17|sines",
+    "image": "https://mentecultural.com/wp-content/uploads/2026/05/fmm.png"
   },
   {
     "id": "iron-maiden-lisboa-2026",
@@ -113,7 +116,8 @@
     "url": "https://www.ticketline.pt/en/evento/iron-maiden-97240/sessao/119247_1153_1783449000",
     "description": "Iron Maiden возвращаются в Португалию с самым масштабным стадионным шоу карьеры: новая сценография и воплощения талисмана Eddie. Открывает концерт группа Anthrax.",
     "sourceId": "websearch",
-    "dedupeHash": "iron maiden run for your lives|2026-07-07|lisboa"
+    "dedupeHash": "iron maiden run for your lives|2026-07-07|lisboa",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Iron_Maiden_live_in_Madrid_13_July_2016.jpg"
   },
   {
     "id": "scorpions-lisboa-2026",
@@ -127,7 +131,8 @@
     "url": "https://arena.meo.pt/agenda/scorpions-coming-home-2026_pt/15776",
     "description": "Легендарная немецкая рок-группа отмечает 60 лет карьеры туром «Coming Home». Хиты вроде Wind of Change и Rock You Like a Hurricane на сцене MEO Arena.",
     "sourceId": "websearch",
-    "dedupeHash": "scorpions coming home|2026-07-08|lisboa"
+    "dedupeHash": "scorpions coming home|2026-07-08|lisboa",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Scorpions_in_Kavarna_2010.JPG"
   },
   {
     "id": "santos-em-santos-2026",
@@ -141,7 +146,8 @@
     "url": "https://aondevamos.pt/lisboa/festas-e-festivais/santos-em-santos/",
     "description": "Мега-арраял на набережной Сантуш длится 52 дня: бесплатная народная музыка каждый вечер, сардины на гриле и трансляции матчей на большом экране. Успейте до 19 июля.",
     "sourceId": "websearch",
-    "dedupeHash": "santos em santos|2026-05-29|lisboa"
+    "dedupeHash": "santos em santos|2026-05-29|lisboa",
+    "image": "https://aondevamos.pt/wp-content/uploads/2026/04/santos_nos_santos_2026_festa_dos_santos_populares_lisboa-536x675.png"
   },
   {
     "id": "serralves-em-luz-2026",
@@ -155,7 +161,8 @@
     "url": "https://www.serralves.pt/en/agenda-serralves/",
     "description": "Четвёртое издание светового фестиваля в парке Серралвеш: 20 новых арт-инсталляций на маршруте протяжённостью два километра, с оригинальной музыкой португальских композиторов.",
     "sourceId": "websearch",
-    "dedupeHash": "serralves em luz|2026-07-09|porto"
+    "dedupeHash": "serralves em luz|2026-07-09|porto",
+    "image": "https://cdn.bndlyr.com/_i/nsa343pdfl/_assets/2206_serralvesemluz_agenda.jpg?auto=format&fit=fill&w=800"
   },
   {
     "id": "bienal-cerveira-2026",
@@ -169,7 +176,8 @@
     "url": "https://bienaldecerveira.pt/2026-2/",
     "description": "Старейшая биеннале современного искусства в Португалии, тема 2026 года — «Territórios sem Fronteira». В программе выставка-посвящение художнику Silvestre Pestana и международные резиденции.",
     "sourceId": "websearch",
-    "dedupeHash": "bienal internacional de arte de cerveira|2026-07-18|vila nova de cerveira"
+    "dedupeHash": "bienal internacional de arte de cerveira|2026-07-18|vila nova de cerveira",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Vila_Nova_de_Cerveira_-_panoramio_%2823%29.jpg"
   },
   {
     "id": "festival-medieval-elvas-2026",
@@ -273,7 +281,8 @@
     "url": "https://feirasmedievais.pt/2026/06/15/feira-quinhentista-de-abiul-3/",
     "description": "Историческая деревня Абиул воссоздаёт XVI век: реконструкции, таверны, ремесленники и ночная прогулка в костюмах эпохи.",
     "sourceId": "websearch",
-    "dedupeHash": "feira quinhentista de abiul|2026-07-04|pombal"
+    "dedupeHash": "feira quinhentista de abiul|2026-07-04|pombal",
+    "image": "https://feirasmedievais.pt/wp-content/uploads/2026/06/721575574_1454618306710417_3958498680760156242_n-1-1080x675.jpg"
   },
   {
     "id": "festa-templaria-tomar-2026",
@@ -287,7 +296,8 @@
     "url": "https://www.cm-tomar.pt/visitar/festas-e-romarias/festa-templaria",
     "description": "Праздник, посвящённый истории и легендам ордена Тамплиеров: реконструкции, экскурсии, средневековый рынок и конкурсы в обновлённом Городском парке Томара.",
     "sourceId": "websearch",
-    "dedupeHash": "festa templaria de tomar|2026-07-09|tomar"
+    "dedupeHash": "festa templaria de tomar|2026-07-09|tomar",
+    "image": "https://i0.wp.com/gazetarural.com/wp-content/uploads/2026/06/festa-templaria-2026-banner-instagram-stories-1080x1920-1.jpg"
   },
   {
     "id": "feira-medieval-sintra-2026",
@@ -331,7 +341,8 @@
     "url": "https://agendaculturalporto.org/eventos/xiia-feira-medieval-de-mindelo-uma-viagem-no-tempo/",
     "description": "13-е издание средневековой ярмарки в Миндело, организованное местной скаутской группой: рынок, ремёсла и историческая анимация.",
     "sourceId": "websearch",
-    "dedupeHash": "feira medieval de mindelo|2026-07-10|vila do conde"
+    "dedupeHash": "feira medieval de mindelo|2026-07-10|vila do conde",
+    "image": "https://agendaculturalporto.org/wp-content/uploads/2025/06/XIIa-Feira-Medieval-de-Mindelo-—-Uma-Viagem-no-Tempo.jpeg"
   },
   {
     "id": "galaicofolia-2026",
@@ -345,7 +356,8 @@
     "url": "https://galaicofolia.com/",
     "description": "Реконструкция кельтско-римской атмосферы на месте городища Каштру-де-Сан-Лоуренсу: ритуальные танцы, театр, ремёсла и бои гладиаторов.",
     "sourceId": "websearch",
-    "dedupeHash": "galaicofolia|2026-07-16|esposende"
+    "dedupeHash": "galaicofolia|2026-07-16|esposende",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/db/Esposende_Lighthouse_%2810386949174%29.jpg"
   },
   {
     "id": "jornadas-medievais-canelas-douro-2026",
@@ -359,7 +371,8 @@
     "url": "https://www.cm-pesoregua.pt/visitar/fazer/festas-e-feiras/poi/jornadas-medievais-do-douro",
     "description": "Праздник в честь визита короля Саншу I в Канелаш, старейшего упоминания театрального представления в средневековой Португалии: торговцы, акробаты и шуты у Дору.",
     "sourceId": "websearch",
-    "dedupeHash": "jornadas medievais do douro|2026-07-17|peso da regua"
+    "dedupeHash": "jornadas medievais do douro|2026-07-17|peso da regua",
+    "image": "https://feirasmedievais.pt/wp-content/uploads/2025/07/Jornadas-Medievais-de-Canelas-do-Douro-18-de-Julho-de-2025-Canelas-1080x675.jpg"
   },
   {
     "id": "caminha-medieval-2026",

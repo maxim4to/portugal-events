@@ -11,7 +11,8 @@
     "url": "https://activealgarve.pt/event/festival-f-2026-faro",
     "description": "Три дня современной португалоязычной музыки в старом городе Фару: 60+ артистов на нескольких сценах во дворах и на площадях. Между сетами можно ужинать в местных ресторанчиках.",
     "sourceId": "websearch",
-    "dedupeHash": "festival f|2026-09-03|faro"
+    "dedupeHash": "festival f|2026-09-03|faro",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Faro_aerial_view.jpg"
   },
   {
     "id": "festa-do-avante-2026",
@@ -25,7 +26,8 @@
     "url": "https://www.festadoavante.pcp.pt/",
     "description": "Крупнейший политико-культурный праздник страны, в 2026-м — 50-е издание. Три дня музыки на нескольких сценах, театр, спорт и гастрономия регионов Португалии.",
     "sourceId": "websearch",
-    "dedupeHash": "festa do avante|2026-09-04|seixal"
+    "dedupeHash": "festa do avante|2026-09-04|seixal",
+    "image": "https://www.festadoavante.pcp.pt/theme/imgs/logo_share.png"
   },
   {
     "id": "the-weeknd-lisboa-2026-09-05",
@@ -39,7 +41,8 @@
     "url": "https://superbocksuperrock.pt/",
     "description": "The Weeknd открывает новый формат Super Bock Super Rock — серию больших концертов. Мировое шоу «After Hours til Dawn» на стадионе Рештелу, на разогреве Playboi Carti.",
     "sourceId": "websearch",
-    "dedupeHash": "the weeknd|2026-09-05|lisboa"
+    "dedupeHash": "the weeknd|2026-09-05|lisboa",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/The_Weeknd_Cannes_2023_%282%29.jpg"
   },
   {
     "id": "the-weeknd-lisboa-2026-09-06",
@@ -53,7 +56,8 @@
     "url": "https://superbocksuperrock.pt/",
     "description": "Второй концерт The Weeknd в Лиссабоне, добавленный из-за спроса на билеты. То же мировое шоу «After Hours til Dawn» на стадионе Рештелу.",
     "sourceId": "websearch",
-    "dedupeHash": "the weeknd|2026-09-06|lisboa"
+    "dedupeHash": "the weeknd|2026-09-06|lisboa",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/The_Weeknd_Cannes_2023_%282%29.jpg"
   },
   {
     "id": "festival-iminente-2026",
@@ -67,7 +71,8 @@
     "url": "https://festivaliminente.com/",
     "description": "Городской фестиваль музыки и уличного искусства, в 2026-м отмечает 10-летие в заброшенной школе в Марвиле. Концерты, муралы и перформансы в необычном пространстве.",
     "sourceId": "websearch",
-    "dedupeHash": "festival iminente|2026-09-17|lisboa"
+    "dedupeHash": "festival iminente|2026-09-17|lisboa",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Marvila_%2834832992532%29.jpg"
   },
   {
     "id": "noites-ritual-porto-2026",
@@ -81,7 +86,8 @@
     "url": "https://iporto.amp.pt/en/eventos/noites-ritual_en/",
     "description": "24-е издание фестиваля возвращается «к истокам» в сады Кришталского дворца в Порту со свободным входом. Два вечера концертов португальских артистов на закате над рекой Дору.",
     "sourceId": "websearch",
-    "dedupeHash": "noites ritual|2026-09-25|porto"
+    "dedupeHash": "noites ritual|2026-09-25|porto",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/36/Porto_view_from_Vila_Nova_de_Gaia_%2827078365799%29.jpg"
   },
   {
     "id": "festa-vindimas-palmela-2026",
@@ -95,7 +101,8 @@
     "url": "https://festadasvindimas.pt/",
     "description": "61-е издание одного из главных праздников сбора винограда в Португалии: пешая давка винограда, дегустации вин региона Палмела, ремесленные ярмарки и фольклорные шествия.",
     "sourceId": "websearch",
-    "dedupeHash": "festa das vindimas de palmela|2026-09-03|palmela"
+    "dedupeHash": "festa das vindimas de palmela|2026-09-03|palmela",
+    "image": "https://festadasvindimas.pt/wp-content/uploads/FB_share.jpg"
   },
   {
     "id": "feiras-novas-ponte-de-lima-2026",
@@ -109,6 +116,7 @@
     "url": "https://www.feirasnovas.pt/",
     "description": "Одна из старейших и самых красочных ярмарок севера Португалии в самом старом городе страны: фейерверки, шествия, концерты и традиционная ярмарка на берегу реки Лима.",
     "sourceId": "websearch",
-    "dedupeHash": "feiras novas de ponte de lima|2026-09-09|ponte de lima"
+    "dedupeHash": "feiras novas de ponte de lima|2026-09-09|ponte de lima",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/03/Ponte_de_lima_arco_da_porta_nova.JPG"
   }
 ]

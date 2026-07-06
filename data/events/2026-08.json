@@ -86,7 +86,8 @@
     "url": "https://www.andancas.net/site/en/homepage/",
     "description": "Международный фестиваль народных танцев и музыки в алентежанской деревне Кампинью. Мастер-классы традиционных танцев со всего мира и общий большой круг вечером.",
     "sourceId": "websearch",
-    "dedupeHash": "festival andanças|2026-08-13|reguengos de monsaraz"
+    "dedupeHash": "festival andanças|2026-08-13|reguengos de monsaraz",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/Reguengos_de_Monsaraz_-_Portugal_%2851090633337%29.jpg"
   },
   {
     "id": "vilar-de-mouros-2026",
@@ -190,6 +191,7 @@
     "url": "https://festivalcrato.pt/",
     "description": "Один из крупнейших летних фестивалей Алто-Алентежу: смесь фаду, хип-хопа, регги и попа. В лайнапе 2026 года Calum Scott, Bispo, Slow J и Sara Correia.",
     "sourceId": "websearch",
-    "dedupeHash": "festival do crato|2026-08-26|crato"
+    "dedupeHash": "festival do crato|2026-08-26|crato",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Crato_-_Portugal_%28144113321%29.jpg"
   }
 ]
