@@ -27,5 +27,16 @@
   { "name": "Silves", "lat": 37.1892, "lon": -8.4382 },
   { "name": "Crato", "lat": 39.2879, "lon": -7.6461 },
   { "name": "Vila Nova de Cerveira", "lat": 41.9331, "lon": -8.7453 },
-  { "name": "Palmela", "lat": 38.5683, "lon": -8.9013 }
+  { "name": "Palmela", "lat": 38.5683, "lon": -8.9013 },
+  { "name": "Elvas", "lat": 38.8804, "lon": -7.1626 },
+  { "name": "Lagoa", "lat": 37.1394, "lon": -8.4536 },
+  { "name": "Valongo", "lat": 41.1876, "lon": -8.4988 },
+  { "name": "Figueira de Castelo Rodrigo", "lat": 40.9167, "lon": -6.9833 },
+  { "name": "Penedono", "lat": 40.9776, "lon": -7.3934 },
+  { "name": "Pombal", "lat": 39.9167, "lon": -8.6167 },
+  { "name": "Vila do Conde", "lat": 41.3521, "lon": -8.7440 },
+  { "name": "Esposende", "lat": 41.5361, "lon": -8.7828 },
+  { "name": "Peso da Régua", "lat": 41.1621, "lon": -7.7893 },
+  { "name": "Montijo", "lat": 38.7061, "lon": -8.9747 },
+  { "name": "Santa Maria da Feira", "lat": 40.9256, "lon": -8.5486 }
 ]
