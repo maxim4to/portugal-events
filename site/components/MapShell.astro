@@ -53,14 +53,15 @@ const { kind, detailPrefix, hrefBase, mapId, points } = Astro.props;
   .explorer-root {
     display: flex;
     flex-direction: column;
-    height: calc(100dvh - 150px);
-    min-height: 520px;
+    flex: 1;
+    min-height: 0;
   }
 
-  /* Compact full-width filter bar above the two panes. */
+  /* Compact full-width filter bar above the two panes. Sits above the card
+     action buttons (z-index 5) so its dropdowns are never occluded. */
   .filter-bar-top {
     position: relative;
-    z-index: 5;
+    z-index: 40;
     display: flex;
     align-items: center;
     gap: var(--space-3);
@@ -207,9 +208,6 @@ const { kind, detailPrefix, hrefBase, mapId, points } = Astro.props;
 
   /* Mobile: single column, toggle between list and map. */
   @media (max-width: 760px) {
-    .explorer-root {
-      height: calc(100dvh - 110px);
-    }
     .map-explorer {
       grid-template-columns: 1fr;
     }

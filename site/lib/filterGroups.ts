@@ -6,17 +6,46 @@
 /** Wire open/close (one-at-a-time, close-on-outside-click) for all `.fgroup`. */
 export function initFilterGroups(root: HTMLElement): void {
   const groups = Array.from(root.querySelectorAll<HTMLElement>('.fgroup'));
+  const MARGIN = 8;
+
+  function clearMenu(g: HTMLElement) {
+    const menu = g.querySelector<HTMLElement>('.fgroup-menu');
+    if (menu) {
+      menu.style.left = '';
+      menu.style.right = '';
+    }
+  }
+
+  // Keep an opened dropdown within the viewport: flip a right-edge overflow to
+  // right-align, and pin to the viewport if it would still spill off the left.
+  function positionMenu(g: HTMLElement) {
+    const menu = g.querySelector<HTMLElement>('.fgroup-menu');
+    if (!menu) return;
+    menu.style.left = '';
+    menu.style.right = '';
+    let rect = menu.getBoundingClientRect();
+    if (rect.right > window.innerWidth - MARGIN) {
+      menu.style.left = 'auto';
+      menu.style.right = '0';
+      rect = menu.getBoundingClientRect();
+    }
+    if (rect.left < MARGIN) {
+      menu.style.right = 'auto';
+      menu.style.left = `${MARGIN - g.getBoundingClientRect().left}px`;
+    }
+  }
+
   groups.forEach((g) => {
     const btn = g.querySelector<HTMLButtonElement>('[data-fgroup-toggle]');
     btn?.addEventListener('click', () => {
       const willOpen = !g.classList.contains('open');
       groups.forEach((o) => {
-        o.classList.toggle('open', o === g && willOpen);
-        o.querySelector('[data-fgroup-toggle]')?.setAttribute(
-          'aria-expanded',
-          String(o === g && willOpen),
-        );
+        const open = o === g && willOpen;
+        o.classList.toggle('open', open);
+        o.querySelector('[data-fgroup-toggle]')?.setAttribute('aria-expanded', String(open));
+        if (!open) clearMenu(o);
       });
+      if (willOpen) positionMenu(g);
     });
   });
   document.addEventListener('click', (e) => {
@@ -24,6 +53,7 @@ export function initFilterGroups(root: HTMLElement): void {
     groups.forEach((g) => {
       g.classList.remove('open');
       g.querySelector('[data-fgroup-toggle]')?.setAttribute('aria-expanded', 'false');
+      clearMenu(g);
     });
   });
 }

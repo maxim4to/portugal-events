@@ -196,23 +196,32 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
 
   document.addEventListener('visited:changed', updateListVisibility);
 
-  // Lock the explorer to the remaining viewport height so the list gets its own
-  // scroll area (instead of the whole page scrolling) and the map pane gets a
-  // real, non-zero height. On mobile the CSS media query owns the height.
-  function sizeToViewport() {
-    if (window.innerWidth <= 760) {
-      root.style.height = '';
-      return;
-    }
-    const top = root.getBoundingClientRect().top + window.scrollY;
-    root.style.height = `${Math.max(480, window.innerHeight - top - 16)}px`;
-  }
-  sizeToViewport();
+  // The explorer fills its flex parent (see Base `.main.wide` / MapShell
+  // `.explorer-root`), so the page never scrolls — only `.list-scroll` does.
+  // On resize just let Leaflet re-measure and re-run viewport filtering.
   window.addEventListener('resize', () => {
-    sizeToViewport();
     map?.invalidateSize();
     updateListVisibility();
   });
+
+  // With the page locked to the viewport, a wheel over the filter bar, gaps or
+  // header would otherwise do nothing. Route any vertical wheel that isn't over
+  // the map (which zooms) or an open dropdown (which scrolls itself) into the
+  // list, so scrolling anywhere scrolls the list. Desktop two-pane only.
+  const listScroll = root.querySelector<HTMLElement>('[data-list-scroll]');
+  window.addEventListener(
+    'wheel',
+    (e) => {
+      if (window.innerWidth <= 760 || !listScroll) return;
+      const t = e.target as HTMLElement;
+      if (t.closest('[data-map]')) return; // map handles its own zoom
+      if (t.closest('.fgroup-menu')) return; // let an open dropdown scroll
+      if (t.closest('[data-list-scroll]')) return; // native scroll already works
+      listScroll.scrollTop += e.deltaY;
+      e.preventDefault();
+    },
+    { passive: false },
+  );
 
   // On wide screens both panes show at once; build the map immediately.
   ensureMap();
