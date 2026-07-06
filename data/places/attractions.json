@@ -158,7 +158,14 @@
     "bestSeason": "круглый год",
     "tags": [],
     "links": [{ "title": "NDML", "url": "https://www.ndml.pt/" }],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Kart_leiria_logo.jpg",
+        "author": "Núcleo de Desportos Motorizados de Leiria",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kart_leiria_logo.jpg"
+      }
+    ],
     "collections": [],
     "status": "approved"
   },
