@@ -3,9 +3,10 @@ import Base from '../../layouts/Base.astro';
 import MiniMap from '../../components/MiniMap.astro';
 import Icon from '../../components/Icon.astro';
 import { upcomingEvents, cities } from '../../lib/data.ts';
-import { buildCityIndex, eventLatLon } from '../../lib/eventGeo.ts';
+import { buildCityIndex, eventLatLon, driveTimeFromLisbon } from '../../lib/eventGeo.ts';
 import { EVENT_TYPE_LABELS } from '../../lib/labels.ts';
 import { formatDateRu } from '../../lib/dates.ts';
+import { imageThumb } from '../../lib/imgProxy.ts';
 import type { Event } from '../../../schema/index.ts';
 
 export function getStaticPaths() {
@@ -19,7 +20,9 @@ const dateLabel =
     ? formatDateRu(event.dateStart)
     : `${formatDateRu(event.dateStart)} – ${formatDateRu(event.dateEnd)}`;
 
-const coords = eventLatLon(event, buildCityIndex(cities));
+const cityIndex = buildCityIndex(cities);
+const coords = eventLatLon(event, cityIndex);
+const driveTime = driveTimeFromLisbon(event, cityIndex);
 const paragraphs = event.description.split(/\n\n+/).map((s) => s.trim()).filter(Boolean);
 ---
 <Base title={event.title} description={event.description.slice(0, 150)}>
@@ -30,7 +33,14 @@ const paragraphs = event.description.split(/\n\n+/).map((s) => s.trim()).filter(
 
     {event.image && (
       <div class="hero">
-        <img src={event.image} alt={event.title} referrerpolicy="no-referrer" />
+        <img
+          src={imageThumb(event.image, 1000, 560)}
+          data-fallback={event.image}
+          alt={event.title}
+          decoding="async"
+          referrerpolicy="no-referrer"
+          onerror="this.onerror=null;this.src=this.dataset.fallback"
+        />
       </div>
     )}
 
@@ -40,6 +50,7 @@ const paragraphs = event.description.split(/\n\n+/).map((s) => s.trim()).filter(
     <div class="meta-row">
       <span>{dateLabel}</span>
       <span>{event.city}, {event.venue}</span>
+      {driveTime && <span>{driveTime}</span>}
       {event.price && <span>{event.price}</span>}
     </div>
 

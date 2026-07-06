@@ -44,3 +44,45 @@ export function eventLatLon(event: Event, cityIndex: Map<string, City>): LatLon 
     lon: city.lon + u2 * JITTER_LON,
   };
 }
+
+const LISBON_NAME = 'lisboa';
+
+/** Average road speed used to estimate driving time from straight-line distance. */
+const AVG_ROAD_SPEED_KMH = 70;
+
+function haversineKm(a: LatLon, b: LatLon): number {
+  const R = 6371;
+  const dLat = ((b.lat - a.lat) * Math.PI) / 180;
+  const dLon = ((b.lon - a.lon) * Math.PI) / 180;
+  const lat1 = (a.lat * Math.PI) / 180;
+  const lat2 = (b.lat * Math.PI) / 180;
+  const sinDLat = Math.sin(dLat / 2);
+  const sinDLon = Math.sin(dLon / 2);
+  const h = sinDLat * sinDLat + Math.cos(lat1) * Math.cos(lat2) * sinDLon * sinDLon;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+
+function formatDriveMinutes(minutes: number): string {
+  const rounded = Math.max(5, Math.round(minutes / 5) * 5);
+  const h = Math.floor(rounded / 60);
+  const m = rounded % 60;
+  if (h === 0) return `${m} мин`;
+  if (m === 0) return `${h} ч`;
+  return `${h} ч ${m} мин`;
+}
+
+/**
+ * Estimated driving time from Lisbon to the event's city, e.g. "~1 ч 20 мин от
+ * Лиссабона". Returns null for events already in Lisbon or in an unknown city —
+ * straight-line distance × average road speed is a rough estimate, not routing.
+ */
+export function driveTimeFromLisbon(event: Event, cityIndex: Map<string, City>): string | null {
+  const cityName = event.city.trim().toLowerCase();
+  if (cityName === LISBON_NAME) return null;
+  const city = cityIndex.get(cityName);
+  const lisbon = cityIndex.get(LISBON_NAME);
+  if (!city || !lisbon) return null;
+  const km = haversineKm(lisbon, city);
+  const minutes = (km / AVG_ROAD_SPEED_KMH) * 60;
+  return `~${formatDriveMinutes(minutes)} от Лиссабона`;
+}

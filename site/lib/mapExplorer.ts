@@ -230,5 +230,19 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   // tiles render into the correct size.
   requestAnimationFrame(() => map?.invalidateSize());
 
+  // Restore list scroll position when returning from a detail page. Real
+  // navigations aren't always served from bfcache, so `.list-scroll`'s
+  // scrollTop otherwise resets to 0 on every "back".
+  if (listScroll) {
+    const scrollKey = `explorer-scroll:${location.pathname}`;
+    const saved = sessionStorage.getItem(scrollKey);
+    if (saved) listScroll.scrollTop = Number(saved);
+    listScroll.addEventListener(
+      'scroll',
+      () => sessionStorage.setItem(scrollKey, String(listScroll.scrollTop)),
+      { passive: true },
+    );
+  }
+
   return { rerender };
 }

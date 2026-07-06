@@ -1,17 +1,21 @@
 ---
-import type { Event } from '../../schema/index.ts';
+import type { City, Event } from '../../schema/index.ts';
 import type { MapPoint } from '../lib/mapExplorer.ts';
 import MapShell from './MapShell.astro';
 import Icon from './Icon.astro';
 import { EVENT_TYPE_LABELS } from '../lib/labels.ts';
 import { formatDateRu } from '../lib/dates.ts';
+import { imageThumb } from '../lib/imgProxy.ts';
+import { buildCityIndex, driveTimeFromLisbon } from '../lib/eventGeo.ts';
 
 interface Props {
   events: Event[];
   points: MapPoint[];
   hrefBase: string;
+  cities: City[];
 }
-const { events, points, hrefBase } = Astro.props;
+const { events, points, hrefBase, cities } = Astro.props;
+const cityIndex = buildCityIndex(cities);
 
 const MONTHS_NOMINATIVE = [
   'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
@@ -114,7 +118,15 @@ const presentCities = [...new Set(events.map((e) => e.city))].sort((a, b) =>
               >
                 <div class="cover">
                   {event.image && (
-                    <img src={event.image} alt={event.title} loading="lazy" referrerpolicy="no-referrer" />
+                    <img
+                      src={imageThumb(event.image, 480, 300)}
+                      data-fallback={event.image}
+                      alt={event.title}
+                      loading="lazy"
+                      decoding="async"
+                      referrerpolicy="no-referrer"
+                      onerror="this.onerror=null;this.src=this.dataset.fallback"
+                    />
                   )}
                   <span class="badge event-badge">{EVENT_TYPE_LABELS[event.type] ?? 'Событие'}</span>
                 </div>
@@ -122,6 +134,9 @@ const presentCities = [...new Set(events.map((e) => e.city))].sort((a, b) =>
                   <span class="date muted">{dateLabel(event)}</span>
                   <h3>{event.title}</h3>
                   <p class="place muted">{event.city}, {event.venue}</p>
+                  {driveTimeFromLisbon(event, cityIndex) && (
+                    <p class="drive-time muted">{driveTimeFromLisbon(event, cityIndex)}</p>
+                  )}
                   {event.price && <p class="price">{event.price}</p>}
                 </div>
               </a>
@@ -197,7 +212,8 @@ const presentCities = [...new Set(events.map((e) => e.city))].sort((a, b) =>
     margin: 0;
   }
   .place,
-  .price {
+  .price,
+  .drive-time {
     margin: 0;
     font-size: 14px;
     color: var(--text-secondary);

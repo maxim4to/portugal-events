@@ -1,12 +1,16 @@
 ---
-import type { Event } from '../../schema/index.ts';
+import type { City, Event } from '../../schema/index.ts';
 import { EVENT_TYPE_LABELS } from '../lib/labels.ts';
 import { formatDateRu } from '../lib/dates.ts';
+import { imageThumb } from '../lib/imgProxy.ts';
+import { buildCityIndex, driveTimeFromLisbon } from '../lib/eventGeo.ts';
 
 interface Props {
   event: Event;
+  cities: City[];
 }
-const { event } = Astro.props;
+const { event, cities } = Astro.props;
+const driveTime = driveTimeFromLisbon(event, buildCityIndex(cities));
 
 const dateLabel =
   event.dateStart === event.dateEnd
@@ -17,10 +21,13 @@ const dateLabel =
   <div class="cover">
     {event.image && (
       <img
-        src={event.image}
+        src={imageThumb(event.image, 480, 300)}
+        data-fallback={event.image}
         alt={event.title}
         loading="lazy"
+        decoding="async"
         referrerpolicy="no-referrer"
+        onerror="this.onerror=null;this.src=this.dataset.fallback"
       />
     )}
     <span class="badge event-badge">{EVENT_TYPE_LABELS[event.type] ?? 'Событие'}</span>
@@ -29,6 +36,7 @@ const dateLabel =
     <span class="date muted">{dateLabel}</span>
     <h3>{event.title}</h3>
     <p class="place muted">{event.city}, {event.venue}</p>
+    {driveTime && <p class="drive-time muted">{driveTime}</p>}
     {event.price && <p class="price">{event.price}</p>}
     <a class="btn" href={event.url} target="_blank" rel="noopener">Подробнее</a>
   </div>
@@ -74,7 +82,8 @@ const dateLabel =
   .body h3 {
     margin: 0;
   }
-  .place {
+  .place,
+  .drive-time {
     margin: 0;
     font-size: 14px;
     color: var(--text-secondary);
