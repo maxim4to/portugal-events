@@ -63,9 +63,10 @@ const points = places.map((p) => ({
   }
 
   /* Visited places sink below the rest, behind a labelled divider. Ordering is
-     driven purely by the [data-visited] attribute the VisitedController keeps in
-     sync, so no JS reflow is needed here — only the divider's visibility. */
-  .card-wrap[data-visited='true'] {
+     driven by [data-order-visited] — a snapshot the VisitedController freezes on
+     load, NOT the live [data-visited] — so marking a place mid-session doesn't
+     reshuffle the list; the order only updates on the next page refresh. */
+  .card-wrap[data-order-visited='true'] {
     order: 2;
   }
   .visited-sep {
@@ -162,7 +163,7 @@ const points = places.map((p) => ({
     function updateVisitedDivider() {
       if (!visitedSep) return;
       const hasVisited = cardWraps.some(
-        (w) => !w.hidden && w.dataset.visited === 'true',
+        (w) => !w.hidden && w.dataset.orderVisited === 'true',
       );
       visitedSep.hidden = !hasVisited;
     }

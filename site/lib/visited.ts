@@ -2,13 +2,14 @@
 //
 // Shared state lives in Firebase Realtime Database at
 //   spaces/<spaceId>/visited/<placeId> = true
-// There is no user auth; access is gated by a shared secret `spaceId` that is
-// never committed to the repo — it arrives at runtime via a link (?space=… or
-// #space=…) and is then persisted to localStorage.
+// There is no user auth. By default everyone shares ONE public space
+// (DEFAULT_SPACE) so the visited history is global to all site visitors — no
+// link or secret needed. A `?space=…` (query or hash) link still overrides it
+// with a private space, persisted to localStorage.
 //
-// Everything degrades gracefully: with a placeholder Firebase config or no
-// spaceId, the feature is INERT — no network calls, callbacks resolve empty,
-// writes are no-ops — so the rest of the site keeps working.
+// Everything degrades gracefully: with a placeholder Firebase config the
+// feature is INERT — no network calls, callbacks resolve empty, writes are
+// no-ops — so the rest of the site keeps working.
 //
 // Framework-free plain TS; only referenced from client <script> bundles.
 
@@ -16,12 +17,15 @@ import type { Database } from 'firebase/database';
 import config from './firebase-config.json';
 
 const SPACE_KEY = 'pe-space';
+// Shared, keyless space every visitor lands in by default.
+const DEFAULT_SPACE = 'public';
 
 /**
- * Resolve the shared spaceId.
+ * Resolve the active spaceId.
  * - If the URL carries `space=…` (query or hash), persist it to localStorage
  *   and strip it from the address bar so it isn't left lying around.
- * - Otherwise fall back to the persisted value, or null.
+ * - Otherwise fall back to the persisted override, or the shared DEFAULT_SPACE.
+ * Only null during SSR (no `window`).
  */
 export function getSpaceId(): string | null {
   if (typeof window === 'undefined') return null;
@@ -33,10 +37,11 @@ export function getSpaceId(): string | null {
       cleanSpaceFromUrl();
       return fromUrl;
     }
-    return localStorage.getItem(SPACE_KEY);
+    return localStorage.getItem(SPACE_KEY) ?? DEFAULT_SPACE;
   } catch {
-    // localStorage can throw (private mode, disabled storage) — stay inert.
-    return null;
+    // localStorage can throw (private mode, disabled storage) — still usable
+    // via the shared space, just without a persisted override.
+    return DEFAULT_SPACE;
   }
 }
 

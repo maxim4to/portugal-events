@@ -64,11 +64,15 @@ no-dependency touch/trackpad-swipe carousel). Filtering logic lives in
 tested through the DOM.
 
 **"Visited" is shared state with no auth**, implemented in `site/lib/visited.ts`: a
-Firebase Realtime Database path `spaces/<spaceId>/visited/<placeId>`, gated only by a
-`spaceId` secret that arrives via a `?space=`/`#space=` URL param and is then persisted
-to `localStorage` (never committed). With a placeholder Firebase config or no `spaceId`,
-every function in that module is inert (no network calls, empty results) so the rest of
-the site works unaffected — preserve that degrade-gracefully behavior when touching it.
+Firebase Realtime Database path `spaces/<spaceId>/visited/<placeId>`. By default every
+visitor lands in one public space (`DEFAULT_SPACE = 'public'`), so the visited history is
+global to everyone — no link or secret needed. A `?space=`/`#space=` URL param still
+overrides it with a private space, persisted to `localStorage`. With a placeholder
+Firebase config the module is inert (no network calls, empty results) so the rest of the
+site works unaffected — preserve that degrade-gracefully behavior when touching it. The
+catalog sorts visited places below a divider, but only off a snapshot frozen on load
+(`data-order-visited`), never live toggles, so marking a place doesn't reshuffle the list
+mid-session.
 
 `astro.config.mjs` sets `base: '/portugal-events'` — internal links must go through
 `hrefBase`/`Astro.url` plumbing already used in components, not hardcoded absolute paths.

@@ -42,6 +42,12 @@
         wrap.hidden = false;
       });
 
+    // The catalog sorts visited places below a divider, but only off the
+    // snapshot taken on load (data-order-visited) — never off live toggles — so
+    // marking a place doesn't make the list jump under the cursor. The order
+    // only catches up on the next page refresh.
+    let frozeOrder = false;
+
     const reflect = (ids: Set<string>) => {
       for (const btn of buttons) {
         const id = btn.dataset.visitedId!;
@@ -63,6 +69,15 @@
             wrap.dataset.visited = ids.has(id) ? 'true' : 'false';
           }
         });
+      // Freeze the sort snapshot once, from the first data we receive.
+      if (!frozeOrder) {
+        document
+          .querySelectorAll<HTMLElement>('[data-place-card]')
+          .forEach((wrap) => {
+            wrap.dataset.orderVisited = ids.has(wrap.dataset.id!) ? 'true' : 'false';
+          });
+        frozeOrder = true;
+      }
       // Let the explorer re-run its filter now that visited state changed.
       document.dispatchEvent(new CustomEvent('visited:changed'));
     };
