@@ -1,10 +1,13 @@
 ---
 // Shared client controller for the "visited" feature. Include once on any page
 // that renders VisitedButton(s). It:
-//  - hides all .visited-btn (and the catalog visited filter) when unconfigured
-//  - subscribes to the shared visited set and reflects it onto buttons +
-//    the [data-place-card] wrappers (via data-visited) so filtering can use it
-//  - toggles visited on click, guarding against anchor navigation
+//  - hides all .visited-btn (and the catalog visited filter) when Firebase is
+//    unconfigured
+//  - keeps buttons visible once configured, even for signed-out visitors; a
+//    click while signed out opens Google sign-in and replays the toggle after
+//  - reveals the catalog visited filter only while signed in (a guest has none)
+//  - subscribes to the signed-in user's visited set and reflects it onto
+//    buttons + the [data-place-card] wrappers (via data-visited) for filtering
 ---
 <script>
   import {
@@ -12,21 +15,22 @@
     setVisited,
     isConfigured,
   } from '../lib/visited.ts';
+  import { onAuthChange, signInWithGoogle } from '../lib/auth.ts';
 
   const buttons = Array.from(
     document.querySelectorAll<HTMLButtonElement>('.visited-btn'),
   );
 
+  // Wrappers around the catalog visited filter chips.
+  const filterWraps = Array.from(
+    document.querySelectorAll<HTMLElement>('[data-filter="visited"]'),
+  ).map((el) => el.closest<HTMLElement>('[data-visited-control]') ?? el);
+
   if (!isConfigured()) {
     // Inert: hide every toggle and the visited filter control, and mark the
     // explorer so the catalog can drop the filter from its layout.
     buttons.forEach((btn) => (btn.hidden = true));
-    document
-      .querySelectorAll<HTMLElement>('[data-filter="visited"]')
-      .forEach((el) => {
-        const wrap = el.closest<HTMLElement>('[data-visited-control]') ?? el;
-        wrap.hidden = true;
-      });
+    filterWraps.forEach((wrap) => (wrap.hidden = true));
     document
       .querySelectorAll<HTMLElement>('[data-explorer]')
       .forEach((el) => (el.dataset.visitedConfigured = 'false'));
@@ -34,13 +38,13 @@
     document
       .querySelectorAll<HTMLElement>('[data-explorer]')
       .forEach((el) => (el.dataset.visitedConfigured = 'true'));
-    // Reveal the catalog visited filter (hidden by default in markup).
-    document
-      .querySelectorAll<HTMLElement>('[data-filter="visited"]')
-      .forEach((el) => {
-        const wrap = el.closest<HTMLElement>('[data-visited-control]') ?? el;
-        wrap.hidden = false;
-      });
+
+    // Buttons are available regardless of sign-in — a click prompts login.
+    buttons.forEach((btn) => (btn.hidden = false));
+
+    let loggedIn = false;
+    // A toggle attempted while signed out, replayed once sign-in succeeds.
+    let pending: { id: string; on: boolean } | null = null;
 
     // The catalog sorts visited places below a divider, but only off the
     // snapshot taken on load (data-order-visited) — never off live toggles — so
@@ -52,7 +56,6 @@
       for (const btn of buttons) {
         const id = btn.dataset.visitedId!;
         const on = ids.has(id);
-        btn.hidden = false;
         btn.setAttribute('aria-pressed', on ? 'true' : 'false');
         const label = btn.querySelector('.visited-label');
         if (label) label.textContent = on ? 'Вы были здесь' : 'Был здесь';
@@ -84,6 +87,17 @@
 
     subscribeVisited(reflect);
 
+    // Reveal the visited filter only while signed in; replay a pending toggle.
+    onAuthChange((user) => {
+      loggedIn = !!user;
+      filterWraps.forEach((wrap) => (wrap.hidden = !loggedIn));
+      if (loggedIn && pending) {
+        const p = pending;
+        pending = null;
+        void setVisited(p.id, p.on);
+      }
+    });
+
     for (const btn of buttons) {
       btn.addEventListener('click', (e) => {
         // The card button lives inside an <a>; do not navigate.
@@ -91,6 +105,12 @@
         e.stopPropagation();
         const id = btn.dataset.visitedId!;
         const next = btn.getAttribute('aria-pressed') !== 'true';
+        if (!loggedIn) {
+          // Remember the intent and apply it once sign-in completes.
+          pending = { id, on: next };
+          void signInWithGoogle();
+          return;
+        }
         // Optimistic reflect; the subscription will confirm/correct.
         btn.setAttribute('aria-pressed', next ? 'true' : 'false');
         void setVisited(id, next);
