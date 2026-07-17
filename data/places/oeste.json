@@ -42,8 +42,7 @@
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_%C3%93bidos_(3).jpg"
       }
-    ],
-    "status": "approved"
+    ]
   },
   {
     "id": "nazare-farol",
@@ -82,8 +81,7 @@
         "license": "CC BY 2.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Big_waves_(23929226275).jpg"
       }
-    ],
-    "status": "approved"
+    ]
   },
   {
     "id": "lagoa-de-obidos",
@@ -129,8 +127,7 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:2025-09-21_Lagoa_de_%C3%93bidos_06.jpg"
       }
     ],
-    "collections": [],
-    "status": "approved"
+    "collections": []
   },
   {
     "id": "berlenga-grande",
@@ -176,7 +173,6 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Berlenga_fort.jpg"
       }
     ],
-    "collections": [],
-    "status": "approved"
+    "collections": []
   }
 ]

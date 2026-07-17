@@ -42,8 +42,7 @@
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Galapinhos.jpg"
       }
-    ],
-    "status": "approved"
+    ]
   },
   {
     "id": "cabo-espichel",
@@ -88,8 +87,7 @@
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:2015_Cabo_Espichel_08.JPG"
       }
-    ],
-    "status": "approved"
+    ]
   },
   {
     "id": "portinho-da-arrabida",
@@ -135,8 +133,7 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Float_(2).jpg"
       }
     ],
-    "collections": [],
-    "status": "approved"
+    "collections": []
   },
   {
     "id": "serra-da-arrabida",
@@ -182,8 +179,7 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:2013PicheleirosArrabida06.JPG"
       }
     ],
-    "collections": [],
-    "status": "approved"
+    "collections": []
   },
   {
     "id": "sesimbra",
@@ -229,8 +225,7 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sesimbra_-_Portugal_(1839930092).jpg"
       }
     ],
-    "collections": [],
-    "status": "approved"
+    "collections": []
   },
   {
     "id": "setubal",
@@ -276,8 +271,7 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:%2250_de_Abril%22_Setubal_2017_(37141167095).jpg"
       }
     ],
-    "collections": [],
-    "status": "approved"
+    "collections": []
   },
   {
     "id": "castelo-de-palmela",
@@ -323,8 +317,7 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Palmela_(90290313).jpg"
       }
     ],
-    "collections": [],
-    "status": "approved"
+    "collections": []
   },
   {
     "id": "azeitao",
@@ -370,8 +363,7 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Azeit%C3%A3o_-_Portugal_(48126968058).jpg"
       }
     ],
-    "collections": [],
-    "status": "approved"
+    "collections": []
   },
   {
     "id": "cristo-rei",
@@ -417,8 +409,7 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Christo_rei_portugal.JPG"
       }
     ],
-    "collections": [],
-    "status": "approved"
+    "collections": []
   },
   {
     "id": "costa-da-caparica",
@@ -464,8 +455,7 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Costa_da_Caparica._Lisboa._(9512880101)_(2).jpg"
       }
     ],
-    "collections": [],
-    "status": "approved"
+    "collections": []
   },
   {
     "id": "praia-do-meco",
@@ -511,8 +501,7 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:MECO_(Sesimbra).jpg"
       }
     ],
-    "collections": [],
-    "status": "approved"
+    "collections": []
   },
   {
     "id": "lagoa-de-albufeira",
@@ -558,8 +547,7 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:LAGOA_DA_ALBUFEIRA.jpg"
       }
     ],
-    "collections": [],
-    "status": "approved"
+    "collections": []
   },
   {
     "id": "convento-da-arrabida",
@@ -605,7 +593,40 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Convento_de_Nossa_Senhora_da_Arr%C3%A1bida_(7).jpg"
       }
     ],
-    "collections": [],
-    "status": "approved"
+    "collections": []
+  },
+  {
+    "id": "troia",
+    "name": "Полуостров Троя",
+    "type": "beach",
+    "region": "Сетубал и Аррабида",
+    "coords": { "lat": 38.4850, "lon": -8.8930 },
+    "description": "Песчаный полуостров напротив Сетубала: 18 километров пляжей с прозрачной водой, ежегодно получающих Голубой флаг за чистоту и безопасность. Удобнее всего добираться на пароме из Сетубала, а по дороге через устье Саду можно встретить местную популяцию дельфинов.",
+    "driveMinutesFromLisbon": 75,
+    "visitDurationHours": 5,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["купание", "природа", "виды"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Playa_Troia_Mar%2C_Troia%2C_Portugal%2C_2021-09-12%2C_DD_05.jpg/1280px-Playa_Troia_Mar%2C_Troia%2C_Portugal%2C_2021-09-12%2C_DD_05.jpg",
+        "author": "Diego Delso",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Playa_Troia_Mar,_Troia,_Portugal,_2021-09-12,_DD_05.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Playa_Troia_Mar%2C_Troia%2C_Portugal%2C_2021-09-12%2C_DD_06.jpg/1280px-Playa_Troia_Mar%2C_Troia%2C_Portugal%2C_2021-09-12%2C_DD_06.jpg",
+        "author": "Diego Delso",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Playa_Troia_Mar,_Troia,_Portugal,_2021-09-12,_DD_06.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Troia_vista_da_serra.jpg/1280px-Troia_vista_da_serra.jpg",
+        "author": "Figas1975",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Troia_vista_da_serra.jpg"
+      }
+    ],
+    "collections": []
   }
 ]

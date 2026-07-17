@@ -24,7 +24,6 @@ const validPlace = {
   bestSeason: 'круглый год',
   tags: [],
   links: [],
-  status: 'approved',
 };
 
 describe('collectErrors', () => {

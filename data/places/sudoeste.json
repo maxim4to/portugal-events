@@ -43,8 +43,7 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cabo_Sard%C3%A3o,_Odemira_(32815031374).jpg"
       }
     ],
-    "collections": [],
-    "status": "approved"
+    "collections": []
   },
   {
     "id": "zambujeira-do-mar",
@@ -90,8 +89,7 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:54_Zambujeira_do_Mar_-_Odeceixe_(26504970306).jpg"
       }
     ],
-    "collections": [],
-    "status": "approved"
+    "collections": []
   },
   {
     "id": "vila-nova-de-milfontes",
@@ -137,7 +135,6 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Estu%C3%A1rio_do_Rio_Mira_,_Sudoeste_alentejano.JPG"
       }
     ],
-    "collections": [],
-    "status": "approved"
+    "collections": []
   }
 ]

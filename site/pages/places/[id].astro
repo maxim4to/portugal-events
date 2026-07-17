@@ -8,11 +8,11 @@ import VisitedController from '../../components/VisitedController.astro';
 import FavoriteButton from '../../components/FavoriteButton.astro';
 import FavoriteController from '../../components/FavoriteController.astro';
 import PhotoGallery from '../../components/PhotoGallery.astro';
-import { approvedPlaces } from '../../lib/data.ts';
+import { allPlaces } from '../../lib/data.ts';
 import type { Place } from '../../../schema/index.ts';
 
 export function getStaticPaths() {
-  return approvedPlaces.map((place) => ({ params: { id: place.id }, props: { place } }));
+  return allPlaces.map((place) => ({ params: { id: place.id }, props: { place } }));
 }
 const { place } = Astro.props as { place: Place };
 const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;

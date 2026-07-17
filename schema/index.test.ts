@@ -13,7 +13,6 @@ const validPlace = {
   bestSeason: 'май–октябрь',
   tags: ['закат', 'бесплатно'],
   links: [{ title: 'Как добраться', url: 'https://example.com' }],
-  status: 'approved',
 };
 
 const validEvent = {
@@ -42,9 +41,6 @@ describe('PlaceSchema', () => {
     expect(
       PlaceSchema.safeParse({ ...validPlace, coords: { lat: 138, lon: -9 } }).success,
     ).toBe(false);
-  });
-  test('rejects unknown status', () => {
-    expect(PlaceSchema.safeParse({ ...validPlace, status: 'draft' }).success).toBe(false);
   });
   test('accepts a place with a photos array', () => {
     const withPhotos = {

@@ -1,15 +1,15 @@
 ---
 name: generate-places
-description: Use when generating or expanding the Portugal places catalog — produces candidate Place entries (with Wikimedia photos) into data/places/*.json for the portugal-events site. Trigger on "сгенерируй места", "добавь места", "наполни каталог", "generate places".
+description: Use when generating or expanding the Portugal places catalog — produces Place entries (with Wikimedia photos) into data/places/*.json for the portugal-events site. Trigger on "сгенерируй места", "добавь места", "наполни каталог", "generate places".
 ---
 
 # generate-places
 
-Generate realistic **candidate** `Place` entries for the portugal-events catalog:
+Generate realistic `Place` entries for the portugal-events catalog:
 real places within a 2–3 hour drive of Lisbon, each with an honest description,
 coordinates, and (when possible) a freely-licensed Wikimedia photo. Everything you
-add lands in `data/places/*.json` with `status: "candidate"` for a human to review
-and promote later.
+add to `data/places/*.json` is rendered on the site immediately — there is no
+approval step, so only add places you are confident are real and correct.
 
 ## Before you write anything
 
@@ -38,11 +38,10 @@ and promote later.
 | `tags` | array of 2–4 tags from the controlled vocabulary below. |
 | `links` | array of `{ title, url }` (both required, `url` must be a valid URL). May be `[]`. |
 | `photo` | OPTIONAL object `{ url, author, license, sourceUrl }` — **all four required when present**. Omit the whole field if you have no free photo. |
-| `status` | always `"candidate"` for everything you generate. |
 
 ## Controlled tag vocabulary (use ONLY these)
 
-The site's tag filter shows whatever tags exist in approved data, so do **not**
+The site's tag filter shows whatever tags exist in the data, so do **not**
 invent synonyms. Pick 2–4 per place from:
 
 ```
@@ -121,7 +120,6 @@ From the response, per page under `query.pages[*].imageinfo[0]`:
 - Append to the matching existing region file, or create a new
   `data/places/<region-slug>.json`. Each file must be a **valid JSON array** of
   places.
-- Set `status: "candidate"` on everything.
 
 ## Mandatory before finishing
 

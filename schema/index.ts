@@ -44,7 +44,6 @@ export const PlaceSchema = z.object({
   tags: z.array(z.string()),
   links: z.array(z.object({ title: z.string().min(1), url: z.string().url() })),
   photos: z.array(PhotoSchema).default([]),
-  status: z.enum(['candidate', 'approved']),
   freeWithResidency: z.boolean().optional(),
 });
 export type Place = z.infer<typeof PlaceSchema>;

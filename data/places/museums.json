@@ -20,7 +20,6 @@
       }
     ],
     "collections": [],
-    "status": "approved",
     "freeWithResidency": true
   },
   {
@@ -44,7 +43,6 @@
       }
     ],
     "collections": [],
-    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -68,7 +66,6 @@
       }
     ],
     "collections": [],
-    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -92,7 +89,6 @@
       }
     ],
     "collections": [],
-    "status": "approved",
     "freeWithResidency": true
   },
   {
@@ -116,7 +112,6 @@
       }
     ],
     "collections": [],
-    "status": "approved",
     "freeWithResidency": true
   },
   {
@@ -140,7 +135,6 @@
       }
     ],
     "collections": [],
-    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -164,7 +158,6 @@
       }
     ],
     "collections": [],
-    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -188,7 +181,6 @@
       }
     ],
     "collections": [],
-    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -212,7 +204,6 @@
       }
     ],
     "collections": [],
-    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -236,7 +227,6 @@
       }
     ],
     "collections": [],
-    "status": "approved",
     "freeWithResidency": true
   },
   {
@@ -260,7 +250,6 @@
       }
     ],
     "collections": [],
-    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -284,7 +273,6 @@
       }
     ],
     "collections": [],
-    "status": "approved",
     "freeWithResidency": true
   },
   {
@@ -308,7 +296,6 @@
       }
     ],
     "collections": [],
-    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -332,7 +319,6 @@
       }
     ],
     "collections": [],
-    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -349,7 +335,6 @@
     "links": [{ "title": "Официальный сайт", "url": "https://www.museudocarroelectrico.pt/" }],
     "photos": [{ "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Museu_do_Carro_El%C3%A9ctrico_-_Porto_%285560584739%29.jpg/1280px-Museu_do_Carro_El%C3%A9ctrico_-_Porto_%285560584739%29.jpg", "author": "Esther Westerveld from Haarlemmermeer, Nederland", "license": "CC BY 2.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Museu_do_Carro_El%C3%A9ctrico_-_Porto_(5560584739).jpg" }],
     "collections": [],
-    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -373,7 +358,6 @@
       }
     ],
     "collections": [],
-    "status": "approved",
     "freeWithResidency": true
   },
   {
@@ -397,7 +381,6 @@
       }
     ],
     "collections": [],
-    "status": "approved",
     "freeWithResidency": true
   },
   {
@@ -421,7 +404,6 @@
       }
     ],
     "collections": [],
-    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -445,7 +427,6 @@
       }
     ],
     "collections": [],
-    "status": "approved",
     "freeWithResidency": true
   },
   {
@@ -469,7 +450,6 @@
       }
     ],
     "collections": [],
-    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -486,7 +466,6 @@
     "links": [{ "title": "Официальный сайт", "url": "https://museu-sbras.com/" }],
     "photos": [{ "url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Museu_do_Trajo_Sao_Bras_de_Alportel.jpg", "author": "OsvaldoGago www.fotografar.net", "license": "CC BY-SA 3.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Museu_do_Trajo_Sao_Bras_de_Alportel.jpg" }],
     "collections": [],
-    "status": "approved",
     "freeWithResidency": false
   },
   {
@@ -503,7 +482,6 @@
     "links": [{ "title": "Официальный сайт", "url": "https://www.museudeportimao.pt/" }],
     "photos": [{ "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Museu_de_Portim%C3%A3o_-_Portugal_%2851781099749%29.jpg/1280px-Museu_de_Portim%C3%A3o_-_Portugal_%2851781099749%29.jpg", "author": "Vitor Oliveira from Torres Vedras, PORTUGAL", "license": "CC BY-SA 2.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Museu_de_Portim%C3%A3o_-_Portugal_(51781099749).jpg" }],
     "collections": [],
-    "status": "approved",
     "freeWithResidency": false
   }
 ]

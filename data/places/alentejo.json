@@ -30,8 +30,7 @@
         "license": "CC BY-SA 2.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ceiling_in_Evora_(10242739943).jpg"
       }
-    ],
-    "status": "approved"
+    ]
   },
   {
     "id": "praia-da-comporta",
@@ -77,8 +76,7 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Comporta_-_Portugal_(50093632712).jpg"
       }
     ],
-    "collections": [],
-    "status": "approved"
+    "collections": []
   },
   {
     "id": "cromeleque-dos-almendres",
@@ -124,8 +122,7 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cromeleque_dos_Almendres_-_Portugal_(3714420752).jpg"
       }
     ],
-    "collections": [],
-    "status": "approved"
+    "collections": []
   },
   {
     "id": "anta-grande-do-zambujeiro",
@@ -171,8 +168,7 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anta_do_Zambujeiro1344.jpg"
       }
     ],
-    "collections": [],
-    "status": "approved"
+    "collections": []
   },
   {
     "id": "monsaraz",
@@ -218,8 +214,7 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brisa_da_tarde_-_Monsaraz.jpg"
       }
     ],
-    "collections": [],
-    "status": "approved"
+    "collections": []
   },
   {
     "id": "marvao",
@@ -265,8 +260,7 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arredores_de_Marv%C3%A3o_-_Portugal_(5336277356).jpg"
       }
     ],
-    "collections": [],
-    "status": "approved"
+    "collections": []
   },
   {
     "id": "castelo-de-vide",
@@ -312,7 +306,6 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Vide_(24305078047).jpg"
       }
     ],
-    "collections": [],
-    "status": "approved"
+    "collections": []
   }
 ]

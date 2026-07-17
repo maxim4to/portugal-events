@@ -32,9 +32,9 @@ so bad data never reaches the site.
 parse through it, and invalid JSON fails both. Never loosen the schema to make bad data
 pass; fix the data.
 
-- `data/places/*.json` — one file per region, array of `Place`. Each place has
-  `status: "candidate" | "approved"`; only `approved` places are ever rendered.
-  `candidate` is a staging state for human review before promotion.
+- `data/places/*.json` — one file per region, array of `Place`. Every place in
+  these files is rendered on the site — there is no draft/approval state, so only
+  add places that are real and correct.
 - `data/events/<YYYY-MM>.json` — one file per month, array of `Event`. Past events move
   to `data/events/archive/` (not shown on the site, kept for history).
 - `data/sources.json` / `data/geo/cities.json` — event-source registry and a city →
@@ -42,7 +42,7 @@ pass; fix the data.
 
 `site/lib/data.ts` uses `import.meta.glob(..., { eager: true })` to slurp every JSON file
 under `data/` at build time, parses it through the zod schemas, and exports plain arrays
-(`allPlaces`, `approvedPlaces`, `upcomingEvents`, `regions`, `allTags`).
+(`allPlaces`, `upcomingEvents`, `regions`, `allTags`).
 Pages and components consume these exports directly — there's no runtime data fetching
 for site content.
 
@@ -51,10 +51,10 @@ produced by scripts you run — they're produced by Claude Code sessions followi
 `.claude/skills/generate-places/SKILL.md` and `.claude/skills/ingest-events/SKILL.md`
 (usage notes in [docs/place-generation.md](docs/place-generation.md) and
 [docs/event-ingestion.md](docs/event-ingestion.md)). `generate-places` writes
-`candidate` places with web-sourced descriptions and Wikimedia Commons photos (only
-free-licensed, `upload.wikimedia.org` URLs); a human promotes the good ones to
-`approved`. `ingest-events` reads `sources.json`, gathers events, dedupes, and must pass
-`npm run validate && npm test` before committing.
+places with web-sourced descriptions and Wikimedia Commons photos (only
+free-licensed, `upload.wikimedia.org` URLs), which appear on the site as soon as
+they land in `data/`. `ingest-events` reads `sources.json`, gathers events, dedupes,
+and must pass `npm run validate && npm test` before committing.
 
 **Frontend is Astro with vanilla-TS islands, no UI framework.** Pages are `.astro`
 files; interactivity is plain `<script>` blocks operating on `data-*` attributes (see

@@ -15,7 +15,6 @@ const placeFiles = import.meta.glob('../../data/places/*.json', {
 export const allPlaces: Place[] = Object.values(placeFiles).flatMap((v) =>
   z.array(PlaceSchema).parse(v),
 );
-export const approvedPlaces: Place[] = allPlaces.filter((p) => p.status === 'approved');
 
 const eventFiles = import.meta.glob('../../data/events/*.json', {
   eager: true,
@@ -35,5 +34,5 @@ export const cities: City[] = Object.values(cityFiles).flatMap((v) =>
   z.array(CitySchema).parse(v),
 );
 
-export const regions: string[] = [...new Set(approvedPlaces.map((p) => p.region))].sort();
-export const allTags: string[] = [...new Set(approvedPlaces.flatMap((p) => p.tags))].sort();
+export const regions: string[] = [...new Set(allPlaces.map((p) => p.region))].sort();
+export const allTags: string[] = [...new Set(allPlaces.flatMap((p) => p.tags))].sort();

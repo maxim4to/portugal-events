@@ -8,7 +8,7 @@ const make = (over: Partial<Place>): Place => ({
   coords: { lat: 38, lon: -9 }, description: 'd',
   driveMinutesFromLisbon: over.driveMinutesFromLisbon ?? 45,
   visitDurationHours: 2, bestSeason: 'лето', tags: over.tags ?? [], links: [],
-  collections: [], status: 'approved', ...over,
+  collections: [], ...over,
 });
 
 const beach = make({ id: 'b', type: 'beach', name: 'Урса', driveMinutesFromLisbon: 45, tags: ['закат'] });
