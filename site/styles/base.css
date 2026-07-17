@@ -316,3 +316,18 @@ img {
 .reset-btn[hidden] {
   display: none;
 }
+
+/* Inline sign-in prompt (see lib/signinPrompt.ts). */
+.signin-prompt {
+  position: fixed;
+  z-index: 1100;
+  max-width: min(90vw, 280px);
+  padding: var(--space-3);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+.signin-prompt-msg { margin: 0 0 var(--space-3); font-size: 14px; color: var(--text-primary); }
+.signin-prompt-actions { display: flex; gap: var(--space-2); }
+.signin-prompt-actions .btn { font-size: 13px; padding: var(--space-1) var(--space-3); }
