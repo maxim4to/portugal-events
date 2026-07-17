@@ -969,5 +969,29 @@
       }
     ],
     "collections": []
+  },
+  {
+    "id": "esplanada-duna-mar-magoito",
+    "name": "Esplanada Duna Mar (Прайя-ду-Магойту)",
+    "type": "other",
+    "region": "Лиссабон и Синтра",
+    "coords": { "lat": 38.8497, "lon": -9.4620 },
+    "description": "Простой пляжный ресторан-эспланада прямо над Прайя-ду-Магойту на побережье Синтры, знаменитый видом на океан и свежей рыбой местного улова. Идеальное место для неспешного обеда и заката с бокалом вина. Учтите: только наличные, без брони, по средам закрыто — в сезон приходите пораньше.",
+    "driveMinutesFromLisbon": 45,
+    "visitDurationHours": 1.5,
+    "bestSeason": "май–сентябрь",
+    "tags": ["ресторан", "виды", "закат"],
+    "links": [
+      { "title": "Esplanada Duna Mar", "url": "https://esplanada-duna-mar.eatbu.com/?lang=en" }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Magoito_seascape.jpg/1280px-Magoito_seascape.jpg",
+        "author": "Pedro Ribeiro Simões",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Magoito_seascape.jpg"
+      }
+    ],
+    "collections": []
   }
 ]
