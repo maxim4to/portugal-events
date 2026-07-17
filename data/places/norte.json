@@ -44,5 +44,29 @@
       }
     ],
     "collections": []
+  },
+  {
+    "id": "fernandes-mattos-porto",
+    "name": "Fernandes, Mattos & Ca. (Порту)",
+    "type": "other",
+    "region": "Север",
+    "coords": { "lat": 41.1465, "lon": -8.6151 },
+    "description": "Историческая лавка 1886 года в самом центре Порту, на Руа-даш-Кармелиташ рядом с башней Клеригуш и книжным Lello. Сохранён интерьер прекрасной эпохи с колоннами, а с верхнего этажа открывается панорамный вид на город — популярное место для фото. Сейчас здесь продают игрушки, декор и сувениры; вход свободный.",
+    "driveMinutesFromLisbon": 180,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": ["история", "виды", "фото", "бесплатно"],
+    "links": [
+      { "title": "Официальный сайт", "url": "https://www.fernandesmattos.pt/" }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Vit%C3%B3ria-Edif%C3%ADcio_Fernandes_Mattos.jpg/1280px-Vit%C3%B3ria-Edif%C3%ADcio_Fernandes_Mattos.jpg",
+        "author": "António Amen",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vit%C3%B3ria-Edif%C3%ADcio_Fernandes_Mattos.jpg"
+      }
+    ],
+    "collections": []
   }
 ]
