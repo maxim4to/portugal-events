@@ -20,11 +20,14 @@ const isActive = (p: string) => {
   <div class="inner">
     <a href={href('/')} class="brand" aria-label="Португалия — на главную">
       <span class="brand-mark" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 7 11.6 7.3 11.9a1 1 0 0 0 1.4 0C13 21.6 20 15.4 20 10c0-4.4-3.6-8-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/>
         </svg>
       </span>
-      <span class="brand-name">Португалия</span>
+      <span class="brand-text">
+        <span class="brand-name">Португалия</span>
+        <span class="brand-kicker">Путеводитель · Афиша</span>
+      </span>
     </a>
 
     <nav class="nav" aria-label="Разделы">
@@ -80,8 +83,9 @@ const isActive = (p: string) => {
     position: sticky;
     top: 0;
     z-index: 30;
-    background: var(--surface-2);
-    border-bottom: 0.5px solid var(--border);
+    background: color-mix(in srgb, var(--surface-2) 88%, transparent);
+    backdrop-filter: saturate(1.1) blur(8px);
+    border-bottom: 1px solid var(--border-strong);
   }
   .inner {
     display: grid;
@@ -95,22 +99,37 @@ const isActive = (p: string) => {
     align-items: center;
     gap: var(--space-2);
     justify-self: start;
-    color: var(--accent);
-    font-weight: 500;
-    font-size: 17px;
+    color: var(--editorial);
   }
   .brand:hover {
     text-decoration: none;
   }
   .brand-mark {
     display: inline-flex;
+    margin-top: 2px;
+  }
+  .brand-text {
+    display: inline-flex;
+    flex-direction: column;
+    line-height: 1;
   }
   .brand-name {
-    color: var(--text-primary);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 20px;
     letter-spacing: -0.01em;
+    color: var(--text-primary);
+  }
+  .brand-kicker {
+    margin-top: 3px;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
   }
 
-  /* Centered Airbnb-style tabs with an underline on the active one. */
+  /* Centered editorial tabs — serif, with a terracotta underline on the active. */
   .nav {
     display: inline-flex;
     align-items: center;
@@ -121,14 +140,15 @@ const isActive = (p: string) => {
     display: inline-grid;
     position: relative;
     padding: var(--space-2) 0;
-    font-size: 15px;
+    font-family: var(--font-display);
+    font-size: 17px;
     color: var(--text-secondary);
   }
   /* Reserve the bold (active) width so toggling weight never shifts neighbours. */
   .nav-link::after {
     content: attr(data-label);
     grid-area: 1 / 1;
-    font-weight: 500;
+    font-weight: 600;
     height: 0;
     visibility: hidden;
     pointer-events: none;
@@ -142,17 +162,16 @@ const isActive = (p: string) => {
   }
   .nav-link.active {
     color: var(--text-primary);
-    font-weight: 500;
+    font-weight: 600;
   }
   .nav-link.active::before {
     content: '';
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -1px;
+    left: -2px;
+    right: -2px;
+    bottom: 0;
     height: 2px;
-    border-radius: 2px;
-    background: var(--text-primary);
+    background: var(--editorial);
   }
 
   .actions {
@@ -170,14 +189,17 @@ const isActive = (p: string) => {
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
-    height: 40px;
+    height: 38px;
     padding: 0 var(--space-4);
     border: 0.5px solid var(--border-strong);
-    border-radius: var(--radius-pill);
-    background: var(--surface-2);
+    border-radius: var(--radius);
+    background: transparent;
     color: var(--text-primary);
-    font: inherit;
-    font-size: 15px;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     cursor: pointer;
     transition: box-shadow 0.15s ease, border-color 0.15s ease;
   }
@@ -204,12 +226,12 @@ const isActive = (p: string) => {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     padding: 3px;
     border: 0.5px solid var(--border-strong);
-    border-radius: var(--radius-pill);
-    background: var(--surface-2);
+    border-radius: var(--radius);
+    background: transparent;
     cursor: pointer;
     transition: box-shadow 0.15s ease, border-color 0.15s ease;
   }
@@ -286,12 +308,12 @@ const isActive = (p: string) => {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     padding: 0;
     border: 0.5px solid var(--border-strong);
-    border-radius: var(--radius-pill);
-    background: var(--surface-2);
+    border-radius: var(--radius);
+    background: transparent;
     color: var(--text-primary);
     cursor: pointer;
     line-height: 0;
@@ -332,7 +354,7 @@ const isActive = (p: string) => {
     .nav {
       gap: var(--space-4);
     }
-    .brand-name {
+    .brand-text {
       display: none;
     }
   }

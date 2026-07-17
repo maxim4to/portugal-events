@@ -89,8 +89,8 @@ const { kind, detailPrefix, hrefBase, mapId, points } = Astro.props;
     display: grid;
     grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
     grid-template-rows: minmax(0, 1fr);
-    border: 0.5px solid var(--border);
-    border-radius: 12px;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-lg);
     overflow: hidden;
   }
   .pane {
@@ -100,7 +100,7 @@ const { kind, detailPrefix, hrefBase, mapId, points } = Astro.props;
   .pane-list {
     display: flex;
     flex-direction: column;
-    border-right: 0.5px solid var(--border);
+    border-right: 1px solid var(--border-strong);
   }
   .list-scroll {
     flex: 1;

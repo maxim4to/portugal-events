@@ -91,7 +91,9 @@ const presentCities = [...new Set(events.map((e) => e.city))].sort((a, b) =>
     ) : (
       groups.map((group) => (
         <section class="month" data-group>
-          <h2 data-group-label>{group.label}</h2>
+          <div class="month-head">
+            <h2 data-group-label>{group.label}</h2>
+          </div>
           <div class="grid-cards">
             {group.events.map((event) => (
               <a
@@ -116,16 +118,18 @@ const presentCities = [...new Set(events.map((e) => e.city))].sort((a, b) =>
                       onerror="this.onerror=null;this.src=this.dataset.fallback"
                     />
                   )}
-                  <span class="badge event-badge">{EVENT_TYPE_LABELS[event.type] ?? 'Событие'}</span>
+                  <span class="date-flag">{dateLabel(event)}</span>
                 </div>
                 <div class="body">
-                  <span class="date muted">{dateLabel(event)}</span>
+                  <span class="kicker">{EVENT_TYPE_LABELS[event.type] ?? 'Событие'}</span>
                   <h3>{event.title}</h3>
                   <p class="place muted">{event.city}, {event.venue}</p>
-                  {driveTimeFromLisbon(event, cityIndex) && (
-                    <p class="drive-time muted">{driveTimeFromLisbon(event, cityIndex)}</p>
-                  )}
-                  {event.price && <p class="price">{event.price}</p>}
+                  <div class="meta-row">
+                    {driveTimeFromLisbon(event, cityIndex) && (
+                      <span>{driveTimeFromLisbon(event, cityIndex)}</span>
+                    )}
+                    {event.price && <span>{event.price}</span>}
+                  </div>
                 </div>
               </a>
             ))}
@@ -145,19 +149,37 @@ const presentCities = [...new Set(events.map((e) => e.city))].sort((a, b) =>
     gap: var(--space-2);
   }
   .month {
-    margin-bottom: var(--space-5);
+    margin-bottom: var(--space-6);
+  }
+  /* Editorial section head: serif title with a hairline rule filling the row. */
+  .month-head {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+  .month-head h2 {
+    margin: 0;
+    white-space: nowrap;
+  }
+  .month-head::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-strong);
+    transform: translateY(-4px);
   }
   .event-card {
     display: flex;
     flex-direction: column;
     text-decoration: none;
     color: inherit;
-    transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+    transition: border-color 0.15s ease, box-shadow 0.2s ease, transform 0.2s ease;
   }
   .event-card:hover {
     border-color: var(--border-strong);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(33, 29, 23, 0.14);
+    transform: translateY(-3px);
     text-decoration: none;
   }
   @media (prefers-reduced-motion: reduce) {
@@ -178,33 +200,47 @@ const presentCities = [...new Set(events.map((e) => e.city))].sort((a, b) =>
     height: 100%;
     object-fit: cover;
   }
-  .event-badge {
+  /* Date as an editorial flag, tucked into the image corner. */
+  .date-flag {
     position: absolute;
     top: var(--space-2);
     left: var(--space-2);
     z-index: 4;
-    background: var(--accent-bg);
-    color: var(--accent-text);
+    padding: 3px var(--space-2);
+    background: var(--surface-2);
+    color: var(--text-primary);
+    border-radius: var(--radius);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    box-shadow: 0 2px 8px rgba(33, 29, 23, 0.18);
   }
   .body {
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
-    padding: var(--space-4);
+    padding: var(--space-3) var(--space-4) var(--space-4);
     flex: 1;
-  }
-  .date {
-    font-size: 13px;
   }
   .body h3 {
     margin: 0;
+    font-size: 19px;
+    transition: color 0.15s ease;
   }
-  .place,
-  .price,
-  .drive-time {
+  .event-card:hover h3 {
+    color: var(--accent);
+  }
+  .place {
     margin: 0;
     font-size: 14px;
     color: var(--text-secondary);
+  }
+  .event-card .meta-row {
+    margin-top: auto;
+    padding-top: var(--space-2);
+  }
+  .event-card .meta-row:not(:empty) {
+    border-top: 0.5px solid var(--border);
   }
 
 </style>

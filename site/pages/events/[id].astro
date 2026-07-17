@@ -28,8 +28,21 @@ const paragraphs = event.description.split(/\n\n+/).map((s) => s.trim()).filter(
 <Base title={event.title} description={event.description.slice(0, 150)}>
   <article class="detail">
     <a class="back-top" href={href('/events/')}>
-      <Icon name="arrow-left" size={16} /> Ко всем событиям
+      <Icon name="arrow-left" size={14} /> Ко всем событиям
     </a>
+
+    <header class="head">
+      <span class="head-kicker">
+        <span class="badge event-badge">{EVENT_TYPE_LABELS[event.type] ?? 'Событие'}</span>
+        <span class="head-date">{dateLabel}</span>
+      </span>
+      <h1>{event.title}</h1>
+      <div class="meta-row byline">
+        <span>{event.city}, {event.venue}</span>
+        {driveTime && <span>{driveTime}</span>}
+        {event.price && <span>{event.price}</span>}
+      </div>
+    </header>
 
     {event.image && (
       <div class="hero">
@@ -43,16 +56,6 @@ const paragraphs = event.description.split(/\n\n+/).map((s) => s.trim()).filter(
         />
       </div>
     )}
-
-    <span class="badge event-badge">{EVENT_TYPE_LABELS[event.type] ?? 'Событие'}</span>
-    <h1>{event.title}</h1>
-
-    <div class="meta-row">
-      <span>{dateLabel}</span>
-      <span>{event.city}, {event.venue}</span>
-      {driveTime && <span>{driveTime}</span>}
-      {event.price && <span>{event.price}</span>}
-    </div>
 
     {paragraphs.length > 0 && (
       <div class="description">
@@ -74,15 +77,33 @@ const paragraphs = event.description.split(/\n\n+/).map((s) => s.trim()).filter(
   .detail {
     display: flex;
     flex-direction: column;
-    gap: var(--space-3);
-    max-width: 760px;
+    gap: var(--space-4);
+    max-width: 720px;
     margin: 0 auto;
   }
+  .head {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  .head-kicker {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+  .head-date {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--text-secondary);
+  }
   .hero {
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
     aspect-ratio: 16 / 9;
     background: var(--accent-bg);
+    border: 1px solid var(--border-strong);
   }
   .hero img {
     width: 100%;
@@ -95,10 +116,13 @@ const paragraphs = event.description.split(/\n\n+/).map((s) => s.trim()).filter(
     gap: var(--space-1);
     align-self: flex-start;
     color: var(--text-secondary);
-    font-size: 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
   }
   .back-top:hover {
-    color: var(--text-primary);
+    color: var(--editorial);
     text-decoration: none;
   }
   .event-badge {
@@ -108,9 +132,26 @@ const paragraphs = event.description.split(/\n\n+/).map((s) => s.trim()).filter(
   }
   .detail h1 {
     margin: 0;
+    font-size: clamp(32px, 5vw, 48px);
+  }
+  .byline {
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--border-strong);
+    font-size: 13px;
   }
   .description {
-    margin-top: var(--space-2);
+    font-family: var(--font-display);
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text-primary);
+  }
+  .description p:first-of-type::first-letter {
+    font-weight: 600;
+    font-size: 3.4em;
+    line-height: 0.8;
+    float: left;
+    margin: 0.04em 0.08em 0 0;
+    color: var(--editorial);
   }
   .description p:last-child {
     margin-bottom: 0;

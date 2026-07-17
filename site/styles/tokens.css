@@ -1,28 +1,36 @@
-/* Design tokens — light mode defaults on :root, dark overrides below.
-   Explicit [data-theme] always wins; system preference applies when unset. */
+/* Design tokens — editorial "travel journal" language.
+   Warm paper surfaces, azulejo cobalt as the interactive accent, terracotta as
+   the editorial voice (kickers, section marks, rules). Light defaults on :root,
+   dark overrides below. Explicit [data-theme] always wins; system preference
+   applies when unset. */
 
 :root {
-  /* Surfaces */
-  --surface-0: #faf9f7;
-  --surface-1: #f1efe8;
-  --surface-2: #ffffff;
+  /* Surfaces — warm paper stack */
+  --surface-0: #f2ece0;   /* page — aged cream */
+  --surface-1: #e8e0d1;   /* recessed */
+  --surface-2: #fcf9f3;   /* cards / raised sheet */
 
-  /* Text */
-  --text-primary: #1a1a18;
-  --text-secondary: #5f5e5a;
-  --text-muted: #8a8880;
+  /* Ink */
+  --text-primary: #211d17;
+  --text-secondary: #6a6357;
+  --text-muted: #98907f;
 
-  /* Borders */
-  --border: rgba(0, 0, 0, 0.10);
-  --border-strong: rgba(0, 0, 0, 0.18);
+  /* Hairlines — warm ink, crisp enough to read as editorial rules */
+  --border: rgba(33, 29, 23, 0.16);
+  --border-strong: rgba(33, 29, 23, 0.32);
 
-  /* Accent */
-  --accent: #185fa5;
-  --accent-bg: #e6f1fb;
-  --accent-text: #0c447c;
+  /* Accent — azulejo cobalt (interactive: links, pins, focus, active filters) */
+  --accent: #1c4f96;
+  --accent-bg: #e3ebf4;
+  --accent-text: #163d73;
+
+  /* Editorial accent — terracotta (kickers, section numerals, decorative rules) */
+  --editorial: #b8461f;
+  --editorial-bg: #f4e2d8;
+  --editorial-text: #973514;
 
   /* Danger (favorite heart) */
-  --danger: #d84a3f;
+  --danger: #c8443a;
 
   /* Place-type cover tints (soft bg + darker same-hue on-tint text) */
   --type-beach: #dcebf6;        /* soft blue */
@@ -54,8 +62,9 @@
   --type-other: #e9e7e1;        /* soft gray */
   --type-other-text: #61605a;
 
-  /* Radii */
-  --radius: 10px;
+  /* Radii — crisp, print-like */
+  --radius: 3px;
+  --radius-lg: 6px;
   --radius-pill: 100px;
 
   /* Spacing scale */
@@ -66,26 +75,33 @@
   --space-5: 24px;
   --space-6: 32px;
 
-  /* Font */
-  --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  /* Type families */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  /* Back-compat alias — existing rules reference --font. */
+  --font: var(--font-sans);
 }
 
 /* Dark values, shared by explicit dark theme and system-preference dark. */
 :root[data-theme="dark"] {
-  --surface-0: #1a1a18;
-  --surface-1: #242320;
-  --surface-2: #2c2b27;
+  --surface-0: #17140f;
+  --surface-1: #211d16;
+  --surface-2: #2a251d;
 
-  --text-primary: #f1efe8;
-  --text-secondary: #b4b2a9;
-  --text-muted: #888780;
+  --text-primary: #f3ede0;
+  --text-secondary: #b6ac99;
+  --text-muted: #857c6c;
 
-  --border: rgba(255, 255, 255, 0.12);
-  --border-strong: rgba(255, 255, 255, 0.20);
+  --border: rgba(243, 237, 224, 0.14);
+  --border-strong: rgba(243, 237, 224, 0.26);
 
-  --accent: #85b7eb;
-  --accent-bg: #0c2b47;
-  --accent-text: #b5d4f4;
+  --accent: #7fb0e8;
+  --accent-bg: #12294a;
+  --accent-text: #b6d3f4;
+
+  --editorial: #e08a63;
+  --editorial-bg: #3a2013;
+  --editorial-text: #f0b394;
 
   --danger: #f09595;
 
@@ -122,20 +138,24 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --surface-0: #1a1a18;
-    --surface-1: #242320;
-    --surface-2: #2c2b27;
+    --surface-0: #17140f;
+    --surface-1: #211d16;
+    --surface-2: #2a251d;
 
-    --text-primary: #f1efe8;
-    --text-secondary: #b4b2a9;
-    --text-muted: #888780;
+    --text-primary: #f3ede0;
+    --text-secondary: #b6ac99;
+    --text-muted: #857c6c;
 
-    --border: rgba(255, 255, 255, 0.12);
-    --border-strong: rgba(255, 255, 255, 0.20);
+    --border: rgba(243, 237, 224, 0.14);
+    --border-strong: rgba(243, 237, 224, 0.26);
 
-    --accent: #85b7eb;
-    --accent-bg: #0c2b47;
-    --accent-text: #b5d4f4;
+    --accent: #7fb0e8;
+    --accent-bg: #12294a;
+    --accent-text: #b6d3f4;
+
+    --editorial: #e08a63;
+    --editorial-bg: #3a2013;
+    --editorial-text: #f0b394;
 
     --danger: #f09595;
 

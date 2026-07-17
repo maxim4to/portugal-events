@@ -12,8 +12,8 @@ const { lat, lon, name } = Astro.props;
   .minimap {
     height: 260px;
     width: 100%;
-    border: 0.5px solid var(--border);
-    border-radius: 12px;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-lg);
     overflow: hidden;
   }
   /* Scoped container bg so tiles load onto a token-aware surface (dark mode).

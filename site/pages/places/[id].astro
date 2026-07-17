@@ -23,25 +23,24 @@ const cover = place.photos[0];
 <Base title={place.name} description={place.description.slice(0, 150)}>
   <article class="detail">
     <a class="back-top" href={href('/places/')}>
-      <Icon name="arrow-left" size={16} /> Ко всем местам
+      <Icon name="arrow-left" size={14} /> Ко всем местам
     </a>
+
+    <header class="head">
+      <span class="head-kicker">
+        <TypeBadge type={place.type} />
+        <a class="region" href={href('/places/?region=' + encodeURIComponent(place.region))}>{place.region}</a>
+      </span>
+      <h1>{place.name}</h1>
+      <div class="meta-row byline">
+        <span><Icon name="clock" size={13} /> {place.driveMinutesFromLisbon} мин на машине</span>
+        <span><Icon name="hourglass" size={13} /> ~{place.visitDurationHours} ч на месте</span>
+        <span><Icon name="calendar" size={13} /> {place.bestSeason}</span>
+      </div>
+    </header>
 
     <div class="hero">
       <PhotoGallery photos={place.photos} alt={place.name} variant="detail" type={place.type} />
-      <span class="badge-overlay">
-        <TypeBadge type={place.type} />
-      </span>
-    </div>
-
-    <h1>{place.name}</h1>
-    <p class="muted region">
-      <a href={href('/places/?region=' + encodeURIComponent(place.region))}>{place.region}</a>
-    </p>
-
-    <div class="meta-row">
-      <span><Icon name="clock" size={14} /> {place.driveMinutesFromLisbon} мин на машине</span>
-      <span><Icon name="hourglass" size={14} /> ~{place.visitDurationHours} ч на месте</span>
-      <span><Icon name="calendar" size={14} /> {place.bestSeason}</span>
     </div>
 
     {place.freeWithResidency === true && (
@@ -93,22 +92,37 @@ const cover = place.photos[0];
   .detail {
     display: flex;
     flex-direction: column;
-    gap: var(--space-3);
-    max-width: 760px;
+    gap: var(--space-4);
+    max-width: 720px;
     margin: 0 auto;
+  }
+  .head {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  .head-kicker {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-3);
   }
   .hero {
     position: relative;
   }
-  .badge-overlay {
-    position: absolute;
-    top: var(--space-3);
-    left: var(--space-3);
-    z-index: 4;
-    pointer-events: none;
-  }
   .detail h1 {
-    margin: var(--space-3) 0 0;
+    margin: 0;
+    font-size: clamp(32px, 5vw, 48px);
+  }
+  .byline {
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--border-strong);
+    font-size: 13px;
+  }
+  .byline span {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
   }
   .back-top {
     display: inline-flex;
@@ -116,35 +130,50 @@ const cover = place.photos[0];
     gap: var(--space-1);
     align-self: flex-start;
     color: var(--text-secondary);
-    font-size: 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
   }
   .back-top:hover {
-    color: var(--text-primary);
+    color: var(--editorial);
     text-decoration: none;
   }
   .region {
-    margin: 0;
-  }
-  .region a {
-    color: inherit;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    text-decoration-color: var(--border-strong);
-  }
-  .region a:hover {
     color: var(--text-secondary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--border-strong);
+    font-size: 13px;
+  }
+  .region:hover {
+    color: var(--editorial);
   }
   .residency-pill {
     align-self: flex-start;
-    font-size: 13px;
-    font-weight: 500;
-    padding: 3px var(--space-3);
-    border-radius: var(--radius-pill);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px var(--space-3);
+    border-radius: var(--radius);
     background: var(--type-hike);
     color: var(--type-hike-text);
   }
   .description {
-    margin-top: var(--space-2);
+    font-family: var(--font-display);
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text-primary);
+  }
+  /* Editorial drop cap on the opening paragraph. */
+  .description p:first-of-type::first-letter {
+    font-weight: 600;
+    font-size: 3.4em;
+    line-height: 0.8;
+    float: left;
+    margin: 0.04em 0.08em 0 0;
+    color: var(--editorial);
   }
   .description p:last-child {
     margin-bottom: 0;
