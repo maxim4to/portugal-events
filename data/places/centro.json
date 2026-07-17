@@ -586,5 +586,33 @@
       }
     ],
     "collections": []
+  },
+  {
+    "id": "castelo-de-almourol",
+    "name": "Замок Алмоурол",
+    "type": "castle",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 39.4614, "lon": -8.3817 },
+    "description": "Средневековый тамплиерский замок на крошечном скалистом острове посреди реки Тежу — один из самых сказочных и фотогеничных замков Португалии. На остров переправляют на лодке; вокруг витают легенды о рыцарях и призраках. Совместите с поездкой в Томар неподалёку.",
+    "driveMinutesFromLisbon": 95,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["история", "виды", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Castelo_de_Almourol_-_1.jpg/1280px-Castelo_de_Almourol_-_1.jpg",
+        "author": "Marta Magalhães",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Almourol_-_1.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/A_boat_passing_by_the_Castle_of_Almourol_-_Um_barco_a_passar_pelo_Castelo_de_Almourol_-_panoramio.jpg/1280px-A_boat_passing_by_the_Castle_of_Almourol_-_Um_barco_a_passar_pelo_Castelo_de_Almourol_-_panoramio.jpg",
+        "author": "tiago186703274",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_boat_passing_by_the_Castle_of_Almourol_-_Um_barco_a_passar_pelo_Castelo_de_Almourol_-_panoramio.jpg"
+      }
+    ],
+    "collections": []
   }
 ]
