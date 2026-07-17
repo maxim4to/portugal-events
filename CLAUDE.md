@@ -63,16 +63,22 @@ no-dependency touch/trackpad-swipe carousel). Filtering logic lives in
 `site/lib/placeMatch.ts`/`filters.ts` and is unit-tested against fixtures rather than
 tested through the DOM.
 
-**"Visited" is shared state with no auth**, implemented in `site/lib/visited.ts`: a
-Firebase Realtime Database path `spaces/<spaceId>/visited/<placeId>`. By default every
-visitor lands in one public space (`DEFAULT_SPACE = 'public'`), so the visited history is
-global to everyone — no link or secret needed. A `?space=`/`#space=` URL param still
-overrides it with a private space, persisted to `localStorage`. With a placeholder
-Firebase config the module is inert (no network calls, empty results) so the rest of the
+**"Visited" and "favorites" are per-user state behind Google sign-in.** Auth is
+Firebase Authentication (Google provider); both features store data in Firebase Realtime
+Database under `users/<uid>/visited/<placeId>` and `users/<uid>/favorites/<placeId>`.
+Shared foundation: `site/lib/firebase.ts` (lazy app/db singleton), `site/lib/auth.ts`
+(sign-in/out + `onAuthChange`), and `site/lib/userData.ts` (per-user boolean sets that
+re-point at the current uid on every auth change). `site/lib/visited.ts` and
+`site/lib/favorites.ts` are thin wrappers; `VisitedController`/`FavoriteController` reflect
+the sets onto buttons/cards and prompt Google sign-in on a click while signed out (the
+toggle replays after login). Signed-out visitors browse freely but can't mark anything;
+the catalog visited/favorites filters appear only while signed in. With a placeholder
+Firebase config every module is inert (no network calls, empty results) so the rest of the
 site works unaffected — preserve that degrade-gracefully behavior when touching it. The
 catalog sorts visited places below a divider, but only off a snapshot frozen on load
 (`data-order-visited`), never live toggles, so marking a place doesn't reshuffle the list
-mid-session.
+mid-session. Firebase console setup (enable Google, authorized domains, DB rules) is in
+[docs/auth-setup.md](docs/auth-setup.md); the security rules live in `database.rules.json`.
 
 `astro.config.mjs` sets `base: '/portugal-events'` — internal links must go through
 `hrefBase`/`Astro.url` plumbing already used in components, not hardcoded absolute paths.

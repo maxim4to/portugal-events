@@ -41,6 +41,13 @@ const isActive = (p: string) => {
     </nav>
 
     <div class="actions">
+      <div class="auth" data-auth hidden>
+        <button type="button" class="auth-signin" data-auth-signin hidden>Войти</button>
+        <div class="auth-user" data-auth-user hidden>
+          <img class="auth-avatar" data-auth-avatar alt="" width="28" height="28" referrerpolicy="no-referrer" />
+          <button type="button" class="auth-signout" data-auth-signout>Выйти</button>
+        </div>
+      </div>
       <button class="icon-btn theme-toggle" id="theme-toggle" aria-label="Переключить тему">
         <span class="icon-sun"><Icon name="sun" size={18} /></span>
         <span class="icon-moon"><Icon name="moon" size={18} /></span>
@@ -135,6 +142,69 @@ const isActive = (p: string) => {
     gap: var(--space-2);
     justify-self: end;
   }
+
+  /* Auth control — a pill matching the theme toggle. */
+  .auth[hidden] {
+    display: none;
+  }
+  .auth-signin {
+    display: inline-flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 var(--space-4);
+    border: 0.5px solid var(--border-strong);
+    border-radius: var(--radius-pill);
+    background: var(--surface-2);
+    color: var(--text-primary);
+    font: inherit;
+    font-size: 15px;
+    cursor: pointer;
+    transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+  .auth-signin[hidden] {
+    display: none;
+  }
+  .auth-signin:hover {
+    border-color: var(--text-secondary);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  }
+  .auth-user {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+  .auth-user[hidden] {
+    display: none;
+  }
+  .auth-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-pill);
+    object-fit: cover;
+    background: var(--surface-3, var(--surface-2));
+    border: 0.5px solid var(--border);
+  }
+  .auth-avatar:not([src]) {
+    display: none;
+  }
+  .auth-signout {
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
+    padding: 0 var(--space-3);
+    border: 0.5px solid var(--border-strong);
+    border-radius: var(--radius-pill);
+    background: var(--surface-2);
+    color: var(--text-secondary);
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+  .auth-signout:hover {
+    border-color: var(--text-secondary);
+    color: var(--text-primary);
+  }
   /* Rounded bordered control, Airbnb-like. */
   .icon-btn {
     display: inline-flex;
@@ -211,4 +281,41 @@ const isActive = (p: string) => {
       } catch (e) {}
     });
   })();
+</script>
+
+<script>
+  import {
+    onAuthChange,
+    signInWithGoogle,
+    signOutUser,
+    isAuthConfigured,
+  } from '../lib/auth.ts';
+
+  const root = document.querySelector<HTMLElement>('[data-auth]');
+  if (root && isAuthConfigured()) {
+    const signinBtn = root.querySelector<HTMLButtonElement>('[data-auth-signin]');
+    const userWrap = root.querySelector<HTMLElement>('[data-auth-user]');
+    const avatar = root.querySelector<HTMLImageElement>('[data-auth-avatar]');
+    const signoutBtn = root.querySelector<HTMLButtonElement>('[data-auth-signout]');
+
+    // Reveal the control now that the feature is available.
+    root.hidden = false;
+
+    onAuthChange((user) => {
+      const signedIn = !!user;
+      if (signinBtn) signinBtn.hidden = signedIn;
+      if (userWrap) userWrap.hidden = !signedIn;
+      if (avatar) {
+        if (user?.photoURL) {
+          avatar.src = user.photoURL;
+          avatar.alt = user.displayName ?? '';
+        } else {
+          avatar.removeAttribute('src');
+        }
+      }
+    });
+
+    signinBtn?.addEventListener('click', () => void signInWithGoogle());
+    signoutBtn?.addEventListener('click', () => void signOutUser());
+  }
 </script>

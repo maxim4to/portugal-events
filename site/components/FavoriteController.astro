@@ -1,80 +1,93 @@
 ---
-// Client controller for the private "favorites" feature. Include once on any
+// Client controller for the per-user "favorites" feature. Include once on any
 // page that renders FavoriteButton(s) or the favorites filter. State lives in
-// localStorage under `favorites` (an array of place ids) — no auth, no network,
-// always available. It:
+// Firebase Realtime Database under users/<uid>/favorites (see lib/favorites.ts),
+// so favorites follow the signed-in user across devices. It:
+//  - hides the favorite buttons + favorites filter when Firebase is unconfigured
+//  - reveals the favorites filter only while signed in (a guest has none)
 //  - reflects the saved set onto every .favorite-btn and [data-place-card]
 //  - keeps [data-fav-count] badges in sync with the number of favorites
-//  - toggles on click (guarding against the enclosing card <a> navigating)
+//  - toggles on click; a click while signed out opens Google sign-in and
+//    replays the toggle after (guarding against the enclosing card <a>)
 //  - dispatches `favorites:changed` so an explorer can re-run its filter
 ---
-<script is:inline>
-  (function () {
-    var KEY = 'favorites';
+<script>
+  import {
+    subscribeFavorites,
+    setFavorite,
+    isConfigured,
+  } from '../lib/favorites.ts';
+  import { onAuthChange, signInWithGoogle } from '../lib/auth.ts';
 
-    function read() {
-      try {
-        var v = JSON.parse(localStorage.getItem(KEY) || '[]');
-        return Array.isArray(v) ? v : [];
-      } catch (e) {
-        return [];
+  const buttons = Array.from(
+    document.querySelectorAll<HTMLButtonElement>('.favorite-btn'),
+  );
+  const countEls = Array.from(
+    document.querySelectorAll<HTMLElement>('[data-fav-count]'),
+  );
+  // The favorites filter pill in the catalog toolbar.
+  const favFilters = Array.from(
+    document.querySelectorAll<HTMLElement>('[data-favorites]'),
+  );
+
+  const reflect = (ids: Set<string>) => {
+    for (const btn of buttons) {
+      const id = btn.dataset.favoriteId!;
+      const on = ids.has(id);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Убрать из избранного' : 'В избранное');
+      const label = btn.querySelector('.favorite-label');
+      if (label) label.textContent = on ? 'В избранном' : 'В избранное';
+    }
+    // Reflect onto catalog card wrappers so the explorer filter can read it.
+    document.querySelectorAll<HTMLElement>('[data-place-card]').forEach((wrap) => {
+      const id = wrap.dataset.id!;
+      wrap.dataset.favorite = ids.has(id) ? 'true' : 'false';
+    });
+    countEls.forEach((el) => {
+      el.textContent = ids.size ? String(ids.size) : '';
+    });
+    document.dispatchEvent(new CustomEvent('favorites:changed'));
+  };
+
+  if (!isConfigured()) {
+    // Inert: hide the toggles and the favorites filter entirely.
+    buttons.forEach((btn) => (btn.hidden = true));
+    favFilters.forEach((el) => (el.hidden = true));
+  } else {
+    let loggedIn = false;
+    // A toggle attempted while signed out, replayed once sign-in succeeds.
+    let pending: { id: string; on: boolean } | null = null;
+
+    subscribeFavorites(reflect);
+
+    // Reveal the favorites filter only while signed in; replay a pending toggle.
+    onAuthChange((user) => {
+      loggedIn = !!user;
+      favFilters.forEach((el) => (el.hidden = !loggedIn));
+      if (loggedIn && pending) {
+        const p = pending;
+        pending = null;
+        void setFavorite(p.id, p.on);
       }
-    }
-    function write(list) {
-      try {
-        localStorage.setItem(KEY, JSON.stringify(list));
-      } catch (e) {}
-    }
+    });
 
-    var buttons = Array.prototype.slice.call(
-      document.querySelectorAll('.favorite-btn'),
-    );
-    var countEls = Array.prototype.slice.call(
-      document.querySelectorAll('[data-fav-count]'),
-    );
-
-    function reflect() {
-      var favs = read();
-      var set = {};
-      for (var i = 0; i < favs.length; i++) set[favs[i]] = true;
-
-      buttons.forEach(function (btn) {
-        var id = btn.getAttribute('data-favorite-id');
-        var on = !!set[id];
-        btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-        btn.setAttribute('aria-label', on ? 'Убрать из избранного' : 'В избранное');
-        var label = btn.querySelector('.favorite-label');
-        if (label) label.textContent = on ? 'В избранном' : 'В избранное';
-      });
-
-      // Reflect onto catalog card wrappers so the explorer filter can read it.
-      document.querySelectorAll('[data-place-card]').forEach(function (wrap) {
-        var id = wrap.getAttribute('data-id');
-        wrap.dataset.favorite = set[id] ? 'true' : 'false';
-      });
-
-      countEls.forEach(function (el) {
-        el.textContent = favs.length ? String(favs.length) : '';
-      });
-
-      document.dispatchEvent(new CustomEvent('favorites:changed'));
-    }
-
-    reflect();
-
-    buttons.forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
         // Card buttons live inside an <a>; never navigate.
         e.preventDefault();
         e.stopPropagation();
-        var id = btn.getAttribute('data-favorite-id');
-        var favs = read();
-        var idx = favs.indexOf(id);
-        if (idx === -1) favs.push(id);
-        else favs.splice(idx, 1);
-        write(favs);
-        reflect();
+        const id = btn.dataset.favoriteId!;
+        const next = btn.getAttribute('aria-pressed') !== 'true';
+        if (!loggedIn) {
+          pending = { id, on: next };
+          void signInWithGoogle();
+          return;
+        }
+        // Optimistic reflect; the subscription will confirm/correct.
+        btn.setAttribute('aria-pressed', next ? 'true' : 'false');
+        void setFavorite(id, next);
       });
     });
-  })();
+  }
 </script>
