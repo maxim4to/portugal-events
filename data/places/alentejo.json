@@ -307,5 +307,33 @@
       }
     ],
     "collections": []
+  },
+  {
+    "id": "se-de-evora",
+    "name": "Кафедральный собор Эворы (Sé de Évora)",
+    "type": "castle",
+    "region": "Алентежу",
+    "coords": { "lat": 38.5717, "lon": -7.9072 },
+    "description": "Крупнейший средневековый собор Португалии (XII–XIII вв.) в центре Эворы, сочетающий романику и готику и похожий на крепость с двумя массивными башнями. Обязательно поднимитесь на крышу — оттуда открывается панорама черепичных крыш города, объекта ЮНЕСКО. Удобно совместить с храмом Дианы и Капеллой костей поблизости.",
+    "driveMinutesFromLisbon": 90,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["история", "виды", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Evora_-_Cathedral_-_Front.jpg/1280px-Evora_-_Cathedral_-_Front.jpg",
+        "author": "Ingo Mehling",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Evora_-_Cathedral_-_Front.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Cathedral_Evora_Portugal_01.jpg/1280px-Cathedral_Evora_Portugal_01.jpg",
+        "author": "Norbert Nagel",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cathedral_Evora_Portugal_01.jpg"
+      }
+    ],
+    "collections": []
   }
 ]

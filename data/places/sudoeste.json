@@ -136,5 +136,33 @@
       }
     ],
     "collections": []
+  },
+  {
+    "id": "praia-da-arrifana",
+    "name": "Прайя-да-Аррифана",
+    "type": "beach",
+    "region": "Юго-запад (Кошта-Висентина)",
+    "coords": { "lat": 37.2920, "lon": -8.8660 },
+    "description": "Эффектный пляж в подкове высоких скал у Алжезура на Кошта-Висентина — одно из культовых мест сёрфинга на западном побережье. Сверху, с обрыва у деревушки и рыбацкого порта, открывается потрясающий вид (популярное кафе Ti Raul с террасой над пляжем). Спуск по дороге серпантином; океан мощный — купаться осторожно.",
+    "driveMinutesFromLisbon": 175,
+    "visitDurationHours": 3,
+    "bestSeason": "май–сентябрь",
+    "tags": ["сёрфинг", "виды", "купание"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Aljezur_Arrifana_playa.jpg/1280px-Aljezur_Arrifana_playa.jpg",
+        "author": "Txo",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aljezur_Arrifana_playa.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Praia_da_Arrifana_%286154747357%29.jpg/1280px-Praia_da_Arrifana_%286154747357%29.jpg",
+        "author": "Geerd-Olaf Freyer",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Arrifana_(6154747357).jpg"
+      }
+    ],
+    "collections": []
   }
 ]

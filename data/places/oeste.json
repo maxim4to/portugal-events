@@ -202,5 +202,27 @@
       }
     ],
     "collections": []
+  },
+  {
+    "id": "sao-martinho-do-porto",
+    "name": "Сан-Мартинью-ду-Порту",
+    "type": "beach",
+    "region": "Оэште",
+    "coords": { "lat": 39.5130, "lon": -9.1370 },
+    "description": "Пляж в почти замкнутой бухте в форме ракушки с тихой, тёплой и мелкой водой — одно из лучших мест на побережье Оэште для семей с детьми. В отличие от бурного океана рядом здесь спокойно можно купаться, а вдоль набережной кафе и рестораны. Приятно совместить с Назаре и Обидушем неподалёку.",
+    "driveMinutesFromLisbon": 90,
+    "visitDurationHours": 3,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["купание", "с детьми", "виды"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/SMP_May_2008-7.jpg/1280px-SMP_May_2008-7.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:SMP_May_2008-7.jpg"
+      }
+    ],
+    "collections": []
   }
 ]

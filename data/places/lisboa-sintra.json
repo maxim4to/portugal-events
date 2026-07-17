@@ -993,5 +993,99 @@
       }
     ],
     "collections": []
+  },
+  {
+    "id": "mosteiro-dos-jeronimos",
+    "name": "Монастырь Жеронимуш",
+    "type": "castle",
+    "region": "Лиссабон и Синтра",
+    "coords": { "lat": 38.6979, "lon": -9.2064 },
+    "description": "Роскошный мануэлинский монастырь в Белене, объект ЮНЕСКО и один из символов Португалии, построенный на доходы от эпохи Великих открытий. Впечатляют резной южный портал, огромная церковь с гробницами Васко да Гамы и Камоэнса и двухъярусный клуатр. Билеты лучше брать онлайн — очереди большие; рядом знаменитая паштелария с настоящими pastéis de Belém.",
+    "driveMinutesFromLisbon": 15,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": ["история", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Monasterio_de_los_Jer%C3%B3nimos%2C_Lisboa%2C_Portugal%2C_2022-07-24%2C_DD_38-40_HDR.jpg/1280px-Monasterio_de_los_Jer%C3%B3nimos%2C_Lisboa%2C_Portugal%2C_2022-07-24%2C_DD_38-40_HDR.jpg",
+        "author": "Diego Delso",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monasterio_de_los_Jer%C3%B3nimos,_Lisboa,_Portugal,_2022-07-24,_DD_38-40_HDR.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/View_of_Mosteiro_dos_Jer%C3%B3nimos_from_Monument_of_the_Discoveries%2C_Bel%C3%A9m%2C_Lisbon%2C_20250604_1111_9124.jpg/1280px-View_of_Mosteiro_dos_Jer%C3%B3nimos_from_Monument_of_the_Discoveries%2C_Bel%C3%A9m%2C_Lisbon%2C_20250604_1111_9124.jpg",
+        "author": "Jakub Hałun",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:View_of_Mosteiro_dos_Jer%C3%B3nimos_from_Monument_of_the_Discoveries,_Bel%C3%A9m,_Lisbon,_20250604_1111_9124.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "torre-de-belem",
+    "name": "Башня Белен",
+    "type": "castle",
+    "region": "Лиссабон и Синтра",
+    "coords": { "lat": 38.6916, "lon": -9.2160 },
+    "description": "Изящная укреплённая башня начала XVI века на берегу Тежу — мануэлинский шедевр и объект ЮНЕСКО, когда-то охранявший вход в лиссабонскую гавань. Ажурные балконы, морские мотивы в камне и вид на реку делают её одной из самых фотографируемых достопримечательностей города. Внутри тесно и есть лестницы — в пик сезона бывают очереди.",
+    "driveMinutesFromLisbon": 15,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": ["история", "виды", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Torre_de_Bel%C3%A9m%2C_Lisboa%2C_Portugal%2C_2012-05-12%2C_DD_12.JPG/1280px-Torre_de_Bel%C3%A9m%2C_Lisboa%2C_Portugal%2C_2012-05-12%2C_DD_12.JPG",
+        "author": "Diego Delso",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Torre_de_Bel%C3%A9m,_Lisboa,_Portugal,_2012-05-12,_DD_12.JPG"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "palacio-nacional-de-queluz",
+    "name": "Национальный дворец Келуш",
+    "type": "castle",
+    "region": "Лиссабон и Синтра",
+    "coords": { "lat": 38.7503, "lon": -9.2590 },
+    "description": "Пышный дворец XVIII века в стиле рококо между Лиссабоном и Синтрой, который часто называют «португальским Версалем». Роскошные залы, зеркальный тронный зал и обширные регулярные сады с фонтанами и изразцовым каналом. Отличная менее людная альтернатива дворцам Синтры по пути туда.",
+    "driveMinutesFromLisbon": 25,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": ["история", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Palais_royal_de_Queluz_-_Vue_g%C3%A9n%C3%A9rale.jpg/1280px-Palais_royal_de_Queluz_-_Vue_g%C3%A9n%C3%A9rale.jpg",
+        "author": "Jean-Christophe BENOIST",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Palais_royal_de_Queluz_-_Vue_g%C3%A9n%C3%A9rale.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "panteao-nacional",
+    "name": "Национальный пантеон (Санта-Энграсия)",
+    "type": "other",
+    "region": "Лиссабон и Синтра",
+    "coords": { "lat": 38.7126, "lon": -9.1250 },
+    "description": "Величественная барочная церковь Санта-Энграсия в Алфаме, ставшая Национальным пантеоном Португалии, где покоятся и увековечены выдающиеся португальцы (в том числе Амалия Родригеш и Эузебиу). С верхней террасы под куполом открывается один из лучших панорамных видов на Алфаму, Тежу и порт. Поднимитесь наверх — ради панорамы стоит.",
+    "driveMinutesFromLisbon": 15,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": ["история", "виды", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Pante%C3%A3o_Nacional%2C_Igreja_de_Santa_Engr%C3%A1cia%2C_Lisboa%2C_Portugal.jpg/1280px-Pante%C3%A3o_Nacional%2C_Igreja_de_Santa_Engr%C3%A1cia%2C_Lisboa%2C_Portugal.jpg",
+        "author": "Paulo.boto",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pante%C3%A3o_Nacional,_Igreja_de_Santa_Engr%C3%A1cia,_Lisboa,_Portugal.jpg"
+      }
+    ],
+    "collections": []
   }
 ]
