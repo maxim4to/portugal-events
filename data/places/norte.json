@@ -322,5 +322,33 @@
     ],
     "photos": [],
     "collections": []
+  },
+  {
+    "id": "passadicos-do-paiva",
+    "name": "Мостки Пайва (Passadiços do Paiva)",
+    "type": "hike",
+    "region": "Север",
+    "coords": { "lat": 40.9547, "lon": -8.2472 },
+    "description": "Один из самых зрелищных маршрутов Португалии в Ароуке: около 8 км деревянных настилов и лестниц вдоль дикой реки Пайва, среди скал, водопадов и порогов. Рядом — подвесной мост 516 Arouca, один из самых длинных пешеходных подвесных мостов в мире. Маршрут линейный и с крутыми лестницами; берите воду, обувь для трекинга и билет заранее в сезон.",
+    "driveMinutesFromLisbon": 200,
+    "visitDurationHours": 4,
+    "bestSeason": "апрель–октябрь",
+    "tags": ["природа", "виды", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Passadi%C3%A7o_do_Paiva_%287%29.JPG/1280px-Passadi%C3%A7o_do_Paiva_%287%29.JPG",
+        "author": "Joseolgon",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Passadi%C3%A7o_do_Paiva_(7).JPG"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Passadi%C3%A7os_do_Paiva_-_Arouca_-_panoramio.jpg/1280px-Passadi%C3%A7os_do_Paiva_-_Arouca_-_panoramio.jpg",
+        "author": "Carlos Cunha",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Passadi%C3%A7os_do_Paiva_-_Arouca_-_panoramio.jpg"
+      }
+    ],
+    "collections": []
   }
 ]
