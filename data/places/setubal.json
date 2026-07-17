@@ -628,5 +628,123 @@
       }
     ],
     "collections": []
+  },
+  {
+    "id": "praia-da-ribeira-do-cavalo",
+    "name": "Прайя-да-Рибейра-ду-Кавалу",
+    "type": "beach",
+    "region": "Сетубал и Аррабида",
+    "coords": { "lat": 38.4388, "lon": -9.0875 },
+    "description": "Спрятанная бухта с бирюзовой водой к востоку от Сезимбры — одна из самых красивых на побережье. Спуск непростой: тропа с камнями занимает минимум 30 минут (никаких вьетнамок!), либо можно доплыть на такси-лодке от пирса Сезимбры (~14 € туда-обратно). Летом бывает многолюдно.",
+    "driveMinutesFromLisbon": 50,
+    "visitDurationHours": 4,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["купание", "природа", "виды", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Praia_da_Ribeira_do_Cavalo_Sesimbra_Arr%C3%A1bida.jpg/1280px-Praia_da_Ribeira_do_Cavalo_Sesimbra_Arr%C3%A1bida.jpg",
+        "author": "Figas1975",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Ribeira_do_Cavalo_Sesimbra_Arr%C3%A1bida.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Praia_do_Ribeiro_do_Cavalo.jpg/1280px-Praia_do_Ribeiro_do_Cavalo.jpg",
+        "author": "The Cosmonaut",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Ribeiro_do_Cavalo.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Praia_do_Ribeiro_do_Cavalo6.jpg/1280px-Praia_do_Ribeiro_do_Cavalo6.jpg",
+        "author": "The Cosmonaut",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Ribeiro_do_Cavalo6.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "praia-do-creiro",
+    "name": "Прайя-ду-Крейру",
+    "type": "beach",
+    "region": "Сетубал и Аррабида",
+    "coords": { "lat": 38.4795, "lon": -8.9765 },
+    "description": "Одна из главных бухт парка Аррабида рядом с Портинью-да-Аррабида: спокойная прозрачная вода, песок и вид на сосны серры. Летом парковки мало — приезжать рано утром или на автобусе от Сетубала. Рядом есть кафе и остатки римского рыбозасолочного комплекса.",
+    "driveMinutesFromLisbon": 55,
+    "visitDurationHours": 4,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["купание", "природа", "виды", "с детьми"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Praia_do_Creiro%2C_Parque_Natural_da_Arr%C3%A1bida%2C_Set%C3%BAbal_01.jpg/1280px-Praia_do_Creiro%2C_Parque_Natural_da_Arr%C3%A1bida%2C_Set%C3%BAbal_01.jpg",
+        "author": "Sanjorgepinho",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Creiro,_Parque_Natural_da_Arr%C3%A1bida,_Set%C3%BAbal_01.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Praia_do_Creiro%2C_Parque_Natural_da_Arr%C3%A1bida%2C_Set%C3%BAbal_02.jpg/1280px-Praia_do_Creiro%2C_Parque_Natural_da_Arr%C3%A1bida%2C_Set%C3%BAbal_02.jpg",
+        "author": "Sanjorgepinho",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Creiro,_Parque_Natural_da_Arr%C3%A1bida,_Set%C3%BAbal_02.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "praia-de-galapos",
+    "name": "Прайя-де-Галапуш",
+    "type": "beach",
+    "region": "Сетубал и Аррабида",
+    "coords": { "lat": 38.4842, "lon": -8.9838 },
+    "description": "Ещё одна открыточная бухта Аррабиды с бирюзовой водой между Галапиньюш и Портинью — тише соседей, но так же красива. Спуск по тропе от дороги, летом лучше приезжать пораньше из-за нехватки парковки. Вода холодная даже в разгар лета.",
+    "driveMinutesFromLisbon": 55,
+    "visitDurationHours": 3,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["купание", "природа", "виды", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Praia_de_Galapos_-_Serra_da_Arr%C3%A1bida_1.jpg/1280px-Praia_de_Galapos_-_Serra_da_Arr%C3%A1bida_1.jpg",
+        "author": "Ines.isabel89",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_de_Galapos_-_Serra_da_Arr%C3%A1bida_1.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Praia_de_Galapos_-_Serra_da_Arr%C3%A1bida_2.jpg/1280px-Praia_de_Galapos_-_Serra_da_Arr%C3%A1bida_2.jpg",
+        "author": "Ines.isabel89",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_de_Galapos_-_Serra_da_Arr%C3%A1bida_2.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "praia-da-figueirinha",
+    "name": "Прайя-да-Фигейринья",
+    "type": "beach",
+    "region": "Сетубал и Аррабида",
+    "coords": { "lat": 38.4870, "lon": -8.9445 },
+    "description": "Самый доступный и семейный пляж Аррабиды ближе к Сетубалу: широкий песок, мелкая спокойная вода и вид на полуостров Троя. Во время отлива образуется песчаная коса, по которой можно уйти далеко в воду. Есть парковка, кафе и автобус от Сетубала.",
+    "driveMinutesFromLisbon": 50,
+    "visitDurationHours": 4,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["купание", "с детьми", "виды", "природа"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Praia_da_Figueirinha.jpg/1280px-Praia_da_Figueirinha.jpg",
+        "author": "Ricardo.moniz",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Figueirinha.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Figueirinha.jpg/1280px-Figueirinha.jpg",
+        "author": "Aabasch",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Figueirinha.jpg"
+      }
+    ],
+    "collections": []
   }
 ]
