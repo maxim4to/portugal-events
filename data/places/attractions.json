@@ -1425,5 +1425,30 @@
     "links": [],
     "photos": [],
     "collections": []
+  },
+  {
+    "id": "kartodromo-braga",
+    "name": "Международный картодром Браги (KIB)",
+    "type": "karting",
+    "region": "Норте",
+    "coords": {
+      "lat": 41.581,
+      "lon": -8.446
+    },
+    "description": "Международный картодром в Палмейре под Брагой — одна из лучших картинг-трасс Португалии, где проходят национальные и международные соревнования. Прокат картов для одиночных гонщиков, групп и компаний.",
+    "driveMinutesFromLisbon": 350,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [
+      {
+        "title": "KIB — Kartódromo Internacional de Braga",
+        "url": "http://www.kib.pt/"
+      }
+    ],
+    "photos": [],
+    "collections": []
   }
 ]
