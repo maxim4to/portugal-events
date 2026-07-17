@@ -42,10 +42,29 @@ const isActive = (p: string) => {
 
     <div class="actions">
       <div class="auth" data-auth hidden>
-        <button type="button" class="auth-signin" data-auth-signin hidden>Войти</button>
+        <button type="button" class="auth-signin" data-auth-signin hidden>
+          <svg class="auth-signin-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+               stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" />
+          </svg>
+          <span>Войти</span>
+        </button>
+
         <div class="auth-user" data-auth-user hidden>
-          <img class="auth-avatar" data-auth-avatar alt="" width="28" height="28" referrerpolicy="no-referrer" />
-          <button type="button" class="auth-signout" data-auth-signout>Выйти</button>
+          <button type="button" class="auth-avatar-btn" data-auth-menu-toggle
+                  aria-haspopup="menu" aria-expanded="false" aria-label="Аккаунт">
+            <img class="auth-avatar" data-auth-avatar alt="" width="32" height="32"
+                 referrerpolicy="no-referrer" />
+          </button>
+          <div class="auth-menu" data-auth-menu role="menu" hidden>
+            <div class="auth-menu-head">
+              <span class="auth-menu-name" data-auth-name></span>
+              <span class="auth-menu-email muted" data-auth-email></span>
+            </div>
+            <button type="button" class="auth-menu-item" data-auth-signout role="menuitem">Выйти</button>
+          </div>
         </div>
       </div>
       <button class="icon-btn theme-toggle" id="theme-toggle" aria-label="Переключить тему">
@@ -150,6 +169,7 @@ const isActive = (p: string) => {
   .auth-signin {
     display: inline-flex;
     align-items: center;
+    gap: var(--space-2);
     height: 40px;
     padding: 0 var(--space-4);
     border: 0.5px solid var(--border-strong);
@@ -168,42 +188,98 @@ const isActive = (p: string) => {
     border-color: var(--text-secondary);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
   }
+  .auth-signin-icon {
+    color: var(--text-secondary);
+    flex: none;
+  }
   .auth-user {
+    position: relative;
     display: inline-flex;
     align-items: center;
-    gap: var(--space-2);
   }
   .auth-user[hidden] {
     display: none;
   }
+  .auth-avatar-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 3px;
+    border: 0.5px solid var(--border-strong);
+    border-radius: var(--radius-pill);
+    background: var(--surface-2);
+    cursor: pointer;
+    transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+  .auth-avatar-btn:hover {
+    border-color: var(--text-secondary);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  }
   .auth-avatar {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     border-radius: var(--radius-pill);
     object-fit: cover;
-    background: var(--surface-3, var(--surface-2));
-    border: 0.5px solid var(--border);
+    display: block;
   }
   .auth-avatar:not([src]) {
     display: none;
   }
-  .auth-signout {
-    display: inline-flex;
-    align-items: center;
-    height: 32px;
-    padding: 0 var(--space-3);
-    border: 0.5px solid var(--border-strong);
-    border-radius: var(--radius-pill);
+  .auth-menu {
+    position: absolute;
+    top: calc(100% + var(--space-1));
+    right: 0;
+    z-index: 1000;
+    min-width: 200px;
+    padding: var(--space-2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
     background: var(--surface-2);
-    color: var(--text-secondary);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  }
+  .auth-menu[hidden] {
+    display: none;
+  }
+  .auth-menu-head {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: var(--space-2) var(--space-3);
+    border-bottom: 0.5px solid var(--border);
+    margin-bottom: var(--space-1);
+  }
+  .auth-menu-name {
+    font-size: 14px;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 220px;
+  }
+  .auth-menu-email {
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 220px;
+  }
+  .auth-menu-item {
+    display: block;
+    width: 100%;
+    padding: var(--space-2) var(--space-3);
+    border: 0;
+    background: none;
+    border-radius: 6px;
+    color: var(--text-primary);
     font: inherit;
     font-size: 14px;
+    text-align: left;
     cursor: pointer;
-    transition: border-color 0.15s ease, color 0.15s ease;
   }
-  .auth-signout:hover {
-    border-color: var(--text-secondary);
-    color: var(--text-primary);
+  .auth-menu-item:hover {
+    background: var(--surface-1);
   }
   /* Rounded bordered control, Airbnb-like. */
   .icon-btn {
@@ -297,9 +373,29 @@ const isActive = (p: string) => {
     const userWrap = root.querySelector<HTMLElement>('[data-auth-user]');
     const avatar = root.querySelector<HTMLImageElement>('[data-auth-avatar]');
     const signoutBtn = root.querySelector<HTMLButtonElement>('[data-auth-signout]');
+    const avatarBtn = root.querySelector<HTMLButtonElement>('[data-auth-menu-toggle]');
+    const menu = root.querySelector<HTMLElement>('[data-auth-menu]');
+    const nameEl = root.querySelector<HTMLElement>('[data-auth-name]');
+    const emailEl = root.querySelector<HTMLElement>('[data-auth-email]');
 
     // Reveal the control now that the feature is available.
     root.hidden = false;
+
+    function setMenu(open: boolean) {
+      if (!menu || !avatarBtn) return;
+      menu.hidden = !open;
+      avatarBtn.setAttribute('aria-expanded', String(open));
+    }
+    avatarBtn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setMenu(menu?.hidden === true);
+    });
+    document.addEventListener('click', (e) => {
+      if (!(e.target as HTMLElement).closest('[data-auth-user]')) setMenu(false);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { setMenu(false); avatarBtn?.focus(); }
+    });
 
     onAuthChange((user) => {
       const signedIn = !!user;
@@ -313,6 +409,9 @@ const isActive = (p: string) => {
           avatar.removeAttribute('src');
         }
       }
+      if (nameEl) nameEl.textContent = user?.displayName ?? '';
+      if (emailEl) emailEl.textContent = user?.email ?? '';
+      if (!signedIn) setMenu(false);
     });
 
     signinBtn?.addEventListener('click', () => void signInWithGoogle());
