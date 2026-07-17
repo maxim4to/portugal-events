@@ -28,8 +28,16 @@ Fetch the link and pull out every real place/event it mentions (name, town,
 short context, any practical tips).
 
 - **Instagram** blocks plain fetches — the normal URL returns just the word
-  "Instagram". Use the **embed** endpoint instead, which returns the full caption:
-  `https://www.instagram.com/p/<SHORTCODE>/embed/captioned/`
+  "Instagram". Read the post in this order, stopping at the first that works:
+  1. **Embed endpoint** — returns the full caption:
+     `https://www.instagram.com/p/<SHORTCODE>/embed/captioned/`
+  2. **imginn mirror** — if the embed is empty/partial or you also need comments
+     or other post content, take the **post id (the last part of the Instagram
+     URL)** and read it through imginn:
+     `https://imginn.com/p/<SHORTCODE>/`
+     e.g. `https://www.instagram.com/p/DayXzXVMabB/` → `https://imginn.com/p/DayXzXVMabB/`.
+  3. If both fail, web-search the caption text or ask the user to paste it.
+  The `<SHORTCODE>` is the id segment after `/p/` in the Instagram link.
 - For blogs/news/maps, fetch the page directly. If a fetch is blocked, try a web
   search for the same content, or ask the user to paste the text.
 - Decide **places vs events**: a physical spot to visit → place; a dated
