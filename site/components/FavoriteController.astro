@@ -19,6 +19,7 @@
   } from '../lib/favorites.ts';
   import { onAuthChange, signInWithGoogle } from '../lib/auth.ts';
   import { showSigninPrompt } from '../lib/signinPrompt.ts';
+  import { showToast } from '../lib/toast.ts';
 
   const buttons = Array.from(
     document.querySelectorAll<HTMLButtonElement>('.favorite-btn'),
@@ -31,14 +32,22 @@
     document.querySelectorAll<HTMLElement>('[data-favorites]'),
   );
 
+  // Paint one button (and its catalog card wrapper) for a given on/off state.
+  // Shared by the subscription and the optimistic click path / rollback.
+  const paint = (btn: HTMLButtonElement, on: boolean) => {
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.setAttribute('aria-label', on ? 'Убрать из избранного' : 'В избранное');
+    const label = btn.querySelector('.favorite-label');
+    if (label) label.textContent = on ? 'В избранном' : 'В избранное';
+    const id = btn.dataset.favoriteId!;
+    document.querySelectorAll<HTMLElement>('[data-place-card]').forEach((wrap) => {
+      if (wrap.dataset.id === id) wrap.dataset.favorite = on ? 'true' : 'false';
+    });
+  };
+
   const reflect = (ids: Set<string>) => {
     for (const btn of buttons) {
-      const id = btn.dataset.favoriteId!;
-      const on = ids.has(id);
-      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-      btn.setAttribute('aria-label', on ? 'Убрать из избранного' : 'В избранное');
-      const label = btn.querySelector('.favorite-label');
-      if (label) label.textContent = on ? 'В избранном' : 'В избранное';
+      paint(btn, ids.has(btn.dataset.favoriteId!));
     }
     // Reflect onto catalog card wrappers so the explorer filter can read it.
     document.querySelectorAll<HTMLElement>('[data-place-card]').forEach((wrap) => {
@@ -69,9 +78,26 @@
       if (loggedIn && pending) {
         const p = pending;
         pending = null;
-        void setFavorite(p.id, p.on);
+        void save(p.id, p.on);
       }
     });
+
+    // Persist a toggle and keep the UI honest: on failure, roll the button back
+    // and tell the user, instead of leaving a change that silently vanishes on
+    // the next reload. Declared (hoisted) so the auth-replay path above can call
+    // it too.
+    async function save(id: string, on: boolean) {
+      try {
+        await setFavorite(id, on);
+      } catch (err) {
+        for (const btn of buttons) {
+          if (btn.dataset.favoriteId === id) paint(btn, !on);
+        }
+        document.dispatchEvent(new CustomEvent('favorites:changed'));
+        const detail = err instanceof Error ? err.message : String(err);
+        showToast(`Не удалось сохранить избранное. ${detail}`);
+      }
+    }
 
     buttons.forEach((btn) => {
       btn.addEventListener('click', (e) => {
@@ -89,9 +115,9 @@
           });
           return;
         }
-        // Optimistic reflect; the subscription will confirm/correct.
-        btn.setAttribute('aria-pressed', next ? 'true' : 'false');
-        void setFavorite(id, next);
+        // Optimistic reflect; save() confirms or rolls back on failure.
+        paint(btn, next);
+        void save(id, next);
       });
     });
   }

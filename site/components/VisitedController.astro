@@ -17,6 +17,7 @@
   } from '../lib/visited.ts';
   import { onAuthChange, signInWithGoogle } from '../lib/auth.ts';
   import { showSigninPrompt } from '../lib/signinPrompt.ts';
+  import { showToast } from '../lib/toast.ts';
 
   const buttons = Array.from(
     document.querySelectorAll<HTMLButtonElement>('.visited-btn'),
@@ -53,16 +54,19 @@
     // only catches up on the next page refresh.
     let frozeOrder = false;
 
+    // Paint one button (and its catalog card wrapper) for a given on/off state.
+    // Shared by the subscription and the optimistic click path / rollback.
+    const paint = (btn: HTMLButtonElement, on: boolean) => {
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      const label = btn.querySelector('.visited-label');
+      if (label) label.textContent = on ? 'Вы были здесь' : 'Был здесь';
+      const wrapper = btn.closest<HTMLElement>('[data-place-card]');
+      if (wrapper) wrapper.dataset.visited = on ? 'true' : 'false';
+    };
+
     const reflect = (ids: Set<string>) => {
       for (const btn of buttons) {
-        const id = btn.dataset.visitedId!;
-        const on = ids.has(id);
-        btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-        const label = btn.querySelector('.visited-label');
-        if (label) label.textContent = on ? 'Вы были здесь' : 'Был здесь';
-        // Reflect onto the enclosing catalog card wrapper for filtering.
-        const wrapper = btn.closest<HTMLElement>('[data-place-card]');
-        if (wrapper) wrapper.dataset.visited = on ? 'true' : 'false';
+        paint(btn, ids.has(btn.dataset.visitedId!));
       }
       // Cards without a button still need a data-visited baseline for filtering.
       document
@@ -95,9 +99,26 @@
       if (loggedIn && pending) {
         const p = pending;
         pending = null;
-        void setVisited(p.id, p.on);
+        void save(p.id, p.on);
       }
     });
+
+    // Persist a toggle and keep the UI honest: on failure, roll the button back
+    // and tell the user, instead of leaving a change that silently vanishes on
+    // the next reload. Declared (hoisted) so the auth-replay path above can call
+    // it too.
+    async function save(id: string, on: boolean) {
+      try {
+        await setVisited(id, on);
+      } catch (err) {
+        for (const btn of buttons) {
+          if (btn.dataset.visitedId === id) paint(btn, !on);
+        }
+        document.dispatchEvent(new CustomEvent('visited:changed'));
+        const detail = err instanceof Error ? err.message : String(err);
+        showToast(`Не удалось сохранить отметку. ${detail}`);
+      }
+    }
 
     for (const btn of buttons) {
       btn.addEventListener('click', (e) => {
@@ -116,9 +137,9 @@
           });
           return;
         }
-        // Optimistic reflect; the subscription will confirm/correct.
-        btn.setAttribute('aria-pressed', next ? 'true' : 'false');
-        void setVisited(id, next);
+        // Optimistic reflect; save() confirms or rolls back on failure.
+        paint(btn, next);
+        void save(id, next);
       });
     }
   }

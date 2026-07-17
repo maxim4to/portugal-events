@@ -88,9 +88,32 @@ export function subscribeUserSet(
   };
 }
 
+/** How long to wait for a write to be acknowledged before treating it as failed.
+ * When the Realtime Database connection can't be established (e.g. its WebSocket
+ * is blocked by a network/extension), `set`/`remove` never resolve — the write
+ * lingers in the local cache and silently vanishes on reload. The timeout turns
+ * that into a surfaced error instead. */
+const WRITE_TIMEOUT_MS = 12_000;
+
+function withTimeout<T>(p: Promise<T>, ms: number): Promise<T> {
+  return new Promise<T>((resolve, reject) => {
+    const timer = setTimeout(
+      () => reject(new Error('Истекло время ожидания ответа от базы данных.')),
+      ms,
+    );
+    p.then(
+      (v) => { clearTimeout(timer); resolve(v); },
+      (e) => { clearTimeout(timer); reject(e); },
+    );
+  });
+}
+
 /**
  * Set (`on = true`) or clear (`on = false`) one id in the current user's set.
- * No-op if not configured or signed out. Never throws.
+ * No-op if Firebase isn't configured. THROWS if the write can't be persisted
+ * (signed out, no database, rejected by rules, or not acknowledged in time) so
+ * callers can surface the failure and roll back optimistic UI — a silently
+ * dropped write is exactly what makes a toggle look saved until the next reload.
  */
 export async function setUserFlag(
   kind: UserSetKind,
@@ -99,15 +122,10 @@ export async function setUserFlag(
 ): Promise<void> {
   if (!isFirebaseConfigured()) return;
   const uid = getUid();
-  if (!uid) return;
-  try {
-    const db = await getDb();
-    if (!db) return;
-    const { ref, set, remove } = await import('firebase/database');
-    const itemRef = ref(db, `users/${uid}/${kind}/${id}`);
-    if (on) await set(itemRef, true);
-    else await remove(itemRef);
-  } catch (err) {
-    console.warn(`[${kind}] write failed.`, err);
-  }
+  if (!uid) throw new Error('Вы не вошли в аккаунт.');
+  const db = await getDb();
+  if (!db) throw new Error('База данных недоступна.');
+  const { ref, set, remove } = await import('firebase/database');
+  const itemRef = ref(db, `users/${uid}/${kind}/${id}`);
+  await withTimeout(on ? set(itemRef, true) : remove(itemRef), WRITE_TIMEOUT_MS);
 }

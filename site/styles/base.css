@@ -474,3 +474,34 @@ img {
     transform: none;
   }
 }
+
+/* Transient status toast (see lib/toast.ts) — bottom-centered, single message,
+   no action. Used for things like a save that failed to reach the database. */
+.app-toast {
+  position: fixed;
+  left: 50%;
+  bottom: max(var(--space-4), env(safe-area-inset-bottom));
+  z-index: 1100;
+  max-width: min(92vw, 360px);
+  padding: var(--space-3) var(--space-4);
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  color: var(--text-primary);
+  font-size: 13px;
+  line-height: 1.4;
+  box-shadow: 0 10px 30px rgba(33, 29, 23, 0.22);
+  opacity: 0;
+  transform: translate(-50%, 8px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+.app-toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .app-toast {
+    transition: opacity 0.18s ease;
+    transform: translate(-50%, 0);
+  }
+}
