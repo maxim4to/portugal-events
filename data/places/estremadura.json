@@ -90,5 +90,61 @@
       }
     ],
     "collections": []
+  },
+  {
+    "id": "mosteiro-da-batalha",
+    "name": "Монастырь Баталья",
+    "type": "castle",
+    "region": "Эштремадура",
+    "coords": { "lat": 39.6592, "lon": -8.8256 },
+    "description": "Один из красивейших готических монастырей Португалии и объект ЮНЕСКО, построенный в честь победы при Алжубарроте. Поражают ажурные «незавершённые капеллы», мануэлинский декор и клуатр — фотографировать галереи лучше утром, пока мало людей. Вход в церковь бесплатный, в монастырь — по билету; есть комбо-билет на Баталью, Алкобасу и Томар.",
+    "driveMinutesFromLisbon": 120,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["история", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Batalha_September_2021-53.jpg/1280px-Batalha_September_2021-53.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Batalha_September_2021-53.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Batalha_September_2021-4.jpg/1280px-Batalha_September_2021-4.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Batalha_September_2021-4.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "mosteiro-de-alcobaca",
+    "name": "Монастырь Алкобаса",
+    "type": "castle",
+    "region": "Эштремадура",
+    "coords": { "lat": 39.5486, "lon": -8.9800 },
+    "description": "Цистерцианский монастырь XII века, объект ЮНЕСКО, с одной из крупнейших средневековых церквей Португалии и знаменитыми готическими гробницами Педру и Инеш. Впечатляют строгий монументальный неф и огромная монастырская кухня с каналом для проточной воды. Удобно совместить с Батальей и Томаром по комбо-билету, но лучше в разные дни.",
+    "driveMinutesFromLisbon": 105,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["история", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Alcoba%C3%A7a_October_2021-1.jpg/1280px-Alcoba%C3%A7a_October_2021-1.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alcoba%C3%A7a_October_2021-1.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Alcoba%C3%A7a_October_2021-4.jpg/1280px-Alcoba%C3%A7a_October_2021-4.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alcoba%C3%A7a_October_2021-4.jpg"
+      }
+    ],
+    "collections": []
   }
 ]
