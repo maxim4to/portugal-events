@@ -82,5 +82,301 @@
       }
     ],
     "collections": []
+  },
+  {
+    "id": "fuseta",
+    "name": "Фузета",
+    "type": "town",
+    "region": "Алгарве",
+    "coords": { "lat": 37.0553, "lon": -7.7423 },
+    "description": "Спокойный рыбацкий городок на лагуне Риа-Формоза с яркими лодками и уютной набережной — приятная альтернатива шумным курортам. Отсюда ходит паром на песчаный остров Илья-да-Фузета с почти пустыми пляжами. Загляните на местный рынок и попробуйте свежих моллюсков.",
+    "driveMinutesFromLisbon": 175,
+    "visitDurationHours": 3,
+    "bestSeason": "май–сентябрь",
+    "tags": ["природа", "купание", "виды"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Ria_Formosa_-_Fuzeta_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_%2854369739041%29.jpg/1280px-Ria_Formosa_-_Fuzeta_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_%2854369739041%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ria_Formosa_-_Fuzeta_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_(54369739041).jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "praia-da-falesia",
+    "name": "Прайя-да-Фалезия",
+    "type": "beach",
+    "region": "Алгарве",
+    "coords": { "lat": 37.0890, "lon": -8.1720 },
+    "description": "Огромный пляж длиной около 6 км под живописными охристо-рыжими скалами между Виламорой и Албуфейрой. Простор даже в разгар сезона, красивые виды и прогулочная тропа поверху. Тени почти нет — берите зонт и воду.",
+    "driveMinutesFromLisbon": 165,
+    "visitDurationHours": 4,
+    "bestSeason": "май–сентябрь",
+    "tags": ["купание", "виды", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Falesia_Beach_seen_from_sea.JPG/1280px-Falesia_Beach_seen_from_sea.JPG",
+        "author": "Diana5cruz",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Falesia_Beach_seen_from_sea.JPG"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Fal%C3%A9sias_Beach_from_the_cliffs.jpg/1280px-Fal%C3%A9sias_Beach_from_the_cliffs.jpg",
+        "author": "Watty62",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fal%C3%A9sias_Beach_from_the_cliffs.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "queda-do-vigario",
+    "name": "Водопад Кеда-ду-Вигариу (Алте)",
+    "type": "nature",
+    "region": "Алгарве",
+    "coords": { "lat": 37.2360, "lon": -8.1730 },
+    "description": "Живописный водопад у деревни Алте во внутреннем Алгарве, с бирюзовой заводью, где летом можно освежиться. Приятное зелёное место для короткой прогулки вдали от пляжной толпы. После дождей поток особенно эффектный, летом мельче.",
+    "driveMinutesFromLisbon": 175,
+    "visitDurationHours": 1.5,
+    "bestSeason": "март–июнь",
+    "tags": ["природа", "купание", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Lado_verde_do_Vigario.jpg/1280px-Lado_verde_do_Vigario.jpg",
+        "author": "Magikknox",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lado_verde_do_Vigario.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "praia-da-marinha",
+    "name": "Прайя-да-Марина",
+    "type": "beach",
+    "region": "Алгарве",
+    "coords": { "lat": 37.0910, "lon": -8.4125 },
+    "description": "Одна из самых знаменитых бухт Алгарве и всей Португалии: золотистые скалы-арки, кристально чистая вода и вид сверху со смотровой площадки. Отсюда начинается красивая тропа Sete Vales Suspensos. Спуск по крутой лестнице, парковка заполняется рано.",
+    "driveMinutesFromLisbon": 165,
+    "visitDurationHours": 3,
+    "bestSeason": "май–сентябрь",
+    "tags": ["купание", "виды", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Praia_da_Marinha_%28IMG_20180514_113339%29.jpg/1280px-Praia_da_Marinha_%28IMG_20180514_113339%29.jpg",
+        "author": "Robbie Klinkenberg",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Marinha_(IMG_20180514_113339).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Praia_da_Marinha-Algarve-Portugal.jpg/1280px-Praia_da_Marinha-Algarve-Portugal.jpg",
+        "author": "Tobi 87",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Marinha-Algarve-Portugal.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "algar-de-benagil",
+    "name": "Пещера Бенажил",
+    "type": "nature",
+    "region": "Алгарве",
+    "coords": { "lat": 37.0876, "lon": -8.4265 },
+    "description": "Знаменитый морской грот с круглым «окном» в потолке, через которое льётся свет на маленький внутренний пляж. Попасть внутрь можно только с воды — на лодке-туре, каяке или SUP из Бенажила или Портимана; вплавь опасно из-за лодок и обвалов. Приезжайте утром, когда спокойнее море и меньше народу.",
+    "driveMinutesFromLisbon": 165,
+    "visitDurationHours": 2,
+    "bestSeason": "май–сентябрь",
+    "tags": ["природа", "виды", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Benagil_Cave_%283%29.jpg/1280px-Benagil_Cave_%283%29.jpg",
+        "author": "Joseolgon",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Benagil_Cave_(3).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Benagil_Cave_%288%29.jpg/1280px-Benagil_Cave_%288%29.jpg",
+        "author": "Joseolgon",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Benagil_Cave_(8).jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "algar-seco",
+    "name": "Алгар-Секу (Карвоейру)",
+    "type": "nature",
+    "region": "Алгарве",
+    "coords": { "lat": 37.0955, "lon": -8.4680 },
+    "description": "Причудливые скальные образования, гроты и арки из золотистого песчаника у курорта Карвоейру, соединённые деревянными настилами и лестницами. Знаменит «окошком» A Boneca и закатными видами на океан. Обувь поустойчивее — камни местами скользкие.",
+    "driveMinutesFromLisbon": 165,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["природа", "виды", "закат"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Algar_Seco_rocks%2C_Carvoeiro%2C_Portugal_julesvernex2.jpg/1280px-Algar_Seco_rocks%2C_Carvoeiro%2C_Portugal_julesvernex2.jpg",
+        "author": "Jules Verne Times Two",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Algar_Seco_rocks,_Carvoeiro,_Portugal_julesvernex2.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Algar_Seco_rocks%2C_Carvoeiro%2C_Portugal_julesvernex2-3.jpg/1280px-Algar_Seco_rocks%2C_Carvoeiro%2C_Portugal_julesvernex2-3.jpg",
+        "author": "Jules Verne Times Two",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Algar_Seco_rocks,_Carvoeiro,_Portugal_julesvernex2-3.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "ferragudo",
+    "name": "Феррагуду",
+    "type": "town",
+    "region": "Алгарве",
+    "coords": { "lat": 37.1236, "lon": -8.5216 },
+    "description": "Живописная рыбацкая деревня на устье реки Араде напротив Портимана: белые домики с цветными наличниками, узкие улочки и уютная площадь с ресторанами. Атмосфернее и спокойнее многих курортов Алгарве. Рядом — пляж Прайя-Гранди и форт Сан-Жуан-ду-Араде.",
+    "driveMinutesFromLisbon": 170,
+    "visitDurationHours": 2,
+    "bestSeason": "апрель–октябрь",
+    "tags": ["виды", "фото", "ресторан"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Harbour_side%2C_Ferragudo%2C_21_June_2016_%286%29.JPG/1280px-Harbour_side%2C_Ferragudo%2C_21_June_2016_%286%29.JPG",
+        "author": "Kolforn",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harbour_side,_Ferragudo,_21_June_2016_(6).JPG"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Ferragudo_%283190602050%29.jpg/1280px-Ferragudo_%283190602050%29.jpg",
+        "author": "Aires Almeida",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ferragudo_(3190602050).jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "praia-do-camilo",
+    "name": "Прайя-ду-Камилу",
+    "type": "beach",
+    "region": "Алгарве",
+    "coords": { "lat": 37.0899, "lon": -8.6690 },
+    "description": "Компактная открыточная бухта у Лагуша с бирюзовой водой, куда ведёт деревянная лестница из ~200 ступеней. Через тоннель в скале открывается второй участок пляжа. Места мало — приезжайте рано, особенно в сезон.",
+    "driveMinutesFromLisbon": 175,
+    "visitDurationHours": 3,
+    "bestSeason": "май–сентябрь",
+    "tags": ["купание", "виды", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Praia_do_Camilo_-_Lagos_%2848405494817%29.jpg/1280px-Praia_do_Camilo_-_Lagos_%2848405494817%29.jpg",
+        "author": "Theo Crazzolara",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Camilo_-_Lagos_(48405494817).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Praia_do_Camilo_-_Lagos_%2848413838302%29.jpg/1280px-Praia_do_Camilo_-_Lagos_%2848413838302%29.jpg",
+        "author": "Theo Crazzolara",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Camilo_-_Lagos_(48413838302).jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "ponta-da-piedade",
+    "name": "Понта-да-Пьедаде",
+    "type": "viewpoint",
+    "region": "Алгарве",
+    "coords": { "lat": 37.0817, "lon": -8.6683 },
+    "description": "Эффектный мыс у Лагуша с золотистыми скалами, арками и гротами, уходящими в бирюзовое море — один из символов Алгарве. Сверху идёт тропа со смотровыми, снизу к пещерам возят лодки и каяки. Особенно красиво на закате.",
+    "driveMinutesFromLisbon": 175,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": ["виды", "природа", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Ponta_da_Piedade%2C_Lagos_%2820518421738%29.jpg/1280px-Ponta_da_Piedade%2C_Lagos_%2820518421738%29.jpg",
+        "author": "Paul Wilkinson",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ponta_da_Piedade,_Lagos_(20518421738).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Ponta_da_Piedade%2C_Lagos_%2820083809934%29.jpg/1280px-Ponta_da_Piedade%2C_Lagos_%2820083809934%29.jpg",
+        "author": "Paul Wilkinson",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ponta_da_Piedade,_Lagos_(20083809934).jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "cabo-de-sao-vicente",
+    "name": "Мыс Сан-Висенте",
+    "type": "viewpoint",
+    "region": "Алгарве",
+    "coords": { "lat": 37.0233, "lon": -8.9976 },
+    "description": "Юго-западная оконечность континентальной Европы у Сагреша: суровые обрывы высотой до 75 м, маяк и бескрайний океан. Когда-то это место считали «краем света». Ветрено и потрясающе на закате — возьмите ветровку и попробуйте местную колбаску из фургончиков у маяка.",
+    "driveMinutesFromLisbon": 200,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["виды", "закат", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Cabo-sao-vicente-lighthouse-2019-msu-2309.jpg/1280px-Cabo-sao-vicente-lighthouse-2019-msu-2309.jpg",
+        "author": "Matthias Süßen",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cabo-sao-vicente-lighthouse-2019-msu-2309.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Memorial_Farol_do_Cabo_de_S%C3%A3o_Vicente_Portugal.JPG/1280px-Memorial_Farol_do_Cabo_de_S%C3%A3o_Vicente_Portugal.JPG",
+        "author": "Herbert wie",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Memorial_Farol_do_Cabo_de_S%C3%A3o_Vicente_Portugal.JPG"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "praia-da-cordoama",
+    "name": "Прайя-да-Кордоама",
+    "type": "beach",
+    "region": "Алгарве",
+    "coords": { "lat": 37.1155, "lon": -8.9430 },
+    "description": "Дикий просторный пляж на западном побережье у Вила-ду-Бишпу с тёмными скалами и мощным атлантическим прибоем — любимое место сёрферов. Почти нетронутая природа и потрясающие закаты, но купаться осторожно: течения сильные. Со смотровой над пляжем открывается впечатляющий вид на побережье.",
+    "driveMinutesFromLisbon": 200,
+    "visitDurationHours": 3,
+    "bestSeason": "май–сентябрь",
+    "tags": ["сёрфинг", "виды", "закат"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Praia_do_Cordoama_%284001722280%29.jpg/1280px-Praia_do_Cordoama_%284001722280%29.jpg",
+        "author": "manjerix",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Cordoama_(4001722280).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Praia_do_Cordoama_%284001723388%29.jpg/1280px-Praia_do_Cordoama_%284001723388%29.jpg",
+        "author": "manjerix",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Cordoama_(4001723388).jpg"
+      }
+    ],
+    "collections": []
   }
 ]
