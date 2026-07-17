@@ -441,5 +441,22 @@
     ],
     "photos": [],
     "collections": []
+  },
+  {
+    "id": "rail-bike-marvao",
+    "name": "Rail Bike Marvão",
+    "type": "other",
+    "region": "Алентежу",
+    "coords": { "lat": 39.4210, "lon": -7.3010 },
+    "description": "Поездка на педальных дрезинах-веломобилях по заброшенной железнодорожной ветке у Марвана в Алентежу — спокойное и живописное развлечение среди холмов, мостов и туннелей, подходит для пар и семей. Весь маршрут занимает около 2 часов, цена ~25 € с человека. Бронировать нужно заранее по почте; летом два сеанса (утром и вечером), берите шляпу и воду.",
+    "driveMinutesFromLisbon": 165,
+    "visitDurationHours": 2,
+    "bestSeason": "апрель–октябрь",
+    "tags": ["с детьми", "природа", "виды"],
+    "links": [
+      { "title": "Rail Bike Marvão (Instagram)", "url": "https://www.instagram.com/railbikemarvao/" }
+    ],
+    "photos": [],
+    "collections": []
   }
 ]

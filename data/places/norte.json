@@ -218,5 +218,48 @@
       }
     ],
     "collections": []
+  },
+  {
+    "id": "nossa-senhora-da-abadia",
+    "name": "Носса-Сеньора-да-Абадия (Амареш)",
+    "type": "nature",
+    "region": "Север",
+    "coords": { "lat": 41.6872, "lon": -8.2828 },
+    "description": "Один из старейших марианских санктуариев Португалии в Амареше у отрогов Жереша, окружённый лесом, тропами, речными заводями и водопадами. Приятное место, чтобы совместить храм с прогулкой, купанием в природных купелях и пикником. Парковка есть у главных подходов, но летом лучше приезжать пораньше; берите удобную обувь.",
+    "driveMinutesFromLisbon": 210,
+    "visitDurationHours": 3,
+    "bestSeason": "май–сентябрь",
+    "tags": ["природа", "купание", "история"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Santu%C3%A1rio_de_Nossa_Senhora_da_Abadia_%2821%29.jpg/1280px-Santu%C3%A1rio_de_Nossa_Senhora_da_Abadia_%2821%29.jpg",
+        "author": "Joseolgon",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Santu%C3%A1rio_de_Nossa_Senhora_da_Abadia_(21).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Santu%C3%A1rio_de_Nossa_Senhora_da_Abadia_%2825%29.jpg/1280px-Santu%C3%A1rio_de_Nossa_Senhora_da_Abadia_%2825%29.jpg",
+        "author": "Joseolgon",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Santu%C3%A1rio_de_Nossa_Senhora_da_Abadia_(25).jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "miradouros-arcos-de-valdevez",
+    "name": "Смотровые Аркуш-де-Валдевеж (Балойсу-ду-Мезиу)",
+    "type": "viewpoint",
+    "region": "Север",
+    "coords": { "lat": 41.8470, "lon": -8.4190 },
+    "description": "Связка панорамных смотровых над зелёными долинами Аркуш-де-Валдевеж у ворот Жереша — Порта-ду-Сол, Пеноусуш и Куньяш, все с лёгким доступом почти от машины. В нескольких минутах езды от Порта-ду-Сол — качели Балойсу-ду-Мезиу с эффектным видом. Отличная быстрая остановка при поездке по национальному парку.",
+    "driveMinutesFromLisbon": 215,
+    "visitDurationHours": 1.5,
+    "bestSeason": "апрель–октябрь",
+    "tags": ["виды", "природа", "фото"],
+    "links": [],
+    "photos": [],
+    "collections": []
   }
 ]
