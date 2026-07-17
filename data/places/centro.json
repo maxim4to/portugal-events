@@ -508,5 +508,33 @@
       }
     ],
     "collections": []
+  },
+  {
+    "id": "monsanto-idanha",
+    "name": "Монсанту (историческая деревня)",
+    "type": "town",
+    "region": "Центр (Серра-да-Эштрела)",
+    "coords": { "lat": 40.0403, "lon": -7.1147 },
+    "description": "Одна из самых знаменитых деревень Португалии, где каменные дома встроены прямо в гигантские гранитные валуны — некоторые глыбы служат крышами и стенами. С руин тамплиерского замка на вершине открывается огромная панорама равнин Бейры. Улочки крутые и мощёные — приезжайте в удобной обуви и оставьте время на подъём к замку.",
+    "driveMinutesFromLisbon": 165,
+    "visitDurationHours": 3,
+    "bestSeason": "апрель–октябрь",
+    "tags": ["история", "виды", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Monsanto_April_2015-17.jpg/1280px-Monsanto_April_2015-17.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monsanto_April_2015-17.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Monsanto_02_%2832367605336%29.jpg/1280px-Monsanto_02_%2832367605336%29.jpg",
+        "author": "Bosc d'Anjou",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monsanto_02_(32367605336).jpg"
+      }
+    ],
+    "collections": []
   }
 ]
