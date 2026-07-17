@@ -10,8 +10,10 @@ const { placeId, variant = 'detail' } = Astro.props;
 ---
 <button
   type="button"
-  class:list={['favorite-btn', `favorite-btn--${variant}`]}
+  class:list={['favorite-btn', `favorite-btn--${variant}`, { 'icon-tip': variant === 'card' }]}
   data-favorite-id={placeId}
+  data-tip="В избранное"
+  data-tip-on="В избранном"
   aria-pressed="false"
   aria-label="В избранное"
 >
@@ -70,17 +72,19 @@ const { placeId, variant = 'detail' } = Astro.props;
     transition: fill 0.15s ease;
   }
 
-  /* Compact circular overlay for catalog cards (Airbnb-style heart). */
+  /* Compact circular overlay for catalog cards. Shares an identical shell with
+     VisitedButton's card variant — only the icon and pressed tint differ. */
   .favorite-btn--card {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     padding: 0;
     justify-content: center;
     border-radius: var(--radius-pill);
+    border: 0.5px solid var(--border);
     color: var(--text-primary);
-    background: color-mix(in srgb, var(--surface-2) 82%, transparent);
-    backdrop-filter: blur(2px);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.22);
+    background: color-mix(in srgb, var(--surface-2) 85%, transparent);
+    backdrop-filter: blur(3px);
+    box-shadow: 0 1px 4px rgba(33, 29, 23, 0.22);
   }
   .favorite-btn--card .favorite-label {
     display: none;
@@ -91,7 +95,7 @@ const { placeId, variant = 'detail' } = Astro.props;
   }
   .favorite-btn--card[aria-pressed='true'] {
     color: var(--danger);
-    border-color: var(--border-strong);
+    border-color: var(--danger);
   }
   @media (prefers-reduced-motion: reduce) {
     .favorite-btn {

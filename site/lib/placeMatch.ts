@@ -17,7 +17,7 @@ export type VisitedFilter = 'all' | 'visited' | 'unvisited';
 
 export interface ExplorerFilterState {
   types: string[];
-  region: string;
+  regions: string[];
   tags: string[];
   maxDrive: number;
   visited: VisitedFilter;
@@ -33,7 +33,7 @@ export interface ExplorerFilterState {
  */
 export function matchesFilter(place: PlaceCardData, state: ExplorerFilterState): boolean {
   if (state.types.length && !state.types.includes(place.type)) return false;
-  if (state.region && place.region !== state.region) return false;
+  if (state.regions.length && !state.regions.includes(place.region)) return false;
   if (state.tags.length && !state.tags.some((t) => place.tags.includes(t))) return false;
   if (place.drive > state.maxDrive) return false;
   if (state.visited === 'visited' && !place.visited) return false;

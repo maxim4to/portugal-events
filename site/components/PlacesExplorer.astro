@@ -7,6 +7,7 @@ import VisitedController from './VisitedController.astro';
 import FavoriteButton from './FavoriteButton.astro';
 import FavoriteController from './FavoriteController.astro';
 import MapShell from './MapShell.astro';
+import { TYPE_LABELS } from '../lib/labels.ts';
 
 interface Props {
   places: Place[];
@@ -22,6 +23,11 @@ const points = places.map((p) => ({
   type: p.type,
   lat: p.coords.lat,
   lon: p.coords.lon,
+  // Wikimedia photos load directly everywhere else on the site (the wsrv proxy
+  // can't fetch them), so use the direct URL for the popup cover too.
+  image: p.photos[0]?.url,
+  kicker: TYPE_LABELS[p.type] ?? p.type,
+  meta: `${p.region} · ${p.driveMinutesFromLisbon} мин от Лиссабона`,
 }));
 ---
 <MapShell kind="places" detailPrefix="/places/" hrefBase={hrefBase} mapId="places-map" points={points}>
@@ -131,7 +137,7 @@ const points = places.map((p) => ({
     function readState(): ExplorerFilterState {
       return {
         types: typeChips.filter(isOn).map((c) => c.dataset.type!),
-        region: regionChips.find(isOn)?.dataset.region ?? '',
+        regions: regionChips.filter(isOn).map((c) => c.dataset.region!),
         tags: tagChips.filter(isOn).map((c) => c.dataset.tag!),
         maxDrive: Number(driveChips.find(isOn)?.dataset.drive ?? 240),
         visited: (visitedChips.find(isOn)?.dataset.visitedOpt as VisitedFilter) || 'all',
@@ -175,7 +181,7 @@ const points = places.map((p) => ({
     function anyActive(s: ExplorerFilterState): boolean {
       return Boolean(
         s.types.length ||
-          s.region ||
+          s.regions.length ||
           s.tags.length ||
           s.maxDrive !== 240 ||
           s.visited !== 'all' ||
@@ -187,7 +193,7 @@ const points = places.map((p) => ({
     function writeUrl(s: ExplorerFilterState) {
       const params = new URLSearchParams();
       if (s.types.length) params.set('type', s.types.join(','));
-      if (s.region) params.set('region', s.region);
+      if (s.regions.length) params.set('region', s.regions.join(','));
       if (s.tags.length) params.set('tag', s.tags.join(','));
       if (s.maxDrive !== 240) params.set('drive', String(s.maxDrive));
       if (s.visited !== 'all') params.set('visited', s.visited);
@@ -200,7 +206,7 @@ const points = places.map((p) => ({
     function onFilterChange() {
       const s = readState();
       setGroupCount(root, 'type', s.types.length);
-      setGroupCount(root, 'region', s.region ? 1 : 0);
+      setGroupCount(root, 'region', s.regions.length);
       setGroupCount(root, 'tags', s.tags.length);
       setGroupCount(root, 'drive', s.maxDrive !== 240 ? 1 : 0);
       setGroupCount(root, 'more', (s.freeWithResidency ? 1 : 0) + (s.visited !== 'all' ? 1 : 0));
@@ -213,8 +219,8 @@ const points = places.map((p) => ({
     // The summary pill toggles its group open (one at a time; tap outside closes).
     initFilterGroups(root);
 
-    // Multi-select toggles: types and tags.
-    [...typeChips, ...tagChips].forEach((c) =>
+    // Multi-select toggles: types, regions and tags.
+    [...typeChips, ...regionChips, ...tagChips].forEach((c) =>
       c.addEventListener('click', () => {
         press(c, !isOn(c));
         onFilterChange();
@@ -227,16 +233,13 @@ const points = places.map((p) => ({
       onFilterChange();
     });
 
-    // Single-select with deselect: region and visited.
+    // Single-select with deselect: visited.
     const singleSelect = (chips: HTMLButtonElement[], clicked: HTMLButtonElement) => {
       const was = isOn(clicked);
       chips.forEach((c) => press(c, false));
       press(clicked, !was);
       onFilterChange();
     };
-    regionChips.forEach((c) =>
-      c.addEventListener('click', () => singleSelect(regionChips, c)),
-    );
     visitedChips.forEach((c) =>
       c.addEventListener('click', () => singleSelect(visitedChips, c)),
     );
@@ -285,12 +288,8 @@ const points = places.map((p) => ({
       });
     };
     setMulti(typeChips, 'type', params.get('type'));
+    setMulti(regionChips, 'region', params.get('region'));
     setMulti(tagChips, 'tag', params.get('tag'));
-    const preRegion = params.get('region');
-    if (preRegion) {
-      const chip = regionChips.find((c) => c.dataset.region === preRegion);
-      if (chip) press(chip, true);
-    }
     const preDrive = params.get('drive');
     if (preDrive && driveChips.some((c) => c.dataset.drive === preDrive)) {
       driveChips.forEach((c) => press(c, c.dataset.drive === preDrive));

@@ -80,8 +80,6 @@ const cover = place.photos[0];
         Фото: <a href={cover.sourceUrl} target="_blank" rel="noopener">{cover.author}, {cover.license}</a>
       </p>
     )}
-
-    <p class="back"><a href={href('/places/')}>← Ко всем местам</a></p>
   </article>
 
   <VisitedController />
@@ -214,11 +212,5 @@ const cover = place.photos[0];
   .attribution a {
     color: inherit;
     text-decoration: underline;
-  }
-  .back {
-    margin-top: var(--space-3);
-  }
-  .back a {
-    color: var(--accent);
   }
 </style>

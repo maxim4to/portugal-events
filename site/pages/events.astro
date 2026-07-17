@@ -3,6 +3,9 @@ import Base from '../layouts/Base.astro';
 import EventsExplorer from '../components/EventsExplorer.astro';
 import { upcomingEvents, cities } from '../lib/data.ts';
 import { buildCityIndex, eventLatLon } from '../lib/eventGeo.ts';
+import { EVENT_TYPE_LABELS } from '../lib/labels.ts';
+import { formatDateRu } from '../lib/dates.ts';
+import { imageThumb } from '../lib/imgProxy.ts';
 import type { MapPoint } from '../lib/mapExplorer.ts';
 
 const hrefBase = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -11,7 +14,21 @@ const cityIndex = buildCityIndex(cities);
 const points: MapPoint[] = [];
 for (const e of upcomingEvents) {
   const ll = eventLatLon(e, cityIndex);
-  if (ll) points.push({ id: e.id, name: e.title, lat: ll.lat, lon: ll.lon, type: e.type });
+  if (!ll) continue;
+  const date =
+    e.dateStart === e.dateEnd
+      ? formatDateRu(e.dateStart)
+      : `${formatDateRu(e.dateStart)} – ${formatDateRu(e.dateEnd)}`;
+  points.push({
+    id: e.id,
+    name: e.title,
+    lat: ll.lat,
+    lon: ll.lon,
+    type: e.type,
+    image: e.image ? imageThumb(e.image, 320, 200) : undefined,
+    kicker: EVENT_TYPE_LABELS[e.type] ?? 'Событие',
+    meta: `${date} · ${e.city}`,
+  });
 }
 ---
 <Base

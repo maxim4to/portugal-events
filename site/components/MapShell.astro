@@ -187,6 +187,96 @@ const { kind, detailPrefix, hrefBase, mapId, points } = Astro.props;
     color: var(--accent);
     font-weight: 500;
   }
+
+  /* --- Rich editorial pin popup (see lib/mapExplorer.popupHtml) --- */
+  :global(.map-pop-popup .leaflet-popup-content-wrapper) {
+    padding: 0;
+    overflow: hidden;
+    border: 0.5px solid var(--border-strong);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 14px 36px rgba(33, 29, 23, 0.28);
+  }
+  :global(.map-pop-popup .leaflet-popup-content) {
+    margin: 0;
+    width: auto !important;
+    font-size: inherit;
+  }
+  /* Close button legible over the cover image. */
+  :global(.map-pop-popup .leaflet-popup-close-button) {
+    top: 6px;
+    right: 6px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: var(--radius-pill);
+    background: color-mix(in srgb, var(--surface-2) 85%, transparent);
+    color: var(--text-primary);
+    box-shadow: 0 1px 4px rgba(33, 29, 23, 0.28);
+    font-size: 16px;
+    line-height: 1;
+  }
+  :global(.map-pop-popup .leaflet-popup-close-button:hover) {
+    background: var(--surface-2);
+  }
+  :global(.map-pop) {
+    display: block;
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  :global(.map-pop:hover) {
+    text-decoration: none;
+  }
+  :global(.map-pop-media) {
+    display: block;
+    aspect-ratio: 16 / 10;
+    background: var(--accent-bg);
+    overflow: hidden;
+  }
+  :global(.map-pop-media img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  :global(.map-pop-body) {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: var(--space-3);
+  }
+  :global(.map-pop-kicker) {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--editorial);
+  }
+  :global(.map-pop-title) {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 550;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+  }
+  :global(.map-pop-meta) {
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+  :global(.map-pop-more) {
+    margin-top: var(--space-1);
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+  }
+  :global(.map-pop:hover .map-pop-more) {
+    text-decoration: underline;
+  }
   :global(.leaflet-bar a),
   :global(.leaflet-bar a:hover) {
     background: var(--surface-2);

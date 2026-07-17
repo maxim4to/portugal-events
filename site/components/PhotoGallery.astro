@@ -82,6 +82,10 @@ const attribData = photos.map((p) => ({
     border-radius: var(--radius-lg);
     border: 1px solid var(--border-strong);
   }
+  /* Detail photos open full-screen on click. */
+  .gallery-zoomable {
+    cursor: zoom-in;
+  }
   .layer {
     position: absolute;
     inset: 0;
@@ -167,6 +171,65 @@ const attribData = photos.map((p) => ({
 </style>
 
 <script>
+  import PhotoSwipe from 'photoswipe';
+  import 'photoswipe/style.css';
+
+  // Fullscreen viewer. We don't store photo dimensions in the data, so measure
+  // each image (browser cache makes this instant for already-loaded ones) and
+  // let PhotoSwipe fit/zoom — vertical photos are shown whole, never cropped.
+  function measurePhoto(url: string): Promise<{ src: string; width: number; height: number }> {
+    return new Promise((resolve) => {
+      const im = new Image();
+      im.onload = () =>
+        resolve({ src: url, width: im.naturalWidth || 1600, height: im.naturalHeight || 1200 });
+      im.onerror = () => resolve({ src: url, width: 1600, height: 1200 });
+      im.src = url;
+    });
+  }
+
+  async function openLightbox(urls: string[], index: number) {
+    const dataSource = await Promise.all(urls.map(measurePhoto));
+    const pswp = new PhotoSwipe({
+      dataSource,
+      index: Math.max(0, Math.min(index, dataSource.length - 1)),
+      bgOpacity: 0.95,
+      loop: dataSource.length > 1,
+    });
+
+    // Trackpad two-finger horizontal gesture (wheel deltaX) -> prev/next, mirroring
+    // the inline gallery. PhotoSwipe handles mouse-drag and touch swipe itself but
+    // not the trackpad wheel gesture. Skip while an image is zoomed in (let it pan).
+    let wheelAccumX = 0;
+    let wheelLocked = false;
+    let wheelResetTimer: number | undefined;
+    const onWheel = (e: WheelEvent) => {
+      if (dataSource.length <= 1) return;
+      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return; // vertical: ignore
+      const slide = pswp.currSlide;
+      if (slide && slide.currZoomLevel > slide.zoomLevels.initial + 0.01) return; // zoomed: pan
+      if (e.cancelable) e.preventDefault();
+      if (wheelLocked) return;
+      wheelAccumX += e.deltaX;
+      clearTimeout(wheelResetTimer);
+      wheelResetTimer = window.setTimeout(() => {
+        wheelAccumX = 0;
+      }, 200);
+      if (Math.abs(wheelAccumX) > 50) {
+        if (wheelAccumX > 0) pswp.next();
+        else pswp.prev();
+        wheelAccumX = 0;
+        wheelLocked = true;
+        window.setTimeout(() => {
+          wheelLocked = false;
+        }, 350);
+      }
+    };
+
+    pswp.on('destroy', () => clearTimeout(wheelResetTimer));
+    pswp.init();
+    pswp.element?.addEventListener('wheel', onWheel, { passive: false });
+  }
+
   // Shared gallery controller. Astro bundles this module once per page,
   // so it initializes every [data-gallery] regardless of instance count.
   (function () {
@@ -187,6 +250,25 @@ const attribData = photos.map((p) => ({
         const dots = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-dot]'));
         const isDetail = root.classList.contains('gallery-detail');
         let current = 0;
+
+        // Fullscreen viewer (detail only): click the photo to open PhotoSwipe
+        // with every photo, starting at the one currently shown. Wired before
+        // the single-image early-return so a lone (often vertical) photo can
+        // still be opened full-screen.
+        if (isDetail) {
+          const urls = layers
+            .map((l) => l.getAttribute('src') || l.getAttribute('data-src') || '')
+            .filter(Boolean);
+          if (urls.length) {
+            root.classList.add('gallery-zoomable');
+            root.addEventListener('click', (e) => {
+              const t = e.target as HTMLElement;
+              if (t.closest('[data-nav]') || t.closest('[data-dot]')) return;
+              e.preventDefault();
+              void openLightbox(urls, current);
+            });
+          }
+        }
 
         // Detail attribution wiring.
         let attribs: Array<{ author: string; license: string; sourceUrl: string }> = [];

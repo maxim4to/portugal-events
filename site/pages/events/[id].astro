@@ -68,8 +68,6 @@ const paragraphs = event.description.split(/\n\n+/).map((s) => s.trim()).filter(
     </div>
 
     {coords && <MiniMap lat={coords.lat} lon={coords.lon} name={event.title} />}
-
-    <p class="back"><a href={href('/events/')}>← Ко всем событиям</a></p>
   </article>
 </Base>
 
@@ -161,11 +159,5 @@ const paragraphs = event.description.split(/\n\n+/).map((s) => s.trim()).filter(
     flex-wrap: wrap;
     gap: var(--space-3);
     margin: var(--space-2) 0;
-  }
-  .back {
-    margin-top: var(--space-3);
-  }
-  .back a {
-    color: var(--accent);
   }
 </style>

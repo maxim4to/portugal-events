@@ -7,6 +7,10 @@ export interface MapPoint {
   lat: number;
   lon: number;
   type?: string;
+  /** Optional richer popup content. */
+  image?: string;   // pre-thumbed cover URL
+  kicker?: string;  // type/category label
+  meta?: string;    // one-line context (drive time / date + city, etc.)
 }
 
 export interface MapExplorerOptions {
@@ -53,6 +57,28 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   const markerById = new Map<string, L.Marker>();
 
   const detailUrl = (id: string) => `${hrefBase}${detailPrefix}${id}/`;
+
+  const esc = (s: string) =>
+    s.replace(/[&<>"']/g, (c) =>
+      ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]!),
+    );
+
+  // Editorial popup card: cover image, kicker, title, one-line meta, CTA. The
+  // whole card links to the detail page. Falls back gracefully when a point
+  // carries no image/kicker/meta.
+  function popupHtml(p: MapPoint): string {
+    const media = p.image
+      ? `<span class="map-pop-media"><img src="${esc(p.image)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.closest('.map-pop-media').style.display='none'"></span>`
+      : '';
+    const kicker = p.kicker ? `<span class="map-pop-kicker">${esc(p.kicker)}</span>` : '';
+    const meta = p.meta ? `<span class="map-pop-meta">${esc(p.meta)}</span>` : '';
+    return (
+      `<a class="map-pop" href="${detailUrl(p.id)}">${media}` +
+      `<span class="map-pop-body">${kicker}` +
+      `<span class="map-pop-title">${esc(p.name)}</span>${meta}` +
+      `<span class="map-pop-more">Подробнее →</span></span></a>`
+    );
+  }
   // The list is always filtered to the map's viewport. Guard on a laid-out map:
   // on mobile it is created inside a display:none pane (size 0), whose bounds
   // would otherwise hide everything.
@@ -105,7 +131,12 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
       const latlng: L.LatLngExpression = [p.lat, p.lon];
       pts.push(latlng);
       const marker = L.marker(latlng, { icon: pinIcon, title: p.name })
-        .bindPopup(`<a href="${detailUrl(p.id)}">${p.name}</a>`)
+        .bindPopup(popupHtml(p), {
+          className: 'map-pop-popup',
+          maxWidth: 260,
+          minWidth: 220,
+          offset: [0, 4],
+        })
         .addTo(markerLayer);
       marker.on('mouseover', () => highlightCard(p.id, true));
       marker.on('mouseout', () => highlightCard(p.id, false));

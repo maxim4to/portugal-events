@@ -9,9 +9,10 @@ const { lat, lon, name } = Astro.props;
 <div class="minimap" data-lat={lat} data-lon={lon} data-name={name}></div>
 
 <style>
+  /* Full-column-width square: the point is shown in context relative to Lisbon. */
   .minimap {
-    height: 260px;
     width: 100%;
+    aspect-ratio: 1 / 1;
     border: 1px solid var(--border-strong);
     border-radius: var(--radius-lg);
     overflow: hidden;
@@ -29,11 +30,45 @@ const { lat, lon, name } = Astro.props;
     display: block;
     filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
   }
+  /* Small editorial label for the Lisbon anchor (no full pin, just context). */
+  .minimap :global(.lisbon-tip) {
+    background: var(--surface-2);
+    color: var(--text-primary);
+    border: 0.5px solid var(--border-strong);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px rgba(33, 29, 23, 0.18);
+    padding: 2px 6px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .minimap :global(.lisbon-tip::before) {
+    display: none;
+  }
+  /* Route + connector colours via CSS (CSS stroke/fill resolve tokens and win
+     over Leaflet's presentation attributes). */
+  .minimap :global(.route-line) {
+    stroke: var(--accent);
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    fill: none;
+  }
+  .minimap :global(.route-line--dashed) {
+    opacity: 0.55;
+  }
+  .minimap :global(.lisbon-dot) {
+    stroke: var(--accent);
+    fill: var(--surface-2);
+  }
 </style>
 
 <script>
   import 'leaflet/dist/leaflet.css';
   import L from 'leaflet';
+
+  // Central Lisbon — the trips all start here (see project design doc).
+  const LISBON = { lat: 38.7223, lon: -9.1393 };
 
   const el = document.querySelector<HTMLElement>('.minimap');
   if (el && !el.dataset.ready) {
@@ -57,6 +92,60 @@ const { lat, lon, name } = Astro.props;
       attribution: '© OpenStreetMap contributors',
       maxZoom: 19,
     }).addTo(map);
+
+    // The destination pin (the only real pin on the map).
     L.marker([lat, lon], { icon: pinIcon, title: name }).addTo(map);
+
+    // A subtle Lisbon anchor so the destination reads relative to it — a small
+    // dot + label rather than a competing pin.
+    L.circleMarker([LISBON.lat, LISBON.lon], {
+      radius: 5,
+      weight: 2,
+      fillOpacity: 1,
+      className: 'lisbon-dot',
+    })
+      .addTo(map)
+      .bindTooltip('Лиссабон', {
+        permanent: true,
+        direction: 'top',
+        className: 'lisbon-tip',
+        offset: [0, -6],
+      });
+
+    // Frame both Lisbon and the destination; refined once a route is drawn.
+    const bothBounds = L.latLngBounds([
+      [LISBON.lat, LISBON.lon],
+      [lat, lon],
+    ]);
+    map.fitBounds(bothBounds, { padding: [36, 36] });
+
+    // Try to draw the actual driving route (OSRM demo). If anything fails, the
+    // straight-line framing above already shows the point relative to Lisbon.
+    const url =
+      `https://router.project-osrm.org/route/v1/driving/` +
+      `${LISBON.lon},${LISBON.lat};${lon},${lat}` +
+      `?overview=full&geometries=geojson`;
+
+    fetch(url)
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error('route http ' + r.status))))
+      .then((data) => {
+        const geo = data?.routes?.[0]?.geometry;
+        if (!geo || geo.type !== 'LineString') throw new Error('no route geometry');
+        const line = L.geoJSON(geo, {
+          style: { weight: 4, opacity: 0.85, className: 'route-line' },
+        }).addTo(map);
+        map.fitBounds(line.getBounds(), { padding: [30, 30] });
+      })
+      .catch(() => {
+        // Fallback: a faint straight connector so the direction is still legible.
+        L.polyline(
+          [
+            [LISBON.lat, LISBON.lon],
+            [lat, lon],
+          ],
+          { weight: 2, dashArray: '5 8', className: 'route-line route-line--dashed' },
+        ).addTo(map);
+        map.fitBounds(bothBounds, { padding: [36, 36] });
+      });
   }
 </script>

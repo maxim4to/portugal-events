@@ -11,7 +11,7 @@ const base: PlaceCardData = {
 
 const emptyState: ExplorerFilterState = {
   types: [],
-  region: '',
+  regions: [],
   tags: [],
   maxDrive: 240,
   visited: 'all',
@@ -27,9 +27,10 @@ describe('matchesFilter', () => {
     expect(matchesFilter(base, { ...emptyState, types: ['beach', 'hike'] })).toBe(true);
   });
 
-  it('filters by region', () => {
-    expect(matchesFilter(base, { ...emptyState, region: 'Oeste' })).toBe(false);
-    expect(matchesFilter(base, { ...emptyState, region: 'Setúbal' })).toBe(true);
+  it('filters by region (OR within selected regions)', () => {
+    expect(matchesFilter(base, { ...emptyState, regions: ['Oeste'] })).toBe(false);
+    expect(matchesFilter(base, { ...emptyState, regions: ['Setúbal'] })).toBe(true);
+    expect(matchesFilter(base, { ...emptyState, regions: ['Oeste', 'Setúbal'] })).toBe(true);
   });
 
   it('filters by tags (OR within selected tags)', () => {

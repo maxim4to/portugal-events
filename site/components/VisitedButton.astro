@@ -7,9 +7,12 @@ const { placeId, variant = 'detail' } = Astro.props;
 ---
 <button
   type="button"
-  class:list={['visited-btn', `visited-btn--${variant}`]}
+  class:list={['visited-btn', `visited-btn--${variant}`, { 'icon-tip': variant === 'card' }]}
   data-visited-id={placeId}
+  data-tip="Был здесь"
+  data-tip-on="Отмечено"
   aria-pressed="false"
+  aria-label="Был здесь"
   hidden
 >
   <svg
@@ -62,20 +65,32 @@ const { placeId, variant = 'detail' } = Astro.props;
     flex: none;
   }
 
-  /* Compact overlay button for catalog cards. Positioned by the enclosing
-     .card-actions stack, so it stays static itself. */
+  /* Compact circular overlay for catalog cards. Mirrors FavoriteButton's card
+     variant exactly — same shell, only the icon and pressed tint differ. */
   .visited-btn--card {
-    padding: var(--space-1) var(--space-2);
-    font-size: 12px;
-    background: color-mix(in srgb, var(--surface-2) 88%, transparent);
-    backdrop-filter: blur(2px);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    justify-content: center;
+    border-radius: var(--radius-pill);
+    border: 0.5px solid var(--border);
+    color: var(--text-primary);
+    background: color-mix(in srgb, var(--surface-2) 85%, transparent);
+    backdrop-filter: blur(3px);
+    box-shadow: 0 1px 4px rgba(33, 29, 23, 0.22);
   }
+  .visited-btn--card .visited-icon {
+    width: 17px;
+    height: 17px;
+  }
+  /* Icon-only on cards: the meaning is carried by the hover tip, not a label. */
   .visited-btn--card .visited-label {
     display: none;
   }
-  .visited-btn--card[aria-pressed='true'] .visited-label {
-    display: inline;
+  .visited-btn--card[aria-pressed='true'] {
+    background: var(--type-lake);
+    color: var(--type-lake-text);
+    border-color: var(--type-lake-text);
   }
   @media (prefers-reduced-motion: reduce) {
     .visited-btn {
