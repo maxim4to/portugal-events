@@ -46,11 +46,17 @@ const { placeId, variant = 'detail' } = Astro.props;
   .visited-btn:hover {
     border-color: var(--border-strong);
   }
+  .visited-btn:active {
+    transform: scale(0.94);
+  }
   /* Pressed = visited: success/teal tint built from the lake tokens. */
   .visited-btn[aria-pressed='true'] {
     background: var(--type-lake);
     color: var(--type-lake-text);
     border-color: var(--type-lake-text);
+  }
+  .visited-btn[aria-pressed='true'] .visited-icon {
+    animation: toggle-pop 180ms cubic-bezier(0.34, 1.56, 0.64, 1);
   }
   .visited-icon {
     flex: none;
@@ -70,5 +76,16 @@ const { placeId, variant = 'detail' } = Astro.props;
   }
   .visited-btn--card[aria-pressed='true'] .visited-label {
     display: inline;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .visited-btn {
+      transition: none;
+    }
+    .visited-btn:active {
+      transform: none;
+    }
+    .visited-btn[aria-pressed='true'] .visited-icon {
+      animation: none;
+    }
   }
 </style>

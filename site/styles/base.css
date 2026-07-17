@@ -47,6 +47,13 @@ a:hover {
   }
 }
 
+/* Toggle activation pop — used by favorite/visited icons when they turn on. */
+@keyframes toggle-pop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.28); }
+  100% { transform: scale(1); }
+}
+
 /* Headings */
 h1,
 h2,
