@@ -97,8 +97,15 @@ The site deploys via `.github/workflows/deploy.yml`, which only runs on push to
 2. Merge it (`merge_pull_request`, squash) — this is the step that triggers the
    Pages deploy.
 
-**Confirm with the user before merging to `main`** unless they've already told you
-to publish/merge. Merging is outward-facing and hard to reverse.
+**This is standing authorization: whenever the user asks to add a place or event,
+publish immediately — open the PR and merge to `main` without asking for
+confirmation, then send the live link.** The user has explicitly opted into
+auto-publish for this skill, so do not pause to confirm the merge.
+
+If the feature branch has diverged from `main` (e.g. after earlier squash-merges)
+and the merge hits a conflict, rebuild the branch from the latest `main`, re-apply
+the change, and push (`--force-with-lease` is fine when the branch only carried
+already-merged history), then merge the PR.
 
 ### 7. Wait for the deploy, then verify live
 
