@@ -193,5 +193,19 @@
     "sourceId": "websearch",
     "dedupeHash": "festival do crato|2026-08-26|crato",
     "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Crato_-_Portugal_%28144113321%29.jpg"
+  },
+  {
+    "id": "dias-medievais-castro-marim-2026",
+    "title": "Dias Medievais em Castro Marim 2026",
+    "type": "festival",
+    "dateStart": "2026-08-26",
+    "dateEnd": "2026-08-30",
+    "city": "Castro Marim",
+    "venue": "Castelo de Castro Marim e centro histórico",
+    "price": "по билетам",
+    "url": "https://diasmedievais.cm-castromarim.pt/site/",
+    "description": "27-е издание одного из самых атмосферных средневековых фестивалей Алгарве: пять дней и ночей у замка Каштру-Марин с рыцарскими турнирами, королевскими банкетами, уличным театром, ремесленным рынком и музыкой.",
+    "sourceId": "websearch",
+    "dedupeHash": "dias medievais castro marim|2026-08-26|castro marim"
   }
 ]
