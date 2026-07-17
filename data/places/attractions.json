@@ -4,14 +4,31 @@
     "name": "KidZania Лиссабон",
     "type": "park",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.7770, "lon": -9.2192 },
+    "coords": {
+      "lat": 38.777,
+      "lon": -9.2192
+    },
     "description": "Интерактивный город профессий для детей внутри торгового центра Dolce Vita Tejo в Амадоре: дети «работают» пожарными, врачами, пилотами и зарабатывают игровую валюту. Отличный вариант на дождливый день рядом с Лиссабоном. Билеты лучше бронировать заранее онлайн — по выходным бывают очереди.",
     "driveMinutesFromLisbon": 20,
     "visitDurationHours": 4,
     "bestSeason": "круглый год",
-    "tags": ["с детьми"],
-    "links": [{ "title": "Официальный сайт", "url": "https://lisboa.kidzania.com/pt-pt" }],
-    "photos": [{ "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Dolce_Vita_Tejo_-_Amadora_-_Portugal_%284140684092%29.jpg/1280px-Dolce_Vita_Tejo_-_Amadora_-_Portugal_%284140684092%29.jpg", "author": "Vitor Oliveira from Torres Vedras, PORTUGAL", "license": "CC BY-SA 2.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dolce_Vita_Tejo_-_Amadora_-_Portugal_(4140684092).jpg" }],
+    "tags": [
+      "с детьми"
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт",
+        "url": "https://lisboa.kidzania.com/pt-pt"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Dolce_Vita_Tejo_-_Amadora_-_Portugal_%284140684092%29.jpg/1280px-Dolce_Vita_Tejo_-_Amadora_-_Portugal_%284140684092%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dolce_Vita_Tejo_-_Amadora_-_Portugal_(4140684092).jpg"
+      }
+    ],
     "collections": []
   },
   {
@@ -19,13 +36,24 @@
     "name": "Сафари-парк Бадока",
     "type": "park",
     "region": "Алентежу",
-    "coords": { "lat": 38.0416, "lon": -8.7445 },
+    "coords": {
+      "lat": 38.0416,
+      "lon": -8.7445
+    },
     "description": "Африканское сафари в Алентежу: жирафы, зебры и антилопы бродят по открытым вольерам, а посетители наблюдают за ними с трактора-поезда или пешеходных мостиков. Есть зона с фермой для малышей и веревочный парк. Приезжайте утром, когда животные активнее и жара еще не такая сильная.",
     "driveMinutesFromLisbon": 100,
     "visitDurationHours": 4,
     "bestSeason": "апрель–октябрь",
-    "tags": ["с детьми", "природа"],
-    "links": [{ "title": "Официальный сайт", "url": "https://badoca.com/en/" }],
+    "tags": [
+      "с детьми",
+      "природа"
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт",
+        "url": "https://badoca.com/en/"
+      }
+    ],
     "photos": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Badoca_Safari_Park.jpg",
@@ -41,13 +69,24 @@
     "name": "Зумарин Алгарве",
     "type": "park",
     "region": "Алгарве",
-    "coords": { "lat": 37.1270, "lon": -8.3142 },
+    "coords": {
+      "lat": 37.127,
+      "lon": -8.3142
+    },
     "description": "Морской парк развлечений в Гиа под Албуфейрой с шоу дельфинов и морских котиков, аквариумом и водными аттракционами. Подходит для целого дня с детьми любого возраста. Летом стоит взять купальники — часть зон совмещена с водным парком.",
     "driveMinutesFromLisbon": 155,
     "visitDurationHours": 6,
     "bestSeason": "апрель–октябрь",
-    "tags": ["с детьми", "купание"],
-    "links": [{ "title": "Официальный сайт", "url": "https://www.zoomarine.pt/en/" }],
+    "tags": [
+      "с детьми",
+      "купание"
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт",
+        "url": "https://www.zoomarine.pt/en/"
+      }
+    ],
     "photos": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Zoomarine_Algarve_27.JPG/1280px-Zoomarine_Algarve_27.JPG",
@@ -63,13 +102,24 @@
     "name": "Aquashow Park",
     "type": "park",
     "region": "Алгарве",
-    "coords": { "lat": 37.0944, "lon": -8.0725 },
+    "coords": {
+      "lat": 37.0944,
+      "lon": -8.0725
+    },
     "description": "Крупнейший аквапарк Алгарве в Картейре с горками разной высоты, водными американскими горками и отдельной зоной для малышей. При парке есть отель, так что можно остаться на пару дней. Лучшее время для посещения — раннее утро, пока очереди на горки короче.",
     "driveMinutesFromLisbon": 160,
     "visitDurationHours": 5,
     "bestSeason": "июнь–сентябрь",
-    "tags": ["с детьми", "купание"],
-    "links": [{ "title": "Официальный сайт", "url": "https://aquashowpark.com/en/home/" }],
+    "tags": [
+      "с детьми",
+      "купание"
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт",
+        "url": "https://aquashowpark.com/en/home/"
+      }
+    ],
     "photos": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Aquashow_Montanha_Russa.jpg/1280px-Aquashow_Montanha_Russa.jpg",
@@ -85,13 +135,24 @@
     "name": "Slide & Splash",
     "type": "park",
     "region": "Алгарве",
-    "coords": { "lat": 37.1394, "lon": -8.4737 },
+    "coords": {
+      "lat": 37.1394,
+      "lon": -8.4737
+    },
     "description": "Один из старейших аквапарков Алгарве, расположенный между Лагоа и Эшторбан, с классическими горками, бассейном с волнами и шоу с попугаями и морскими львами. Территория утопает в зелени, поэтому даже в жару здесь много тени. Хорошо совместить с посещением пляжей Карвоейру, до которых 10 минут на машине.",
     "driveMinutesFromLisbon": 165,
     "visitDurationHours": 5,
     "bestSeason": "июнь–сентябрь",
-    "tags": ["с детьми", "купание"],
-    "links": [{ "title": "Официальный сайт", "url": "https://www.slidesplash.com/en/" }],
+    "tags": [
+      "с детьми",
+      "купание"
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт",
+        "url": "https://www.slidesplash.com/en/"
+      }
+    ],
     "photos": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Slide_and_Splash_in_2015.JPG/1280px-Slide_and_Splash_in_2015.JPG",
@@ -107,13 +168,24 @@
     "name": "Aqualand Algarve",
     "type": "park",
     "region": "Алгарве",
-    "coords": { "lat": 37.1349, "lon": -8.3671 },
+    "coords": {
+      "lat": 37.1349,
+      "lon": -8.3671
+    },
     "description": "Аквапарк в Алкантарилье с одной из самых высоких горок Европы («Kamikaze») и спокойными зонами для семей с маленькими детьми. Рядом трасса EN125, удобно заезжать по пути между Албуфейрой и Портимау. Возьмите водонепроницаемый чехол для телефона — брызги долетают далеко за пределы бассейнов.",
     "driveMinutesFromLisbon": 165,
     "visitDurationHours": 5,
     "bestSeason": "июнь–сентябрь",
-    "tags": ["с детьми", "купание"],
-    "links": [{ "title": "Официальный сайт", "url": "https://www.aqualand.pt/" }],
+    "tags": [
+      "с детьми",
+      "купание"
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт",
+        "url": "https://www.aqualand.pt/"
+      }
+    ],
     "photos": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/31-08-2017_Aqualand_Algarve%2C_Alcantarilha%2C3%29.JPG/1280px-31-08-2017_Aqualand_Algarve%2C_Alcantarilha%2C3%29.JPG",
@@ -129,14 +201,31 @@
     "name": "Картодром KIP (Палмела)",
     "type": "karting",
     "region": "Сетубал и Аррабида",
-    "coords": { "lat": 38.5787, "lon": -8.8279 },
+    "coords": {
+      "lat": 38.5787,
+      "lon": -8.8279
+    },
     "description": "Международный картодром в Палмеле — одна из самых серьёзных трасс Португалии, где проходят национальные и международные соревнования по картингу. Есть прокат картов разного уровня мощности для взрослых и подростков. Хорошо сочетать с поездкой в Аррабиду — от трассы до серры около 20 минут.",
     "driveMinutesFromLisbon": 40,
     "visitDurationHours": 1.5,
     "bestSeason": "круглый год",
-    "tags": ["с детьми"],
-    "links": [{ "title": "Официальный сайт", "url": "https://www.kip.pt/en" }],
-    "photos": [{ "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Regional_Karting_Palmela_KIP_Mar%C3%A7o_2010_%284470664429%29.jpg", "author": "Diogo Duarte from Portugal", "license": "CC BY-SA 2.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Regional_Karting_Palmela_KIP_Mar%C3%A7o_2010_(4470664429).jpg" }],
+    "tags": [
+      "с детьми"
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт",
+        "url": "https://www.kip.pt/en"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Regional_Karting_Palmela_KIP_Mar%C3%A7o_2010_%284470664429%29.jpg",
+        "author": "Diogo Duarte from Portugal",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Regional_Karting_Palmela_KIP_Mar%C3%A7o_2010_(4470664429).jpg"
+      }
+    ],
     "collections": []
   },
   {
@@ -144,13 +233,21 @@
     "name": "Международный картодром Лейрии",
     "type": "karting",
     "region": "Центр (Коимбра, Томар)",
-    "coords": { "lat": 39.8071, "lon": -8.7921 },
+    "coords": {
+      "lat": 39.8071,
+      "lon": -8.7921
+    },
     "description": "Картодром в Милагрише под Лейрией, домашняя трасса регионального мотоспортивного клуба NDML, где регулярно проходят этапы чемпионата Португалии по картингу. Трасса открыта и для любительских заездов по расписанию. Место скорее для тех, кто уже едет в сторону Лейрии или Фатимы, а не отдельная цель поездки.",
     "driveMinutesFromLisbon": 90,
     "visitDurationHours": 1.5,
     "bestSeason": "круглый год",
     "tags": [],
-    "links": [{ "title": "NDML", "url": "https://www.ndml.pt/" }],
+    "links": [
+      {
+        "title": "NDML",
+        "url": "https://www.ndml.pt/"
+      }
+    ],
     "photos": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Kart_leiria_logo.jpg",
@@ -166,13 +263,21 @@
     "name": "Картодром Балтар",
     "type": "karting",
     "region": "Норте",
-    "coords": { "lat": 41.1878, "lon": -8.3975 },
+    "coords": {
+      "lat": 41.1878,
+      "lon": -8.3975
+    },
     "description": "Один из самых титулованных картодромов Португалии в посёлке Балтар под Пареде, недалеко от Порту — здесь готовили не одно поколение португальских автогонщиков. Трасса принимает и любительские заезды, и крупные национальные чемпионаты. Далековато от Лиссабона, зато логичная остановка при поездке на север страны.",
     "driveMinutesFromLisbon": 220,
     "visitDurationHours": 1.5,
     "bestSeason": "круглый год",
     "tags": [],
-    "links": [{ "title": "Kartódromo de Baltar", "url": "https://kartodromodebaltar.pt/" }],
+    "links": [
+      {
+        "title": "Kartódromo de Baltar",
+        "url": "https://kartodromodebaltar.pt/"
+      }
+    ],
     "photos": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Kartodromo-Baltar.jpg",
@@ -188,13 +293,25 @@
     "name": "Канатная дорога Парке-даш-Насойнш",
     "type": "cablecar",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.7635, "lon": -9.0938 },
+    "coords": {
+      "lat": 38.7635,
+      "lon": -9.0938
+    },
     "description": "Канатная дорога вдоль набережной Тежу в Парке-даш-Насойнш, построенная к Экспо-98: за несколько минут провозит над рекой между Океанариумом и башней Ваку-да-Гама. Отличный способ увидеть район с высоты без долгих подъёмов. По вечерам работает дольше — стоит проверить актуальное расписание на сайте.",
     "driveMinutesFromLisbon": 15,
     "visitDurationHours": 0.5,
     "bestSeason": "круглый год",
-    "tags": ["виды", "с детьми", "фото"],
-    "links": [{ "title": "Официальный сайт", "url": "https://www.telecabinelisboa.pt/en_GB" }],
+    "tags": [
+      "виды",
+      "с детьми",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт",
+        "url": "https://www.telecabinelisboa.pt/en_GB"
+      }
+    ],
     "photos": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Cable_car_tower%2C_Parque_das_Na%C3%A7%C3%B5es%2C_Lisbon%2C_Portugal_julesvernex2.jpg/1280px-Cable_car_tower%2C_Parque_das_Na%C3%A7%C3%B5es%2C_Lisbon%2C_Portugal_julesvernex2.jpg",
@@ -210,13 +327,24 @@
     "name": "Канатная дорога Гайи",
     "type": "cablecar",
     "region": "Норте",
-    "coords": { "lat": 41.1375, "lon": -8.6162 },
+    "coords": {
+      "lat": 41.1375,
+      "lon": -8.6162
+    },
     "description": "Канатная дорога в Вила-Нова-де-Гайя соединяет набережную у Дору с площадкой у моста Дона Луиша I и монастыря Серра-ду-Пилар, откуда открывается лучший вид на Порту. Поездка занимает всего пару минут, но экономит силы на подъёме по крутому склону. После — можно спуститься к погребам портвейна пешком.",
     "driveMinutesFromLisbon": 180,
     "visitDurationHours": 0.5,
     "bestSeason": "круглый год",
-    "tags": ["виды", "фото"],
-    "links": [{ "title": "Официальный сайт", "url": "https://gaiacablecar.com/en/" }],
+    "tags": [
+      "виды",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт",
+        "url": "https://gaiacablecar.com/en/"
+      }
+    ],
     "photos": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Oporto_-_Telef%C3%A9rico_de_Gaia_-_20110425_130745.jpg/1280px-Oporto_-_Telef%C3%A9rico_de_Gaia_-_20110425_130745.jpg",
@@ -232,13 +360,23 @@
     "name": "Термы Сан-Педру-ду-Сул",
     "type": "thermal",
     "region": "Центр (Коимбра, Томар)",
-    "coords": { "lat": 40.7408, "lon": -8.0914 },
+    "coords": {
+      "lat": 40.7408,
+      "lon": -8.0914
+    },
     "description": "Крупнейший и старейший термальный курорт Португалии на берегу реки Вога, известный ещё с римских времён — сохранились руины античных терм рядом с современным санаторием. Сернистая вода из источника используется для лечения суставов и дыхательных путей. Рядом стоит заглянуть в живописную деревню Пиодан, до которой около часа на машине.",
     "driveMinutesFromLisbon": 210,
     "visitDurationHours": 2,
     "bestSeason": "круглый год",
-    "tags": ["история"],
-    "links": [{ "title": "Официальный сайт", "url": "https://termas-spsul.com/" }],
+    "tags": [
+      "история"
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт",
+        "url": "https://termas-spsul.com/"
+      }
+    ],
     "photos": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Capela_das_Termas_de_S%C3%A3o_Pedro_do_Sul_-_Portugal_%2852304328913%29.jpg/1280px-Capela_das_Termas_de_S%C3%A3o_Pedro_do_Sul_-_Portugal_%2852304328913%29.jpg",
@@ -254,13 +392,23 @@
     "name": "Термы Монфортинью",
     "type": "thermal",
     "region": "Центр (Коимбра, Томар)",
-    "coords": { "lat": 39.9772, "lon": -6.8993 },
+    "coords": {
+      "lat": 39.9772,
+      "lon": -6.8993
+    },
     "description": "Термальный курорт на границе с Испанией у реки Эргеш, работающий с 1907 года — вода отличается высоким содержанием кремния и используется для лечения кожных заболеваний. Место тихое и малотуристическое, хорошо подходит для спокойного отдыха на несколько дней. Учтите, что это самая восточная точка маршрута — дорога из Лиссабона занимает почти 3,5 часа.",
     "driveMinutesFromLisbon": 210,
     "visitDurationHours": 2,
     "bestSeason": "май–октябрь",
-    "tags": ["природа"],
-    "links": [{ "title": "Официальный сайт", "url": "https://www.termasdemonfortinho.com/" }],
+    "tags": [
+      "природа"
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт",
+        "url": "https://www.termasdemonfortinho.com/"
+      }
+    ],
     "photos": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Termas_de_Monfortinho_-_1.jpg/1280px-Termas_de_Monfortinho_-_1.jpg",
@@ -276,13 +424,23 @@
     "name": "Термы Шавеша",
     "type": "thermal",
     "region": "Норте",
-    "coords": { "lat": 41.7367, "lon": -7.4718 },
+    "coords": {
+      "lat": 41.7367,
+      "lon": -7.4718
+    },
     "description": "Термальный комплекс в историческом центре Шавеша на воде, которую использовали ещё римляне — рядом сохранились руины античных терм со статусом национального памятника. Современный комплекс Aquae Salutem сочетает лечебные программы и спа-зоны. После процедур приятно прогуляться по старому мосту через Тамегу прямо у источника.",
     "driveMinutesFromLisbon": 260,
     "visitDurationHours": 2,
     "bestSeason": "круглый год",
-    "tags": ["история"],
-    "links": [{ "title": "Официальный сайт", "url": "https://www.termasdechaves.com/en" }],
+    "tags": [
+      "история"
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт",
+        "url": "https://www.termasdechaves.com/en"
+      }
+    ],
     "photos": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Termas_Romanas_de_Chaves_004.jpg/1280px-Termas_Romanas_de_Chaves_004.jpg",
@@ -298,13 +456,23 @@
     "name": "Термы Лузу",
     "type": "thermal",
     "region": "Центр (Коимбра, Томар)",
-    "coords": { "lat": 40.3839, "lon": -8.3778 },
+    "coords": {
+      "lat": 40.3839,
+      "lon": -8.3778
+    },
     "description": "Термальный комплекс у подножия горного массива Бусаку, известный своей особо мягкой водой, которую также продают как минеральную. Современный спа-центр сочетает термальные программы, бассейны и сауны в окружении соснового леса. Легко совместить с прогулкой по национальному лесу Бусаку в паре километров отсюда.",
     "driveMinutesFromLisbon": 130,
     "visitDurationHours": 2.5,
     "bestSeason": "круглый год",
-    "tags": ["природа"],
-    "links": [{ "title": "Официальный сайт", "url": "https://termasdeluso.pt/" }],
+    "tags": [
+      "природа"
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт",
+        "url": "https://termasdeluso.pt/"
+      }
+    ],
     "photos": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Complexo_Termal_do_Luso_1.jpg",
@@ -320,13 +488,24 @@
     "name": "Ботанический сад Лиссабона",
     "type": "garden",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.7156, "lon": -9.1489 },
+    "coords": {
+      "lat": 38.7156,
+      "lon": -9.1489
+    },
     "description": "Тенистый ботанический сад XIX века в самом центре Лиссабона, спускающийся террасами от улицы Эшкола-Политекника — с вековыми деревьями, драценами и прудом с утками. Отличное место, чтобы спрятаться от жары и городского шума на час-другой. Вход платный, но недорогой, и почти всегда немноголюдно даже в высокий сезон.",
     "driveMinutesFromLisbon": 10,
     "visitDurationHours": 1,
     "bestSeason": "круглый год",
-    "tags": ["природа", "фото"],
-    "links": [{ "title": "Museus da ULisboa", "url": "https://www.museus.ulisboa.pt/jardim-botanico-de-lisboa" }],
+    "tags": [
+      "природа",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Museus da ULisboa",
+        "url": "https://www.museus.ulisboa.pt/jardim-botanico-de-lisboa"
+      }
+    ],
     "photos": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Jardim_Bot%C3%A2nico_da_Universidade_de_Lisboa.jpg/1280px-Jardim_Bot%C3%A2nico_da_Universidade_de_Lisboa.jpg",
@@ -342,12 +521,19 @@
     "name": "Парк Эдуарда VII",
     "type": "garden",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.7283, "lon": -9.1527 },
+    "coords": {
+      "lat": 38.7283,
+      "lon": -9.1527
+    },
     "description": "Самый большой парк в центре Лиссабона, разбитый геометрическими живыми изгородями, поднимается от площади Маркиз-де-Помбал к смотровой площадке с видом на весь город и реку Тежу. Внутри — оранжерея Эштуфа-Фриа с тропическими растениями и небольшим водопадом. Хорошее место для утренней прогулки перед тем, как жара усилится.",
     "driveMinutesFromLisbon": 10,
     "visitDurationHours": 1,
     "bestSeason": "круглый год",
-    "tags": ["виды", "бесплатно", "фото"],
+    "tags": [
+      "виды",
+      "бесплатно",
+      "фото"
+    ],
     "links": [],
     "photos": [
       {
@@ -364,12 +550,18 @@
     "name": "Ботанический сад Порту",
     "type": "garden",
     "region": "Норте",
-    "coords": { "lat": 41.1536, "lon": -8.6426 },
+    "coords": {
+      "lat": 41.1536,
+      "lon": -8.6426
+    },
     "description": "Ботанический сад Порту разбит в парке усадьбы Каза-Андресен на западе города и принадлежит университету Порту — здесь собраны коллекции камелий, суккулентов и вековые деревья на террасах с видом на Дору вдалеке. Тихое место, куда почти не доходят туристы из центра. Вход бесплатный по будням в определённые часы — стоит уточнить расписание заранее.",
     "driveMinutesFromLisbon": 175,
     "visitDurationHours": 1,
     "bestSeason": "март–октябрь",
-    "tags": ["природа", "фото"],
+    "tags": [
+      "природа",
+      "фото"
+    ],
     "links": [],
     "photos": [
       {
@@ -386,13 +578,25 @@
     "name": "Кинта-даш-Лагримаш",
     "type": "garden",
     "region": "Центр (Коимбра, Томар)",
-    "coords": { "lat": 40.1981, "lon": -8.4333 },
+    "coords": {
+      "lat": 40.1981,
+      "lon": -8.4333
+    },
     "description": "Романтический парк при усадьбе XVIII века в Коимбре, связанный с легендой о трагической любви Педру I и Инеш де Каштру — по преданию, именно здесь она была убита. В парке растут гигантские секвойи и платаны, а «Фонтан слёз» считается местом действия легенды. Сейчас в усадьбе работает отель, но парк открыт для всех посетителей за отдельный билет.",
     "driveMinutesFromLisbon": 130,
     "visitDurationHours": 1.5,
     "bestSeason": "круглый год",
-    "tags": ["история", "природа", "фото"],
-    "links": [{ "title": "Quinta das Lágrimas", "url": "https://www.quintadaslagrimas.pt/" }],
+    "tags": [
+      "история",
+      "природа",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Quinta das Lágrimas",
+        "url": "https://www.quintadaslagrimas.pt/"
+      }
+    ],
     "photos": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Quinta_das_Lagrimas_entry_-_DSC09528.jpg/1280px-Quinta_das_Lagrimas_entry_-_DSC09528.jpg",
@@ -408,12 +612,18 @@
     "name": "Лесопарк Монсанту",
     "type": "garden",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.7366, "lon": -9.1990 },
+    "coords": {
+      "lat": 38.7366,
+      "lon": -9.199
+    },
     "description": "Крупнейший лесной массив Лиссабона площадью почти 900 гектаров, известный как «лёгкие города» — с размеченными тропами для бега и велопрогулок, смотровыми площадками и зонами для пикника. Хорошая альтернатива пляжу в жаркий будний день, если хочется тени и тишины прямо в черте города. В некоторых удалённых уголках парка вечером лучше не гулять в одиночку.",
     "driveMinutesFromLisbon": 15,
     "visitDurationHours": 2,
     "bestSeason": "круглый год",
-    "tags": ["природа", "бесплатно"],
+    "tags": [
+      "природа",
+      "бесплатно"
+    ],
     "links": [],
     "photos": [
       {
@@ -430,14 +640,24 @@
     "name": "Пена Авентура (парк приключений)",
     "type": "other",
     "region": "Север",
-    "coords": { "lat": 41.5000, "lon": -7.7920 },
+    "coords": {
+      "lat": 41.5,
+      "lon": -7.792
+    },
     "description": "Парк приключений в Рибейра-де-Пена на севере Португалии, известный тирзолиной Fantasticable — одной из крупнейших в Европе: более 1,5 км, высота до 150 м и скорость до 130 км/ч, ощущение настоящего полёта между гор. Есть и другие активности на природе — подойдёт любителям адреналина и семьям. Примерно в часе езды от Порту.",
     "driveMinutesFromLisbon": 210,
     "visitDurationHours": 4,
     "bestSeason": "апрель–октябрь",
-    "tags": ["с детьми", "природа", "виды"],
+    "tags": [
+      "с детьми",
+      "природа",
+      "виды"
+    ],
     "links": [
-      { "title": "Pena Aventura Park", "url": "https://www.penaaventura.com.pt/" }
+      {
+        "title": "Pena Aventura Park",
+        "url": "https://www.penaaventura.com.pt/"
+      }
     ],
     "photos": [],
     "collections": []
@@ -447,14 +667,24 @@
     "name": "Rail Bike Marvão",
     "type": "other",
     "region": "Алентежу",
-    "coords": { "lat": 39.4210, "lon": -7.3010 },
+    "coords": {
+      "lat": 39.421,
+      "lon": -7.301
+    },
     "description": "Поездка на педальных дрезинах-веломобилях по заброшенной железнодорожной ветке у Марвана в Алентежу — спокойное и живописное развлечение среди холмов, мостов и туннелей, подходит для пар и семей. Весь маршрут занимает около 2 часов, цена ~25 € с человека. Бронировать нужно заранее по почте; летом два сеанса (утром и вечером), берите шляпу и воду.",
     "driveMinutesFromLisbon": 165,
     "visitDurationHours": 2,
     "bestSeason": "апрель–октябрь",
-    "tags": ["с детьми", "природа", "виды"],
+    "tags": [
+      "с детьми",
+      "природа",
+      "виды"
+    ],
     "links": [
-      { "title": "Rail Bike Marvão (Instagram)", "url": "https://www.instagram.com/railbikemarvao/" }
+      {
+        "title": "Rail Bike Marvão (Instagram)",
+        "url": "https://www.instagram.com/railbikemarvao/"
+      }
     ],
     "photos": [],
     "collections": []
@@ -464,14 +694,24 @@
     "name": "Horizon of Khufu (VR-экспедиция)",
     "type": "other",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.7196, "lon": -9.1560 },
+    "coords": {
+      "lat": 38.7196,
+      "lon": -9.156
+    },
     "description": "Иммерсивная VR-экспедиция по Великой пирамиде Хеопса и плато Гиза: в шлеме виртуальной реальности вы свободно перемещаетесь по коридорам и скрытым камерам, реконструированным по данным египтологов. Проходит в Immersivus Gallery в историческом резервуаре Мãе-д'Агуа-даш-Аморейраш в Лиссабоне. Билеты по времени сеансов — бронируйте заранее.",
     "driveMinutesFromLisbon": 10,
     "visitDurationHours": 1,
     "bestSeason": "круглый год",
-    "tags": ["с детьми", "история", "фото"],
+    "tags": [
+      "с детьми",
+      "история",
+      "фото"
+    ],
     "links": [
-      { "title": "Horizon of Khufu Lisboa", "url": "https://horizonkheopsexperience.com/lisboa/en/" }
+      {
+        "title": "Horizon of Khufu Lisboa",
+        "url": "https://horizonkheopsexperience.com/lisboa/en/"
+      }
     ],
     "photos": [],
     "collections": []
@@ -481,14 +721,732 @@
     "name": "Speedkart Indoor (Фафе)",
     "type": "karting",
     "region": "Север",
-    "coords": { "lat": 41.4497, "lon": -8.1723 },
+    "coords": {
+      "lat": 41.4497,
+      "lon": -8.1723
+    },
     "description": "Крытый картинг-центр в Фафе (Зона Индустриал ду Сокорру) — в 30 минутах от Браги и часе от Порту, отличный вариант для активного дня в любую погоду. Заезды от 8,95 € за 10 минут, дольше — с напитком в подарок. Подходит для компаний и семейных праздников.",
     "driveMinutesFromLisbon": 200,
     "visitDurationHours": 1,
     "bestSeason": "круглый год",
-    "tags": ["с детьми"],
+    "tags": [
+      "с детьми"
+    ],
     "links": [
-      { "title": "Speedkart Indoor Fafe (Instagram)", "url": "https://www.instagram.com/speedkart_indoorfafe/" }
+      {
+        "title": "Speedkart Indoor Fafe (Instagram)",
+        "url": "https://www.instagram.com/speedkart_indoorfafe/"
+      }
+    ],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kiro-kartodromo-oeste-bombarral",
+    "name": "KIRO — Международный картодром Оэште (Бомбаррал)",
+    "type": "karting",
+    "region": "Оэште",
+    "coords": {
+      "lat": 39.268,
+      "lon": -9.155
+    },
+    "description": "Крупный открытый картодром в Бомбаррале с трассой до 1225 м и множеством конфигураций — отличный вариант активного дня недалеко от Обидуша и Лиссабона. Летом (1 июля–31 августа) работает ежедневно 9:00–21:00. Подходит для компаний и групповых заездов.",
+    "driveMinutesFromLisbon": 75,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [
+      {
+        "title": "KIRO — Kartódromo do Oeste",
+        "url": "http://kiro-karting.com/"
+      }
+    ],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "indoor-karting-caldas-da-rainha",
+    "name": "Крытый картинг Калдаш-да-Раинья",
+    "type": "karting",
+    "region": "Оэште",
+    "coords": {
+      "lat": 39.407,
+      "lon": -9.135
+    },
+    "description": "Крытый картинг-центр (Крытый картинг Калдаш-да-Раинья) — активный отдых в любую погоду, прокат картов и заезды для компаний и семей.",
+    "driveMinutesFromLisbon": 85,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "algarve-indoor-kart-center-olhao",
+    "name": "Algarve Indoor Kart Center (Ольян)",
+    "type": "karting",
+    "region": "Алгарве",
+    "coords": {
+      "lat": 37.0294,
+      "lon": -7.841
+    },
+    "description": "Крытый картинг-центр на верхнем этаже парковки Ria Shopping в Ольяне — активный отдых в любую погоду для компаний и семей.",
+    "driveMinutesFromLisbon": 260,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kartodromo-abrantes",
+    "name": "Картодром Абрантеш",
+    "type": "karting",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 39.464,
+      "lon": -8.197
+    },
+    "description": "Картинг-трасса (Картодром Абрантеш) — прокат картов и заезды для любителей скорости, подойдёт компаниям и семьям.",
+    "driveMinutesFromLisbon": 130,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kartodromo-alcanede",
+    "name": "Картодром Алканеде",
+    "type": "karting",
+    "region": "Эштремадура",
+    "coords": {
+      "lat": 39.416,
+      "lon": -8.823
+    },
+    "description": "Картинг-трасса (Картодром Алканеде) — прокат картов и заезды для любителей скорости, подойдёт компаниям и семьям.",
+    "driveMinutesFromLisbon": 100,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kartodromo-almancil",
+    "name": "Картодром Алмансил",
+    "type": "karting",
+    "region": "Алгарве",
+    "coords": {
+      "lat": 37.088,
+      "lon": -8.023
+    },
+    "description": "Картинг-трасса (Картодром Алмансил) — прокат картов и заезды для любителей скорости, подойдёт компаниям и семьям.",
+    "driveMinutesFromLisbon": 255,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kartodromo-almeirim",
+    "name": "Картодром Алмейрин",
+    "type": "karting",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 39.207,
+      "lon": -8.627
+    },
+    "description": "Картинг-трасса (Картодром Алмейрин) — прокат картов и заезды для любителей скорости, подойдёт компаниям и семьям.",
+    "driveMinutesFromLisbon": 80,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kartodromo-batalha",
+    "name": "Картодром Баталья",
+    "type": "karting",
+    "region": "Эштремадура",
+    "coords": {
+      "lat": 39.656,
+      "lon": -8.83
+    },
+    "description": "Картинг-трасса (Картодром Баталья) — прокат картов и заезды для любителей скорости, подойдёт компаниям и семьям.",
+    "driveMinutesFromLisbon": 120,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kartodromo-braganca",
+    "name": "Картодром Браганса",
+    "type": "karting",
+    "region": "Норте",
+    "coords": {
+      "lat": 41.806,
+      "lon": -6.757
+    },
+    "description": "Картинг-трасса (Картодром Браганса) — прокат картов и заезды для любителей скорости, подойдёт компаниям и семьям.",
+    "driveMinutesFromLisbon": 300,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kartodromo-cabo-do-mundo",
+    "name": "Картодром Кабу-ду-Мунду (Перафита)",
+    "type": "karting",
+    "region": "Норте",
+    "coords": {
+      "lat": 41.235,
+      "lon": -8.705
+    },
+    "description": "Картинг-трасса (Картодром Кабу-ду-Мунду (Перафита)) — прокат картов и заезды для любителей скорости, подойдёт компаниям и семьям.",
+    "driveMinutesFromLisbon": 300,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kartodromo-chaves",
+    "name": "Картодром Шавеш",
+    "type": "karting",
+    "region": "Норте",
+    "coords": {
+      "lat": 41.74,
+      "lon": -7.471
+    },
+    "description": "Картинг-трасса (Картодром Шавеш) — прокат картов и заезды для любителей скорости, подойдёт компаниям и семьям.",
+    "driveMinutesFromLisbon": 300,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kartodromo-covilha",
+    "name": "Картодром Ковильян (Тортозенду)",
+    "type": "karting",
+    "region": "Центр (Серра-да-Эштрела)",
+    "coords": {
+      "lat": 40.25,
+      "lon": -7.53
+    },
+    "description": "Картинг-трасса (Картодром Ковильян (Тортозенду)) — прокат картов и заезды для любителей скорости, подойдёт компаниям и семьям.",
+    "driveMinutesFromLisbon": 220,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kartodromo-evora",
+    "name": "Картодром Эвора",
+    "type": "karting",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 38.567,
+      "lon": -7.908
+    },
+    "description": "Картинг-трасса в Эворе длиной около 908 м с освещением для ночных заездов, сертифицированная для международных соревнований. Прокат картов для любителей и групп.",
+    "driveMinutesFromLisbon": 90,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kartodromo-fatima",
+    "name": "Картодром Фатима",
+    "type": "karting",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 39.63,
+      "lon": -8.67
+    },
+    "description": "Картинг-трасса (Картодром Фатима) — прокат картов и заезды для любителей скорости, подойдёт компаниям и семьям.",
+    "driveMinutesFromLisbon": 90,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "dinokart-lourinha",
+    "name": "DinoKart — Картодром Лоуринья",
+    "type": "karting",
+    "region": "Оэште",
+    "coords": {
+      "lat": 39.241,
+      "lon": -9.313
+    },
+    "description": "Картинг-трасса (DinoKart — Картодром Лоуринья) — прокат картов и заезды для любителей скорости, подойдёт компаниям и семьям.",
+    "driveMinutesFromLisbon": 65,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kartodromo-montijo",
+    "name": "Картодром Монтижу",
+    "type": "karting",
+    "region": "Сетубал и Аррабида",
+    "coords": {
+      "lat": 38.706,
+      "lon": -8.975
+    },
+    "description": "Картинг-трасса (Картодром Монтижу) — прокат картов и заезды для любителей скорости, подойдёт компаниям и семьям.",
+    "driveMinutesFromLisbon": 40,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kartodromo-odivelas",
+    "name": "Картодром Одивелаш",
+    "type": "karting",
+    "region": "Лиссабон и Синтра",
+    "coords": {
+      "lat": 38.794,
+      "lon": -9.183
+    },
+    "description": "Картинг-трасса (Картодром Одивелаш) — прокат картов и заезды для любителей скорости, подойдёт компаниям и семьям.",
+    "driveMinutesFromLisbon": 20,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kartodromo-oia",
+    "name": "Картодром Ойан",
+    "type": "karting",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.568,
+      "lon": -8.576
+    },
+    "description": "Картинг-трасса (Картодром Ойан) — прокат картов и заезды для любителей скорости, подойдёт компаниям и семьям.",
+    "driveMinutesFromLisbon": 210,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kartodromo-poiares",
+    "name": "Картодром Пойареш",
+    "type": "karting",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.213,
+      "lon": -8.256
+    },
+    "description": "Картинг-трасса (Картодром Пойареш) — прокат картов и заезды для любителей скорости, подойдёт компаниям и семьям.",
+    "driveMinutesFromLisbon": 200,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kartodromo-pombal",
+    "name": "Картодром Помбал",
+    "type": "karting",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 39.916,
+      "lon": -8.628
+    },
+    "description": "Картинг-трасса (Картодром Помбал) — прокат картов и заезды для любителей скорости, подойдёт компаниям и семьям.",
+    "driveMinutesFromLisbon": 140,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kartodromo-portalegre",
+    "name": "Картодром Порталегре",
+    "type": "karting",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 39.293,
+      "lon": -7.431
+    },
+    "description": "Картинг-трасса (Картодром Порталегре) — прокат картов и заезды для любителей скорости, подойдёт компаниям и семьям.",
+    "driveMinutesFromLisbon": 200,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kartodromo-internacional-algarve",
+    "name": "Международный картодром Алгарве (Портиман)",
+    "type": "karting",
+    "region": "Алгарве",
+    "coords": {
+      "lat": 37.229,
+      "lon": -8.627
+    },
+    "description": "Картинг-трасса при Международном автодроме Алгарве в Портимане — современный комплекс с прокатом картов, заездами и мероприятиями для любителей скорости.",
+    "driveMinutesFromLisbon": 200,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kartodromo-santo-andre",
+    "name": "Картодром Санту-Андре",
+    "type": "karting",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 38.055,
+      "lon": -8.79
+    },
+    "description": "Картинг-трасса (Картодром Санту-Андре) — прокат картов и заезды для любителей скорости, подойдёт компаниям и семьям.",
+    "driveMinutesFromLisbon": 130,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kartodromo-serra-da-estrela",
+    "name": "Картодром Серра-да-Эштрела (Сейя)",
+    "type": "karting",
+    "region": "Центр (Серра-да-Эштрела)",
+    "coords": {
+      "lat": 40.418,
+      "lon": -7.708
+    },
+    "description": "Картинг-трасса (Картодром Серра-да-Эштрела (Сейя)) — прокат картов и заезды для любителей скорости, подойдёт компаниям и семьям.",
+    "driveMinutesFromLisbon": 210,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kartodromo-viana-do-castelo",
+    "name": "Картодром Виана-ду-Каштелу",
+    "type": "karting",
+    "region": "Норте",
+    "coords": {
+      "lat": 41.693,
+      "lon": -8.833
+    },
+    "description": "Картинг-трасса (Картодром Виана-ду-Каштелу) — прокат картов и заезды для любителей скорости, подойдёт компаниям и семьям.",
+    "driveMinutesFromLisbon": 360,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kartodromo-vila-real",
+    "name": "Картодром Вила-Реал",
+    "type": "karting",
+    "region": "Норте",
+    "coords": {
+      "lat": 41.301,
+      "lon": -7.744
+    },
+    "description": "Картинг-трасса (Картодром Вила-Реал) — прокат картов и заезды для любителей скорости, подойдёт компаниям и семьям.",
+    "driveMinutesFromLisbon": 350,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "cascais-indoor-karting",
+    "name": "Cascais Indoor Karting",
+    "type": "karting",
+    "region": "Лиссабон и Синтра",
+    "coords": {
+      "lat": 38.698,
+      "lon": -9.421
+    },
+    "description": "Крытый картинг-центр (Cascais Indoor Karting) — активный отдых в любую погоду, прокат картов и заезды для компаний и семей.",
+    "driveMinutesFromLisbon": 30,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "indoor-karting-espinho",
+    "name": "Крытый картинг Эшпинью",
+    "type": "karting",
+    "region": "Норте",
+    "coords": {
+      "lat": 41.007,
+      "lon": -8.641
+    },
+    "description": "Крытый картинг-центр (Крытый картинг Эшпинью) — активный отдых в любую погоду, прокат картов и заезды для компаний и семей.",
+    "driveMinutesFromLisbon": 300,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "maia-indoor-karting",
+    "name": "Maia Indoor Karting",
+    "type": "karting",
+    "region": "Норте",
+    "coords": {
+      "lat": 41.235,
+      "lon": -8.62
+    },
+    "description": "Крытый картинг-центр (Maia Indoor Karting) — активный отдых в любую погоду, прокат картов и заезды для компаний и семей.",
+    "driveMinutesFromLisbon": 310,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kart-center-matosinhos",
+    "name": "Kart Center Matosinhos",
+    "type": "karting",
+    "region": "Норте",
+    "coords": {
+      "lat": 41.182,
+      "lon": -8.689
+    },
+    "description": "Крытый картинг-центр (Kart Center Matosinhos) — активный отдых в любую погоду, прокат картов и заезды для компаний и семей.",
+    "driveMinutesFromLisbon": 310,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "bowlikart-ovar",
+    "name": "Bowlikart (Овар)",
+    "type": "karting",
+    "region": "Норте",
+    "coords": {
+      "lat": 40.859,
+      "lon": -8.625
+    },
+    "description": "Крытый картинг-центр (Bowlikart (Овар)) — активный отдых в любую погоду, прокат картов и заезды для компаний и семей.",
+    "driveMinutesFromLisbon": 280,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "campera-karting-carregado",
+    "name": "Campera Karting (Каррегаду)",
+    "type": "karting",
+    "region": "Оэште",
+    "coords": {
+      "lat": 39.027,
+      "lon": -8.977
+    },
+    "description": "Картинг-трасса (Campera Karting (Каррегаду)) — прокат картов и заезды для любителей скорости, подойдёт компаниям и семьям.",
+    "driveMinutesFromLisbon": 40,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kivi-kartodromo-viana",
+    "name": "KIVI — крытый картинг Виана",
+    "type": "karting",
+    "region": "Норте",
+    "coords": {
+      "lat": 41.693,
+      "lon": -8.833
+    },
+    "description": "Крытый картинг-центр (KIVI — крытый картинг Виана) — активный отдых в любую погоду, прокат картов и заезды для компаний и семей.",
+    "driveMinutesFromLisbon": 360,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kartodromo-vn-paiva",
+    "name": "Картодром Вила-Нова-де-Пайва",
+    "type": "karting",
+    "region": "Центр (Серра-да-Эштрела)",
+    "coords": {
+      "lat": 40.852,
+      "lon": -7.729
+    },
+    "description": "Картинг-трасса (Картодром Вила-Нова-де-Пайва) — прокат картов и заезды для любителей скорости, подойдёт компаниям и семьям.",
+    "driveMinutesFromLisbon": 320,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "kartodromo-braga",
+    "name": "Международный картодром Браги (KIB)",
+    "type": "karting",
+    "region": "Норте",
+    "coords": {
+      "lat": 41.581,
+      "lon": -8.446
+    },
+    "description": "Международный картодром в Палмейре под Брагой — одна из лучших картинг-трасс Португалии, где проходят национальные и международные соревнования. Прокат картов для одиночных гонщиков, групп и компаний.",
+    "driveMinutesFromLisbon": 350,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми"
+    ],
+    "links": [
+      {
+        "title": "KIB — Kartódromo Internacional de Braga",
+        "url": "http://www.kib.pt/"
+      }
     ],
     "photos": [],
     "collections": []
