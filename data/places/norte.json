@@ -350,5 +350,61 @@
       }
     ],
     "collections": []
+  },
+  {
+    "id": "santuario-bom-jesus-braga",
+    "name": "Санктуарий Бом-Жезуш-ду-Монти (Брага)",
+    "type": "castle",
+    "region": "Север",
+    "coords": { "lat": 41.5547, "lon": -8.3775 },
+    "description": "Знаменитый санктуарий над Брагой (объект ЮНЕСКО) с грандиозной барочной лестницей-зигзагом «Пяти чувств», украшенной фонтанами и скульптурами. Подняться можно пешком по лестнице, на машине или на старинном водяном фуникулёре; сверху — церковь и панорама города. Приезжайте пораньше и оставьте время на парк вокруг.",
+    "driveMinutesFromLisbon": 210,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": ["история", "виды", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Santu%C3%A1rio_do_Bom_Jesus_do_Monte_-_Portugal_%2813134251373%29.jpg/1280px-Santu%C3%A1rio_do_Bom_Jesus_do_Monte_-_Portugal_%2813134251373%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Santu%C3%A1rio_do_Bom_Jesus_do_Monte_-_Portugal_(13134251373).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Igreja_e_escadaria_do_Bom_Jesus_%283%29.JPG/1280px-Igreja_e_escadaria_do_Bom_Jesus_%283%29.JPG",
+        "author": "Béria Lima de Rodríguez",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Igreja_e_escadaria_do_Bom_Jesus_(3).JPG"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "quinta-da-aveleda",
+    "name": "Кинта-да-Авеледа (Пенафиел)",
+    "type": "garden",
+    "region": "Север",
+    "coords": { "lat": 41.2050, "lon": -8.2870 },
+    "description": "Историческое винодельческое поместье под Пенафиелом с одними из самых романтичных садов Португалии: вековые деревья, ручьи, мостики, фонтаны, гроты и даже домик для коз. Можно погулять по паркам и продегустировать знаменитые зелёные вина (vinho verde). Вход и туры — по билету, лучше бронировать заранее.",
+    "driveMinutesFromLisbon": 190,
+    "visitDurationHours": 2,
+    "bestSeason": "апрель–октябрь",
+    "tags": ["вино", "природа", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Quinta_da_Aveleda%2C_Penafiel%2C_Region_de_Porto%2C_Portugal.jpg/1280px-Quinta_da_Aveleda%2C_Penafiel%2C_Region_de_Porto%2C_Portugal.jpg",
+        "author": "Basilicofresco",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Quinta_da_Aveleda,_Penafiel,_Region_de_Porto,_Portugal.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Penafiel%2C_Quinta_da_Aveleda%2C_Dez.2003_-_panoramio_-_fvmacedo_%283%29.jpg/1280px-Penafiel%2C_Quinta_da_Aveleda%2C_Dez.2003_-_panoramio_-_fvmacedo_%283%29.jpg",
+        "author": "fvmacedo",
+        "license": "CC BY 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Penafiel,_Quinta_da_Aveleda,_Dez.2003_-_panoramio_-_fvmacedo_(3).jpg"
+      }
+    ],
+    "collections": []
   }
 ]

@@ -393,5 +393,27 @@
     "links": [],
     "photos": [],
     "collections": []
+  },
+  {
+    "id": "nossa-senhora-da-rocha",
+    "name": "Носса-Сеньора-да-Рока",
+    "type": "viewpoint",
+    "region": "Алгарве",
+    "coords": { "lat": 37.1010, "lon": -8.3350 },
+    "description": "Маленькая белая часовня на скалистом мысу, вдающемся в море, между пляжами у Армасан-де-Пера — одно из самых открыточных мест Алгарве. С мыса открывается вид на бирюзовые бухты по обе стороны, а к соседним пляжам ведёт живописная тропа и туннель в скале. Лучше всего на закате.",
+    "driveMinutesFromLisbon": 170,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["виды", "история", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Capela_da_Senhora_da_Rocha_-_Portugal_%289596062156%29.jpg/1280px-Capela_da_Senhora_da_Rocha_-_Portugal_%289596062156%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Capela_da_Senhora_da_Rocha_-_Portugal_(9596062156).jpg"
+      }
+    ],
+    "collections": []
   }
 ]
