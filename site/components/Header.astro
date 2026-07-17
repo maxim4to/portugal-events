@@ -181,7 +181,13 @@ const isActive = (p: string) => {
     justify-self: end;
   }
 
-  /* Auth control — a pill matching the theme toggle. */
+  /* Auth control — a pill matching the theme toggle. Flex-centered so the
+     inline-flex avatar/sign-in child doesn't sit on a text baseline (which
+     otherwise nudged it a couple px above the theme toggle). */
+  .auth {
+    display: inline-flex;
+    align-items: center;
+  }
   .auth[hidden] {
     display: none;
   }
