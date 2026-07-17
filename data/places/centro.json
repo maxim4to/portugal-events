@@ -452,5 +452,33 @@
       }
     ],
     "collections": []
+  },
+  {
+    "id": "convento-de-cristo-tomar",
+    "name": "Монастырь Христа (Томар)",
+    "type": "castle",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 39.6039, "lon": -8.4184 },
+    "description": "Бывшая штаб-квартира тамплиеров и объект ЮНЕСКО на холме над Томаром: круглая церковь-ротонда «Шарола» по образцу храма Гроба Господня и знаменитое мануэлинское окно капитула — один из символов Португалии. Комплекс большой, закладывайте пару часов на клуатры и террасы. Входит в комбо-билет с Батальей и Алкобасой.",
+    "driveMinutesFromLisbon": 90,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": ["история", "виды", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Convento_de_Cristo_-_South_Facade.jpg/1280px-Convento_de_Cristo_-_South_Facade.jpg",
+        "author": "Ingo Mehling",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Convento_de_Cristo_-_South_Facade.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Convento_de_Cristo_-_Cloister_of_Joao_III.jpg/1280px-Convento_de_Cristo_-_Cloister_of_Joao_III.jpg",
+        "author": "Ingo Mehling",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Convento_de_Cristo_-_Cloister_of_Joao_III.jpg"
+      }
+    ],
+    "collections": []
   }
 ]
