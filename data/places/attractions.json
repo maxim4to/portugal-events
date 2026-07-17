@@ -492,5 +492,22 @@
     ],
     "photos": [],
     "collections": []
+  },
+  {
+    "id": "kiro-kartodromo-oeste-bombarral",
+    "name": "KIRO — Международный картодром Оэште (Бомбаррал)",
+    "type": "karting",
+    "region": "Оэште",
+    "coords": { "lat": 39.2680, "lon": -9.1550 },
+    "description": "Крупный открытый картодром в Бомбаррале с трассой до 1225 м и множеством конфигураций — отличный вариант активного дня недалеко от Обидуша и Лиссабона. Летом (1 июля–31 августа) работает ежедневно 9:00–21:00. Подходит для компаний и групповых заездов.",
+    "driveMinutesFromLisbon": 75,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": ["с детьми"],
+    "links": [
+      { "title": "KIRO — Kartódromo do Oeste", "url": "http://kiro-karting.com/" }
+    ],
+    "photos": [],
+    "collections": []
   }
 ]
