@@ -18,6 +18,7 @@
     isConfigured,
   } from '../lib/favorites.ts';
   import { onAuthChange, signInWithGoogle } from '../lib/auth.ts';
+  import { showSigninPrompt } from '../lib/signinPrompt.ts';
 
   const buttons = Array.from(
     document.querySelectorAll<HTMLButtonElement>('.favorite-btn'),
@@ -81,7 +82,11 @@
         const next = btn.getAttribute('aria-pressed') !== 'true';
         if (!loggedIn) {
           pending = { id, on: next };
-          void signInWithGoogle();
+          showSigninPrompt({
+            anchor: btn,
+            message: 'Войдите через Google, чтобы сохранять избранное.',
+            onConfirm: () => signInWithGoogle(),
+          });
           return;
         }
         // Optimistic reflect; the subscription will confirm/correct.

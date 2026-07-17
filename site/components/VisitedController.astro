@@ -16,6 +16,7 @@
     isConfigured,
   } from '../lib/visited.ts';
   import { onAuthChange, signInWithGoogle } from '../lib/auth.ts';
+  import { showSigninPrompt } from '../lib/signinPrompt.ts';
 
   const buttons = Array.from(
     document.querySelectorAll<HTMLButtonElement>('.visited-btn'),
@@ -108,7 +109,11 @@
         if (!loggedIn) {
           // Remember the intent and apply it once sign-in completes.
           pending = { id, on: next };
-          void signInWithGoogle();
+          showSigninPrompt({
+            anchor: btn,
+            message: 'Войдите, чтобы отмечать посещённые места.',
+            onConfirm: () => signInWithGoogle(),
+          });
           return;
         }
         // Optimistic reflect; the subscription will confirm/correct.
