@@ -1,0 +1,86 @@
+[
+  {
+    "id": "tavira",
+    "name": "Тавира",
+    "type": "town",
+    "region": "Алгарве",
+    "coords": { "lat": 37.1273, "lon": -7.6503 },
+    "description": "Один из самых красивых и не «пляжно-массовых» городов Алгарве, разделённый рекой Жилан: старый центр, римский мост, церкви и руины мавританского замка с видом на черепичные крыши. Отличная база для однодневного маршрута — прогулка по старому городу, а затем поезд/паром через Риа-Формозу к пляжу Баррил. Приезжайте пораньше и оставьте время на кафе у реки.",
+    "driveMinutesFromLisbon": 165,
+    "visitDurationHours": 4,
+    "bestSeason": "апрель–октябрь",
+    "tags": ["история", "виды", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Algarve_Tavira.JPG/1280px-Algarve_Tavira.JPG",
+        "author": "Björn Ehrlich",
+        "license": "CC BY 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Algarve_Tavira.JPG"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Tavira_%28Portugal%29_%2812219413764%29.jpg/1280px-Tavira_%28Portugal%29_%2812219413764%29.jpg",
+        "author": "Jose A.",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tavira_(Portugal)_(12219413764).jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "praia-do-barril",
+    "name": "Прайя-ду-Баррил",
+    "type": "beach",
+    "region": "Алгарве",
+    "coords": { "lat": 37.0985, "lon": -7.6790 },
+    "description": "Широкий песчаный пляж на острове Тавира, известный «кладбищем якорей» — сотнями старых якорей в дюнах, память о былом промысле тунца. Добраться можно пешком по мосту от Педраш-д’Эл-Рей или на игрушечном поезде через лагуну. Возьмите воду и защиту от солнца — тени почти нет.",
+    "driveMinutesFromLisbon": 170,
+    "visitDurationHours": 4,
+    "bestSeason": "май–сентябрь",
+    "tags": ["купание", "история", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Anchor_Cemetery_at_Praia_do_Barril%2C_Portugal_2019-11-07-1.jpg/1280px-Anchor_Cemetery_at_Praia_do_Barril%2C_Portugal_2019-11-07-1.jpg",
+        "author": "Alexey Komarov",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anchor_Cemetery_at_Praia_do_Barril,_Portugal_2019-11-07-1.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Anchor_Cemetery_at_Praia_do_Barril%2C_Portugal_2019-11-07-2.jpg/1280px-Anchor_Cemetery_at_Praia_do_Barril%2C_Portugal_2019-11-07-2.jpg",
+        "author": "Alexey Komarov",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anchor_Cemetery_at_Praia_do_Barril,_Portugal_2019-11-07-2.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "ria-formosa",
+    "name": "Природный парк Риа-Формоза",
+    "type": "nature",
+    "region": "Алгарве",
+    "coords": { "lat": 37.0245, "lon": -7.8410 },
+    "description": "Лагунная система из островов, песчаных кос, соляных марей и проток вдоль побережья Алгарве — одно из лучших мест в Португалии для наблюдения за птицами (включая фламинго). Исследовать удобно на лодке, каяке или по деревянным настилам эко-троп. По пути из Тавиры через парк проходит и живописный маршрут к пляжу Баррил.",
+    "driveMinutesFromLisbon": 160,
+    "visitDurationHours": 3,
+    "bestSeason": "круглый год",
+    "tags": ["природа", "виды", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Ria_Formosa_R08.jpg/1280px-Ria_Formosa_R08.jpg",
+        "author": "Marc Ryckaert",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ria_Formosa_R08.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Ria_Formosa_R09.jpg/1280px-Ria_Formosa_R09.jpg",
+        "author": "Marc Ryckaert",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ria_Formosa_R09.jpg"
+      }
+    ],
+    "collections": []
+  }
+]
