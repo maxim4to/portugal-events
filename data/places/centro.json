@@ -480,5 +480,33 @@
       }
     ],
     "collections": []
+  },
+  {
+    "id": "praia-fluvial-do-agroal",
+    "name": "Речной пляж Агроал",
+    "type": "beach",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 39.6791, "lon": -8.4362 },
+    "description": "Спокойный речной пляж на реке Набан у Оурена, где вода бьёт прямо из известняковых источников и остаётся холодной (16–18 °C) даже летом. Тихое природное место с зеленью, деревянными настилами и лёгкой прогулочной тропой вдоль реки. Отличная передышка в жару по пути из Томара или Фатимы.",
+    "driveMinutesFromLisbon": 100,
+    "visitDurationHours": 3,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["купание", "природа", "с детьми"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Caudal_do_Nab%C3%A3o_ao_chegar_ao_Agroal.jpg/1280px-Caudal_do_Nab%C3%A3o_ao_chegar_ao_Agroal.jpg",
+        "author": "Threeohsix",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caudal_do_Nab%C3%A3o_ao_chegar_ao_Agroal.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Nascente_da_Praia_Fluvial_do_Agroal.jpg/1280px-Nascente_da_Praia_Fluvial_do_Agroal.jpg",
+        "author": "Threeohsix",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nascente_da_Praia_Fluvial_do_Agroal.jpg"
+      }
+    ],
+    "collections": []
   }
 ]
