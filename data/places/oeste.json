@@ -174,5 +174,33 @@
       }
     ],
     "collections": []
+  },
+  {
+    "id": "caldas-da-rainha",
+    "name": "Калдаш-да-Раинья",
+    "type": "town",
+    "region": "Оэште",
+    "coords": { "lat": 39.4074, "lon": -9.1350 },
+    "description": "Уютный город в регионе Оэште, основанный в XV веке королевой Леонор вокруг термального госпиталя и известный керамическими традициями и ежедневным фруктовым рынком. Главная жемчужина — парк Дон-Карлуш I с вековыми деревьями, озером и садами, идеальный для неспешной прогулки. Удобно совместить с поездкой в Обидуш и Нафарру.",
+    "driveMinutesFromLisbon": 85,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": ["история", "природа", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Parque_Dom_Carlos_I_-_Caldas_da_Rainha_-_Portugal_%287609073780%29.jpg/1280px-Parque_Dom_Carlos_I_-_Caldas_da_Rainha_-_Portugal_%287609073780%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parque_Dom_Carlos_I_-_Caldas_da_Rainha_-_Portugal_(7609073780).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Parque_Dom_Carlos%2C_Caldas_da_Rainha_%2852556357430%29.jpg/1280px-Parque_Dom_Carlos%2C_Caldas_da_Rainha_%2852556357430%29.jpg",
+        "author": "Jocelyn Erskine-Kellie",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parque_Dom_Carlos,_Caldas_da_Rainha_(52556357430).jpg"
+      }
+    ],
+    "collections": []
   }
 ]
