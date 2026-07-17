@@ -433,5 +433,49 @@
     "description": "Один из крупнейших и старейших средневековых фестивалей Португалии отмечает 30-летие у стен замка Санта-Мария-да-Фейра: бесплатное открытие 28 июля и две недели реконструкций.",
     "sourceId": "websearch",
     "dedupeHash": "viagem medieval em terra de santa maria|2026-07-29|santa maria da feira"
+  },
+  {
+    "id": "feira-medieval-avenidas-novas-2026",
+    "title": "Feira Medieval das Avenidas Novas",
+    "type": "market",
+    "dateStart": "2026-07-14",
+    "dateEnd": "2026-07-17",
+    "city": "Lisboa",
+    "venue": "Jardim do Arco do Cego, Avenidas Novas",
+    "price": "бесплатно",
+    "url": "https://www.viralagenda.com/pt/events/1663548/feira-medieval-avenidas-novas",
+    "image": "https://cdn.viralagenda.com/images/events/ext/1663548-6abfb5a8cbd0e8c3a0f545a6f642e40a-r.jpg",
+    "description": "Средневековая ярмарка прямо в центре Лиссабона, в саду Арку-ду-Сегу: ремесленники, торговцы, музыка и анимация для всех возрастов. Вход свободный.",
+    "sourceId": "websearch",
+    "dedupeHash": "feira medieval das avenidas novas|2026-07-14|lisboa"
+  },
+  {
+    "id": "feira-medieval-pacos-de-ferreira-2026",
+    "title": "Feira Medieval de Paços de Ferreira",
+    "type": "market",
+    "dateStart": "2026-07-16",
+    "dateEnd": "2026-07-19",
+    "city": "Paços de Ferreira",
+    "venue": "Parque Urbano de Paços de Ferreira",
+    "price": "",
+    "url": "https://www.cm-pacosdeferreira.pt/3799/feira-medieval-26",
+    "image": "https://api.cm-pacosdeferreira.pt.portal2.vf-portal.com/uploads/1/1/Atualidade/Eventos/2026/junho/Feira%20Medieval.png",
+    "description": "Городской парк на четыре дня превращается в средневековую деревню: рынок ремёсел, таверны, рыцарские турниры и вечерние шоу.",
+    "sourceId": "websearch",
+    "dedupeHash": "feira medieval de pacos de ferreira|2026-07-16|pacos de ferreira"
+  },
+  {
+    "id": "leiria-medieval-2026",
+    "title": "Leiria Medieval",
+    "type": "market",
+    "dateStart": "2026-07-17",
+    "dateEnd": "2026-07-19",
+    "city": "Leiria",
+    "venue": "Praça da República e centro histórico",
+    "price": "бесплатно",
+    "url": "https://www.visiteleiria.pt/en/eventos/events/leiria-medieval-fair/",
+    "description": "В третий уикенд июля исторический центр Лейрии у подножия замка возвращается в Средневековье: большая историческая реконструкция, ярмарка, музыка и уличный театр.",
+    "sourceId": "websearch",
+    "dedupeHash": "leiria medieval|2026-07-17|leiria"
   }
 ]

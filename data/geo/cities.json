@@ -38,5 +38,7 @@
   { "name": "Esposende", "lat": 41.5361, "lon": -8.7828 },
   { "name": "Peso da Régua", "lat": 41.1621, "lon": -7.7893 },
   { "name": "Montijo", "lat": 38.7061, "lon": -8.9747 },
-  { "name": "Santa Maria da Feira", "lat": 40.9256, "lon": -8.5486 }
+  { "name": "Santa Maria da Feira", "lat": 40.9256, "lon": -8.5486 },
+  { "name": "Paços de Ferreira", "lat": 41.2761, "lon": -8.3775 },
+  { "name": "Leiria", "lat": 39.7436, "lon": -8.8071 }
 ]
