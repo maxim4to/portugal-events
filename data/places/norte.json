@@ -261,5 +261,66 @@
     "links": [],
     "photos": [],
     "collections": []
+  },
+  {
+    "id": "se-do-porto",
+    "name": "Кафедральный собор Порту (Sé do Porto)",
+    "type": "castle",
+    "region": "Север",
+    "coords": { "lat": 41.1428, "lon": -8.6110 },
+    "description": "Массивный романский собор XII века на холме в историческом центре Порту, похожий на крепость. Внутри — готический клуатр с азулежу и барочная отделка, а с площади перед собором открывается один из лучших видов на черепичные крыши города и реку Дору. Вход на эспланаду свободный, в клуатр — по билету.",
+    "driveMinutesFromLisbon": 180,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": ["история", "виды", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Porto_April_2019-19a.jpg/1280px-Porto_April_2019-19a.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Porto_April_2019-19a.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "parque-da-penha",
+    "name": "Парк Пенья (Гимарайнш)",
+    "type": "nature",
+    "region": "Север",
+    "coords": { "lat": 41.4283, "lon": -8.2717 },
+    "description": "Лесной парк на вершине горы над Гимарайншем с гранитными валунами, тропами, гротами и панорамными видами на город. Подняться можно на канатной дороге или на машине; наверху есть святилище, кафе и тихие дорожки для прогулок. Особенно атмосферно в туман, когда деревья тонут в дымке.",
+    "driveMinutesFromLisbon": 210,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": ["природа", "виды", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Penha_vista_das_traseiras_dos_Pa%C3%A7os_dos_Duques.jpg",
+        "author": "a m",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Penha_vista_das_traseiras_dos_Pa%C3%A7os_dos_Duques.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "quinta-da-pegadinha-girassois",
+    "name": "Поля подсолнухов Кинта-да-Пегадинья (Афифе)",
+    "type": "other",
+    "region": "Север",
+    "coords": { "lat": 41.7900, "lon": -8.8680 },
+    "description": "Ферма у пляжа Прайя-да-Арда в Афифе (Виана-ду-Каштелу), где летом с любовью высаживают целые поля подсолнухов — красивое фотогеничное место для семейной прогулки. Вход свободный, без предварительной записи. Пожалуйста, не срывайте цветы и берегите пчёл, которые там работают.",
+    "driveMinutesFromLisbon": 215,
+    "visitDurationHours": 1,
+    "bestSeason": "июль–август",
+    "tags": ["фото", "с детьми", "бесплатно"],
+    "links": [
+      { "title": "Quinta da Pegadinha (Instagram)", "url": "https://www.instagram.com/quinta_da_pegadinha/" }
+    ],
+    "photos": [],
+    "collections": []
   }
 ]
