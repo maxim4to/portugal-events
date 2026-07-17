@@ -536,5 +536,27 @@
       }
     ],
     "collections": []
+  },
+  {
+    "id": "cortes-do-meio-piscinas-naturais",
+    "name": "Природные бассейны Кортеш-ду-Мейу",
+    "type": "nature",
+    "region": "Центр (Серра-да-Эштрела)",
+    "coords": { "lat": 40.3050, "lon": -7.5350 },
+    "description": "Деревня Кортеш-ду-Мейу на южном склоне Серра-да-Эштрела называют «столицей природных бассейнов»: горные ручьи образуют десятки заводей с холодной чистой водой, включая знаменитый Посу-да-Монтейра. Отличное место, чтобы освежиться среди гор в жару. Вода холодная даже летом, дно каменистое — удобная обувь не помешает.",
+    "driveMinutesFromLisbon": 180,
+    "visitDurationHours": 3,
+    "bestSeason": "июнь–сентябрь",
+    "tags": ["купание", "природа", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Po%C3%A7o_do_meio_quartilho.jpg/1280px-Po%C3%A7o_do_meio_quartilho.jpg",
+        "author": "TiagoCBarbosa",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Po%C3%A7o_do_meio_quartilho.jpg"
+      }
+    ],
+    "collections": []
   }
 ]

@@ -68,5 +68,127 @@
       }
     ],
     "collections": []
+  },
+  {
+    "id": "peneda-geres",
+    "name": "Национальный парк Пенеда-Жереш",
+    "type": "nature",
+    "region": "Север",
+    "coords": { "lat": 41.7333, "lon": -8.1333 },
+    "description": "Единственный национальный парк Португалии на границе с Галисией: горы, дубовые леса, водопады и бирюзовые заводи, старинные деревни, римские дороги и смотровые. Многие красивейшие водопады — в 10–30 минутах пешком от парковки, так что удобнее всего исследовать парк на машине. Расстояния на карте обманчивы — закладывайте время на горный серпантин.",
+    "driveMinutesFromLisbon": 210,
+    "visitDurationHours": 6,
+    "bestSeason": "май–октябрь",
+    "tags": ["природа", "виды", "купание"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Parque_Nacional_Peneda-G%C3%A9res%2C_Portugal.jpg/1280px-Parque_Nacional_Peneda-G%C3%A9res%2C_Portugal.jpg",
+        "author": "Harpagornis",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parque_Nacional_Peneda-G%C3%A9res,_Portugal.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "cascata-do-arado",
+    "name": "Водопад Араду",
+    "type": "nature",
+    "region": "Север",
+    "coords": { "lat": 41.7556, "lon": -8.1783 },
+    "description": "Один из самых знаменитых водопадов Жереша с каскадами и заводями среди гранитных скал. Со смотровой сверху открывается эффектный вид, а вниз к купелям ведёт короткая, но крутая тропа. Летом воды меньше — красивее всего весной и после дождей.",
+    "driveMinutesFromLisbon": 215,
+    "visitDurationHours": 1.5,
+    "bestSeason": "апрель–июль",
+    "tags": ["природа", "купание", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Cascata_do_Arado%2C_Ger%C3%AAs%2C_Portugal.jpg/1280px-Cascata_do_Arado%2C_Ger%C3%AAs%2C_Portugal.jpg",
+        "author": "Razevedo172010",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cascata_do_Arado,_Ger%C3%AAs,_Portugal.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "cascata-da-portela-do-homem",
+    "name": "Водопад Портела-ду-Омен",
+    "type": "nature",
+    "region": "Север",
+    "coords": { "lat": 41.8158, "lon": -8.1289 },
+    "description": "Живописный водопад с чистыми купелями у самой границы с Испанией, в лесу Мата-да-Албергария. Летом здесь приятно освежиться в холодной прозрачной воде. Рядом проходит старая римская дорога Geira с сохранившимися милевыми камнями.",
+    "driveMinutesFromLisbon": 220,
+    "visitDurationHours": 1.5,
+    "bestSeason": "май–сентябрь",
+    "tags": ["природа", "купание", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Cascata_da_Portela_do_Homem_%28Geres%29.jpg/1280px-Cascata_da_Portela_do_Homem_%28Geres%29.jpg",
+        "author": "Otto Domes",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cascata_da_Portela_do_Homem_(Geres).jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "lindoso",
+    "name": "Линдозу",
+    "type": "town",
+    "region": "Север",
+    "coords": { "lat": 41.8703, "lon": -8.1936 },
+    "description": "Историческая горная деревня в Пенеда-Жереше со средневековым замком и знаменитой группой из десятков каменных амбаров-эспигейруш на гранитных сваях — один из самых атмосферных видов севера Португалии. Рядом водохранилище и тропы. Отличная остановка при поездке по парку у границы с Испанией.",
+    "driveMinutesFromLisbon": 225,
+    "visitDurationHours": 2,
+    "bestSeason": "апрель–октябрь",
+    "tags": ["история", "виды", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Espigueiros_do_Lindoso_%281%29.jpg/1280px-Espigueiros_do_Lindoso_%281%29.jpg",
+        "author": "Krzysztof Golik",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Espigueiros_do_Lindoso_(1).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Espigueiros_do_Lindoso_%282%29.jpg/1280px-Espigueiros_do_Lindoso_%282%29.jpg",
+        "author": "Krzysztof Golik",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Espigueiros_do_Lindoso_(2).jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "ponte-da-misarela",
+    "name": "Мост Мизарела",
+    "type": "other",
+    "region": "Север",
+    "coords": { "lat": 41.6717, "lon": -8.0242 },
+    "description": "Стройный средневековый каменный мост через ущелье реки Рабаган, окутанный легендами (его зовут «чёртовым мостом»). Драматичное место среди скал и зелени на краю Жереша, популярное у фотографов; летом в заводях под мостом купаются. К мосту ведёт короткая тропа под уклон.",
+    "driveMinutesFromLisbon": 205,
+    "visitDurationHours": 1,
+    "bestSeason": "апрель–октябрь",
+    "tags": ["история", "природа", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Ponte_da_Misarela_%289%29.jpg/1280px-Ponte_da_Misarela_%289%29.jpg",
+        "author": "Joseolgon",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ponte_da_Misarela_(9).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Ponte_da_Misarela_%2818%29.jpg/1280px-Ponte_da_Misarela_%2818%29.jpg",
+        "author": "Joseolgon",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ponte_da_Misarela_(18).jpg"
+      }
+    ],
+    "collections": []
   }
 ]
