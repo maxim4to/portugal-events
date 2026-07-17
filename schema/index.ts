@@ -20,8 +20,19 @@ export const PLACE_TYPES = [
   'other',
 ] as const;
 
+// A photo either lives on a remote host (Wikimedia and friends) or is a file
+// committed under public/place-photos/ and referenced as "place-photos/<file>"
+// (resolved to a base-prefixed URL in site/lib/data.ts at build time). Local
+// files are the fallback for places with no free-licensed photo online.
+const photoUrl = z
+  .string()
+  .refine(
+    (v) => /^https?:\/\//.test(v) || /^place-photos\/[\w.-]+$/.test(v),
+    'url must be an http(s) URL or a "place-photos/<file>" local path',
+  );
+
 export const PhotoSchema = z.object({
-  url: z.string().url(),
+  url: photoUrl,
   author: z.string().min(1),
   license: z.string().min(1),
   sourceUrl: z.string().url(),

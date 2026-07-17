@@ -659,7 +659,14 @@
         "url": "https://www.penaaventura.com.pt/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/pena-aventura-park.jpg",
+        "author": "penaaventura.com.pt",
+        "license": "© Pena Aventura Park",
+        "sourceUrl": "https://www.penaaventura.com.pt/"
+      }
+    ],
     "collections": []
   },
   {
@@ -686,7 +693,14 @@
         "url": "https://www.instagram.com/railbikemarvao/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/rail-bike-marvao.jpg",
+        "author": "railbikemarvao.com",
+        "license": "© Rail Bike Marvão",
+        "sourceUrl": "https://www.railbikemarvao.com/"
+      }
+    ],
     "collections": []
   },
   {
@@ -713,7 +727,14 @@
         "url": "https://horizonkheopsexperience.com/lisboa/en/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/horizon-of-khufu-lisboa.webp",
+        "author": "horizonkheopsexperience.com",
+        "license": "© Horizon of Khufu",
+        "sourceUrl": "https://horizonkheopsexperience.com/lisboa/en/"
+      }
+    ],
     "collections": []
   },
   {
@@ -738,7 +759,14 @@
         "url": "https://www.instagram.com/speedkart_indoorfafe/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/speedkart-indoor-fafe.jpg",
+        "author": "Speedkart Indoor Fafe / Visit Portugal",
+        "license": "© Speedkart Indoor Fafe",
+        "sourceUrl": "https://www.visitportugal.com/en/node/425191"
+      }
+    ],
     "collections": []
   },
   {
@@ -763,7 +791,14 @@
         "url": "http://kiro-karting.com/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kiro-kartodromo-oeste-bombarral.jpg",
+        "author": "KIRO Kartódromo Internacional do Oeste",
+        "license": "© kiro-karting.com",
+        "sourceUrl": "http://kiro-karting.com/"
+      }
+    ],
     "collections": []
   },
   {
@@ -783,7 +818,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/indoor-karting-caldas-da-rainha.png",
+        "author": "GoCaldas (Indoor Karting Caldas da Rainha)",
+        "license": "© GoCaldas / IKCR",
+        "sourceUrl": "https://gocaldas.com/indoor-karting-caldas-da-rainha/"
+      }
+    ],
     "collections": []
   },
   {
@@ -803,7 +845,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/algarve-indoor-kart-center-olhao.jpg",
+        "author": "Algarve Indoor Kart Center",
+        "license": "© Algarve Indoor Kart Center",
+        "sourceUrl": "https://www.livetheworld.com/activities/portugal/algarve-indoor-kart-center"
+      }
+    ],
     "collections": []
   },
   {
@@ -823,7 +872,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kartodromo-abrantes.jpg",
+        "author": "Kartódromo de Abrantes",
+        "license": "© kartodromo-abrantes.com",
+        "sourceUrl": "https://kartodromo-abrantes.com/"
+      }
+    ],
     "collections": []
   },
   {
@@ -843,7 +899,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kartodromo-alcanede.jpg",
+        "author": "Kartódromo de Alcanede",
+        "license": "© kartalcanede.com",
+        "sourceUrl": "https://www.kartalcanede.com/instalacoes"
+      }
+    ],
     "collections": []
   },
   {
@@ -863,7 +926,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kartodromo-almancil.jpg",
+        "author": "Karting de Almancil (kartingalgarve.com)",
+        "license": "© kartingalgarve.com",
+        "sourceUrl": "https://www.kartingalgarve.com/"
+      }
+    ],
     "collections": []
   },
   {
@@ -883,7 +953,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kartodromo-almeirim.jpg",
+        "author": "Kartódromo de Almeirim",
+        "license": "© Kartódromo de Almeirim",
+        "sourceUrl": "https://kalmeirim.com/"
+      }
+    ],
     "collections": []
   },
   {
@@ -903,7 +980,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kartodromo-batalha.jpg",
+        "author": "Euroindy — Kartódromo da Batalha",
+        "license": "© Euroindy / Kartódromo da Batalha",
+        "sourceUrl": "https://www.euroindy.com/"
+      }
+    ],
     "collections": []
   },
   {
@@ -923,7 +1007,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kartodromo-braganca.webp",
+        "author": "Open Racer",
+        "license": "© Open Racer",
+        "sourceUrl": "https://open-racer.com/cities/braganca-portugal"
+      }
+    ],
     "collections": []
   },
   {
@@ -943,7 +1034,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kartodromo-cabo-do-mundo.jpg",
+        "author": "Kartódromo Cabo do Mundo",
+        "license": "© Kartódromo Cabo do Mundo",
+        "sourceUrl": "https://cabodomundokarting.pt/"
+      }
+    ],
     "collections": []
   },
   {
@@ -963,7 +1061,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kartodromo-chaves.jpg",
+        "author": "Kartódromo de Chaves",
+        "license": "© Kartódromo de Chaves",
+        "sourceUrl": "https://kartodromodechaves.net/webkarts/"
+      }
+    ],
     "collections": []
   },
   {
@@ -983,7 +1088,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kartodromo-covilha.jpg",
+        "author": "Um Torto de Blog (Tortosendo)",
+        "license": "© Um Torto de Blog",
+        "sourceUrl": "http://www-tortosendo.blogspot.com/2009/07/kartodromo-do-tortosendo_18.html"
+      }
+    ],
     "collections": []
   },
   {
@@ -1003,7 +1115,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kartodromo-evora.webp",
+        "author": "Kartódromo de Évora",
+        "license": "© Kartódromo de Évora",
+        "sourceUrl": "https://www.kartodromoevora.com/"
+      }
+    ],
     "collections": []
   },
   {
@@ -1023,7 +1142,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kartodromo-fatima.webp",
+        "author": "Funpark — Kartódromo de Fátima",
+        "license": "© Funpark",
+        "sourceUrl": "https://funpark.pt/en/home-2/"
+      }
+    ],
     "collections": []
   },
   {
@@ -1043,7 +1169,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/dinokart-lourinha.jpg",
+        "author": "Dinokart — Kartódromo da Lourinhã",
+        "license": "© Dinokart",
+        "sourceUrl": "https://dinokart.pt/en/"
+      }
+    ],
     "collections": []
   },
   {
@@ -1063,7 +1196,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kartodromo-montijo.jpg",
+        "author": "Kartódromo do Montijo",
+        "license": "© Kartódromo do Montijo",
+        "sourceUrl": "https://www.facebook.com/Kartodromodomontijo/"
+      }
+    ],
     "collections": []
   },
   {
@@ -1083,7 +1223,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kartodromo-odivelas.png",
+        "author": "Outdoor Karting Lisboa",
+        "license": "© Outdoor Karting Lisboa",
+        "sourceUrl": "https://www.oklisboa.com/"
+      }
+    ],
     "collections": []
   },
   {
@@ -1123,7 +1270,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kartodromo-poiares.jpg",
+        "author": "Karting de Poiares (FMKART76)",
+        "license": "© Karting de Poiares",
+        "sourceUrl": "https://www.fmmotos76.com/"
+      }
+    ],
     "collections": []
   },
   {
@@ -1143,7 +1297,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kartodromo-pombal.jpg",
+        "author": "All About Portugal / InfoPortugal",
+        "license": "© InfoPortugal",
+        "sourceUrl": "https://www.allaboutportugal.pt/en/pombal/sports/kartodromo-de-carnide"
+      }
+    ],
     "collections": []
   },
   {
@@ -1163,7 +1324,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kartodromo-portalegre.webp",
+        "author": "Kart-Map",
+        "license": "© Kart-Map",
+        "sourceUrl": "https://www.kart-map.com/en/circuits/kartodromo-de-portalegre"
+      }
+    ],
     "collections": []
   },
   {
@@ -1183,7 +1351,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Aut%C3%B3dromo_Internacional_do_Algarve_-_Portim%C3%A3o_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_%2853656876708%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aut%C3%B3dromo_Internacional_do_Algarve_-_Portim%C3%A3o_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_(53656876708).jpg"
+      }
+    ],
     "collections": []
   },
   {
@@ -1203,7 +1378,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kartodromo-santo-andre.jpg",
+        "author": "inventrip / SAKI",
+        "license": "© SAKI",
+        "sourceUrl": "https://inventrip.com/santiagodocacem/object/43432/en"
+      }
+    ],
     "collections": []
   },
   {
@@ -1223,7 +1405,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kartodromo-serra-da-estrela.jpg",
+        "author": "Kartódromo Serra da Estrela (KSE)",
+        "license": "© kse.pt",
+        "sourceUrl": "https://kse.pt/inicio/"
+      }
+    ],
     "collections": []
   },
   {
@@ -1243,7 +1432,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kartodromo-viana-do-castelo.jpg",
+        "author": "Kivikart / portugalplease.com",
+        "license": "© Kivikart",
+        "sourceUrl": "https://www.portugalplease.com/viana-do-castelo/viana-do-castelo/atividades/karting/kivikart-kartodromo-interpistas-de-viana"
+      }
+    ],
     "collections": []
   },
   {
@@ -1263,7 +1459,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kartodromo-vila-real.webp",
+        "author": "Kart-Map",
+        "license": "© Kart-Map",
+        "sourceUrl": "https://www.kart-map.com/en/circuits/kartodromo-vila-real"
+      }
+    ],
     "collections": []
   },
   {
@@ -1303,7 +1506,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/indoor-karting-espinho.jpg",
+        "author": "Visit Porto (Porto Digital)",
+        "license": "© Visit Porto",
+        "sourceUrl": "https://visitporto.travel/pt-PT/poi/5cd04b54f979e000012c9a1e"
+      }
+    ],
     "collections": []
   },
   {
@@ -1323,7 +1533,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/maia-indoor-karting.jpg",
+        "author": "Câmara Municipal da Maia",
+        "license": "© CM Maia",
+        "sourceUrl": "https://www.cm-maia.pt/institucional/noticias/noticia/karts-no-aerodromo-municipal-da-maia"
+      }
+    ],
     "collections": []
   },
   {
@@ -1343,7 +1560,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kart-center-matosinhos.jpg",
+        "author": "Kart Center de Matosinhos",
+        "license": "© Kart Center de Matosinhos",
+        "sourceUrl": "https://www.kartcentermatosinhos.com/pista-e-comodidades/"
+      }
+    ],
     "collections": []
   },
   {
@@ -1363,7 +1587,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/bowlikart-ovar.webp",
+        "author": "Bowlikart",
+        "license": "© Bowlikart",
+        "sourceUrl": "https://bowlikart.com/"
+      }
+    ],
     "collections": []
   },
   {
@@ -1383,7 +1614,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/campera-karting-carregado.jpg",
+        "author": "Lifecooler",
+        "license": "© Lifecooler",
+        "sourceUrl": "https://lifecooler.com/artigo/comer/campera-karting/393157"
+      }
+    ],
     "collections": []
   },
   {
@@ -1403,7 +1641,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kivi-kartodromo-viana.jpg",
+        "author": "KIVI / Portugal Please",
+        "license": "© KIVI Kart",
+        "sourceUrl": "https://www.portugalplease.com/viana-do-castelo/viana-do-castelo/atividades/karting/kivikart-kartodromo-interpistas-de-viana"
+      }
+    ],
     "collections": []
   },
   {
@@ -1423,7 +1668,14 @@
       "с детьми"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kartodromo-vn-paiva.jpg",
+        "author": "Kartódromo Vila Nova de Paiva",
+        "license": "© Kartódromo VN Paiva",
+        "sourceUrl": "https://kartodromovnpaiva.com/o-kartodromo/"
+      }
+    ],
     "collections": []
   },
   {
@@ -1448,7 +1700,14 @@
         "url": "http://www.kib.pt/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/kartodromo-braga.webp",
+        "author": "Kart-Map",
+        "license": "© Kart-Map",
+        "sourceUrl": "https://www.kart-map.com/en/circuits/kartodromo-internacional-de-braga"
+      }
+    ],
     "collections": []
   }
 ]

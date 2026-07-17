@@ -12,8 +12,17 @@ const placeFiles = import.meta.glob('../../data/places/*.json', {
   eager: true,
   import: 'default',
 });
+// Local photos are stored as "place-photos/<file>" and live in public/; resolve
+// them to a base-prefixed URL so <img src> works both in dev and on GitHub Pages.
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const resolvePhotos = (p: Place): Place => ({
+  ...p,
+  photos: p.photos.map((ph) =>
+    /^https?:\/\//.test(ph.url) ? ph : { ...ph, url: `${base}/${ph.url}` },
+  ),
+});
 export const allPlaces: Place[] = Object.values(placeFiles).flatMap((v) =>
-  z.array(PlaceSchema).parse(v),
+  z.array(PlaceSchema).parse(v).map(resolvePhotos),
 );
 
 const eventFiles = import.meta.glob('../../data/events/*.json', {
