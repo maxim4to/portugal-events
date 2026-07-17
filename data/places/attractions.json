@@ -458,5 +458,39 @@
     ],
     "photos": [],
     "collections": []
+  },
+  {
+    "id": "horizon-of-khufu-lisboa",
+    "name": "Horizon of Khufu (VR-экспедиция)",
+    "type": "other",
+    "region": "Лиссабон и Синтра",
+    "coords": { "lat": 38.7196, "lon": -9.1560 },
+    "description": "Иммерсивная VR-экспедиция по Великой пирамиде Хеопса и плато Гиза: в шлеме виртуальной реальности вы свободно перемещаетесь по коридорам и скрытым камерам, реконструированным по данным египтологов. Проходит в Immersivus Gallery в историческом резервуаре Мãе-д'Агуа-даш-Аморейраш в Лиссабоне. Билеты по времени сеансов — бронируйте заранее.",
+    "driveMinutesFromLisbon": 10,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": ["с детьми", "история", "фото"],
+    "links": [
+      { "title": "Horizon of Khufu Lisboa", "url": "https://horizonkheopsexperience.com/lisboa/en/" }
+    ],
+    "photos": [],
+    "collections": []
+  },
+  {
+    "id": "speedkart-indoor-fafe",
+    "name": "Speedkart Indoor (Фафе)",
+    "type": "karting",
+    "region": "Север",
+    "coords": { "lat": 41.4497, "lon": -8.1723 },
+    "description": "Крытый картинг-центр в Фафе (Зона Индустриал ду Сокорру) — в 30 минутах от Браги и часе от Порту, отличный вариант для активного дня в любую погоду. Заезды от 8,95 € за 10 минут, дольше — с напитком в подарок. Подходит для компаний и семейных праздников.",
+    "driveMinutesFromLisbon": 200,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": ["с детьми"],
+    "links": [
+      { "title": "Speedkart Indoor Fafe (Instagram)", "url": "https://www.instagram.com/speedkart_indoorfafe/" }
+    ],
+    "photos": [],
+    "collections": []
   }
 ]

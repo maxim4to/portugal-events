@@ -42,6 +42,12 @@ short context, any practical tips).
   search for the same content, or ask the user to paste the text.
 - Decide **places vs events**: a physical spot to visit → place; a dated
   happening (concert, festival, market, exhibition) → event.
+- **Commercial / immersive / indoor attractions still count as places** — VR
+  experiences, indoor karting, adventure parks, aquariums, trampoline parks,
+  etc. Add them as `Place` entries (usually `type: other` or `karting`), even if
+  they're paid, branded, or feel "touristy". Do NOT skip them as
+  "temporary/commercial". Only skip a *dated, time-limited* run (a pop-up with a
+  start/end date) — that's an event, not a place.
 
 ### 2. Dedupe against the catalog
 
