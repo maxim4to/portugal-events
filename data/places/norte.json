@@ -190,5 +190,33 @@
       }
     ],
     "collections": []
+  },
+  {
+    "id": "aldeia-do-drave",
+    "name": "Алдейя-ду-Драве",
+    "type": "town",
+    "region": "Север",
+    "coords": { "lat": 40.8728, "lon": -8.2119 },
+    "description": "Затерянная в горах Серра-да-Фрейта каменная деревушка в Ароуке, которую называют «волшебной»: без автомобильного доступа, без магазинов и суеты, только каменные дома, зелёные склоны и тишина. Дойти можно пешком по тропе (около часа) — рядом речной пляж Рибейра-душ-Пальяйш, где приятно освежиться. Возьмите воду и удобную обувь: инфраструктуры почти нет.",
+    "driveMinutesFromLisbon": 200,
+    "visitDurationHours": 4,
+    "bestSeason": "май–октябрь",
+    "tags": ["природа", "виды", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/72795-Aldeia_de_DRAVE_-_AROUCA_%285%29.jpg/1280px-72795-Aldeia_de_DRAVE_-_AROUCA_%285%29.jpg",
+        "author": "Carlos Alberto Correida de Pinho",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:72795-Aldeia_de_DRAVE_-_AROUCA_(5).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/72795-Aldeia_de_DRAVE_-_AROUCA_%286%29.jpg/1280px-72795-Aldeia_de_DRAVE_-_AROUCA_%286%29.jpg",
+        "author": "Carlos Alberto Correida de Pinho",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:72795-Aldeia_de_DRAVE_-_AROUCA_(6).jpg"
+      }
+    ],
+    "collections": []
   }
 ]
