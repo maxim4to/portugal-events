@@ -558,5 +558,33 @@
       }
     ],
     "collections": []
+  },
+  {
+    "id": "foz-d-egua",
+    "name": "Фож-д'Эгуа",
+    "type": "town",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": { "lat": 40.2213, "lon": -7.8267 },
+    "description": "Крошечная сланцевая деревушка в горах Серра-ду-Асор рядом с Пиоданом, где два подвесных мостика перекинуты через прозрачную речку — место словно из сказки. Есть речной пляж с холодной чистой водой, приятный для купания в жару. Удобно совместить в один маршрут с Пиоданом и Таласналом.",
+    "driveMinutesFromLisbon": 170,
+    "visitDurationHours": 2,
+    "bestSeason": "май–сентябрь",
+    "tags": ["природа", "купание", "фото"],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Praia_Fluvial_de_Foz_d%27%C3%89gua_-_Portugal_%2820909901279%29.jpg/1280px-Praia_Fluvial_de_Foz_d%27%C3%89gua_-_Portugal_%2820909901279%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_Fluvial_de_Foz_d%27%C3%89gua_-_Portugal_(20909901279).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Praia_Fluvial_de_Foz_d%27%C3%89gua_-_Portugal_%2821493098164%29.jpg/1280px-Praia_Fluvial_de_Foz_d%27%C3%89gua_-_Portugal_%2821493098164%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_Fluvial_de_Foz_d%27%C3%89gua_-_Portugal_(21493098164).jpg"
+      }
+    ],
+    "collections": []
   }
 ]
