@@ -132,9 +132,11 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
       pts.push(latlng);
       const marker = L.marker(latlng, { icon: pinIcon, title: p.name })
         .bindPopup(popupHtml(p), {
+          // Fixed width — CSS pins .leaflet-popup-content to 240px; keep
+          // Leaflet's own bounds in sync so its autopan/layout math matches.
           className: 'map-pop-popup',
-          maxWidth: 260,
-          minWidth: 220,
+          maxWidth: 240,
+          minWidth: 240,
           offset: [0, 4],
         })
         .addTo(markerLayer);

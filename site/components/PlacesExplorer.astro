@@ -30,7 +30,7 @@ const points = places.map((p) => ({
   meta: `${p.region} · ${p.driveMinutesFromLisbon} мин от Лиссабона`,
 }));
 ---
-<MapShell kind="places" detailPrefix="/places/" hrefBase={hrefBase} mapId="places-map" points={points}>
+<MapShell kind="places" detailPrefix="/places/" hrefBase={hrefBase} mapId="places-map" points={points} awaitUser>
   <FilterBar slot="filters" regions={regions} tags={tags} />
 
   <div class="grid-cards" slot="list">
@@ -109,6 +109,7 @@ const points = places.map((p) => ({
 
 <script>
   import { initMapExplorer } from '../lib/mapExplorer.ts';
+  import { awaitUserData } from '../lib/catalogReady.ts';
   import { initFilterGroups, setGroupCount } from '../lib/filterGroups.ts';
   import {
     matchesFilter,
@@ -119,6 +120,10 @@ const points = places.map((p) => ({
 
   const root = document.querySelector<HTMLElement>('[data-explorer]');
   if (root) {
+    // Hold the list hidden until the profile + saved sets load, so it paints
+    // once already ordered instead of reflowing when visited places sink.
+    awaitUserData(root);
+
     const typeChips = Array.from(root.querySelectorAll<HTMLButtonElement>('.chip[data-type]'));
     const regionChips = Array.from(root.querySelectorAll<HTMLButtonElement>('.chip[data-region]'));
     const tagChips = Array.from(root.querySelectorAll<HTMLButtonElement>('.chip[data-tag]'));

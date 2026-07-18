@@ -7,8 +7,11 @@ interface Props {
   hrefBase: string;
   mapId: string;
   points: MapPoint[];
+  /** Hold the catalog hidden until the signed-in profile + its saved sets load,
+      so the list paints once (already ordered) instead of reflowing. */
+  awaitUser?: boolean;
 }
-const { kind, detailPrefix, hrefBase, mapId, points } = Astro.props;
+const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro.props;
 ---
 <section
   class="explorer-root"
@@ -16,15 +19,12 @@ const { kind, detailPrefix, hrefBase, mapId, points } = Astro.props;
   data-kind={kind}
   data-detail-prefix={detailPrefix}
   data-href-base={hrefBase}
+  data-user-loading={awaitUser ? '' : undefined}
 >
   <div class="filter-bar-top">
     <slot name="filters" />
     <div class="toolbar">
       <slot name="toolbar" />
-      <div class="view-toggle" role="group" aria-label="Вид">
-        <button type="button" class="btn view-btn" data-view="list" aria-pressed="true">Список</button>
-        <button type="button" class="btn view-btn" data-view="map" aria-pressed="false">Карта</button>
-      </div>
     </div>
   </div>
 
@@ -45,15 +45,79 @@ const { kind, detailPrefix, hrefBase, mapId, points } = Astro.props;
     </div>
   </div>
 
+  {/* Placed at the end of the flow (not up in the toolbar) so that if a frame
+      ever paints before the stylesheet pins it to `position: fixed`, it appears
+      at the bottom of the list — off-screen — instead of flashing at the top. */}
+  <div class="view-toggle" role="group" aria-label="Вид">
+    <button type="button" class="btn view-btn" data-view="list" aria-pressed="true">Список</button>
+    <button type="button" class="btn view-btn" data-view="map" aria-pressed="false">Карта</button>
+  </div>
+
   <script type="application/json" data-points set:html={JSON.stringify(points)}></script>
+
+  {awaitUser && (
+    <div class="catalog-loader" aria-hidden="true">
+      <span class="catalog-spinner"></span>
+    </div>
+  )}
 </section>
 
 <style>
   .explorer-root {
+    position: relative;
     display: flex;
     flex-direction: column;
     flex: 1;
     min-height: 0;
+  }
+
+  /* While waiting for the signed-in profile + saved sets, fade the content and
+     show a centered spinner. Content stays laid out (opacity, not display:none)
+     so the map still measures its pane. Revealed by removing the attribute
+     (see lib/catalogReady.ts). */
+  .explorer-root[data-user-loading] .filter-bar-top,
+  .explorer-root[data-user-loading] .map-explorer,
+  .explorer-root[data-user-loading] .view-toggle {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .filter-bar-top,
+  .map-explorer,
+  .view-toggle {
+    transition: opacity 0.2s ease;
+  }
+  .catalog-loader {
+    display: none;
+  }
+  /* Fixed (not absolute): on mobile the explorer root is the full, page-tall
+     scroll region, so an absolute overlay would center the spinner thousands of
+     px down. Fixed keeps it in the middle of the viewport. */
+  .explorer-root[data-user-loading] .catalog-loader {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+  .catalog-spinner {
+    width: 28px;
+    height: 28px;
+    border: 2.5px solid var(--border-strong);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: catalog-spin 0.7s linear infinite;
+  }
+  @keyframes catalog-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .catalog-spinner {
+      animation-duration: 1.4s;
+    }
   }
 
   /* Compact full-width filter bar above the two panes. Sits above the card
@@ -196,9 +260,13 @@ const { kind, detailPrefix, hrefBase, mapId, points } = Astro.props;
     border-radius: var(--radius-lg);
     box-shadow: 0 14px 36px rgba(33, 29, 23, 0.28);
   }
+  /* Fixed width so every card is identical. Leaflet otherwise sets its own
+     content width from the text's measured (nowrap) width; forcing `auto` here
+     broke that, letting the popup shrink to a short title or stretch to a long
+     line — hence the "floating" width. `!important` beats Leaflet's inline width. */
   :global(.map-pop-popup .leaflet-popup-content) {
     margin: 0;
-    width: auto !important;
+    width: 240px !important;
     font-size: inherit;
   }
   /* Close button legible over the cover image. */
