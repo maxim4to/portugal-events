@@ -32,6 +32,9 @@
   /* Danger (favorite heart) */
   --danger: #c8443a;
 
+  /* Visited (eye-with-check toggle + map pins) — a clear "seen" green */
+  --visited: #2f8f5f;
+
   /* Place-type cover tints (soft bg + darker same-hue on-tint text) */
   --type-beach: #dcebf6;        /* soft blue */
   --type-beach-text: #1f5a86;
@@ -104,6 +107,7 @@
   --editorial-text: #f0b394;
 
   --danger: #f09595;
+  --visited: #74c99a;
 
   /* Muted deep versions of the same hues with a light same-hue text color */
   --type-beach: #1c3247;
@@ -158,6 +162,7 @@
     --editorial-text: #f0b394;
 
     --danger: #f09595;
+    --visited: #74c99a;
 
     --type-beach: #1c3247;
     --type-beach-text: #a9cbe8;

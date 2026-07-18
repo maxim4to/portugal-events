@@ -21,6 +21,10 @@ export interface MapExplorerOptions {
 const PIN_HTML =
   '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 7 11.6 7.3 11.9a1 1 0 0 0 1.4 0C13 21.6 20 15.4 20 10c0-4.4-3.6-8-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>';
 
+// Favorite places drop as a heart (its bottom tip is the anchor, like a pin).
+const HEART_HTML =
+  '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 21S3 14.6 3 8.9C3 5.8 5.3 3.6 8.1 3.6c1.8 0 3.2 1 3.9 2.1.7-1.1 2.1-2.1 3.9-2.1 2.8 0 5.1 2.2 5.1 5.3C21 14.6 12 21 12 21Z"/></svg>';
+
 /**
  * Wires the two-pane (list + map) explorer: marker/list synchronisation,
  * "search as I move the map" viewport filtering, and the in-place detail
@@ -51,6 +55,31 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     iconAnchor: [12, 22],
     popupAnchor: [0, -20],
   });
+  // Visited places: same pin, dimmed (styled via .place-pin--visited).
+  const pinVisitedIcon = L.divIcon({
+    className: 'place-pin place-pin--visited',
+    html: PIN_HTML,
+    iconSize: [24, 24],
+    iconAnchor: [12, 22],
+    popupAnchor: [0, -20],
+  });
+  // Favorites: a heart instead of the teardrop pin.
+  const pinFavoriteIcon = L.divIcon({
+    className: 'place-pin place-pin--favorite',
+    html: HEART_HTML,
+    iconSize: [24, 24],
+    iconAnchor: [12, 22],
+    popupAnchor: [0, -20],
+  });
+
+  // Favorite wins over visited (a saved place stays a heart); both fall back to
+  // the plain pin. Reads the live state the controllers reflect onto the card.
+  const iconFor = (el: HTMLElement) =>
+    el.dataset.favorite === 'true'
+      ? pinFavoriteIcon
+      : el.dataset.visited === 'true'
+        ? pinVisitedIcon
+        : pinIcon;
 
   let map: L.Map | null = null;
   let markerLayer: L.LayerGroup | null = null;
@@ -130,7 +159,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
       if (!p) continue;
       const latlng: L.LatLngExpression = [p.lat, p.lon];
       pts.push(latlng);
-      const marker = L.marker(latlng, { icon: pinIcon, title: p.name })
+      const marker = L.marker(latlng, { icon: iconFor(el), title: p.name })
         .bindPopup(popupHtml(p), {
           // Fixed width — CSS pins .leaflet-popup-content to 240px; keep
           // Leaflet's own bounds in sync so its autopan/layout math matches.
@@ -181,6 +210,14 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     updateListVisibility();
   }
 
+  // Swap each existing marker's icon to match the card's current visited/favorite
+  // state, without rebuilding/refitting the whole layer (used on toggle events).
+  function restyleMarkers() {
+    for (const el of cards) {
+      markerById.get(el.dataset.id!)?.setIcon(iconFor(el));
+    }
+  }
+
   // ---- Card ↔ marker hover sync -------------------------------------------
 
   for (const el of cards) {
@@ -213,7 +250,12 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     b.addEventListener('click', () => setView(b.dataset.view as 'list' | 'map')),
   );
 
-  document.addEventListener('visited:changed', updateListVisibility);
+  document.addEventListener('visited:changed', () => {
+    updateListVisibility();
+    restyleMarkers();
+  });
+  // Favorites don't hide/show cards, but they do change a pin into a heart.
+  document.addEventListener('favorites:changed', restyleMarkers);
 
   // On resize just let Leaflet re-measure and re-run viewport filtering.
   window.addEventListener('resize', () => {

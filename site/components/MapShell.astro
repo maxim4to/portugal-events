@@ -232,6 +232,26 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro
     transform: scale(1.5);
   }
 
+  /* Visited places: a dimmer pin so they recede behind unseen ones. Full
+     opacity again while highlighted (hovered/selected). */
+  :global(.place-pin--visited) {
+    opacity: 0.4;
+  }
+  :global(.place-pin--visited.pin-active) {
+    opacity: 1;
+  }
+
+  /* Favorites: a heart, always in the danger red (the pin-active red then just
+     scales it). Highlighted state scales a touch more with a stronger shadow so
+     a selected favorite stands out on the map. */
+  :global(.place-pin--favorite) {
+    color: var(--danger);
+  }
+  :global(.place-pin--favorite.pin-active svg) {
+    transform: scale(1.5);
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.45));
+  }
+
   /* Leaflet legibility with design tokens (esp. dark mode). */
   :global(.leaflet-container) {
     background: var(--surface-1);
