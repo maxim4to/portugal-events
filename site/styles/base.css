@@ -505,3 +505,10 @@ img {
     transform: translate(-50%, 0);
   }
 }
+/* On phones, sit above the floating list/map toggle (bottom-centered too) so
+   the two never overlap. */
+@media (max-width: 760px) {
+  .app-toast {
+    bottom: calc(max(var(--space-4), env(safe-area-inset-bottom)) + 64px);
+  }
+}

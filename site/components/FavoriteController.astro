@@ -118,6 +118,11 @@
         // Optimistic reflect; save() confirms or rolls back on failure.
         paint(btn, next);
         void save(id, next);
+        // Small confirmation toast on phones, where the tiny card icon gives
+        // little feedback. A save failure replaces it with its own message.
+        if (window.matchMedia('(max-width: 760px)').matches) {
+          showToast(next ? 'Добавлено в избранное' : 'Убрано из избранного', 2200);
+        }
       });
     });
   }

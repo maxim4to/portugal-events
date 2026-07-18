@@ -97,6 +97,17 @@ const { placeId, variant = 'detail' } = Astro.props;
     color: var(--danger);
     border-color: var(--danger);
   }
+  /* Bigger tap target on phones — 32px is fiddly under a finger. */
+  @media (max-width: 760px) {
+    .favorite-btn--card {
+      width: 44px;
+      height: 44px;
+    }
+    .favorite-btn--card .favorite-icon {
+      width: 22px;
+      height: 22px;
+    }
+  }
   @media (prefers-reduced-motion: reduce) {
     .favorite-btn {
       transition: none;

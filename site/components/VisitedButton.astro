@@ -92,6 +92,17 @@ const { placeId, variant = 'detail' } = Astro.props;
     color: var(--type-lake-text);
     border-color: var(--type-lake-text);
   }
+  /* Bigger tap target on phones — 32px is fiddly under a finger. */
+  @media (max-width: 760px) {
+    .visited-btn--card {
+      width: 44px;
+      height: 44px;
+    }
+    .visited-btn--card .visited-icon {
+      width: 22px;
+      height: 22px;
+    }
+  }
   @media (prefers-reduced-motion: reduce) {
     .visited-btn {
       transition: none;
