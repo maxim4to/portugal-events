@@ -9,11 +9,13 @@ const links = [
 ];
 
 // Astro.url.pathname includes the base (e.g. /portugal-events/places/).
-// Normalise both sides (strip trailing slash, treat empty as '/') and match by suffix.
+// Normalise both sides (strip trailing slash, treat empty as '/') and match by
+// section: a tab stays active on its detail pages too (e.g. /places/evora
+// keeps "Места" highlighted), so match the target or any sub-path under it.
 const current = Astro.url.pathname.replace(/\/$/, '') || '/';
 const isActive = (p: string) => {
   const target = href(p).replace(/\/$/, '') || '/';
-  return current === target;
+  return current === target || (target !== '/' && current.startsWith(target + '/'));
 };
 ---
 <header class="site-header">

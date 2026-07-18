@@ -194,6 +194,8 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
 
   function setView(view: 'list' | 'map') {
     root.classList.toggle('show-map', view === 'map');
+    root.classList.remove('hide-filter-bar');
+    lastScrollY = window.scrollY;
     root.querySelectorAll<HTMLButtonElement>('[data-view]').forEach((b) => {
       b.setAttribute('aria-pressed', String(b.dataset.view === view));
     });
@@ -211,13 +213,38 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
 
   document.addEventListener('visited:changed', updateListVisibility);
 
-  // The explorer fills its flex parent (see Base `.main.wide` / MapShell
-  // `.explorer-root`), so the page never scrolls — only `.list-scroll` does.
   // On resize just let Leaflet re-measure and re-run viewport filtering.
   window.addEventListener('resize', () => {
     map?.invalidateSize();
     updateListVisibility();
   });
+
+  // Mobile list view: the whole page scrolls (desktop and the map view stay
+  // locked to the viewport, see Base/MapShell). Hide the sticky filter bar when
+  // scrolling down into the list, reveal it on any scroll back up.
+  let lastScrollY = window.scrollY;
+  let scrollTicking = false;
+  function onPageScroll() {
+    const y = window.scrollY;
+    const active = window.innerWidth <= 760 && !root.classList.contains('show-map');
+    if (!active) {
+      root.classList.remove('hide-filter-bar');
+    } else if (Math.abs(y - lastScrollY) > 6) {
+      // Keep it visible near the very top; hide only once scrolled past it.
+      root.classList.toggle('hide-filter-bar', y > lastScrollY && y > 80);
+    }
+    lastScrollY = y;
+    scrollTicking = false;
+  }
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (scrollTicking) return;
+      scrollTicking = true;
+      requestAnimationFrame(onPageScroll);
+    },
+    { passive: true },
+  );
 
   // With the page locked to the viewport, a wheel over the filter bar, gaps or
   // header would otherwise do nothing. Route any vertical wheel that isn't over
