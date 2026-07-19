@@ -128,6 +128,9 @@ const { lat, lon, name } = Astro.props;
       scrollWheelZoom: false,
       dragging: !coarse,
     }).setView([lat, lon], 12);
+    // Drop Leaflet's own attribution prefix (which carries a 🇺🇦 flag); keep the
+    // OpenStreetMap tile credit added below.
+    map.attributionControl.setPrefix(false);
     if (coarse) {
       // Let the browser own vertical scroll gestures; two-finger gestures still
       // reach Leaflet (which preventDefaults them) so pinch/pan work.

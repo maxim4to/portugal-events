@@ -197,6 +197,9 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
       wheelPxPerZoomLevel: 120,
       wheelDebounceTime: 30,
     }).setView([39.5, -8.0], 6);
+    // Drop Leaflet's own attribution prefix (which carries a 🇺🇦 flag); keep the
+    // OpenStreetMap tile credit added below.
+    map.attributionControl.setPrefix(false);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors',
       maxZoom: 19,
