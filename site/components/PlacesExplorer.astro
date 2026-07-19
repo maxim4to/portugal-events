@@ -6,6 +6,8 @@ import VisitedButton from './VisitedButton.astro';
 import VisitedController from './VisitedController.astro';
 import FavoriteButton from './FavoriteButton.astro';
 import FavoriteController from './FavoriteController.astro';
+import NotInterestedButton from './NotInterestedButton.astro';
+import NotInterestedController from './NotInterestedController.astro';
 import MapShell from './MapShell.astro';
 import { TYPE_LABELS } from '../lib/labels.ts';
 
@@ -37,6 +39,9 @@ const points = places.map((p) => ({
     <div class="visited-sep" data-visited-sep hidden aria-hidden="true">
       <span class="visited-sep-label">Посещённые</span>
     </div>
+    <div class="ni-sep" data-ni-sep hidden aria-hidden="true">
+      <span class="ni-sep-label">Не интересно</span>
+    </div>
     {places.map((p) => (
       <div
         class="card-wrap"
@@ -53,6 +58,7 @@ const points = places.map((p) => ({
         <div class="card-actions">
           <FavoriteButton placeId={p.id} variant="card" />
           <VisitedButton placeId={p.id} variant="card" />
+          <NotInterestedButton placeId={p.id} variant="card" />
         </div>
         <PlaceCard place={p} href={`${hrefBase}/places/${p.id}/`} />
       </div>
@@ -62,6 +68,7 @@ const points = places.map((p) => ({
 
 <VisitedController />
 <FavoriteController />
+<NotInterestedController />
 
 <style>
   .card-wrap {
@@ -75,8 +82,14 @@ const points = places.map((p) => ({
   .card-wrap[data-order-visited='true'] {
     order: 2;
   }
-  .visited-sep {
-    order: 1;
+  /* Not-interested places sink below even the visited ones, into their own
+     section. This rule comes after the visited one so a place that is both
+     visited and not-interested lands in the not-interested group (order 4). */
+  .card-wrap[data-order-notinterested='true'] {
+    order: 4;
+  }
+  .visited-sep,
+  .ni-sep {
     grid-column: 1 / -1;
     display: flex;
     align-items: center;
@@ -85,10 +98,18 @@ const points = places.map((p) => ({
     color: var(--text-muted);
     font-size: 14px;
   }
-  .visited-sep[hidden] {
+  .visited-sep {
+    order: 1;
+  }
+  .ni-sep {
+    order: 3;
+  }
+  .visited-sep[hidden],
+  .ni-sep[hidden] {
     display: none;
   }
-  .visited-sep::after {
+  .visited-sep::after,
+  .ni-sep::after {
     content: '';
     flex: 1;
     height: 0.5px;
@@ -167,20 +188,34 @@ const points = places.map((p) => ({
     const matches = (el: HTMLElement) => matchesFilter(cardData(el), readState());
     const explorer = initMapExplorer(root, { matches });
 
-    // Show the "Посещённые" divider only when at least one visited card is
-    // currently visible (CSS `order` already floats visited cards below it).
+    // Show each section divider only when at least one card that belongs to it
+    // is currently visible (CSS `order` already floats those cards below it). A
+    // place that is both visited and not-interested belongs to the (lower)
+    // not-interested section, so it doesn't keep the visited divider alive.
     const visitedSep = root.querySelector<HTMLElement>('[data-visited-sep]');
+    const niSep = root.querySelector<HTMLElement>('[data-ni-sep]');
     const cardWraps = Array.from(root.querySelectorAll<HTMLElement>('[data-place-card]'));
-    function updateVisitedDivider() {
-      if (!visitedSep) return;
-      const hasVisited = cardWraps.some(
-        (w) => !w.hidden && w.dataset.orderVisited === 'true',
-      );
-      visitedSep.hidden = !hasVisited;
+    function updateDividers() {
+      if (visitedSep) {
+        const hasVisited = cardWraps.some(
+          (w) =>
+            !w.hidden &&
+            w.dataset.orderVisited === 'true' &&
+            w.dataset.orderNotinterested !== 'true',
+        );
+        visitedSep.hidden = !hasVisited;
+      }
+      if (niSep) {
+        const hasNi = cardWraps.some(
+          (w) => !w.hidden && w.dataset.orderNotinterested === 'true',
+        );
+        niSep.hidden = !hasNi;
+      }
     }
-    // Runs after mapExplorer's own 'visited:changed' handler (registered first),
-    // so card `hidden` states are already up to date when we read them.
-    document.addEventListener('visited:changed', updateVisitedDivider);
+    // Runs after mapExplorer's own change handlers (registered first), so card
+    // `hidden` states are already up to date when we read them.
+    document.addEventListener('visited:changed', updateDividers);
+    document.addEventListener('notinterested:changed', updateDividers);
 
     // ---- URL <-> filter state sync ------------------------------------------
     function anyActive(s: ExplorerFilterState): boolean {
@@ -218,7 +253,7 @@ const points = places.map((p) => ({
       resetButtons.forEach((b) => (b.hidden = !anyActive(s)));
       writeUrl(s);
       explorer.rerender();
-      updateVisitedDivider();
+      updateDividers();
     }
 
     // The summary pill toggles its group open (one at a time; tap outside closes).

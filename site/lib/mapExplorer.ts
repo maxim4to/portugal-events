@@ -155,6 +155,9 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     const pts: L.LatLngExpression[] = [];
     for (const el of cards) {
       if (!matches(el)) continue;
+      // "Not interested" places stay in the list (sunk to the bottom) but drop
+      // off the map entirely.
+      if (el.dataset.notinterested === 'true') continue;
       const p = pointById.get(el.dataset.id!);
       if (!p) continue;
       const latlng: L.LatLngExpression = [p.lat, p.lon];
@@ -256,6 +259,9 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   });
   // Favorites don't hide/show cards, but they do change a pin into a heart.
   document.addEventListener('favorites:changed', restyleMarkers);
+  // Marking a place not-interested removes/restores its pin. Rebuild the marker
+  // layer without refitting, so the map doesn't jump under the user.
+  document.addEventListener('notinterested:changed', () => refreshMarkers(false));
 
   // On resize just let Leaflet re-measure and re-run viewport filtering.
   window.addEventListener('resize', () => {

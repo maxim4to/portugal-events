@@ -12,7 +12,7 @@
 import { getDb, isFirebaseConfigured } from './firebase';
 import { getUid, onAuthChange } from './auth';
 
-export type UserSetKind = 'visited' | 'favorites';
+export type UserSetKind = 'visited' | 'favorites' | 'notInterested';
 
 /**
  * Subscribe to the current user's set for `kind`. Calls `cb` with a Set of ids

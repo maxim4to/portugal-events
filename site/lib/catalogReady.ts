@@ -38,12 +38,15 @@ export function awaitUserData(root: HTMLElement): void {
   let signedIn: boolean | null = null;
   let gotVisited = false;
   let gotFavorites = false;
+  let gotNotInterested = false;
 
   const maybeReveal = () => {
-    // Signed out: no per-user data to load. Signed in: wait for both sets, so
-    // the divider/order and the favorites state are final before the first paint.
+    // Signed out: no per-user data to load. Signed in: wait for all three sets,
+    // so the dividers/order and the favorites state are final before the first
+    // paint (not-interested cards sink to the bottom, so they must be applied
+    // before the reveal too).
     if (signedIn === false) reveal();
-    else if (signedIn && gotVisited && gotFavorites) reveal();
+    else if (signedIn && gotVisited && gotFavorites && gotNotInterested) reveal();
   };
 
   // Both controllers dispatch these once their first snapshot is reflected. For
@@ -55,6 +58,10 @@ export function awaitUserData(root: HTMLElement): void {
   });
   document.addEventListener('favorites:changed', () => {
     gotFavorites = true;
+    maybeReveal();
+  });
+  document.addEventListener('notinterested:changed', () => {
+    gotNotInterested = true;
     maybeReveal();
   });
   onAuthChange((user) => {

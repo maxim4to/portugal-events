@@ -1,0 +1,124 @@
+---
+// Shared client controller for the "not interested" feature. Include once on any
+// page that renders NotInterestedButton(s). State lives in Firebase Realtime
+// Database under users/<uid>/notInterested (see lib/notInterested.ts). It:
+//  - hides all .ni-btn when Firebase is unconfigured
+//  - keeps buttons visible once configured, even for signed-out visitors; a
+//    click while signed out opens Google sign-in and replays the toggle after
+//  - subscribes to the signed-in user's set and reflects it onto buttons + the
+//    [data-place-card] wrappers (via data-notinterested) for sorting/map
+//  - freezes a sort snapshot (data-order-notinterested) once on load, like
+//    visited, so marking a place doesn't reshuffle the list mid-session
+//  - dispatches `notinterested:changed` so the explorer/map can react
+---
+<script>
+  import {
+    subscribeNotInterested,
+    setNotInterested,
+    isConfigured,
+  } from '../lib/notInterested.ts';
+  import { onAuthChange, signInWithGoogle } from '../lib/auth.ts';
+  import { showSigninPrompt } from '../lib/signinPrompt.ts';
+  import { showToast } from '../lib/toast.ts';
+
+  const buttons = Array.from(
+    document.querySelectorAll<HTMLButtonElement>('.ni-btn'),
+  );
+
+  if (!isConfigured()) {
+    buttons.forEach((btn) => (btn.hidden = true));
+  } else {
+    // Buttons are available regardless of sign-in — a click prompts login.
+    buttons.forEach((btn) => (btn.hidden = false));
+
+    let loggedIn = false;
+    // A toggle attempted while signed out, replayed once sign-in succeeds.
+    let pending: { id: string; on: boolean } | null = null;
+
+    // Freeze the sort snapshot once, from the first data we receive, so marking
+    // a place mid-session doesn't make the list jump under the cursor.
+    let frozeOrder = false;
+
+    const paint = (btn: HTMLButtonElement, on: boolean) => {
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Вернуть на карту' : 'Не интересно');
+      const label = btn.querySelector('.ni-label');
+      if (label) label.textContent = on ? 'Скрыто' : 'Не интересно';
+      const wrapper = btn.closest<HTMLElement>('[data-place-card]');
+      if (wrapper) wrapper.dataset.notinterested = on ? 'true' : 'false';
+    };
+
+    const reflect = (ids: Set<string>) => {
+      for (const btn of buttons) {
+        paint(btn, ids.has(btn.dataset.niId!));
+      }
+      // Cards without a button still need a baseline for sorting / map.
+      document
+        .querySelectorAll<HTMLElement>('[data-place-card]')
+        .forEach((wrap) => {
+          const id = wrap.dataset.id!;
+          if (wrap.dataset.notinterested === undefined || wrap.querySelector('.ni-btn')) {
+            wrap.dataset.notinterested = ids.has(id) ? 'true' : 'false';
+          }
+        });
+      if (!frozeOrder) {
+        document
+          .querySelectorAll<HTMLElement>('[data-place-card]')
+          .forEach((wrap) => {
+            wrap.dataset.orderNotinterested = ids.has(wrap.dataset.id!) ? 'true' : 'false';
+          });
+        frozeOrder = true;
+      }
+      document.dispatchEvent(new CustomEvent('notinterested:changed'));
+    };
+
+    subscribeNotInterested(reflect);
+
+    onAuthChange((user) => {
+      loggedIn = !!user;
+      if (loggedIn && pending) {
+        const p = pending;
+        pending = null;
+        void save(p.id, p.on);
+      }
+    });
+
+    async function save(id: string, on: boolean) {
+      try {
+        await setNotInterested(id, on);
+      } catch (err) {
+        for (const btn of buttons) {
+          if (btn.dataset.niId === id) paint(btn, !on);
+        }
+        document.dispatchEvent(new CustomEvent('notinterested:changed'));
+        const detail = err instanceof Error ? err.message : String(err);
+        showToast(`Не удалось сохранить отметку. ${detail}`);
+      }
+    }
+
+    for (const btn of buttons) {
+      btn.addEventListener('click', (e) => {
+        // The card button lives inside an <a>; do not navigate.
+        e.preventDefault();
+        e.stopPropagation();
+        const id = btn.dataset.niId!;
+        const next = btn.getAttribute('aria-pressed') !== 'true';
+        if (!loggedIn) {
+          pending = { id, on: next };
+          showSigninPrompt({
+            anchor: btn,
+            message: 'Войдите, чтобы отмечать неинтересные места.',
+            onConfirm: () => signInWithGoogle(),
+          });
+          return;
+        }
+        // Optimistic reflect; save() confirms or rolls back on failure.
+        paint(btn, next);
+        void save(id, next);
+        if (window.matchMedia('(max-width: 760px)').matches) {
+          showToast(next ? 'Скрыто с карты' : 'Возвращено на карту', 2200);
+        }
+      });
+    }
+  }
+</script>
