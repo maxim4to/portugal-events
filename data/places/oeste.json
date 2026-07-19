@@ -224,5 +224,22 @@
       }
     ],
     "collections": []
+  },
+  {
+    "id": "nomade-slow-pizza-paredes",
+    "name": "NÓMADE • Slow Pizza (Прайя-даш-Паредеш)",
+    "type": "other",
+    "region": "Оэште",
+    "coords": { "lat": 39.5585, "lon": -9.0715 },
+    "description": "Небольшая пиццерия на дюне у пляжа Прайя-даш-Паредеш в Патайаше: тесто на закваске 48-часовой ферментации, дровяная печь, местные продукты и потрясающий вид на Атлантику среди сосен. Идеальное место, чтобы поесть пиццу на закате. Работает по выходным (пт–вс), лучше бронировать заранее.",
+    "driveMinutesFromLisbon": 110,
+    "visitDurationHours": 1.5,
+    "bestSeason": "май–сентябрь",
+    "tags": ["ресторан", "виды", "закат"],
+    "links": [
+      { "title": "NÓMADE Slow Pizza (Instagram)", "url": "https://www.instagram.com/nomadecomidasustentavel/" }
+    ],
+    "photos": [],
+    "collections": []
   }
 ]
