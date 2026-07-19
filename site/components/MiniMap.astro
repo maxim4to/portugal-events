@@ -23,6 +23,13 @@ const { lat, lon, name } = Astro.props;
     background: var(--surface-1);
     font: inherit;
   }
+  /* Touch screens: reserve one-finger vertical drags for page scroll; the JS
+     disables one-finger map dragging so only two-finger gestures pan/zoom. */
+  @media (pointer: coarse) {
+    .minimap :global(.leaflet-container) {
+      touch-action: pan-y;
+    }
+  }
   /* Map overlays sit on always-light OSM tiles, so they use a fixed, saturated
      colour + white halo instead of the theme accent (which goes pale-blue in
      dark mode and washes out against the tiles). */
@@ -104,7 +111,19 @@ const { lat, lon, name } = Astro.props;
       popupAnchor: [0, -20],
     });
 
-    const map = L.map(el, { scrollWheelZoom: false }).setView([lat, lon], 12);
+    // On touch screens, one-finger drag should scroll the page, not pan the
+    // map — only a two-finger gesture (Leaflet's touch-zoom, which also pans)
+    // interacts with the map. Desktop mouse dragging is unaffected.
+    const coarse = window.matchMedia('(pointer: coarse)').matches;
+    const map = L.map(el, {
+      scrollWheelZoom: false,
+      dragging: !coarse,
+    }).setView([lat, lon], 12);
+    if (coarse) {
+      // Let the browser own vertical scroll gestures; two-finger gestures still
+      // reach Leaflet (which preventDefaults them) so pinch/pan work.
+      el.style.touchAction = 'pan-y';
+    }
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors',
       maxZoom: 19,
