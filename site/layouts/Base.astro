@@ -82,6 +82,11 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
     }
     :global(body.app-fill:not(:has(.explorer-root.show-map)) .main.wide) {
       flex: none;
+      /* Tighter side margins on the phone list view — more room for cards. The
+         map view keeps the roomier padding. Kept in sync with the list-scroll
+         and filter-bar bleed in MapShell so everything lines up at 12px. */
+      padding-left: var(--space-3);
+      padding-right: var(--space-3);
     }
     /* Let the site header scroll away with the page; the filter bar becomes the
        sticky, auto-hiding header over the content (see MapShell). */
