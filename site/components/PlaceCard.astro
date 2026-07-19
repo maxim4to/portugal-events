@@ -116,4 +116,14 @@ const typeLabel = TYPE_LABELS[place.type] ?? place.type;
     gap: var(--space-1);
     white-space: nowrap;
   }
+  /* Drop the "·" separators on cards: when the three facts wrap on a narrow
+     card the leading dot would dangle at the start of the next line. Spacing
+     alone separates them, and each fact stays whole (nowrap above). */
+  .meta-row > * + *::before {
+    content: none;
+  }
+  .meta-row {
+    column-gap: var(--space-4);
+    row-gap: var(--space-1);
+  }
 </style>

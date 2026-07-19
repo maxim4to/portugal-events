@@ -133,13 +133,13 @@ const cover = place.photos[0];
     /* Never break a single fact mid-phrase (e.g. "65 мин на машине"). */
     white-space: nowrap;
   }
-  /* On phones the three facts don't fit on one row; stack them cleanly instead
-     of wrapping with a "·" separator dangling at the start of a line. */
+  /* Try to keep the facts on one line; when the screen is too narrow to fit
+     them, wrap neatly to the next line. Drop the "·" separators so a wrapped
+     line never starts with a dangling dot (spacing alone separates them). */
   @media (max-width: 760px) {
     .byline {
-      flex-direction: column;
-      align-items: flex-start;
-      row-gap: var(--space-2);
+      column-gap: var(--space-4);
+      row-gap: var(--space-1);
     }
     .byline > * + *::before {
       content: none;
