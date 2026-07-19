@@ -16,7 +16,6 @@ export function getStaticPaths() {
 }
 const { place } = Astro.props as { place: Place };
 const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
-const directions = `https://www.google.com/maps/dir/?api=1&destination=${place.coords.lat},${place.coords.lon}`;
 // Open the place itself on Google Maps (photos/reviews/hours), not just a pin.
 // The id slug is the Portuguese/Latin name (e.g. "praia-da-arrifana"), which
 // Google resolves far more reliably than the Cyrillic display name; anchor the
@@ -74,8 +73,7 @@ const cover = place.photos[0];
     )}
 
     <div class="actions">
-      <a class="btn btn-primary" href={directions} target="_blank" rel="noopener">Маршрут в Google Maps</a>
-      <a class="btn" href={gmapsPlace} target="_blank" rel="noopener">Открыть место в Google Maps</a>
+      <a class="btn btn-primary" href={gmapsPlace} target="_blank" rel="noopener">Открыть в Google Maps</a>
       <FavoriteButton placeId={place.id} variant="detail" />
       <VisitedButton placeId={place.id} variant="detail" />
     </div>
