@@ -366,6 +366,18 @@ const isActive = (p: string) => {
       display: none;
     }
   }
+
+  /* Phones: the sticky header uses backdrop-filter, and WebKit drops one edge
+     (here the top) of a 0.5px hairline on controls sitting over a
+     backdrop-filtered surface. A full 1px border renders reliably and matches
+     the header's own 1px bottom border; desktop keeps the finer hairline. */
+  @media (max-width: 760px) {
+    .icon-btn,
+    .auth-avatar-btn,
+    .auth-signin {
+      border-width: 1px;
+    }
+  }
 </style>
 
 <script is:inline>
