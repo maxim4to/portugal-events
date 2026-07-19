@@ -23,12 +23,21 @@ const { lat, lon, name } = Astro.props;
     background: var(--surface-1);
     font: inherit;
   }
+  /* Map overlays sit on always-light OSM tiles, so they use a fixed, saturated
+     colour + white halo instead of the theme accent (which goes pale-blue in
+     dark mode and washes out against the tiles). */
+  .minimap {
+    --map-accent: #d1341f;
+    --map-halo: #ffffff;
+  }
   .minimap :global(.place-pin) {
-    color: var(--accent);
+    color: var(--map-accent);
   }
   .minimap :global(.place-pin svg) {
     display: block;
-    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+    /* White outline + soft shadow so the pin reads on any tile. */
+    filter: drop-shadow(0 0 1px var(--map-halo))
+      drop-shadow(0 0 1px var(--map-halo)) drop-shadow(0 2px 3px rgba(0, 0, 0, 0.45));
   }
   /* Small editorial label for the Lisbon anchor (no full pin, just context). */
   .minimap :global(.lisbon-tip) {
@@ -49,17 +58,25 @@ const { lat, lon, name } = Astro.props;
   /* Route + connector colours via CSS (CSS stroke/fill resolve tokens and win
      over Leaflet's presentation attributes). */
   .minimap :global(.route-line) {
-    stroke: var(--accent);
+    stroke: var(--map-accent);
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    fill: none;
+  }
+  /* White casing drawn under the route so it separates from the tiles. */
+  .minimap :global(.route-casing) {
+    stroke: var(--map-halo);
     stroke-linejoin: round;
     stroke-linecap: round;
     fill: none;
   }
   .minimap :global(.route-line--dashed) {
-    opacity: 0.55;
+    opacity: 0.9;
   }
   .minimap :global(.lisbon-dot) {
-    stroke: var(--accent);
-    fill: var(--surface-2);
+    stroke: var(--map-accent);
+    stroke-width: 3;
+    fill: var(--map-halo);
   }
 </style>
 
@@ -131,8 +148,13 @@ const { lat, lon, name } = Astro.props;
       .then((data) => {
         const geo = data?.routes?.[0]?.geometry;
         if (!geo || geo.type !== 'LineString') throw new Error('no route geometry');
+        // White casing first, then the coloured route on top, so the line
+        // stays legible over any map tiles.
+        L.geoJSON(geo, {
+          style: { weight: 8, opacity: 1, className: 'route-casing' },
+        }).addTo(map);
         const line = L.geoJSON(geo, {
-          style: { weight: 4, opacity: 0.85, className: 'route-line' },
+          style: { weight: 4, opacity: 1, className: 'route-line' },
         }).addTo(map);
         map.fitBounds(line.getBounds(), { padding: [30, 30] });
       })
@@ -143,7 +165,7 @@ const { lat, lon, name } = Astro.props;
             [LISBON.lat, LISBON.lon],
             [lat, lon],
           ],
-          { weight: 2, dashArray: '5 8', className: 'route-line route-line--dashed' },
+          { weight: 3, dashArray: '6 7', className: 'route-line route-line--dashed' },
         ).addTo(map);
         map.fitBounds(bothBounds, { padding: [36, 36] });
       });
