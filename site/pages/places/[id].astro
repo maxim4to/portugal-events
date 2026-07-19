@@ -7,6 +7,8 @@ import VisitedButton from '../../components/VisitedButton.astro';
 import VisitedController from '../../components/VisitedController.astro';
 import FavoriteButton from '../../components/FavoriteButton.astro';
 import FavoriteController from '../../components/FavoriteController.astro';
+import NotInterestedButton from '../../components/NotInterestedButton.astro';
+import NotInterestedController from '../../components/NotInterestedController.astro';
 import PhotoGallery from '../../components/PhotoGallery.astro';
 import { allPlaces } from '../../lib/data.ts';
 import type { Place } from '../../../schema/index.ts';
@@ -76,6 +78,7 @@ const cover = place.photos[0];
       <a class="btn btn-primary" href={gmapsPlace} target="_blank" rel="noopener">Открыть в Google Maps</a>
       <FavoriteButton placeId={place.id} variant="detail" />
       <VisitedButton placeId={place.id} variant="detail" />
+      <NotInterestedButton placeId={place.id} variant="detail" />
     </div>
 
     <MiniMap lat={place.coords.lat} lon={place.coords.lon} name={place.name} />
@@ -89,6 +92,7 @@ const cover = place.photos[0];
 
   <VisitedController />
   <FavoriteController />
+  <NotInterestedController />
 </Base>
 
 <style>
@@ -126,6 +130,20 @@ const cover = place.photos[0];
     display: inline-flex;
     align-items: center;
     gap: var(--space-1);
+    /* Never break a single fact mid-phrase (e.g. "65 мин на машине"). */
+    white-space: nowrap;
+  }
+  /* On phones the three facts don't fit on one row; stack them cleanly instead
+     of wrapping with a "·" separator dangling at the start of a line. */
+  @media (max-width: 760px) {
+    .byline {
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: var(--space-2);
+    }
+    .byline > * + *::before {
+      content: none;
+    }
   }
   .back-top {
     display: inline-flex;
