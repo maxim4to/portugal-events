@@ -62,6 +62,24 @@ const { lat, lon, name } = Astro.props;
   .minimap :global(.lisbon-tip::before) {
     display: none;
   }
+  /* Label for the point of interest — same editorial chip as Lisbon, but tinted
+     to the map accent so it reads as the primary marker. */
+  .minimap :global(.place-tip) {
+    background: var(--surface-2);
+    color: var(--map-accent);
+    border: 0.5px solid var(--map-accent);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px rgba(33, 29, 23, 0.22);
+    padding: 2px 7px;
+    font-size: 11px;
+    font-weight: 700;
+    max-width: 160px;
+    white-space: normal;
+    text-align: center;
+  }
+  .minimap :global(.place-tip::before) {
+    display: none;
+  }
   /* Route + connector colours via CSS (CSS stroke/fill resolve tokens and win
      over Leaflet's presentation attributes). */
   .minimap :global(.route-line) {
@@ -129,8 +147,16 @@ const { lat, lon, name } = Astro.props;
       maxZoom: 19,
     }).addTo(map);
 
-    // The destination pin (the only real pin on the map).
-    L.marker([lat, lon], { icon: pinIcon, title: name }).addTo(map);
+    // The destination pin (the only real pin on the map), labelled like the
+    // Lisbon anchor so the point of interest is named on the map.
+    L.marker([lat, lon], { icon: pinIcon, title: name })
+      .addTo(map)
+      .bindTooltip(name, {
+        permanent: true,
+        direction: 'top',
+        className: 'place-tip',
+        offset: [0, -22],
+      });
 
     // A subtle Lisbon anchor so the destination reads relative to it — a small
     // dot + label rather than a competing pin.
