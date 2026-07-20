@@ -67,6 +67,12 @@ under a different slug.
   free-licensed Wikimedia Commons photos** (`upload.wikimedia.org` URLs, all four
   photo fields present, or omit the photo). Append to the matching region file
   (e.g. Arrábida/Sesimbra beaches → `data/places/setubal.json`).
+  - **Always store the source reel/post** in the place's `reels` field (array of
+    the Instagram URLs the place came from). The place detail page embeds them
+    (see `ReelEmbed.astro`) so visitors watch the reel right on the page. If the
+    same link covers several places, add it to each. If a place the link mentions
+    is already in the catalog, append the new URL to its existing `reels` rather
+    than skipping — that's how a place accumulates multiple inspiring clips.
 - **Events** → invoke the `ingest-events` skill and write into
   `data/events/<YYYY-MM>.json`.
 

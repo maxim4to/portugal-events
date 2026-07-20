@@ -55,6 +55,9 @@ export const PlaceSchema = z.object({
   tags: z.array(z.string()),
   links: z.array(z.object({ title: z.string().min(1), url: z.string().url() })),
   photos: z.array(PhotoSchema).default([]),
+  // Instagram reels/posts about this place, shown as embeds on the detail page
+  // so visitors can watch and get inspired, not just browse photos.
+  reels: z.array(z.string().url()).default([]),
   freeWithResidency: z.boolean().optional(),
 });
 export type Place = z.infer<typeof PlaceSchema>;
