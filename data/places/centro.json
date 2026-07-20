@@ -758,5 +758,43 @@
     "reels": [
       "https://www.instagram.com/reel/DVGnK5LDNxb/"
     ]
+  },
+  {
+    "id": "costa-nova",
+    "name": "Кошта-Нова",
+    "type": "town",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.618,
+      "lon": -8.75
+    },
+    "description": "Курортный посёлок у Авейру, знаменитый рядами полосатых домиков-palheiros в яркую полоску — одно из самых фотогеничных мест центрального побережья. Приятно погулять вдоль лагуны и пляжа, попробовать рис с морепродуктами (arroz de marisco) и местную сладость «tripa de chocolate». Удобная однодневная поездка (~1 час от Порту).",
+    "driveMinutesFromLisbon": 150,
+    "visitDurationHours": 3,
+    "bestSeason": "круглый год",
+    "tags": [
+      "виды",
+      "фото",
+      "ресторан"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Costa_Nova_-_Colorful_houses_03.jpg/1280px-Costa_Nova_-_Colorful_houses_03.jpg",
+        "author": "Einaz80",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Costa_Nova_-_Colorful_houses_03.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Costa_Nova_-_Colorful_houses_05.jpg/1280px-Costa_Nova_-_Colorful_houses_05.jpg",
+        "author": "Einaz80",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Costa_Nova_-_Colorful_houses_05.jpg"
+      }
+    ],
+    "reels": [
+      "https://www.instagram.com/reel/DZe7RHUvugD/"
+    ],
+    "collections": []
   }
 ]
