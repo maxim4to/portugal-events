@@ -10,6 +10,7 @@ import FavoriteController from '../../components/FavoriteController.astro';
 import NotInterestedButton from '../../components/NotInterestedButton.astro';
 import NotInterestedController from '../../components/NotInterestedController.astro';
 import PhotoGallery from '../../components/PhotoGallery.astro';
+import ReelEmbed from '../../components/ReelEmbed.astro';
 import { allPlaces } from '../../lib/data.ts';
 import type { Place } from '../../../schema/index.ts';
 
@@ -73,6 +74,8 @@ const cover = place.photos[0];
         ))}
       </ul>
     )}
+
+    {place.reels.length > 0 && <ReelEmbed reels={place.reels} name={place.name} />}
 
     <div class="actions">
       <a class="btn btn-primary" href={gmapsPlace} target="_blank" rel="noopener">Открыть в Google Maps</a>

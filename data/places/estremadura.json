@@ -4,12 +4,19 @@
     "name": "Форнеа",
     "type": "nature",
     "region": "Эштремадура",
-    "coords": { "lat": 39.5544, "lon": -8.8093 },
+    "coords": {
+      "lat": 39.5544,
+      "lon": -8.8093
+    },
     "description": "Гигантский природный амфитеатр диаметром около 500 м и высотой 200 м в парке Серраш-де-Айре-и-Кандеейруш, куда после дождей срывается сезонный водопад. Тропа из деревни Алкария приводит к подножию отвесных известняковых стен и пещере Кова-да-Велья. Идите весной или после дождя, летом водопад пересыхает.",
     "driveMinutesFromLisbon": 110,
     "visitDurationHours": 3,
     "bestSeason": "ноябрь–апрель (после дождей)",
-    "tags": ["природа", "виды", "фото"],
+    "tags": [
+      "природа",
+      "виды",
+      "фото"
+    ],
     "links": [],
     "photos": [
       {
@@ -50,13 +57,25 @@
     "name": "Пещеры Мира-де-Айре",
     "type": "nature",
     "region": "Эштремадура",
-    "coords": { "lat": 39.5378, "lon": -8.7025 },
+    "coords": {
+      "lat": 39.5378,
+      "lon": -8.7025
+    },
     "description": "Крупнейшие оборудованные пещеры Португалии в парке Серраш-де-Айре-и-Кандеейруш: подземный маршрут с озёрами, сталактитами и залами до 60 м высотой. Спуск в 683 ступени, наверх поднимает лифт. Отличный вариант в жару или дождь; внутри прохладно, возьмите кофту.",
     "driveMinutesFromLisbon": 100,
     "visitDurationHours": 1.5,
     "bestSeason": "круглый год",
-    "tags": ["с детьми", "природа", "фото"],
-    "links": [{ "title": "Сайт", "url": "https://www.grutasmiradaire.com" }],
+    "tags": [
+      "с детьми",
+      "природа",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Сайт",
+        "url": "https://www.grutasmiradaire.com"
+      }
+    ],
     "photos": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Grutas_de_Mira_de_Aire_%2811%29.jpg/1280px-Grutas_de_Mira_de_Aire_%2811%29.jpg",
@@ -89,19 +108,28 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grutas_de_Mira_de_Aire_(1).jpg"
       }
     ],
-    "collections": []
+    "collections": [],
+    "reels": [
+      "https://www.instagram.com/reel/DVGnK5LDNxb/"
+    ]
   },
   {
     "id": "mosteiro-da-batalha",
     "name": "Монастырь Баталья",
     "type": "castle",
     "region": "Эштремадура",
-    "coords": { "lat": 39.6592, "lon": -8.8256 },
+    "coords": {
+      "lat": 39.6592,
+      "lon": -8.8256
+    },
     "description": "Один из красивейших готических монастырей Португалии и объект ЮНЕСКО, построенный в честь победы при Алжубарроте. Поражают ажурные «незавершённые капеллы», мануэлинский декор и клуатр — фотографировать галереи лучше утром, пока мало людей. Вход в церковь бесплатный, в монастырь — по билету; есть комбо-билет на Баталью, Алкобасу и Томар.",
     "driveMinutesFromLisbon": 120,
     "visitDurationHours": 1.5,
     "bestSeason": "круглый год",
-    "tags": ["история", "фото"],
+    "tags": [
+      "история",
+      "фото"
+    ],
     "links": [],
     "photos": [
       {
@@ -117,19 +145,31 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Batalha_September_2021-4.jpg"
       }
     ],
-    "collections": []
+    "collections": [],
+    "reels": [
+      "https://www.instagram.com/reel/DYmF_f5OBrG/",
+      "https://www.instagram.com/reel/DWqyzd-iADb/",
+      "https://www.instagram.com/reel/DY7_9bAtIQF/",
+      "https://www.instagram.com/reel/DVGnK5LDNxb/"
+    ]
   },
   {
     "id": "mosteiro-de-alcobaca",
     "name": "Монастырь Алкобаса",
     "type": "castle",
     "region": "Эштремадура",
-    "coords": { "lat": 39.5486, "lon": -8.9800 },
+    "coords": {
+      "lat": 39.5486,
+      "lon": -8.98
+    },
     "description": "Цистерцианский монастырь XII века, объект ЮНЕСКО, с одной из крупнейших средневековых церквей Португалии и знаменитыми готическими гробницами Педру и Инеш. Впечатляют строгий монументальный неф и огромная монастырская кухня с каналом для проточной воды. Удобно совместить с Батальей и Томаром по комбо-билету, но лучше в разные дни.",
     "driveMinutesFromLisbon": 105,
     "visitDurationHours": 1.5,
     "bestSeason": "круглый год",
-    "tags": ["история", "фото"],
+    "tags": [
+      "история",
+      "фото"
+    ],
     "links": [],
     "photos": [
       {
@@ -145,6 +185,9 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alcoba%C3%A7a_October_2021-4.jpg"
       }
     ],
-    "collections": []
+    "collections": [],
+    "reels": [
+      "https://www.instagram.com/reel/DYmF_f5OBrG/"
+    ]
   }
 ]

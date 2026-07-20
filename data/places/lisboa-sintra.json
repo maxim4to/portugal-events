@@ -4,12 +4,19 @@
     "name": "Прайя-да-Урса",
     "type": "beach",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.7954, "lon": -9.4826 },
+    "coords": {
+      "lat": 38.7954,
+      "lon": -9.4826
+    },
     "description": "Дикий пляж со скалами-останцами рядом с мысом Рока. Спуск крутой, зато людей мало даже летом.",
     "driveMinutesFromLisbon": 45,
     "visitDurationHours": 3,
     "bestSeason": "май–октябрь",
-    "tags": ["закат", "бесплатно", "дикая природа"],
+    "tags": [
+      "закат",
+      "бесплатно",
+      "дикая природа"
+    ],
     "links": [],
     "photos": [
       {
@@ -49,12 +56,18 @@
     "name": "Мыс Рока",
     "type": "viewpoint",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.7803, "lon": -9.4989 },
+    "coords": {
+      "lat": 38.7803,
+      "lon": -9.4989
+    },
     "description": "Самая западная точка континентальной Европы. Маяк, обрывы, океан до горизонта.",
     "driveMinutesFromLisbon": 40,
     "visitDurationHours": 1,
     "bestSeason": "круглый год",
-    "tags": ["закат", "бесплатно"],
+    "tags": [
+      "закат",
+      "бесплатно"
+    ],
     "links": [],
     "photos": [
       {
@@ -88,13 +101,24 @@
     "name": "Замок мавров",
     "type": "castle",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.7926, "lon": -9.3893 },
+    "coords": {
+      "lat": 38.7926,
+      "lon": -9.3893
+    },
     "description": "Крепостная стена IX века на гребне гор Синтры с видами на океан и дворец Пена.",
     "driveMinutesFromLisbon": 35,
     "visitDurationHours": 2,
     "bestSeason": "круглый год",
-    "tags": ["история", "виды"],
-    "links": [{ "title": "Билеты", "url": "https://www.parquesdesintra.pt" }],
+    "tags": [
+      "история",
+      "виды"
+    ],
+    "links": [
+      {
+        "title": "Билеты",
+        "url": "https://www.parquesdesintra.pt"
+      }
+    ],
     "photos": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Castelo_dos_Mouros%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_112-121_PAN.jpg/1280px-Castelo_dos_Mouros%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_112-121_PAN.jpg",
@@ -133,12 +157,18 @@
     "name": "Прайя-ду-Гинчу",
     "type": "beach",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.7330, "lon": -9.4730 },
+    "coords": {
+      "lat": 38.733,
+      "lon": -9.473
+    },
     "description": "Широкий океанский пляж между Кашкайшем и Синтрой, столица виндсёрфинга. Ветрено почти всегда.",
     "driveMinutesFromLisbon": 35,
     "visitDurationHours": 4,
     "bestSeason": "июнь–сентябрь",
-    "tags": ["сёрфинг", "бесплатно"],
+    "tags": [
+      "сёрфинг",
+      "бесплатно"
+    ],
     "links": [],
     "photos": [
       {
@@ -178,12 +208,18 @@
     "name": "Азеньяш-ду-Мар",
     "type": "town",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.8376, "lon": -9.4610 },
+    "coords": {
+      "lat": 38.8376,
+      "lon": -9.461
+    },
     "description": "Белая деревня, стекающая по скале к океану. Смотровая, природный бассейн и рыбный ресторан у воды.",
     "driveMinutesFromLisbon": 45,
     "visitDurationHours": 2,
     "bestSeason": "круглый год",
-    "tags": ["фото", "ресторан"],
+    "tags": [
+      "фото",
+      "ресторан"
+    ],
     "links": [],
     "photos": [
       {
@@ -223,13 +259,25 @@
     "name": "Дворец Пена",
     "type": "castle",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.7876, "lon": -9.3906 },
+    "coords": {
+      "lat": 38.7876,
+      "lon": -9.3906
+    },
     "description": "Самый сказочный дворец Португалии: яркие красно-жёлтые башни романтической эпохи на вершине гор Синтры, окружённые огромным парком. Билеты берите онлайн заранее и приезжайте к открытию — днём очереди огромные.",
     "driveMinutesFromLisbon": 40,
     "visitDurationHours": 3,
     "bestSeason": "круглый год",
-    "tags": ["история", "виды", "фото"],
-    "links": [{ "title": "Билеты", "url": "https://www.parquesdesintra.pt" }],
+    "tags": [
+      "история",
+      "виды",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Билеты",
+        "url": "https://www.parquesdesintra.pt"
+      }
+    ],
     "photos": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Palacio_Nacional_da_Pena%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_131.jpg/1280px-Palacio_Nacional_da_Pena%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_131.jpg",
@@ -269,13 +317,25 @@
     "name": "Кинта да Регалейра",
     "type": "castle",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.7963, "lon": -9.3963 },
+    "coords": {
+      "lat": 38.7963,
+      "lon": -9.3963
+    },
     "description": "Усадьба начала XX века с мистическим парком, гротами и знаменитым «колодцем посвящения» — спиральной лестницей вглубь земли. Заложите время на прогулку по подземным туннелям, которые выводят к пруду с камнями-переходами.",
     "driveMinutesFromLisbon": 40,
     "visitDurationHours": 2.5,
     "bestSeason": "круглый год",
-    "tags": ["история", "фото", "природа"],
-    "links": [{ "title": "Сайт", "url": "https://www.regaleira.pt" }],
+    "tags": [
+      "история",
+      "фото",
+      "природа"
+    ],
+    "links": [
+      {
+        "title": "Сайт",
+        "url": "https://www.regaleira.pt"
+      }
+    ],
     "photos": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Quinta_da_Regaleira%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_56.jpg/1280px-Quinta_da_Regaleira%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_56.jpg",
@@ -315,13 +375,25 @@
     "name": "Дворец Монсеррате",
     "type": "castle",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.7920, "lon": -9.4183 },
+    "coords": {
+      "lat": 38.792,
+      "lon": -9.4183
+    },
     "description": "Романтический дворец в мавританско-индийском стиле с ажурными арками и одним из красивейших ботанических парков страны. Народу здесь заметно меньше, чем в Пене, а сад стоит отдельной прогулки.",
     "driveMinutesFromLisbon": 42,
     "visitDurationHours": 2,
     "bestSeason": "круглый год",
-    "tags": ["история", "природа", "фото"],
-    "links": [{ "title": "Билеты", "url": "https://www.parquesdesintra.pt" }],
+    "tags": [
+      "история",
+      "природа",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Билеты",
+        "url": "https://www.parquesdesintra.pt"
+      }
+    ],
     "photos": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Monserrate_Palace_%2852526640315%29.jpg/1280px-Monserrate_Palace_%2852526640315%29.jpg",
@@ -361,13 +433,24 @@
     "name": "Национальный дворец Синтры",
     "type": "castle",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.7975, "lon": -9.3906 },
+    "coords": {
+      "lat": 38.7975,
+      "lon": -9.3906
+    },
     "description": "Дворец в самом центре Синтры с двумя огромными белыми коническими трубами кухни — символом города. Внутри сохранились старейшие в Португалии азулежу и расписные залы. Легко совмещается с прогулкой по исторической части.",
     "driveMinutesFromLisbon": 38,
     "visitDurationHours": 1.5,
     "bestSeason": "круглый год",
-    "tags": ["история", "фото"],
-    "links": [{ "title": "Билеты", "url": "https://www.parquesdesintra.pt" }],
+    "tags": [
+      "история",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Билеты",
+        "url": "https://www.parquesdesintra.pt"
+      }
+    ],
     "photos": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Palacio_Nacional%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_08.jpg/1280px-Palacio_Nacional%2C_Sintra%2C_Portugal%2C_2019-05-25%2C_DD_08.jpg",
@@ -407,13 +490,24 @@
     "name": "Монастырь капуцинов",
     "type": "castle",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.7736, "lon": -9.4295 },
+    "coords": {
+      "lat": 38.7736,
+      "lon": -9.4295
+    },
     "description": "Крошечный монастырь XVI века в лесу Синтры, где кельи вырублены в скале и обиты пробкой. Атмосферное, аскетичное место в стороне от толп; удобная обувь обязательна из-за узких каменных проходов.",
     "driveMinutesFromLisbon": 45,
     "visitDurationHours": 1.5,
     "bestSeason": "круглый год",
-    "tags": ["история", "природа"],
-    "links": [{ "title": "Билеты", "url": "https://www.parquesdesintra.pt" }],
+    "tags": [
+      "история",
+      "природа"
+    ],
+    "links": [
+      {
+        "title": "Билеты",
+        "url": "https://www.parquesdesintra.pt"
+      }
+    ],
     "photos": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Convento_dos_capuchos_%28Sintra%29_-_Claustro.jpg/1280px-Convento_dos_capuchos_%28Sintra%29_-_Claustro.jpg",
@@ -446,19 +540,29 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:2019_09_21_Lissabon_(15).jpg"
       }
     ],
-    "collections": []
+    "collections": [],
+    "reels": [
+      "https://www.instagram.com/reel/DVGnK5LDNxb/"
+    ]
   },
   {
     "id": "peninha",
     "name": "Пенинья",
     "type": "viewpoint",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.7676, "lon": -9.4497 },
+    "coords": {
+      "lat": 38.7676,
+      "lon": -9.4497
+    },
     "description": "Уединённая часовня на скалистой вершине природного парка Синтра-Кашкайш с панорамой на океан, мыс Рока и пляж Гинчу. Одна из лучших закатных точек региона, при этом почти без туристов.",
     "driveMinutesFromLisbon": 45,
     "visitDurationHours": 1,
     "bestSeason": "круглый год",
-    "tags": ["закат", "виды", "бесплатно"],
+    "tags": [
+      "закат",
+      "виды",
+      "бесплатно"
+    ],
     "links": [],
     "photos": [
       {
@@ -499,12 +603,19 @@
     "name": "Прайя-да-Адрага",
     "type": "beach",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.8035, "lon": -9.4707 },
+    "coords": {
+      "lat": 38.8035,
+      "lon": -9.4707
+    },
     "description": "Драматичный пляж под высокими скалами с арками и гротами рядом с деревней Алмосагеме. Есть парковка и хороший рыбный ресторан у входа; для купания приезжайте в спокойный день, океан бывает суровым.",
     "driveMinutesFromLisbon": 45,
     "visitDurationHours": 3,
     "bestSeason": "июнь–сентябрь",
-    "tags": ["купание", "виды", "ресторан"],
+    "tags": [
+      "купание",
+      "виды",
+      "ресторан"
+    ],
     "links": [],
     "photos": [
       {
@@ -545,12 +656,19 @@
     "name": "Бока-ду-Инферну",
     "type": "viewpoint",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.6912, "lon": -9.4290 },
+    "coords": {
+      "lat": 38.6912,
+      "lon": -9.429
+    },
     "description": "«Пасть ада» — обвалившийся морской грот у Кашкайша, где океан с грохотом врывается сквозь каменную арку. Особенно зрелищно в шторм; вход свободный, рядом набережная и кафе.",
     "driveMinutesFromLisbon": 35,
     "visitDurationHours": 1,
     "bestSeason": "круглый год",
-    "tags": ["виды", "бесплатно", "фото"],
+    "tags": [
+      "виды",
+      "бесплатно",
+      "фото"
+    ],
     "links": [],
     "photos": [
       {
@@ -591,12 +709,19 @@
     "name": "Мыс Разу",
     "type": "viewpoint",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.7130, "lon": -9.4869 },
+    "coords": {
+      "lat": 38.713,
+      "lon": -9.4869
+    },
     "description": "Ветреный мыс с красным маяком и фортом XVII века между Кашкайшем и Гинчу. Отличное место для заката и наблюдения за сёрферами; открытая береговая линия без толп.",
     "driveMinutesFromLisbon": 35,
     "visitDurationHours": 1,
     "bestSeason": "круглый год",
-    "tags": ["закат", "виды", "бесплатно"],
+    "tags": [
+      "закат",
+      "виды",
+      "бесплатно"
+    ],
     "links": [],
     "photos": [
       {
@@ -637,12 +762,19 @@
     "name": "Кашкайш",
     "type": "town",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.6979, "lon": -9.4215 },
+    "coords": {
+      "lat": 38.6979,
+      "lon": -9.4215
+    },
     "description": "Элегантный курортный городок бывшей аристократии с уютной бухтой, старым центром и маяком Санта-Марта. Легко доехать на электричке вдоль побережья от Лиссабона; хорош для прогулок, пляжей и рыбных ресторанов.",
     "driveMinutesFromLisbon": 35,
     "visitDurationHours": 4,
     "bestSeason": "круглый год",
-    "tags": ["ресторан", "купание", "виды"],
+    "tags": [
+      "ресторан",
+      "купание",
+      "виды"
+    ],
     "links": [],
     "photos": [
       {
@@ -683,12 +815,19 @@
     "name": "Эрисейра",
     "type": "town",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.9631, "lon": -9.4172 },
+    "coords": {
+      "lat": 38.9631,
+      "lon": -9.4172
+    },
     "description": "Белый рыбацкий городок и мировой заповедник сёрфинга с чередой пляжей и волн вдоль скал. Приезжайте за морепродуктами, закатами над океаном и расслабленной атмосферой.",
     "driveMinutesFromLisbon": 50,
     "visitDurationHours": 4,
     "bestSeason": "май–октябрь",
-    "tags": ["сёрфинг", "ресторан", "закат"],
+    "tags": [
+      "сёрфинг",
+      "ресторан",
+      "закат"
+    ],
     "links": [],
     "photos": [
       {
@@ -729,12 +868,19 @@
     "name": "Прайя-душ-Кошуш",
     "type": "beach",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.9868, "lon": -9.4211 },
+    "coords": {
+      "lat": 38.9868,
+      "lon": -9.4211
+    },
     "description": "Легендарный сёрф-спот к северу от Эрисейры с мощной правой волной, часть заповедной зоны мирового сёрфинга. Для купания подходит мало, зато отличная точка, чтобы понаблюдать за сёрферами и скалистым берегом.",
     "driveMinutesFromLisbon": 55,
     "visitDurationHours": 2,
     "bestSeason": "сентябрь–апрель (сёрф)",
-    "tags": ["сёрфинг", "виды", "бесплатно"],
+    "tags": [
+      "сёрфинг",
+      "виды",
+      "бесплатно"
+    ],
     "links": [],
     "photos": [
       {
@@ -757,12 +903,18 @@
     "name": "Мафра",
     "type": "town",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.9367, "lon": -9.3260 },
+    "coords": {
+      "lat": 38.9367,
+      "lon": -9.326
+    },
     "description": "Городок, выросший вокруг колоссального дворца-монастыря. Стоит заехать ради самого монумента и старинного охотничьего парка Тапада-де-Мафра рядом.",
     "driveMinutesFromLisbon": 45,
     "visitDurationHours": 2,
     "bestSeason": "круглый год",
-    "tags": ["история", "с детьми"],
+    "tags": [
+      "история",
+      "с детьми"
+    ],
     "links": [],
     "photos": [
       {
@@ -803,13 +955,24 @@
     "name": "Дворец-монастырь Мафры",
     "type": "castle",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.9366, "lon": -9.3225 },
+    "coords": {
+      "lat": 38.9366,
+      "lon": -9.3225
+    },
     "description": "Грандиозный барочный дворец-монастырь XVIII века с базиликой, двумя колокольнями с 92 колоколами и одной из красивейших исторических библиотек Европы. Комплекс огромный — закладывайте не меньше двух часов.",
     "driveMinutesFromLisbon": 45,
     "visitDurationHours": 2.5,
     "bestSeason": "круглый год",
-    "tags": ["история", "фото"],
-    "links": [{ "title": "Сайт", "url": "https://www.palaciomafra.gov.pt" }],
+    "tags": [
+      "история",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Сайт",
+        "url": "https://www.palaciomafra.gov.pt"
+      }
+    ],
     "photos": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Mafra_-_Palace_of_Mafra_-_20191230180805.jpg/1280px-Mafra_-_Palace_of_Mafra_-_20191230180805.jpg",
@@ -849,12 +1012,19 @@
     "name": "Прайя-Гранди",
     "type": "beach",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.8125, "lon": -9.4728 },
+    "coords": {
+      "lat": 38.8125,
+      "lon": -9.4728
+    },
     "description": "Широкий песчаный пляж под скалами у Колареша, любимый сёрферами и семьями за пологий вход и простор. На южных скалах сохранились следы динозавров, а рядом есть большой морской бассейн с океанской водой.",
     "driveMinutesFromLisbon": 45,
     "visitDurationHours": 3,
     "bestSeason": "июнь–сентябрь",
-    "tags": ["купание", "сёрфинг", "с детьми"],
+    "tags": [
+      "купание",
+      "сёрфинг",
+      "с детьми"
+    ],
     "links": [],
     "photos": [
       {
@@ -895,12 +1065,19 @@
     "name": "Прайя-даш-Масаш",
     "type": "beach",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.8228, "lon": -9.4692 },
+    "coords": {
+      "lat": 38.8228,
+      "lon": -9.4692
+    },
     "description": "Уютный пляж в устье ручья с песчаной полосой и променадом, куда с апреля по октябрь ходит исторический трамвай из Синтры. Хорошее место для семейного дня у океана и заката с кафе на набережной.",
     "driveMinutesFromLisbon": 48,
     "visitDurationHours": 3,
     "bestSeason": "июнь–сентябрь",
-    "tags": ["купание", "с детьми", "закат"],
+    "tags": [
+      "купание",
+      "с детьми",
+      "закат"
+    ],
     "links": [],
     "photos": [
       {
@@ -941,12 +1118,19 @@
     "name": "Прайя-да-Фож-ду-Лизандру",
     "type": "beach",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.9430, "lon": -9.4181 },
+    "coords": {
+      "lat": 38.943,
+      "lon": -9.4181
+    },
     "description": "Широкий песчаный пляж южнее Эрисейры в устье реки Лизандру, где река образует мелкую тёплую лагуну рядом с океанским прибоем. Отличное место для начинающих сёрферов и семей: спокойная вода со стороны реки и волны со стороны моря. Есть парковка, кафе и променад; закаты над устьем очень живописны.",
     "driveMinutesFromLisbon": 50,
     "visitDurationHours": 3,
     "bestSeason": "июнь–сентябрь",
-    "tags": ["купание", "сёрфинг", "с детьми"],
+    "tags": [
+      "купание",
+      "сёрфинг",
+      "с детьми"
+    ],
     "links": [],
     "photos": [
       {
@@ -975,14 +1159,24 @@
     "name": "Esplanada Duna Mar (Прайя-ду-Магойту)",
     "type": "other",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.8497, "lon": -9.4620 },
+    "coords": {
+      "lat": 38.8497,
+      "lon": -9.462
+    },
     "description": "Простой пляжный ресторан-эспланада прямо над Прайя-ду-Магойту на побережье Синтры, знаменитый видом на океан и свежей рыбой местного улова. Идеальное место для неспешного обеда и заката с бокалом вина. Учтите: только наличные, без брони, по средам закрыто — в сезон приходите пораньше.",
     "driveMinutesFromLisbon": 45,
     "visitDurationHours": 1.5,
     "bestSeason": "май–сентябрь",
-    "tags": ["ресторан", "виды", "закат"],
+    "tags": [
+      "ресторан",
+      "виды",
+      "закат"
+    ],
     "links": [
-      { "title": "Esplanada Duna Mar", "url": "https://esplanada-duna-mar.eatbu.com/?lang=en" }
+      {
+        "title": "Esplanada Duna Mar",
+        "url": "https://esplanada-duna-mar.eatbu.com/?lang=en"
+      }
     ],
     "photos": [
       {
@@ -999,12 +1193,18 @@
     "name": "Монастырь Жеронимуш",
     "type": "castle",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.6979, "lon": -9.2064 },
+    "coords": {
+      "lat": 38.6979,
+      "lon": -9.2064
+    },
     "description": "Роскошный мануэлинский монастырь в Белене, объект ЮНЕСКО и один из символов Португалии, построенный на доходы от эпохи Великих открытий. Впечатляют резной южный портал, огромная церковь с гробницами Васко да Гамы и Камоэнса и двухъярусный клуатр. Билеты лучше брать онлайн — очереди большие; рядом знаменитая паштелария с настоящими pastéis de Belém.",
     "driveMinutesFromLisbon": 15,
     "visitDurationHours": 2,
     "bestSeason": "круглый год",
-    "tags": ["история", "фото"],
+    "tags": [
+      "история",
+      "фото"
+    ],
     "links": [],
     "photos": [
       {
@@ -1020,19 +1220,29 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:View_of_Mosteiro_dos_Jer%C3%B3nimos_from_Monument_of_the_Discoveries,_Bel%C3%A9m,_Lisbon,_20250604_1111_9124.jpg"
       }
     ],
-    "collections": []
+    "collections": [],
+    "reels": [
+      "https://www.instagram.com/reel/DY7_9bAtIQF/"
+    ]
   },
   {
     "id": "torre-de-belem",
     "name": "Башня Белен",
     "type": "castle",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.6916, "lon": -9.2160 },
+    "coords": {
+      "lat": 38.6916,
+      "lon": -9.216
+    },
     "description": "Изящная укреплённая башня начала XVI века на берегу Тежу — мануэлинский шедевр и объект ЮНЕСКО, когда-то охранявший вход в лиссабонскую гавань. Ажурные балконы, морские мотивы в камне и вид на реку делают её одной из самых фотографируемых достопримечательностей города. Внутри тесно и есть лестницы — в пик сезона бывают очереди.",
     "driveMinutesFromLisbon": 15,
     "visitDurationHours": 1,
     "bestSeason": "круглый год",
-    "tags": ["история", "виды", "фото"],
+    "tags": [
+      "история",
+      "виды",
+      "фото"
+    ],
     "links": [],
     "photos": [
       {
@@ -1042,19 +1252,28 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Torre_de_Bel%C3%A9m,_Lisboa,_Portugal,_2012-05-12,_DD_12.JPG"
       }
     ],
-    "collections": []
+    "collections": [],
+    "reels": [
+      "https://www.instagram.com/reel/DY7_9bAtIQF/"
+    ]
   },
   {
     "id": "palacio-nacional-de-queluz",
     "name": "Национальный дворец Келуш",
     "type": "castle",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.7503, "lon": -9.2590 },
+    "coords": {
+      "lat": 38.7503,
+      "lon": -9.259
+    },
     "description": "Пышный дворец XVIII века в стиле рококо между Лиссабоном и Синтрой, который часто называют «португальским Версалем». Роскошные залы, зеркальный тронный зал и обширные регулярные сады с фонтанами и изразцовым каналом. Отличная менее людная альтернатива дворцам Синтры по пути туда.",
     "driveMinutesFromLisbon": 25,
     "visitDurationHours": 2,
     "bestSeason": "круглый год",
-    "tags": ["история", "фото"],
+    "tags": [
+      "история",
+      "фото"
+    ],
     "links": [],
     "photos": [
       {
@@ -1064,19 +1283,29 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Palais_royal_de_Queluz_-_Vue_g%C3%A9n%C3%A9rale.jpg"
       }
     ],
-    "collections": []
+    "collections": [],
+    "reels": [
+      "https://www.instagram.com/reel/DY7_9bAtIQF/"
+    ]
   },
   {
     "id": "panteao-nacional",
     "name": "Национальный пантеон (Санта-Энграсия)",
     "type": "other",
     "region": "Лиссабон и Синтра",
-    "coords": { "lat": 38.7126, "lon": -9.1250 },
+    "coords": {
+      "lat": 38.7126,
+      "lon": -9.125
+    },
     "description": "Величественная барочная церковь Санта-Энграсия в Алфаме, ставшая Национальным пантеоном Португалии, где покоятся и увековечены выдающиеся португальцы (в том числе Амалия Родригеш и Эузебиу). С верхней террасы под куполом открывается один из лучших панорамных видов на Алфаму, Тежу и порт. Поднимитесь наверх — ради панорамы стоит.",
     "driveMinutesFromLisbon": 15,
     "visitDurationHours": 1,
     "bestSeason": "круглый год",
-    "tags": ["история", "виды", "фото"],
+    "tags": [
+      "история",
+      "виды",
+      "фото"
+    ],
     "links": [],
     "photos": [
       {
@@ -1086,6 +1315,9 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pante%C3%A3o_Nacional,_Igreja_de_Santa_Engr%C3%A1cia,_Lisboa,_Portugal.jpg"
       }
     ],
-    "collections": []
+    "collections": [],
+    "reels": [
+      "https://www.instagram.com/reel/DY7_9bAtIQF/"
+    ]
   }
 ]
