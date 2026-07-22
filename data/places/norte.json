@@ -616,5 +616,43 @@
     "reels": [
       "https://www.instagram.com/reel/DZe_3WtCxJY/"
     ]
+  },
+  {
+    "id": "santuario-nossa-senhora-dos-remedios-lamego",
+    "name": "Санктуарий Носса-Сеньора-душ-Ремедиуш (Ламегу)",
+    "type": "castle",
+    "region": "Норте",
+    "coords": {
+      "lat": 41.093,
+      "lon": -7.8085
+    },
+    "description": "Один из самых впечатляющих санктуариев Португалии над городом Ламегу: монументальная барочная лестница почти в 700 ступеней с бело-голубыми азулежу, фонтанами и статуями поднимается сквозь сады к церкви на вершине. Строился больше века (1750–1905). Вход свободный; поднимайтесь не спеша и оставьте время на сады и вид на долину Дору.",
+    "driveMinutesFromLisbon": 210,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "виды",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Santu%C3%A1rio_de_Nossa_Senhora_dos_Rem%C3%A9dios_Lamego.jpg/1280px-Santu%C3%A1rio_de_Nossa_Senhora_dos_Rem%C3%A9dios_Lamego.jpg",
+        "author": "Peregrino27",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Santu%C3%A1rio_de_Nossa_Senhora_dos_Rem%C3%A9dios_Lamego.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Santu%C3%A1rio_de_Nossa_Senhora_dos_Rem%C3%A9dios_-_Lamego_-_Portugal_%286108087697%29.jpg/1280px-Santu%C3%A1rio_de_Nossa_Senhora_dos_Rem%C3%A9dios_-_Lamego_-_Portugal_%286108087697%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Santu%C3%A1rio_de_Nossa_Senhora_dos_Rem%C3%A9dios_-_Lamego_-_Portugal_(6108087697).jpg"
+      }
+    ],
+    "reels": [
+      "https://www.instagram.com/reel/DXwx4seMvZ6/"
+    ],
+    "collections": []
   }
 ]
