@@ -1721,5 +1721,43 @@
       }
     ],
     "collections": []
+  },
+  {
+    "id": "piscina-das-mares-leca",
+    "name": "Приливные бассейны Piscina das Marés (Леса-да-Палмейра)",
+    "type": "other",
+    "region": "Норте",
+    "coords": {
+      "lat": 41.1968,
+      "lon": -8.7085
+    },
+    "description": "Морские приливные бассейны в Леса-да-Палмейра под Порту — знаменитый памятник модернизма по проекту Álvaro Siza Vieira, вписанный прямо в прибрежные скалы. Вода из океана, свежая, есть детская зона и небольшой песчаный пляж, раздевалки и снек-бар. Летний классик севера с потрясающими видами; вода прохладная, зато пейзаж всё компенсирует.",
+    "driveMinutesFromLisbon": 310,
+    "visitDurationHours": 3,
+    "bestSeason": "июнь–сентябрь",
+    "tags": [
+      "купание",
+      "с детьми",
+      "виды"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Piscina_das_Mar%C3%A9s_-_Le%C3%A7a_da_Palmeira_-_Portugal_%2827747007423%29.jpg/1280px-Piscina_das_Mar%C3%A9s_-_Le%C3%A7a_da_Palmeira_-_Portugal_%2827747007423%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Piscina_das_Mar%C3%A9s_-_Le%C3%A7a_da_Palmeira_-_Portugal_(27747007423).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Open_House_Porto_2021_Piscina_das_Mar%C3%A9s.jpg/1280px-Open_House_Porto_2021_Piscina_das_Mar%C3%A9s.jpg",
+        "author": "Filipa Guimarães",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Open_House_Porto_2021_Piscina_das_Mar%C3%A9s.jpg"
+      }
+    ],
+    "reels": [
+      "https://www.instagram.com/reel/DZNtjN0yajx/"
+    ],
+    "collections": []
   }
 ]
