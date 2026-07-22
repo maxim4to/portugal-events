@@ -796,5 +796,29 @@
       "https://www.instagram.com/reel/DZe7RHUvugD/"
     ],
     "collections": []
+  },
+  {
+    "id": "miradouro-do-zebro",
+    "name": "Смотровая Зебру (Miradouro do Zebro)",
+    "type": "viewpoint",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 39.9633,
+      "lon": -7.7739
+    },
+    "description": "Футуристическая круглая смотровая площадка (2024) по проекту знаменитого архитектора Алвару Сизы Виейры, парящая над зелёной долиной в Серра-ду-Мурадал у Олейруша. Диаметр 15 м, закреплена в скале на высоте ~30 м над склоном и 150 м над дном долины — дух захватывает. Находится вдоль EN238; далеко от Лиссабона, но эффектная остановка в глубинном центре страны.",
+    "driveMinutesFromLisbon": 165,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": [
+      "виды",
+      "фото"
+    ],
+    "links": [],
+    "photos": [],
+    "reels": [
+      "https://www.instagram.com/reel/DYFR0acs1xB/"
+    ],
+    "collections": []
   }
 ]
