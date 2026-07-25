@@ -1319,5 +1319,30 @@
     "reels": [
       "https://www.instagram.com/reel/DY7_9bAtIQF/"
     ]
+  },
+  {
+    "id": "parque-ecologico-adraga-praia-grande",
+    "name": "Экопарк Адрага — Прайя-Гранди",
+    "type": "nature",
+    "region": "Лиссабон и Синтра",
+    "coords": {
+      "lat": 38.808,
+      "lon": -9.4695
+    },
+    "description": "Новый природный парк на побережье Синтры с деревянным настилом-passadiço длиной 2,5 км, соединяющим Прайя-Гранди и Прайя-да-Адрага. По пути — потрясающие виды на океан, скамейки и столы для пикника среди дикой природы и даже отпечатки лап динозавров на скалах. Официально ещё не открыт, но пройти уже можно; берите воду и удобную обувь.",
+    "driveMinutesFromLisbon": 45,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": [
+      "природа",
+      "виды",
+      "фото"
+    ],
+    "links": [],
+    "photos": [],
+    "reels": [
+      "https://www.instagram.com/reel/DbOrLmktWm5/"
+    ],
+    "collections": []
   }
 ]
