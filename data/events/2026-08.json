@@ -207,5 +207,33 @@
     "description": "27-е издание одного из самых атмосферных средневековых фестивалей Алгарве: пять дней и ночей у замка Каштру-Марин с рыцарскими турнирами, королевскими банкетами, уличным театром, ремесленным рынком и музыкой.",
     "sourceId": "websearch",
     "dedupeHash": "dias medievais castro marim|2026-08-26|castro marim"
+  },
+  {
+    "id": "cinema-ar-livre-parque-mayer-2026",
+    "title": "Cinema ao Ar Livre no Parque Mayer",
+    "type": "other",
+    "dateStart": "2026-08-06",
+    "dateEnd": "2026-08-28",
+    "city": "Lisboa",
+    "venue": "Parque Mayer",
+    "price": "бесплатно",
+    "url": "https://www.agendalx.pt/events/event/cinema-no-verao-ao-ar-livre/",
+    "description": "Бесплатные показы кино под открытым небом в Парке Майер по пятницам и субботам в августе — приятный летний вечер для всей семьи. Мест ограниченное количество, приходите заранее.",
+    "sourceId": "websearch",
+    "dedupeHash": "cinema ao ar livre parque mayer|2026-08-06|lisboa"
+  },
+  {
+    "id": "festas-santo-elias-carnide-2026",
+    "title": "Festas de Santo Elias em Carnide",
+    "type": "festival",
+    "dateStart": "2026-08-06",
+    "dateEnd": "2026-08-10",
+    "city": "Lisboa",
+    "venue": "Carnide",
+    "price": "бесплатно",
+    "url": "https://www.viralagenda.com/pt/events/1733487/festas-de-santo-elias-em-carnide-2026",
+    "description": "Традиционный народный арраял в лиссабонском районе Карниде: живая музыка, концерты, уличная еда и танцы пять вечеров подряд. Атмосферный кусочек «Santos Populares» уже после июньских праздников.",
+    "sourceId": "websearch",
+    "dedupeHash": "festas de santo elias carnide|2026-08-06|lisboa"
   }
 ]

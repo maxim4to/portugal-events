@@ -491,5 +491,19 @@
     "description": "11-е издание мультидисциплинарного фестиваля превращает Авейру в сцену под открытым небом: около 90 представлений на 17 площадках — уличный театр, музыка, танец, современный цирк и перформативные инсталляции. Вход на большинство событий свободный.",
     "sourceId": "websearch",
     "dedupeHash": "festival dos canais|2026-07-15|aveiro"
+  },
+  {
+    "id": "jazz-em-agosto-2026",
+    "title": "Jazz em Agosto 2026",
+    "type": "festival",
+    "dateStart": "2026-07-31",
+    "dateEnd": "2026-08-09",
+    "city": "Lisboa",
+    "venue": "Fundação Calouste Gulbenkian",
+    "price": "по билетам",
+    "url": "https://www.visitlisboa.com/en/events/jazz-em-agosto-2",
+    "description": "Один из самых уважаемых джазовых фестивалей Португалии в садах фонда Гюльбенкяна: четырнадцать концертов авангардного и современного джаза, часть — в открытом амфитеатре под соснами.",
+    "sourceId": "websearch",
+    "dedupeHash": "jazz em agosto|2026-07-31|lisboa"
   }
 ]
