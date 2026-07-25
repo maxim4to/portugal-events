@@ -252,6 +252,9 @@
         "license": "CC BY-SA 2.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Azenhas_do_Mar_(31486911404).jpg"
       }
+    ],
+    "reels": [
+      "https://www.instagram.com/reel/DXpGDNbjAWD/"
     ]
   },
   {
@@ -596,7 +599,10 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peninha,Santu%C3%A1rio.jpg"
       }
     ],
-    "collections": []
+    "collections": [],
+    "reels": [
+      "https://www.instagram.com/reel/DXpGDNbjAWD/"
+    ]
   },
   {
     "id": "praia-da-adraga",
@@ -808,7 +814,10 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:2750_Cascais,_Portugal_-_panoramio_(2).jpg"
       }
     ],
-    "collections": []
+    "collections": [],
+    "reels": [
+      "https://www.instagram.com/reel/DXpGDNbjAWD/"
+    ]
   },
   {
     "id": "ericeira",
@@ -1342,6 +1351,69 @@
     "photos": [],
     "reels": [
       "https://www.instagram.com/reel/DbOrLmktWm5/"
+    ],
+    "collections": []
+  },
+  {
+    "id": "aldeia-da-mata-pequena",
+    "name": "Алдейя-да-Мата-Пекена",
+    "type": "town",
+    "region": "Лиссабон и Синтра",
+    "coords": {
+      "lat": 38.931,
+      "lon": -9.2585
+    },
+    "description": "Крошечная деревушка из десятка традиционных домов в зелёной сельской местности Мафры — идеальное тихое место, чтобы сбежать из города и побыть наедине с природой. Сохранён деревенский аутентичный уклад: каменные дома, огороды, полная тишина. Часть домов сдаётся как сельское жильё.",
+    "driveMinutesFromLisbon": 40,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "природа",
+      "история",
+      "фото"
+    ],
+    "links": [],
+    "photos": [],
+    "reels": [
+      "https://www.instagram.com/reel/DXpGDNbjAWD/"
+    ],
+    "collections": []
+  },
+  {
+    "id": "palacio-marqueses-fronteira",
+    "name": "Дворец маркизов Фронтейра",
+    "type": "castle",
+    "region": "Лиссабон и Синтра",
+    "coords": {
+      "lat": 38.7365,
+      "lon": -9.1875
+    },
+    "description": "Малоизвестная жемчужина Лиссабона (Сан-Домингуш-де-Бенфика) — дворец XVII века с одними из красивейших садов Португалии, сплошь украшенных изразцами-азулежу: терраса королей, водные зеркала и барочные партеры. Один из лучших образцов дворцовой архитектуры страны, при этом почти без толп. Посещение садов и дворца — по билету/с экскурсией.",
+    "driveMinutesFromLisbon": 15,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "фото",
+      "виды"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Azulejos_no_Jardim_do_Pal%C3%A1cio_dos_Marqueses_de_Fronteira%2C_S%C3%A3o_Domingos_de_Benfica%2C_Lisboa_01.jpg/1280px-Azulejos_no_Jardim_do_Pal%C3%A1cio_dos_Marqueses_de_Fronteira%2C_S%C3%A3o_Domingos_de_Benfica%2C_Lisboa_01.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Azulejos_no_Jardim_do_Pal%C3%A1cio_dos_Marqueses_de_Fronteira,_S%C3%A3o_Domingos_de_Benfica,_Lisboa_01.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Azulejos_no_Jardim_do_Pal%C3%A1cio_dos_Marqueses_de_Fronteira%2C_S%C3%A3o_Domingos_de_Benfica%2C_Lisboa_03.jpg/1280px-Azulejos_no_Jardim_do_Pal%C3%A1cio_dos_Marqueses_de_Fronteira%2C_S%C3%A3o_Domingos_de_Benfica%2C_Lisboa_03.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Azulejos_no_Jardim_do_Pal%C3%A1cio_dos_Marqueses_de_Fronteira,_S%C3%A3o_Domingos_de_Benfica,_Lisboa_03.jpg"
+      }
+    ],
+    "reels": [
+      "https://www.instagram.com/reel/DXpGDNbjAWD/"
     ],
     "collections": []
   }
