@@ -654,5 +654,43 @@
       "https://www.instagram.com/reel/DXwx4seMvZ6/"
     ],
     "collections": []
+  },
+  {
+    "id": "cascata-de-pincaes",
+    "name": "Водопад Пинсайнш",
+    "type": "nature",
+    "region": "Норте",
+    "coords": {
+      "lat": 41.735,
+      "lon": -8.135
+    },
+    "description": "Ещё один живописный водопад Пенеда-Жереша с бирюзовыми купелями среди гранита и леса. К нему ведёт хорошо размеченная тропа около 1,2 км в одну сторону — мимо водных каналов, руин старых мельниц и местной растительности, с небольшим набором высоты. Машину оставляют в деревне Пинсайнш (дальше проезд только для местных).",
+    "driveMinutesFromLisbon": 220,
+    "visitDurationHours": 2,
+    "bestSeason": "апрель–сентябрь",
+    "tags": [
+      "природа",
+      "купание",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Cascata_dos_Pinc%C3%A3es.jpg/1280px-Cascata_dos_Pinc%C3%A3es.jpg",
+        "author": "Ruben Queirós",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cascata_dos_Pinc%C3%A3es.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Cascata_de_Pinc%C3%A3es_26.jpg/1280px-Cascata_de_Pinc%C3%A3es_26.jpg",
+        "author": "Afsalgado",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cascata_de_Pinc%C3%A3es_26.jpg"
+      }
+    ],
+    "reels": [
+      "https://www.instagram.com/reel/DblBy3qtW3D/"
+    ],
+    "collections": []
   }
 ]
