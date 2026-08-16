@@ -393,5 +393,212 @@
     "reels": [
       "https://www.instagram.com/reel/DY7_9bAtIQF/"
     ]
+  },
+  {
+    "id": "parque-ecologico-do-gameiro",
+    "name": "Экопарк Гамейру",
+    "type": "nature",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 38.954,
+      "lon": -8.109
+    },
+    "description": "Тихий природный парк на реке Раия у Кабесана (Мора): старая запруда с азенья (водяной мельницей), деревянный настил ~1,5 км вдоль реки, зоны для пикника, кемпинг и верёвочный парк. Идеально для спокойного дня на природе в глубине Алентежу. Рядом — речной пляж и Флувиариу-де-Мора.",
+    "driveMinutesFromLisbon": 120,
+    "visitDurationHours": 3,
+    "bestSeason": "май–сентябрь",
+    "tags": [
+      "природа",
+      "купание",
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/A%C3%A7ude_do_Gameiro_I.jpg/1280px-A%C3%A7ude_do_Gameiro_I.jpg",
+        "author": "Filipe Rocha",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:A%C3%A7ude_do_Gameiro_I.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/A%C3%A7ude_do_Gameiro_e_barragem_I.jpg/1280px-A%C3%A7ude_do_Gameiro_e_barragem_I.jpg",
+        "author": "Filipe Rocha",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:A%C3%A7ude_do_Gameiro_e_barragem_I.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "praia-fluvial-do-gameiro",
+    "name": "Речной пляж Гамейру",
+    "type": "beach",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 38.9543,
+      "lon": -8.1084
+    },
+    "description": "Речной пляж на реке Раия в экопарке Гамейру: спокойная пресная вода у запруды, песок и тень деревьев — приятная передышка в жаркий алентежанский день. Есть кафе, места для пикника и кемпинг рядом. Летом бывает многолюдно по выходным.",
+    "driveMinutesFromLisbon": 120,
+    "visitDurationHours": 3,
+    "bestSeason": "июнь–сентябрь",
+    "tags": [
+      "купание",
+      "природа",
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/A%C3%A7ude_do_Gameiro_e_barragem_II.jpg/1280px-A%C3%A7ude_do_Gameiro_e_barragem_II.jpg",
+        "author": "Filipe Rocha",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:A%C3%A7ude_do_Gameiro_e_barragem_II.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "fluviario-de-mora",
+    "name": "Флувиариу-де-Мора (речной аквариум)",
+    "type": "other",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 38.9546,
+      "lon": -8.1079
+    },
+    "description": "Один из немногих в Европе аквариумов пресноводной фауны, в экопарке Гамейру под Морой: маршрут «от истока к устью» с рыбами, черепахами, осетрами и большим главным аквариумом. Отличное место для семей с детьми и в жару, и в дождь. Вокруг — парк, речной пляж и тропы.",
+    "driveMinutesFromLisbon": 120,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми",
+      "природа"
+    ],
+    "links": [
+      {
+        "title": "Fluviário de Mora",
+        "url": "https://www.fluviariomora.pt/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Fluvi%C3%A1rio_de_Mora_2.jpg/1280px-Fluvi%C3%A1rio_de_Mora_2.jpg",
+        "author": "Juntas",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fluvi%C3%A1rio_de_Mora_2.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Fluvi%C3%A1rio_de_Mora.jpg/1280px-Fluvi%C3%A1rio_de_Mora.jpg",
+        "author": "Paulo Juntas",
+        "license": "CC BY-SA 2.5",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fluvi%C3%A1rio_de_Mora.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "anta-capela-de-pavia",
+    "name": "Анта-капела де Павия",
+    "type": "other",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 38.898,
+      "lon": -8.015
+    },
+    "description": "Редкость: мегалитический дольмен эпохи неолита, ещё в XVII веке превращённый в крошечную христианскую часовню Сан-Диниш, — стоит прямо в деревне Павия (Мора). Огромные каменные плиты образуют стены и крышу капеллы. Быстрая, но впечатляющая остановка по пути к Гамейру.",
+    "driveMinutesFromLisbon": 115,
+    "visitDurationHours": 0.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Anta_de_Pavia%2C_transformada_em_capela_de_S%C3%A3o_Dinis.jpg/1280px-Anta_de_Pavia%2C_transformada_em_capela_de_S%C3%A3o_Dinis.jpg",
+        "author": "Duca696",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anta_de_Pavia,_transformada_em_capela_de_S%C3%A3o_Dinis.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Anta_de_Pavia_%281%29.jpg/1280px-Anta_de_Pavia_%281%29.jpg",
+        "author": "Alvaro Azevedo Moura",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anta_de_Pavia_(1).jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "arraiolos",
+    "name": "Аррайолуш",
+    "type": "town",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 38.724,
+      "lon": -7.984
+    },
+    "description": "Белоснежный алентежанский городок, знаменитый ручными коврами tapetes de Arraiolos и редким круглым замком XIV века на холме. С крепостных стен открывается вид на равнины и оливковые рощи. Загляните в мастерские ковров и поднимитесь к замку на закате.",
+    "driveMinutesFromLisbon": 105,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "виды",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Vila_de_Arraiolos_%28Vista_das_Muralhas%29.jpg/1280px-Vila_de_Arraiolos_%28Vista_das_Muralhas%29.jpg",
+        "author": "Inces26",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vila_de_Arraiolos_(Vista_das_Muralhas).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Torre_de_Menagem_do_Castelo_de_Arraiolos.jpg/1280px-Torre_de_Menagem_do_Castelo_de_Arraiolos.jpg",
+        "author": "Inces26",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Torre_de_Menagem_do_Castelo_de_Arraiolos.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "montemor-o-novo",
+    "name": "Монтемор-у-Нову",
+    "type": "town",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 38.648,
+      "lon": -8.217
+    },
+    "description": "Алентежанский городок на полпути из Лиссабона в Эвору, увенчанный обширными руинами средневекового замка на холме с панорамой окрестных равнин. Внизу — белёные улочки и церкви. Удобная и красивая остановка прямо по трассе A6.",
+    "driveMinutesFromLisbon": 90,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "виды",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Castelo_de_Montemor-o-Novo_1b.jpg/1280px-Castelo_de_Montemor-o-Novo_1b.jpg",
+        "author": "carlos p. gonçalves",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Montemor-o-Novo_1b.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Castelo_de_Montemor-o-Novo_1c.jpg/1280px-Castelo_de_Montemor-o-Novo_1c.jpg",
+        "author": "carlos p. gonçalves",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Montemor-o-Novo_1c.jpg"
+      }
+    ],
+    "collections": []
   }
 ]
