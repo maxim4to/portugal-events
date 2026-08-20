@@ -1416,5 +1416,43 @@
       "https://www.instagram.com/reel/DXpGDNbjAWD/"
     ],
     "collections": []
+  },
+  {
+    "id": "tapada-de-monserrate",
+    "name": "Тапада-де-Монсеррате",
+    "type": "hike",
+    "region": "Лиссабон и Синтра",
+    "coords": {
+      "lat": 38.79,
+      "lon": -9.423
+    },
+    "description": "Лесной массив напротив дворца Монсеррате с сетью пересекающихся троп (зелёная, голубая, оранжевая) — гораздо тише туристической Синтры. Главная цель — самая высокая скала: рядом с ней табличка «Trilhos All Mountain – Sintra (FLOWE)», а с вершины открывается собственная смотровая с панорамой серры. Маршруты постоянно пересекаются, заблудиться сложно — но обувь берите походную.",
+    "driveMinutesFromLisbon": 45,
+    "visitDurationHours": 2.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "природа",
+      "виды",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Tapada_de_Monserrate_01.jpg/1280px-Tapada_de_Monserrate_01.jpg",
+        "author": "DiogoBaptista",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tapada_de_Monserrate_01.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Tapada_de_Monserrate_03.jpg/1280px-Tapada_de_Monserrate_03.jpg",
+        "author": "DiogoBaptista",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tapada_de_Monserrate_03.jpg"
+      }
+    ],
+    "reels": [
+      "https://www.instagram.com/reel/DcQhNevNxEZ/"
+    ],
+    "collections": []
   }
 ]
