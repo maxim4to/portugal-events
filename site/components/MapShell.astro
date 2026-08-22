@@ -371,6 +371,89 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro
     color: var(--text-primary);
     border-color: var(--border);
   }
+  /* --- "Где я" control + current-location marker (lib/geolocate.ts) ------- */
+  /* Sits under the zoom buttons as a second leaflet-bar. Geolocation is only
+     requested on a press — nothing happens on load. */
+  :global(.locate-control .locate-btn) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    color: var(--text-primary);
+    cursor: pointer;
+  }
+  :global(.locate-control .locate-btn.is-located) {
+    color: var(--map-me);
+  }
+  /* Waiting on the fix: spin the crosshair. */
+  :global(.locate-control .locate-btn.is-busy) {
+    color: var(--text-muted);
+  }
+  :global(.locate-control .locate-btn.is-busy svg) {
+    animation: locate-spin 1s linear infinite;
+  }
+  @keyframes locate-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    :global(.locate-control .locate-btn.is-busy svg) {
+      animation-duration: 2.4s;
+    }
+  }
+
+  /* Fixed blue (not the theme accent): the dot sits on always-light OSM tiles. */
+  .pane-map {
+    --map-me: #1a73e8;
+  }
+  :global(.me-pin) {
+    /* Leaflet gives the divIcon a size; the dot centres itself inside it. */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  :global(.me-pin-dot) {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--map-me);
+    border: 2.5px solid #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+  }
+  :global(.me-accuracy) {
+    fill: var(--map-me);
+    fill-opacity: 0.12;
+    stroke: var(--map-me);
+    stroke-opacity: 0.45;
+    stroke-width: 1;
+  }
+
+  /* Error strip (permission denied / timeout), auto-hides after a few seconds. */
+  :global(.locate-toast) {
+    position: absolute;
+    left: 50%;
+    bottom: var(--space-4);
+    transform: translateX(-50%);
+    z-index: 1000;
+    max-width: min(320px, calc(100% - 24px));
+    padding: var(--space-2) var(--space-3);
+    background: var(--surface-2);
+    color: var(--text-primary);
+    border: 0.5px solid var(--border-strong);
+    border-radius: var(--radius-pill);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+    font-size: 13px;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+  :global(.locate-toast.is-shown) {
+    opacity: 1;
+  }
+
   :global(.leaflet-control-attribution) {
     background: color-mix(in srgb, var(--surface-2) 80%, transparent);
     color: var(--text-muted);
@@ -438,6 +521,10 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro
     }
     .explorer-root:not(.show-map).hide-filter-bar .filter-bar-top {
       transform: translateY(-100%);
+    }
+    /* Keep the geolocation message clear of the floating list/map switch. */
+    :global(.locate-toast) {
+      bottom: 64px;
     }
     /* Airbnb-style floating list/map switch, centered at the bottom. */
     .view-toggle {

@@ -1,5 +1,6 @@
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+import { attachLocateControl } from './geolocate.ts';
 
 export interface MapPoint {
   id: string;
@@ -204,6 +205,8 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
       attribution: '© OpenStreetMap contributors',
       maxZoom: 19,
     }).addTo(map);
+    // "Где я": geolocation is requested only when its button is pressed.
+    attachLocateControl(map);
     map.on('moveend', () => {
       if (boundsMode()) updateListVisibility();
     });
