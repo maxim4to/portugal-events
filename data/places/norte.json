@@ -692,5 +692,35 @@
       "https://www.instagram.com/reel/DblBy3qtW3D/"
     ],
     "collections": []
+  },
+  {
+    "id": "praia-fluvial-do-alqueirao",
+    "name": "Речной пляж Алкейран (Жереш)",
+    "type": "beach",
+    "region": "Норте",
+    "coords": {
+      "lat": 41.6785,
+      "lon": -8.1762
+    },
+    "description": "Самый известный речной пляж Жереша на берегу водохранилища Санисада у Вилар-да-Вейга — единственный в парке с «золотым» знаком качества воды. Спокойная пресная вода в окружении гор, прокат сапов/каяков и водные активности летом; рядом мост между Риу-Калду и Вила-ду-Жереш. Отличная точка, чтобы искупаться после троп и водопадов парка.",
+    "driveMinutesFromLisbon": 210,
+    "visitDurationHours": 3,
+    "bestSeason": "июнь–сентябрь",
+    "tags": [
+      "купание",
+      "природа",
+      "с детьми"
+    ],
+    "links": [
+      {
+        "title": "Praia Fluvial do Alqueirão (Terras de Bouro)",
+        "url": "https://turismo.cm-terrasdebouro.pt/listings/praia-fluvial-do-alqueirao/"
+      }
+    ],
+    "photos": [],
+    "reels": [
+      "https://www.instagram.com/reel/Dcxu5sKoXUI/"
+    ],
+    "collections": []
   }
 ]
