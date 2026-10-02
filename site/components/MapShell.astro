@@ -513,9 +513,8 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro
   }
 
   /* ---- Phone: full-screen map with the list in a draggable bottom sheet ----
-     Geometry comes from lib/mobileSheet.ts via --sheet-y (sheet offset from
-     the top), --map-cover (px of map hidden at the bottom) and --bar-h (filter
-     bar height). */
+     lib/mobileSheet.ts positions the sheet and the map's bottom controls with
+     inline transforms, and publishes the filter bar height as --bar-h. */
   @media (max-width: 760px) {
     .explorer-root {
       position: fixed;
@@ -627,7 +626,7 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro
       background: var(--surface-0);
       border-radius: 16px 16px 0 0;
       box-shadow: 0 -2px 18px rgba(33, 29, 23, 0.2);
-      transform: translate3d(0, var(--sheet-y, 50%), 0);
+      transform: translate3d(0, 50%, 0);
       will-change: transform;
     }
     .explorer-root.sheet-anim .pane-list {
@@ -697,11 +696,7 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro
     /* Leaflet controls ride just above whatever covers the map's bottom edge,
        and just below the floating filter row at the top. */
     .pane-map :global(.leaflet-bottom) {
-      bottom: var(--map-cover, 0px);
-      transition: bottom 0.34s cubic-bezier(0.2, 0.9, 0.25, 1);
-    }
-    .explorer-root.sheet-dragging .pane-map :global(.leaflet-bottom) {
-      transition: none;
+      transition: transform 0.34s cubic-bezier(0.2, 0.9, 0.25, 1);
     }
     .pane-map :global(.leaflet-top) {
       top: var(--bar-h, 56px);

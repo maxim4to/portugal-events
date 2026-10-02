@@ -5,10 +5,10 @@
 // scrolled (then it scrolls natively, and a pull-down at the very top collapses
 // it again — the iOS sheet convention).
 //
-// Geometry is published as CSS custom properties on the explorer root:
-//   --sheet-y    the sheet's translateY from the root's top
-//   --map-cover  how many px of the map's bottom edge are covered (sheet or
-//                pin preview) — map controls sit just above it.
+// Moves are transform-only, written straight onto the sheet and the map's
+// bottom control corners (which ride just above whatever covers the map). No
+// custom properties on the root and no measuring per frame: either would make
+// the browser restyle/re-lay out the whole 200+ card list on every finger move.
 // Framework-free; the host (mapExplorer) owns persistence and the map.
 
 export type SheetSnap = 'peek' | 'half' | 'full';
@@ -57,11 +57,33 @@ export function initSheet(root: HTMLElement, opts: Options): SheetController {
   const posOf = (s: SheetSnap) =>
     s === 'full' ? fullY() : s === 'half' ? Math.round(H() * HALF_AT) : H() - headH();
 
-  function paint(nextY: number) {
+  // Leaflet creates its control corners after the sheet starts; look them up
+  // lazily and keep them.
+  let corners: HTMLElement[] = [];
+  const mapCorners = () => {
+    if (corners.length < 2) {
+      corners = Array.from(root.querySelectorAll<HTMLElement>('.pane-map .leaflet-bottom'));
+    }
+    return corners;
+  };
+  let lastCover = -1;
+  let lastBarH = -1;
+
+  function paint(nextY: number, height = H()) {
     y = nextY;
-    root.style.setProperty('--sheet-y', `${Math.round(y)}px`);
-    const cover = away ? awayCover : Math.max(0, H() - y);
-    root.style.setProperty('--map-cover', `${Math.round(cover)}px`);
+    if (!opts.enabled()) {
+      // Wide screens: the list is a normal pane again.
+      sheet.style.transform = '';
+      mapCorners().forEach((el) => (el.style.transform = ''));
+      lastCover = -1;
+      return;
+    }
+    sheet.style.transform = `translate3d(0, ${Math.round(y)}px, 0)`;
+    const cover = Math.round(away ? awayCover : Math.max(0, height - y));
+    if (cover !== lastCover) {
+      lastCover = cover;
+      mapCorners().forEach((el) => (el.style.transform = `translate3d(0, ${-cover}px, 0)`));
+    }
   }
 
   function apply(animate: boolean) {
@@ -69,7 +91,11 @@ export function initSheet(root: HTMLElement, opts: Options): SheetController {
     root.classList.toggle('sheet-full', state === 'full' && !away);
     root.classList.toggle('sheet-away', away);
     root.dataset.sheet = away ? 'away' : state;
-    root.style.setProperty('--bar-h', `${bar.offsetHeight}px`);
+    const barH = bar.offsetHeight;
+    if (barH !== lastBarH) {
+      lastBarH = barH;
+      root.style.setProperty('--bar-h', `${barH}px`);
+    }
     if (state !== 'full') root.classList.remove('hide-filter-bar');
     paint(away ? H() + 24 : posOf(state));
   }
@@ -92,6 +118,28 @@ export function initSheet(root: HTMLElement, opts: Options): SheetController {
   let mode: 'idle' | 'pending' | 'drag' | 'native' = 'idle';
   let fromHead = false;
   let samples: { t: number; y: number }[] = [];
+  // Measured once per gesture, not per frame.
+  let dragMin = 0;
+  let dragMax = 0;
+  let dragH = 0;
+  let pendingY: number | null = null;
+  let frame = 0;
+  let fullClass = false;
+
+  function flush() {
+    frame = 0;
+    if (pendingY === null) return;
+    const next = pendingY;
+    pendingY = null;
+    // Leaving full: the list must stop being the scroller right away. Only
+    // touch the class when it actually flips — it restyles the whole list.
+    const atTop = next <= dragMin + 1;
+    if (atTop !== fullClass) {
+      fullClass = atTop;
+      root.classList.toggle('sheet-full', atTop);
+    }
+    paint(next, dragH);
+  }
 
   sheet.addEventListener(
     'touchstart',
@@ -126,19 +174,21 @@ export function initSheet(root: HTMLElement, opts: Options): SheetController {
         mode =
           fromHead || state !== 'full' || (listAtTop && dy > 0) ? 'drag' : 'native';
         if (mode === 'native') return;
-        root.classList.remove('sheet-anim');
-        root.classList.add('sheet-dragging');
+        dragH = H();
+        dragMin = posOf('full');
+        dragMax = dragH - headH();
+        fullClass = root.classList.contains('sheet-full');
+        // Follow the finger 1:1 — inline, so no class flips on the root.
+        sheet.style.transition = 'none';
+        mapCorners().forEach((el) => (el.style.transition = 'none'));
       }
       e.preventDefault();
-      const min = posOf('full');
-      const max = posOf('peek');
       let next = startSheetY + dy;
       // Rubber-band past the ends.
-      if (next < min) next = min - Math.sqrt(min - next) * 2;
-      if (next > max) next = max + Math.sqrt(next - max) * 2;
-      // Leaving full: the list must stop being the scroller immediately.
-      root.classList.toggle('sheet-full', next <= min + 1);
-      paint(next);
+      if (next < dragMin) next = dragMin - Math.sqrt(dragMin - next) * 2;
+      if (next > dragMax) next = dragMax + Math.sqrt(next - dragMax) * 2;
+      pendingY = next;
+      if (!frame) frame = requestAnimationFrame(flush);
       samples.push({ t: e.timeStamp, y: cy });
       if (samples.length > 5) samples.shift();
     },
@@ -151,7 +201,10 @@ export function initSheet(root: HTMLElement, opts: Options): SheetController {
       return;
     }
     mode = 'idle';
-    root.classList.remove('sheet-dragging');
+    if (frame) cancelAnimationFrame(frame);
+    flush();
+    sheet.style.transition = '';
+    mapCorners().forEach((el) => (el.style.transition = ''));
     const a = samples[0];
     const b = samples[samples.length - 1];
     const v = b && a && b.t > a.t ? (b.y - a.y) / (b.t - a.t) : 0; // px/ms
