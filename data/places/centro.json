@@ -572,7 +572,8 @@
       "https://www.instagram.com/reel/DYmF_f5OBrG/",
       "https://www.instagram.com/reel/DY7_9bAtIQF/",
       "https://www.instagram.com/reel/DVGnK5LDNxb/"
-    ]
+    ],
+    "freeWithResidency": true
   },
   {
     "id": "praia-fluvial-do-agroal",
@@ -905,7 +906,8 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_barbarians_have_left_the_city_(1414840422).jpg"
       }
     ],
-    "collections": []
+    "collections": [],
+    "freeWithResidency": true
   },
   {
     "id": "portugal-dos-pequenitos",
