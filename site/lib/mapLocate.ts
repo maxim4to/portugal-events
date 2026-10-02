@@ -100,7 +100,7 @@ export function addLocateControl(map: L.Map, opts: Options = {}) {
 
   function onTap() {
     const fix = getFix();
-    if (mode === 'off' || !isActive()) {
+    if (mode === 'off' || !isActive() || !fix) {
       setMode('locating');
       requestLocation();
       if (fix) {
@@ -135,7 +135,7 @@ export function addLocateControl(map: L.Map, opts: Options = {}) {
       );
     } else if (err === 'unsupported') {
       showToast('Этот браузер не умеет определять местоположение.');
-    } else if (mode !== 'shown' && mode !== 'follow') {
+    } else if (mode === 'locating') {
       showToast('Не удалось определить местоположение. Попробуйте ещё раз.');
     }
   });
@@ -159,10 +159,7 @@ export function addLocateControl(map: L.Map, opts: Options = {}) {
     },
     /** Ask for the position without moving the map (e.g. for sorting). */
     ensure() {
-      if (!isActive()) {
-        if (mode === 'off') setMode('shown');
-        requestLocation();
-      }
+      if (!isActive()) requestLocation();
     },
   };
 }

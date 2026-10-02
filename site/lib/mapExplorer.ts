@@ -263,7 +263,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     }
     markerLayer.addLayers(batch);
     if (selectedId) highlightMarker(selectedId, true);
-    if (fit && skipNextFit) {
+    if (fit && (skipNextFit || holdRestored)) {
       skipNextFit = false;
     } else if (fit) {
       fitTo(pts);
@@ -404,7 +404,11 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     if (restored) {
       map.setView(restored.center, restored.zoom, { animate: false });
       skipNextFit = true;
+      holdRestored = true;
       autoFit = false;
+      const release = () => (holdRestored = false);
+      root.addEventListener('pointerdown', release, { once: true, capture: true });
+      window.setTimeout(release, 4000);
       refreshMarkers(false);
     } else {
       refreshMarkers(true);
@@ -413,6 +417,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
 
   /** Full re-render after a filter change: rebuild pins, refit, re-filter list. */
   function rerender() {
+    closePreview();
     refreshMarkers(true);
     updateListVisibility();
   }
@@ -443,11 +448,27 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   const viewKey = `explorer-view:${location.pathname}`;
   type SavedView = { snap: SheetSnap; center: [number, number]; zoom: number };
   let restored: SavedView | null = null;
+  // Only a real "back"/"forward" returns to the saved view; a fresh visit (a
+  // tab tap, a link with other filters) frames the pins anew.
+  const navType = (
+    performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming | undefined
+  )?.type;
+  let isReturn = navType === 'back_forward';
+  try {
+    if (sessionStorage.getItem('explorer-return') === location.pathname) isReturn = true;
+    sessionStorage.removeItem('explorer-return');
+  } catch {}
   try {
     const raw = sessionStorage.getItem(viewKey);
-    if (raw && isMobile()) restored = JSON.parse(raw) as SavedView;
+    const saved = raw ? (JSON.parse(raw) as SavedView & { search?: string }) : null;
+    if (saved && isMobile() && isReturn && (saved.search ?? '') === location.search) {
+      restored = saved;
+    }
   } catch {}
   let skipNextFit = false;
+  // Late re-renders on load (the signed-in sets arriving) mustn't throw the
+  // restored view away; the hold ends on the first touch or after a moment.
+  let holdRestored = false;
 
   function saveView() {
     if (!map || !isMobile()) return;
@@ -455,7 +476,12 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     try {
       sessionStorage.setItem(
         viewKey,
-        JSON.stringify({ snap: sheet.state, center: [c.lat, c.lng], zoom: map.getZoom() }),
+        JSON.stringify({
+          snap: sheet.state,
+          center: [c.lat, c.lng],
+          zoom: map.getZoom(),
+          search: location.search,
+        }),
       );
     } catch {}
   }
@@ -542,14 +568,15 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     }
   }
 
-  function setNearSort(on: boolean) {
+  function setNearSort(on: boolean, fromRestore = false) {
     nearSort = on;
     nearBtn?.setAttribute('aria-pressed', String(on));
     try {
       if (on) sessionStorage.setItem(nearKey, '1');
       else sessionStorage.removeItem(nearKey);
     } catch {}
-    if (on && !getFix()) locate?.ensure();
+    // Restoring on load never prompts; it sorts once a (resumed) fix lands.
+    if (on && !getFix() && !fromRestore) locate?.ensure();
     applySort();
   }
 
@@ -560,9 +587,11 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
 
   onFix(updateDistances);
 
+  // The visited filter can add/remove pins (and the set may land after the
+  // first render), so rebuild them — refitting only while auto-framed.
   document.addEventListener('visited:changed', () => {
+    refreshMarkers(autoFit);
     updateListVisibility();
-    restyleMarkers();
   });
   // Favorites don't hide/show cards, but they do change a pin into a heart.
   document.addEventListener('favorites:changed', restyleMarkers);
@@ -606,7 +635,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   const cachedFix = getFix();
   if (cachedFix) updateDistances(cachedFix);
   try {
-    if (sessionStorage.getItem(nearKey) === '1') setNearSort(true);
+    if (sessionStorage.getItem(nearKey) === '1') setNearSort(true, true);
   } catch {}
   updateListVisibility();
   // The container height settles after first layout; let Leaflet re-measure so
@@ -618,11 +647,17 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   // scrollTop otherwise resets to 0 on every "back".
   if (listScroll) {
     const scrollKey = `explorer-scroll:${location.pathname}`;
-    const saved = sessionStorage.getItem(scrollKey);
-    if (saved) listScroll.scrollTop = Number(saved);
+    try {
+      const saved = sessionStorage.getItem(scrollKey);
+      if (saved && (isReturn || !isMobile())) listScroll.scrollTop = Number(saved);
+    } catch {}
     listScroll.addEventListener(
       'scroll',
-      () => sessionStorage.setItem(scrollKey, String(listScroll.scrollTop)),
+      () => {
+        try {
+          sessionStorage.setItem(scrollKey, String(listScroll.scrollTop));
+        } catch {}
+      },
       { passive: true },
     );
   }

@@ -174,7 +174,11 @@ const isRoot = (p: string) => current === href(p).replace(/\/$/, '');
         }
         try {
           const saved = sessionStorage.getItem(key(a.dataset.tab!));
-          if (saved) a.href = saved;
+          if (saved) {
+            a.href = saved;
+            // Lets the explorer restore its sheet and map view, as on "back".
+            sessionStorage.setItem('explorer-return', new URL(saved, location.href).pathname);
+          }
         } catch {}
       });
     });

@@ -76,6 +76,8 @@ export function initSheet(root: HTMLElement, opts: Options): SheetController {
 
   function snap(to: SheetSnap, animate = true) {
     const changed = to !== state;
+    // Below full the list can't scroll, so don't leave it parked mid-way.
+    if (state === 'full' && to !== 'full') scroll.scrollTo({ top: 0, behavior: 'smooth' });
     state = to;
     away = false;
     apply(animate);
