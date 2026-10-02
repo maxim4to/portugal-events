@@ -189,11 +189,14 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   const RAIL_MAX = 15;
   let railKey = '';
 
-  // Wikimedia thumbnails are addressable by width (standard steps only: 250,
-  // 330, 500… — other widths are refused); the stored 1280px ones are far too
-  // heavy for a small tile.
-  const smallImage = (url: string, w: 250 | 330 = 250) =>
-    url.replace(/\/(\d+)px-([^/]+)$/, `/${w}px-$2`);
+  // Wikimedia thumbnails are addressable by width, but only a few widths are
+  // pre-rendered: others are refused (400) or rate-limited while generated
+  // (429). 330px is a cached standard step; on any failure fall back to the
+  // stored 1280px URL the rest of the site already loads.
+  const smallImage = (url: string) => url.replace(/\/(\d+)px-([^/]+)$/, '/330px-$2');
+  const imgTag = (url: string, hide: string) =>
+    `<img src="${esc(smallImage(url))}" data-full="${esc(url)}" alt="" decoding="async" referrerpolicy="no-referrer" ` +
+    `onerror="if(this.dataset.full&&this.src!==this.dataset.full){this.src=this.dataset.full}else{${hide}}">`;
 
   function renderRail(force = false) {
     if (!railEl || !isMobile()) return;
@@ -220,9 +223,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
             : p.meta
               ? `<span class="rail-meta">${esc(p.meta)}</span>`
               : '';
-        const img = p.image
-          ? `<img src="${esc(smallImage(p.image))}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.visibility='hidden'">`
-          : '';
+        const img = p.image ? imgTag(p.image, "this.style.visibility='hidden'") : '';
         return (
           `<button type="button" class="rail-item" data-rail-id="${esc(p.id)}">` +
           `<span class="rail-thumb">${img}</span><span class="rail-text">` +
@@ -365,7 +366,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
 
   function previewHtml(p: MapPoint): string {
     const media = p.image
-      ? `<span class="pp-media"><img src="${esc(smallImage(p.image, 330))}" alt="" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.style.visibility='hidden'"></span>`
+      ? `<span class="pp-media">${imgTag(p.image, "this.parentNode.style.visibility='hidden'")}</span>`
       : '';
     return (
       `<a class="pp-card" href="${detailUrl(p.id)}">${media}` +
