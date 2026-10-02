@@ -53,6 +53,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   const countEl = root.querySelector<HTMLElement>('[data-sheet-count]');
   const showAllBtns = Array.from(root.querySelectorAll<HTMLElement>('[data-show-all]'));
   const previewEl = root.querySelector<HTMLElement>('[data-pin-preview]');
+  const railEl = root.querySelector<HTMLElement>('[data-peek-rail]');
   const mapEl = root.querySelector<HTMLElement>('[data-map]')!;
   const cards = Array.from(root.querySelectorAll<HTMLElement>('[data-item-card]'));
   const groups = Array.from(root.querySelectorAll<HTMLElement>('[data-group]'));
@@ -180,7 +181,64 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     }
     emptyEl.hidden = visible !== 0;
     paintCount(visible, matching);
+    renderRail();
   }
+
+  // ---- Collapsed-sheet rail: compact cards for what's in view ---------------
+
+  const RAIL_MAX = 15;
+  let railKey = '';
+
+  // Wikimedia thumbnails are addressable by width (standard steps only: 250,
+  // 330, 500… — other widths are refused); the stored 1280px ones are far too
+  // heavy for a small tile.
+  const smallImage = (url: string, w: 250 | 330 = 250) =>
+    url.replace(/\/(\d+)px-([^/]+)$/, `/${w}px-$2`);
+
+  function renderRail(force = false) {
+    if (!railEl || !isMobile()) return;
+    const items: MapPoint[] = [];
+    for (const el of root.querySelectorAll<HTMLElement>('[data-item-card]')) {
+      if (el.hidden || el.dataset.notinterested === 'true') continue;
+      const p = pointById.get(el.dataset.id!);
+      if (p) items.push(p);
+      if (items.length >= RAIL_MAX) break;
+    }
+    const key = items.map((p) => p.id).join('|') + (distFix ? `@${distFix.at}` : '');
+    if (key === railKey && !force) return;
+    railKey = key;
+    if (!items.length) {
+      railEl.innerHTML = '<span class="rail-empty">Здесь ничего нет — подвиньте карту</span>';
+      return;
+    }
+    railEl.innerHTML = items
+      .map((p) => {
+        const km = distById.get(p.id);
+        const meta =
+          km !== undefined
+            ? `<span class="rail-meta is-dist">${formatDistance(km)} от вас</span>`
+            : p.meta
+              ? `<span class="rail-meta">${esc(p.meta)}</span>`
+              : '';
+        const img = p.image
+          ? `<img src="${esc(smallImage(p.image))}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.visibility='hidden'">`
+          : '';
+        return (
+          `<button type="button" class="rail-item" data-rail-id="${esc(p.id)}">` +
+          `<span class="rail-thumb">${img}</span><span class="rail-text">` +
+          (p.kicker ? `<span class="rail-kicker">${esc(p.kicker)}</span>` : '') +
+          `<span class="rail-title">${esc(p.name)}</span>${meta}</span></button>`
+        );
+      })
+      .join('');
+    railEl.scrollLeft = 0;
+  }
+
+  railEl?.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest<HTMLElement>('[data-rail-id]');
+    const p = btn ? pointById.get(btn.dataset.railId!) : undefined;
+    if (p) openPreview(p);
+  });
 
   function paintCount(visible: number, matching: number) {
     const limited = visible < matching;
@@ -307,7 +365,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
 
   function previewHtml(p: MapPoint): string {
     const media = p.image
-      ? `<span class="pp-media"><img src="${esc(p.image)}" alt="" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.style.visibility='hidden'"></span>`
+      ? `<span class="pp-media"><img src="${esc(smallImage(p.image, 330))}" alt="" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.style.visibility='hidden'"></span>`
       : '';
     return (
       `<a class="pp-card" href="${detailUrl(p.id)}">${media}` +
@@ -543,6 +601,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
       }
     }
     paintPreviewDistance();
+    renderRail(true);
     // Re-sort only on a sizeable move, so the list doesn't shuffle under you.
     if (nearSort && moved > 2) applySort();
   }
@@ -566,6 +625,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
         .sort(sorted ? byDistance : byOriginal)
         .forEach((c) => parent.appendChild(c));
     }
+    renderRail(true);
   }
 
   function setNearSort(on: boolean, fromRestore = false) {

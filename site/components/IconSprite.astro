@@ -1,0 +1,45 @@
+---
+// One copy of every repeated icon, referenced with <use href="#i-…">. The
+// catalog renders 200+ cards with ~8 icons each; inlining full SVGs per card
+// was ~40% of the page's HTML and thousands of extra DOM nodes. Stroke/fill
+// come from the referencing <svg> (inherited into the <use> tree), except
+// where a symbol pins its own colours.
+---
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-sun" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+  </symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></symbol>
+  <symbol id="i-hourglass" viewBox="0 0 24 24">
+    <path d="M6 3h12M6 21h12" />
+    <path d="M7 3c0 4 4 5 5 7 1-2 5-3 5-7M7 21c0-4 4-5 5-7 1 2 5 3 5 7" />
+  </symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2" /><path d="M3 9h18M8 2v4M16 2v4" /></symbol>
+  <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" /></symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" /></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="M21 21l-4.3-4.3" /></symbol>
+  <symbol id="i-sort" viewBox="0 0 24 24"><path d="M8 6h13M8 12h9M8 18h5M3 6l2-2 2 2M5 4v16" /></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6" /></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24">
+    <path d="M12 20s-7-4.6-9.3-9A4.9 4.9 0 0 1 12 6a4.9 4.9 0 0 1 9.3 5C19 15.4 12 20 12 20z" />
+  </symbol>
+
+  <symbol id="i-visited" viewBox="0 0 24 24">
+    <path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z" />
+    <circle cx="12" cy="12" r="2.6" />
+  </symbol>
+  <symbol id="i-visited-on" viewBox="0 0 24 24">
+    <path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+    <path d="M9.1 12.2l2 2 3.8-4.2" fill="none" stroke="var(--surface-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </symbol>
+  <symbol id="i-ni" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9" />
+    <line x1="5.6" y1="5.6" x2="18.4" y2="18.4" />
+  </symbol>
+  <symbol id="i-ni-on" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9" fill="currentColor" stroke="currentColor" stroke-width="2" />
+    <line x1="5.6" y1="5.6" x2="18.4" y2="18.4" stroke="var(--surface-2)" stroke-width="2.4" stroke-linecap="round" />
+  </symbol>
+</svg>

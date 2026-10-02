@@ -50,6 +50,7 @@ async function ensureAuth(): Promise<Auth | null> {
     onAuthStateChanged(auth, (user) => {
       currentUser = user;
       ready = true;
+      rememberUser(user);
       listeners.forEach((cb) => cb(user));
     });
     return auth;
@@ -73,6 +74,46 @@ export function onAuthChange(cb: (user: User | null) => void): () => void {
   return () => {
     listeners.delete(cb);
   };
+}
+
+// Firebase restores the session asynchronously (SDK download + IndexedDB),
+// which on a cold start takes a noticeable moment. The last signed-in profile
+// is kept here so the UI can show the account immediately instead of flashing
+// a signed-out state; the real auth state always replaces it.
+export interface CachedUser {
+  uid: string;
+  displayName: string | null;
+  email: string | null;
+  photoURL: string | null;
+}
+const CACHE_KEY = 'auth:last';
+
+function rememberUser(user: User | null) {
+  try {
+    if (user) {
+      const { uid, displayName, email, photoURL } = user;
+      localStorage.setItem(CACHE_KEY, JSON.stringify({ uid, displayName, email, photoURL }));
+    } else {
+      localStorage.removeItem(CACHE_KEY);
+    }
+  } catch {}
+}
+
+/** The last known signed-in user, until the real auth state arrives. */
+export function getCachedUser(): CachedUser | null {
+  if (!isFirebaseConfigured()) return null;
+  if (ready) return currentUser;
+  try {
+    const raw = localStorage.getItem(CACHE_KEY);
+    return raw ? (JSON.parse(raw) as CachedUser) : null;
+  } catch {
+    return null;
+  }
+}
+
+/** True once Firebase has reported the real auth state. */
+export function isAuthKnown(): boolean {
+  return ready;
 }
 
 /** The signed-in user's uid, or null. Populated once auth state is known. */

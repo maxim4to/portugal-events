@@ -17,45 +17,8 @@ const { placeId, variant = 'detail' } = Astro.props;
 >
   {/* Not visited: an open eye. Visited: the same eye filled, with a check for
       its pupil — the "on" state is toggled purely by aria-pressed (see CSS). */}
-  <svg
-    class="visited-icon"
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    aria-hidden="true"
-  >
-    <path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z" />
-    <circle cx="12" cy="12" r="2.6" />
-  </svg>
-  <svg
-    class="visited-icon-on"
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="none"
-    aria-hidden="true"
-  >
-    <path
-      d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"
-      fill="currentColor"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linejoin="round"
-    />
-    <path
-      d="M9.1 12.2l2 2 3.8-4.2"
-      fill="none"
-      stroke="var(--surface-2)"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-  </svg>
+  <svg class="visited-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-visited" /></svg>
+  <svg class="visited-icon-on" width="18" height="18" fill="none" aria-hidden="true"><use href="#i-visited-on" /></svg>
   <span class="visited-label">Был здесь</span>
 </button>
 

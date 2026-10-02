@@ -86,7 +86,13 @@ bottom `TabBar.astro` (Места / Афиша / Профиль → `pages/profi
 pages the map is full-screen and the list rides in a draggable bottom sheet
 (`site/lib/mobileSheet.ts`, snaps peek/half/full, geometry via CSS vars on the root);
 `mapExplorer.ts` filters the list to the visible map strip, shows a docked preview card on
-pin tap, and saves sheet + map view in sessionStorage so "back" restores it. Filter menus
+pin tap (and a rail of compact cards in the collapsed sheet), and saves sheet + map view
+in sessionStorage so "back" restores it. Sheet drags must stay transform-only (no CSS
+vars on the explorer root — that restyles every card per frame). Tab switches step through
+history when the target tab is the adjacent entry (`navStack.ts`) so it comes back from the
+bfcache; `auth.ts`/`userData.ts` cache the last account and its sets in localStorage so a
+cold start paints signed-in state at once. The app runs under a translucent status bar:
+anything at the top must pad by `env(safe-area-inset-top)`. Filter menus
 turn into bottom sheets (CSS in `base.css`). "My location" is `geolocate.ts` (one shared
 `watchPosition`, only started on an explicit tap, silently resumed when already granted)
 plus `mapLocate.ts` (dot + locate button); distances and the "Рядом" sort come from it.

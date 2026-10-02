@@ -73,6 +73,9 @@ const points = places.map((p) => ({
 <style>
   .card-wrap {
     position: relative;
+    /* 200+ cards: let the browser skip layout/paint of the ones off screen. */
+    content-visibility: auto;
+    contain-intrinsic-size: auto 420px;
   }
 
   /* Visited places sink below the rest, behind a labelled divider. Ordering is
@@ -240,7 +243,8 @@ const points = places.map((p) => ({
       if (s.onlyFavorites) params.set('fav', '1');
       if (s.freeWithResidency) params.set('residency', '1');
       const qs = params.toString();
-      history.replaceState(null, '', qs ? `?${qs}` : location.pathname);
+      // Keep history.state: it carries the tab bar's place in the history stack.
+      history.replaceState(history.state, '', qs ? `?${qs}` : location.pathname);
     }
 
     function onFilterChange() {

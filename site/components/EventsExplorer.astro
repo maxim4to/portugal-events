@@ -305,7 +305,8 @@ const presentCities = [...new Set(events.map((e) => e.city))].sort((a, b) =>
       if (s.types.length) params.set('type', s.types.join(','));
       if (s.city) params.set('city', s.city);
       const qs = params.toString();
-      history.replaceState(null, '', qs ? `?${qs}` : location.pathname);
+      // Keep history.state: it carries the tab bar's place in the history stack.
+      history.replaceState(history.state, '', qs ? `?${qs}` : location.pathname);
     }
 
     function onFilterChange() {

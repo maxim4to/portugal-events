@@ -44,6 +44,8 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro
           <span class="sheet-count" data-sheet-count aria-live="polite"></span>
           <button type="button" class="sheet-showall" data-show-all hidden>Все</button>
         </div>
+        {/* Collapsed sheet: a swipeable rail of what's in view (mapExplorer). */}
+        <div class="peek-rail" data-peek-rail></div>
       </div>
       <div class="list-scroll" data-list-scroll>
         <slot name="list" />
@@ -513,9 +515,8 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro
   }
 
   /* ---- Phone: full-screen map with the list in a draggable bottom sheet ----
-     Geometry comes from lib/mobileSheet.ts via --sheet-y (sheet offset from
-     the top), --map-cover (px of map hidden at the bottom) and --bar-h (filter
-     bar height). */
+     lib/mobileSheet.ts positions the sheet and the map's bottom controls with
+     inline transforms, and publishes the filter bar height as --bar-h. */
   @media (max-width: 760px) {
     .explorer-root {
       position: fixed;
@@ -627,7 +628,7 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro
       background: var(--surface-0);
       border-radius: 16px 16px 0 0;
       box-shadow: 0 -2px 18px rgba(33, 29, 23, 0.2);
-      transform: translate3d(0, var(--sheet-y, 50%), 0);
+      transform: translate3d(0, 50%, 0);
       will-change: transform;
     }
     .explorer-root.sheet-anim .pane-list {
@@ -661,6 +662,99 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro
       font-size: 15px;
       font-weight: 600;
       color: var(--text-primary);
+    }
+    /* Rail of compact cards, only in the collapsed (map) state. Its height is
+       fixed — mobileSheet.ts sizes the collapsed sheet with RAIL_BLOCK. */
+    .peek-rail {
+      display: none;
+    }
+    .explorer-root[data-sheet='peek'] .peek-rail {
+      display: flex;
+      gap: 10px;
+      height: 84px;
+      margin: 10px calc(-1 * var(--space-4)) 0;
+      padding: 0 var(--space-4);
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scroll-padding: 0 var(--space-4);
+      scrollbar-width: none;
+      touch-action: pan-x;
+    }
+    .peek-rail::-webkit-scrollbar {
+      display: none;
+    }
+    .peek-rail :global(.rail-item) {
+      flex: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 248px;
+      height: 84px;
+      padding: 8px;
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface-2);
+      color: var(--text-primary);
+      font: inherit;
+      text-align: left;
+      scroll-snap-align: start;
+      cursor: pointer;
+    }
+    .peek-rail :global(.rail-item:active) {
+      background: var(--surface-1);
+    }
+    .peek-rail :global(.rail-thumb) {
+      flex: none;
+      width: 68px;
+      height: 68px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--accent-bg);
+    }
+    .peek-rail :global(.rail-thumb img) {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .peek-rail :global(.rail-text) {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+    .peek-rail :global(.rail-kicker) {
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--editorial);
+    }
+    .peek-rail :global(.rail-title) {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 550;
+      line-height: 1.15;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .peek-rail :global(.rail-meta) {
+      font-size: 12px;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .peek-rail :global(.rail-meta.is-dist) {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .peek-rail :global(.rail-empty) {
+      align-self: center;
+      font-size: 13px;
+      color: var(--text-muted);
     }
     .sheet-showall {
       padding: 4px 0;
@@ -697,11 +791,7 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro
     /* Leaflet controls ride just above whatever covers the map's bottom edge,
        and just below the floating filter row at the top. */
     .pane-map :global(.leaflet-bottom) {
-      bottom: var(--map-cover, 0px);
-      transition: bottom 0.34s cubic-bezier(0.2, 0.9, 0.25, 1);
-    }
-    .explorer-root.sheet-dragging .pane-map :global(.leaflet-bottom) {
-      transition: none;
+      transition: transform 0.34s cubic-bezier(0.2, 0.9, 0.25, 1);
     }
     .pane-map :global(.leaflet-top) {
       top: var(--bar-h, 56px);
