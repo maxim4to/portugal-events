@@ -36,18 +36,49 @@ export function initFilterGroups(root: HTMLElement): void {
   }
 
   const phone = window.matchMedia('(max-width: 760px)');
-  const closeAll = () =>
+
+  // Phone bottom sheet: the menu is moved to <body> while open. iOS Safari clips
+  // position:fixed descendants of a scrolling container (the pill row scrolls
+  // sideways), which left only a dimmed strip over the bar instead of a sheet.
+  const menus = new Map<HTMLElement, HTMLElement>(); // group → its menu
+  let backdrop: HTMLElement | null = null;
+
+  function detachSheet(g: HTMLElement) {
+    const menu = menus.get(g);
+    if (menu && menu.parentElement !== g) {
+      menu.classList.remove('is-sheet');
+      g.append(menu);
+    }
+  }
+
+  function attachSheet(g: HTMLElement) {
+    const menu = menus.get(g);
+    if (!menu) return;
+    if (!backdrop) {
+      backdrop = document.createElement('div');
+      backdrop.className = 'fgroup-backdrop';
+      backdrop.addEventListener('click', () => closeAll());
+    }
+    document.body.append(backdrop, menu);
+    menu.classList.add('is-sheet');
+  }
+
+  const closeAll = () => {
     groups.forEach((g) => {
       g.classList.remove('open');
       g.querySelector('[data-fgroup-toggle]')?.setAttribute('aria-expanded', 'false');
+      detachSheet(g);
       clearMenu(g);
     });
+    backdrop?.remove();
+  };
 
   groups.forEach((g) => {
     // On phones the menu opens as a bottom sheet: give it a title (the pill's
     // label) and a "Готово" button. Both are hidden by CSS on wider screens.
     const menu = g.querySelector<HTMLElement>('.fgroup-menu');
     if (menu) {
+      menus.set(g, menu);
       menu.dataset.title = g.querySelector('.flabel')?.textContent?.trim() ?? '';
       const done = document.createElement('button');
       done.type = 'button';
@@ -63,20 +94,18 @@ export function initFilterGroups(root: HTMLElement): void {
     const btn = g.querySelector<HTMLButtonElement>('[data-fgroup-toggle]');
     btn?.addEventListener('click', () => {
       const willOpen = !g.classList.contains('open');
-      groups.forEach((o) => {
-        const open = o === g && willOpen;
-        o.classList.toggle('open', open);
-        o.querySelector('[data-fgroup-toggle]')?.setAttribute('aria-expanded', String(open));
-        if (!open) clearMenu(o);
-      });
-      if (willOpen && !phone.matches) positionMenu(g);
+      closeAll();
+      if (!willOpen) return;
+      g.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      if (phone.matches) attachSheet(g);
+      else positionMenu(g);
     });
   });
   document.addEventListener('click', (e) => {
     const t = e.target as HTMLElement;
-    // A tap on the phone sheet's backdrop (the open group's ::before) lands on
-    // the .fgroup itself — treat it as outside.
-    if (t.closest('.fgroup') && !t.matches('.fgroup')) return;
+    // Inside a group, or inside its menu while that sits in <body> as a sheet.
+    if (t.closest('.fgroup, .fgroup-menu')) return;
     closeAll();
   });
 }

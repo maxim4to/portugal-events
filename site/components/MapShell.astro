@@ -562,14 +562,6 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro
     .explorer-root.sheet-full.hide-filter-bar .filter-bar-top {
       transform: translateY(-100%);
     }
-    /* An open filter sheet must sit above the tab bar and everything else. */
-    .filter-bar-top:has(.fgroup.open) {
-      z-index: 1200;
-      transform: none !important;
-      /* A mask would clip the fixed-position filter sheet to the bar. */
-      -webkit-mask-image: none !important;
-      mask-image: none !important;
-    }
     .toolbar:not(:has(*)) {
       display: none;
     }
