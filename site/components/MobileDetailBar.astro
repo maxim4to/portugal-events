@@ -1,0 +1,221 @@
+---
+// Phone-only (≤760px) floating controls for detail pages: a big round "back"
+// button in the bottom-left thumb zone, plus page actions on the right (slot).
+// Back returns to the previous in-app page (the list, with its state restored);
+// opened directly, it goes to `fallback`. In the installed web app — which has
+// no browser back button — a swipe from the left edge also goes back.
+interface Props {
+  fallback: string;
+}
+const { fallback } = Astro.props;
+---
+<div class="mbar" data-mbar>
+  <button type="button" class="mbar-back" data-mbar-back data-fallback={fallback} aria-label="Назад">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M15 5l-7 7 7 7" />
+    </svg>
+  </button>
+  <div class="mbar-actions">
+    <slot />
+  </div>
+</div>
+<div class="edge-hint" data-edge-hint aria-hidden="true">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 5l-7 7 7 7" />
+  </svg>
+</div>
+
+<style>
+  .mbar,
+  .edge-hint {
+    display: none;
+  }
+  @media (max-width: 760px) {
+    .mbar {
+      position: fixed;
+      left: max(var(--space-4), env(safe-area-inset-left, 0px));
+      right: max(var(--space-4), env(safe-area-inset-right, 0px));
+      bottom: calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
+      z-index: 70;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      pointer-events: none;
+    }
+    .mbar > * {
+      pointer-events: auto;
+    }
+    /* Soft fade behind the controls so they never sit on busy text. */
+    .mbar::before {
+      content: '';
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      height: calc(110px + env(safe-area-inset-bottom, 0px));
+      background: linear-gradient(to top, var(--surface-0) 15%, transparent);
+      pointer-events: none;
+    }
+    .mbar-back {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+      width: 56px;
+      height: 56px;
+      padding: 0;
+      border: 0.5px solid var(--border-strong);
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--surface-2) 92%, transparent);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      color: var(--text-primary);
+      box-shadow: 0 6px 22px rgba(33, 29, 23, 0.28);
+      cursor: pointer;
+      transition: transform 0.12s ease;
+    }
+    .mbar-back:active {
+      transform: scale(0.92);
+    }
+    .mbar-back svg {
+      margin-left: -2px;
+    }
+    .mbar-actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      min-width: 0;
+    }
+    /* Shared look for the action controls dropped into the slot. */
+    .mbar-actions :global(.favorite-btn),
+    .mbar-actions :global(.visited-btn) {
+      width: 48px;
+      height: 48px;
+      border-color: var(--border-strong);
+      background: color-mix(in srgb, var(--surface-2) 92%, transparent);
+      box-shadow: 0 6px 22px rgba(33, 29, 23, 0.24);
+    }
+    .mbar-actions :global(.mbar-pill) {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      height: 48px;
+      padding: 0 var(--space-5);
+      border-radius: var(--radius-pill);
+      background: var(--accent);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      white-space: nowrap;
+      text-decoration: none;
+      box-shadow: 0 6px 22px rgba(28, 79, 150, 0.35);
+    }
+    .mbar-actions :global(.mbar-pill:active) {
+      transform: scale(0.96);
+    }
+
+    .edge-hint {
+      position: fixed;
+      top: 50%;
+      left: 0;
+      z-index: 80;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      margin-top: -20px;
+      border-radius: 50%;
+      background: var(--surface-2);
+      color: var(--text-primary);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+      opacity: 0;
+      transform: translateX(-44px);
+      pointer-events: none;
+    }
+  }
+</style>
+
+<script>
+  const back = document.querySelector<HTMLButtonElement>('[data-mbar-back]');
+  const hint = document.querySelector<HTMLElement>('[data-edge-hint]');
+
+  function goBack() {
+    const fallback = back?.dataset.fallback || '/';
+    let sameOrigin = false;
+    try {
+      sameOrigin = !!document.referrer && new URL(document.referrer).origin === location.origin;
+    } catch {}
+    if (sameOrigin && history.length > 1) history.back();
+    else location.href = fallback;
+  }
+  back?.addEventListener('click', goBack);
+
+  // Edge swipe — only in the installed app, where iOS gives no back gesture of
+  // its own (in Safari it would fight the browser's swipe).
+  const standalone =
+    window.matchMedia('(display-mode: standalone)').matches ||
+    (navigator as Navigator & { standalone?: boolean }).standalone === true;
+  if (standalone && hint) {
+    const EDGE = 24;
+    const TRIGGER = 80;
+    let startX = 0;
+    let startY = 0;
+    let tracking = false;
+    let dx = 0;
+
+    window.addEventListener(
+      'touchstart',
+      (e) => {
+        const t = e.touches[0];
+        if (e.touches.length !== 1 || t.clientX > EDGE) return;
+        tracking = true;
+        dx = 0;
+        startX = t.clientX;
+        startY = t.clientY;
+        // Keep the photo gallery from also treating this as its swipe.
+        e.stopPropagation();
+      },
+      { capture: true, passive: true },
+    );
+    window.addEventListener(
+      'touchmove',
+      (e) => {
+        if (!tracking) return;
+        const t = e.touches[0];
+        dx = Math.max(0, t.clientX - startX);
+        if (Math.abs(t.clientY - startY) > 60 && dx < 30) {
+          tracking = false;
+          hint.style.opacity = '0';
+          return;
+        }
+        e.stopPropagation();
+        const p = Math.min(1, dx / TRIGGER);
+        hint.style.transition = 'none';
+        hint.style.opacity = String(p);
+        hint.style.transform = `translateX(${-44 + p * 60}px) scale(${0.8 + p * 0.2})`;
+      },
+      { capture: true, passive: true },
+    );
+    const end = () => {
+      if (!tracking) return;
+      tracking = false;
+      hint.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+      if (dx >= TRIGGER) {
+        goBack();
+      } else {
+        hint.style.opacity = '0';
+        hint.style.transform = 'translateX(-44px)';
+      }
+    };
+    window.addEventListener('touchend', end, true);
+    window.addEventListener('touchcancel', end, true);
+    // Coming back via bfcache: hide the hint left over from the swipe.
+    window.addEventListener('pageshow', () => {
+      hint.style.opacity = '0';
+      hint.style.transform = 'translateX(-44px)';
+    });
+  }
+</script>

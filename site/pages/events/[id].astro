@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import MiniMap from '../../components/MiniMap.astro';
 import Icon from '../../components/Icon.astro';
+import MobileDetailBar from '../../components/MobileDetailBar.astro';
 import { upcomingEvents, cities } from '../../lib/data.ts';
 import { buildCityIndex, eventLatLon, driveTimeFromLisbon } from '../../lib/eventGeo.ts';
 import { EVENT_TYPE_LABELS } from '../../lib/labels.ts';
@@ -25,7 +26,7 @@ const coords = eventLatLon(event, cityIndex);
 const driveTime = driveTimeFromLisbon(event, cityIndex);
 const paragraphs = event.description.split(/\n\n+/).map((s) => s.trim()).filter(Boolean);
 ---
-<Base title={event.title} description={event.description.slice(0, 150)}>
+<Base title={event.title} description={event.description.slice(0, 150)} tabbar={false}>
   <article class="detail">
     <a class="back-top" href={href('/events/')}>
       <Icon name="arrow-left" size={14} /> Ко всем событиям
@@ -69,6 +70,10 @@ const paragraphs = event.description.split(/\n\n+/).map((s) => s.trim()).filter(
 
     {coords && <MiniMap lat={coords.lat} lon={coords.lon} name={event.title} />}
   </article>
+
+  <MobileDetailBar fallback={href('/events/')}>
+    <a class="mbar-pill" href={event.url} target="_blank" rel="noopener">Подробнее на сайте</a>
+  </MobileDetailBar>
 </Base>
 
 <style>
@@ -159,5 +164,22 @@ const paragraphs = event.description.split(/\n\n+/).map((s) => s.trim()).filter(
     flex-wrap: wrap;
     gap: var(--space-3);
     margin: var(--space-2) 0;
+  }
+
+  @media (max-width: 760px) {
+    .detail {
+      padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+    }
+    .back-top,
+    .actions {
+      display: none;
+    }
+    .hero {
+      order: -1;
+      margin: calc(-1 * (env(safe-area-inset-top, 0px) + var(--space-4))) calc(-1 * var(--space-4)) 0;
+      border: 0;
+      border-radius: 0;
+      aspect-ratio: 4 / 3;
+    }
   }
 </style>

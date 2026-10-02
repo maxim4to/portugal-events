@@ -168,6 +168,12 @@ const attribData = photos.map((p) => ({
       opacity: 1;
     }
   }
+  /* Phones swipe; the arrows would only cover the photo. */
+  @media (max-width: 760px) {
+    .nav {
+      display: none;
+    }
+  }
 </style>
 
 <script>

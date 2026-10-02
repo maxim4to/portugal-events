@@ -11,6 +11,7 @@ import NotInterestedButton from '../../components/NotInterestedButton.astro';
 import NotInterestedController from '../../components/NotInterestedController.astro';
 import PhotoGallery from '../../components/PhotoGallery.astro';
 import ReelEmbed from '../../components/ReelEmbed.astro';
+import MobileDetailBar from '../../components/MobileDetailBar.astro';
 import { allPlaces } from '../../lib/data.ts';
 import type { Place } from '../../../schema/index.ts';
 
@@ -27,8 +28,9 @@ const gmapsQuery = place.id.replace(/-/g, ' ');
 const gmapsPlace = `https://www.google.com/maps/search/${encodeURIComponent(gmapsQuery)}/@${place.coords.lat},${place.coords.lon},16z`;
 const paragraphs = place.description.split(/\n\n+/).map((s) => s.trim()).filter(Boolean);
 const cover = place.photos[0];
+const directions = `https://www.google.com/maps/dir/?api=1&destination=${place.coords.lat},${place.coords.lon}`;
 ---
-<Base title={place.name} description={place.description.slice(0, 150)}>
+<Base title={place.name} description={place.description.slice(0, 150)} tabbar={false}>
   <article class="detail">
     <a class="back-top" href={href('/places/')}>
       <Icon name="arrow-left" size={14} /> Ко всем местам
@@ -92,6 +94,17 @@ const cover = place.photos[0];
       </p>
     )}
   </article>
+
+  <MobileDetailBar fallback={href('/places/')}>
+    <FavoriteButton placeId={place.id} variant="card" />
+    <VisitedButton placeId={place.id} variant="card" />
+    <a class="mbar-pill" href={directions} target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20.5 3.5 3.8 10.4c-.7.3-.6 1.3.1 1.5l6.6 1.6 1.6 6.6c.2.7 1.2.8 1.5.1z" />
+      </svg>
+      Маршрут
+    </a>
+  </MobileDetailBar>
 
   <VisitedController />
   <FavoriteController />
@@ -238,5 +251,29 @@ const cover = place.photos[0];
   .attribution a {
     color: inherit;
     text-decoration: underline;
+  }
+
+  /* Phone: photo edge-to-edge at the very top, back/actions live in the
+     floating bottom bar (MobileDetailBar), so drop their in-page duplicates. */
+  @media (max-width: 760px) {
+    .detail {
+      padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+    }
+    .back-top {
+      display: none;
+    }
+    .hero {
+      order: -1;
+      margin: calc(-1 * (env(safe-area-inset-top, 0px) + var(--space-4))) calc(-1 * var(--space-4)) 0;
+    }
+    .hero :global(.gallery-detail) {
+      aspect-ratio: 4 / 3;
+      border: 0;
+      border-radius: 0;
+    }
+    .actions :global(.favorite-btn),
+    .actions :global(.visited-btn) {
+      display: none;
+    }
   }
 </style>
