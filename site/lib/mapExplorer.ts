@@ -1,6 +1,8 @@
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import { initSheet, type SheetSnap } from './mobileSheet';
+import 'leaflet.markercluster';
+import 'leaflet.markercluster/dist/MarkerCluster.css';
+import { HALF_AT, initSheet, type SheetSnap } from './mobileSheet';
 import { distanceKm, formatDistance, pluralRu } from './geo';
 import { getFix, onFix, type Fix } from './geolocate';
 import { addLocateControl } from './mapLocate';
@@ -49,8 +51,6 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
 
   const emptyEl = root.querySelector<HTMLElement>('[data-empty]')!;
   const countEl = root.querySelector<HTMLElement>('[data-sheet-count]');
-  const areaNote = root.querySelector<HTMLElement>('[data-area-note]');
-  const areaText = root.querySelector<HTMLElement>('[data-area-text]');
   const showAllBtns = Array.from(root.querySelectorAll<HTMLElement>('[data-show-all]'));
   const previewEl = root.querySelector<HTMLElement>('[data-pin-preview]');
   const mapEl = root.querySelector<HTMLElement>('[data-map]')!;
@@ -99,7 +99,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   const listScroll = root.querySelector<HTMLElement>('[data-list-scroll]');
   let map: L.Map | null = null;
   let locate: ReturnType<typeof addLocateControl> | null = null;
-  let markerLayer: L.LayerGroup | null = null;
+  let markerLayer: L.MarkerClusterGroup | null = null;
   const markerById = new Map<string, L.Marker>();
 
   const detailUrl = (id: string) => `${hrefBase}${detailPrefix}${id}/`;
@@ -141,7 +141,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   function fitInsets(): { top: number; bottom: number } {
     const insets = mapInsets();
     if (isMobile() && sheet.state === 'half') {
-      insets.bottom = Math.max(insets.bottom, root.clientHeight - Math.round(root.clientHeight * 0.5));
+      insets.bottom = Math.max(insets.bottom, root.clientHeight - Math.round(root.clientHeight * HALF_AT));
     }
     return insets;
   }
@@ -186,12 +186,10 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     const limited = visible < matching;
     if (countEl) {
       countEl.textContent = limited
-        ? `${visible} ${pluralRu(visible, NOUN)} в этой области`
+        ? `${visible} из ${matching} · в этой области`
         : `${visible} ${pluralRu(visible, NOUN)}`;
     }
     showAllBtns.forEach((b) => (b.hidden = !limited));
-    if (areaNote) areaNote.hidden = !limited;
-    if (areaText) areaText.textContent = `${visible} из ${matching} — в области карты`;
   }
 
   // ---- Markers -------------------------------------------------------------
@@ -207,9 +205,29 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
 
   function refreshMarkers(fit: boolean) {
     if (!map) return;
-    if (!markerLayer) markerLayer = L.layerGroup().addTo(map);
+    if (!markerLayer) {
+      // Nearby pins merge into a counted bubble until zoomed in — at country
+      // zoom 200+ pins are otherwise an untappable blob.
+      markerLayer = L.markerClusterGroup({
+        maxClusterRadius: 40,
+        disableClusteringAtZoom: 12,
+        showCoverageOnHover: false,
+        spiderfyOnMaxZoom: false,
+        chunkedLoading: true,
+        iconCreateFunction: (cluster) => {
+          const n = cluster.getChildCount();
+          const size = n < 10 ? 34 : n < 50 ? 40 : 46;
+          return L.divIcon({
+            className: 'pin-cluster',
+            html: `<span>${n}</span>`,
+            iconSize: [size, size],
+          });
+        },
+      }).addTo(map);
+    }
     markerLayer.clearLayers();
     markerById.clear();
+    const batch: L.Marker[] = [];
     const pts: L.LatLngExpression[] = [];
     for (const el of cards) {
       if (!matches(el)) continue;
@@ -220,7 +238,8 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
       if (!p) continue;
       const latlng: L.LatLngExpression = [p.lat, p.lon];
       pts.push(latlng);
-      const marker = L.marker(latlng, { icon: iconFor(el), title: p.name }).addTo(markerLayer);
+      const marker = L.marker(latlng, { icon: iconFor(el), title: p.name });
+      batch.push(marker);
       if (isMobile()) {
         // Phone: a docked preview card instead of a fiddly popup.
         marker.on('click', () => openPreview(p));
@@ -242,6 +261,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
       }
       markerById.set(p.id, marker);
     }
+    markerLayer.addLayers(batch);
     if (selectedId) highlightMarker(selectedId, true);
     if (fit && skipNextFit) {
       skipNextFit = false;
@@ -250,8 +270,13 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     }
   }
 
+  // While the map shows the automatic framing (nobody has panned/zoomed it by
+  // hand), it re-frames itself whenever the sheet changes height.
+  let autoFit = true;
+
   function fitTo(pts: L.LatLngExpression[]) {
     if (!map) return;
+    autoFit = true;
     const { top, bottom } = fitInsets();
     const pad = isMobile() ? 20 : 40;
     if (pts.length) {
@@ -361,10 +386,25 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
       saveView();
     });
     map.on('click', closePreview);
-    locate = addLocateControl(map, { insets: fitInsets });
+    map.on('dragstart', () => (autoFit = false));
+    mapEl.addEventListener('wheel', () => (autoFit = false), { passive: true });
+    mapEl.addEventListener(
+      'touchstart',
+      (e) => {
+        if (e.touches.length > 1) autoFit = false;
+      },
+      { passive: true },
+    );
+    locate = addLocateControl(map, {
+      insets: fitInsets,
+      onModeChange: (m) => {
+        if (m === 'follow') autoFit = false;
+      },
+    });
     if (restored) {
       map.setView(restored.center, restored.zoom, { animate: false });
       skipNextFit = true;
+      autoFit = false;
       refreshMarkers(false);
     } else {
       refreshMarkers(true);
@@ -423,7 +463,8 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   const sheet = initSheet(root, {
     initial: restored?.snap ?? 'half',
     enabled: isMobile,
-    onChange: () => {
+    onChange: (state) => {
+      if (autoFit && state !== 'full' && map) fitAll();
       saveView();
     },
   });

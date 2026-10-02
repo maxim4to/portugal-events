@@ -42,14 +42,10 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro
         <span class="sheet-grabber" aria-hidden="true"></span>
         <div class="sheet-title-row">
           <span class="sheet-count" data-sheet-count aria-live="polite"></span>
-          <button type="button" class="sheet-showall" data-show-all hidden>Показать все</button>
+          <button type="button" class="sheet-showall" data-show-all hidden>Все</button>
         </div>
       </div>
       <div class="list-scroll" data-list-scroll>
-        <div class="area-note" data-area-note hidden>
-          <span data-area-text></span>
-          <button type="button" class="sheet-showall" data-show-all hidden>Показать все</button>
-        </div>
         <slot name="list" />
         <div class="empty" data-empty hidden>
           <p class="empty-title">Ничего не найдено</p>
@@ -163,7 +159,6 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro
   .sheet-head,
   .pin-preview,
   .map-fab,
-  .area-note,
   .near-pill {
     display: none;
   }
@@ -315,6 +310,40 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro
   }
   :global(.place-pin.pin-active svg) {
     transform: scale(1.5);
+  }
+
+  /* Cluster bubble: count of the pins merged under it. */
+  :global(.pin-cluster) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--accent) 22%, transparent);
+  }
+  :global(.pin-cluster span) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 700;
+  }
+  :global(:root[data-theme='dark']) :global(.pin-cluster span) {
+    color: #0f1d33;
+    border-color: #0f1d33;
+  }
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme='light'])) :global(.pin-cluster span) {
+      color: #0f1d33;
+      border-color: #0f1d33;
+    }
   }
 
   /* Visited places: a dimmer pin so they recede behind unseen ones. Full
@@ -596,18 +625,14 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro
     .sheet-head {
       display: block;
       flex: none;
-      max-height: 80px;
       padding: var(--space-2) var(--space-4) var(--space-3);
-      overflow: hidden;
       touch-action: none;
       cursor: grab;
-      transition: max-height 0.25s ease, padding 0.25s ease, opacity 0.2s ease;
+      transition: padding 0.25s ease;
     }
-    .explorer-root.sheet-full .sheet-head {
-      max-height: 0;
-      padding-top: 0;
-      padding-bottom: 0;
-      opacity: 0;
+    /* Bar tucked away: the sheet reaches the top edge, so clear the status bar. */
+    .explorer-root.sheet-full.hide-filter-bar .sheet-head {
+      padding-top: calc(env(safe-area-inset-top, 0px) + var(--space-2));
     }
     .sheet-title-row {
       display: flex;
@@ -635,30 +660,20 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro
     .sheet-showall[hidden] {
       display: none;
     }
-    .area-note:not([hidden]) {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--space-3);
-      margin-bottom: var(--space-3);
-      padding: var(--space-2) var(--space-3);
-      border-radius: 10px;
-      background: var(--accent-bg);
-      color: var(--accent-text);
-      font-size: 13px;
-    }
-    .explorer-root:not(.sheet-full) .area-note {
-      display: none;
-    }
     .list-scroll {
       overflow: hidden;
       overscroll-behavior: contain;
-      padding: 0 var(--space-3) 96px;
+      /* The sheet hangs --bar-h below the screen while fully open. */
+      padding: 0 var(--space-3) calc(var(--bar-h, 56px) + 96px);
     }
     .explorer-root.sheet-full .list-scroll {
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
-      padding-top: calc(var(--bar-h, 56px) + var(--space-2));
+    }
+    /* Shorter card photos, so a half-open sheet already shows a place name. */
+    .list-scroll :global(.gallery-card),
+    .list-scroll :global(.event-card .cover) {
+      aspect-ratio: 16 / 9;
     }
     .explorer-root.sheet-away .pane-list {
       box-shadow: none;

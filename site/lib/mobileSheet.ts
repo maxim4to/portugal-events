@@ -13,6 +13,10 @@
 
 export type SheetSnap = 'peek' | 'half' | 'full';
 
+/** Half-open sheet top, as a fraction of the explorer height. Low enough that
+    the first card's title shows under its photo. */
+export const HALF_AT = 0.44;
+
 export interface SheetController {
   readonly state: SheetSnap;
   snap(to: SheetSnap, animate?: boolean): void;
@@ -47,8 +51,11 @@ export function initSheet(root: HTMLElement, opts: Options): SheetController {
 
   const H = () => root.clientHeight;
   const headH = () => head.offsetHeight || 56;
+  // Fully open, the sheet starts below the filter bar — or at the very top
+  // while the bar is tucked away during a scroll down the list.
+  const fullY = () => (root.classList.contains('hide-filter-bar') ? 0 : bar.offsetHeight);
   const posOf = (s: SheetSnap) =>
-    s === 'full' ? 0 : s === 'half' ? Math.round(H() * 0.5) : H() - headH();
+    s === 'full' ? fullY() : s === 'half' ? Math.round(H() * HALF_AT) : H() - headH();
 
   function paint(nextY: number) {
     y = nextY;
@@ -180,8 +187,12 @@ export function initSheet(root: HTMLElement, opts: Options): SheetController {
     'scroll',
     () => {
       const top = scroll.scrollTop;
-      if (state === 'full' && Math.abs(top - lastTop) > 6) {
-        root.classList.toggle('hide-filter-bar', top > lastTop && top > 60);
+      if (state === 'full' && !away && Math.abs(top - lastTop) > 6) {
+        const hide = top > lastTop && top > 60;
+        if (hide !== root.classList.contains('hide-filter-bar')) {
+          root.classList.toggle('hide-filter-bar', hide);
+          apply(true);
+        }
       }
       if (Math.abs(top - lastTop) > 6 || top <= 0) lastTop = top;
     },
