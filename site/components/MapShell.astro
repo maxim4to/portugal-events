@@ -337,6 +337,17 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.45));
   }
 
+  /* Dark theme: a dark basemap (inverted OSM tiles, hues restored), so the
+     map matches the UI instead of glaring. */
+  :global(:root[data-theme='dark']) .pane-map :global(.leaflet-tile-pane) {
+    filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.88) saturate(0.7);
+  }
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme='light'])) .pane-map :global(.leaflet-tile-pane) {
+      filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.88) saturate(0.7);
+    }
+  }
+
   /* Leaflet legibility with design tokens (esp. dark mode). */
   :global(.leaflet-container) {
     background: var(--surface-1);

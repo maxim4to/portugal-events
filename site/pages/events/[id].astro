@@ -167,6 +167,12 @@ const paragraphs = event.description.split(/\n\n+/).map((s) => s.trim()).filter(
   }
 
   @media (max-width: 760px) {
+    .byline {
+      column-gap: var(--space-4);
+    }
+    .byline > * + *::before {
+      content: none;
+    }
     .detail {
       padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px));
     }
