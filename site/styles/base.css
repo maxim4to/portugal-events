@@ -687,3 +687,15 @@ html {
     z-index: 1200;
   }
 }
+
+/* Phones: cross-fade between pages instead of a hard white flash (Safari
+   18.2+; ignored elsewhere). The tab bar keeps its own name so it stays put. */
+@media (max-width: 760px) and (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.22s;
+  }
+}
