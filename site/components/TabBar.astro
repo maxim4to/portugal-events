@@ -1,0 +1,199 @@
+---
+// Phone-only bottom navigation (≤760px), replacing the desktop header there:
+// Места / Афиша / Профиль. Each tab remembers its last URL (filters included)
+// for the session, so switching tabs returns to where you left off — like
+// native tab bars. Tapping the already-active tab dispatches `tabbar:reselect`.
+const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
+
+const tabs = [
+  { path: '/places/', label: 'Места', icon: 'pin' },
+  { path: '/events/', label: 'Афиша', icon: 'ticket' },
+  { path: '/profile/', label: 'Профиль', icon: 'person' },
+] as const;
+
+const current = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isActive = (p: string) => {
+  const target = href(p).replace(/\/$/, '');
+  return current === target || current.startsWith(target + '/');
+};
+const isRoot = (p: string) => current === href(p).replace(/\/$/, '');
+---
+<nav class="tabbar" aria-label="Разделы" data-tabbar>
+  {tabs.map((t) => (
+    <a
+      href={href(t.path)}
+      class:list={['tab', { active: isActive(t.path) }]}
+      data-tab={t.path}
+      data-tab-root={isRoot(t.path) ? '' : undefined}
+      aria-current={isActive(t.path) ? 'page' : undefined}
+    >
+      <span class="tab-icon" aria-hidden="true">
+        {t.icon === 'pin' && (
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21.5s-7-6.1-7-11.5a7 7 0 0 1 14 0c0 5.4-7 11.5-7 11.5z" />
+            <circle cx="12" cy="10" r="2.6" />
+          </svg>
+        )}
+        {t.icon === 'person' && (
+          <>
+            <svg class="tab-person" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" />
+            </svg>
+            <img class="tab-avatar" data-tab-avatar alt="" width="26" height="26" referrerpolicy="no-referrer" hidden />
+          </>
+        )}
+        {t.icon === 'ticket' && (
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4.5" width="18" height="16" rx="2.5" />
+            <path d="M3 9.5h18M8 2.5v4M16 2.5v4" />
+            <path d="M7.5 14h3M7.5 17h6" />
+          </svg>
+        )}
+      </span>
+      <span class="tab-label">{t.label}</span>
+    </a>
+  ))}
+</nav>
+
+<style>
+  .tabbar {
+    display: none;
+  }
+
+  @media (max-width: 760px) {
+    .tabbar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 60;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      height: var(--tabbar-h);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+      background: color-mix(in srgb, var(--surface-2) 94%, transparent);
+      backdrop-filter: saturate(1.2) blur(14px);
+      -webkit-backdrop-filter: saturate(1.2) blur(14px);
+      border-top: 0.5px solid var(--border-strong);
+      view-transition-name: tabbar;
+    }
+    .tab {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      padding: 0;
+      border: 0;
+      background: none;
+      color: var(--text-muted);
+      font: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    .tab:hover {
+      text-decoration: none;
+    }
+    .tab:active .tab-icon {
+      transform: scale(0.9);
+    }
+    .tab.active {
+      color: var(--editorial);
+    }
+    .tab-icon {
+      position: relative;
+      display: inline-flex;
+      width: 26px;
+      height: 26px;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.12s ease;
+    }
+    .tab.active .tab-icon svg {
+      stroke-width: 2.2;
+    }
+    .tab.active .tab-icon svg path:first-child {
+      fill: color-mix(in srgb, currentColor 16%, transparent);
+    }
+    .tab-label {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      line-height: 1;
+    }
+    .tab-avatar {
+      position: absolute;
+      inset: 0;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 0 1.5px var(--surface-2), 0 0 0 2.5px var(--border-strong);
+    }
+    .tab-avatar[hidden] {
+      display: none;
+    }
+    .tab:has(.tab-avatar:not([hidden])) .tab-person {
+      visibility: hidden;
+    }
+
+  }
+</style>
+
+<script>
+  import { onAuthChange, isAuthConfigured } from '../lib/auth.ts';
+
+  const bar = document.querySelector<HTMLElement>('[data-tabbar]');
+
+  if (bar) {
+    const key = (path: string) => `tab-url:${path}`;
+    const rootTab = bar.querySelector<HTMLAnchorElement>('[data-tab-root]');
+
+    // Remember the active tab's full URL (filters live in the query string) so
+    // coming back to it from the other tab restores the same view.
+    if (rootTab) {
+      const save = () => {
+        try {
+          sessionStorage.setItem(key(rootTab.dataset.tab!), location.pathname + location.search);
+        } catch {}
+      };
+      addEventListener('pagehide', save);
+      document.addEventListener('visibilitychange', save);
+      bar.addEventListener('click', save, true);
+    }
+
+    bar.querySelectorAll<HTMLAnchorElement>('a[data-tab]').forEach((a) => {
+      a.addEventListener('click', (e) => {
+        if (a.hasAttribute('data-tab-root')) {
+          e.preventDefault();
+          document.dispatchEvent(new CustomEvent('tabbar:reselect'));
+          return;
+        }
+        try {
+          const saved = sessionStorage.getItem(key(a.dataset.tab!));
+          if (saved) {
+            a.href = saved;
+            // Lets the explorer restore its sheet and map view, as on "back".
+            sessionStorage.setItem('explorer-return', new URL(saved, location.href).pathname);
+          }
+        } catch {}
+      });
+    });
+  }
+
+  const tabAvatar = bar?.querySelector<HTMLImageElement>('[data-tab-avatar]');
+  if (tabAvatar && isAuthConfigured()) {
+    onAuthChange((user) => {
+      if (user?.photoURL) {
+        tabAvatar.src = user.photoURL;
+        tabAvatar.hidden = false;
+      } else {
+        tabAvatar.removeAttribute('src');
+        tabAvatar.hidden = true;
+      }
+    });
+  }
+</script>

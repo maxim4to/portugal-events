@@ -127,6 +127,8 @@ const { lat, lon, name } = Astro.props;
     const map = L.map(el, {
       scrollWheelZoom: false,
       dragging: !coarse,
+      // Touch screens pinch; the +/- buttons are just clutter there.
+      zoomControl: !coarse,
     }).setView([lat, lon], 12);
     // Drop Leaflet's own attribution prefix (which carries a 🇺🇦 flag); keep the
     // OpenStreetMap tile credit added below.

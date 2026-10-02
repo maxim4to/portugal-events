@@ -367,6 +367,14 @@ const isActive = (p: string) => {
     }
   }
 
+  /* Phones navigate with the bottom tab bar (TabBar.astro) instead — the
+     header would only eat vertical space there. */
+  @media (max-width: 760px) {
+    .site-header {
+      display: none;
+    }
+  }
+
   /* Phones: the sticky header uses backdrop-filter, and WebKit drops one edge
      (here the top) of a 0.5px hairline on controls sitting over a
      backdrop-filtered surface. A full 1px border renders reliably and matches
@@ -392,11 +400,7 @@ const isActive = (p: string) => {
         var isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         current = isDark ? 'dark' : 'light';
       }
-      var next = current === 'dark' ? 'light' : 'dark';
-      root.dataset.theme = next;
-      try {
-        localStorage.setItem('theme', next);
-      } catch (e) {}
+      window.__setTheme(current === 'dark' ? 'light' : 'dark');
     });
   })();
 </script>

@@ -1,5 +1,11 @@
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+import 'leaflet.markercluster';
+import 'leaflet.markercluster/dist/MarkerCluster.css';
+import { HALF_AT, initSheet, type SheetSnap } from './mobileSheet';
+import { distanceKm, formatDistance, pluralRu } from './geo';
+import { getFix, onFix, type Fix } from './geolocate';
+import { addLocateControl } from './mapLocate';
 
 export interface MapPoint {
   id: string;
@@ -37,7 +43,16 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   const hrefBase = root.dataset.hrefBase ?? '';
   const detailPrefix = root.dataset.detailPrefix ?? '/places/';
 
+  const kind = root.dataset.kind === 'events' ? 'events' : 'places';
+  const NOUN: [string, string, string] =
+    kind === 'events' ? ['событие', 'события', 'событий'] : ['место', 'места', 'мест'];
+  const mobileMq = window.matchMedia('(max-width: 760px)');
+  const isMobile = () => mobileMq.matches;
+
   const emptyEl = root.querySelector<HTMLElement>('[data-empty]')!;
+  const countEl = root.querySelector<HTMLElement>('[data-sheet-count]');
+  const showAllBtns = Array.from(root.querySelectorAll<HTMLElement>('[data-show-all]'));
+  const previewEl = root.querySelector<HTMLElement>('[data-pin-preview]');
   const mapEl = root.querySelector<HTMLElement>('[data-map]')!;
   const cards = Array.from(root.querySelectorAll<HTMLElement>('[data-item-card]'));
   const groups = Array.from(root.querySelectorAll<HTMLElement>('[data-group]'));
@@ -81,8 +96,10 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
         ? pinVisitedIcon
         : pinIcon;
 
+  const listScroll = root.querySelector<HTMLElement>('[data-list-scroll]');
   let map: L.Map | null = null;
-  let markerLayer: L.LayerGroup | null = null;
+  let locate: ReturnType<typeof addLocateControl> | null = null;
+  let markerLayer: L.MarkerClusterGroup | null = null;
   const markerById = new Map<string, L.Marker>();
 
   const detailUrl = (id: string) => `${hrefBase}${detailPrefix}${id}/`;
@@ -113,15 +130,43 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   // would otherwise hide everything.
   const boundsMode = () => Boolean(map && map.getSize().x > 0);
 
+  // On the phone the map is full-screen but its top is under the floating
+  // filter row and its bottom under the sheet's header, so "what's on the map"
+  // is the strip between them (the map-mode view), whatever the sheet does.
+  function mapInsets(): { top: number; bottom: number } {
+    if (!isMobile()) return { top: 0, bottom: 0 };
+    return { top: sheet.barHeight(), bottom: sheet.peekHeight() };
+  }
+  // Framing pins: also keep them clear of a half-open sheet.
+  function fitInsets(): { top: number; bottom: number } {
+    const insets = mapInsets();
+    if (isMobile() && sheet.state === 'half') {
+      insets.bottom = Math.max(insets.bottom, root.clientHeight - Math.round(root.clientHeight * HALF_AT));
+    }
+    return insets;
+  }
+  function visibleBounds(): L.LatLngBounds {
+    const m = map!;
+    const { top, bottom } = mapInsets();
+    if (!top && !bottom) return m.getBounds();
+    const size = m.getSize();
+    return L.latLngBounds(
+      m.containerPointToLatLng([0, Math.min(top, size.y)]),
+      m.containerPointToLatLng([size.x, Math.max(0, size.y - bottom)]),
+    );
+  }
+
   // ---- List visibility (filters ∩ optional viewport) -----------------------
 
   function updateListVisibility() {
     const useBounds = boundsMode();
-    const bounds = useBounds ? map!.getBounds() : null;
+    const bounds = useBounds ? visibleBounds() : null;
     let visible = 0;
+    let matching = 0;
     for (const el of cards) {
       const id = el.dataset.id!;
       let show = matches(el);
+      if (show) matching++;
       if (show && bounds) {
         const p = pointById.get(id);
         // Items without a point (e.g. unknown city) stay in the list regardless.
@@ -134,6 +179,17 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
       g.hidden = !g.querySelector<HTMLElement>('[data-item-card]:not([hidden])');
     }
     emptyEl.hidden = visible !== 0;
+    paintCount(visible, matching);
+  }
+
+  function paintCount(visible: number, matching: number) {
+    const limited = visible < matching;
+    if (countEl) {
+      countEl.textContent = limited
+        ? `${visible} из ${matching} · в этой области`
+        : `${visible} ${pluralRu(visible, NOUN)}`;
+    }
+    showAllBtns.forEach((b) => (b.hidden = !limited));
   }
 
   // ---- Markers -------------------------------------------------------------
@@ -149,9 +205,29 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
 
   function refreshMarkers(fit: boolean) {
     if (!map) return;
-    if (!markerLayer) markerLayer = L.layerGroup().addTo(map);
+    if (!markerLayer) {
+      // Nearby pins merge into a counted bubble until zoomed in — at country
+      // zoom 200+ pins are otherwise an untappable blob.
+      markerLayer = L.markerClusterGroup({
+        maxClusterRadius: 40,
+        disableClusteringAtZoom: 12,
+        showCoverageOnHover: false,
+        spiderfyOnMaxZoom: false,
+        chunkedLoading: true,
+        iconCreateFunction: (cluster) => {
+          const n = cluster.getChildCount();
+          const size = n < 10 ? 34 : n < 50 ? 40 : 46;
+          return L.divIcon({
+            className: 'pin-cluster',
+            html: `<span>${n}</span>`,
+            iconSize: [size, size],
+          });
+        },
+      }).addTo(map);
+    }
     markerLayer.clearLayers();
     markerById.clear();
+    const batch: L.Marker[] = [];
     const pts: L.LatLngExpression[] = [];
     for (const el of cards) {
       if (!matches(el)) continue;
@@ -162,29 +238,127 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
       if (!p) continue;
       const latlng: L.LatLngExpression = [p.lat, p.lon];
       pts.push(latlng);
-      const marker = L.marker(latlng, { icon: iconFor(el), title: p.name })
-        .bindPopup(popupHtml(p), {
+      const marker = L.marker(latlng, { icon: iconFor(el), title: p.name });
+      batch.push(marker);
+      if (isMobile()) {
+        // Phone: a docked preview card instead of a fiddly popup.
+        marker.on('click', () => openPreview(p));
+      } else {
+        marker.bindPopup(popupHtml(p), {
           // Fixed width — CSS pins .leaflet-popup-content to 240px; keep
           // Leaflet's own bounds in sync so its autopan/layout math matches.
           className: 'map-pop-popup',
           maxWidth: 240,
           minWidth: 240,
           offset: [0, 4],
-        })
-        .addTo(markerLayer);
-      marker.on('mouseover', () => highlightCard(p.id, true));
-      marker.on('mouseout', () => highlightCard(p.id, false));
-      marker.on('click', () => {
-        const card = cardById.get(p.id);
-        if (card) card.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-      });
+        });
+        marker.on('mouseover', () => highlightCard(p.id, true));
+        marker.on('mouseout', () => highlightCard(p.id, false));
+        marker.on('click', () => {
+          const card = cardById.get(p.id);
+          if (card) card.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        });
+      }
       markerById.set(p.id, marker);
     }
-    if (fit && pts.length) {
-      map.fitBounds(L.latLngBounds(pts), { padding: [40, 40], maxZoom: 12 });
+    markerLayer.addLayers(batch);
+    if (selectedId) highlightMarker(selectedId, true);
+    if (fit && (skipNextFit || holdRestored)) {
+      skipNextFit = false;
     } else if (fit) {
+      fitTo(pts);
+    }
+  }
+
+  // While the map shows the automatic framing (nobody has panned/zoomed it by
+  // hand), it re-frames itself whenever the sheet changes height.
+  let autoFit = true;
+
+  function fitTo(pts: L.LatLngExpression[]) {
+    if (!map) return;
+    autoFit = true;
+    const { top, bottom } = fitInsets();
+    const pad = isMobile() ? 20 : 40;
+    if (pts.length) {
+      map.fitBounds(L.latLngBounds(pts), {
+        paddingTopLeft: [pad, top + pad],
+        paddingBottomRight: [pad, bottom + pad],
+        maxZoom: 12,
+      });
+    } else {
       map.setView([39.5, -8.0], 6);
     }
+  }
+
+  /** Frame every pin that passes the current filters. */
+  function fitAll() {
+    const pts: L.LatLngExpression[] = [];
+    for (const el of cards) {
+      if (!matches(el) || el.dataset.notinterested === 'true') continue;
+      const p = pointById.get(el.dataset.id!);
+      if (p) pts.push([p.lat, p.lon]);
+    }
+    fitTo(pts);
+  }
+
+  // ---- Phone pin preview ---------------------------------------------------
+
+  let selectedId: string | null = null;
+
+  function previewHtml(p: MapPoint): string {
+    const media = p.image
+      ? `<span class="pp-media"><img src="${esc(p.image)}" alt="" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.style.visibility='hidden'"></span>`
+      : '';
+    return (
+      `<a class="pp-card" href="${detailUrl(p.id)}">${media}` +
+      `<span class="pp-body">` +
+      (p.kicker ? `<span class="pp-kicker">${esc(p.kicker)}</span>` : '') +
+      `<span class="pp-title">${esc(p.name)}</span>` +
+      (p.meta ? `<span class="pp-meta">${esc(p.meta)}</span>` : '') +
+      `<span class="pp-dist" data-pp-dist></span>` +
+      `<span class="pp-more">Подробнее →</span></span></a>` +
+      `<button type="button" class="pp-close" data-pp-close aria-label="Закрыть">` +
+      `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>`
+    );
+  }
+
+  function openPreview(p: MapPoint) {
+    if (!previewEl || !map) return;
+    if (selectedId) highlightMarker(selectedId, false);
+    selectedId = p.id;
+    highlightMarker(p.id, true);
+    previewEl.innerHTML = previewHtml(p);
+    previewEl.hidden = false;
+    previewEl.querySelector('[data-pp-close]')?.addEventListener('click', closePreview);
+    paintPreviewDistance();
+    document.dispatchEvent(new CustomEvent('explorer:preview', { detail: { id: p.id } }));
+    const cover = previewEl.offsetHeight + 12;
+    sheet.setAway(true, cover);
+    // Keep the chosen pin clear of the card and the filter row.
+    const pt = map.latLngToContainerPoint([p.lat, p.lon]);
+    const size = map.getSize();
+    const top = sheet.barHeight() + 40;
+    const bottom = size.y - cover - 40;
+    if (pt.y > bottom || pt.y < top || pt.x < 24 || pt.x > size.x - 24) {
+      const target = L.point(size.x / 2, (top + bottom) / 2);
+      map.panBy(pt.subtract(target), { animate: true });
+    }
+  }
+
+  function paintPreviewDistance() {
+    const el = previewEl?.querySelector<HTMLElement>('[data-pp-dist]');
+    const fix = getFix();
+    const p = selectedId ? pointById.get(selectedId) : undefined;
+    if (el && fix && p) el.textContent = `${formatDistance(distanceKm(fix.lat, fix.lon, p.lat, p.lon))} от вас`;
+  }
+
+  function closePreview() {
+    if (!previewEl || previewEl.hidden) return;
+    previewEl.hidden = true;
+    previewEl.innerHTML = '';
+    if (selectedId) highlightMarker(selectedId, false);
+    selectedId = null;
+    sheet.setAway(false);
   }
 
   function ensureMap() {
@@ -193,6 +367,9 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     // pans. The map lives in a fixed pane, so wheel-zoom no longer fights the
     // page scroll. wheelPxPerZoomLevel softens the otherwise jumpy trackpad zoom.
     map = L.map(mapEl, {
+      // Phone: fractional zoom so the country fills the screen instead of
+      // jumping a whole level too far out.
+      zoomSnap: isMobile() ? 0.25 : 1,
       scrollWheelZoom: true,
       wheelPxPerZoomLevel: 120,
       wheelDebounceTime: 30,
@@ -206,12 +383,41 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     }).addTo(map);
     map.on('moveend', () => {
       if (boundsMode()) updateListVisibility();
+      saveView();
     });
-    refreshMarkers(true);
+    map.on('click', closePreview);
+    map.on('dragstart', () => (autoFit = false));
+    mapEl.addEventListener('wheel', () => (autoFit = false), { passive: true });
+    mapEl.addEventListener(
+      'touchstart',
+      (e) => {
+        if (e.touches.length > 1) autoFit = false;
+      },
+      { passive: true },
+    );
+    locate = addLocateControl(map, {
+      insets: fitInsets,
+      onModeChange: (m) => {
+        if (m === 'follow') autoFit = false;
+      },
+    });
+    if (restored) {
+      map.setView(restored.center, restored.zoom, { animate: false });
+      skipNextFit = true;
+      holdRestored = true;
+      autoFit = false;
+      const release = () => (holdRestored = false);
+      root.addEventListener('pointerdown', release, { once: true, capture: true });
+      window.setTimeout(release, 4000);
+      refreshMarkers(false);
+    } else {
+      refreshMarkers(true);
+    }
   }
 
   /** Full re-render after a filter change: rebuild pins, refit, re-filter list. */
   function rerender() {
+    closePreview();
     refreshMarkers(true);
     updateListVisibility();
   }
@@ -235,30 +441,157 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   // Card and pin-popup links navigate to the full detail page in the same tab;
   // the browser back button returns to the list. No overlay, no custom button.
 
-  // ---- Mobile list/map toggle ---------------------------------------------
+  // ---- Phone sheet + saved view ------------------------------------------
 
-  function setView(view: 'list' | 'map') {
-    root.classList.toggle('show-map', view === 'map');
-    root.classList.remove('hide-filter-bar');
-    lastScrollY = window.scrollY;
-    root.querySelectorAll<HTMLButtonElement>('[data-view]').forEach((b) => {
-      b.setAttribute('aria-pressed', String(b.dataset.view === view));
-    });
-    if (view === 'map') {
-      ensureMap();
-      setTimeout(() => {
-        map?.invalidateSize();
-        updateListVisibility();
-      }, 0);
+  // The phone view (sheet height, map position, list scroll) survives a trip
+  // to a detail page and back, even without the bfcache.
+  const viewKey = `explorer-view:${location.pathname}`;
+  type SavedView = { snap: SheetSnap; center: [number, number]; zoom: number };
+  let restored: SavedView | null = null;
+  // Only a real "back"/"forward" returns to the saved view; a fresh visit (a
+  // tab tap, a link with other filters) frames the pins anew.
+  const navType = (
+    performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming | undefined
+  )?.type;
+  let isReturn = navType === 'back_forward';
+  try {
+    if (sessionStorage.getItem('explorer-return') === location.pathname) isReturn = true;
+    sessionStorage.removeItem('explorer-return');
+  } catch {}
+  try {
+    const raw = sessionStorage.getItem(viewKey);
+    const saved = raw ? (JSON.parse(raw) as SavedView & { search?: string }) : null;
+    if (saved && isMobile() && isReturn && (saved.search ?? '') === location.search) {
+      restored = saved;
     }
+  } catch {}
+  let skipNextFit = false;
+  // Late re-renders on load (the signed-in sets arriving) mustn't throw the
+  // restored view away; the hold ends on the first touch or after a moment.
+  let holdRestored = false;
+
+  function saveView() {
+    if (!map || !isMobile()) return;
+    const c = map.getCenter();
+    try {
+      sessionStorage.setItem(
+        viewKey,
+        JSON.stringify({
+          snap: sheet.state,
+          center: [c.lat, c.lng],
+          zoom: map.getZoom(),
+          search: location.search,
+        }),
+      );
+    } catch {}
   }
-  root.querySelectorAll<HTMLButtonElement>('[data-view]').forEach((b) =>
-    b.addEventListener('click', () => setView(b.dataset.view as 'list' | 'map')),
+
+  const sheet = initSheet(root, {
+    initial: restored?.snap ?? 'half',
+    enabled: isMobile,
+    onChange: (state) => {
+      if (autoFit && state !== 'full' && map) fitAll();
+      saveView();
+    },
+  });
+
+  root.querySelector('[data-to-map]')?.addEventListener('click', () => sheet.snap('peek'));
+  showAllBtns.forEach((b) =>
+    b.addEventListener('click', (e) => {
+      e.stopPropagation();
+      fitAll();
+    }),
   );
 
+  // Tapping the already-active tab: back to the top of the list, or — over
+  // the map — back to the full picture.
+  document.addEventListener('tabbar:reselect', () => {
+    if (previewEl && !previewEl.hidden) {
+      closePreview();
+    } else if (sheet.state === 'full') {
+      if (listScroll && listScroll.scrollTop > 0) {
+        listScroll.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        sheet.snap('half');
+      }
+    } else {
+      fitAll();
+    }
+  });
+
+  addEventListener('pagehide', saveView);
+
+  // ---- Distance from the visitor + "Рядом" sort ---------------------------
+
+  const distById = new Map<string, number>();
+  let distFix: Fix | null = null;
+
+  function updateDistances(fix: Fix) {
+    // Ignore jitter: only recompute after a real move.
+    if (distFix && distanceKm(distFix.lat, distFix.lon, fix.lat, fix.lon) < 0.1) return;
+    const moved = distFix ? distanceKm(distFix.lat, distFix.lon, fix.lat, fix.lon) : Infinity;
+    distFix = fix;
+    for (const el of cards) {
+      const p = pointById.get(el.dataset.id!);
+      const badge = el.querySelector<HTMLElement>('[data-dist]');
+      if (!p) continue;
+      const km = distanceKm(fix.lat, fix.lon, p.lat, p.lon);
+      distById.set(p.id, km);
+      if (badge) {
+        badge.textContent = formatDistance(km);
+        badge.hidden = false;
+      }
+    }
+    paintPreviewDistance();
+    // Re-sort only on a sizeable move, so the list doesn't shuffle under you.
+    if (nearSort && moved > 2) applySort();
+  }
+
+  const nearBtn = root.querySelector<HTMLButtonElement>('[data-sort-near]');
+  const nearKey = `explorer-near:${location.pathname}`;
+  const originalIndex = new Map(cards.map((c, i) => [c, i]));
+  const sortParents = [...new Set(cards.map((c) => c.parentElement!))];
+  let nearSort = false;
+
+  function applySort() {
+    const byOriginal = (a: HTMLElement, b: HTMLElement) =>
+      originalIndex.get(a)! - originalIndex.get(b)!;
+    const byDistance = (a: HTMLElement, b: HTMLElement) =>
+      (distById.get(a.dataset.id!) ?? Infinity) - (distById.get(b.dataset.id!) ?? Infinity) ||
+      byOriginal(a, b);
+    const sorted = nearSort && distById.size > 0;
+    for (const parent of sortParents) {
+      cards
+        .filter((c) => c.parentElement === parent)
+        .sort(sorted ? byDistance : byOriginal)
+        .forEach((c) => parent.appendChild(c));
+    }
+  }
+
+  function setNearSort(on: boolean, fromRestore = false) {
+    nearSort = on;
+    nearBtn?.setAttribute('aria-pressed', String(on));
+    try {
+      if (on) sessionStorage.setItem(nearKey, '1');
+      else sessionStorage.removeItem(nearKey);
+    } catch {}
+    // Restoring on load never prompts; it sorts once a (resumed) fix lands.
+    if (on && !getFix() && !fromRestore) locate?.ensure();
+    applySort();
+  }
+
+  nearBtn?.addEventListener('click', () => {
+    setNearSort(!nearSort);
+    listScroll?.scrollTo({ top: 0 });
+  });
+
+  onFix(updateDistances);
+
+  // The visited filter can add/remove pins (and the set may land after the
+  // first render), so rebuild them — refitting only while auto-framed.
   document.addEventListener('visited:changed', () => {
+    refreshMarkers(autoFit);
     updateListVisibility();
-    restyleMarkers();
   });
   // Favorites don't hide/show cards, but they do change a pin into a heart.
   document.addEventListener('favorites:changed', restyleMarkers);
@@ -268,42 +601,21 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
 
   // On resize just let Leaflet re-measure and re-run viewport filtering.
   window.addEventListener('resize', () => {
+    sheet.relayout();
     map?.invalidateSize();
     updateListVisibility();
   });
-
-  // Mobile list view: the whole page scrolls (desktop and the map view stay
-  // locked to the viewport, see Base/MapShell). Hide the sticky filter bar when
-  // scrolling down into the list, reveal it on any scroll back up.
-  let lastScrollY = window.scrollY;
-  let scrollTicking = false;
-  function onPageScroll() {
-    const y = window.scrollY;
-    const active = window.innerWidth <= 760 && !root.classList.contains('show-map');
-    if (!active) {
-      root.classList.remove('hide-filter-bar');
-    } else if (Math.abs(y - lastScrollY) > 6) {
-      // Keep it visible near the very top; hide only once scrolled past it.
-      root.classList.toggle('hide-filter-bar', y > lastScrollY && y > 80);
-    }
-    lastScrollY = y;
-    scrollTicking = false;
-  }
-  window.addEventListener(
-    'scroll',
-    () => {
-      if (scrollTicking) return;
-      scrollTicking = true;
-      requestAnimationFrame(onPageScroll);
-    },
-    { passive: true },
-  );
+  // Crossing the phone breakpoint swaps pin popups for the preview card.
+  mobileMq.addEventListener('change', () => {
+    closePreview();
+    map?.closePopup();
+    refreshMarkers(false);
+  });
 
   // With the page locked to the viewport, a wheel over the filter bar, gaps or
   // header would otherwise do nothing. Route any vertical wheel that isn't over
   // the map (which zooms) or an open dropdown (which scrolls itself) into the
   // list, so scrolling anywhere scrolls the list. Desktop two-pane only.
-  const listScroll = root.querySelector<HTMLElement>('[data-list-scroll]');
   window.addEventListener(
     'wheel',
     (e) => {
@@ -320,6 +632,11 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
 
   // On wide screens both panes show at once; build the map immediately.
   ensureMap();
+  const cachedFix = getFix();
+  if (cachedFix) updateDistances(cachedFix);
+  try {
+    if (sessionStorage.getItem(nearKey) === '1') setNearSort(true, true);
+  } catch {}
   updateListVisibility();
   // The container height settles after first layout; let Leaflet re-measure so
   // tiles render into the correct size.
@@ -330,11 +647,17 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   // scrollTop otherwise resets to 0 on every "back".
   if (listScroll) {
     const scrollKey = `explorer-scroll:${location.pathname}`;
-    const saved = sessionStorage.getItem(scrollKey);
-    if (saved) listScroll.scrollTop = Number(saved);
+    try {
+      const saved = sessionStorage.getItem(scrollKey);
+      if (saved && (isReturn || !isMobile())) listScroll.scrollTop = Number(saved);
+    } catch {}
     listScroll.addEventListener(
       'scroll',
-      () => sessionStorage.setItem(scrollKey, String(listScroll.scrollTop)),
+      () => {
+        try {
+          sessionStorage.setItem(scrollKey, String(listScroll.scrollTop));
+        } catch {}
+      },
       { passive: true },
     );
   }

@@ -1,0 +1,15 @@
+{
+  "name": "Португалия — места и афиша",
+  "short_name": "Португалия",
+  "start_url": "/portugal-events/places/",
+  "scope": "/portugal-events/",
+  "display": "standalone",
+  "background_color": "#f2ece0",
+  "theme_color": "#f2ece0",
+  "lang": "ru",
+  "icons": [
+    { "src": "/portugal-events/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/portugal-events/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/portugal-events/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

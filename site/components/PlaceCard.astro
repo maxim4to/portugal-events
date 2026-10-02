@@ -26,6 +26,7 @@ const typeLabel = TYPE_LABELS[place.type] ?? place.type;
       <span class="residency-pill">Бесплатно с ВНЖ</span>
     )}
     <div class="meta-row">
+      <span class="dist" data-dist hidden></span>
       <span><Icon name="clock" size={12} /> {place.driveMinutesFromLisbon} мин</span>
       <span><Icon name="hourglass" size={12} /> ~{place.visitDurationHours} ч</span>
       <span><Icon name="calendar" size={12} /> {place.bestSeason}</span>
@@ -121,6 +122,23 @@ const typeLabel = TYPE_LABELS[place.type] ?? place.type;
      alone separates them, and each fact stays whole (nowrap above). */
   .meta-row > * + *::before {
     content: none;
+  }
+  /* Straight-line distance from the visitor, filled in once located. */
+  .dist {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .dist::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    margin-right: 2px;
+    border-radius: 50%;
+    background: #0a84ff;
+    box-shadow: 0 0 0 2px color-mix(in srgb, #0a84ff 25%, transparent);
+  }
+  .dist[hidden] {
+    display: none !important;
   }
   .meta-row {
     column-gap: var(--space-4);

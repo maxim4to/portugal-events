@@ -505,10 +505,197 @@ img {
     transform: translate(-50%, 0);
   }
 }
-/* On phones, sit above the floating list/map toggle (bottom-centered too) so
-   the two never overlap. */
+/* On phones, sit above the bottom tab bar and the floating "Карта" pill. */
 @media (max-width: 760px) {
   .app-toast {
-    bottom: calc(max(var(--space-4), env(safe-area-inset-bottom)) + 64px);
+    bottom: calc(var(--tabbar-h) + 72px);
+  }
+}
+
+/* --- Phone app shell --- */
+
+:root {
+  /* Bottom tab bar (TabBar.astro), including the home-indicator inset. */
+  --tabbar-h: calc(52px + env(safe-area-inset-bottom, 0px));
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media (max-width: 760px) {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* No double-tap-to-zoom delay on controls. */
+  a,
+  button {
+    touch-action: manipulation;
+  }
+  button {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
+
+/* Touch screens have no hover: drop the hover-lift on cards so a tap doesn't
+   leave a card stuck "raised". */
+@media (hover: none) {
+  .card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  @keyframes sheet-up {
+    from { transform: translateY(100%); }
+    to { transform: none; }
+  }
+  @keyframes sheet-fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+.sheet-grabber {
+  display: block;
+  width: 36px;
+  height: 5px;
+  margin: 0 auto;
+  border-radius: 3px;
+  background: var(--border-strong);
+}
+
+/* --- Phone filters: compact app-style pills; menus open as bottom sheets --- */
+.fgroup-done {
+  display: none;
+}
+@media (max-width: 760px) {
+  .fgroup-summary,
+  .fav-toggle,
+  .reset-btn,
+  .near-pill {
+    flex: none;
+    height: 36px;
+    padding: 0 14px;
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-pill);
+    background: var(--surface-2);
+    color: var(--text-primary);
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(33, 29, 23, 0.18);
+  }
+  .reset-btn {
+    color: var(--editorial);
+  }
+  .sheet-full .fgroup-summary,
+  .sheet-full .fav-toggle,
+  .sheet-full .reset-btn,
+  .sheet-full .near-pill {
+    box-shadow: none;
+    border-color: var(--border-strong);
+  }
+  .fgroup.active .fgroup-summary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .fgroup.active .fcount {
+    background: #fff;
+    color: var(--accent);
+  }
+
+  .fgroup.open::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background: rgba(20, 16, 10, 0.42);
+    animation: sheet-fade 0.2s ease;
+  }
+  .fgroup-menu {
+    position: fixed;
+    left: 0 !important;
+    right: 0 !important;
+    top: auto;
+    bottom: 0;
+    z-index: 2;
+    width: auto;
+    max-width: none;
+    max-height: 78vh;
+    align-content: flex-start;
+    gap: 10px;
+    padding: var(--space-5) var(--space-4) calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
+    border: 0;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.25);
+    /* Grabber drawn as a background so ::before stays free for the title. */
+    background: linear-gradient(var(--border-strong), var(--border-strong)) center 8px / 36px 5px
+        no-repeat,
+      var(--surface-2);
+    overscroll-behavior: contain;
+    animation: sheet-up 0.28s cubic-bezier(0.2, 0.9, 0.3, 1);
+  }
+  .fgroup-menu .chip[aria-pressed='true']::before {
+    content: '✓';
+    font-weight: 700;
+    margin-right: -2px;
+  }
+  .fgroup-menu::before {
+    content: attr(data-title);
+    flex: 0 0 100%;
+    margin-bottom: var(--space-1);
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 550;
+    color: var(--text-primary);
+  }
+  .fgroup-menu .chip {
+    padding: 9px 15px;
+    border-radius: var(--radius-pill);
+    font-size: 15px;
+    color: var(--text-primary);
+  }
+  .fgroup-menu .visited-group {
+    display: contents;
+  }
+  .fgroup-done {
+    display: block;
+    flex: 0 0 100%;
+    height: 50px;
+    margin-top: var(--space-3);
+    border: 0;
+    border-radius: 12px;
+    background: var(--text-primary);
+    color: var(--surface-2);
+    font: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
+@media (max-width: 760px) {
+  /* The explorer is position:fixed (its own stacking context): lift it over
+     the tab bar while one of its filter sheets is open. */
+  .explorer-root:has(.fgroup.open) {
+    z-index: 1200;
+  }
+}
+
+/* Phones: cross-fade between pages instead of a hard white flash (Safari
+   18.2+; ignored elsewhere). The tab bar keeps its own name so it stays put. */
+@media (max-width: 760px) and (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.22s;
   }
 }

@@ -80,6 +80,20 @@ catalog sorts visited places below a divider, but only off a snapshot frozen on 
 mid-session. Firebase console setup (enable Google, authorized domains, DB rules) is in
 [docs/auth-setup.md](docs/auth-setup.md); the security rules live in `database.rules.json`.
 
+**Phones (≤760px) get an app-like layer**, used mostly as an installed iOS web app
+(manifest + apple meta in `Base.astro`). The desktop header is hidden; navigation is the
+bottom `TabBar.astro` (Места / Афиша / Профиль → `pages/profile.astro`). On the explorer
+pages the map is full-screen and the list rides in a draggable bottom sheet
+(`site/lib/mobileSheet.ts`, snaps peek/half/full, geometry via CSS vars on the root);
+`mapExplorer.ts` filters the list to the visible map strip, shows a docked preview card on
+pin tap, and saves sheet + map view in sessionStorage so "back" restores it. Filter menus
+turn into bottom sheets (CSS in `base.css`). "My location" is `geolocate.ts` (one shared
+`watchPosition`, only started on an explicit tap, silently resumed when already granted)
+plus `mapLocate.ts` (dot + locate button); distances and the "Рядом" sort come from it.
+Detail pages use `MobileDetailBar.astro` (thumb-reach back button, actions, edge-swipe back
+in standalone). Desktop layout is unchanged — keep phone-only rules inside the 760px media
+query.
+
 `astro.config.mjs` sets `base: '/portugal-events'` — internal links must go through
 `hrefBase`/`Astro.url` plumbing already used in components, not hardcoded absolute paths.
 

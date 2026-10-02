@@ -129,6 +129,7 @@ const presentCities = [...new Set(events.map((e) => e.city))].sort((a, b) =>
                       <span>{driveTimeFromLisbon(event, cityIndex)}</span>
                     )}
                     {event.price && <span>{event.price}</span>}
+                    <span class="dist" data-dist hidden></span>
                   </div>
                 </div>
               </a>
@@ -168,6 +169,17 @@ const presentCities = [...new Set(events.map((e) => e.city))].sort((a, b) =>
     height: 1px;
     background: var(--border-strong);
     transform: translateY(-4px);
+  }
+  @media (max-width: 760px) {
+    .month {
+      margin-bottom: var(--space-5);
+    }
+    .month-head {
+      margin-bottom: var(--space-3);
+    }
+    .month-head h2 {
+      font-size: 20px;
+    }
   }
   .event-card {
     display: flex;
@@ -239,9 +251,17 @@ const presentCities = [...new Set(events.map((e) => e.city))].sort((a, b) =>
     margin-top: auto;
     padding-top: var(--space-2);
   }
-  .event-card .meta-row:not(:empty) {
+  .event-card .meta-row:has(> :not([hidden])) {
     border-top: 0.5px solid var(--border);
   }
+  .dist {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .dist[hidden] {
+    display: none;
+  }
+
 
 </style>
 
