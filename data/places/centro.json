@@ -820,5 +820,311 @@
       "https://www.instagram.com/reel/DYFR0acs1xB/"
     ],
     "collections": []
+  },
+  {
+    "id": "coimbra",
+    "name": "Коимбра",
+    "type": "town",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.211,
+      "lon": -8.4292
+    },
+    "description": "Старинный университетский город на холме над рекой Мондегу: лабиринт средневековых улочек Алты, традиция фаду в студенческом исполнении и кафе на площади Праса-ду-Комерсиу. Полдня легко уходит на верхний город и набережную. Отличная большая остановка на полпути между Лиссабоном и Авейру.",
+    "driveMinutesFromLisbon": 120,
+    "visitDurationHours": 4,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "виды",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Coimbra_December_2011-11.jpg/1280px-Coimbra_December_2011-11.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coimbra_December_2011-11.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "universidade-de-coimbra",
+    "name": "Университет Коимбры и библиотека Жуанина",
+    "type": "castle",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.2076,
+      "lon": -8.4265
+    },
+    "description": "Один из старейших университетов Европы (1290) и объект ЮНЕСКО на вершине города: двор с башней и часовней, экзаменационный зал и жемчужина — барочная библиотека Жуанина с позолоченными стеллажами (и летучими мышами, охраняющими книги от насекомых). Билеты в Жуанину — на конкретное время, берите заранее.",
+    "driveMinutesFromLisbon": 120,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "виды",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Coimbra_BW_2018-10-06_10-17-45_stitch.jpg/1280px-Coimbra_BW_2018-10-06_10-17-45_stitch.jpg",
+        "author": "Berthold Werner",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coimbra_BW_2018-10-06_10-17-45_stitch.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "conimbriga",
+    "name": "Конимбрига (римские руины)",
+    "type": "other",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.0993,
+      "lon": -8.4902
+    },
+    "description": "Крупнейшее римское поселение Португалии у Кондейша-а-Нова, в 15 минутах до Коимбры: городские стены, термы, форум и дома с изумительно сохранившимися напольными мозаиками. При раскопках — хороший музей с находками. Удобный съезд прямо с трассы по пути на север.",
+    "driveMinutesFromLisbon": 115,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/The_barbarians_have_left_the_city_%281414840422%29.jpg/1280px-The_barbarians_have_left_the_city_%281414840422%29.jpg",
+        "author": "Pedro",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_barbarians_have_left_the_city_(1414840422).jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "portugal-dos-pequenitos",
+    "name": "Португал-душ-Пекенитуш",
+    "type": "park",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.2026,
+      "lon": -8.432
+    },
+    "description": "Парк миниатюр 1940 года в Коимбре, где вся Португалия и её бывшие колонии собраны в детском масштабе: можно заходить внутрь крошечных домиков, обойти мини-Беленскую башню и университет. Главная классика для поездки с детьми, но мило и взрослым. Находится у моста через Мондегу, рядом с Кинта-даш-Лагримаш.",
+    "driveMinutesFromLisbon": 120,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми",
+      "история",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт",
+        "url": "https://www.portugaldospequenitos.pt/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Portugal_dos_Pequenitos_pano.jpg/1280px-Portugal_dos_Pequenitos_pano.jpg",
+        "author": "Dicklyon",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portugal_dos_Pequenitos_pano.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Portugal_dos_Pequenitos%2C_Coimbra_04.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portugal_dos_Pequenitos,_Coimbra_04.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "santuario-de-fatima",
+    "name": "Санктуарий Фатимы",
+    "type": "other",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 39.6319,
+      "lon": -8.6718
+    },
+    "description": "Один из главных католических паломнических центров мира на месте явлений Девы Марии 1917 года: огромная эспланада (вдвое больше площади Св. Петра), базилика Розарии, капелла Явлений и современная круглая церковь Святой Троицы на 9000 мест. Вход свободный; 12–13 числа каждого месяца — большие паломничества и толпы.",
+    "driveMinutesFromLisbon": 85,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "бесплатно",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Fatima_BW_2018-10-07_10-42-43.jpg/1280px-Fatima_BW_2018-10-07_10-42-43.jpg",
+        "author": "Berthold Werner",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fatima_BW_2018-10-07_10-42-43.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Fatima_BW_2018-10-07_08-58-30_s_v1.jpg/1280px-Fatima_BW_2018-10-07_08-58-30_s_v1.jpg",
+        "author": "Berthold Werner",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fatima_BW_2018-10-07_08-58-30_s_v1.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "santarem-portas-do-sol",
+    "name": "Сантарен: сад Порташ-ду-Сол",
+    "type": "viewpoint",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 39.2331,
+      "lon": -8.6782
+    },
+    "description": "Сад на месте мавританской цитадели на обрыве над Тежу — лучшая смотровая Сантарена с панорамой реки и заливных равнин Рибатежу. Сам город называют «столицей португальской готики»: по пути к саду — церкви Граса и Марвила. Быстрая красивая остановка в часе от Лиссабона.",
+    "driveMinutesFromLisbon": 65,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "виды",
+      "история",
+      "бесплатно"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Views_from_the_Portas_do_Sol_%28Santar%C3%A9m%29_03.jpg/1280px-Views_from_the_Portas_do_Sol_%28Santar%C3%A9m%29_03.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Views_from_the_Portas_do_Sol_(Santar%C3%A9m)_03.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Santar%C3%A9m_May_2015-9a.jpg/1280px-Santar%C3%A9m_May_2015-9a.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Santar%C3%A9m_May_2015-9a.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "castelo-de-montemor-o-velho",
+    "name": "Замок Монтемор-у-Велью",
+    "type": "castle",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.175,
+      "lon": -8.685
+    },
+    "description": "Внушительный средневековый замок над долиной Мондегу между Коимброй и побережьем: длинные зубчатые стены, по которым можно гулять, и широкая панорама рисовых полей. Вход свободный, народу мало. Удобный крюк по пути Коимбра → Авейру.",
+    "driveMinutesFromLisbon": 135,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "виды",
+      "бесплатно"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Castelo_Montemor-o-Velho_Mar%C3%A7o_2022-1.jpg/1280px-Castelo_Montemor-o-Velho_Mar%C3%A7o_2022-1.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_Montemor-o-Velho_Mar%C3%A7o_2022-1.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Castelo_de_Montemor-o-Velho_-_Portugal_%285158411631%29.jpg/1280px-Castelo_de_Montemor-o-Velho_-_Portugal_%285158411631%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Montemor-o-Velho_-_Portugal_(5158411631).jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "aveiro",
+    "name": "Авейру",
+    "type": "town",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.6405,
+      "lon": -8.6538
+    },
+    "description": "«Португальская Венеция»: каналы с расписными лодками-молисейру, фасады ар-нуво и солёные сладости ovos moles. Покатайтесь на молисейру, пройдитесь по кварталу Бейра-Мар и попробуйте ovos moles в старых кондитерских. Рядом — полосатые домики Кошта-Новы и фарфор Vista Alegre.",
+    "driveMinutesFromLisbon": 150,
+    "visitDurationHours": 4,
+    "bestSeason": "круглый год",
+    "tags": [
+      "виды",
+      "фото",
+      "ресторан"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Canal_in_Aveiro_12.jpg/1280px-Canal_in_Aveiro_12.jpg",
+        "author": "John Samuel",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Canal_in_Aveiro_12.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Canal_in_Aveiro_02.jpg/1280px-Canal_in_Aveiro_02.jpg",
+        "author": "John Samuel",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Canal_in_Aveiro_02.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "vista-alegre-ilhavo",
+    "name": "Vista Alegre (Илхаву)",
+    "type": "museum",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.587,
+      "lon": -8.683
+    },
+    "description": "Историческая фарфоровая мануфактура 1824 года в Илхаву под Авейру: музей с двухвековой коллекцией фарфора, старинная фабричная деревня с часовней и театром, фирменный магазин с аутлетом. Один из лучших индустриально-художественных музеев страны. В 10 минутах от Авейру по пути к Кошта-Нове.",
+    "driveMinutesFromLisbon": 145,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "фото",
+      "с детьми"
+    ],
+    "links": [
+      {
+        "title": "Museu Vista Alegre",
+        "url": "https://vistaalegre.com/pt/p/teatromuseu"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Vista_Alegre_-_Portugal_%2852236821192%29.jpg/1280px-Vista_Alegre_-_Portugal_%2852236821192%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vista_Alegre_-_Portugal_(52236821192).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/VISTA_ALEGRE_-_%C3%8Dlhavo_-_capela.jpg/1280px-VISTA_ALEGRE_-_%C3%8Dlhavo_-_capela.jpg",
+        "author": "Isabel Pinheiro mcp",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:VISTA_ALEGRE_-_%C3%8Dlhavo_-_capela.jpg"
+      }
+    ],
+    "collections": []
   }
 ]
