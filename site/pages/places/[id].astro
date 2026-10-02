@@ -95,7 +95,7 @@ const directions = `https://www.google.com/maps/dir/?api=1&destination=${place.c
     )}
   </article>
 
-  <MobileDetailBar fallback={href('/places/')}>
+  <MobileDetailBar fallback={href('/places/')} title={place.name}>
     <div class="mbar-group">
       <FavoriteButton placeId={place.id} variant="card" />
       <VisitedButton placeId={place.id} variant="card" />

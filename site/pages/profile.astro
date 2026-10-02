@@ -258,6 +258,15 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
     font-weight: 600;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.14);
   }
+  /* Dark: the raised segment needs more lift than the surface step gives. */
+  :global(:root[data-theme='dark']) .segmented button[aria-checked='true'] {
+    background: color-mix(in srgb, var(--text-primary) 14%, var(--surface-2));
+  }
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme='light'])) .segmented button[aria-checked='true'] {
+      background: color-mix(in srgb, var(--text-primary) 14%, var(--surface-2));
+    }
+  }
 </style>
 
 <script>

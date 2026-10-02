@@ -6,9 +6,12 @@
 // no browser back button — a swipe from the left edge also goes back.
 interface Props {
   fallback: string;
+  /** Shown in a compact top bar once the page's own title scrolls away. */
+  title: string;
 }
-const { fallback } = Astro.props;
+const { fallback, title } = Astro.props;
 ---
+<div class="mtop" data-mtop aria-hidden="true"><span>{title}</span></div>
 <div class="mbar" data-mbar>
   <button type="button" class="mbar-back" data-mbar-back data-fallback={fallback} aria-label="Назад">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -27,7 +30,8 @@ const { fallback } = Astro.props;
 
 <style>
   .mbar,
-  .edge-hint {
+  .edge-hint,
+  .mtop {
     display: none;
   }
   @media (max-width: 760px) {
@@ -132,17 +136,60 @@ const { fallback } = Astro.props;
       box-shadow: 0 6px 22px rgba(28, 79, 150, 0.35);
     }
     /* The dark theme's accent is a light blue: dark ink reads on it. */
-    :global(:root[data-theme='dark']) .mbar-actions :global(.mbar-pill) {
+    :global(:root[data-theme='dark']) .mbar-actions :global(.mbar-pill:not(.mbar-pill--quiet)) {
       color: #0f1d33;
+    }
+    /* Icon-only secondary action (e.g. directions next to a primary CTA). */
+    .mbar-actions :global(.mbar-pill--quiet) {
+      width: 48px;
+      padding: 0;
+      justify-content: center;
+      border: 0.5px solid var(--border-strong);
+      background: color-mix(in srgb, var(--surface-2) 92%, transparent);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      color: var(--accent);
+      box-shadow: 0 6px 22px rgba(33, 29, 23, 0.24);
     }
     .mbar-actions :global(.mbar-pill:active) {
       transform: scale(0.96);
     }
 
     @media (prefers-color-scheme: dark) {
-      :global(:root:not([data-theme='light'])) .mbar-actions :global(.mbar-pill) {
+      :global(:root:not([data-theme='light'])) .mbar-actions :global(.mbar-pill:not(.mbar-pill--quiet)) {
         color: #0f1d33;
       }
+    }
+
+    .mtop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 70;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: calc(44px + env(safe-area-inset-top, 0px));
+      padding: env(safe-area-inset-top, 0px) 56px 0;
+      background: color-mix(in srgb, var(--surface-0) 88%, transparent);
+      -webkit-backdrop-filter: saturate(1.2) blur(14px);
+      backdrop-filter: saturate(1.2) blur(14px);
+      border-bottom: 0.5px solid var(--border);
+      transform: translateY(-100%);
+      transition: transform 0.22s ease;
+      pointer-events: none;
+    }
+    .mtop.show {
+      transform: none;
+    }
+    .mtop span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
     }
 
     .edge-hint {
@@ -181,6 +228,15 @@ const { fallback } = Astro.props;
     else location.href = fallback;
   }
   back?.addEventListener('click', goBack);
+
+  // Compact title bar once the page heading has scrolled under the top edge.
+  const mtop = document.querySelector<HTMLElement>('[data-mtop]');
+  const heading = document.querySelector('main h1');
+  if (mtop && heading && 'IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => {
+      mtop.classList.toggle('show', !entry.isIntersecting && entry.boundingClientRect.top < 0);
+    }).observe(heading);
+  }
 
   // Edge swipe — only in the installed app, where iOS gives no back gesture of
   // its own (in Safari it would fight the browser's swipe).

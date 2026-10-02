@@ -71,17 +71,24 @@ export function addLocateControl(map: L.Map, opts: Options = {}) {
   function paint(fix: Fix) {
     const ll: L.LatLngExpression = [fix.lat, fix.lon];
     if (!dot) {
+      // Own pane above markers and cluster bubbles, so "you" is never buried.
+      if (!map.getPane('me')) {
+        const pane = map.createPane('me');
+        pane.style.zIndex = '650';
+        pane.style.pointerEvents = 'none';
+      }
       halo = L.circle(ll, {
         radius: fix.accuracy,
         className: 'me-halo',
         interactive: false,
         weight: 1,
+        pane: 'me',
       }).addTo(map);
       dot = L.marker(ll, {
         icon: L.divIcon({ className: 'me-dot', html: '<span></span>', iconSize: [22, 22] }),
         interactive: false,
         keyboard: false,
-        zIndexOffset: 2000,
+        pane: 'me',
       }).addTo(map);
     } else {
       dot.setLatLng(ll);
