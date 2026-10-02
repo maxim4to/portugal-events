@@ -170,6 +170,17 @@ const presentCities = [...new Set(events.map((e) => e.city))].sort((a, b) =>
     background: var(--border-strong);
     transform: translateY(-4px);
   }
+  @media (max-width: 760px) {
+    .month {
+      margin-bottom: var(--space-5);
+    }
+    .month-head {
+      margin-bottom: var(--space-3);
+    }
+    .month-head h2 {
+      font-size: 20px;
+    }
+  }
   .event-card {
     display: flex;
     flex-direction: column;

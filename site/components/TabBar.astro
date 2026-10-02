@@ -1,14 +1,14 @@
 ---
 // Phone-only bottom navigation (≤760px), replacing the desktop header there:
-// two section tabs plus a "Профиль" tab that opens an account sheet (sign-in /
-// sign-out and theme). Each tab remembers its last URL (filters included) for
-// the session, so switching tabs returns to where you left off — like native
-// tab bars. Tapping the already-active tab dispatches `tabbar:reselect`.
+// Места / Афиша / Профиль. Each tab remembers its last URL (filters included)
+// for the session, so switching tabs returns to where you left off — like
+// native tab bars. Tapping the already-active tab dispatches `tabbar:reselect`.
 const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
 
 const tabs = [
   { path: '/places/', label: 'Места', icon: 'pin' },
   { path: '/events/', label: 'Афиша', icon: 'ticket' },
+  { path: '/profile/', label: 'Профиль', icon: 'person' },
 ] as const;
 
 const current = Astro.url.pathname.replace(/\/$/, '') || '/';
@@ -34,6 +34,15 @@ const isRoot = (p: string) => current === href(p).replace(/\/$/, '');
             <circle cx="12" cy="10" r="2.6" />
           </svg>
         )}
+        {t.icon === 'person' && (
+          <>
+            <svg class="tab-person" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" />
+            </svg>
+            <img class="tab-avatar" data-tab-avatar alt="" width="26" height="26" referrerpolicy="no-referrer" hidden />
+          </>
+        )}
         {t.icon === 'ticket' && (
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="4.5" width="18" height="16" rx="2.5" />
@@ -45,55 +54,10 @@ const isRoot = (p: string) => current === href(p).replace(/\/$/, '');
       <span class="tab-label">{t.label}</span>
     </a>
   ))}
-  <button type="button" class="tab" data-account-open aria-haspopup="dialog">
-    <span class="tab-icon" aria-hidden="true">
-      <svg class="tab-person" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="8" r="4" />
-        <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" />
-      </svg>
-      <img class="tab-avatar" data-tab-avatar alt="" width="26" height="26" referrerpolicy="no-referrer" hidden />
-    </span>
-    <span class="tab-label">Профиль</span>
-  </button>
 </nav>
 
-<div class="account-sheet" data-account-sheet hidden>
-  <div class="account-backdrop" data-account-close></div>
-  <div class="account-panel" role="dialog" aria-modal="true" aria-label="Профиль">
-    <span class="sheet-grabber" aria-hidden="true"></span>
-
-    <section class="account-auth" data-acc-auth hidden>
-      <div class="acc-signed-out" data-acc-out>
-        <p class="acc-title">Войдите в аккаунт</p>
-        <p class="acc-hint">Чтобы отмечать избранное и посещённые места на всех устройствах.</p>
-        <button type="button" class="acc-primary" data-acc-signin>Войти через Google</button>
-      </div>
-      <div class="acc-signed-in" data-acc-in hidden>
-        <img class="acc-avatar" data-acc-avatar alt="" width="48" height="48" referrerpolicy="no-referrer" />
-        <div class="acc-who">
-          <span class="acc-name" data-acc-name></span>
-          <span class="acc-email" data-acc-email></span>
-        </div>
-        <button type="button" class="acc-signout" data-acc-signout>Выйти</button>
-      </div>
-    </section>
-
-    <section class="account-theme">
-      <p class="acc-section">Оформление</p>
-      <div class="segmented" role="radiogroup" aria-label="Тема">
-        <button type="button" role="radio" data-theme-opt="system">Авто</button>
-        <button type="button" role="radio" data-theme-opt="light">Светлая</button>
-        <button type="button" role="radio" data-theme-opt="dark">Тёмная</button>
-      </div>
-    </section>
-
-    <button type="button" class="acc-done" data-account-close>Готово</button>
-  </div>
-</div>
-
 <style>
-  .tabbar,
-  .account-sheet {
+  .tabbar {
     display: none;
   }
 
@@ -176,155 +140,13 @@ const isRoot = (p: string) => current === href(p).replace(/\/$/, '');
       visibility: hidden;
     }
 
-    .account-sheet:not([hidden]) {
-      display: block;
-      position: fixed;
-      inset: 0;
-      z-index: 1300;
-    }
-    .account-backdrop {
-      position: absolute;
-      inset: 0;
-      background: rgba(20, 16, 10, 0.4);
-      animation: sheet-fade 0.2s ease;
-    }
-    .account-panel {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-5);
-      padding: var(--space-2) var(--space-4) calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
-      background: var(--surface-2);
-      border-radius: 16px 16px 0 0;
-      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.25);
-      animation: sheet-up 0.28s cubic-bezier(0.2, 0.9, 0.3, 1);
-    }
-    .account-auth[hidden],
-    .acc-signed-out[hidden],
-    .acc-signed-in[hidden] {
-      display: none;
-    }
-    .acc-title {
-      margin: var(--space-2) 0 var(--space-1);
-      font-family: var(--font-display);
-      font-size: 22px;
-      font-weight: 550;
-    }
-    .acc-hint {
-      margin: 0 0 var(--space-4);
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.45;
-    }
-    .acc-primary,
-    .acc-done {
-      width: 100%;
-      height: 50px;
-      border: 0;
-      border-radius: 12px;
-      font: inherit;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    .acc-primary {
-      background: var(--accent);
-      color: #fff;
-    }
-    .acc-done {
-      background: var(--surface-1);
-      color: var(--text-primary);
-    }
-    .acc-signed-in {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-      padding-top: var(--space-2);
-    }
-    .acc-avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      object-fit: cover;
-      background: var(--surface-1);
-      flex: none;
-    }
-    .acc-who {
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      flex: 1;
-    }
-    .acc-name {
-      font-weight: 600;
-      font-size: 16px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    .acc-email {
-      font-size: 13px;
-      color: var(--text-muted);
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    .acc-signout {
-      flex: none;
-      height: 36px;
-      padding: 0 var(--space-4);
-      border: 0.5px solid var(--border-strong);
-      border-radius: var(--radius-pill);
-      background: transparent;
-      color: var(--danger);
-      font: inherit;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    .acc-section {
-      margin: 0 0 var(--space-2);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-    .segmented {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      padding: 3px;
-      border-radius: 10px;
-      background: var(--surface-1);
-    }
-    .segmented button {
-      height: 36px;
-      border: 0;
-      border-radius: 8px;
-      background: transparent;
-      color: var(--text-secondary);
-      font: inherit;
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-    }
-    .segmented button[aria-checked='true'] {
-      background: var(--surface-2);
-      color: var(--text-primary);
-      font-weight: 600;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.14);
-    }
   }
 </style>
 
 <script>
-  import { onAuthChange, signInWithGoogle, signOutUser, isAuthConfigured } from '../lib/auth.ts';
+  import { onAuthChange, isAuthConfigured } from '../lib/auth.ts';
 
   const bar = document.querySelector<HTMLElement>('[data-tabbar]');
-  const sheet = document.querySelector<HTMLElement>('[data-account-sheet]');
 
   if (bar) {
     const key = (path: string) => `tab-url:${path}`;
@@ -358,64 +180,16 @@ const isRoot = (p: string) => current === href(p).replace(/\/$/, '');
     });
   }
 
-  if (bar && sheet) {
-    const openBtn = bar.querySelector<HTMLButtonElement>('[data-account-open]');
-    const tabAvatar = bar.querySelector<HTMLImageElement>('[data-tab-avatar]');
-    const themeBtns = Array.from(sheet.querySelectorAll<HTMLButtonElement>('[data-theme-opt]'));
-
-    const paintTheme = () => {
-      const t = document.documentElement.dataset.theme || 'system';
-      themeBtns.forEach((b) => b.setAttribute('aria-checked', String(b.dataset.themeOpt === t)));
-    };
-    themeBtns.forEach((b) =>
-      b.addEventListener('click', () => {
-        (window as unknown as { __setTheme?: (t: string) => void }).__setTheme?.(b.dataset.themeOpt!);
-        paintTheme();
-      }),
-    );
-
-    const open = () => {
-      paintTheme();
-      sheet.hidden = false;
-    };
-    const close = () => (sheet.hidden = true);
-    openBtn?.addEventListener('click', open);
-    sheet.querySelectorAll('[data-account-close]').forEach((el) => el.addEventListener('click', close));
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !sheet.hidden) close();
+  const tabAvatar = bar?.querySelector<HTMLImageElement>('[data-tab-avatar]');
+  if (tabAvatar && isAuthConfigured()) {
+    onAuthChange((user) => {
+      if (user?.photoURL) {
+        tabAvatar.src = user.photoURL;
+        tabAvatar.hidden = false;
+      } else {
+        tabAvatar.removeAttribute('src');
+        tabAvatar.hidden = true;
+      }
     });
-
-    if (isAuthConfigured()) {
-      const authBox = sheet.querySelector<HTMLElement>('[data-acc-auth]')!;
-      const outBox = sheet.querySelector<HTMLElement>('[data-acc-out]')!;
-      const inBox = sheet.querySelector<HTMLElement>('[data-acc-in]')!;
-      const avatar = sheet.querySelector<HTMLImageElement>('[data-acc-avatar]')!;
-      const nameEl = sheet.querySelector<HTMLElement>('[data-acc-name]')!;
-      const emailEl = sheet.querySelector<HTMLElement>('[data-acc-email]')!;
-      authBox.hidden = false;
-
-      onAuthChange((user) => {
-        outBox.hidden = !!user;
-        inBox.hidden = !user;
-        nameEl.textContent = user?.displayName ?? '';
-        emailEl.textContent = user?.email ?? '';
-        if (user?.photoURL) {
-          avatar.src = user.photoURL;
-          if (tabAvatar) {
-            tabAvatar.src = user.photoURL;
-            tabAvatar.hidden = false;
-          }
-        } else {
-          avatar.removeAttribute('src');
-          if (tabAvatar) tabAvatar.hidden = true;
-        }
-      });
-      sheet.querySelector('[data-acc-signin]')?.addEventListener('click', () => {
-        void signInWithGoogle().then(close);
-      });
-      sheet.querySelector('[data-acc-signout]')?.addEventListener('click', () => {
-        void signOutUser();
-      });
-    }
   }
 </script>

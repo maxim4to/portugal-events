@@ -635,8 +635,17 @@ html {
     border: 0;
     border-radius: 16px 16px 0 0;
     box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.25);
+    /* Grabber drawn as a background so ::before stays free for the title. */
+    background: linear-gradient(var(--border-strong), var(--border-strong)) center 8px / 36px 5px
+        no-repeat,
+      var(--surface-2);
     overscroll-behavior: contain;
     animation: sheet-up 0.28s cubic-bezier(0.2, 0.9, 0.3, 1);
+  }
+  .fgroup-menu .chip[aria-pressed='true']::before {
+    content: '✓';
+    font-weight: 700;
+    margin-right: -2px;
   }
   .fgroup-menu::before {
     content: attr(data-title);

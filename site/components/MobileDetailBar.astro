@@ -63,8 +63,8 @@ const { fallback } = Astro.props;
       align-items: center;
       justify-content: center;
       flex: none;
-      width: 56px;
-      height: 56px;
+      width: 52px;
+      height: 52px;
       padding: 0;
       border: 0.5px solid var(--border-strong);
       border-radius: 50%;
@@ -88,14 +88,33 @@ const { fallback } = Astro.props;
       gap: var(--space-2);
       min-width: 0;
     }
-    /* Shared look for the action controls dropped into the slot. */
-    .mbar-actions :global(.favorite-btn),
-    .mbar-actions :global(.visited-btn) {
-      width: 48px;
+    /* Toggle buttons joined into one translucent capsule. */
+    .mbar-actions :global(.mbar-group) {
+      display: flex;
+      align-items: center;
       height: 48px;
-      border-color: var(--border-strong);
+      padding: 0 4px;
+      border: 0.5px solid var(--border-strong);
+      border-radius: var(--radius-pill);
       background: color-mix(in srgb, var(--surface-2) 92%, transparent);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
       box-shadow: 0 6px 22px rgba(33, 29, 23, 0.24);
+    }
+    .mbar-actions :global(.mbar-group > button) {
+      width: 44px;
+      height: 44px;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+      backdrop-filter: none;
+    }
+    .mbar-actions :global(.mbar-group > button[hidden]) {
+      display: none;
+    }
+    .mbar-actions :global(.mbar-group > button:not([hidden]) ~ button:not([hidden])) {
+      box-shadow: -0.5px 0 0 var(--border);
+      border-radius: 0 var(--radius-pill) var(--radius-pill) 0;
     }
     .mbar-actions :global(.mbar-pill) {
       display: inline-flex;
@@ -112,8 +131,18 @@ const { fallback } = Astro.props;
       text-decoration: none;
       box-shadow: 0 6px 22px rgba(28, 79, 150, 0.35);
     }
+    /* The dark theme's accent is a light blue: dark ink reads on it. */
+    :global(:root[data-theme='dark']) .mbar-actions :global(.mbar-pill) {
+      color: #0f1d33;
+    }
     .mbar-actions :global(.mbar-pill:active) {
       transform: scale(0.96);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :global(:root:not([data-theme='light'])) .mbar-actions :global(.mbar-pill) {
+        color: #0f1d33;
+      }
     }
 
     .edge-hint {
