@@ -611,21 +611,21 @@ html {
     color: var(--accent);
   }
 
-  .fgroup.open::before {
-    content: '';
+  .fgroup-backdrop {
     position: fixed;
     inset: 0;
-    z-index: 1;
+    z-index: 1290;
     background: rgba(20, 16, 10, 0.42);
     animation: sheet-fade 0.2s ease;
   }
-  .fgroup-menu {
+  .fgroup-menu.is-sheet {
     position: fixed;
     left: 0 !important;
     right: 0 !important;
     top: auto;
     bottom: 0;
-    z-index: 2;
+    z-index: 1300;
+    display: flex;
     width: auto;
     max-width: none;
     max-height: 78vh;
@@ -647,7 +647,7 @@ html {
     font-weight: 700;
     margin-right: -2px;
   }
-  .fgroup-menu::before {
+  .fgroup-menu.is-sheet::before {
     content: attr(data-title);
     flex: 0 0 100%;
     margin-bottom: var(--space-1);
@@ -665,7 +665,7 @@ html {
   .fgroup-menu .visited-group {
     display: contents;
   }
-  .fgroup-done {
+  .is-sheet .fgroup-done {
     display: block;
     flex: 0 0 100%;
     height: 50px;
@@ -678,13 +678,6 @@ html {
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-  }
-}
-@media (max-width: 760px) {
-  /* The explorer is position:fixed (its own stacking context): lift it over
-     the tab bar while one of its filter sheets is open. */
-  .explorer-root:has(.fgroup.open) {
-    z-index: 1200;
   }
 }
 
