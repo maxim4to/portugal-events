@@ -35,7 +35,31 @@ export function initFilterGroups(root: HTMLElement): void {
     }
   }
 
+  const phone = window.matchMedia('(max-width: 760px)');
+  const closeAll = () =>
+    groups.forEach((g) => {
+      g.classList.remove('open');
+      g.querySelector('[data-fgroup-toggle]')?.setAttribute('aria-expanded', 'false');
+      clearMenu(g);
+    });
+
   groups.forEach((g) => {
+    // On phones the menu opens as a bottom sheet: give it a title (the pill's
+    // label) and a "Готово" button. Both are hidden by CSS on wider screens.
+    const menu = g.querySelector<HTMLElement>('.fgroup-menu');
+    if (menu) {
+      menu.dataset.title = g.querySelector('.flabel')?.textContent?.trim() ?? '';
+      const done = document.createElement('button');
+      done.type = 'button';
+      done.className = 'fgroup-done';
+      done.textContent = 'Готово';
+      done.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeAll();
+      });
+      menu.append(done);
+    }
+
     const btn = g.querySelector<HTMLButtonElement>('[data-fgroup-toggle]');
     btn?.addEventListener('click', () => {
       const willOpen = !g.classList.contains('open');
@@ -45,16 +69,15 @@ export function initFilterGroups(root: HTMLElement): void {
         o.querySelector('[data-fgroup-toggle]')?.setAttribute('aria-expanded', String(open));
         if (!open) clearMenu(o);
       });
-      if (willOpen) positionMenu(g);
+      if (willOpen && !phone.matches) positionMenu(g);
     });
   });
   document.addEventListener('click', (e) => {
-    if ((e.target as HTMLElement).closest('.fgroup')) return;
-    groups.forEach((g) => {
-      g.classList.remove('open');
-      g.querySelector('[data-fgroup-toggle]')?.setAttribute('aria-expanded', 'false');
-      clearMenu(g);
-    });
+    const t = e.target as HTMLElement;
+    // A tap on the phone sheet's backdrop (the open group's ::before) lands on
+    // the .fgroup itself — treat it as outside.
+    if (t.closest('.fgroup') && !t.matches('.fgroup')) return;
+    closeAll();
   });
 }
 
