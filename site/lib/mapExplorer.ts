@@ -1,7 +1,9 @@
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { initSheet, type SheetSnap } from './mobileSheet';
-import { pluralRu } from './geo';
+import { distanceKm, formatDistance, pluralRu } from './geo';
+import { getFix, onFix, type Fix } from './geolocate';
+import { addLocateControl } from './mapLocate';
 
 export interface MapPoint {
   id: string;
@@ -96,6 +98,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
 
   const listScroll = root.querySelector<HTMLElement>('[data-list-scroll]');
   let map: L.Map | null = null;
+  let locate: ReturnType<typeof addLocateControl> | null = null;
   let markerLayer: L.LayerGroup | null = null;
   const markerById = new Map<string, L.Marker>();
 
@@ -188,7 +191,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     }
     showAllBtns.forEach((b) => (b.hidden = !limited));
     if (areaNote) areaNote.hidden = !limited;
-    if (areaText) areaText.textContent = `Показаны ${visible} из ${matching} — в области карты`;
+    if (areaText) areaText.textContent = `${visible} из ${matching} — в области карты`;
   }
 
   // ---- Markers -------------------------------------------------------------
@@ -302,6 +305,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     previewEl.innerHTML = previewHtml(p);
     previewEl.hidden = false;
     previewEl.querySelector('[data-pp-close]')?.addEventListener('click', closePreview);
+    paintPreviewDistance();
     document.dispatchEvent(new CustomEvent('explorer:preview', { detail: { id: p.id } }));
     const cover = previewEl.offsetHeight + 12;
     sheet.setAway(true, cover);
@@ -314,6 +318,13 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
       const target = L.point(size.x / 2, (top + bottom) / 2);
       map.panBy(pt.subtract(target), { animate: true });
     }
+  }
+
+  function paintPreviewDistance() {
+    const el = previewEl?.querySelector<HTMLElement>('[data-pp-dist]');
+    const fix = getFix();
+    const p = selectedId ? pointById.get(selectedId) : undefined;
+    if (el && fix && p) el.textContent = `${formatDistance(distanceKm(fix.lat, fix.lon, p.lat, p.lon))} от вас`;
   }
 
   function closePreview() {
@@ -350,6 +361,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
       saveView();
     });
     map.on('click', closePreview);
+    locate = addLocateControl(map, { insets: fitInsets });
     if (restored) {
       map.setView(restored.center, restored.zoom, { animate: false });
       skipNextFit = true;
@@ -442,6 +454,71 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
 
   addEventListener('pagehide', saveView);
 
+  // ---- Distance from the visitor + "Рядом" sort ---------------------------
+
+  const distById = new Map<string, number>();
+  let distFix: Fix | null = null;
+
+  function updateDistances(fix: Fix) {
+    // Ignore jitter: only recompute after a real move.
+    if (distFix && distanceKm(distFix.lat, distFix.lon, fix.lat, fix.lon) < 0.1) return;
+    const moved = distFix ? distanceKm(distFix.lat, distFix.lon, fix.lat, fix.lon) : Infinity;
+    distFix = fix;
+    for (const el of cards) {
+      const p = pointById.get(el.dataset.id!);
+      const badge = el.querySelector<HTMLElement>('[data-dist]');
+      if (!p) continue;
+      const km = distanceKm(fix.lat, fix.lon, p.lat, p.lon);
+      distById.set(p.id, km);
+      if (badge) {
+        badge.textContent = formatDistance(km);
+        badge.hidden = false;
+      }
+    }
+    paintPreviewDistance();
+    // Re-sort only on a sizeable move, so the list doesn't shuffle under you.
+    if (nearSort && moved > 2) applySort();
+  }
+
+  const nearBtn = root.querySelector<HTMLButtonElement>('[data-sort-near]');
+  const nearKey = `explorer-near:${location.pathname}`;
+  const originalIndex = new Map(cards.map((c, i) => [c, i]));
+  const sortParents = [...new Set(cards.map((c) => c.parentElement!))];
+  let nearSort = false;
+
+  function applySort() {
+    const byOriginal = (a: HTMLElement, b: HTMLElement) =>
+      originalIndex.get(a)! - originalIndex.get(b)!;
+    const byDistance = (a: HTMLElement, b: HTMLElement) =>
+      (distById.get(a.dataset.id!) ?? Infinity) - (distById.get(b.dataset.id!) ?? Infinity) ||
+      byOriginal(a, b);
+    const sorted = nearSort && distById.size > 0;
+    for (const parent of sortParents) {
+      cards
+        .filter((c) => c.parentElement === parent)
+        .sort(sorted ? byDistance : byOriginal)
+        .forEach((c) => parent.appendChild(c));
+    }
+  }
+
+  function setNearSort(on: boolean) {
+    nearSort = on;
+    nearBtn?.setAttribute('aria-pressed', String(on));
+    try {
+      if (on) sessionStorage.setItem(nearKey, '1');
+      else sessionStorage.removeItem(nearKey);
+    } catch {}
+    if (on && !getFix()) locate?.ensure();
+    applySort();
+  }
+
+  nearBtn?.addEventListener('click', () => {
+    setNearSort(!nearSort);
+    listScroll?.scrollTo({ top: 0 });
+  });
+
+  onFix(updateDistances);
+
   document.addEventListener('visited:changed', () => {
     updateListVisibility();
     restyleMarkers();
@@ -485,6 +562,11 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
 
   // On wide screens both panes show at once; build the map immediately.
   ensureMap();
+  const cachedFix = getFix();
+  if (cachedFix) updateDistances(cachedFix);
+  try {
+    if (sessionStorage.getItem(nearKey) === '1') setNearSort(true);
+  } catch {}
   updateListVisibility();
   // The container height settles after first layout; let Leaflet re-measure so
   // tiles render into the correct size.

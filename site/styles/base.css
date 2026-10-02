@@ -575,7 +575,8 @@ html {
 @media (max-width: 760px) {
   .fgroup-summary,
   .fav-toggle,
-  .reset-btn {
+  .reset-btn,
+  .near-pill {
     flex: none;
     height: 36px;
     padding: 0 14px;
@@ -595,7 +596,8 @@ html {
   }
   .sheet-full .fgroup-summary,
   .sheet-full .fav-toggle,
-  .sheet-full .reset-btn {
+  .sheet-full .reset-btn,
+  .sheet-full .near-pill {
     box-shadow: none;
     border-color: var(--border-strong);
   }
