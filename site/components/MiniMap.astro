@@ -11,6 +11,11 @@ const { lat, lon, name } = Astro.props;
 <style>
   /* Full-column-width square: the point is shown in context relative to Lisbon. */
   .minimap {
+    /* Own stacking context: Leaflet's panes/controls carry z-indexes up to
+       1000 and would otherwise paint over the page's floating bars. */
+    position: relative;
+    z-index: 0;
+    isolation: isolate;
     width: 100%;
     aspect-ratio: 1 / 1;
     border: 1px solid var(--border-strong);
@@ -67,7 +72,10 @@ const { lat, lon, name } = Astro.props;
   }
   /* Place names can be long, so let this label wrap (Lisbon is a single word). */
   .minimap :global(.place-tip) {
-    max-width: 160px;
+    /* Tooltips sit in a zero-size pane, so without an explicit width they
+       shrink to one word per line. */
+    width: max-content;
+    max-width: 200px;
     white-space: normal;
     text-align: center;
   }
@@ -129,6 +137,8 @@ const { lat, lon, name } = Astro.props;
       dragging: !coarse,
       // Touch screens pinch; the +/- buttons are just clutter there.
       zoomControl: !coarse,
+      // Fractional zoom so the padded framing doesn't drop a whole level.
+      zoomSnap: 0.25,
     }).setView([lat, lon], 12);
     // Drop Leaflet's own attribution prefix (which carries a 🇺🇦 flag); keep the
     // OpenStreetMap tile credit added below.
@@ -156,7 +166,13 @@ const { lat, lon, name } = Astro.props;
 
     // A subtle Lisbon anchor so the destination reads relative to it — a small
     // dot + label rather than a competing pin.
+    // The route lives in the overlay pane; the Lisbon dot gets a pane above it
+    // so the line runs under the dot instead of across it.
+    const pointsPane = map.createPane('points');
+    pointsPane.style.zIndex = '450';
+
     L.circleMarker([LISBON.lat, LISBON.lon], {
+      pane: 'points',
       radius: 5,
       weight: 2,
       fillOpacity: 1,
@@ -175,7 +191,14 @@ const { lat, lon, name } = Astro.props;
       [LISBON.lat, LISBON.lon],
       [lat, lon],
     ]);
-    map.fitBounds(bothBounds, { padding: [36, 36] });
+    // Leave room for the labels: they sit above both points (the destination
+    // one can be ~200px wide and up to three lines tall), so pad the top and
+    // sides more than the bottom.
+    const FIT = {
+      paddingTopLeft: [105, 100] as L.PointTuple,
+      paddingBottomRight: [105, 30] as L.PointTuple,
+    };
+    map.fitBounds(bothBounds, FIT);
 
     // Try to draw the actual driving route (OSRM demo). If anything fails, the
     // straight-line framing above already shows the point relative to Lisbon.
@@ -197,7 +220,7 @@ const { lat, lon, name } = Astro.props;
         const line = L.geoJSON(geo, {
           style: { weight: 4, opacity: 1, className: 'route-line' },
         }).addTo(map);
-        map.fitBounds(line.getBounds(), { padding: [30, 30] });
+        map.fitBounds(line.getBounds().extend(bothBounds), FIT);
       })
       .catch(() => {
         // Fallback: a faint straight connector so the direction is still legible.
@@ -208,7 +231,7 @@ const { lat, lon, name } = Astro.props;
           ],
           { weight: 3, dashArray: '6 7', className: 'route-line route-line--dashed' },
         ).addTo(map);
-        map.fitBounds(bothBounds, { padding: [36, 36] });
+        map.fitBounds(bothBounds, FIT);
       });
   }
 </script>
