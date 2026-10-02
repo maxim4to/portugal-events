@@ -3,6 +3,7 @@ import '../styles/tokens.css';
 import '../styles/base.css';
 import Header from '../components/Header.astro';
 import TabBar from '../components/TabBar.astro';
+import IconSprite from '../components/IconSprite.astro';
 
 interface Props {
   title: string;
@@ -24,7 +25,9 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
     <meta name="theme-color" content="#f2ece0" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    {/* Content runs under the status bar (the map/photos fill it); controls
+        pad themselves by env(safe-area-inset-top). See .statusbar-scrim. */}
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Португалия" />
     <link rel="manifest" href={href('/manifest.webmanifest')} />
     <link rel="apple-touch-icon" href={href('/icons/apple-touch-icon.png')} />
@@ -70,11 +73,22 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
     </script>
   </head>
   <body class:list={{ 'app-fill': wide, 'has-tabbar': tabbar }}>
+    <IconSprite />
+    <div class="statusbar-scrim" aria-hidden="true"></div>
     <Header />
     <main class:list={['main', { wide }]}>
       <slot />
     </main>
     {tabbar && <TabBar />}
+    <script>
+      import { trackPage } from '../lib/navStack.ts';
+      trackPage();
+      // Restored from the back/forward cache: scripts don't re-run, so note
+      // which entry we're on again.
+      addEventListener('pageshow', (e) => {
+        if (e.persisted) trackPage();
+      });
+    </script>
   </body>
 </html>
 

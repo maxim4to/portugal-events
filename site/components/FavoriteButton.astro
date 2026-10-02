@@ -17,16 +17,7 @@ const { placeId, variant = 'detail' } = Astro.props;
   aria-pressed="false"
   aria-label="В избранное"
 >
-  <svg class="favorite-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-    <path
-      d="M12 20s-7-4.6-9.3-9A4.9 4.9 0 0 1 12 6a4.9 4.9 0 0 1 9.3 5C19 15.4 12 20 12 20z"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-  </svg>
+  <svg class="favorite-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-heart" /></svg>
   <span class="favorite-label">В избранное</span>
 </button>
 
@@ -59,7 +50,7 @@ const { placeId, variant = 'detail' } = Astro.props;
     color: var(--danger);
     border-color: var(--danger);
   }
-  .favorite-btn[aria-pressed='true'] .favorite-icon path {
+  .favorite-btn[aria-pressed='true'] .favorite-icon {
     fill: var(--danger);
   }
   .favorite-btn[aria-pressed='true'] .favorite-icon {
@@ -68,7 +59,7 @@ const { placeId, variant = 'detail' } = Astro.props;
   .favorite-icon {
     flex: none;
   }
-  .favorite-icon path {
+  .favorite-icon {
     transition: fill 0.15s ease;
   }
 

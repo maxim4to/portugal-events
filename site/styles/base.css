@@ -699,3 +699,22 @@ html {
     animation-duration: 0.22s;
   }
 }
+
+/* Installed app: the status bar floats over the page and its text is always
+   white, so a soft shade sits under it. Its height comes from the safe-area
+   inset alone, so it is 0 (invisible) in a browser tab and on desktop. */
+.statusbar-scrim {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1250;
+  height: calc(env(safe-area-inset-top, 0px) * 1.35);
+  background: linear-gradient(
+    to bottom,
+    rgba(20, 16, 10, 0.46) 0%,
+    rgba(20, 16, 10, 0.3) 62%,
+    rgba(20, 16, 10, 0) 100%
+  );
+  pointer-events: none;
+}

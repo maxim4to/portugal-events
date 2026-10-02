@@ -10,7 +10,8 @@
 // places catalog, the one list that reorders on profile load).
 
 import { isFirebaseConfigured } from './firebase';
-import { onAuthChange } from './auth';
+import { getCachedUser, onAuthChange } from './auth';
+import { hasDelivered } from './userData';
 
 // Never hold the UI hostage to a slow or broken database — reveal regardless
 // after this long, accepting a possible reflow over an indefinitely blank page.
@@ -35,10 +36,13 @@ export function awaitUserData(root: HTMLElement): void {
     return;
   }
 
-  let signedIn: boolean | null = null;
-  let gotVisited = false;
-  let gotFavorites = false;
-  let gotNotInterested = false;
+  // A remembered account counts as signed in straight away: its cached sets
+  // arrive synchronously (see userData), so the list paints without waiting
+  // for Firebase.
+  let signedIn: boolean | null = getCachedUser() ? true : null;
+  let gotVisited = hasDelivered('visited');
+  let gotFavorites = hasDelivered('favorites');
+  let gotNotInterested = hasDelivered('notInterested');
 
   const maybeReveal = () => {
     // Signed out: no per-user data to load. Signed in: wait for all three sets,
@@ -68,6 +72,7 @@ export function awaitUserData(root: HTMLElement): void {
     signedIn = !!user;
     maybeReveal();
   });
+  maybeReveal();
 
   window.setTimeout(reveal, SAFETY_REVEAL_MS);
 }

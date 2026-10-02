@@ -10,7 +10,7 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
     <h1 class="large-title">Профиль</h1>
 
     <section class="group" data-p-auth hidden>
-      <div class="account" data-p-out>
+      <div class="account" data-p-out hidden>
         <p class="acc-title">Войдите в аккаунт</p>
         <p class="acc-hint">Чтобы отмечать избранное и посещённые места — на всех устройствах.</p>
         <button type="button" class="google-btn" data-p-signin>
@@ -270,7 +270,14 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
 </style>
 
 <script>
-  import { onAuthChange, signInWithGoogle, signOutUser, isAuthConfigured } from '../lib/auth.ts';
+  import {
+    getCachedUser,
+    onAuthChange,
+    signInWithGoogle,
+    signOutUser,
+    isAuthConfigured,
+    type CachedUser,
+  } from '../lib/auth.ts';
   import { subscribeFavorites } from '../lib/favorites.ts';
   import { subscribeVisited } from '../lib/visited.ts';
 
@@ -297,7 +304,9 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
     const avatar = $<HTMLImageElement>('[data-p-avatar]');
     $('[data-p-auth]').hidden = false;
 
-    onAuthChange((user) => {
+    // Paint the remembered account at once; "Войдите" only shows once Firebase
+    // has actually confirmed there is no session.
+    const paint = (user: CachedUser | null) => {
       out.hidden = !!user;
       inBox.hidden = !user;
       lists.hidden = !user;
@@ -306,7 +315,10 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
       $('[data-p-email]').textContent = user?.email ?? '';
       if (user?.photoURL) avatar.src = user.photoURL;
       else avatar.removeAttribute('src');
-    });
+    };
+    const cached = getCachedUser();
+    if (cached) paint(cached);
+    onAuthChange(paint);
 
     const count = (kind: string) => (ids: Set<string>) => {
       const el = document.querySelector<HTMLElement>(`[data-p-count="${kind}"]`);

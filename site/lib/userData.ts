@@ -10,9 +10,15 @@
 // and writes are no-ops.
 
 import { getDb, isFirebaseConfigured } from './firebase';
-import { getUid, onAuthChange } from './auth';
+import { getCachedUser, getUid, isAuthKnown, onAuthChange } from './auth';
 
 export type UserSetKind = 'visited' | 'favorites' | 'notInterested';
+
+// Kinds whose first set has been handed to a subscriber. Lets a later script
+// (catalogReady) know the controllers already painted, even though their
+// events fired before it started listening.
+const delivered = new Set<UserSetKind>();
+export const hasDelivered = (kind: UserSetKind) => delivered.has(kind);
 
 /**
  * Subscribe to the current user's set for `kind`. Calls `cb` with a Set of ids
@@ -21,8 +27,12 @@ export type UserSetKind = 'visited' | 'favorites' | 'notInterested';
  */
 export function subscribeUserSet(
   kind: UserSetKind,
-  cb: (ids: Set<string>) => void,
+  onSet: (ids: Set<string>) => void,
 ): () => void {
+  const cb = (ids: Set<string>) => {
+    delivered.add(kind);
+    onSet(ids);
+  };
   if (!isFirebaseConfigured()) {
     cb(new Set());
     return () => {};
@@ -31,6 +41,22 @@ export function subscribeUserSet(
   let cancelled = false;
   let curUid: string | null = null;
   let dbUnsub: (() => void) | null = null;
+
+  // Last snapshot per user, so a cold start can paint the saved state at once
+  // (provisionally) instead of waiting for auth restore + the database.
+  const cacheKey = (uid: string) => `userset:${uid}:${kind}`;
+  const remember = (uid: string, ids: Set<string>) => {
+    try {
+      localStorage.setItem(cacheKey(uid), JSON.stringify([...ids]));
+    } catch {}
+  };
+  const cached = isAuthKnown() ? null : getCachedUser();
+  if (cached) {
+    try {
+      const raw = localStorage.getItem(cacheKey(cached.uid));
+      if (raw) cb(new Set(JSON.parse(raw) as string[]));
+    } catch {}
+  }
 
   const detach = () => {
     if (dbUnsub) {
@@ -67,6 +93,7 @@ export function subscribeUserSet(
                 if (on) ids.add(id);
               }
             }
+            remember(uid, ids);
             cb(ids);
           },
           (err) => {

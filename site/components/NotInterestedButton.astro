@@ -17,40 +17,8 @@ const { placeId, variant = 'detail' } = Astro.props;
 >
   {/* Not-interested: a slashed circle ("no"). Pressed: the same circle filled,
       the slash cut out in the surface colour. Swapped purely by aria-pressed. */}
-  <svg
-    class="ni-icon"
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    aria-hidden="true"
-  >
-    <circle cx="12" cy="12" r="9" />
-    <line x1="5.6" y1="5.6" x2="18.4" y2="18.4" />
-  </svg>
-  <svg
-    class="ni-icon-on"
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="none"
-    aria-hidden="true"
-  >
-    <circle cx="12" cy="12" r="9" fill="currentColor" stroke="currentColor" stroke-width="2" />
-    <line
-      x1="5.6"
-      y1="5.6"
-      x2="18.4"
-      y2="18.4"
-      stroke="var(--surface-2)"
-      stroke-width="2.4"
-      stroke-linecap="round"
-    />
-  </svg>
+  <svg class="ni-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-ni" /></svg>
+  <svg class="ni-icon-on" width="18" height="18" fill="none" aria-hidden="true"><use href="#i-ni-on" /></svg>
   <span class="ni-label">Не интересно</span>
 </button>
 

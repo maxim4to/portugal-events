@@ -144,7 +144,8 @@ const isRoot = (p: string) => current === href(p).replace(/\/$/, '');
 </style>
 
 <script>
-  import { onAuthChange, isAuthConfigured } from '../lib/auth.ts';
+  import { getCachedUser, onAuthChange, isAuthConfigured, type CachedUser } from '../lib/auth.ts';
+  import { stepTo } from '../lib/navStack.ts';
 
   const bar = document.querySelector<HTMLElement>('[data-tabbar]');
 
@@ -172,6 +173,12 @@ const isRoot = (p: string) => current === href(p).replace(/\/$/, '');
           document.dispatchEvent(new CustomEvent('tabbar:reselect'));
           return;
         }
+        // The tab is the previous/next page in history: step there, so it
+        // comes back from the back/forward cache instantly, as it was left.
+        if (stepTo(new URL(a.href, location.href).pathname)) {
+          e.preventDefault();
+          return;
+        }
         try {
           const saved = sessionStorage.getItem(key(a.dataset.tab!));
           if (saved) {
@@ -186,7 +193,7 @@ const isRoot = (p: string) => current === href(p).replace(/\/$/, '');
 
   const tabAvatar = bar?.querySelector<HTMLImageElement>('[data-tab-avatar]');
   if (tabAvatar && isAuthConfigured()) {
-    onAuthChange((user) => {
+    const paint = (user: CachedUser | null) => {
       if (user?.photoURL) {
         tabAvatar.src = user.photoURL;
         tabAvatar.hidden = false;
@@ -194,6 +201,8 @@ const isRoot = (p: string) => current === href(p).replace(/\/$/, '');
         tabAvatar.removeAttribute('src');
         tabAvatar.hidden = true;
       }
-    });
+    };
+    paint(getCachedUser());
+    onAuthChange(paint);
   }
 </script>

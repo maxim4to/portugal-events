@@ -17,6 +17,9 @@ export type SheetSnap = 'peek' | 'half' | 'full';
     the first card's title shows under its photo. */
 export const HALF_AT = 0.44;
 
+/** Height + top margin of the collapsed sheet's card rail (see MapShell CSS). */
+const RAIL_BLOCK = 94;
+
 export interface SheetController {
   readonly state: SheetSnap;
   snap(to: SheetSnap, animate?: boolean): void;
@@ -50,7 +53,14 @@ export function initSheet(root: HTMLElement, opts: Options): SheetController {
   let y = 0;
 
   const H = () => root.clientHeight;
-  const headH = () => head.offsetHeight || 56;
+  const rail = root.querySelector<HTMLElement>('[data-peek-rail]');
+  // The collapsed sheet is the header plus the card rail, which is only laid
+  // out while collapsed — so add it in when measuring from another state.
+  const headH = () => {
+    const h = head.offsetHeight || 56;
+    if (!rail) return h;
+    return root.dataset.sheet === 'peek' ? h : h + RAIL_BLOCK;
+  };
   // Fully open, the sheet starts below the filter bar — or at the very top
   // while the bar is tucked away during a scroll down the list.
   const fullY = () => (root.classList.contains('hide-filter-bar') ? 0 : bar.offsetHeight);
