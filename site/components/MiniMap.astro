@@ -3,10 +3,19 @@ interface Props {
   lat: number;
   lon: number;
   name: string;
+  // Scenic-drive places: the road's own polyline, drawn in a second colour on
+  // top of the Lisbon approach route.
+  path?: { lat: number; lon: number }[];
 }
-const { lat, lon, name } = Astro.props;
+const { lat, lon, name, path } = Astro.props;
 ---
-<div class="minimap" data-lat={lat} data-lon={lon} data-name={name}></div>
+<div
+  class="minimap"
+  data-lat={lat}
+  data-lon={lon}
+  data-name={name}
+  data-path={path && path.length > 1 ? JSON.stringify(path.map((p) => [p.lat, p.lon])) : undefined}
+></div>
 
 <style>
   /* Full-column-width square: the point is shown in context relative to Lisbon. */
@@ -40,6 +49,7 @@ const { lat, lon, name } = Astro.props;
      dark mode and washes out against the tiles). */
   .minimap {
     --map-accent: #d1341f;
+    --map-road: #1d5bbf;
     --map-halo: #ffffff;
   }
   .minimap :global(.place-pin) {
@@ -97,6 +107,19 @@ const { lat, lon, name } = Astro.props;
   .minimap :global(.route-line--dashed) {
     opacity: 0.9;
   }
+  /* The scenic road itself (type "route") — a second colour so it reads apart
+     from the red Lisbon approach. */
+  .minimap :global(.road-line) {
+    stroke: var(--map-road);
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    fill: none;
+  }
+  .minimap :global(.road-dot) {
+    stroke: var(--map-road);
+    stroke-width: 3;
+    fill: var(--map-halo);
+  }
   .minimap :global(.lisbon-dot) {
     stroke: var(--map-accent);
     stroke-width: 3;
@@ -117,6 +140,13 @@ const { lat, lon, name } = Astro.props;
     const lat = Number(el.dataset.lat);
     const lon = Number(el.dataset.lon);
     const name = el.dataset.name || '';
+    // Scenic road polyline ([lat, lon] pairs), present only on "route" places.
+    let road: [number, number][] = [];
+    try {
+      road = JSON.parse(el.dataset.path || '[]');
+    } catch {
+      road = [];
+    }
 
     const PIN_HTML =
       '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 7 11.6 7.3 11.9a1 1 0 0 0 1.4 0C13 21.6 20 15.4 20 10c0-4.4-3.6-8-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>';
@@ -186,11 +216,29 @@ const { lat, lon, name } = Astro.props;
         offset: [0, -6],
       });
 
+    // The scenic road itself, in its own colour over a white casing, with
+    // start/end dots. Drawn before the Lisbon approach is fetched so the road
+    // is visible even if OSRM is down.
+    if (road.length > 1) {
+      L.polyline(road, { weight: 9, className: 'route-casing' }).addTo(map);
+      L.polyline(road, { weight: 5, className: 'road-line' }).addTo(map);
+      for (const end of [road[0], road[road.length - 1]]) {
+        L.circleMarker(end, {
+          pane: 'points',
+          radius: 4,
+          weight: 2,
+          fillOpacity: 1,
+          className: 'road-dot',
+        }).addTo(map);
+      }
+    }
+
     // Frame both Lisbon and the destination; refined once a route is drawn.
     const bothBounds = L.latLngBounds([
       [LISBON.lat, LISBON.lon],
       [lat, lon],
     ]);
+    if (road.length > 1) for (const p of road) bothBounds.extend(p);
     // Leave room for the labels: they sit above both points (the destination
     // one can be ~200px wide and up to three lines tall), so pad the top and
     // sides more than the bottom.
@@ -202,9 +250,12 @@ const { lat, lon, name } = Astro.props;
 
     // Try to draw the actual driving route (OSRM demo). If anything fails, the
     // straight-line framing above already shows the point relative to Lisbon.
+    // For a scenic road, approach its first point (the end nearest Lisbon)
+    // rather than the mid-road pin.
+    const dest = road.length > 1 ? { lat: road[0][0], lon: road[0][1] } : { lat, lon };
     const url =
       `https://router.project-osrm.org/route/v1/driving/` +
-      `${LISBON.lon},${LISBON.lat};${lon},${lat}` +
+      `${LISBON.lon},${LISBON.lat};${dest.lon},${dest.lat}` +
       `?overview=full&geometries=geojson`;
 
     fetch(url)
@@ -227,7 +278,7 @@ const { lat, lon, name } = Astro.props;
         L.polyline(
           [
             [LISBON.lat, LISBON.lon],
-            [lat, lon],
+            [dest.lat, dest.lon],
           ],
           { weight: 3, dashArray: '6 7', className: 'route-line route-line--dashed' },
         ).addTo(map);

@@ -73,6 +73,16 @@ under a different slug.
     same link covers several places, add it to each. If a place the link mentions
     is already in the catalog, append the new URL to its existing `reels` rather
     than skipping — that's how a place accumulates multiple inspiring clips.
+  - **Scenic driving roads are places too** (type `route`, badge «Дорога»). A road
+    entry stores the road's own polyline in `routePath` (array of `{lat, lon}`,
+    ordered from the end you reach first coming from Lisbon; `coords` = a
+    mid-road point used as the map pin). Get real geometry from OSRM
+    (`router.project-osrm.org/route/v1/driving/<lon,lat>;<lon,lat>?overview=full&geometries=geojson`
+    between the road's endpoints, verify the distance matches the real road) and
+    simplify with Douglas-Peucker (~0.0005°, ≈50–120 points). The detail page then
+    draws the road on the MiniMap in its own colour and shows a
+    «Проехать дорогу в Google Maps» start→end directions button automatically.
+    Description must say where the road goes, how long it is and why to drive it.
 - **Events** → invoke the `ingest-events` skill and write into
   `data/events/<YYYY-MM>.json`.
 

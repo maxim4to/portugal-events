@@ -17,6 +17,7 @@ export const PLACE_TYPES = [
   'karting',
   'cablecar',
   'thermal',
+  'route',
   'other',
 ] as const;
 
@@ -59,6 +60,14 @@ export const PlaceSchema = z.object({
   // so visitors can watch and get inspired, not just browse photos.
   reels: z.array(z.string().url()).default([]),
   freeWithResidency: z.boolean().optional(),
+  // Scenic drives (type "route"): the road's own polyline, ordered from the
+  // end you reach first coming from Lisbon. Drawn on the detail map and used
+  // to build a start→end Google Maps directions link. coords stays the pin
+  // (a mid-road viewpoint) so list/map/driving-time logic works unchanged.
+  routePath: z
+    .array(z.object({ lat: z.number().min(-90).max(90), lon: z.number().min(-180).max(180) }))
+    .min(2)
+    .optional(),
 });
 export type Place = z.infer<typeof PlaceSchema>;
 

@@ -3,7 +3,7 @@ export const TYPE_LABELS: Record<string, string> = {
   viewpoint: 'Вид', town: 'Городок', nature: 'Природа',
   museum: 'Музей', park: 'Парк развлечений', garden: 'Сад',
   karting: 'Картинг', cablecar: 'Канатная дорога', thermal: 'Термы',
-  other: 'Другое',
+  route: 'Дорога', other: 'Другое',
 };
 export const EVENT_TYPE_LABELS: Record<string, string> = {
   concert: 'Концерт', festival: 'Фестиваль', exhibition: 'Выставка',

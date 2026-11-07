@@ -65,6 +65,8 @@
   --type-cablecar-text: #445468;
   --type-thermal: #d3ecee;      /* soft aqua */
   --type-thermal-text: #14707a;
+  --type-route: #ece4d2;        /* soft road-gravel tan */
+  --type-route-text: #6f5a2e;
   --type-other: #e9e7e1;        /* soft gray */
   --type-other-text: #61605a;
 
@@ -140,6 +142,8 @@
   --type-cablecar-text: #b3c1d1;
   --type-thermal: #143336;
   --type-thermal-text: #9dcdd1;
+  --type-route: #332d1e;
+  --type-route-text: #d3c49c;
   --type-other: #302f2a;
   --type-other-text: #c0beb6;
 }
@@ -195,6 +199,8 @@
     --type-cablecar-text: #b3c1d1;
     --type-thermal: #143336;
     --type-thermal-text: #9dcdd1;
+    --type-route: #332d1e;
+    --type-route-text: #d3c49c;
     --type-other: #302f2a;
     --type-other-text: #c0beb6;
   }
