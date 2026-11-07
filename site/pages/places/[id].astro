@@ -29,6 +29,18 @@ const gmapsPlace = `https://www.google.com/maps/search/${encodeURIComponent(gmap
 const paragraphs = place.description.split(/\n\n+/).map((s) => s.trim()).filter(Boolean);
 const cover = place.photos[0];
 const directions = `https://www.google.com/maps/dir/?api=1&destination=${place.coords.lat},${place.coords.lon}`;
+// Scenic drives: a directions link that follows the road itself — start to
+// end with a few mid-road via points so Google keeps the route on this road.
+const road = place.routePath;
+let driveRoad: string | null = null;
+if (road && road.length > 1) {
+  const pt = (p: { lat: number; lon: number }) => `${p.lat.toFixed(5)},${p.lon.toFixed(5)}`;
+  const vias = [0.25, 0.5, 0.75].map((f) => pt(road[Math.floor(f * (road.length - 1))]));
+  driveRoad =
+    `https://www.google.com/maps/dir/?api=1&origin=${pt(road[0])}` +
+    `&destination=${pt(road[road.length - 1])}` +
+    `&waypoints=${encodeURIComponent(vias.join('|'))}`;
+}
 ---
 <Base title={place.name} description={place.description.slice(0, 150)} tabbar={false}>
   <article class="detail">
@@ -80,13 +92,16 @@ const directions = `https://www.google.com/maps/dir/?api=1&destination=${place.c
     {place.reels.length > 0 && <ReelEmbed reels={place.reels} name={place.name} />}
 
     <div class="actions">
+      {driveRoad && (
+        <a class="btn btn-primary" href={driveRoad} target="_blank" rel="noopener">Проехать дорогу в Google Maps</a>
+      )}
       <a class="btn btn-primary" href={gmapsPlace} target="_blank" rel="noopener">Открыть в Google Maps</a>
       <FavoriteButton placeId={place.id} variant="detail" />
       <VisitedButton placeId={place.id} variant="detail" />
       <NotInterestedButton placeId={place.id} variant="detail" />
     </div>
 
-    <MiniMap lat={place.coords.lat} lon={place.coords.lon} name={place.name} />
+    <MiniMap lat={place.coords.lat} lon={place.coords.lon} name={place.name} path={place.routePath} />
 
     {cover && (
       <p class="muted attribution" data-gallery-attrib>

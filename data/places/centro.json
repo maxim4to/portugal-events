@@ -1128,5 +1128,386 @@
       }
     ],
     "collections": []
+  },
+  {
+    "id": "estrada-n339-torre",
+    "name": "Дорога N339: подъём на Торре",
+    "type": "route",
+    "region": "Центр (Серра-да-Эштрела)",
+    "coords": {
+      "lat": 40.30577,
+      "lon": -7.54535
+    },
+    "description": "N339 из Ковильяна на Торре — самая высокогорная асфальтовая дорога континентальной Португалии: за 20 километров она набирает почти 1300 метров и выводит к вершине 1993 м мимо ледниковой долины Зезере, гранитных скал и святилища Сеньора-да-Боа-Эштрела, вырезанного прямо в камне. Наверху — обзор на всю Серра-да-Эштрелу, зимой здесь единственный в стране горнолыжный курорт.\n\nЛетом это чистое удовольствие серпантина; зимой дорогу периодически закрывают из-за снега, нужны цепи. Наверху заметно холоднее — возьмите куртку даже в августе.",
+    "driveMinutesFromLisbon": 170,
+    "visitDurationHours": 2,
+    "bestSeason": "июнь–октябрь (зимой возможен снег и закрытия)",
+    "tags": [
+      "виды",
+      "природа",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Торре — Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Torre_(Serra_da_Estrela)"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Torre_-_Serra_da_Estrela_-_Portugal_%287561701786%29.jpg/1280px-Torre_-_Serra_da_Estrela_-_Portugal_%287561701786%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Torre_-_Serra_da_Estrela_-_Portugal_(7561701786).jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Estradas_de_neve_-_A_caminho_da_Torre.jpg/1280px-Estradas_de_neve_-_A_caminho_da_Torre.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Raquel Rosa",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Estradas_de_neve_-_A_caminho_da_Torre.jpg"
+      }
+    ],
+    "reels": [
+      "https://www.instagram.com/reel/DfaG_WlviX4/"
+    ],
+    "routePath": [
+      {
+        "lat": 40.28044,
+        "lon": -7.51241
+      },
+      {
+        "lat": 40.28046,
+        "lon": -7.50789
+      },
+      {
+        "lat": 40.28178,
+        "lon": -7.5085
+      },
+      {
+        "lat": 40.28259,
+        "lon": -7.51223
+      },
+      {
+        "lat": 40.28124,
+        "lon": -7.51418
+      },
+      {
+        "lat": 40.28093,
+        "lon": -7.52481
+      },
+      {
+        "lat": 40.28144,
+        "lon": -7.52546
+      },
+      {
+        "lat": 40.28236,
+        "lon": -7.52504
+      },
+      {
+        "lat": 40.28282,
+        "lon": -7.52068
+      },
+      {
+        "lat": 40.28526,
+        "lon": -7.5202
+      },
+      {
+        "lat": 40.28372,
+        "lon": -7.52217
+      },
+      {
+        "lat": 40.28438,
+        "lon": -7.52265
+      },
+      {
+        "lat": 40.28425,
+        "lon": -7.52412
+      },
+      {
+        "lat": 40.28513,
+        "lon": -7.52453
+      },
+      {
+        "lat": 40.28614,
+        "lon": -7.52354
+      },
+      {
+        "lat": 40.2867,
+        "lon": -7.5278
+      },
+      {
+        "lat": 40.28802,
+        "lon": -7.52618
+      },
+      {
+        "lat": 40.28851,
+        "lon": -7.52854
+      },
+      {
+        "lat": 40.2894,
+        "lon": -7.5269
+      },
+      {
+        "lat": 40.28985,
+        "lon": -7.52761
+      },
+      {
+        "lat": 40.29029,
+        "lon": -7.52706
+      },
+      {
+        "lat": 40.29104,
+        "lon": -7.5275
+      },
+      {
+        "lat": 40.28981,
+        "lon": -7.5316
+      },
+      {
+        "lat": 40.29135,
+        "lon": -7.52972
+      },
+      {
+        "lat": 40.29107,
+        "lon": -7.53164
+      },
+      {
+        "lat": 40.294,
+        "lon": -7.5347
+      },
+      {
+        "lat": 40.29357,
+        "lon": -7.53512
+      },
+      {
+        "lat": 40.29273,
+        "lon": -7.53422
+      },
+      {
+        "lat": 40.29221,
+        "lon": -7.53499
+      },
+      {
+        "lat": 40.29357,
+        "lon": -7.53697
+      },
+      {
+        "lat": 40.29866,
+        "lon": -7.53861
+      },
+      {
+        "lat": 40.30248,
+        "lon": -7.53397
+      },
+      {
+        "lat": 40.30471,
+        "lon": -7.53754
+      },
+      {
+        "lat": 40.30733,
+        "lon": -7.53675
+      },
+      {
+        "lat": 40.30835,
+        "lon": -7.53756
+      },
+      {
+        "lat": 40.3057,
+        "lon": -7.54383
+      },
+      {
+        "lat": 40.30577,
+        "lon": -7.54535
+      },
+      {
+        "lat": 40.30846,
+        "lon": -7.54983
+      },
+      {
+        "lat": 40.30976,
+        "lon": -7.55051
+      },
+      {
+        "lat": 40.31323,
+        "lon": -7.55515
+      },
+      {
+        "lat": 40.31337,
+        "lon": -7.5575
+      },
+      {
+        "lat": 40.31428,
+        "lon": -7.55865
+      },
+      {
+        "lat": 40.31393,
+        "lon": -7.56351
+      },
+      {
+        "lat": 40.31679,
+        "lon": -7.56384
+      },
+      {
+        "lat": 40.31775,
+        "lon": -7.57074
+      },
+      {
+        "lat": 40.31627,
+        "lon": -7.57611
+      },
+      {
+        "lat": 40.31178,
+        "lon": -7.58123
+      },
+      {
+        "lat": 40.31157,
+        "lon": -7.5829
+      },
+      {
+        "lat": 40.31564,
+        "lon": -7.58648
+      },
+      {
+        "lat": 40.31807,
+        "lon": -7.58745
+      },
+      {
+        "lat": 40.31951,
+        "lon": -7.58713
+      },
+      {
+        "lat": 40.32048,
+        "lon": -7.58893
+      },
+      {
+        "lat": 40.32248,
+        "lon": -7.58788
+      },
+      {
+        "lat": 40.3227,
+        "lon": -7.59094
+      },
+      {
+        "lat": 40.32429,
+        "lon": -7.58955
+      },
+      {
+        "lat": 40.32352,
+        "lon": -7.5918
+      },
+      {
+        "lat": 40.32154,
+        "lon": -7.59379
+      },
+      {
+        "lat": 40.32,
+        "lon": -7.59226
+      },
+      {
+        "lat": 40.31987,
+        "lon": -7.59044
+      },
+      {
+        "lat": 40.31894,
+        "lon": -7.59072
+      },
+      {
+        "lat": 40.3181,
+        "lon": -7.59243
+      },
+      {
+        "lat": 40.31884,
+        "lon": -7.59615
+      },
+      {
+        "lat": 40.32145,
+        "lon": -7.60192
+      },
+      {
+        "lat": 40.32273,
+        "lon": -7.60292
+      },
+      {
+        "lat": 40.32436,
+        "lon": -7.60286
+      },
+      {
+        "lat": 40.3265,
+        "lon": -7.60027
+      },
+      {
+        "lat": 40.32631,
+        "lon": -7.60184
+      },
+      {
+        "lat": 40.32764,
+        "lon": -7.60387
+      },
+      {
+        "lat": 40.32663,
+        "lon": -7.605
+      },
+      {
+        "lat": 40.32727,
+        "lon": -7.60698
+      },
+      {
+        "lat": 40.32505,
+        "lon": -7.61035
+      },
+      {
+        "lat": 40.32162,
+        "lon": -7.61348
+      }
+    ]
+  },
+  {
+    "id": "ecopista-do-vouga",
+    "name": "Экопишта-ду-Вога и мост Посу-де-Сантьягу",
+    "type": "hike",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.69926,
+      "lon": -8.3757
+    },
+    "description": "Пешеходно-велосипедная тропа по полотну старой узкоколейки Линья-ду-Вога у Север-ду-Вога: прорубленные вручную тоннели в скале, зелёная долина реки и главная звезда маршрута — ажурный железный мост Понте-ду-Посу-де-Сантьягу 1913 года, перекинутый через ущелье. Идти по шпалам истории — ощущение машины времени, как пишут сами португальцы.\n\nУдобнее всего стартовать от старой станции Парадела и идти до моста и обратно — около 8–10 км лёгкой прогулки через три тоннеля. Возьмите фонарик для тоннелей.",
+    "driveMinutesFromLisbon": 165,
+    "visitDurationHours": 2.5,
+    "bestSeason": "весна–осень",
+    "tags": [
+      "природа",
+      "фото",
+      "бесплатно",
+      "с детьми"
+    ],
+    "links": [
+      {
+        "title": "Ecopista do Vouga — Câmara de Sever do Vouga",
+        "url": "https://www.cm-sever.pt/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Ponte_Ferrovi%C3%A1ria_do_Po%C3%A7o_de_Santiago.jpg/1280px-Ponte_Ferrovi%C3%A1ria_do_Po%C3%A7o_de_Santiago.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Mizinhak",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ponte_Ferrovi%C3%A1ria_do_Po%C3%A7o_de_Santiago.jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Ponte_do_Po%C3%A7o_de_S%C3%A3o_Tiago_-_Portugal_%285693497349%29.jpg/1280px-Ponte_do_Po%C3%A7o_de_S%C3%A3o_Tiago_-_Portugal_%285693497349%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ponte_do_Po%C3%A7o_de_S%C3%A3o_Tiago_-_Portugal_(5693497349).jpg"
+      },
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Ecopista_do_Vouga_-_Portugal_%2850591558161%29.jpg/1280px-Ecopista_do_Vouga_-_Portugal_%2850591558161%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ecopista_do_Vouga_-_Portugal_(50591558161).jpg"
+      }
+    ],
+    "reels": [
+      "https://www.instagram.com/reel/DfCX_QOMGqy/"
+    ]
   }
 ]
