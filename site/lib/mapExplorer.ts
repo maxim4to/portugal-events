@@ -137,10 +137,12 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     if (!isMobile()) return { top: 0, bottom: 0 };
     return { top: sheet.barHeight(), bottom: sheet.peekHeight() };
   }
-  // Framing pins: also keep them clear of a half-open sheet.
+  // Framing pins: always keep them clear of a half-open sheet, whatever the
+  // sheet does now, so the map can stay put while the sheet moves (like native
+  // map apps) instead of re-framing on every snap.
   function fitInsets(): { top: number; bottom: number } {
     const insets = mapInsets();
-    if (isMobile() && sheet.state === 'half') {
+    if (isMobile()) {
       insets.bottom = Math.max(insets.bottom, root.clientHeight - Math.round(root.clientHeight * HALF_AT));
     }
     return insets;
@@ -431,7 +433,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   }
 
   // While the map shows the automatic framing (nobody has panned/zoomed it by
-  // hand), it re-frames itself whenever the sheet changes height.
+  // hand), it re-frames itself when the pins change (filters, visited, ...).
   let autoFit = true;
   // Moves the code starts (fits, preview pans, invalidateSize) must not offer
   // "search this area" — only the user's own pan/zoom does. Interrupted and
@@ -465,26 +467,18 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   function fitTo(pts: L.LatLngExpression[]) {
     if (!map) return;
     autoFit = true;
-    const m = map;
     const { top, bottom } = fitInsets();
     const pad = isMobile() ? 20 : 40;
     progCall(() => {
-      if (!pts.length) {
-        m.setView([39.5, -8.0], 6);
-        return;
+      if (pts.length) {
+        map!.fitBounds(L.latLngBounds(pts), {
+          paddingTopLeft: [pad, top + pad],
+          paddingBottomRight: [pad, bottom + pad],
+          maxZoom: 12,
+        });
+      } else {
+        map!.setView([39.5, -8.0], 6);
       }
-      // The zoom always fits the half-open sheet (like the zoom floor), so
-      // moving the sheet between half and peek only slides the map along with
-      // it instead of re-zooming (which reloads every tile and jolts the pins).
-      const zoomBottom = isMobile()
-        ? Math.max(bottom, root.clientHeight - Math.round(root.clientHeight * HALF_AT))
-        : bottom;
-      const b = L.latLngBounds(pts);
-      const z = Math.min(12, m.getBoundsZoom(b, false, L.point(2 * pad, top + zoomBottom + 2 * pad)));
-      const mid = m.project(b.getSouthWest(), z).add(m.project(b.getNorthEast(), z)).divideBy(2);
-      const center = m.unproject(mid.add([0, (bottom - top) / 2]), z);
-      // Same duration and ease-out as the sheet's own transition (MapShell).
-      m.setView(center, z, { animate: true, pan: { duration: 0.34, easeLinearity: 0.25 } } as L.ZoomPanOptions);
     });
   }
 
@@ -829,9 +823,8 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   const sheet = initSheet(root, {
     initial: restored?.snap ?? 'half',
     enabled: isMobile,
-    onChange: (state) => {
+    onChange: () => {
       syncFrame?.();
-      if (autoFit && state !== 'full' && map) fitAll();
       saveView();
     },
   });
