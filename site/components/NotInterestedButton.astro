@@ -9,8 +9,6 @@ const { placeId, variant = 'detail' } = Astro.props;
   type="button"
   class:list={['ni-btn', `ni-btn--${variant}`, { 'icon-tip': variant === 'card' }]}
   data-ni-id={placeId}
-  data-tip="Не интересно"
-  data-tip-on="Скрыто"
   aria-pressed="false"
   aria-label="Не интересно"
   hidden
@@ -115,9 +113,12 @@ const { placeId, variant = 'detail' } = Astro.props;
   /* Compact circular overlay for catalog cards. Mirrors the visited/favorite
      card buttons exactly — same shell, only the icon and pressed tint differ. */
   .ni-btn--card {
-    width: 32px;
+    /* Icon-only circle at rest; on hover its label unfurls to the left
+       (see .icon-tip in base.css), so the width is content-driven. */
+    min-width: 32px;
     height: 32px;
-    padding: 0;
+    padding: 0 7px;
+    gap: 0;
     justify-content: center;
     border-radius: var(--radius-pill);
     min-height: 0;
@@ -132,10 +133,6 @@ const { placeId, variant = 'detail' } = Astro.props;
     width: 18px;
     height: 18px;
   }
-  /* Icon-only on cards: meaning carried by the hover tip, not a label. */
-  .ni-btn--card .ni-label {
-    display: none;
-  }
   .ni-btn--card[aria-pressed='true'] {
     color: var(--not-interested);
     border-color: var(--not-interested);
@@ -143,8 +140,9 @@ const { placeId, variant = 'detail' } = Astro.props;
   /* Bigger tap target on phones — 32px is fiddly under a finger. */
   @media (max-width: 760px) {
     .ni-btn--card {
-      width: 44px;
+      min-width: 44px;
       height: 44px;
+      padding: 0 11px;
     }
     .ni-btn--card .ni-icon,
     .ni-btn--card .ni-icon-on {

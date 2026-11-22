@@ -6,8 +6,8 @@ The visual contract for the site. Every UI change follows it; tokens live in
 References: **Airbnb** (map + list explorer, photo-first cards, pill filters,
 generous whitespace), **Linear / Stripe** (strict grid, quiet neutral type,
 one accent), **Craft Docs** (palette: neutral paper-white canvas, white cards,
-near-black ink for text and filled controls, soft layered shadows, pastel type
-tints, a papaya brand mark). Character comes from photography and an editorial
+near-black ink text, azure interactive accent, soft layered shadows, pastel
+type tints, a papaya brand mark). Character comes from photography and an editorial
 serif used *only* for page titles — not from decoration.
 
 ## Principles
@@ -18,8 +18,7 @@ serif used *only* for page titles — not from decoration.
    (`--gutter`) and max width (`--page-max`). Nothing floats off-axis.
 3. **Sentence case everywhere.** No uppercase letter-spaced labels. Hierarchy
    comes from size and weight, not tracking.
-4. **One accent.** Ink (`--accent`, near-black; near-white in dark) =
-   interactive/selected. Papaya (`--editorial`) stays out of UI chrome; it
+4. **One accent.** Azure (`--accent`) = interactive/selected. Papaya (`--editorial`) stays out of UI chrome; it
    survives only in the brand mark.
    Red (`--danger`) = favorite heart, green (`--visited`) = visited.
 5. **Quiet until needed.** Secondary actions (visited / not interested) appear

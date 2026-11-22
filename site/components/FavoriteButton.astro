@@ -12,8 +12,6 @@ const { placeId, variant = 'detail' } = Astro.props;
   type="button"
   class:list={['favorite-btn', `favorite-btn--${variant}`, { 'icon-tip': variant === 'card' }]}
   data-favorite-id={placeId}
-  data-tip="В избранное"
-  data-tip-on="В избранном"
   aria-pressed="false"
   aria-label="В избранное"
 >
@@ -114,9 +112,12 @@ const { placeId, variant = 'detail' } = Astro.props;
   /* Compact circular overlay for catalog cards. Shares an identical shell with
      VisitedButton's card variant — only the icon and pressed tint differ. */
   .favorite-btn--card {
-    width: 32px;
+    /* Icon-only circle at rest; on hover its label unfurls to the left
+       (see .icon-tip in base.css), so the width is content-driven. */
+    min-width: 32px;
     height: 32px;
-    padding: 0;
+    padding: 0 7px;
+    gap: 0;
     justify-content: center;
     border-radius: var(--radius-pill);
     min-height: 0;
@@ -125,9 +126,6 @@ const { placeId, variant = 'detail' } = Astro.props;
     background: color-mix(in srgb, var(--surface-2) 85%, transparent);
     backdrop-filter: blur(6px);
     box-shadow: var(--shadow-md);
-  }
-  .favorite-btn--card .favorite-label {
-    display: none;
   }
   .favorite-btn--card .favorite-icon {
     width: 17px;
@@ -140,8 +138,9 @@ const { placeId, variant = 'detail' } = Astro.props;
   /* Bigger tap target on phones — 32px is fiddly under a finger. */
   @media (max-width: 760px) {
     .favorite-btn--card {
-      width: 44px;
+      min-width: 44px;
       height: 44px;
+      padding: 0 11px;
     }
     .favorite-btn--card .favorite-icon {
       width: 22px;

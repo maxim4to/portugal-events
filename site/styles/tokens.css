@@ -1,4 +1,4 @@
-/* Design tokens — see DESIGN.md. Neutral paper-white surfaces, ink as the
+/* Design tokens — see DESIGN.md. Neutral paper-white surfaces, azure as the
    interactive accent, papaya brand mark (Craft-style). Light defaults on :root, dark overrides below.
    Explicit [data-theme] always wins; system preference applies when unset. */
 
@@ -18,11 +18,11 @@
   --border: rgba(3, 3, 2, 0.09);
   --border-strong: rgba(3, 3, 2, 0.18);
 
-  /* Accent — ink (interactive, selected); filled pills are near-black */
-  --accent: #030302;
-  --accent-hover: #41413f;
-  --accent-bg: #ebebea;
-  --accent-text: #030302;
+  /* Accent — Craft azure (interactive, selected), deepened for text contrast */
+  --accent: #0a74e6;
+  --accent-hover: #0062c7;
+  --accent-bg: #e4f0ff;
+  --accent-text: #0059ba;
   --on-accent: #ffffff;
 
   /* Editorial papaya — brand mark only */
@@ -139,11 +139,11 @@
   --border: rgba(255, 255, 255, 0.10);
   --border-strong: rgba(255, 255, 255, 0.20);
 
-  --accent: #f5f5f4;
-  --accent-hover: #ffffff;
-  --accent-bg: #2c2c2b;
-  --accent-text: #ffffff;
-  --on-accent: #0b0b0a;
+  --accent: #4da3ff;
+  --accent-hover: #75b8ff;
+  --accent-bg: #10294a;
+  --accent-text: #a9d0ff;
+  --on-accent: #03121f;
 
   --editorial: #ff6a33;
   --editorial-bg: #3b1d10;
@@ -206,11 +206,11 @@
   --border: rgba(255, 255, 255, 0.10);
   --border-strong: rgba(255, 255, 255, 0.20);
 
-  --accent: #f5f5f4;
-  --accent-hover: #ffffff;
-  --accent-bg: #2c2c2b;
-  --accent-text: #ffffff;
-  --on-accent: #0b0b0a;
+  --accent: #4da3ff;
+  --accent-hover: #75b8ff;
+  --accent-bg: #10294a;
+  --accent-text: #a9d0ff;
+  --on-accent: #03121f;
 
   --editorial: #ff6a33;
   --editorial-bg: #3b1d10;

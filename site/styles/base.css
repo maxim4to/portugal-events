@@ -250,53 +250,60 @@ img {
   color: var(--text-muted);
 }
 
-/* Icon-button hover hint — a floating mini-label sharing the sign-in prompt's
-   look (paper surface, hairline, soft shadow). Sits to the left of the control
-   so it never clips against the right edge of the scrolling list. Pure CSS:
-   shown on hover/focus, swaps text on the pressed state, hidden on touch. */
-.icon-tip {
-  position: relative;
-}
-.icon-tip::after {
-  content: attr(data-tip);
-  position: absolute;
-  top: calc(100% + 6px);
-  right: 0;
-  transform: translateY(-2px);
-  white-space: nowrap;
-  padding: 5px var(--space-2);
-  border: 0;
-  border-radius: var(--radius-sm);
-  background: var(--text-primary);
-  color: var(--surface-0);
-  font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 1.3;
-  box-shadow: var(--shadow-md);
+/* Card action buttons (favorite / visited / not interested): an icon-only
+   glass circle at rest. On hover or keyboard focus the button's own label
+   unfurls to the left of the icon and the capsule grows with it, pushing its
+   neighbours aside like a dock — the meaning is told by the control itself,
+   not by a tooltip laid over the photo. The label already tracks the state
+   («В избранное» → «В избранном»), so a click confirms in place. Touch never
+   shows labels (no hover); phones get a toast instead. */
+.icon-tip > [class$='-label'] {
+  order: -1;
+  max-width: 0;
+  overflow: hidden;
   opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out);
-  z-index: 20;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 550;
+  line-height: 1;
+  letter-spacing: -0.005em;
+  transition:
+    max-width 220ms var(--ease-out),
+    margin 220ms var(--ease-out),
+    opacity 120ms ease;
 }
-.icon-tip[aria-pressed="true"]::after {
-  content: attr(data-tip-on);
-}
-.icon-tip:hover::after,
-.icon-tip:focus-visible::after {
-  opacity: 1;
-  transform: none;
-  transition-delay: 300ms;
-}
-@media (hover: none) {
-  .icon-tip::after {
-    display: none;
+@media (hover: hover) and (min-width: 761px) {
+  .icon-tip {
+    transition:
+      background-color var(--dur-fast) ease,
+      color var(--dur-fast) ease,
+      transform var(--dur-fast) var(--ease-out),
+      opacity var(--dur-fast) ease;
+  }
+  .icon-tip.icon-tip:hover,
+  .icon-tip.icon-tip:focus-visible {
+    background: var(--surface-2);
+  }
+  /* A short intent delay so sweeping the cursor across the row doesn't make
+     every capsule flicker open; closing is immediate. */
+  .icon-tip:hover > [class$='-label'],
+  .icon-tip:focus-visible > [class$='-label'] {
+    max-width: 180px;
+    margin: 0 6px 0 4px;
+    opacity: 1;
+    transition-delay: 80ms, 80ms, 140ms;
+  }
+  /* The sign-in prompt answers the click; keep the capsule closed under it. */
+  body:has(.signin-toast.show) .icon-tip > [class$='-label'] {
+    max-width: 0;
+    margin: 0;
+    opacity: 0;
   }
 }
-/* The sign-in prompt answers the click; the hover hint would sit on top of it. */
-body:has(.signin-toast.show) .icon-tip::after {
-  opacity: 0;
+@media (prefers-reduced-motion: reduce) {
+  .icon-tip > [class$='-label'] {
+    transition: opacity 120ms ease;
+  }
 }
 
 /* Visually hidden but available to screen readers. */

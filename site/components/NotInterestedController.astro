@@ -43,7 +43,7 @@
       btn.setAttribute('aria-pressed', on ? 'true' : 'false');
       btn.setAttribute('aria-label', on ? 'Вернуть на карту' : 'Не интересно');
       const label = btn.querySelector('.ni-label');
-      if (label) label.textContent = on ? 'Скрыто' : 'Не интересно';
+      if (label) label.textContent = 'Не интересно';
       const wrapper = btn.closest<HTMLElement>('[data-place-card]');
       if (wrapper) wrapper.dataset.notinterested = on ? 'true' : 'false';
     };
