@@ -178,6 +178,11 @@ const points = places.map((p) => ({
     const resetButtons = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-reset]'));
 
     const isOn = (el: Element | null) => el?.getAttribute('aria-pressed') === 'true';
+    // Defaults for the signed-in "Ещё" filters: hide not-interested places and
+    // show only places not visited yet. Only deviations count as "active" and
+    // go into the URL (`ni=show`, `visited=all|visited`).
+    const DEFAULT_VISITED: VisitedFilter = 'unvisited';
+    const DEFAULT_HIDE_NI = true;
     const press = (el: Element, on: boolean) =>
       el.setAttribute('aria-pressed', on ? 'true' : 'false');
 
@@ -247,10 +252,10 @@ const points = places.map((p) => ({
           s.regions.length ||
           s.tags.length ||
           s.maxDrive !== 240 ||
-          s.visited !== 'all' ||
+          s.visited !== DEFAULT_VISITED ||
           s.onlyFavorites ||
           s.freeWithResidency ||
-          s.hideNotInterested,
+          s.hideNotInterested !== DEFAULT_HIDE_NI,
       );
     }
 
@@ -260,10 +265,10 @@ const points = places.map((p) => ({
       if (s.regions.length) params.set('region', s.regions.join(','));
       if (s.tags.length) params.set('tag', s.tags.join(','));
       if (s.maxDrive !== 240) params.set('drive', String(s.maxDrive));
-      if (s.visited !== 'all') params.set('visited', s.visited);
+      if (s.visited !== DEFAULT_VISITED) params.set('visited', s.visited);
       if (s.onlyFavorites) params.set('fav', '1');
       if (s.freeWithResidency) params.set('residency', '1');
-      if (s.hideNotInterested) params.set('ni', 'hide');
+      if (s.hideNotInterested !== DEFAULT_HIDE_NI) params.set('ni', s.hideNotInterested ? 'hide' : 'show');
       const qs = params.toString();
       // Keep history.state: it carries the tab bar's place in the history stack.
       // While a detail panel is open the current entry is the detail URL —
@@ -279,7 +284,11 @@ const points = places.map((p) => ({
       setGroupCount(root, 'tags', s.tags.length);
       setGroupCount(root, 'drive', s.maxDrive !== 240 ? 1 : 0);
       setGroupCount(root, 'residency', s.freeWithResidency ? 1 : 0);
-      setGroupCount(root, 'more', (s.visited !== 'all' ? 1 : 0) + (s.hideNotInterested ? 1 : 0));
+      setGroupCount(
+        root,
+        'more',
+        (s.visited !== DEFAULT_VISITED ? 1 : 0) + (s.hideNotInterested !== DEFAULT_HIDE_NI ? 1 : 0),
+      );
       resetButtons.forEach((b) => (b.hidden = !anyActive(s)));
       writeUrl(s);
       explorer.rerender();
@@ -349,10 +358,11 @@ const points = places.map((p) => ({
     // Reset: clear every filter.
     resetButtons.forEach((b) =>
       b.addEventListener('click', () => {
-        [...typeChips, ...tagChips, ...visitedChips].forEach((c) => press(c, false));
+        [...typeChips, ...tagChips].forEach((c) => press(c, false));
         regionChips.forEach((c) => press(c, false));
+        visitedChips.forEach((c) => press(c, c.dataset.visitedOpt === DEFAULT_VISITED));
         if (residencyChip) press(residencyChip, false);
-        if (niHideChip) press(niHideChip, false);
+        if (niHideChip) press(niHideChip, DEFAULT_HIDE_NI);
         if (favToggle) press(favToggle, false);
         driveChips.forEach((c) => press(c, c.dataset.drive === '240'));
         onFilterChange();
@@ -375,13 +385,15 @@ const points = places.map((p) => ({
     if (preDrive && driveChips.some((c) => c.dataset.drive === preDrive)) {
       driveChips.forEach((c) => press(c, c.dataset.drive === preDrive));
     }
-    const preVisited = params.get('visited');
-    if (preVisited === 'visited' || preVisited === 'unvisited') {
-      const chip = visitedChips.find((c) => c.dataset.visitedOpt === preVisited);
-      if (chip) press(chip, true);
-    }
+    const rawVisited = params.get('visited');
+    const preVisited: VisitedFilter =
+      rawVisited === 'visited' || rawVisited === 'unvisited' || rawVisited === 'all'
+        ? rawVisited
+        : DEFAULT_VISITED;
+    visitedChips.forEach((c) => press(c, c.dataset.visitedOpt === preVisited));
     if (params.get('residency') === '1' && residencyChip) press(residencyChip, true);
-    if (params.get('ni') === 'hide' && niHideChip) press(niHideChip, true);
+    const rawNi = params.get('ni');
+    if (niHideChip) press(niHideChip, rawNi === 'show' ? false : rawNi === 'hide' ? true : DEFAULT_HIDE_NI);
     if (params.get('fav') === '1' && favToggle) press(favToggle, true);
 
     onFilterChange();
