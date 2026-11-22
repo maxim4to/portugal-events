@@ -203,6 +203,12 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
     :global(body.app-fill) {
       overscroll-behavior: none;
     }
+    /* 1px of document scroll for the iOS status-bar tap (lib/mapExplorer.ts):
+       everything visible is position: fixed, so this moves nothing. */
+    :global(body.app-fill.sb-tap) {
+      height: calc(100dvh + 1px);
+      overflow: visible;
+    }
     .main.wide {
       padding: 0;
     }

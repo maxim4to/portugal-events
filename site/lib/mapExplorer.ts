@@ -784,6 +784,30 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     }),
   );
 
+  // iOS status-bar tap ("scroll to top") only scrolls the document, and on
+  // phones the page itself never scrolls — the list lives in the sheet. Give
+  // the document 1px of scroll and park it at 1: the tap scrolls the window
+  // to 0, which we read as "to the top" for the list, then park it again.
+  if (isMobile() && listScroll) {
+    document.body.classList.add('sb-tap');
+    const park = () => {
+      if (window.scrollY !== 1) window.scrollTo(0, 1);
+    };
+    requestAnimationFrame(park);
+    addEventListener('pageshow', () => requestAnimationFrame(park));
+    addEventListener(
+      'scroll',
+      () => {
+        if (window.scrollY > 0 || !isMobile()) return;
+        if (sheet.state === 'full' && listScroll.scrollTop > 0) {
+          listScroll.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        requestAnimationFrame(park);
+      },
+      { passive: true },
+    );
+  }
+
   // Tapping the already-active tab: back to the top of the list, or — over
   // the map — back to the full picture.
   document.addEventListener('tabbar:reselect', () => {

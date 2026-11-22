@@ -994,6 +994,25 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
       font-size: 14px;
     }
 
+    /* Nothing inside the moving sheet blurs its backdrop: iOS re-renders
+       every backdrop-filter on each frame the sheet moves (card buttons,
+       photo dots, status chips), which is what made dragging stutter. The
+       surfaces get a little more opaque instead. */
+    .pane-list :global(*) {
+      -webkit-backdrop-filter: none !important;
+      backdrop-filter: none !important;
+    }
+    .pane-list :global(.favorite-btn--card),
+    .pane-list :global(.more-btn) {
+      background: color-mix(in srgb, var(--surface-2) 94%, transparent);
+    }
+    .pane-list :global(.dots) {
+      background: rgb(0 0 0 / 0.38);
+    }
+    .pane-list :global(.cstat) {
+      background: rgb(0 0 0 / 0.62);
+    }
+
     /* The sheet. */
     .pane-list {
       position: absolute;
