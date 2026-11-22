@@ -1,0 +1,929 @@
+[
+  {
+    "id": "trilho-peninha-adrenunes",
+    "name": "Тропа Пенинья — Адренуниш (PR10, Синтра)",
+    "type": "hike",
+    "region": "Лиссабон и Синтра",
+    "coords": {
+      "lat": 38.76922,
+      "lon": -9.45895
+    },
+    "description": "Кольцевая малая тропа PR10 «Пенинья» по западному краю Серра-де-Синтра: около 6 км от парковки у святилища Пенинья мимо часовни Сан-Сатурнину и скал Педраш-Ирманш к Адренуниш — нагромождению гранитных глыб, похожему на древний дольмен, с видом на океан и мыс Рока. Здесь гораздо тише, чем у дворцов Синтры. Парковаться только на площадке у Пенинья (на обочинах запрещено), а после сильных дождей заранее проверьте на Visit Sintra, открыты ли тропы.",
+    "driveMinutesFromLisbon": 45,
+    "visitDurationHours": 2.5,
+    "bestSeason": "круглый год (лучше осень–весна)",
+    "tags": [
+      "природа",
+      "виды",
+      "бесплатно",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Visit Sintra — пешие маршруты (PR10 Peninha)",
+        "url": "https://visitsintra.travel/en/discover/active-sintra/land-sports/hiking"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Adrenunes_%26_Peninha_20110513_0649c.jpg/1280px-Adrenunes_%26_Peninha_20110513_0649c.jpg",
+        "author": "Ricardo ML Alves da Silva",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Adrenunes_%26_Peninha_20110513_0649c.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/AntadeAdranunes2.jpg/1280px-AntadeAdranunes2.jpg",
+        "author": "Roundtheworld",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:AntadeAdranunes2.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/AntadeAdranunes1.jpg/1280px-AntadeAdranunes1.jpg",
+        "author": "Roundtheworld",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:AntadeAdranunes1.jpg"
+      }
+    ]
+  },
+  {
+    "id": "trilho-terras-do-risco",
+    "name": "Тропа «Террас-ду-Риску» (PR1 SSB, Сезимбра)",
+    "type": "hike",
+    "region": "Сетубал и Аррабида",
+    "coords": {
+      "lat": 38.46089,
+      "lon": -9.06814
+    },
+    "description": "Официальная кольцевая тропа PR1 «Terras do Risco» — 11,5 км (около 3 часов) в природном парке Аррабида у подножия Серра-ду-Риску, самого высокого известнякового обрыва Европы: его вершина Пинкару поднимается примерно на 380 м прямо над океаном. Маршрут идёт по карстовой котловине под обрывом, мимо старинного погребального памятника Роса-ду-Казал-ду-Мейу, а весной — через поля диких орхидей. Подъём на сам гребень — не размеченный вариант с опасными краями; на официальной тропе берите воду и еду, тени мало.",
+    "driveMinutesFromLisbon": 45,
+    "visitDurationHours": 3.5,
+    "bestSeason": "октябрь–май (весной орхидеи)",
+    "tags": [
+      "природа",
+      "виды",
+      "бесплатно"
+    ],
+    "links": [
+      {
+        "title": "Arrábida Trails — PR1 Terras do Risco",
+        "url": "https://www.arrabidatrails.com/rotas-sesimbra/pr1-risco"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Serra_do_Risco_-_Parque_Natural_da_Arr%C3%A1bida.jpg/1280px-Serra_do_Risco_-_Parque_Natural_da_Arr%C3%A1bida.jpg",
+        "author": "FBUSANOVIEIRA",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Serra_do_Risco_-_Parque_Natural_da_Arr%C3%A1bida.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Serra_do_Risco_01.jpg/1280px-Serra_do_Risco_01.jpg",
+        "author": "FakenMC",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Serra_do_Risco_01.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Serra_do_Risco_02.jpg/1280px-Serra_do_Risco_02.jpg",
+        "author": "FakenMC",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Serra_do_Risco_02.jpg"
+      }
+    ]
+  },
+  {
+    "id": "trilho-alto-do-formosinho",
+    "name": "Подъём на Формозинью (PR2 STB, Аррабида)",
+    "type": "hike",
+    "region": "Сетубал и Аррабида",
+    "coords": {
+      "lat": 38.5191,
+      "lon": -9.01324
+    },
+    "description": "Линейная тропа PR2 длиной 8,3 км из Вила-Ногейра-де-Азейтан через вершину Формозинью (501 м, высшая точка Серра-да-Аррабида) к заливу Портинью-да-Аррабида: с гребня видно Лиссабон, устье Тежу, мыс Эшпишел и мыс Рока, по пути — монастырь Аррабида XVI века. Маршрут официально помечен как физически очень тяжёлый: крутой скальный подъём и участки лазания на спуске, в дождь камни очень скользкие. Это линейный путь — продумайте обратную дорогу (такси или вторая машина) и не ходите в декабре–январе.",
+    "driveMinutesFromLisbon": 35,
+    "visitDurationHours": 4,
+    "bestSeason": "сентябрь–июнь (кроме дождливых дней)",
+    "tags": [
+      "природа",
+      "виды",
+      "бесплатно",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Arrábida Trails — PR2 Alto do Formosinho",
+        "url": "https://www.arrabidatrails.com/rotas-setubal/pr2-alto-formosinho"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Pico_do_Formosinho.jpg/1280px-Pico_do_Formosinho.jpg",
+        "author": "Ivan Ruggiero",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pico_do_Formosinho.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Pico_do_Formosinho_2.jpg/1280px-Pico_do_Formosinho_2.jpg",
+        "author": "Ivan Ruggiero",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pico_do_Formosinho_2.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Nascer_do_Sol_-_Formosinho_-_Parque_Natural_da_Arrabida.jpg/1280px-Nascer_do_Sol_-_Formosinho_-_Parque_Natural_da_Arrabida.jpg",
+        "author": "Pepolino83",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nascer_do_Sol_-_Formosinho_-_Parque_Natural_da_Arrabida.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Formosinho_-_Parque_Natural_da_Arrabida.jpg/1280px-Formosinho_-_Parque_Natural_da_Arrabida.jpg",
+        "author": "Pepolino83",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Formosinho_-_Parque_Natural_da_Arrabida.jpg"
+      }
+    ]
+  },
+  {
+    "id": "trilho-pescadores-porto-covo-milfontes",
+    "name": "Тропа рыбаков: Порту-Кову — Вила-Нова-де-Милфонтеш",
+    "type": "hike",
+    "region": "Юго-запад (Кошта-Висентина)",
+    "coords": {
+      "lat": 37.85187,
+      "lon": -8.79103
+    },
+    "description": "Второй этап знаменитой Тропы рыбаков (Rota Vicentina): 19,6 км по краю диких скал и дюн от Порту-Кову мимо острова Пессегейру с крепостью и пляжей Айвадуш и Малян до устья Мира в Милфонтеше. Весной дюны покрываются цветами, среди них много эндемиков. Этап длинный и утомительный из-за песка: берите минимум 1,5 л воды на человека, держитесь подальше от края осыпающихся скал, а между Кеймаду и Малян, где разметки нет, идите по песчаной дороге или по пляжу только в отлив.",
+    "driveMinutesFromLisbon": 160,
+    "visitDurationHours": 6,
+    "bestSeason": "сентябрь–июнь",
+    "tags": [
+      "природа",
+      "виды",
+      "бесплатно",
+      "купание"
+    ],
+    "links": [
+      {
+        "title": "Rota Vicentina — Porto Covo » Vila Nova de Milfontes",
+        "url": "https://rotavicentina.com/en/walking/porto-covo-vila-nova-de-milfontes-2/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Start_of_the_Fishermen%27s_Trail%2C_Porto_Covo%2C_Portugal_julesvernex2.jpg/1280px-Start_of_the_Fishermen%27s_Trail%2C_Porto_Covo%2C_Portugal_julesvernex2.jpg",
+        "author": "Jules Verne Times Two",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Start_of_the_Fishermen%27s_Trail,_Porto_Covo,_Portugal_julesvernex2.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Queimado_Beach%2C_Fishermen%27s_Trail%2C_Porto_Covo%2C_Portugal_julesvernex2.jpg/1280px-Queimado_Beach%2C_Fishermen%27s_Trail%2C_Porto_Covo%2C_Portugal_julesvernex2.jpg",
+        "author": "Jules Verne Times Two",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Queimado_Beach,_Fishermen%27s_Trail,_Porto_Covo,_Portugal_julesvernex2.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Malh%C3%A3o_Beach%2C_Fishermen%27s_Trail%2C_Vila_Nova_de_Milfontes_Portugal_julesvernex2.jpg/1280px-Malh%C3%A3o_Beach%2C_Fishermen%27s_Trail%2C_Vila_Nova_de_Milfontes_Portugal_julesvernex2.jpg",
+        "author": "Jules Verne Times Two",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Malh%C3%A3o_Beach,_Fishermen%27s_Trail,_Vila_Nova_de_Milfontes_Portugal_julesvernex2.jpg"
+      }
+    ]
+  },
+  {
+    "id": "trilho-pescadores-almograve-zambujeira",
+    "name": "Тропа рыбаков: Алмограве — Замбужейра-ду-Мар",
+    "type": "hike",
+    "region": "Юго-запад (Кошта-Висентина)",
+    "coords": {
+      "lat": 37.65305,
+      "lon": -8.79258
+    },
+    "description": "Один из самых красивых этапов Тропы рыбаков: 21,5 км по красноватым скалам Алентежу мимо маяка Кабу-Сардан, где на утёсах гнездятся аисты — редкость для морского берега, — и рыбацкой гавани Энтрада-да-Барка до часовни Носса-Сеньора-ду-Мар в Замбужейре. Перекусить можно в Кавалейру (около 9,5 км) и в Энтрада-да-Барка (около 18 км). Между Энтрада-ду-Пау и Понта-да-Каррака тропа уходит вглубь суши из-за обрушений — не срезайте по краю скал.",
+    "driveMinutesFromLisbon": 185,
+    "visitDurationHours": 6,
+    "bestSeason": "сентябрь–июнь (весной — птицы и цветы)",
+    "tags": [
+      "природа",
+      "виды",
+      "бесплатно",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Rota Vicentina — Almograve » Zambujeira do Mar",
+        "url": "https://rotavicentina.com/en/walking/almograve-zambujeira-do-mar/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Panorama_Cabo_Sard%C3%A3o.jpg/1280px-Panorama_Cabo_Sard%C3%A3o.jpg",
+        "author": "Joaomartinho63",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panorama_Cabo_Sard%C3%A3o.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Cavaleiro_costa_cabo_Sardao_1.jpg/1280px-Cavaleiro_costa_cabo_Sardao_1.jpg",
+        "author": "Txo",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cavaleiro_costa_cabo_Sardao_1.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Near_Creleiz%C3%A3o_Beach%2C_Fishermen%27s_Trail%2C_Zambujeira_do_Mar%2C_Portugal_julesvernex2.jpg/1280px-Near_Creleiz%C3%A3o_Beach%2C_Fishermen%27s_Trail%2C_Zambujeira_do_Mar%2C_Portugal_julesvernex2.jpg",
+        "author": "Jules Verne Times Two",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Near_Creleiz%C3%A3o_Beach,_Fishermen%27s_Trail,_Zambujeira_do_Mar,_Portugal_julesvernex2.jpg"
+      }
+    ]
+  },
+  {
+    "id": "percurso-sete-vales-suspensos",
+    "name": "Маршрут Семи висячих долин (Лагоа)",
+    "type": "hike",
+    "region": "Алгарве",
+    "coords": {
+      "lat": 37.09116,
+      "lon": -8.41289
+    },
+    "description": "Самая известная прибрежная тропа Алгарве: около 6 км в одну сторону по известняковым скалам от пляжа Марина до пляжа Вале-де-Сентианеш — с арками, морскими гротами, провалами-алгарами, видом сверху на Бенажил и туннелем к пляжу Карвалью. Тропа размечена, есть информационные щиты и места отдыха в сосняке. Тени почти нет — летом выходите рано утром или к закату, не подходите к краю обрывов и берите воду; обратно можно вернуться той же дорогой.",
+    "driveMinutesFromLisbon": 165,
+    "visitDurationHours": 4,
+    "bestSeason": "сентябрь–июнь",
+    "tags": [
+      "виды",
+      "фото",
+      "бесплатно",
+      "закат"
+    ],
+    "links": [
+      {
+        "title": "Visit Algarve — Percurso dos Sete Vales Suspensos",
+        "url": "https://visitalgarve.pt/pt/3593/percurso-dos-sete-vales-suspensos.aspx"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/20210713_204716_-_Flickr_-_dcdc887.jpg/1280px-20210713_204716_-_Flickr_-_dcdc887.jpg",
+        "author": "David Ceballos",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:20210713_204716_-_Flickr_-_dcdc887.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Ruta_dos_Sete_Vales_Suspensos_%2850601523661%29.jpg/1280px-Ruta_dos_Sete_Vales_Suspensos_%2850601523661%29.jpg",
+        "author": "Ana Rey from Sevilla, España",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ruta_dos_Sete_Vales_Suspensos_(50601523661).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Camino_a_Praia_do_Carvalho._Ruta_dos_Sete_Vales_Suspensos_%2850601518936%29.jpg/1280px-Camino_a_Praia_do_Carvalho._Ruta_dos_Sete_Vales_Suspensos_%2850601518936%29.jpg",
+        "author": "Ana Rey from Sevilla, España",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Camino_a_Praia_do_Carvalho._Ruta_dos_Sete_Vales_Suspensos_(50601518936).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Playa_de_Benagil_Ruta_dos_Sete_Vales_Suspensos_%2850601634777%29.jpg/1280px-Playa_de_Benagil_Ruta_dos_Sete_Vales_Suspensos_%2850601634777%29.jpg",
+        "author": "Ana Rey from Sevilla, España",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Playa_de_Benagil_Ruta_dos_Sete_Vales_Suspensos_(50601634777).jpg"
+      }
+    ]
+  },
+  {
+    "id": "trilho-caldas-picota",
+    "name": "Тропа Калдаш — Пикота (PR2 MCQ, Моншики)",
+    "type": "hike",
+    "region": "Алгарве",
+    "coords": {
+      "lat": 37.28604,
+      "lon": -8.55348
+    },
+    "description": "Кольцевая тропа длиной 18 км (около 5 часов, сложная) из курортной деревушки Калдаш-де-Моншики через пробковые дубы и эвкалипты Серра-де-Моншики к вершине Пикота — 774 м, вторая по высоте точка Алгарве, с пожарной вышкой и панорамой на 360° до самого моря. Часть пути совпадает с большим маршрутом GR13 Via Algarviana, по дороге — смотровая Мирант-да-Мата и часовня Санта-Тереза. Осторожно переходите шоссе EN266; в сезон охоты носите яркую одежду.",
+    "driveMinutesFromLisbon": 160,
+    "visitDurationHours": 5.5,
+    "bestSeason": "октябрь–май",
+    "tags": [
+      "природа",
+      "виды",
+      "бесплатно"
+    ],
+    "links": [
+      {
+        "title": "Via Algarviana — PR2 MCQ Caminho das Caldas – Picota",
+        "url": "https://viaalgarviana.org/en/526/pr2-mcq---caminho-das-caldas---picota-caldas-picota-walking-path--monchique---18-km"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Picota_viewpoint%2C_Via_Algarviana%2C_Monchique%2C_Portugal_%28PPL1-Corrected%29_julesvernex2.jpg/1280px-Picota_viewpoint%2C_Via_Algarviana%2C_Monchique%2C_Portugal_%28PPL1-Corrected%29_julesvernex2.jpg",
+        "author": "Jules Verne Times Two",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Picota_viewpoint,_Via_Algarviana,_Monchique,_Portugal_(PPL1-Corrected)_julesvernex2.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2025-09-12_Mount_Picota%2C_Serra_de_Monchique_1.jpg/1280px-2025-09-12_Mount_Picota%2C_Serra_de_Monchique_1.jpg",
+        "author": "Alexkom000",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2025-09-12_Mount_Picota,_Serra_de_Monchique_1.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/2025-09-12_View_from_Mount_Picota%2C_Serra_de_Monchique.jpg/1280px-2025-09-12_View_from_Mount_Picota%2C_Serra_de_Monchique.jpg",
+        "author": "Alexkom000",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2025-09-12_View_from_Mount_Picota,_Serra_de_Monchique.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Picota_-_Posto_de_vigia.jpg/1280px-Picota_-_Posto_de_vigia.jpg",
+        "author": "Wilrooij",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Picota_-_Posto_de_vigia.jpg"
+      }
+    ]
+  },
+  {
+    "id": "rota-pontal-da-carrapateira",
+    "name": "Кольцо Понтал-да-Каррапатейра (Rota Vicentina)",
+    "type": "hike",
+    "region": "Юго-запад (Кошта-Висентина)",
+    "coords": {
+      "lat": 37.1836,
+      "lon": -8.89534
+    },
+    "description": "Лёгкий кольцевой маршрут Rota Vicentina длиной 11,5 км (около 3 часов) по мысу между двумя большими сёрф-пляжами — Бордейра и Амаду — с одними из лучших видов на дикий западный берег Алгарве. По пути — смотровые над скалами и руины старинной исламской рыбацкой деревни. Западная часть идёт по широкой грунтовке, а к морю спускайтесь только по деревянным настилам; здесь пересекается несколько маршрутов, следите за разметкой.",
+    "driveMinutesFromLisbon": 190,
+    "visitDurationHours": 3,
+    "bestSeason": "круглый год",
+    "tags": [
+      "виды",
+      "закат",
+      "сёрфинг",
+      "бесплатно"
+    ],
+    "links": [
+      {
+        "title": "Rota Vicentina — 20 Pontal da Carrapateira",
+        "url": "https://rotavicentina.com/en/walking/20-pontal-da-carrapateira/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Bordeira_Beach%2C_Fishermen%27s_Trail%2C_Carrapateira%2C_Portugal_julesvernex2.jpg/1280px-Bordeira_Beach%2C_Fishermen%27s_Trail%2C_Carrapateira%2C_Portugal_julesvernex2.jpg",
+        "author": "Jules Verne Times Two",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bordeira_Beach,_Fishermen%27s_Trail,_Carrapateira,_Portugal_julesvernex2.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/RV_at_Ponta_da_Carrapateira%2C_Fishermen%27s_Trail%2C_Carrapateira%2C_Portugal_julesvernex2.jpg/1280px-RV_at_Ponta_da_Carrapateira%2C_Fishermen%27s_Trail%2C_Carrapateira%2C_Portugal_julesvernex2.jpg",
+        "author": "Jules Verne Times Two",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:RV_at_Ponta_da_Carrapateira,_Fishermen%27s_Trail,_Carrapateira,_Portugal_julesvernex2.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Pontal_-_I.jpg/1280px-Pontal_-_I.jpg",
+        "author": "Filipe Rocha,user:sacavem (pt) http://pt.wikipedia.org/wiki/Usu%C3%A1rio:Sacavem",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pontal_-_I.jpg"
+      }
+    ]
+  },
+  {
+    "id": "rota-do-glaciar-manteigas",
+    "name": "Маршрут ледника: Торре — Ковау-д'Аметаде — Мантейгаш",
+    "type": "hike",
+    "region": "Центр (Серра-да-Эштрела)",
+    "coords": {
+      "lat": 40.3281,
+      "lon": -7.58676
+    },
+    "description": "Спуск по долине Зезере — самой выразительной ледниковой долине Португалии с идеальным U-образным профилем, который пропахали языки льда со снежной шапки Серра-да-Эштрела. Полный маршрут PR6 MTG «Rota do Glaciar» — 17,2 км (около 6 часов) от Торре (1993 м, высшая точка материковой Португалии) до Мантейгаша, мимо скульптуры Сеньора-да-Боа-Эштрела, высеченной в скале у Кантару-Разу. Короче и проще начать с берёзовой поляны Ковау-д'Аметаде у истока Зезере: оттуда до Мантейгаша около 10 км почти всё время вниз — продумайте возврат к машине.",
+    "driveMinutesFromLisbon": 195,
+    "visitDurationHours": 5,
+    "bestSeason": "май–октябрь",
+    "tags": [
+      "природа",
+      "виды",
+      "бесплатно",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Rota do Glaciar — Manteigas Trilhos Verdes",
+        "url": "https://manteigastrilhosverdes.com/english/portfolio_page/glaciar/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Vale_Glaciar_do_Z%C3%AAzere.jpg/1280px-Vale_Glaciar_do_Z%C3%AAzere.jpg",
+        "author": "PedroMGG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vale_Glaciar_do_Z%C3%AAzere.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Reflexos_no_Cov%C3%A3o_d%27Ametade.jpg/1280px-Reflexos_no_Cov%C3%A3o_d%27Ametade.jpg",
+        "author": "Raquel Rosa",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Reflexos_no_Cov%C3%A3o_d%27Ametade.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Vale_Glaciar_do_Z%C3%AAzere_no_Parque_Natural_da_Serra_da_Estrela.jpg/1280px-Vale_Glaciar_do_Z%C3%AAzere_no_Parque_Natural_da_Serra_da_Estrela.jpg",
+        "author": "MLR2022",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vale_Glaciar_do_Z%C3%AAzere_no_Parque_Natural_da_Serra_da_Estrela.jpg"
+      }
+    ]
+  },
+  {
+    "id": "rota-garganta-de-loriga",
+    "name": "Маршрут ущелья Лорига (PR5 SEI)",
+    "type": "hike",
+    "region": "Центр (Серра-да-Эштрела)",
+    "coords": {
+      "lat": 40.33977,
+      "lon": -7.61895
+    },
+    "description": "Линейная тропа PR5 SEI длиной около 8,7 км по ледниковому ущелью Лорига: с плато у Салгадейраш (рядом с дорогой EN338 у Торре) вниз почти на 1100 м мимо четырёх ледниковых цирков — Боейру, ду-Мейу, да-Нав (da Nave) и да-Арейя — к посёлку Лорига. Один из самых суровых и красивых маршрутов Серра-да-Эштрела. Тропа сложная, крутой спуск по камням; с ноября по апрель здесь бывает снег — без горного опыта в это время не ходите и заранее договоритесь о трансфере обратно наверх.",
+    "driveMinutesFromLisbon": 190,
+    "visitDurationHours": 4.5,
+    "bestSeason": "май–октябрь",
+    "tags": [
+      "природа",
+      "виды",
+      "бесплатно"
+    ],
+    "links": [
+      {
+        "title": "PR5 SEI — Rota da Garganta de Loriga (Município de Seia)",
+        "url": "https://www.outdooractive.com/en/route/hiking-trail/seia/pr5-sei-loriga-gorge-route/805613299/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Vale_Glaciar_da_Loriga_-_Caminhada.jpg/1280px-Vale_Glaciar_da_Loriga_-_Caminhada.jpg",
+        "author": "Sara Jaques",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vale_Glaciar_da_Loriga_-_Caminhada.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Vale_Glaciar_da_Loriga_-_Torre.jpg/1280px-Vale_Glaciar_da_Loriga_-_Torre.jpg",
+        "author": "Sara Jaques",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vale_Glaciar_da_Loriga_-_Torre.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Vale_de_Loriga%2C_Barragem_do_Cov%C3%A3o_do_Meio%2C_Serra_da_Estrela_01.jpg/1280px-Vale_de_Loriga%2C_Barragem_do_Cov%C3%A3o_do_Meio%2C_Serra_da_Estrela_01.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vale_de_Loriga,_Barragem_do_Cov%C3%A3o_do_Meio,_Serra_da_Estrela_01.jpg"
+      }
+    ]
+  },
+  {
+    "id": "rota-aldeias-do-xisto-lousa",
+    "name": "Маршрут сланцевых деревень Лоузана (PR2 LSA)",
+    "type": "hike",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.10041,
+      "lon": -8.23542
+    },
+    "description": "Кольцевая тропа PR2 LSA длиной 5,7 км (около 3,5 часа, набор ~600 м) от замка Аруше XI века вверх по склону Серра-да-Лоузан к сланцевым деревням Таласнал, Шикейру и Казал-Нову — мимо водопада, старой маслобойни и смотровой с огромными буквами «LOUSÃ». Возвращается тропа к святилищу Носса-Сеньора-да-Пьедаде с речным пляжем у подножия замка, где летом можно искупаться. Подъём крутой, но короткий; после сильных дождей ручей быстро поднимается.",
+    "driveMinutesFromLisbon": 150,
+    "visitDurationHours": 3.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "природа",
+      "история",
+      "виды",
+      "бесплатно"
+    ],
+    "links": [
+      {
+        "title": "PR2 LSA — Rota das Aldeias do Xisto (CM Lousã)",
+        "url": "https://cm-lousa.pt/atividades-municipais/desporto/rede-percursos-pedestres-da-lousa/pr2-lsa-rota-das-aldeias-do-xisto-schist-villages-route/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Castelo_da_Lous%C3%A3_ou_de_Arouce_-_Portugal_%2828681915441%29.jpg/1280px-Castelo_da_Lous%C3%A3_ou_de_Arouce_-_Portugal_%2828681915441%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_da_Lous%C3%A3_ou_de_Arouce_-_Portugal_(28681915441).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Talasnal_-_Portugal_%2837562736646%29.jpg/1280px-Talasnal_-_Portugal_%2837562736646%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Talasnal_-_Portugal_(37562736646).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Aldeia_Chiqueiro.jpg/1280px-Aldeia_Chiqueiro.jpg",
+        "author": "Ricardo Saraiva de Almeida",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aldeia_Chiqueiro.jpg"
+      }
+    ]
+  },
+  {
+    "id": "rota-da-boa-viagem",
+    "name": "Маршрут Серра-да-Боа-Вьяжен (PR3 FIG, Фигейра-да-Фош)",
+    "type": "hike",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.20229,
+      "lon": -8.87997
+    },
+    "description": "Кольцевая тропа PR3 FIG длиной 12,6 км (около 4 часов) по прибрежному хребту Боа-Вьяжен над Фигейра-да-Фош: от смотровой Бандейра с видом на пляжи Муртиньейра и Киайуш и дюнный лес, мимо водопада Киайуш у старой мельницы и часовни Санту-Амару к виду на мыс Мондегу. Мыс — природный памятник с отпечатками лап юрских динозавров. Хорошая зимняя альтернатива пляжу; после прогулки — свежая рыба в Фигейре или Буарку.",
+    "driveMinutesFromLisbon": 120,
+    "visitDurationHours": 4,
+    "bestSeason": "круглый год",
+    "tags": [
+      "природа",
+      "виды",
+      "бесплатно",
+      "закат"
+    ],
+    "links": [
+      {
+        "title": "Caminhos da Região de Coimbra — путеводитель по маршрутам (PDF)",
+        "url": "https://www.e-cultura.pt/uploads/PercursosPedestresCoimbra.pdf"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/2026-09-12_View_from_Miradouro_da_Bandeira%2C_Serra_da_Boa_Viagem_2.jpg/1280px-2026-09-12_View_from_Miradouro_da_Bandeira%2C_Serra_da_Boa_Viagem_2.jpg",
+        "author": "Alexkom000",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026-09-12_View_from_Miradouro_da_Bandeira,_Serra_da_Boa_Viagem_2.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Serra_da_Boa_Viagem%2C_Quiaios%2C_Portugal.jpg/1280px-Serra_da_Boa_Viagem%2C_Quiaios%2C_Portugal.jpg",
+        "author": "Ines Saraiva",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Serra_da_Boa_Viagem,_Quiaios,_Portugal.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Cabo_Mondego_Cliffs.jpg/1280px-Cabo_Mondego_Cliffs.jpg",
+        "author": "Luis Afonso",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cabo_Mondego_Cliffs.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Serra_da_Boa_Viagem_%284540747125%29.jpg/1280px-Serra_da_Boa_Viagem_%284540747125%29.jpg",
+        "author": "ines saraiva from Belgium / Portugal",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Serra_da_Boa_Viagem_(4540747125).jpg"
+      }
+    ]
+  },
+  {
+    "id": "passadicos-do-mondego",
+    "name": "Мостки Мондегу (Passadiços do Mondego)",
+    "type": "hike",
+    "region": "Центр (Серра-да-Эштрела)",
+    "coords": {
+      "lat": 40.535879,
+      "lon": -7.32663
+    },
+    "description": "Около 12 км деревянных мостков и троп вдоль молодой реки Мондегу у Гуарды — от плотины Калдейран до деревни Видемонте мимо водопада Калдейран, средневекового моста Мизарела, старой ГЭС Патейру и разрушенных мельниц. Идти рекомендуют именно в этом направлении (в сумме ~600 м набора, около 5 часов); для семей есть короткий 2-километровый участок от Видемонте. Маршрут линейный и работает по часам; билет около 2,5 € (до 12 лет бесплатно) нужно купить онлайн заранее, а в дни максимальной пожароопасности мостки закрывают — продумайте и трансфер к машине.",
+    "driveMinutesFromLisbon": 185,
+    "visitDurationHours": 5,
+    "bestSeason": "апрель–октябрь",
+    "tags": [
+      "природа",
+      "виды",
+      "фото",
+      "с детьми"
+    ],
+    "links": [
+      {
+        "title": "Passadiços do Mondego — официальный сайт",
+        "url": "https://www.passadicosdomondego.pt/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/2026-05-24_Passadi%C3%A7os_do_Mondego_11.jpg/1280px-2026-05-24_Passadi%C3%A7os_do_Mondego_11.jpg",
+        "author": "Alexkom000",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026-05-24_Passadi%C3%A7os_do_Mondego_11.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/2026-05-24_Passadi%C3%A7os_do_Mondego_17.jpg/1280px-2026-05-24_Passadi%C3%A7os_do_Mondego_17.jpg",
+        "author": "Alexkom000",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026-05-24_Passadi%C3%A7os_do_Mondego_17.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/2026-05-24_Passadi%C3%A7os_do_Mondego_02.jpg/1280px-2026-05-24_Passadi%C3%A7os_do_Mondego_02.jpg",
+        "author": "Alexkom000",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026-05-24_Passadi%C3%A7os_do_Mondego_02.jpg"
+      }
+    ]
+  },
+  {
+    "id": "trilho-geira-mata-da-albergaria",
+    "name": "Римская дорога Жейра в лесу Албергария (Жереш)",
+    "type": "hike",
+    "region": "Север",
+    "coords": {
+      "lat": 41.80822,
+      "lon": -8.13151
+    },
+    "description": "Прогулка по римской дороге Via XVIII (Жейра), которая около 80 года н. э. соединила Бракару-Аугусту (Брагу) и Астурику-Аугусту (Асторгу): в лесу Албергария у испанской границы вдоль неё до сих пор стоят мильные столбы, а рядом — руины римских мостов и один из лучше всего сохранившихся дубовых лесов северо-запада. Популярная неофициальная петля около 4,5 км (лёгкая) начинается от парковки у Портела-ду-Омен, где в старом пограничном посту летом открыта бесплатная галерея мильных столбов. Летом въезд машин в лес бывает платным и по часам, а в дни высокой пожароопасности тропы закрывают.",
+    "driveMinutesFromLisbon": 220,
+    "visitDurationHours": 2,
+    "bestSeason": "апрель–октябрь",
+    "tags": [
+      "история",
+      "природа",
+      "с детьми"
+    ],
+    "links": [
+      {
+        "title": "Via XVIII / Geira — Turismo Terras de Bouro",
+        "url": "https://turismo.cm-terrasdebouro.pt/listings/via-xviii-geira/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Mili%C3%A1rio_XXX.jpg/1280px-Mili%C3%A1rio_XXX.jpg",
+        "author": "Ricardo Saraiva de Almeida",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mili%C3%A1rio_XXX.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Mata_de_albergaria_-_marcos_milenares.JPG/1280px-Mata_de_albergaria_-_marcos_milenares.JPG",
+        "author": "Bhavagati",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mata_de_albergaria_-_marcos_milenares.JPG"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Caminho_Romano%2C_Ger%C3%AAs_-_panoramio_%281%29.jpg/1280px-Caminho_Romano%2C_Ger%C3%AAs_-_panoramio_%281%29.jpg",
+        "author": "Carlos Cunha",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caminho_Romano,_Ger%C3%AAs_-_panoramio_(1).jpg"
+      }
+    ]
+  },
+  {
+    "id": "trilho-da-calcedonia",
+    "name": "Тропа Калседония (PR1, Ковиде, Жереш)",
+    "type": "hike",
+    "region": "Север",
+    "coords": {
+      "lat": 41.7341,
+      "lon": -8.2113
+    },
+    "description": "Кольцевая тропа PR1 длиной 7 км (около 4 часов, сложная) из деревни Ковиде к «Городу Калседония» — укреплённому поселению железного века, позже занятому римлянами, среди огромных гранитных скал с лабиринтом проходов, где до сих пор видны остатки стен. По пути тропа проходит гранитную глыбу Тонел. Нужна хорошая форма и обувь с цепкой подошвой: камни бывают скользкими и неустойчивыми; узкая щель Фенда-да-Калседония в официальный маршрут не входит.",
+    "driveMinutesFromLisbon": 215,
+    "visitDurationHours": 4,
+    "bestSeason": "апрель–октябрь",
+    "tags": [
+      "природа",
+      "история",
+      "виды",
+      "бесплатно"
+    ],
+    "links": [
+      {
+        "title": "PR1 — Trilho da Calcedónia (Turismo Terras de Bouro)",
+        "url": "https://turismo.cm-terrasdebouro.pt/listings/pr1-trilho-da-calcedonia/"
+      }
+    ],
+    "photos": []
+  },
+  {
+    "id": "trilho-castrejo-castro-laboreiro",
+    "name": "Тропа Каштрежу (PR3 MLG, Каштру-Лаборейру)",
+    "type": "hike",
+    "region": "Север",
+    "coords": {
+      "lat": 42.03036,
+      "lon": -8.15812
+    },
+    "description": "Кольцевая тропа PR3 MLG длиной 16,7 км (сложная) по самому северному углу Пенеда-Жереш: средневековые мощёные дороги и арочные мостики связывают летние горные деревни-«бранды» с зимними «инвернейраш» в долинах — уникальный местный уклад с сезонным переездом. По пути — мост Кава-да-Велья (национальный памятник), мельница и часовня Сан-Браш, скала Бику-де-Пателу; встречаются горные козлы. Не ходите в туман и снег, при высокой пожароопасности доступ ограничивают; стартуйте от церкви в Каштру-Лаборейру, где можно и пообедать.",
+    "driveMinutesFromLisbon": 270,
+    "visitDurationHours": 6,
+    "bestSeason": "май–октябрь",
+    "tags": [
+      "природа",
+      "история",
+      "виды",
+      "бесплатно"
+    ],
+    "links": [
+      {
+        "title": "PR3 Trilho Castrejo — буклет (Discover Melgaço)",
+        "url": "https://discovermelgaco.pt/wp-content/uploads/2024/01/PR3.pdf"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Ponte_da_Cava_da_Velha_%2811%29.jpg/1280px-Ponte_da_Cava_da_Velha_%2811%29.jpg",
+        "author": "Joseolgon",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ponte_da_Cava_da_Velha_(11).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Ponte_da_Cava_da_Velha_%282%29.jpg/1280px-Ponte_da_Cava_da_Velha_%282%29.jpg",
+        "author": "Joseolgon",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ponte_da_Cava_da_Velha_(2).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Aerial_photograph_of_Ponte_da_Cava_da_Velha_%284%29.jpg/1280px-Aerial_photograph_of_Ponte_da_Cava_da_Velha_%284%29.jpg",
+        "author": "Joseolgon",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aerial_photograph_of_Ponte_da_Cava_da_Velha_(4).jpg"
+      }
+    ]
+  },
+  {
+    "id": "trilho-cascata-mosteiro-pitoes-das-junias",
+    "name": "Тропа к водопаду и монастырю Питойнш-даш-Жуниаш",
+    "type": "hike",
+    "region": "Север",
+    "coords": {
+      "lat": 41.83805,
+      "lon": -7.94657
+    },
+    "description": "Короткая кольцевая тропа (около 4 км, 1,5–2 часа) из высокогорной деревни Питойнш-даш-Жуниаш: длинная деревянная лестница спускается к самому большому водопаду муниципалитета Монталегре — больше 30 м в несколько ступеней, — а затем тропа выходит к руинам романского монастыря Санта-Мария-даш-Жуниаш XII века в тихой долине. Лучшее соотношение «усилия — впечатления» в Барозу. Ступени крутые — в дождь, холод и туман лучше не ходить; старт у кладбища деревни.",
+    "driveMinutesFromLisbon": 255,
+    "visitDurationHours": 2,
+    "bestSeason": "апрель–октябрь",
+    "tags": [
+      "природа",
+      "история",
+      "фото",
+      "бесплатно"
+    ],
+    "links": [
+      {
+        "title": "Mosteiro de Santa Maria das Júnias — VisitPortugal",
+        "url": "https://www.visitportugal.com/en/node/136765"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Cascata_de_Pit%C3%B5es_das_J%C3%BAnias.JPG/1280px-Cascata_de_Pit%C3%B5es_das_J%C3%BAnias.JPG",
+        "author": "Ajfcampos",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cascata_de_Pit%C3%B5es_das_J%C3%BAnias.JPG"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Cascata_de_Pit%C3%B5es_das_J%C3%BAnias_%28Montalegre%29.jpg/1280px-Cascata_de_Pit%C3%B5es_das_J%C3%BAnias_%28Montalegre%29.jpg",
+        "author": "Joseolgon",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cascata_de_Pit%C3%B5es_das_J%C3%BAnias_(Montalegre).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Mosteiro_de_Santa_Maria_das_J%C3%BAnias_1.jpg/1280px-Mosteiro_de_Santa_Maria_das_J%C3%BAnias_1.jpg",
+        "author": "Joseolgon",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mosteiro_de_Santa_Maria_das_J%C3%BAnias_1.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Pit%C3%B5es_das_J%C3%BAnias_IX_%2848448749196%29.jpg/1280px-Pit%C3%B5es_das_J%C3%BAnias_IX_%2848448749196%29.jpg",
+        "author": "Pedro from Maia (Porto), Portugal",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pit%C3%B5es_das_J%C3%BAnias_IX_(48448749196).jpg"
+      }
+    ]
+  },
+  {
+    "id": "trilho-socalcos-de-sistelo",
+    "name": "Тропа террас Сиштелу (PR24)",
+    "type": "hike",
+    "region": "Север",
+    "coords": {
+      "lat": 41.97361,
+      "lon": -8.37423
+    },
+    "description": "Лёгкая кольцевая тропа PR24 длиной 5,2 км (около 2,5 часа, набор ~420 м) по знаменитым террасам Сиштелу — «маленькому португальскому Тибету»: склоны долины Вез держат гранитные стенки, летом на них кукуруза и фасоль, зимой — заливные луга, а пасутся коровы местной породы кашена. Культурный ландшафт Сиштелу первым в стране получил статус национального памятника (2018). Тропа доходит до деревушки Падран с каменными зернохранилищами-эшпигейруш; для совсем короткой прогулки есть соседняя PR25 по мосткам (2,6 км).",
+    "driveMinutesFromLisbon": 250,
+    "visitDurationHours": 2.5,
+    "bestSeason": "апрель–октябрь",
+    "tags": [
+      "природа",
+      "виды",
+      "фото",
+      "бесплатно"
+    ],
+    "links": [
+      {
+        "title": "PR 24 — Trilho dos Socalcos de Sistelo",
+        "url": "https://trilhos.arcosdevaldevez.pt/percursos-pedestres/percurso/pr-24-trilho-dos-socalcos-de-sistelo"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/AJSL48_-_SISTELO_paisagem_dos_socalcos_agr%C3%ADcolas.jpg/1280px-AJSL48_-_SISTELO_paisagem_dos_socalcos_agr%C3%ADcolas.jpg",
+        "author": "AJSL48",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:AJSL48_-_SISTELO_paisagem_dos_socalcos_agr%C3%ADcolas.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/AJSL48_-_SISTELO_paisagem_de_povoado_a_noroeste_com_os_seus_socalcos.jpg/1280px-AJSL48_-_SISTELO_paisagem_de_povoado_a_noroeste_com_os_seus_socalcos.jpg",
+        "author": "AJSL48",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:AJSL48_-_SISTELO_paisagem_de_povoado_a_noroeste_com_os_seus_socalcos.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Espigueiros_Sistelo.jpg/1280px-Espigueiros_Sistelo.jpg",
+        "author": "Sãozinha Costa",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Espigueiros_Sistelo.jpg"
+      }
+    ]
+  },
+  {
+    "id": "trilho-pinhao-casal-de-loivos",
+    "name": "Тропа Пиньян — Казал-де-Лойвуш (PR20 ALJ, Дору)",
+    "type": "hike",
+    "region": "Север",
+    "coords": {
+      "lat": 41.19068,
+      "lon": -7.54523
+    },
+    "description": "Кольцевая тропа PR20 ALJ длиной 9,8 км (около 3,5 часа, набор ~400 м) от вокзала Пиньян (XIX век, знаменит панно из азулежу) вверх через виноградники долины Дору (объект ЮНЕСКО) и старинные кинты к смотровой Казал-де-Лойвуш — одной из самых знаменитых панорам на изгибы реки и террасы. Подъём ощутимый, а летом в долине очень жарко: выходите рано утром и берите много воды. После спуска — дегустация портвейна в Пиньяне.",
+    "driveMinutesFromLisbon": 240,
+    "visitDurationHours": 3.5,
+    "bestSeason": "март–июнь, сентябрь–ноябрь (сбор винограда)",
+    "tags": [
+      "виды",
+      "вино",
+      "фото",
+      "бесплатно"
+    ],
+    "links": [
+      {
+        "title": "PR20 ALJ — Trilho do Pinhão – Casal de Loivos (буклет)",
+        "url": "https://turismo.cm-alijo.pt/cmalijo/uploads/writer_file/document/830/pr20_alj_compressed.pdf"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Miradouro_de_Casal_de_Loivos_1.jpg/1280px-Miradouro_de_Casal_de_Loivos_1.jpg",
+        "author": "Sanjorgepinho",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Miradouro_de_Casal_de_Loivos_1.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Miradouro_de_Casal_de_Loivos_3.jpg/1280px-Miradouro_de_Casal_de_Loivos_3.jpg",
+        "author": "Sanjorgepinho",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Miradouro_de_Casal_de_Loivos_3.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Casal_de_Loivos_-_Portugal_%289346042546%29.jpg/1280px-Casal_de_Loivos_-_Portugal_%289346042546%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Casal_de_Loivos_-_Portugal_(9346042546).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_do_Pinh%C3%A3o_-_Portugal_%283877715352%29.jpg/1280px-Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_do_Pinh%C3%A3o_-_Portugal_%283877715352%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_do_Pinh%C3%A3o_-_Portugal_(3877715352).jpg"
+      }
+    ]
+  },
+  {
+    "id": "trilho-escarpas-da-mizarela",
+    "name": "Тропа «Над обрывами Мизарелы» (PR7, Серра-да-Фрейта)",
+    "type": "hike",
+    "region": "Север",
+    "coords": {
+      "lat": 40.8733,
+      "lon": -8.29179
+    },
+    "description": "Кольцевая тропа PR7 длиной 8 км (около 3,5 часа, средняя–сложная) в геопарке Ароука (ЮНЕСКО): от кемпинга Мерожал через деревни Рибейра, Кабасуш и Мизарела к смотровым над Фреша-да-Мизарела — одним из самых высоких водопадов Португалии, где река Кайма срывается более чем на 60 м с гранита на сланец. Местами тропа узкая и крутая, над обрывами натянуты цепи — с маленькими детьми не подходит; зимой бывают снег и лёд. Хорошо совмещать с мостками Пайва в соседней долине.",
+    "driveMinutesFromLisbon": 205,
+    "visitDurationHours": 3.5,
+    "bestSeason": "апрель–июнь, сентябрь–октябрь",
+    "tags": [
+      "природа",
+      "виды",
+      "фото",
+      "бесплатно"
+    ],
+    "links": [
+      {
+        "title": "PR7 Nas Escarpas da Mizarela — Arouca Geopark",
+        "url": "https://aroucageopark.pt/percursos/nas-escarpas-da-mizarela/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Frecha_da_Mizarela_waterfall.JPG/1280px-Frecha_da_Mizarela_waterfall.JPG",
+        "author": "Muaddib2015",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Frecha_da_Mizarela_waterfall.JPG"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Frecha_da_Mizarela_-_Serra_da_Freita_-_Portugal_%2851492577382%29.jpg/1280px-Frecha_da_Mizarela_-_Serra_da_Freita_-_Portugal_%2851492577382%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Frecha_da_Mizarela_-_Serra_da_Freita_-_Portugal_(51492577382).jpg"
+      }
+    ]
+  }
+]
