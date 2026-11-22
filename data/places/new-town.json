@@ -1,0 +1,828 @@
+[
+  {
+    "id": "tomar",
+    "name": "Томар",
+    "type": "town",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 39.6036,
+      "lon": -8.4097
+    },
+    "description": "Город тамплиеров на реке Набан: под холмом с монастырём Ордена Христа лежит уютный старый центр с площадью Републики, церковью Сан-Жуан-Баптишта и одной из старейших сохранившихся синагог Португалии. У реки — парк Мушан на острове с водяным колесом и старый мост. Раз в четыре года (ближайший — в 2027-м) здесь проходит праздник Табулейруш с процессией девушек, несущих на головах башни из хлеба.",
+    "driveMinutesFromLisbon": 90,
+    "visitDurationHours": 4,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "фото",
+      "ресторан"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Levada_de_Tomar_and_Ponte_Velha%2C_Tomar%2C_Portugal_julesvernex2.jpg/1280px-Levada_de_Tomar_and_Ponte_Velha%2C_Tomar%2C_Portugal_julesvernex2.jpg",
+        "author": "Jules Verne Times Two",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Levada_de_Tomar_and_Ponte_Velha,_Tomar,_Portugal_julesvernex2.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Tomar_BW_2018-10-08_11-54-18.jpg/1280px-Tomar_BW_2018-10-08_11-54-18.jpg",
+        "author": "Berthold Werner",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tomar_BW_2018-10-08_11-54-18.jpg"
+      }
+    ]
+  },
+  {
+    "id": "constancia",
+    "name": "Констансия",
+    "type": "town",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 39.4747,
+      "lon": -8.3383
+    },
+    "description": "Белая деревушка амфитеатром спускается к месту, где Зезере впадает в Тежу; по преданию, здесь жил поэт Луиш де Камоэнш, и в городке есть его сад-заповедник с растениями из «Лузиад». Узкие лестничные улочки, набережная и речной пляж делают Констансию спокойной альтернативой туристическим городам. Удобно совместить с замком Алмоурол в 5 км ниже по Тежу.",
+    "driveMinutesFromLisbon": 80,
+    "visitDurationHours": 2,
+    "bestSeason": "апрель–октябрь",
+    "tags": [
+      "виды",
+      "история",
+      "бесплатно"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Rio_Tejo_-_Const%C3%A2ncia_-_Portugal_%2853287334366%29.jpg/1280px-Rio_Tejo_-_Const%C3%A2ncia_-_Portugal_%2853287334366%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rio_Tejo_-_Const%C3%A2ncia_-_Portugal_(53287334366).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Const%C3%A2ncia_-_Portugal_%28456921908%29.jpg/960px-Const%C3%A2ncia_-_Portugal_%28456921908%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Const%C3%A2ncia_-_Portugal_(456921908).jpg"
+      }
+    ]
+  },
+  {
+    "id": "dornes",
+    "name": "Дорнеш",
+    "type": "town",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 39.7697,
+      "lon": -8.2706
+    },
+    "description": "Крошечная деревня на полуострове, почти со всех сторон окружённом водохранилищем Каштелу-ду-Боде на реке Зезере. Над домами стоит пятиугольная башня, которую связывают с тамплиерами, и храм Носса-Сеньора-ду-Пиляр, а вокруг — зелёные холмы и спокойная вода. Захватите купальник: рядом есть речной пляж, а с обзорных точек у дороги деревня видна целиком.",
+    "driveMinutesFromLisbon": 115,
+    "visitDurationHours": 2,
+    "bestSeason": "май–октябрь",
+    "tags": [
+      "виды",
+      "история",
+      "купание",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/The_Z%C3%AAzere_at_Dornes_%2842521391811%29.jpg/1280px-The_Z%C3%AAzere_at_Dornes_%2842521391811%29.jpg",
+        "author": "Pedro from Maia (Porto), Portugal",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Z%C3%AAzere_at_Dornes_(42521391811).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Arriving_in_Dornes_I_%2842539511561%29.jpg/1280px-Arriving_in_Dornes_I_%2842539511561%29.jpg",
+        "author": "Pedro from Maia (Porto), Portugal",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arriving_in_Dornes_I_(42539511561).jpg"
+      }
+    ]
+  },
+  {
+    "id": "mertola",
+    "name": "Мертола",
+    "type": "town",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 37.639,
+      "lon": -7.6617
+    },
+    "description": "Белый городок-музей на скале над Гвадианой: замок, бывшая мечеть, превращённая в главную церковь, и множество музейных точек — римских, исламских, раннехристианских. Мертола была важным речным портом от финикийцев до мавров, и городок сохранил атмосферу пограничья. Летом здесь очень жарко — лучше ехать весной или осенью; каждые два года в мае проходит Исламский фестиваль.",
+    "driveMinutesFromLisbon": 165,
+    "visitDurationHours": 4,
+    "bestSeason": "октябрь–май",
+    "tags": [
+      "история",
+      "виды",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/M%C3%A9rtola%2C_Portugal_2019-11-10-2.jpg/1280px-M%C3%A9rtola%2C_Portugal_2019-11-10-2.jpg",
+        "author": "Alexey Komarov",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:M%C3%A9rtola,_Portugal_2019-11-10-2.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/M%C3%A9rtola_by_the_Guadiana_River%2C_Portugal_%2834120222416%29.jpg/1280px-M%C3%A9rtola_by_the_Guadiana_River%2C_Portugal_%2834120222416%29.jpg",
+        "author": "peterichman from York, Yorkshire",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:M%C3%A9rtola_by_the_Guadiana_River,_Portugal_(34120222416).jpg"
+      }
+    ]
+  },
+  {
+    "id": "elvas",
+    "name": "Элваш",
+    "type": "town",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 38.8808,
+      "lon": -7.1636
+    },
+    "description": "Пограничный город-крепость у Испании с крупнейшей в мире системой бастионных укреплений, внесённой в список ЮНЕСКО: звёздчатые стены, форты Санта-Лузия и Граса и акведук Аморейра длиной около 7 км. В центре — площадь Републики с чёрно-белой мостовой и бывший собор. Обойдите стены по периметру и поднимитесь к форту Граса — оттуда видна вся звезда укреплений.",
+    "driveMinutesFromLisbon": 130,
+    "visitDurationHours": 4,
+    "bestSeason": "октябрь–май",
+    "tags": [
+      "история",
+      "фото",
+      "виды"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Elvas%2C_Portugal_%2840280142970%29.jpg/1280px-Elvas%2C_Portugal_%2840280142970%29.jpg",
+        "author": "Stephen Colebourne from London, UK",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elvas,_Portugal_(40280142970).jpg"
+      }
+    ]
+  },
+  {
+    "id": "vila-vicosa",
+    "name": "Вила-Висоза",
+    "type": "town",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 38.779,
+      "lon": -7.4185
+    },
+    "description": "«Мраморный» городок Алентежу, бывшая резиденция герцогов Браганса: огромная площадь перед Герцогским дворцом, тротуары, пороги и фонтаны из местного мрамора, замок и апельсиновые деревья вдоль улиц. Отсюда династия Браганса пришла к трону в 1640 году. Во дворце можно попасть только с экскурсией — заложите на него пару часов.",
+    "driveMinutesFromLisbon": 120,
+    "visitDurationHours": 4,
+    "bestSeason": "октябрь–май",
+    "tags": [
+      "история",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Vila_Vi%C3%A7osa_April_2011-5.jpg/1280px-Vila_Vi%C3%A7osa_April_2011-5.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vila_Vi%C3%A7osa_April_2011-5.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Vila_Vi%C3%A7osa_September_2013-44a.jpg/1280px-Vila_Vi%C3%A7osa_September_2013-44a.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vila_Vi%C3%A7osa_September_2013-44a.jpg"
+      }
+    ]
+  },
+  {
+    "id": "estremoz",
+    "name": "Эштремош",
+    "type": "town",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 38.8425,
+      "lon": -7.5868
+    },
+    "description": "Белый город на холме, известный мрамором и глиняными фигурками «бонекуш», внесёнными ЮНЕСКО в список нематериального наследия. Над нижним городом с огромной площадью Росиу возвышается замок с башней Трёх корон (сейчас там пузада) и часовней королевы Изабеллы. Приезжайте в субботу утром — на Росиу проходит большой рынок с едой, керамикой и антиквариатом.",
+    "driveMinutesFromLisbon": 105,
+    "visitDurationHours": 3,
+    "bestSeason": "октябрь–июнь",
+    "tags": [
+      "история",
+      "виды",
+      "ресторан"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Vista_de_Estremoz%2C_Portugal.jpg/1280px-Vista_de_Estremoz%2C_Portugal.jpg",
+        "author": "Alonso de Mendoza",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vista_de_Estremoz,_Portugal.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Castelo_de_Estremoz_2021.jpg/1280px-Castelo_de_Estremoz_2021.jpg",
+        "author": "Joseolgon",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Estremoz_2021.jpg"
+      }
+    ]
+  },
+  {
+    "id": "terena",
+    "name": "Терена",
+    "type": "town",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 38.6175,
+      "lon": -7.3975
+    },
+    "description": "Маленькая белёная деревня с одной главной улицей, ведущей к средневековому замку на холме. Рядом стоит необычная укреплённая церковь-святилище Носса-Сеньора-да-Боа-Нова, а внизу блестит водохранилище Лукефит. Тихое, почти нетуристическое место — хорошо совмещается с Вила-Висозой и Алкевой.",
+    "driveMinutesFromLisbon": 135,
+    "visitDurationHours": 1.5,
+    "bestSeason": "октябрь–июнь",
+    "tags": [
+      "история",
+      "виды",
+      "бесплатно"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Vila_Terena.JPG/1280px-Vila_Terena.JPG",
+        "author": "Alentejano",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vila_Terena.JPG"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Castelo_de_Terena.jpg/960px-Castelo_de_Terena.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Terena.jpg"
+      }
+    ]
+  },
+  {
+    "id": "porto-covo",
+    "name": "Порту-Кову",
+    "type": "town",
+    "region": "Юго-запад (Кошта-Висентина)",
+    "coords": {
+      "lat": 37.8522,
+      "lon": -8.7928
+    },
+    "description": "Бывшая рыбацкая деревня с бело-синими домиками вокруг квадратной площади и маленькими бухтами под скалами — северные ворота природного парка Кошта-Висентина. По скалам вдоль океана идёт тропа Рота-Висентина, а напротив виден остров Пессегейру с крепостью. Вода прохладная даже летом; лучшие пляжи — к югу от деревни.",
+    "driveMinutesFromLisbon": 115,
+    "visitDurationHours": 3,
+    "bestSeason": "май–октябрь",
+    "tags": [
+      "купание",
+      "закат",
+      "виды",
+      "ресторан"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Porto_Covo_pano_April_2009-4.jpg/1280px-Porto_Covo_pano_April_2009-4.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Porto_Covo_pano_April_2009-4.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Porto_Covo_January_2014-10a.jpg/1280px-Porto_Covo_January_2014-10a.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Porto_Covo_January_2014-10a.jpg"
+      }
+    ]
+  },
+  {
+    "id": "alcacer-do-sal",
+    "name": "Алкасер-ду-Сал",
+    "type": "town",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 38.3726,
+      "lon": -8.5134
+    },
+    "description": "Старинный город на реке Саду: дома спускаются от замка-пузады к набережной, а вокруг лежат рисовые поля и солончаки. Под замком — археологическая крипта с находками от железного века до мавританской эпохи. Хорошая остановка по пути в Компорту или на Алентежское побережье; на закате набережная особенно красива.",
+    "driveMinutesFromLisbon": 60,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "закат",
+      "бесплатно"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Panor%C3%A1mica_de_Alc%C3%A1cer_do_Sal_desde_el_r%C3%ADo.jpg/1280px-Panor%C3%A1mica_de_Alc%C3%A1cer_do_Sal_desde_el_r%C3%ADo.jpg",
+        "author": "Hovallef",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panor%C3%A1mica_de_Alc%C3%A1cer_do_Sal_desde_el_r%C3%ADo.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Alc%C3%A1cer_do_Sal_-_Panorama.jpg/1280px-Alc%C3%A1cer_do_Sal_-_Panorama.jpg",
+        "author": "bem_bom",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alc%C3%A1cer_do_Sal_-_Panorama.jpg"
+      }
+    ]
+  },
+  {
+    "id": "serpa",
+    "name": "Серпа",
+    "type": "town",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 37.9443,
+      "lon": -7.5975
+    },
+    "description": "Обнесённый стенами белый город на юге Алентежу, родина сыра Серпа и хорового пения канте-алентежану (наследие ЮНЕСКО). Внутри стен — замок, по стене тянется акведук с водокачкой-норией. Попробуйте местный овечий сыр и зайдите в Дом канте; летом днём очень жарко, поэтому гуляйте утром и вечером.",
+    "driveMinutesFromLisbon": 150,
+    "visitDurationHours": 3,
+    "bestSeason": "октябрь–май",
+    "tags": [
+      "история",
+      "ресторан",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Serpa_-_Portugal_%28131992364%29.jpg/960px-Serpa_-_Portugal_%28131992364%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Serpa_-_Portugal_(131992364).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Castelo_de_Serpa_-_Portugal_%28132583359%29.jpg/960px-Castelo_de_Serpa_-_Portugal_%28132583359%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Serpa_-_Portugal_(132583359).jpg"
+      }
+    ]
+  },
+  {
+    "id": "castelo-novo",
+    "name": "Каштелу-Нову",
+    "type": "town",
+    "region": "Центр (Серра-да-Эштрела)",
+    "coords": {
+      "lat": 40.0773,
+      "lon": -7.4955
+    },
+    "description": "Историческая деревня из гранита на склоне горы Гардунья: руины тамплиерского замка, мануэлинский позорный столб и необычный фонтан эпохи короля Жуана V на главной площади. Деревня входит в сеть Aldeias Históricas de Portugal. С замка открывается вид на долину Кова-да-Бейра; по соседству — источник минеральной воды Алардо.",
+    "driveMinutesFromLisbon": 160,
+    "visitDurationHours": 2,
+    "bestSeason": "март–ноябрь",
+    "tags": [
+      "история",
+      "виды",
+      "бесплатно"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Castelo_Novo%2C_historic_village_-_panoramio.jpg/1280px-Castelo_Novo%2C_historic_village_-_panoramio.jpg",
+        "author": "Luis Caprichoso",
+        "license": "CC BY 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_Novo,_historic_village_-_panoramio.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Castelo_Novo_April_2015-2a.jpg/1280px-Castelo_Novo_April_2015-2a.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_Novo_April_2015-2a.jpg"
+      }
+    ]
+  },
+  {
+    "id": "marialva",
+    "name": "Мариалва",
+    "type": "town",
+    "region": "Центр (Серра-да-Эштрела)",
+    "coords": {
+      "lat": 40.9106,
+      "lon": -7.2311
+    },
+    "description": "Заброшенная средневековая цитадель на гранитной скале: внутри стен — руины домов, позорный столб, цистерна и донжон. Под стенами живёт современная деревня, одна из 12 «исторических деревень» Португалии. Особенно атмосферно на закате; рядом начинается винный Доуру-Супериор, так что поездку можно совместить с дегустацией.",
+    "driveMinutesFromLisbon": 215,
+    "visitDurationHours": 2,
+    "bestSeason": "апрель–октябрь",
+    "tags": [
+      "история",
+      "закат",
+      "виды",
+      "бесплатно"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Castelo_de_Marialva_%28M%C3%AAda%29.jpg/1280px-Castelo_de_Marialva_%28M%C3%AAda%29.jpg",
+        "author": "Dinah Raphael",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Marialva_(M%C3%AAda).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Marialva_01_by-dpc.jpg/1280px-Marialva_01_by-dpc.jpg",
+        "author": "David Perez",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marialva_01_by-dpc.jpg"
+      }
+    ]
+  },
+  {
+    "id": "trancoso",
+    "name": "Транкозу",
+    "type": "town",
+    "region": "Центр (Серра-да-Эштрела)",
+    "coords": {
+      "lat": 40.779,
+      "lon": -7.3493
+    },
+    "description": "Городок, полностью окружённый средневековыми стенами с воротами, замком и романским донжоном; здесь в 1282 году король Диниш женился на Изабелле Арагонской. Внутри — бывший еврейский квартал с домами с широкими и узкими дверями и центром Isaac Cardoso. Центр компактный и обходится пешком за пару часов; попробуйте местные сладости «сардиньяш доше».",
+    "driveMinutesFromLisbon": 195,
+    "visitDurationHours": 3,
+    "bestSeason": "апрель–октябрь",
+    "tags": [
+      "история",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Muralhas_de_Trancoso_-_Portugal_%28266329966%29.jpg/960px-Muralhas_de_Trancoso_-_Portugal_%28266329966%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Muralhas_de_Trancoso_-_Portugal_(266329966).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Trancoso-Castelo-36-Stadt-2011-gje.jpg/1280px-Trancoso-Castelo-36-Stadt-2011-gje.jpg",
+        "author": "Gerd Eichmann",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Trancoso-Castelo-36-Stadt-2011-gje.jpg"
+      }
+    ]
+  },
+  {
+    "id": "castelo-mendo",
+    "name": "Каштелу-Менду",
+    "type": "town",
+    "region": "Центр (Серра-да-Эштрела)",
+    "coords": {
+      "lat": 40.5942,
+      "lon": -6.9514
+    },
+    "description": "Маленькая обнесённая стенами деревня на холме над рекой Коа, у испанской границы. У главных ворот стоят два гранитных кабана-«берраку», а внутри — один из самых высоких в стране позорных столбов, и тихие улицы из гранита. Деревня входит в сеть Aldeias Históricas; удобно объединить со звёздчатой крепостью Алмейда неподалёку.",
+    "driveMinutesFromLisbon": 200,
+    "visitDurationHours": 1.5,
+    "bestSeason": "апрель–октябрь",
+    "tags": [
+      "история",
+      "бесплатно",
+      "виды"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Le_village_fortifi%C3%A9_de_Castelo_Mendo.JPG/960px-Le_village_fortifi%C3%A9_de_Castelo_Mendo.JPG",
+        "author": "France64160",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Le_village_fortifi%C3%A9_de_Castelo_Mendo.JPG"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Castelo_Mendo%2C_muralla_y_puerta_principal.JPG/1280px-Castelo_Mendo%2C_muralla_y_puerta_principal.JPG",
+        "author": "Malopez 21",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_Mendo,_muralla_y_puerta_principal.JPG"
+      }
+    ]
+  },
+  {
+    "id": "gondramaz",
+    "name": "Гондрамаш",
+    "type": "town",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.0619,
+      "lon": -8.2725
+    },
+    "description": "Тихая деревня из тёмного сланца на склоне гор Лозан, с узкими улочками, каменными домами и видами на лесистые долины. Деревня входит в сеть Aldeias do Xisto, отсюда расходятся пешие тропы по лесам Серра-да-Лозан. Последний участок дороги узкий и серпантинный — машину оставьте на парковке у въезда.",
+    "driveMinutesFromLisbon": 145,
+    "visitDurationHours": 2,
+    "bestSeason": "март–ноябрь",
+    "tags": [
+      "природа",
+      "фото",
+      "бесплатно"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Aldeia_do_Xisto_-_Gondramaz_-_Miranda_do_Corvo_19.jpg/1280px-Aldeia_do_Xisto_-_Gondramaz_-_Miranda_do_Corvo_19.jpg",
+        "author": "Cidonio Rinaldi",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aldeia_do_Xisto_-_Gondramaz_-_Miranda_do_Corvo_19.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Aldeia_do_Xisto_-_Gondramaz_-_Miranda_do_Corvo_03.jpg/1280px-Aldeia_do_Xisto_-_Gondramaz_-_Miranda_do_Corvo_03.jpg",
+        "author": "Cidonio Rinaldi",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aldeia_do_Xisto_-_Gondramaz_-_Miranda_do_Corvo_03.jpg"
+      }
+    ]
+  },
+  {
+    "id": "cerdeira-lousa",
+    "name": "Сердейра",
+    "type": "town",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.094,
+      "lon": -8.1948
+    },
+    "description": "Восстановленная сланцевая деревня в лесах над Лозаном, превращённая в небольшую арт-резиденцию с мастерскими керамики и дерева, кафе и гостевыми домами. Входит в сеть Aldeias do Xisto. К деревне можно дойти пешком от замка Лозан и святилища Носса-Сеньора-да-Пьедаде.",
+    "driveMinutesFromLisbon": 150,
+    "visitDurationHours": 2.5,
+    "bestSeason": "март–ноябрь",
+    "tags": [
+      "природа",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Cerdeira_01.jpg/1280px-Cerdeira_01.jpg",
+        "author": "Ricardo Saraiva de Almeida",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cerdeira_01.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Cerdeira_DSC_0244_%2852285496935%29.jpg/1280px-Cerdeira_DSC_0244_%2852285496935%29.jpg",
+        "author": "Pedro from Maia (Porto), Portugal",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cerdeira_DSC_0244_(52285496935).jpg"
+      }
+    ]
+  },
+  {
+    "id": "ferraria-de-sao-joao",
+    "name": "Феррария-де-Сан-Жуан",
+    "type": "town",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 39.9738,
+      "lon": -8.3234
+    },
+    "description": "Сланцевая деревня на горном гребне над долинами Пенелы, с каменными домами и видами на десятки километров. Входит в сеть Aldeias do Xisto; от деревни идут кольцевые тропы с видами на долины Пенелы. Хороший вариант короткой прогулки на полдня, рядом — римская вилла Рабасал и замок Пенелы.",
+    "driveMinutesFromLisbon": 135,
+    "visitDurationHours": 2,
+    "bestSeason": "март–ноябрь",
+    "tags": [
+      "природа",
+      "виды",
+      "бесплатно"
+    ],
+    "links": []
+  },
+  {
+    "id": "ponte-de-lima",
+    "name": "Понте-ди-Лима",
+    "type": "town",
+    "region": "Норте",
+    "coords": {
+      "lat": 41.7672,
+      "lon": -8.5838
+    },
+    "description": "Одна из старейших вил Португалии (хартия 1125 года) с длинным средневековым мостом через Лиму, по которому проходит Португальский путь Сантьяго. На набережной под платанами раз в две недели по понедельникам шумит большой рынок, а в городе — Международный фестиваль садов. Попробуйте местное зелёное вино лоурейру и рис с кровью «аррош де саррабулью».",
+    "driveMinutesFromLisbon": 225,
+    "visitDurationHours": 3,
+    "bestSeason": "апрель–октябрь",
+    "tags": [
+      "история",
+      "вино",
+      "ресторан",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/City_of_Ponte_de_Lima.jpg/1280px-City_of_Ponte_de_Lima.jpg",
+        "author": "V.B.Speranza",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:City_of_Ponte_de_Lima.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Ponte_de_Ponte_de_Lima.jpg/1280px-Ponte_de_Ponte_de_Lima.jpg",
+        "author": "MdMV or Emdy idk",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ponte_de_Ponte_de_Lima.jpg"
+      }
+    ]
+  },
+  {
+    "id": "amarante",
+    "name": "Амаранте",
+    "type": "town",
+    "region": "Норте",
+    "coords": {
+      "lat": 41.27,
+      "lon": -8.0782
+    },
+    "description": "Городок на реке Тамега: каменный мост Сан-Гонсалу, монастырь с церковью над водой и набережные с балконами. Здесь родился художник-модернист Амадеу де Соуза-Кардозу — его работы в местном музее. Обязательно зайдите в кондитерскую за местными монастырскими сладостями, а летом возьмите лодку на реке.",
+    "driveMinutesFromLisbon": 200,
+    "visitDurationHours": 3,
+    "bestSeason": "апрель–октябрь",
+    "tags": [
+      "история",
+      "ресторан",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Ponte_de_S%C3%A3o_Gon%C3%A7alo%2C_Amarante%2C_Portugal.jpg/1280px-Ponte_de_S%C3%A3o_Gon%C3%A7alo%2C_Amarante%2C_Portugal.jpg",
+        "author": "Ridiculopathy",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ponte_de_S%C3%A3o_Gon%C3%A7alo,_Amarante,_Portugal.jpg"
+      }
+    ]
+  },
+  {
+    "id": "pinhao",
+    "name": "Пиньян",
+    "type": "town",
+    "region": "Норте",
+    "coords": {
+      "lat": 41.1906,
+      "lon": -7.5458
+    },
+    "description": "Посёлок в сердце винного Доуру, окружённый террасами виноградников (ландшафт ЮНЕСКО). Главная достопримечательность — вокзал, украшенный азулежу со сценами сбора винограда; отсюда же отправляются речные прогулки на лодках. Вокруг — кинты с дегустациями портвейна; бронируйте их заранее, особенно в сезон сбора урожая в сентябре.",
+    "driveMinutesFromLisbon": 230,
+    "visitDurationHours": 4,
+    "bestSeason": "апрель–октябрь (сбор винограда — сентябрь)",
+    "tags": [
+      "вино",
+      "виды",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Pinh%C3%A3o%2C_heart_of_Alto_Douro_Wine_Region%2C_UNESCO_World_Heritage_Site.jpg/1280px-Pinh%C3%A3o%2C_heart_of_Alto_Douro_Wine_Region%2C_UNESCO_World_Heritage_Site.jpg",
+        "author": "Sanjorgepinho",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pinh%C3%A3o,_heart_of_Alto_Douro_Wine_Region,_UNESCO_World_Heritage_Site.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Pinh%C3%A3o%2C_Vale_do_Douro%2C_Portugal_.jpg/1280px-Pinh%C3%A3o%2C_Vale_do_Douro%2C_Portugal_.jpg",
+        "author": "sanjorgepinho",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pinh%C3%A3o,_Vale_do_Douro,_Portugal_.jpg"
+      }
+    ]
+  },
+  {
+    "id": "provesende",
+    "name": "Провезенде",
+    "type": "town",
+    "region": "Норте",
+    "coords": {
+      "lat": 41.2181,
+      "lon": -7.5697
+    },
+    "description": "Деревня на склоне над Пиньяном с гербовыми особняками виноделов XVII–XVIII веков, позорным столбом и старинным фонтаном. Дорога сюда идёт серпантином через виноградные террасы Доуру с одними из лучших видов в регионе. Удобно совместить с Пиньяном — до него около 15 минут вниз по серпантину.",
+    "driveMinutesFromLisbon": 235,
+    "visitDurationHours": 1.5,
+    "bestSeason": "апрель–октябрь",
+    "tags": [
+      "вино",
+      "виды",
+      "история"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Provesende_-_Portugal_%288496565598%29.jpg/1280px-Provesende_-_Portugal_%288496565598%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Provesende_-_Portugal_(8496565598).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Vista_do_Miradouro_de_S%C3%A3o_Domingos_-_Provesende_-_Portugal_%2812121359823%29.jpg/1280px-Vista_do_Miradouro_de_S%C3%A3o_Domingos_-_Provesende_-_Portugal_%2812121359823%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vista_do_Miradouro_de_S%C3%A3o_Domingos_-_Provesende_-_Portugal_(12121359823).jpg"
+      }
+    ]
+  },
+  {
+    "id": "guimaraes",
+    "name": "Гимарайнш",
+    "type": "town",
+    "region": "Норте",
+    "coords": {
+      "lat": 41.4429,
+      "lon": -8.2936
+    },
+    "description": "«Колыбель Португалии»: здесь родился первый король Афонсу Энрикеш, а исторический центр внесён в список ЮНЕСКО. Средневековые площади Оливейра и Сантьягу, замок X века и Дворец герцогов Браганса составляют один пешеходный маршрут. На гору Пенья над городом можно подняться на канатной дороге.",
+    "driveMinutesFromLisbon": 200,
+    "visitDurationHours": 5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "фото",
+      "ресторан"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Guimaraes_Portugal_Pra%C3%A7a-de-S-Tiago-01.jpg/1280px-Guimaraes_Portugal_Pra%C3%A7a-de-S-Tiago-01.jpg",
+        "author": "CEphoto, Uwe Aranas",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guimaraes_Portugal_Pra%C3%A7a-de-S-Tiago-01.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Centro_Hist%C3%B3rico_de_Guimar%C3%A3es_-14.jpg/1280px-Centro_Hist%C3%B3rico_de_Guimar%C3%A3es_-14.jpg",
+        "author": "Asublif",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Centro_Hist%C3%B3rico_de_Guimar%C3%A3es_-14.jpg"
+      }
+    ]
+  },
+  {
+    "id": "agua-formosa",
+    "name": "Агуа-Формоза",
+    "type": "town",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 39.6347,
+      "lon": -8.0999
+    },
+    "description": "Крошечная сланцевая деревня в зелёной долине у ручья, в муниципалитете Вила-де-Рей недалеко от географического центра Португалии. Входит в сеть Aldeias do Xisto: каменные домики, мостики и почти полная тишина. Летом совместите с речными пляжами Вила-де-Рей.",
+    "driveMinutesFromLisbon": 115,
+    "visitDurationHours": 1,
+    "bestSeason": "март–ноябрь",
+    "tags": [
+      "природа",
+      "фото",
+      "бесплатно"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/%C3%81gua_Formosa_-_Portugal_%2817005014036%29.jpg/1280px-%C3%81gua_Formosa_-_Portugal_%2817005014036%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%C3%81gua_Formosa_-_Portugal_(17005014036).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/%C3%81gua_Formosa_-_Portugal_%2826841315625%29.jpg/1280px-%C3%81gua_Formosa_-_Portugal_%2826841315625%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%C3%81gua_Formosa_-_Portugal_(26841315625).jpg"
+      }
+    ]
+  },
+  {
+    "id": "odeceixe",
+    "name": "Одесейше",
+    "type": "town",
+    "region": "Юго-запад (Кошта-Висентина)",
+    "coords": {
+      "lat": 37.4328,
+      "lon": -8.7692
+    },
+    "description": "Белая деревня на холме над рекой Сейше, по которой проходит граница Алентежу и Алгарве. В нескольких километрах — пляж Одесейше, где река встречается с океаном: можно выбирать между тёплой лагуной и волнами. Наверху деревни стоит ветряная мельница со смотровой площадкой.",
+    "driveMinutesFromLisbon": 170,
+    "visitDurationHours": 3,
+    "bestSeason": "май–октябрь",
+    "tags": [
+      "купание",
+      "сёрфинг",
+      "виды",
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Odeceixe_-_Portugal_%2823949021454%29.jpg/1280px-Odeceixe_-_Portugal_%2823949021454%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Odeceixe_-_Portugal_(23949021454).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Valley_of_the_odeceixe_river_%282457363946%29.jpg/1280px-Valley_of_the_odeceixe_river_%282457363946%29.jpg",
+        "author": "Hendrik Dacquin from gent, Belgium",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Valley_of_the_odeceixe_river_(2457363946).jpg"
+      }
+    ]
+  }
+]
