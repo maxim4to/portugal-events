@@ -33,12 +33,18 @@ const hoverFirstCard = async (page) => {
   if (await c.count()) await c.hover().catch(() => {});
   await page.waitForTimeout(300);
 };
+const openFirstFilter = async (page) => {
+  const f = page.locator('.fgroup-summary:visible').first();
+  if (await f.count()) await f.click().catch(() => {});
+  await page.waitForTimeout(500);
+};
 const pages = [
   ['places', '/places/'],
   ['places-hover', '/places/', hoverFirstCard],
   ['places-filtered', '/places/?type=beach&region=algarve'],
   ['places-empty', '/places/?type=karting&drive=60&tag=купание'],
   ['places-popup', '/places/', clickFirstMarker],
+  ['places-filtermenu', '/places/', openFirstFilter],
   ['place-detail', '/places/tavira/'],
   ['place-detail-museum', '/places/museu-nacional-de-arte-antiga/'],
   ['events', '/events/'],

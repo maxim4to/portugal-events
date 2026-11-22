@@ -657,11 +657,11 @@ img {
   flex: none;
   padding: 5px var(--space-3);
   border: 0;
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 600;
   letter-spacing: 0;
   cursor: pointer;
@@ -810,10 +810,10 @@ html {
   .fgroup.active .fgroup-summary {
     background: var(--accent);
     border-color: var(--accent);
-    color: #fff;
+    color: var(--on-accent);
   }
   .fgroup.active .fcount {
-    background: #fff;
+    background: var(--on-accent);
     color: var(--accent);
   }
 
@@ -821,7 +821,7 @@ html {
     position: fixed;
     inset: 0;
     z-index: 1290;
-    background: rgba(20, 16, 10, 0.42);
+    background: rgba(0, 0, 0, 0.42);
     animation: sheet-fade 0.2s ease;
   }
   .fgroup-menu.is-sheet {
@@ -840,7 +840,7 @@ html {
     padding: var(--space-5) var(--space-4) calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
     border: 0;
     border-radius: 16px 16px 0 0;
-    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--shadow-lg);
     /* Grabber drawn as a background so ::before stays free for the title. */
     background: linear-gradient(var(--border-strong), var(--border-strong)) center 8px / 36px 5px
         no-repeat,
@@ -857,9 +857,10 @@ html {
     content: attr(data-title);
     flex: 0 0 100%;
     margin-bottom: var(--space-1);
-    font-family: var(--font-display);
-    font-size: 22px;
-    font-weight: 550;
+    font-family: var(--font-sans);
+    font-size: 20px;
+    font-weight: 650;
+    letter-spacing: -0.01em;
     color: var(--text-primary);
   }
   .fgroup-menu .chip {
@@ -877,9 +878,9 @@ html {
     height: 50px;
     margin-top: var(--space-3);
     border: 0;
-    border-radius: 12px;
-    background: var(--text-primary);
-    color: var(--surface-2);
+    border-radius: var(--radius);
+    background: var(--accent);
+    color: var(--on-accent);
     font: inherit;
     font-size: 16px;
     font-weight: 600;
