@@ -26,6 +26,10 @@ a {
 a:hover {
   text-decoration: underline;
 }
+/* Map controls (zoom +/−, popups) are <a> elements in Leaflet: buttons, not links. */
+.leaflet-container a:hover {
+  text-decoration: none;
+}
 
 /* Consistent keyboard-focus ring. Components that want a softer inset ring set
    `outline: none` + a box-shadow themselves; their higher specificity wins. */
