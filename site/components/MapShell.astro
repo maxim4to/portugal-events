@@ -1,5 +1,6 @@
 ---
 import type { MapPoint } from '../lib/mapExplorer.ts';
+import DetailOverlay from './DetailOverlay.astro';
 
 interface Props {
   kind: 'places' | 'events';
@@ -101,6 +102,8 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
     </div>
   )}
 </section>
+
+<DetailOverlay />
 
 <style>
   .explorer-root {

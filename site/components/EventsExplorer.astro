@@ -194,6 +194,9 @@ const presentCities = [...new Set(events.map((e) => e.city))].sort((a, b) =>
       if (s.city) params.set('city', s.city);
       const qs = params.toString();
       // Keep history.state: it carries the tab bar's place in the history stack.
+      // While a detail panel is open the current entry is the detail URL —
+      // don't stamp list filters onto it.
+      if ((history.state as { __overlay?: string } | null)?.__overlay) return;
       history.replaceState(history.state, '', qs ? `?${qs}` : location.pathname);
     }
 

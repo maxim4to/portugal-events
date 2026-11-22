@@ -1,0 +1,217 @@
+---
+// Desktop detail panel over the explorer (see lib/detailOverlay.ts).
+---
+<dialog class="detail-overlay" data-detail-overlay aria-label="Подробнее">
+  <div class="do-panel" data-do-panel>
+    <div class="do-tools">
+      <a class="do-tool" data-do-open href="#" target="_top" aria-label="Открыть отдельной страницей">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M14 4h6v6M20 4l-8.5 8.5M18 14v4.5A1.5 1.5 0 0 1 16.5 20h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10" />
+        </svg>
+      </a>
+      <button type="button" class="do-tool" data-do-close aria-label="Закрыть">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+          <path d="M6 6l12 12M18 6 6 18" />
+        </svg>
+      </button>
+    </div>
+    <div class="do-body" data-do-body>
+      {/* Shown until the page inside has loaded: the real layout's shapes. */}
+      <div class="do-skeleton" aria-hidden="true">
+        <div class="sk-head">
+          <span class="sk sk-line sk-short"></span>
+          <span class="sk-title" data-do-skeleton-title></span>
+        </div>
+        <div class="sk-cols">
+          <span class="sk sk-photo"></span>
+          <span class="sk sk-aside"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<style>
+  .detail-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: var(--space-5) var(--space-6);
+    border: 0;
+    background: transparent;
+    overflow: hidden;
+    display: none;
+    align-items: stretch;
+    justify-content: center;
+  }
+  .detail-overlay[open] {
+    display: flex;
+  }
+  .detail-overlay::backdrop {
+    background: rgb(12 12 12 / 0);
+    backdrop-filter: blur(0px);
+    transition: background-color 320ms var(--ease-out), backdrop-filter 320ms var(--ease-out);
+  }
+  .detail-overlay.is-open::backdrop {
+    background: rgb(12 12 12 / 0.42);
+    backdrop-filter: blur(3px);
+  }
+
+  /* Panel: grows out of the clicked card (transform-origin set from JS) with
+     the iOS sheet curve; leaves faster than it arrives. */
+  .do-panel {
+    position: relative;
+    width: min(1240px, 100%);
+    height: 100%;
+    border-radius: 20px;
+    background: var(--surface-0);
+    box-shadow: var(--shadow-lg), 0 40px 120px rgb(0 0 0 / 0.25);
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0.94) translateY(12px);
+    transition:
+      transform 460ms cubic-bezier(0.32, 0.72, 0, 1),
+      opacity 240ms var(--ease-out);
+    will-change: transform, opacity;
+  }
+  .is-open .do-panel {
+    opacity: 1;
+    transform: none;
+  }
+  .is-closing .do-panel {
+    opacity: 0;
+    transform: scale(0.97) translateY(8px);
+    transition:
+      transform 220ms var(--ease-out),
+      opacity 180ms ease;
+  }
+
+  .do-body {
+    position: absolute;
+    inset: 0;
+  }
+  .do-body :global(.do-frame) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: var(--surface-0);
+    opacity: 0;
+    transition: opacity 260ms var(--ease-out);
+  }
+  .is-loaded .do-body :global(.do-frame) {
+    opacity: 1;
+  }
+
+  /* Skeleton in the detail page's own proportions; shimmer sweeps across. */
+  .do-skeleton {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    padding: 56px var(--space-7) 0;
+    transition: opacity 200ms ease;
+  }
+  .is-loaded .do-skeleton {
+    opacity: 0;
+  }
+  .sk-head {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  .sk-title {
+    min-height: 1.1em;
+    font-family: var(--font-display);
+    font-size: clamp(32px, 3.6vw, 48px);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+  }
+  .sk-cols {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: var(--space-6);
+    flex: 1;
+    max-height: 520px;
+  }
+  .sk {
+    display: block;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(100deg, var(--surface-1) 40%, color-mix(in srgb, var(--surface-1) 55%, var(--surface-0)) 50%, var(--surface-1) 60%) 0 0 / 300% 100%;
+    animation: sk-shimmer 1.4s linear infinite;
+  }
+  .sk-line {
+    height: 22px;
+    border-radius: var(--radius-sm);
+  }
+  .sk-short {
+    width: 160px;
+  }
+  @keyframes sk-shimmer {
+    from { background-position: 100% 0; }
+    to { background-position: 0 0; }
+  }
+
+  /* Floating tools: open as page + close. */
+  .do-tools {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    z-index: 2;
+    display: flex;
+    gap: var(--space-2);
+  }
+  .do-tool {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--surface-2) 88%, transparent);
+    backdrop-filter: blur(8px);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    transition: transform var(--dur-fast) var(--ease-out), background-color var(--dur-fast) ease;
+  }
+  .do-tool:hover {
+    background: var(--surface-2);
+    text-decoration: none;
+  }
+  .do-tool:active {
+    transform: scale(0.92);
+  }
+  [data-do-close] svg {
+    transition: transform var(--dur) var(--ease-out);
+  }
+  [data-do-close]:hover svg {
+    transform: rotate(90deg);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .do-panel,
+    .is-closing .do-panel {
+      transform: none;
+      transition: opacity 150ms ease;
+    }
+    .sk {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  import { initDetailOverlay } from '../lib/detailOverlay.ts';
+  document.querySelectorAll<HTMLElement>('[data-explorer]').forEach(initDetailOverlay);
+</script>

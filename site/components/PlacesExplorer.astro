@@ -266,6 +266,9 @@ const points = places.map((p) => ({
       if (s.hideNotInterested) params.set('ni', 'hide');
       const qs = params.toString();
       // Keep history.state: it carries the tab bar's place in the history stack.
+      // While a detail panel is open the current entry is the detail URL —
+      // don't stamp list filters onto it.
+      if ((history.state as { __overlay?: string } | null)?.__overlay) return;
       history.replaceState(history.state, '', qs ? `?${qs}` : location.pathname);
     }
 

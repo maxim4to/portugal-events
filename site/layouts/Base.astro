@@ -42,6 +42,24 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..650&family=Inter:wght@400..700&display=swap"
     />
     <script is:inline>
+      // Embedded as the desktop detail panel (lib/detailOverlay.ts): drop the
+      // site chrome, open links in the top window, relay Esc to the parent.
+      (function () {
+        var f = null;
+        try { f = window.frameElement; } catch (e) {}
+        if (!f || !f.hasAttribute('data-detail-frame')) return;
+        document.documentElement.setAttribute('data-embed', '');
+        var base = document.createElement('base');
+        base.target = '_top';
+        document.head.appendChild(base);
+        window.addEventListener('keydown', function (e) {
+          if (e.key !== 'Escape' || e.defaultPrevented) return;
+          if (document.querySelector('.pswp')) return; // lightbox closes first
+          parent.postMessage({ type: 'detail-overlay:close' }, location.origin);
+        });
+      })();
+    </script>
+    <script is:inline>
       (function () {
         var root = document.documentElement;
         var dark = window.matchMedia('(prefers-color-scheme: dark)');

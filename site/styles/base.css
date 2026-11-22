@@ -955,3 +955,18 @@ html {
   );
   pointer-events: none;
 }
+
+/* --- Embedded detail page (desktop panel, see lib/detailOverlay.ts) --- */
+:root[data-embed] {
+  --header-h: 0px;
+}
+:root[data-embed] .site-header,
+:root[data-embed] .tabbar,
+:root[data-embed] .mbar,
+:root[data-embed] .mtop,
+:root[data-embed] .detail a.back {
+  display: none !important;
+}
+:root[data-embed] .main {
+  padding-top: var(--space-7);
+}
