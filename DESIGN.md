@@ -5,8 +5,10 @@ The visual contract for the site. Every UI change follows it; tokens live in
 
 References: **Airbnb** (map + list explorer, photo-first cards, pill filters,
 generous whitespace), **Linear / Stripe** (strict grid, quiet neutral type,
-one accent). Portuguese character comes from the azulejo-cobalt accent and an
-editorial serif used *only* for page titles — not from decoration.
+one accent), **Craft Docs** (palette: neutral paper-white canvas, white cards,
+near-black ink for text and filled controls, soft layered shadows, pastel type
+tints, a papaya brand mark). Character comes from photography and an editorial
+serif used *only* for page titles — not from decoration.
 
 ## Principles
 
@@ -16,8 +18,9 @@ editorial serif used *only* for page titles — not from decoration.
    (`--gutter`) and max width (`--page-max`). Nothing floats off-axis.
 3. **Sentence case everywhere.** No uppercase letter-spaced labels. Hierarchy
    comes from size and weight, not tracking.
-4. **One accent.** Cobalt (`--accent`) = interactive/selected. Terracotta
-   (`--editorial`) is retired from UI chrome; it survives only in the brand mark.
+4. **One accent.** Ink (`--accent`, near-black; near-white in dark) =
+   interactive/selected. Papaya (`--editorial`) stays out of UI chrome; it
+   survives only in the brand mark.
    Red (`--danger`) = favorite heart, green (`--visited`) = visited.
 5. **Quiet until needed.** Secondary actions (visited / not interested) appear
    on hover on pointer devices; always visible on touch.
@@ -93,9 +96,9 @@ Numerals in meta use `font-variant-numeric: tabular-nums`.
 - **Facet sidebar** (≥1100px, places): left column 256px (224px at
   1100–1399px so the list keeps two card columns), own scroll. Section label +
   rows (icon, label, check). Left edges of all rows align with the header brand.
-- **List header** (desktop explorers): live result count above the cards.
+- **List header** (desktop explorers): no result count; the row appears only for «Все» after a map-area search.
 - **Map**: radius-lg container, controls as one rounded card with shadow-md;
-  popups radius-lg + shadow-lg. Tiles graded in CSS (warm in light, inverted
+  popups radius-lg + shadow-lg. Tiles graded in CSS (neutral in light, inverted
   in dark) on every map including the detail minimap. The view is locked to
   mainland Portugal: `maxBounds` + a min zoom at which the country just fits
   the visible area; on phones the frame stretches by what the sheet covers.

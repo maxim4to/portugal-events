@@ -24,7 +24,7 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{title}</title>
-    <meta name="theme-color" content="#f2ece0" />
+    <meta name="theme-color" content="#f7f7f7" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     {/* Content runs under the status bar (the map/photos fill it); controls
@@ -104,7 +104,7 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
         function paint() {
           var isDark = root.dataset.theme ? root.dataset.theme === 'dark' : dark.matches;
           var m = document.querySelector('meta[name="theme-color"]');
-          if (m) m.setAttribute('content', isDark ? '#17140f' : '#f2ece0');
+          if (m) m.setAttribute('content', isDark ? '#121212' : '#f7f7f7');
         }
         // 'light' | 'dark' pin a theme; anything else follows the system.
         // `origin` ({x, y} in viewport px): reveal the new theme as a circle

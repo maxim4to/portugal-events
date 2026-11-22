@@ -49,7 +49,7 @@ const { lat, lon, name, path } = Astro.props;
      light, inverted dark map in dark. Only the tile pane is filtered, so the
      route, pins and labels keep their own colors on top. */
   .minimap :global(.leaflet-tile-pane) {
-    filter: sepia(0.18) saturate(0.95) hue-rotate(-5deg) brightness(1.03) contrast(0.95);
+    filter: saturate(0.82) brightness(1.03) contrast(0.95);
   }
   :global(:root[data-theme='dark']) .minimap :global(.leaflet-tile-pane) {
     filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.88) saturate(0.7);

@@ -369,11 +369,13 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
       gap: var(--space-3);
       min-height: 24px;
     }
+    /* No result count on wide screens — the row only appears for «Все»
+       after a "search this area". */
     .sheet-count {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-secondary);
-      font-variant-numeric: tabular-nums;
+      display: none;
+    }
+    .sheet-head:not(:has(.sheet-showall:not([hidden]))) {
+      display: none;
     }
     .sheet-showall {
       height: 28px;
@@ -510,7 +512,7 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
   }
   @media (prefers-color-scheme: dark) {
     :global(:root:not([data-theme='light'])) .pane-map :global(.pt-mask) {
-      fill: #17140f;
+      fill: var(--surface-0);
       fill-opacity: 0.6;
     }
   }
@@ -587,11 +589,11 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
     opacity: 1;
   }
 
-  /* Game-map grading: warm the OSM tiles into a slightly desaturated
-     parchment tone (matching the site's cream palette), so the basemap reads
+  /* Game-map grading: soften the OSM tiles into a slightly desaturated,
+     neutral tone (matching the site's paper-white palette), so the basemap reads
      like a game world under the colored type blips, not a data map. */
   .pane-map :global(.leaflet-tile-pane) {
-    filter: sepia(0.18) saturate(0.95) hue-rotate(-5deg) brightness(1.03) contrast(0.95);
+    filter: saturate(0.82) brightness(1.03) contrast(0.95);
   }
 
   /* Dark theme: a dark basemap (inverted tiles, hues restored), so the

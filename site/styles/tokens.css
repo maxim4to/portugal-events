@@ -1,54 +1,54 @@
-/* Design tokens — see DESIGN.md. Warm off-white surfaces, azulejo cobalt as
-   the single interactive accent. Light defaults on :root, dark overrides below.
+/* Design tokens — see DESIGN.md. Neutral paper-white surfaces, ink as the
+   interactive accent, papaya brand mark (Craft-style). Light defaults on :root, dark overrides below.
    Explicit [data-theme] always wins; system preference applies when unset. */
 
 :root {
-  /* Surfaces — warm off-white page, white raised sheets */
-  --surface-0: #f6f4f0;   /* page */
-  --surface-1: #ece9e3;   /* subtle fills: hover, chips, segmented track */
+  /* Surfaces — neutral off-white page, white raised sheets */
+  --surface-0: #f7f7f7;   /* page */
+  --surface-1: #efefef;   /* subtle fills: hover, chips, segmented track */
   --surface-2: #ffffff;   /* cards, popovers, header */
   --surface-raised: #ffffff; /* thumbs/active pills sitting on a surface-1 track */
 
   /* Ink */
-  --text-primary: #1c1a17;
-  --text-secondary: #5c574f;
-  --text-muted: #8a857b;
+  --text-primary: #030302;
+  --text-secondary: #41413f;
+  --text-muted: #7a7976;
 
   /* Hairlines */
-  --border: rgba(28, 26, 23, 0.10);
-  --border-strong: rgba(28, 26, 23, 0.20);
+  --border: rgba(3, 3, 2, 0.09);
+  --border-strong: rgba(3, 3, 2, 0.18);
 
-  /* Accent — azulejo cobalt (interactive, selected) */
-  --accent: #1f56b8;
-  --accent-hover: #194a9f;
-  --accent-bg: #e8effb;
-  --accent-text: #1a4797;
+  /* Accent — ink (interactive, selected); filled pills are near-black */
+  --accent: #030302;
+  --accent-hover: #41413f;
+  --accent-bg: #ebebea;
+  --accent-text: #030302;
   --on-accent: #ffffff;
 
-  /* Editorial terracotta — brand mark only */
-  --editorial: #c0532a;
-  --editorial-bg: #f7e6dd;
-  --editorial-text: #9a3f1c;
+  /* Editorial papaya — brand mark only */
+  --editorial: #ff4500;
+  --editorial-bg: #ffe8dd;
+  --editorial-text: #c23400;
 
-  --danger: #e0434f;
-  --visited: #23875a;
-  --not-interested: #8a8275;
+  --danger: #e5383b;
+  --visited: #1f9254;
+  --not-interested: #8b8984;
 
   /* Depth */
-  --shadow-sm: 0 1px 2px rgba(28, 26, 23, 0.08), 0 1px 1px rgba(28, 26, 23, 0.04);
-  --shadow-md: 0 4px 14px rgba(28, 26, 23, 0.10), 0 1px 3px rgba(28, 26, 23, 0.06);
-  --shadow-lg: 0 16px 40px rgba(28, 26, 23, 0.16), 0 2px 8px rgba(28, 26, 23, 0.06);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 20px 40px rgba(0, 0, 0, 0.05), 0 3px 10px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 50px 40px rgba(0, 0, 0, 0.03), 0 20px 40px rgba(0, 0, 0, 0.08), 0 3px 10px rgba(0, 0, 0, 0.08);
 
   /* Place-type cover tints (soft bg + darker same-hue on-tint text) */
-  --type-beach: #dcebf6;        /* soft blue */
+  --type-beach: #ddeefa;        /* soft blue */
   --type-beach-text: #1f5a86;
-  --type-hike: #dfeede;         /* soft green */
+  --type-hike: #dcf1e1;         /* soft green */
   --type-hike-text: #2f6b3d;
-  --type-castle: #e8e2f2;       /* soft purple */
+  --type-castle: #e6e4f8;       /* soft purple */
   --type-castle-text: #5a4a86;
   --type-lake: #d8ecec;         /* soft teal */
   --type-lake-text: #1f6b6b;
-  --type-viewpoint: #f6ecd6;    /* soft amber */
+  --type-viewpoint: #fdf1c6;    /* soft amber */
   --type-viewpoint-text: #8a6414;
   --type-town: #f6dfda;         /* soft coral */
   --type-town-text: #9c4634;
@@ -66,12 +66,12 @@
   --type-cablecar-text: #445468;
   --type-thermal: #d3ecee;      /* soft aqua */
   --type-thermal-text: #14707a;
-  --type-route: #ece4d2;        /* soft road-gravel tan */
+  --type-route: #efe8d8;        /* soft road-gravel tan */
   --type-route-text: #6f5a2e;
   --type-stay: #f6dde3;         /* soft rose (cozy stays) */
   --type-stay-text: #9c3550;
-  --type-other: #e9e7e1;        /* soft gray */
-  --type-other-text: #61605a;
+  --type-other: #ececeb;        /* soft gray */
+  --type-other-text: #5c5b58;
 
   /* Event types reuse place tints (aliases, so dark mode follows). Keep in
      sync with the TINT table in EventCard.astro. */
@@ -132,22 +132,22 @@
   --surface-2: #1a1a1a;
   --surface-raised: #333333;
 
-  --text-primary: #f2f0ec;
-  --text-secondary: #b3aea6;
-  --text-muted: #85807a;
+  --text-primary: #f5f5f4;
+  --text-secondary: #b4b4b1;
+  --text-muted: #858582;
 
-  --border: rgba(242, 240, 236, 0.10);
-  --border-strong: rgba(242, 240, 236, 0.20);
+  --border: rgba(255, 255, 255, 0.10);
+  --border-strong: rgba(255, 255, 255, 0.20);
 
-  --accent: #6d9cf0;
-  --accent-hover: #8ab0f4;
-  --accent-bg: #1a2a47;
-  --accent-text: #b8cff8;
-  --on-accent: #0d1626;
+  --accent: #f5f5f4;
+  --accent-hover: #ffffff;
+  --accent-bg: #2c2c2b;
+  --accent-text: #ffffff;
+  --on-accent: #0b0b0a;
 
-  --editorial: #e48b62;
-  --editorial-bg: #3a2013;
-  --editorial-text: #f0b394;
+  --editorial: #ff6a33;
+  --editorial-bg: #3b1d10;
+  --editorial-text: #ffb08f;
 
   --danger: #ff6b76;
   --visited: #5cc08f;
@@ -155,7 +155,7 @@
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
   --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.45), 0 1px 3px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 18px 44px rgba(0, 0, 0, 0.55), 0 2px 8px rgba(0, 0, 0, 0.3);
-  --not-interested: #9a9280;
+  --not-interested: #95948f;
 
   /* Muted deep versions of the same hues with a light same-hue text color */
   --type-beach: #1c3247;
@@ -188,8 +188,8 @@
   --type-route-text: #d3c49c;
   --type-stay: #3d2029;
   --type-stay-text: #eaa9bb;
-  --type-other: #302f2a;
-  --type-other-text: #c0beb6;
+  --type-other: #2d2d2c;
+  --type-other-text: #c2c2bf;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -199,22 +199,22 @@
   --surface-2: #1a1a1a;
   --surface-raised: #333333;
 
-  --text-primary: #f2f0ec;
-  --text-secondary: #b3aea6;
-  --text-muted: #85807a;
+  --text-primary: #f5f5f4;
+  --text-secondary: #b4b4b1;
+  --text-muted: #858582;
 
-  --border: rgba(242, 240, 236, 0.10);
-  --border-strong: rgba(242, 240, 236, 0.20);
+  --border: rgba(255, 255, 255, 0.10);
+  --border-strong: rgba(255, 255, 255, 0.20);
 
-  --accent: #6d9cf0;
-  --accent-hover: #8ab0f4;
-  --accent-bg: #1a2a47;
-  --accent-text: #b8cff8;
-  --on-accent: #0d1626;
+  --accent: #f5f5f4;
+  --accent-hover: #ffffff;
+  --accent-bg: #2c2c2b;
+  --accent-text: #ffffff;
+  --on-accent: #0b0b0a;
 
-  --editorial: #e48b62;
-  --editorial-bg: #3a2013;
-  --editorial-text: #f0b394;
+  --editorial: #ff6a33;
+  --editorial-bg: #3b1d10;
+  --editorial-text: #ffb08f;
 
   --danger: #ff6b76;
   --visited: #5cc08f;
@@ -222,7 +222,7 @@
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
   --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.45), 0 1px 3px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 18px 44px rgba(0, 0, 0, 0.55), 0 2px 8px rgba(0, 0, 0, 0.3);
-    --not-interested: #9a9280;
+    --not-interested: #95948f;
 
     --type-beach: #1c3247;
     --type-beach-text: #a9cbe8;
@@ -254,7 +254,7 @@
     --type-route-text: #d3c49c;
     --type-stay: #3d2029;
     --type-stay-text: #eaa9bb;
-    --type-other: #302f2a;
-    --type-other-text: #c0beb6;
+    --type-other: #2d2d2c;
+    --type-other-text: #c2c2bf;
   }
 }
