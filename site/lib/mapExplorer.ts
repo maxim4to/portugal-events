@@ -8,6 +8,14 @@ import PT_MAINLAND from '../assets/pt-mainland.json';
  *  Outside it there's nothing to show. On the phone the list sheet covers the
  *  lower half of the map, so the frame reaches much further south: the whole
  *  country (and the Algarve on its own) must still fit above the sheet. */
+/** The type dot that precedes a type label on cards, repeated in popups and
+ *  previews so the label looks the same everywhere. Event types have no tint
+ *  token, so they fall back to a muted dot. */
+function typeDot(p: { type?: string }): string {
+  const t = (p.type ?? '').replace(/[^a-z-]/g, '');
+  return `<span class="type-dot" style="background:var(--type-${t}-text, var(--text-muted))" aria-hidden="true"></span>`;
+}
+
 const PT_VIEW_BOUNDS = L.latLngBounds([34.6, -12.4], [43.6, -3.6]);
 const PT_VIEW_BOUNDS_PHONE = L.latLngBounds([22.0, -12.4], [43.6, -3.6]);
 /** Mainland Portugal's own bounding box (from pt-mainland.json). */
@@ -97,7 +105,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     const media = p.image
       ? `<span class="map-pop-media"><img src="${esc(p.image)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.closest('.map-pop-media').style.display='none'"></span>`
       : '';
-    const kicker = p.kicker ? `<span class="map-pop-kicker">${esc(p.kicker)}</span>` : '';
+    const kicker = p.kicker ? `<span class="map-pop-kicker">${typeDot(p)}${esc(p.kicker)}</span>` : '';
     const meta = p.meta ? `<span class="map-pop-meta">${esc(p.meta)}</span>` : '';
     return (
       `<a class="map-pop" href="${detailUrl(p.id)}">${media}` +
@@ -213,7 +221,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
         return (
           `<button type="button" class="rail-item" data-rail-id="${esc(p.id)}">` +
           `<span class="rail-thumb">${img}</span><span class="rail-text">` +
-          (p.kicker ? `<span class="rail-kicker">${esc(p.kicker)}</span>` : '') +
+          (p.kicker ? `<span class="rail-kicker">${typeDot(p)}${esc(p.kicker)}</span>` : '') +
           `<span class="rail-title">${esc(p.name)}</span>${meta}</span></button>`
         );
       })
@@ -374,7 +382,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     return (
       `<a class="pp-card" href="${detailUrl(p.id)}">${media}` +
       `<span class="pp-body">` +
-      (p.kicker ? `<span class="pp-kicker">${esc(p.kicker)}</span>` : '') +
+      (p.kicker ? `<span class="pp-kicker">${typeDot(p)}${esc(p.kicker)}</span>` : '') +
       `<span class="pp-title">${esc(p.name)}</span>` +
       (p.meta ? `<span class="pp-meta">${esc(p.meta)}</span>` : '') +
       `<span class="pp-dist" data-pp-dist></span>` +

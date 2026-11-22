@@ -118,6 +118,20 @@ img {
   line-height: 1.3;
 }
 
+/* Type dot before a type label in map popups / previews (built as HTML
+   strings in mapExplorer.ts; the cards style their own dot). */
+.map-pop-kicker .type-dot,
+.pp-kicker .type-dot,
+.rail-kicker .type-dot {
+  display: inline-block;
+  flex: none;
+  width: 8px;
+  height: 8px;
+  margin-right: 6px;
+  border-radius: 50%;
+  vertical-align: 0.05em;
+}
+
 /* --- Reusable primitives --- */
 
 /* Chip — filter pill (flat, hairline, letter-spaced) */
