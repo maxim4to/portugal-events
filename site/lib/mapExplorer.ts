@@ -395,6 +395,8 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     // Drop Leaflet's own attribution prefix (which carries a 🇺🇦 flag); keep the
     // OpenStreetMap tile credit added below.
     map.attributionControl.setPrefix(false);
+    // Standard OSM tiles, regraded in CSS (see MapShell) into a warm, slightly
+    // desaturated "game world" tone under the colored type blips.
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors',
       maxZoom: 19,
