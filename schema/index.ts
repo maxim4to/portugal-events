@@ -18,6 +18,7 @@ export const PLACE_TYPES = [
   'cablecar',
   'thermal',
   'route',
+  'stay',
   'other',
 ] as const;
 
