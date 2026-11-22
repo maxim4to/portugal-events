@@ -70,18 +70,18 @@ const { fallback, title } = Astro.props;
       width: 52px;
       height: 52px;
       padding: 0;
-      border: 0.5px solid var(--border-strong);
-      border-radius: 50%;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
       background: color-mix(in srgb, var(--surface-2) 92%, transparent);
       -webkit-backdrop-filter: blur(12px);
       backdrop-filter: blur(12px);
       color: var(--text-primary);
-      box-shadow: 0 6px 22px rgba(33, 29, 23, 0.28);
+      box-shadow: var(--shadow-md);
       cursor: pointer;
-      transition: transform 0.12s ease;
+      transition: transform var(--dur-fast) var(--ease-out);
     }
     .mbar-back:active {
-      transform: scale(0.92);
+      transform: scale(0.94);
     }
     .mbar-back svg {
       margin-left: -2px;
@@ -98,12 +98,12 @@ const { fallback, title } = Astro.props;
       align-items: center;
       height: 48px;
       padding: 0 4px;
-      border: 0.5px solid var(--border-strong);
+      border: 1px solid var(--border);
       border-radius: var(--radius-pill);
       background: color-mix(in srgb, var(--surface-2) 92%, transparent);
       -webkit-backdrop-filter: blur(12px);
       backdrop-filter: blur(12px);
-      box-shadow: 0 6px 22px rgba(33, 29, 23, 0.24);
+      box-shadow: var(--shadow-md);
     }
     .mbar-actions :global(.mbar-group > button) {
       width: 44px;
@@ -117,7 +117,7 @@ const { fallback, title } = Astro.props;
       display: none;
     }
     .mbar-actions :global(.mbar-group > button:not([hidden]) ~ button:not([hidden])) {
-      box-shadow: -0.5px 0 0 var(--border);
+      box-shadow: -1px 0 0 var(--border);
       border-radius: 0 var(--radius-pill) var(--radius-pill) 0;
     }
     .mbar-actions :global(.mbar-pill) {
@@ -128,37 +128,31 @@ const { fallback, title } = Astro.props;
       padding: 0 var(--space-5);
       border-radius: var(--radius-pill);
       background: var(--accent);
-      color: #fff;
+      color: var(--on-accent);
       font-size: 15px;
       font-weight: 600;
       white-space: nowrap;
       text-decoration: none;
-      box-shadow: 0 6px 22px rgba(28, 79, 150, 0.35);
-    }
-    /* The dark theme's accent is a light blue: dark ink reads on it. */
-    :global(:root[data-theme='dark']) .mbar-actions :global(.mbar-pill:not(.mbar-pill--quiet)) {
-      color: #0f1d33;
+      box-shadow: var(--shadow-md);
+      transition: transform var(--dur-fast) var(--ease-out);
     }
     /* Icon-only secondary action (e.g. directions next to a primary CTA). */
     .mbar-actions :global(.mbar-pill--quiet) {
       width: 48px;
       padding: 0;
       justify-content: center;
-      border: 0.5px solid var(--border-strong);
+      border: 1px solid var(--border);
       background: color-mix(in srgb, var(--surface-2) 92%, transparent);
       -webkit-backdrop-filter: blur(12px);
       backdrop-filter: blur(12px);
       color: var(--accent);
-      box-shadow: 0 6px 22px rgba(33, 29, 23, 0.24);
+      box-shadow: var(--shadow-md);
     }
     .mbar-actions :global(.mbar-pill:active) {
       transform: scale(0.96);
     }
-
-    @media (prefers-color-scheme: dark) {
-      :global(:root:not([data-theme='light'])) .mbar-actions :global(.mbar-pill:not(.mbar-pill--quiet)) {
-        color: #0f1d33;
-      }
+    .mbar-actions :global(.mbar-pill:hover) {
+      text-decoration: none;
     }
 
     .mtop {
@@ -175,9 +169,9 @@ const { fallback, title } = Astro.props;
       background: color-mix(in srgb, var(--surface-0) 88%, transparent);
       -webkit-backdrop-filter: saturate(1.2) blur(14px);
       backdrop-filter: saturate(1.2) blur(14px);
-      border-bottom: 0.5px solid var(--border);
+      border-bottom: 1px solid var(--border);
       transform: translateY(-100%);
-      transition: transform 0.22s ease;
+      transition: transform var(--dur) var(--ease-out);
       pointer-events: none;
     }
     .mtop.show {
@@ -192,12 +186,14 @@ const { fallback, title } = Astro.props;
       color: var(--text-primary);
     }
 
+    /* Edge-swipe hint: only the installed app has the gesture (see script),
+       so in a browser tab it stays out of the page entirely. */
     .edge-hint {
+      display: none;
       position: fixed;
       top: 50%;
       left: 0;
       z-index: 80;
-      display: flex;
       align-items: center;
       justify-content: center;
       width: 40px;
@@ -206,10 +202,15 @@ const { fallback, title } = Astro.props;
       border-radius: 50%;
       background: var(--surface-2);
       color: var(--text-primary);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+      box-shadow: var(--shadow-md);
       opacity: 0;
       transform: translateX(-44px);
       pointer-events: none;
+    }
+  }
+  @media (max-width: 760px) and (display-mode: standalone) {
+    .edge-hint {
+      display: flex;
     }
   }
 </style>

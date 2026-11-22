@@ -41,73 +41,119 @@ if (road && road.length > 1) {
     `&destination=${pt(road[road.length - 1])}` +
     `&waypoints=${encodeURIComponent(vias.join('|'))}`;
 }
+
+// "65" -> "1 ч 5 мин": easier to read at a glance than raw minutes.
+const fmtMinutes = (min: number) => {
+  const h = Math.floor(min / 60);
+  const m = Math.round(min % 60);
+  if (h === 0) return `${m} мин`;
+  return m === 0 ? `${h} ч` : `${h} ч ${m} мин`;
+};
+const season = place.bestSeason.charAt(0).toUpperCase() + place.bestSeason.slice(1);
 ---
 <Base title={place.name} description={place.description.slice(0, 150)} tabbar={false}>
   <article class="detail">
-    <a class="back-top" href={href('/places/')}>
-      <Icon name="arrow-left" size={14} /> Ко всем местам
-    </a>
+    <div class="d-head">
+      <a class="back" href={href('/places/')}>
+        <Icon name="arrow-left" size={16} /> Все места
+      </a>
 
-    <header class="head">
-      <span class="head-kicker">
-        <TypeBadge type={place.type} />
-        <a class="region" href={href('/places/?region=' + encodeURIComponent(place.region))}>{place.region}</a>
-      </span>
-      <h1>{place.name}</h1>
-      <div class="meta-row byline">
-        <span><Icon name="clock" size={13} /> {place.driveMinutesFromLisbon} мин на машине</span>
-        <span><Icon name="hourglass" size={13} /> ~{place.visitDurationHours} ч на месте</span>
-        <span><Icon name="calendar" size={13} /> {place.bestSeason}</span>
+      <header class="head">
+        <div class="kicker-row">
+          <TypeBadge type={place.type} />
+          <a class="region" href={href('/places/?region=' + encodeURIComponent(place.region))}>{place.region}</a>
+        </div>
+        <h1>{place.name}</h1>
+      </header>
+    </div>
+
+    <div class="d-main">
+      <figure class="hero">
+        <PhotoGallery photos={place.photos} alt={place.name} variant="detail" type={place.type} />
+        {cover && (
+          <figcaption class="credit" data-gallery-attrib>
+            Фото: <a href={cover.sourceUrl} target="_blank" rel="noopener">{cover.author}, {cover.license}</a>
+          </figcaption>
+        )}
+      </figure>
+
+      <div class="body">
+        <div class="prose">
+          {paragraphs.map((p) => <p>{p}</p>)}
+        </div>
+
+        {place.tags.length > 0 && (
+          <div class="tags" aria-label="Теги">
+            {place.tags.map((tag) => (
+              <a class="chip tag" href={href('/places/?tag=' + encodeURIComponent(tag))}>{tag}</a>
+            ))}
+          </div>
+        )}
+
+        {place.links.length > 0 && (
+          <section class="links">
+            <h2 class="section-title">Ссылки</h2>
+            <ul>
+              {place.links.map((link) => (
+                <li>
+                  <a href={link.url} target="_blank" rel="noopener">
+                    {link.title}
+                    <svg class="ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {place.reels.length > 0 && <ReelEmbed reels={place.reels} name={place.name} />}
       </div>
-    </header>
-
-    <div class="hero">
-      <PhotoGallery photos={place.photos} alt={place.name} variant="detail" type={place.type} />
     </div>
 
-    {place.freeWithResidency === true && (
-      <span class="residency-pill">Бесплатно с ВНЖ</span>
-    )}
+    <aside class="d-aside" aria-label="Коротко о месте">
+      <div class="panel">
+        <dl class="facts">
+          <div class="fact">
+            <svg class="fact-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 16V11.5l1.6-4.3A2 2 0 0 1 8.5 6h7a2 2 0 0 1 1.9 1.2l1.6 4.3V16" /><path d="M4 16h16v2.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5V18H7v.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5Z" /><path d="M5 11.5h14" /><circle cx="8" cy="14" r=".6" fill="currentColor" /><circle cx="16" cy="14" r=".6" fill="currentColor" /></svg>
+            <dt>Дорога из Лиссабона</dt>
+            <dd>{fmtMinutes(place.driveMinutesFromLisbon)}</dd>
+          </div>
+          <div class="fact">
+            <Icon name="hourglass" size={20} class="fact-ico" />
+            <dt>Время на месте</dt>
+            <dd>≈ {place.visitDurationHours} ч</dd>
+          </div>
+          <div class="fact">
+            <Icon name="calendar" size={20} class="fact-ico" />
+            <dt>Лучший сезон</dt>
+            <dd>{season}</dd>
+          </div>
+          {place.freeWithResidency === true && (
+            <div class="fact">
+              <svg class="fact-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8a2 2 0 0 0 2-2h12a2 2 0 0 0 2 2v8a2 2 0 0 0-2 2H6a2 2 0 0 0-2-2Z" /><path d="M10 6v12" stroke-dasharray="2 2" /></svg>
+              <dt>Вход</dt>
+              <dd>Бесплатно с ВНЖ</dd>
+            </div>
+          )}
+        </dl>
 
-    <div class="description">
-      {paragraphs.map((p) => <p>{p}</p>)}
-    </div>
-
-    {place.tags.length > 0 && (
-      <div class="tags">
-        {place.tags.map((tag) => (
-          <a class="badge tag" href={href('/places/?tag=' + encodeURIComponent(tag))}>{tag}</a>
-        ))}
+        <div class="actions">
+          <a class="btn btn-primary act-main" href={driveRoad ?? directions} target="_blank" rel="noopener" data-dup-mbar={driveRoad ? undefined : ''}>
+            {driveRoad ? 'Проехать дорогу в Google Maps' : 'Маршрут в Google Maps'}
+          </a>
+          <a class="btn act-secondary" href={gmapsPlace} target="_blank" rel="noopener">Открыть место в Google Maps</a>
+          <div class="toggles">
+            <FavoriteButton placeId={place.id} variant="detail" />
+            <VisitedButton placeId={place.id} variant="detail" />
+            <NotInterestedButton placeId={place.id} variant="detail" />
+          </div>
+        </div>
       </div>
-    )}
 
-    {place.links.length > 0 && (
-      <ul class="links">
-        {place.links.map((link) => (
-          <li><a href={link.url} target="_blank" rel="noopener">{link.title}</a></li>
-        ))}
-      </ul>
-    )}
-
-    {place.reels.length > 0 && <ReelEmbed reels={place.reels} name={place.name} />}
-
-    <div class="actions">
-      {driveRoad && (
-        <a class="btn btn-primary" href={driveRoad} target="_blank" rel="noopener">Проехать дорогу в Google Maps</a>
-      )}
-      <a class="btn btn-primary" href={gmapsPlace} target="_blank" rel="noopener">Открыть в Google Maps</a>
-      <FavoriteButton placeId={place.id} variant="detail" />
-      <VisitedButton placeId={place.id} variant="detail" />
-      <NotInterestedButton placeId={place.id} variant="detail" />
-    </div>
-
-    <MiniMap lat={place.coords.lat} lon={place.coords.lon} name={place.name} path={place.routePath} />
-
-    {cover && (
-      <p class="muted attribution" data-gallery-attrib>
-        Фото: <a href={cover.sourceUrl} target="_blank" rel="noopener">{cover.author}, {cover.license}</a>
-      </p>
-    )}
+      <div class="map-wrap">
+        <MiniMap lat={place.coords.lat} lon={place.coords.lon} name={place.name} path={place.routePath} />
+      </div>
+    </aside>
   </article>
 
   <MobileDetailBar fallback={href('/places/')} title={place.name}>
@@ -129,107 +175,157 @@ if (road && road.length > 1) {
 </Base>
 
 <style>
+  /* Detail pages get a wider page container than Base's 1100px default so the
+     two-column layout (content + aside) has room. */
+  :global(main.main:has(> .detail)) {
+    max-width: calc(1200px + 2 * var(--gutter));
+  }
+
+  /* ---- Single column (default, < 1100px) ----
+     .d-main / .d-aside dissolve so their parts can be ordered: the facts panel
+     follows the photo, the minimap closes the page. */
   .detail {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
-    max-width: 720px;
+    gap: var(--space-5);
+    max-width: 760px;
     margin: 0 auto;
+  }
+  .d-head,
+  .d-main,
+  .d-aside {
+    display: contents;
+  }
+  .back { order: 0; }
+  .head { order: 1; }
+  .hero { order: 2; }
+  .panel { order: 3; }
+  .body { order: 4; }
+  .map-wrap { order: 5; }
+
+  /* ---- Two columns (≥ 1100px): title across the top, then content +
+     sticky aside whose top lines up with the photo. ---- */
+  @media (min-width: 1100px) {
+    .detail {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 368px;
+      grid-template-areas:
+        'head head'
+        'main aside';
+      gap: var(--space-5) var(--space-7);
+      align-items: start;
+      max-width: none;
+    }
+    .d-head {
+      grid-area: head;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+    }
+    .d-head h1 {
+      max-width: 880px;
+    }
+    .d-main {
+      grid-area: main;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+      min-width: 0;
+    }
+    .d-aside {
+      grid-area: aside;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+  }
+  /* Sticky only when the whole aside fits the viewport. */
+  @media (min-width: 1100px) and (min-height: 760px) {
+    .d-aside {
+      position: sticky;
+      top: calc(var(--header-h) + var(--space-5));
+    }
+  }
+
+  /* ---- Head ---- */
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    align-self: flex-start;
+    margin-bottom: calc(-1 * var(--space-2));
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color var(--dur-fast) ease;
+  }
+  .back:hover {
+    color: var(--text-primary);
+    text-decoration: none;
   }
   .head {
     display: flex;
     flex-direction: column;
     gap: var(--space-3);
   }
-  .head-kicker {
-    display: inline-flex;
+  .kicker-row {
+    display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: var(--space-3);
   }
-  .hero {
-    position: relative;
-  }
-  .detail h1 {
-    margin: 0;
-    font-size: clamp(32px, 5vw, 48px);
-  }
-  .byline {
-    padding-top: var(--space-2);
-    border-top: 1px solid var(--border-strong);
-    font-size: 13px;
-  }
-  .byline span {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-1);
-    /* Never break a single fact mid-phrase (e.g. "65 мин на машине"). */
-    white-space: nowrap;
-  }
-  /* Try to keep the facts on one line; when the screen is too narrow to fit
-     them, wrap neatly to the next line. Drop the "·" separators so a wrapped
-     line never starts with a dangling dot (spacing alone separates them). */
-  @media (max-width: 760px) {
-    .byline {
-      column-gap: var(--space-4);
-      row-gap: var(--space-1);
-    }
-    .byline > * + *::before {
-      content: none;
-    }
-  }
-  .back-top {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-1);
-    align-self: flex-start;
-    color: var(--text-secondary);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-  .back-top:hover {
-    color: var(--editorial);
-    text-decoration: none;
-  }
   .region {
     color: var(--text-secondary);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    text-decoration-color: var(--border-strong);
-    font-size: 13px;
+    font-size: 13.5px;
+    font-weight: 500;
   }
   .region:hover {
-    color: var(--editorial);
+    color: var(--accent);
+    text-decoration: none;
   }
-  .residency-pill {
-    align-self: flex-start;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 4px var(--space-3);
-    border-radius: var(--radius);
-    background: var(--type-hike);
-    color: var(--type-hike-text);
+  .head h1 {
+    margin: 0;
+    overflow-wrap: anywhere;
   }
-  .description {
-    font-family: var(--font-display);
-    font-size: 18px;
-    line-height: 1.7;
+
+  /* ---- Photo ---- */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin: 0;
+    min-width: 0;
+  }
+  .credit {
+    margin: 0;
+    font-size: 12.5px;
+    line-height: 1.4;
+    color: var(--text-muted);
+  }
+  .credit a {
+    color: inherit;
+  }
+  .credit a:hover {
+    color: var(--text-secondary);
+  }
+
+  /* ---- Body ---- */
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    min-width: 0;
+  }
+  .prose {
+    max-width: 720px;
+    font-size: 17px;
+    line-height: 1.65;
     color: var(--text-primary);
   }
-  /* Editorial drop cap on the opening paragraph. */
-  .description p:first-of-type::first-letter {
-    font-weight: 600;
-    font-size: 3.4em;
-    line-height: 0.8;
-    float: left;
-    margin: 0.04em 0.08em 0 0;
-    color: var(--editorial);
+  .prose p {
+    margin: 0 0 var(--space-4);
   }
-  .description p:last-child {
+  .prose p:last-child {
     margin-bottom: 0;
   }
   .tags {
@@ -237,93 +333,183 @@ if (road && road.length > 1) {
     flex-wrap: wrap;
     gap: var(--space-2);
   }
-  .tag {
-    background: var(--surface-2);
-    border: 0.5px solid var(--border);
-    color: var(--text-secondary);
-    text-decoration: none;
-  }
   .tag:hover {
-    border-color: var(--border-strong);
     text-decoration: none;
   }
-  .links {
+  .section-title {
+    margin: 0 0 var(--space-3);
+    font-size: 17px;
+    font-weight: 600;
+  }
+  .links ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
     margin: 0;
-    padding-left: var(--space-4);
-    font-size: 14px;
+    padding: 0;
+    list-style: none;
   }
   .links a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
     color: var(--accent);
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .links .ext {
+    flex: none;
+  }
+
+  /* ---- Aside panel: facts + actions ---- */
+  .panel {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    padding: var(--space-5);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    min-width: 0;
+  }
+  .facts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin: 0;
+  }
+  .fact {
+    display: grid;
+    grid-template-columns: 20px minmax(0, 1fr);
+    column-gap: var(--space-3);
+    row-gap: 2px;
+    align-items: start;
+  }
+  .fact :global(.fact-ico) {
+    grid-row: 1 / span 2;
+    margin-top: 2px;
+    color: var(--text-secondary);
+  }
+  .fact dt {
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--text-secondary);
+  }
+  .fact dd {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 550;
+    line-height: 1.4;
+    color: var(--text-primary);
+    font-variant-numeric: tabular-nums;
   }
   .actions {
     display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-3);
-    margin: var(--space-2) 0;
+    flex-direction: column;
+    gap: var(--space-2);
   }
-  .attribution {
-    font-size: 12px;
-    margin: 0;
+  .actions .btn {
+    width: 100%;
+    min-height: 44px;
+    white-space: normal;
+    text-align: center;
   }
-  .attribution a {
-    color: inherit;
-    text-decoration: underline;
+  .toggles {
+    display: flex;
+    gap: var(--space-2);
+    margin-top: var(--space-1);
   }
 
-  /* Phone: photo edge-to-edge at the very top, back/actions live in the
-     floating bottom bar (MobileDetailBar), so drop their in-page duplicates. */
+  /* ---- Minimap ---- */
+  .map-wrap {
+    min-width: 0;
+  }
+  .map-wrap :global(.minimap) {
+    aspect-ratio: 16 / 10;
+  }
+  @media (min-width: 761px) and (max-width: 1099px) {
+    .map-wrap :global(.minimap) {
+      aspect-ratio: 16 / 9;
+    }
+  }
+
+  /* ---- Tablet (761–1099): facts read across, actions in a row ---- */
+  @media (min-width: 761px) and (max-width: 1099px) {
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: var(--space-4) var(--space-5);
+    }
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .toggles {
+      grid-column: 1 / -1;
+    }
+  }
+
+  /* ---- Phone (≤ 760px) ----
+     Photo edge-to-edge at the very top; back + favorite/visited + directions
+     live in the floating MobileDetailBar, so their in-page twins go. */
   @media (max-width: 760px) {
     .detail {
+      gap: var(--space-5);
       padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px));
     }
-    .back-top {
+    .back {
       display: none;
     }
     .hero {
       order: -1;
-      margin: calc(-1 * (env(safe-area-inset-top, 0px) + var(--space-4))) calc(-1 * var(--space-4)) 0;
+      margin: calc(-1 * (env(safe-area-inset-top, 0px) + var(--space-4))) calc(-1 * var(--gutter)) 0;
     }
     .hero :global(.gallery-detail) {
       aspect-ratio: 4 / 3;
-      border: 0;
       border-radius: 0;
     }
-    .actions :global(.favorite-btn),
-    .actions :global(.visited-btn) {
+    .hero :global(.gallery-detail[data-count='0']) {
+      aspect-ratio: 2 / 1;
+    }
+    .credit {
+      padding: 0 var(--gutter);
+    }
+    .head {
+      gap: var(--space-2);
+    }
+    .head h1 {
+      font-size: clamp(28px, 7.6vw, 34px);
+    }
+    .prose {
+      font-size: 16.5px;
+    }
+    .panel {
+      padding: var(--space-4);
+      gap: var(--space-4);
+    }
+    .facts {
+      gap: var(--space-3);
+    }
+    .act-main[data-dup-mbar],
+    .toggles :global(.favorite-btn),
+    .toggles :global(.visited-btn) {
       display: none;
     }
-    /* Remaining actions as an iOS-style grouped list. */
-    .actions {
-      flex-direction: column;
-      gap: 0;
-      margin: 0;
-      border: 0.5px solid var(--border);
-      border-radius: 14px;
-      background: var(--surface-2);
-      overflow: hidden;
+    .actions .btn {
+      min-height: 48px;
+      font-size: 15px;
     }
-    .actions > :global(*) {
-      justify-content: flex-start;
-      width: 100%;
-      min-height: 52px;
-      padding: 0 var(--space-4);
-      border: 0;
-      border-radius: 0;
-      background: transparent;
-      color: var(--text-primary);
-      font-size: 16px;
-      font-weight: 500;
-      letter-spacing: 0;
+    .toggles {
+      margin-top: 0;
     }
-    .actions > :global(* + *) {
-      box-shadow: inset 0 0.5px 0 var(--border);
+    /* Only "not interested" is left: a full-width row like the other buttons. */
+    .toggles :global(.ni-btn--detail) {
+      flex-direction: row;
+      min-height: 48px;
+      font-size: 15px;
     }
-    .actions > :global(.btn-primary) {
-      color: var(--accent);
-    }
-    .actions > :global(*:active) {
-      background: var(--surface-1);
-      transform: none;
+    .tag {
+      min-height: 36px;
     }
   }
 </style>

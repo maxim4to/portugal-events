@@ -69,6 +69,54 @@ const { placeId, variant = 'detail' } = Astro.props;
     display: block;
   }
 
+  /* Detail page: equal-width secondary tiles (icon over a sentence-case
+     label) that share one row in the aside, however many are visible. */
+  .visited-btn--detail {
+    flex: 1 1 0;
+    min-width: 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-1);
+    min-height: 64px;
+    padding: var(--space-2) var(--space-1);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    background: var(--surface-2);
+    color: var(--text-primary);
+    font-size: 12.5px;
+    font-weight: 550;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    transition: border-color var(--dur-fast) ease, background-color var(--dur-fast) ease, color var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out);
+  }
+  .visited-btn--detail[hidden] {
+    display: none;
+  }
+  @media (hover: hover) {
+    .visited-btn--detail:hover {
+      border-color: var(--text-primary);
+    }
+  }
+  .visited-btn--detail:active {
+    transform: scale(0.97);
+  }
+  .visited-btn--detail:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    box-shadow: none;
+  }
+  .visited-btn--detail[aria-pressed='true'] {
+    color: var(--visited);
+    border-color: currentColor;
+    background: color-mix(in srgb, currentColor 8%, var(--surface-2));
+  }
+  .visited-btn--detail .visited-label {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   /* Compact circular overlay for catalog cards. Mirrors FavoriteButton's card
      variant exactly — same shell, only the icon and pressed tint differ. */
   .visited-btn--card {

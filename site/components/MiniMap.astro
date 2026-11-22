@@ -18,7 +18,7 @@ const { lat, lon, name, path } = Astro.props;
 ></div>
 
 <style>
-  /* Full-column-width square: the point is shown in context relative to Lisbon. */
+  /* The point in context relative to Lisbon. Pages may override the ratio. */
   .minimap {
     /* Own stacking context: Leaflet's panes/controls carry z-indexes up to
        1000 and would otherwise paint over the page's floating bars. */
@@ -26,21 +26,55 @@ const { lat, lon, name, path } = Astro.props;
     z-index: 0;
     isolation: isolate;
     width: 100%;
-    aspect-ratio: 1 / 1;
-    border: 1px solid var(--border-strong);
+    aspect-ratio: 16 / 10;
     border-radius: var(--radius-lg);
+    background: var(--surface-1);
     overflow: hidden;
   }
   /* Scoped container bg so tiles load onto a token-aware surface (dark mode).
      Global Leaflet popup/control overrides already live in the catalog. */
-  .minimap :global(.leaflet-container) {
+  .minimap:global(.leaflet-container) {
     background: var(--surface-1);
     font: inherit;
+  }
+  /* Zoom buttons: one rounded card, per DESIGN.md. leaflet.css is imported
+     from JS and loads after this, so overrides carry .leaflet-container to win. */
+  .minimap:global(.leaflet-container) :global(.leaflet-bar) {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+  }
+  .minimap:global(.leaflet-container) :global(.leaflet-bar a) {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    background: var(--surface-2);
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border);
+  }
+  .minimap:global(.leaflet-container) :global(.leaflet-bar a:last-child) {
+    border-bottom: 0;
+  }
+  .minimap:global(.leaflet-container) :global(.leaflet-bar a:hover) {
+    background: var(--surface-1);
+  }
+  .minimap:global(.leaflet-container) :global(.leaflet-control-attribution) {
+    font-size: 10px;
+  }
+  /* No hairline seams between tiles: leaflet.css blends tiles with
+     plus-lighter, which whitens their edges at fractional zoom. */
+  .minimap:global(.leaflet-container) :global(img.leaflet-tile) {
+    mix-blend-mode: normal;
+  }
+  .minimap :global(.leaflet-tile-container img.leaflet-tile) {
+    width: 257px !important;
+    height: 257px !important;
   }
   /* Touch screens: reserve one-finger vertical drags for page scroll; the JS
      disables one-finger map dragging so only two-finger gestures pan/zoom. */
   @media (pointer: coarse) {
-    .minimap :global(.leaflet-container) {
+    .minimap:global(.leaflet-container) {
       touch-action: pan-y;
     }
   }
@@ -67,14 +101,15 @@ const { lat, lon, name, path } = Astro.props;
   .minimap :global(.place-tip) {
     background: var(--surface-2);
     color: var(--text-primary);
-    border: 0.5px solid var(--border-strong);
-    border-radius: var(--radius);
-    box-shadow: 0 2px 8px rgba(33, 29, 23, 0.18);
-    padding: 2px 6px;
-    font-size: 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-md);
+    padding: 2px var(--space-2);
+    font-family: var(--font-sans);
+    font-size: 12px;
     font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    line-height: 1.35;
+    letter-spacing: 0;
   }
   .minimap :global(.lisbon-tip::before),
   .minimap :global(.place-tip::before) {
@@ -85,7 +120,7 @@ const { lat, lon, name, path } = Astro.props;
     /* Tooltips sit in a zero-size pane, so without an explicit width they
        shrink to one word per line. */
     width: max-content;
-    max-width: 200px;
+    max-width: 168px;
     white-space: normal;
     text-align: center;
   }
@@ -133,6 +168,10 @@ const { lat, lon, name, path } = Astro.props;
 
   // Central Lisbon — the trips all start here (see project design doc).
   const LISBON = { lat: 38.7223, lon: -9.1393 };
+  // Portugal-only site: keep the map on mainland Portugal plus a margin (same
+  // frame as the explorer map, see PT_VIEW_BOUNDS in mapExplorer.ts).
+  const PT_VIEW_BOUNDS = L.latLngBounds([34.6, -12.4], [43.6, -3.6]);
+  const PT_BOX = L.latLngBounds([36.7, -9.85], [42.16, -6.18]);
 
   const el = document.querySelector<HTMLElement>('.minimap');
   if (el && !el.dataset.ready) {
@@ -169,7 +208,18 @@ const { lat, lon, name, path } = Astro.props;
       zoomControl: !coarse,
       // Fractional zoom so the padded framing doesn't drop a whole level.
       zoomSnap: 0.25,
+      maxBounds: PT_VIEW_BOUNDS,
+      maxBoundsViscosity: 1,
     }).setView([lat, lon], 12);
+    // Min zoom: where mainland Portugal fits the box, a quarter-step out.
+    const syncMinZoom = () => {
+      const fit = map.getBoundsZoom(PT_BOX, false, L.point(32, 32));
+      const z = Math.floor(fit * 4) / 4 - 0.25;
+      map.setMinZoom(z);
+      if (map.getZoom() < z) map.setZoom(z, { animate: false });
+    };
+    syncMinZoom();
+    map.on('resize', syncMinZoom);
     // Drop Leaflet's own attribution prefix (which carries a 🇺🇦 flag); keep the
     // OpenStreetMap tile credit added below.
     map.attributionControl.setPrefix(false);
@@ -242,9 +292,15 @@ const { lat, lon, name, path } = Astro.props;
     // Leave room for the labels: they sit above both points (the destination
     // one can be ~200px wide and up to three lines tall), so pad the top and
     // sides more than the bottom.
+    // Scale the padding with the box (aside ≈ 360×225, wide ≈ 760×430) so a
+    // small map doesn't zoom out to fit room reserved for a big one.
+    const side = Math.round(Math.min(90, el.clientWidth * 0.2));
+    // The destination label sits above its pin and can run to three lines.
+    const top = Math.round(Math.min(100, el.clientHeight * 0.42));
+    const bottom = Math.round(Math.min(28, el.clientHeight * 0.1));
     const FIT = {
-      paddingTopLeft: [105, 100] as L.PointTuple,
-      paddingBottomRight: [105, 30] as L.PointTuple,
+      paddingTopLeft: [side, top] as L.PointTuple,
+      paddingBottomRight: [side, bottom] as L.PointTuple,
     };
     map.fitBounds(bothBounds, FIT);
 
@@ -271,7 +327,7 @@ const { lat, lon, name, path } = Astro.props;
         const line = L.geoJSON(geo, {
           style: { weight: 4, opacity: 1, className: 'route-line' },
         }).addTo(map);
-        map.fitBounds(line.getBounds().extend(bothBounds), FIT);
+        map.fitBounds(line.getBounds().extend(bothBounds), { ...FIT, animate: false });
       })
       .catch(() => {
         // Fallback: a faint straight connector so the direction is still legible.
@@ -282,7 +338,7 @@ const { lat, lon, name, path } = Astro.props;
           ],
           { weight: 3, dashArray: '6 7', className: 'route-line route-line--dashed' },
         ).addTo(map);
-        map.fitBounds(bothBounds, FIT);
+        map.fitBounds(bothBounds, { ...FIT, animate: false });
       });
   }
 </script>

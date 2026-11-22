@@ -1,58 +1,138 @@
 ---
-import type { City, Event } from '../../schema/index.ts';
+import type { Event } from '../../schema/index.ts';
 import { EVENT_TYPE_LABELS } from '../lib/labels.ts';
 import { formatDateRu } from '../lib/dates.ts';
 import { imageThumb } from '../lib/imgProxy.ts';
-import { buildCityIndex, driveTimeFromLisbon } from '../lib/eventGeo.ts';
+import { driveTimeFromLisbon, type buildCityIndex } from '../lib/eventGeo.ts';
+import Icon from './Icon.astro';
 
 interface Props {
   event: Event;
-  cities: City[];
+  href: string;
+  cityIndex: ReturnType<typeof buildCityIndex>;
 }
-const { event, cities } = Astro.props;
-const driveTime = driveTimeFromLisbon(event, buildCityIndex(cities));
+const { event, href, cityIndex } = Astro.props;
 
+const typeLabel = EVENT_TYPE_LABELS[event.type] ?? 'Событие';
 const dateLabel =
   event.dateStart === event.dateEnd
     ? formatDateRu(event.dateStart)
     : `${formatDateRu(event.dateStart)} – ${formatDateRu(event.dateEnd)}`;
+// "~1 ч 20 мин от Лиссабона" → "~1 ч 20 мин": the clock icon carries the
+// meaning, matching the places cards' meta row.
+const driveTime = driveTimeFromLisbon(event, cityIndex)?.replace(/\s+от Лиссабона$/, '');
+
+// Event types have no tint tokens of their own; borrow the place-type tints
+// so placeholders and type dots stay inside the token palette.
+const TINT: Record<string, string> = {
+  concert: 'museum',
+  festival: 'park',
+  exhibition: 'castle',
+  market: 'viewpoint',
+  sport: 'hike',
+  other: 'other',
+};
+const tint = TINT[event.type] ?? 'other';
+
+// Line glyphs (24×24, stroke = currentColor) for the missing-image placeholder.
+const GLYPHS: Record<string, string> = {
+  concert: '<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',
+  festival:
+    '<path d="M12 3.5l2.47 5.01 5.53.8-4 3.9.94 5.5L12 16.1l-4.94 2.6.94-5.5-4-3.9 5.53-.8z"/>',
+  exhibition:
+    '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/>',
+  market: '<path d="M4 9l1.5-5h13L20 9"/><path d="M4 9v11h16V9"/><path d="M3 9h18"/><path d="M10 20v-5h4v5"/>',
+  sport:
+    '<path d="M8 21h8M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/>',
+  other:
+    '<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>',
+};
+const glyph = GLYPHS[event.type] ?? GLYPHS.other;
 ---
-<div class="card event-card">
+<a
+  class="card event-card"
+  href={href}
+  data-item-card
+  data-id={event.id}
+  data-name={`${event.title} ${event.city} ${event.venue}`}
+  data-type={event.type}
+  data-city={event.city}
+  data-card-link
+  style={`--tint: var(--type-${tint}); --tint-text: var(--type-${tint}-text);`}
+>
   <div class="cover">
+    {/* Placeholder sits under the photo: shown when there is no image, and
+        revealed again if the image (and its fallback) fails to load. */}
+    <div class="cover-ph" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor"
+        stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" set:html={glyph} />
+      <span>{typeLabel}</span>
+    </div>
     {event.image && (
       <img
-        src={imageThumb(event.image, 480, 300)}
+        src={imageThumb(event.image, 480, 360)}
         data-fallback={event.image}
         alt={event.title}
         loading="lazy"
         decoding="async"
         referrerpolicy="no-referrer"
-        onerror="this.onerror=null;this.src=this.dataset.fallback"
+        onerror="this.onerror=function(){this.remove()};this.src=this.dataset.fallback"
       />
     )}
-    <span class="badge event-badge">{EVENT_TYPE_LABELS[event.type] ?? 'Событие'}</span>
+    <span class="date-pill">{dateLabel}</span>
   </div>
   <div class="body">
-    <span class="date muted">{dateLabel}</span>
+    <span class="kicker type-kicker">
+      <span class="type-dot" aria-hidden="true"></span>
+      {typeLabel}
+    </span>
     <h3>{event.title}</h3>
-    <p class="place muted">{event.city}, {event.venue}</p>
-    {driveTime && <p class="drive-time muted">{driveTime}</p>}
-    {event.price && <p class="price">{event.price}</p>}
-    <a class="btn" href={event.url} target="_blank" rel="noopener">Подробнее</a>
+    <p class="venue">{event.city} · {event.venue}</p>
+    <div class="meta-row">
+      <span class="dist" data-dist hidden></span>
+      {driveTime && (
+        <span title="Дорога от Лиссабона"><Icon name="clock" size={12} /> {driveTime}</span>
+      )}
+      {event.price && (
+        <span class="price">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z" />
+            <path d="M14 5v2M14 11v2M14 17v2" />
+          </svg>
+          {event.price}
+        </span>
+      )}
+    </div>
   </div>
-</div>
+</a>
 
 <style>
+  /* Photo-first card (DESIGN.md), same anatomy as PlaceCard: no frame,
+     rounded cover, text below. */
   .event-card {
     display: flex;
     flex-direction: column;
+    gap: var(--space-3);
+    height: 100%;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    overflow: visible;
+    text-decoration: none;
+    color: inherit;
+  }
+  .event-card:hover {
+    text-decoration: none;
   }
   .cover {
     position: relative;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius-lg);
     overflow: hidden;
-    /* Fallback tint always present; a loaded img covers it, a broken img reveals it. */
-    background: var(--accent-bg);
+    background: var(--tint, var(--surface-1));
+    isolation: isolate;
+    transition: box-shadow var(--dur) var(--ease-out);
   }
   .cover img {
     position: absolute;
@@ -60,41 +140,134 @@ const dateLabel =
     width: 100%;
     height: 100%;
     object-fit: cover;
+    z-index: 1;
   }
-  .event-badge {
+  .cover-ph {
     position: absolute;
-    top: var(--space-2);
-    left: var(--space-2);
-    z-index: 4;
-    background: var(--accent-bg);
-    color: var(--accent-text);
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    color: var(--tint-text, var(--text-secondary));
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .cover-ph svg {
+    opacity: 0.85;
+  }
+  .date-pill {
+    position: absolute;
+    top: var(--space-3);
+    left: var(--space-3);
+    z-index: 2;
+    max-width: calc(100% - 2 * var(--space-3));
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    background: var(--surface-2);
+    color: var(--text-primary);
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 1.3;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-shadow: var(--shadow-sm);
+  }
+  @media (hover: hover) {
+    .event-card:hover .cover {
+      box-shadow: var(--shadow-md);
+    }
+    .event-card:hover h3 {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
   }
   .body {
     display: flex;
     flex-direction: column;
-    gap: var(--space-2);
-    padding: var(--space-4);
+    gap: 6px;
     flex: 1;
+    min-width: 0;
+    padding: 0 2px;
   }
-  .date {
-    font-size: 13px;
+  .type-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .type-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex: none;
+    background: var(--tint-text, var(--text-muted));
   }
   .body h3 {
     margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.005em;
   }
-  .place,
-  .drive-time {
+  .venue {
     margin: 0;
     font-size: 14px;
+    line-height: 1.45;
     color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-  .price {
-    margin: 0;
-    font-size: 14px;
-    color: var(--text-secondary);
+  .meta-row {
+    margin-top: auto;
+    padding-top: 2px;
+    column-gap: var(--space-3);
   }
-  .event-card .btn {
-    margin-top: var(--space-2);
-    align-self: flex-start;
+  .meta-row:not(:has(> :not([hidden]))) {
+    display: none;
+  }
+  .meta-row > * + *::before {
+    content: none;
+  }
+  .meta-row > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  /* The last fact truncates with an ellipsis instead of clipping mid-glyph
+     (block, so text-overflow applies). */
+  .meta-row > span:last-child:not(.dist) {
+    display: block;
+  }
+  .meta-row > span:last-child:not(.dist) :global(svg) {
+    display: inline-block;
+    vertical-align: -1px;
+    margin-right: 5px;
+  }
+  .meta-row :global(svg) {
+    flex: none;
+    color: var(--text-muted);
+  }
+  /* Straight-line distance from the visitor, filled in once located. */
+  .dist {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .dist::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    margin-right: 2px;
+    border-radius: 50%;
+    background: #0a84ff;
+    box-shadow: 0 0 0 2px color-mix(in srgb, #0a84ff 25%, transparent);
+  }
+  .dist[hidden] {
+    display: none !important;
   }
 </style>

@@ -8,6 +8,7 @@ import { buildCityIndex, eventLatLon, driveTimeFromLisbon } from '../../lib/even
 import { EVENT_TYPE_LABELS } from '../../lib/labels.ts';
 import { formatDateRu } from '../../lib/dates.ts';
 import { imageThumb } from '../../lib/imgProxy.ts';
+import { GLYPHS } from '../../lib/typeIcons.ts';
 import type { Event } from '../../../schema/index.ts';
 
 export function getStaticPaths() {
@@ -16,62 +17,110 @@ export function getStaticPaths() {
 const { event } = Astro.props as { event: Event };
 const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
 
-const dateLabel =
-  event.dateStart === event.dateEnd
-    ? formatDateRu(event.dateStart)
-    : `${formatDateRu(event.dateStart)} – ${formatDateRu(event.dateEnd)}`;
+const oneDay = event.dateStart === event.dateEnd;
+const dateLabel = oneDay
+  ? formatDateRu(event.dateStart)
+  : `${formatDateRu(event.dateStart)} – ${formatDateRu(event.dateEnd)}`;
 
 const cityIndex = buildCityIndex(cities);
 const coords = eventLatLon(event, cityIndex);
-const driveTime = driveTimeFromLisbon(event, cityIndex);
+// "~1 ч 20 мин от Лиссабона" -> "~1 ч 20 мин": the fact label says the rest.
+const driveTime = driveTimeFromLisbon(event, cityIndex)?.replace(/\s*от Лиссабона$/, '') ?? null;
 const directions = coords
   ? `https://www.google.com/maps/dir/?api=1&destination=${coords.lat},${coords.lon}`
   : '';
 const paragraphs = event.description.split(/\n\n+/).map((s) => s.trim()).filter(Boolean);
+const glyph = GLYPHS[event.type]?.replaceAll('#fff', 'currentColor') ?? null;
+const price = event.price ? event.price.charAt(0).toUpperCase() + event.price.slice(1) : null;
 ---
 <Base title={event.title} description={event.description.slice(0, 150)} tabbar={false}>
   <article class="detail">
-    <a class="back-top" href={href('/events/')}>
-      <Icon name="arrow-left" size={14} /> Ко всем событиям
-    </a>
+    <div class="d-head">
+      <a class="back" href={href('/events/')}>
+        <Icon name="arrow-left" size={16} /> Вся афиша
+      </a>
 
-    <header class="head">
-      <span class="head-kicker">
-        <span class="badge event-badge">{EVENT_TYPE_LABELS[event.type] ?? 'Событие'}</span>
-        <span class="head-date">{dateLabel}</span>
-      </span>
-      <h1>{event.title}</h1>
-      <div class="meta-row byline">
-        <span>{event.city}, {event.venue}</span>
-        {driveTime && <span>{driveTime}</span>}
-        {event.price && <span>{event.price}</span>}
-      </div>
-    </header>
-
-    {event.image && (
-      <div class="hero">
-        <img
-          src={imageThumb(event.image, 1000, 560)}
-          data-fallback={event.image}
-          alt={event.title}
-          decoding="async"
-          referrerpolicy="no-referrer"
-          onerror="this.onerror=null;this.src=this.dataset.fallback"
-        />
-      </div>
-    )}
-
-    {paragraphs.length > 0 && (
-      <div class="description">
-        {paragraphs.map((p) => <p>{p}</p>)}
-      </div>
-    )}
-
-    <div class="actions">
-      <a class="btn btn-primary" href={event.url} target="_blank" rel="noopener">Подробнее на сайте</a>
+      <header class="head">
+        <div class="kicker-row">
+          <span class="badge event-badge">{EVENT_TYPE_LABELS[event.type] ?? 'Событие'}</span>
+          <span class="head-date">{dateLabel}</span>
+        </div>
+        <h1>{event.title}</h1>
+      </header>
     </div>
 
-    {coords && <MiniMap lat={coords.lat} lon={coords.lon} name={event.title} />}
+    <div class="d-main">
+      <figure class="hero">
+        {event.image ? (
+          <div class="hero-img">
+            <img
+              src={imageThumb(event.image, 1200, 800)}
+              data-fallback={event.image}
+              alt={event.title}
+              decoding="async"
+              referrerpolicy="no-referrer"
+              onerror="this.onerror=null;this.src=this.dataset.fallback"
+            />
+          </div>
+        ) : (
+          <div class="hero-img is-empty" aria-hidden="true">
+            {glyph && <svg viewBox="0 0 24 24" set:html={glyph} />}
+          </div>
+        )}
+      </figure>
+
+      {paragraphs.length > 0 && (
+        <div class="body">
+          <div class="prose">
+            {paragraphs.map((p) => <p>{p}</p>)}
+          </div>
+        </div>
+      )}
+    </div>
+
+    <aside class="d-aside" aria-label="Коротко о событии">
+      <div class="panel">
+        <dl class="facts">
+          <div class="fact">
+            <Icon name="calendar" size={20} class="fact-ico" />
+            <dt>{oneDay ? 'Дата' : 'Даты'}</dt>
+            <dd>{dateLabel}</dd>
+          </div>
+          <div class="fact">
+            <svg class="fact-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z" /><circle cx="12" cy="9.5" r="2.5" /></svg>
+            <dt>Место</dt>
+            <dd>{event.venue}<span class="dd-sub">{event.city}</span></dd>
+          </div>
+          {price && (
+            <div class="fact">
+              <svg class="fact-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8a2 2 0 0 0 2-2h12a2 2 0 0 0 2 2v8a2 2 0 0 0-2 2H6a2 2 0 0 0-2-2Z" /><path d="M10 6v12" stroke-dasharray="2 2" /></svg>
+              <dt>Цена</dt>
+              <dd>{price}</dd>
+            </div>
+          )}
+          {driveTime && (
+            <div class="fact">
+              <svg class="fact-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 16V11.5l1.6-4.3A2 2 0 0 1 8.5 6h7a2 2 0 0 1 1.9 1.2l1.6 4.3V16" /><path d="M4 16h16v2.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5V18H7v.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5Z" /><path d="M5 11.5h14" /><circle cx="8" cy="14" r=".6" fill="currentColor" /><circle cx="16" cy="14" r=".6" fill="currentColor" /></svg>
+              <dt>Дорога из Лиссабона</dt>
+              <dd>{driveTime}</dd>
+            </div>
+          )}
+        </dl>
+
+        <div class="actions">
+          <a class="btn btn-primary act-main" href={event.url} target="_blank" rel="noopener">Подробнее на сайте</a>
+          {coords && (
+            <a class="btn act-secondary" href={directions} target="_blank" rel="noopener">Маршрут в Google Maps</a>
+          )}
+        </div>
+      </div>
+
+      {coords && (
+        <div class="map-wrap">
+          <MiniMap lat={coords.lat} lon={coords.lon} name={event.title} />
+        </div>
+      )}
+    </aside>
   </article>
 
   <MobileDetailBar fallback={href('/events/')} title={event.title}>
@@ -87,115 +136,316 @@ const paragraphs = event.description.split(/\n\n+/).map((s) => s.trim()).filter(
 </Base>
 
 <style>
+  /* Detail pages get a wider page container than Base's 1100px default so the
+     two-column layout (content + aside) has room. */
+  :global(main.main:has(> .detail)) {
+    max-width: calc(1200px + 2 * var(--gutter));
+  }
+
+  /* ---- Single column (default, < 1100px) ----
+     .d-main / .d-aside dissolve so their parts can be ordered: the facts panel
+     follows the photo, the minimap closes the page. */
   .detail {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
-    max-width: 720px;
+    gap: var(--space-5);
+    max-width: 760px;
     margin: 0 auto;
+  }
+  .d-head,
+  .d-main,
+  .d-aside {
+    display: contents;
+  }
+  .back { order: 0; }
+  .head { order: 1; }
+  .hero { order: 2; }
+  .panel { order: 3; }
+  .body { order: 4; }
+  .map-wrap { order: 5; }
+
+  /* ---- Two columns (≥ 1100px): title across the top, then content +
+     sticky aside whose top lines up with the photo. ---- */
+  @media (min-width: 1100px) {
+    .detail {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 368px;
+      grid-template-areas:
+        'head head'
+        'main aside';
+      gap: var(--space-5) var(--space-7);
+      align-items: start;
+      max-width: none;
+    }
+    .d-head {
+      grid-area: head;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+    }
+    .d-head h1 {
+      max-width: 880px;
+    }
+    .d-main {
+      grid-area: main;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+      min-width: 0;
+    }
+    .d-aside {
+      grid-area: aside;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+  }
+  /* Sticky only when the whole aside fits the viewport. */
+  @media (min-width: 1100px) and (min-height: 760px) {
+    .d-aside {
+      position: sticky;
+      top: calc(var(--header-h) + var(--space-5));
+    }
+  }
+
+  /* ---- Head ---- */
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    align-self: flex-start;
+    margin-bottom: calc(-1 * var(--space-2));
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color var(--dur-fast) ease;
+  }
+  .back:hover {
+    color: var(--text-primary);
+    text-decoration: none;
   }
   .head {
     display: flex;
     flex-direction: column;
     gap: var(--space-3);
   }
-  .head-kicker {
-    display: inline-flex;
+  .kicker-row {
+    display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: var(--space-3);
   }
-  .head-date {
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
+  .region {
     color: var(--text-secondary);
+    font-size: 13.5px;
+    font-weight: 500;
   }
-  .hero {
+  .region:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .head h1 {
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+
+  /* ---- Photo ---- */
+  .hero-img {
+    position: relative;
+    aspect-ratio: 3 / 2;
     border-radius: var(--radius-lg);
     overflow: hidden;
-    aspect-ratio: 16 / 9;
-    background: var(--accent-bg);
-    border: 1px solid var(--border-strong);
+    background: var(--surface-1);
   }
-  .hero img {
+  .hero-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-  .back-top {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-1);
-    align-self: flex-start;
-    color: var(--text-secondary);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-  .back-top:hover {
-    color: var(--editorial);
-    text-decoration: none;
-  }
-  .event-badge {
-    align-self: flex-start;
+  /* No poster: a quiet tinted band with the event-type glyph. */
+  .hero-img.is-empty {
+    aspect-ratio: 21 / 9;
     background: var(--accent-bg);
     color: var(--accent-text);
   }
-  .detail h1 {
+  .hero-img.is-empty svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 56px;
+    height: 56px;
+    transform: translate(-50%, -50%);
+    opacity: 0.7;
+  }
+  .event-badge {
+    background: var(--accent-bg);
+    color: var(--accent-text);
+  }
+  .head-date {
+    color: var(--text-secondary);
+    font-size: 13.5px;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  .hero {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
     margin: 0;
-    font-size: clamp(32px, 5vw, 48px);
+    min-width: 0;
   }
-  .byline {
-    padding-top: var(--space-2);
-    border-top: 1px solid var(--border-strong);
-    font-size: 13px;
+
+  /* ---- Body ---- */
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    min-width: 0;
   }
-  .description {
-    font-family: var(--font-display);
-    font-size: 18px;
-    line-height: 1.7;
+  .prose {
+    max-width: 720px;
+    font-size: 17px;
+    line-height: 1.65;
     color: var(--text-primary);
   }
-  .description p:first-of-type::first-letter {
-    font-weight: 600;
-    font-size: 3.4em;
-    line-height: 0.8;
-    float: left;
-    margin: 0.04em 0.08em 0 0;
-    color: var(--editorial);
+  .prose p {
+    margin: 0 0 var(--space-4);
   }
-  .description p:last-child {
+  .prose p:last-child {
     margin-bottom: 0;
+  }
+
+  /* ---- Aside panel: facts + actions ---- */
+  .panel {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    padding: var(--space-5);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    min-width: 0;
+  }
+  .facts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin: 0;
+  }
+  .fact {
+    display: grid;
+    grid-template-columns: 20px minmax(0, 1fr);
+    column-gap: var(--space-3);
+    row-gap: 2px;
+    align-items: start;
+  }
+  .fact :global(.fact-ico) {
+    grid-row: 1 / span 2;
+    margin-top: 2px;
+    color: var(--text-secondary);
+  }
+  .fact dt {
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--text-secondary);
+  }
+  .dd-sub {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-secondary);
+  }
+  .fact dd {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 550;
+    line-height: 1.4;
+    color: var(--text-primary);
+    font-variant-numeric: tabular-nums;
   }
   .actions {
     display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-3);
-    margin: var(--space-2) 0;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .actions .btn {
+    width: 100%;
+    min-height: 44px;
+    white-space: normal;
+    text-align: center;
   }
 
+  /* ---- Minimap ---- */
+  .map-wrap {
+    min-width: 0;
+  }
+  .map-wrap :global(.minimap) {
+    aspect-ratio: 16 / 10;
+  }
+  @media (min-width: 761px) and (max-width: 1099px) {
+    .map-wrap :global(.minimap) {
+      aspect-ratio: 16 / 9;
+    }
+  }
+
+  /* ---- Tablet (761–1099): facts read across, actions in a row ---- */
+  @media (min-width: 761px) and (max-width: 1099px) {
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: var(--space-4) var(--space-5);
+    }
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  /* ---- Phone (≤ 760px) ----
+     Photo edge-to-edge at the very top; back + favorite/visited + directions
+     live in the floating MobileDetailBar, so their in-page twins go. */
   @media (max-width: 760px) {
-    .byline {
-      column-gap: var(--space-4);
-    }
-    .byline > * + *::before {
-      content: none;
-    }
     .detail {
+      gap: var(--space-5);
       padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px));
     }
-    .back-top,
-    .actions {
+    .back {
       display: none;
     }
     .hero {
       order: -1;
-      margin: calc(-1 * (env(safe-area-inset-top, 0px) + var(--space-4))) calc(-1 * var(--space-4)) 0;
-      border: 0;
-      border-radius: 0;
+      margin: calc(-1 * (env(safe-area-inset-top, 0px) + var(--space-4))) calc(-1 * var(--gutter)) 0;
+    }
+    .hero-img {
       aspect-ratio: 4 / 3;
+      border-radius: 0;
+    }
+    .hero-img.is-empty {
+      aspect-ratio: 2 / 1;
+    }
+    .head {
+      gap: var(--space-2);
+    }
+    .head h1 {
+      font-size: clamp(28px, 7.6vw, 34px);
+    }
+    .prose {
+      font-size: 16.5px;
+    }
+    .panel {
+      padding: var(--space-4);
+      gap: var(--space-4);
+    }
+    .facts {
+      gap: var(--space-3);
+    }
+    /* Both actions live in the floating bar on phones. */
+    .actions {
+      display: none;
+    }
+    .actions .btn {
+      min-height: 48px;
+      font-size: 15px;
     }
   }
 </style>
