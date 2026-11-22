@@ -314,16 +314,15 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   // While the map shows the automatic framing (nobody has panned/zoomed it by
   // hand), it re-frames itself whenever the sheet changes height.
   let autoFit = true;
-  // Moves the code starts (fits, preview pans) must not offer "search this
-  // area" — only the user's own pan/zoom does. A programmatic call arms
-  // `progMove`; the movestart it triggers consumes it into `moveWasProg`. Any
-  // pointer/wheel interaction with the map clears a stale armed flag (left by
-  // a no-op call that never fired movestart) so the user's own move counts.
-  // Starts true: every move before the first interaction is ours.
-  let progMove = false;
-  let moveWasProg = true;
+  // Moves the code starts (fits, preview pans, invalidateSize) must not offer
+  // "search this area" — only the user's own pan/zoom does. Interrupted and
+  // chained animations make per-move flags unreliable, so compare timestamps
+  // instead: a moveend counts as the user's only if they touched the map
+  // (pointer/wheel) after our last programmatic call.
+  let lastProgAt = 0;
+  let lastUserAt = -1;
   function progCall(fn: () => void) {
-    progMove = true;
+    lastProgAt = Date.now();
     fn();
   }
 
@@ -526,14 +525,10 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
       ],
       { className: 'pt-mask', stroke: false, interactive: false },
     ).addTo(map);
-    map.on('movestart', () => {
-      moveWasProg = progMove;
-      progMove = false;
-    });
     map.on('moveend', () => {
       if (isMobile()) {
         if (boundsMode()) updateListVisibility();
-      } else if (!moveWasProg) {
+      } else if (lastUserAt > lastProgAt) {
         // The user moved the map themselves: offer to sync the list to it.
         showAreaSearch(true);
       }
@@ -554,9 +549,9 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
       },
       { passive: true },
     );
-    // The user touching the map (drag, zoom buttons, locate) claims the next
-    // move as theirs, clearing any stale programmatic flag.
-    const userIntent = () => (progMove = false);
+    // The user touching the map (drag, zoom buttons, locate) claims the moves
+    // that follow as theirs.
+    const userIntent = () => (lastUserAt = Date.now());
     mapEl.addEventListener('pointerdown', userIntent, { capture: true, passive: true });
     mapEl.addEventListener('wheel', userIntent, { capture: true, passive: true });
     locate = addLocateControl(map, {

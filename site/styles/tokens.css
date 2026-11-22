@@ -68,6 +68,8 @@
   --type-thermal-text: #14707a;
   --type-route: #ece4d2;        /* soft road-gravel tan */
   --type-route-text: #6f5a2e;
+  --type-stay: #f6dde3;         /* soft rose (cozy stays) */
+  --type-stay-text: #9c3550;
   --type-other: #e9e7e1;        /* soft gray */
   --type-other-text: #61605a;
 
@@ -184,6 +186,8 @@
   --type-thermal-text: #9dcdd1;
   --type-route: #332d1e;
   --type-route-text: #d3c49c;
+  --type-stay: #3d2029;
+  --type-stay-text: #eaa9bb;
   --type-other: #302f2a;
   --type-other-text: #c0beb6;
 }
@@ -248,6 +252,8 @@
     --type-thermal-text: #9dcdd1;
     --type-route: #332d1e;
     --type-route-text: #d3c49c;
+    --type-stay: #3d2029;
+    --type-stay-text: #eaa9bb;
     --type-other: #302f2a;
     --type-other-text: #c0beb6;
   }
