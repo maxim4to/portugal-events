@@ -30,10 +30,6 @@
   } else {
     // Buttons are available regardless of sign-in — a click prompts login.
     buttons.forEach((btn) => (btn.hidden = false));
-    // The "hide not interested" filter chip only makes sense with the feature.
-    document
-      .querySelectorAll<HTMLElement>('[data-ni-filter-control]')
-      .forEach((el) => (el.hidden = false));
 
     let loggedIn = false;
     // A toggle attempted while signed out, replayed once sign-in succeeds.
@@ -80,6 +76,11 @@
 
     onAuthChange((user) => {
       loggedIn = !!user;
+      // The "hide not interested" filter chip only makes sense when there is a
+      // signed-in set of marks (mirrors the visited filter's behavior).
+      document
+        .querySelectorAll<HTMLElement>('[data-ni-filter-control]')
+        .forEach((el) => (el.hidden = !loggedIn));
       if (loggedIn && pending) {
         const p = pending;
         pending = null;

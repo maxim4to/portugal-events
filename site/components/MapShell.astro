@@ -10,11 +10,14 @@ interface Props {
   /** Hold the catalog hidden until the signed-in profile + its saved sets load,
       so the list paints once (already ordered) instead of reflowing. */
   awaitUser?: boolean;
+  /** Wide desktop: park the filters in an always-open left sidebar instead of
+      the top dropdown pills (places catalog). */
+  sidebar?: boolean;
 }
-const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro.props;
+const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar = false } = Astro.props;
 ---
 <section
-  class="explorer-root"
+  class:list={['explorer-root', { 'has-sidebar': sidebar }]}
   data-explorer
   data-kind={kind}
   data-detail-prefix={detailPrefix}
@@ -163,6 +166,34 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro
   .map-fab,
   .near-pill {
     display: none;
+  }
+
+  /* ---- Wide desktop: filters live in an always-open left sidebar ---------
+     The filter bar becomes the first grid column; its facet styling lives in
+     base.css (shared .fgroup primitives). Between 761–1099px the top pills
+     stay, and the phone layer below is untouched. */
+  @media (min-width: 1100px) {
+    .explorer-root.has-sidebar {
+      display: grid;
+      grid-template-columns: 250px minmax(0, 1fr);
+      grid-template-rows: minmax(0, 1fr);
+      column-gap: var(--space-4);
+    }
+    .has-sidebar .filter-bar-top {
+      grid-column: 1;
+      display: block;
+      min-height: 0;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: thin;
+      padding: 0 var(--space-2) var(--space-4) 0;
+    }
+    .has-sidebar .map-explorer {
+      grid-column: 2;
+    }
+    .has-sidebar .toolbar {
+      display: none;
+    }
   }
 
   /* Locate control + the visitor's blue dot (fixed iOS blue, so it reads on

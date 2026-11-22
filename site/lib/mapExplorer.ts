@@ -650,6 +650,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
       const t = e.target as HTMLElement;
       if (t.closest('[data-map]')) return; // map handles its own zoom
       if (t.closest('.fgroup-menu')) return; // let an open dropdown scroll
+      if (t.closest('.filter-bar-top')) return; // the filter sidebar scrolls itself
       if (t.closest('[data-list-scroll]')) return; // native scroll already works
       listScroll.scrollTop += e.deltaY;
       e.preventDefault();

@@ -32,7 +32,7 @@ const points = places.map((p) => ({
   meta: `${p.region} · ${p.driveMinutesFromLisbon} мин от Лиссабона`,
 }));
 ---
-<MapShell kind="places" detailPrefix="/places/" hrefBase={hrefBase} mapId="places-map" points={points} awaitUser>
+<MapShell kind="places" detailPrefix="/places/" hrefBase={hrefBase} mapId="places-map" points={points} awaitUser sidebar>
   <FilterBar slot="filters" regions={regions} tags={tags} />
 
   <div class="grid-cards" slot="list">
