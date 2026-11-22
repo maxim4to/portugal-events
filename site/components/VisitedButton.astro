@@ -1,7 +1,7 @@
 ---
 interface Props {
   placeId: string;
-  variant?: 'card' | 'detail';
+  variant?: 'card' | 'detail' | 'menu';
 }
 const { placeId, variant = 'detail' } = Astro.props;
 ---
@@ -19,7 +19,11 @@ const { placeId, variant = 'detail' } = Astro.props;
     <svg class="visited-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-visited" /></svg>
     <svg class="visited-icon-on" width="18" height="18" fill="none" aria-hidden="true"><use href="#i-visited-on" /></svg>
   </span>
+  {variant === 'menu' ? (
+    <span class="m-lab"><span class="m-off">Я здесь был</span><span class="m-on">Убрать из посещённых</span></span>
+  ) : (
   <span class="visited-label">Был здесь</span>
+  )}
 </button>
 
 <style>
@@ -215,5 +219,55 @@ const { placeId, variant = 'detail' } = Astro.props;
     .visited-btn[aria-pressed='true'] .visited-icon-on {
       animation: none;
     }
+  }
+
+  /* Catalog card "⋯" menu row: icon + an action label that names what a
+     click will do (the menu explains itself; no tooltip needed). */
+  .visited-btn--menu {
+    width: 100%;
+    min-height: 36px;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 0 10px;
+    border: 0;
+    border-radius: var(--radius-sm);
+    background: none;
+    color: var(--text-primary);
+    font-size: 13.5px;
+    font-weight: 500;
+    text-align: left;
+    white-space: nowrap;
+  }
+  .visited-btn--menu[hidden] {
+    display: none;
+  }
+  .visited-btn--menu:hover,
+  .visited-btn--menu:focus-visible {
+    background: var(--surface-1);
+    border-color: transparent;
+    box-shadow: none;
+    outline: none;
+  }
+  .visited-btn--menu:active {
+    transform: none;
+    background: color-mix(in srgb, var(--text-primary) 8%, var(--surface-1));
+  }
+  .visited-btn--menu[aria-pressed='true'] {
+    color: var(--text-primary);
+    border-color: transparent;
+  }
+  .visited-btn--menu .act-ico {
+    display: inline-flex;
+    color: var(--text-secondary);
+  }
+  .visited-btn--menu[aria-pressed='true'] .act-ico {
+    color: var(--visited);
+  }
+  .visited-btn--menu .m-on,
+  .visited-btn--menu[aria-pressed='true'] .m-off {
+    display: none;
+  }
+  .visited-btn--menu[aria-pressed='true'] .m-on {
+    display: inline;
   }
 </style>

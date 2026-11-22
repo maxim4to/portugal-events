@@ -58,7 +58,7 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
     <section class="section" data-p-lists hidden aria-labelledby="p-lists-h">
       <h2 class="section-title" id="p-lists-h">Мои места</h2>
       <div class="panel list">
-        <a class="row" href={href('/places/?fav=1')}>
+        <a class="row" href={href('/places/?fav=1&visited=all&ni=show')}>
           <span class="row-icon row-icon--fav" aria-hidden="true">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 20s-7-4.6-9.3-9A4.9 4.9 0 0 1 12 6a4.9 4.9 0 0 1 9.3 5C19 15.4 12 20 12 20z" /></svg>
           </span>
@@ -66,7 +66,7 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
           <span class="row-value" data-p-count="favorites"></span>
           <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6" /></svg>
         </a>
-        <a class="row" href={href('/places/?visited=visited')}>
+        <a class="row" href={href('/places/?visited=visited&ni=show')}>
           <span class="row-icon row-icon--visited" aria-hidden="true">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.2 4.2L19 7" /></svg>
           </span>

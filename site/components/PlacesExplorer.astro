@@ -58,11 +58,31 @@ const points = places.map((p) => ({
         data-name={p.name}
         data-residency={p.freeWithResidency ? 'true' : 'false'}
       >
+        {/* Status, not controls: what the user has marked, top-left, in a
+            dark scrim chip that reads as a label (see .card-status). */}
+        <div class="card-status" aria-hidden="true">
+          <span class="cstat cstat-visited">
+            <svg width="14" height="14" fill="none" aria-hidden="true"><use href="#i-visited-on" /></svg>
+            Вы здесь были
+          </span>
+          <span class="cstat cstat-ni">
+            <svg width="14" height="14" fill="none" aria-hidden="true"><use href="#i-ni-on" /></svg>
+            Не интересно
+          </span>
+        </div>
+        {/* Controls, top-right: the heart (the one action that needs no
+            words) and a "⋯" menu whose rows say what they do. */}
         <div class="card-actions">
           <FavoriteButton placeId={p.id} variant="card" />
-          <VisitedButton placeId={p.id} variant="card" />
-          <NotInterestedButton placeId={p.id} variant="card" />
-          <span class="ca-label" aria-hidden="true"><span class="ca-text"></span></span>
+          <div class="card-more" data-card-more>
+            <button type="button" class="more-btn" data-more-toggle aria-haspopup="true" aria-expanded="false" aria-label="Ещё действия">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5.5" cy="12" r="1.8" /><circle cx="12" cy="12" r="1.8" /><circle cx="18.5" cy="12" r="1.8" /></svg>
+            </button>
+            <div class="more-menu" role="group" aria-label="Действия с местом">
+              <VisitedButton placeId={p.id} variant="menu" />
+              <NotInterestedButton placeId={p.id} variant="menu" />
+            </div>
+          </div>
         </div>
         <PlaceCard place={p} href={`${hrefBase}/places/${p.id}/`} />
       </div>
@@ -75,65 +95,6 @@ const points = places.map((p) => ({
 <NotInterestedController />
 
 <style>
-  /* Shared caption for the card actions: a glass capsule to the left of the
-     row that names whichever button is hovered. The buttons keep fixed
-     positions; only this caption changes width and text (lib/cardActions.ts). */
-  .ca-label {
-    display: none;
-  }
-  @media (hover: hover) and (min-width: 761px) {
-    .ca-label {
-      display: block;
-      height: 32px;
-      margin-right: 2px;
-      overflow: hidden;
-      border-radius: var(--radius-pill);
-      background: color-mix(in srgb, var(--surface-2) 90%, transparent);
-      backdrop-filter: blur(6px);
-      box-shadow: var(--shadow-md);
-      color: var(--text-primary);
-      font-size: 13px;
-      font-weight: 550;
-      line-height: 32px;
-      white-space: nowrap;
-      width: 0;
-      opacity: 0;
-      transform: translateX(6px) scale(0.96);
-      transform-origin: right center;
-      pointer-events: none;
-      transition:
-        width 220ms var(--ease-out),
-        opacity 140ms ease,
-        transform 220ms var(--ease-out);
-    }
-    .ca-label.is-on {
-      opacity: 1;
-      transform: none;
-    }
-    .ca-text {
-      display: inline-block;
-      padding: 0 12px;
-    }
-    /* Text swap while moving between buttons: a quick blur cross-fade. */
-    .ca-text.swap {
-      animation: ca-swap 180ms var(--ease-out);
-    }
-    @keyframes ca-swap {
-      from {
-        opacity: 0;
-        filter: blur(3px);
-      }
-    }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .ca-label {
-      transition: opacity 120ms ease;
-      transform: none;
-    }
-    .ca-text.swap {
-      animation: none;
-    }
-  }
   .card-wrap {
     position: relative;
     /* 200+ cards: let the browser skip layout/paint of the ones off screen. */
@@ -191,18 +152,144 @@ const points = places.map((p) => ({
     align-items: center;
     gap: 6px;
   }
-  /* Pointer devices: the photo stays clear — a button rests on it only once
-     it's on (a saved heart, a visited eye); all three reveal on hover or
-     keyboard focus. Touch keeps all three visible — there is no hover. */
+  /* Pointer devices: the photo stays clear — the heart rests on it only once
+     saved; heart and "⋯" reveal on hover / keyboard focus, and stay while
+     the menu is open. Touch keeps both visible — there is no hover. */
   @media (hover: hover) and (min-width: 761px) {
-    .card-actions > :global(button:not([aria-pressed='true'])) {
+    .card-actions > :global(.favorite-btn:not([aria-pressed='true'])),
+    .card-more {
       opacity: 0;
       transform: scale(0.9);
       transition: opacity var(--dur-fast) ease, transform var(--dur) var(--ease-out);
     }
     .card-wrap:hover .card-actions > :global(*),
-    .card-wrap:focus-within .card-actions > :global(*) {
+    .card-wrap:focus-within .card-actions > :global(*),
+    .card-more.open {
       opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* "⋯" trigger: the same glass circle as the heart. Hidden when the menu
+     would be empty (visited / not-interested not configured). */
+  .card-more {
+    position: relative;
+  }
+  .card-more:not(:has(.more-menu > :global(button:not([hidden])))) {
+    display: none;
+  }
+  .more-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    border-radius: var(--radius-pill);
+    background: color-mix(in srgb, var(--surface-2) 85%, transparent);
+    backdrop-filter: blur(6px);
+    box-shadow: var(--shadow-md);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: transform var(--dur-fast) var(--ease-out), background-color var(--dur-fast) ease;
+  }
+  .more-btn:hover,
+  .card-more.open .more-btn {
+    background: var(--surface-2);
+  }
+  .more-btn:active {
+    transform: scale(0.92);
+  }
+  .more-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  /* The menu drops from the trigger (origin top-right) and stays inside the
+     card's box — cards use content-visibility, which clips overflow. */
+  .more-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    min-width: 200px;
+    padding: var(--space-1);
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface-2);
+    box-shadow: var(--shadow-lg);
+    transform-origin: top right;
+    opacity: 0;
+    transform: scale(0.96) translateY(-4px);
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity 120ms ease,
+      transform 120ms var(--ease-out),
+      visibility 0s linear 120ms;
+  }
+  .card-more.open .more-menu {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+    pointer-events: auto;
+    transition:
+      opacity 160ms ease,
+      transform 180ms var(--ease-out),
+      visibility 0s;
+  }
+
+  /* Status chips: dark scrim, small white text, no shadow or border — they
+     read as labels on the photo, distinct from the white controls. */
+  .card-status {
+    position: absolute;
+    top: var(--space-3);
+    left: var(--space-3);
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    pointer-events: none;
+  }
+  .cstat {
+    display: none;
+    align-items: center;
+    gap: 5px;
+    height: 24px;
+    padding: 0 9px 0 7px;
+    border-radius: var(--radius-pill);
+    background: rgb(0 0 0 / 0.5);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 550;
+    line-height: 1;
+    /* The sprite's cut-outs use --surface-2; on the dark chip they should
+       read as dark too. */
+    --surface-2: rgb(0 0 0 / 0.55);
+  }
+  .card-wrap[data-visited='true'] .cstat-visited,
+  .card-wrap[data-notinterested='true'] .cstat-ni {
+    display: inline-flex;
+  }
+  @media (max-width: 760px) {
+    .more-btn {
+      width: 44px;
+      height: 44px;
+    }
+    .more-btn svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .more-menu,
+    .card-more.open .more-menu {
       transform: none;
     }
   }
@@ -210,7 +297,8 @@ const points = places.map((p) => ({
 
 <script>
   import { initMapExplorer } from '../lib/mapExplorer.ts';
-  import { initCardActionLabels } from '../lib/cardActions.ts';
+  import { initCardMenus } from '../lib/cardMenu.ts';
+  import { initSavedFilters } from '../lib/savedFilters.ts';
   import { awaitUserData } from '../lib/catalogReady.ts';
   import { initFilterGroups, setGroupCount } from '../lib/filterGroups.ts';
   import {
@@ -276,7 +364,7 @@ const points = places.map((p) => ({
 
     const matches = (el: HTMLElement) => matchesFilter(cardData(el), readState());
     const explorer = initMapExplorer(root, { matches });
-    initCardActionLabels(root);
+    initCardMenus(root);
 
     // Show each section divider only when at least one card that belongs to it
     // is currently visible (CSS `order` already floats those cards below it). A
@@ -321,7 +409,7 @@ const points = places.map((p) => ({
       );
     }
 
-    function writeUrl(s: ExplorerFilterState) {
+    function toQuery(s: ExplorerFilterState): string {
       const params = new URLSearchParams();
       if (s.types.length) params.set('type', s.types.join(','));
       if (s.regions.length) params.set('region', s.regions.join(','));
@@ -331,7 +419,11 @@ const points = places.map((p) => ({
       if (s.onlyFavorites) params.set('fav', '1');
       if (s.freeWithResidency) params.set('residency', '1');
       if (s.hideNotInterested !== DEFAULT_HIDE_NI) params.set('ni', s.hideNotInterested ? 'hide' : 'show');
-      const qs = params.toString();
+      return params.toString();
+    }
+
+    function writeUrl(s: ExplorerFilterState) {
+      const qs = toQuery(s);
       // Keep history.state: it carries the tab bar's place in the history stack.
       // While a detail panel is open the current entry is the detail URL —
       // don't stamp list filters onto it.
@@ -339,8 +431,14 @@ const points = places.map((p) => ({
       history.replaceState(history.state, '', qs ? `?${qs}` : location.pathname);
     }
 
-    function onFilterChange() {
+    // `byUser`: a click (saved for next time) vs. restoring from URL/storage.
+    let touched = false;
+    function onFilterChange(byUser = true) {
       const s = readState();
+      if (byUser) {
+        touched = true;
+        saved.save(toQuery(s));
+      }
       setGroupCount(root, 'type', s.types.length);
       setGroupCount(root, 'region', s.regions.length);
       setGroupCount(root, 'tags', s.tags.length);
@@ -431,33 +529,50 @@ const points = places.map((p) => ({
       }),
     );
 
-    // ---- Restore state from the URL on load. --------------------------------
-    const params = new URLSearchParams(location.search);
-    const setMulti = (chips: HTMLButtonElement[], key: string, raw: string | null) => {
-      if (!raw) return;
-      const wanted = new Set(raw.split(',').map((s) => s.trim()).filter(Boolean));
-      chips.forEach((c) => {
-        if (wanted.has(c.dataset[key]!)) press(c, true);
-      });
-    };
-    setMulti(typeChips, 'type', params.get('type'));
-    setMulti(regionChips, 'region', params.get('region'));
-    setMulti(tagChips, 'tag', params.get('tag'));
-    const preDrive = params.get('drive');
-    if (preDrive && driveChips.some((c) => c.dataset.drive === preDrive)) {
-      driveChips.forEach((c) => press(c, c.dataset.drive === preDrive));
+    // ---- Restore state: the URL's query, else the saved filters. -----------
+    function applyQuery(qs: string) {
+      const params = new URLSearchParams(qs);
+      [...typeChips, ...regionChips, ...tagChips].forEach((c) => press(c, false));
+      if (residencyChip) press(residencyChip, false);
+      if (favToggle) press(favToggle, false);
+      driveChips.forEach((c) => press(c, c.dataset.drive === '240'));
+      const setMulti = (chips: HTMLButtonElement[], key: string, raw: string | null) => {
+        if (!raw) return;
+        const wanted = new Set(raw.split(',').map((s) => s.trim()).filter(Boolean));
+        chips.forEach((c) => {
+          if (wanted.has(c.dataset[key]!)) press(c, true);
+        });
+      };
+      setMulti(typeChips, 'type', params.get('type'));
+      setMulti(regionChips, 'region', params.get('region'));
+      setMulti(tagChips, 'tag', params.get('tag'));
+      const preDrive = params.get('drive');
+      if (preDrive && driveChips.some((c) => c.dataset.drive === preDrive)) {
+        driveChips.forEach((c) => press(c, c.dataset.drive === preDrive));
+      }
+      const rawVisited = params.get('visited');
+      const preVisited: VisitedFilter =
+        rawVisited === 'visited' || rawVisited === 'unvisited' || rawVisited === 'all'
+          ? rawVisited
+          : DEFAULT_VISITED;
+      visitedChips.forEach((c) => press(c, c.dataset.visitedOpt === preVisited));
+      if (params.get('residency') === '1' && residencyChip) press(residencyChip, true);
+      const rawNi = params.get('ni');
+      if (niHideChip) press(niHideChip, rawNi === 'show' ? false : rawNi === 'hide' ? true : DEFAULT_HIDE_NI);
+      if (params.get('fav') === '1' && favToggle) press(favToggle, true);
     }
-    const rawVisited = params.get('visited');
-    const preVisited: VisitedFilter =
-      rawVisited === 'visited' || rawVisited === 'unvisited' || rawVisited === 'all'
-        ? rawVisited
-        : DEFAULT_VISITED;
-    visitedChips.forEach((c) => press(c, c.dataset.visitedOpt === preVisited));
-    if (params.get('residency') === '1' && residencyChip) press(residencyChip, true);
-    const rawNi = params.get('ni');
-    if (niHideChip) press(niHideChip, rawNi === 'show' ? false : rawNi === 'hide' ? true : DEFAULT_HIDE_NI);
-    if (params.get('fav') === '1' && favToggle) press(favToggle, true);
 
-    onFilterChange();
+    // Saved filters (lib/savedFilters.ts): a bare /places/ opens with the
+    // user's last filters; once the account's copy loads it wins, unless the
+    // user has already changed something in this visit.
+    const fromUrl = location.search.length > 1;
+    const saved = initSavedFilters('places', (qs) => {
+      if (touched || fromUrl || qs === toQuery(readState())) return;
+      applyQuery(qs);
+      onFilterChange(false);
+      writeUrl(readState());
+    });
+    applyQuery(fromUrl ? location.search : saved.initial ?? '');
+    onFilterChange(false);
   }
 </script>
