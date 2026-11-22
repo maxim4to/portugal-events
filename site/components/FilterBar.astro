@@ -9,6 +9,9 @@ interface Props {
 }
 const { regions, tags } = Astro.props;
 const typeEntries = Object.entries(TYPE_LABELS);
+// Region and tag lists come most-used first; the sidebar shows this many and
+// folds the rest behind "Показать все" (selected ones always stay visible).
+const SHOWN = 5;
 const drivePresets = [
   { value: 60, label: 'до 1 ч' },
   { value: 120, label: 'до 2 ч' },
@@ -59,6 +62,33 @@ const TAG_FALLBACK = ic('<path d="M3 11V4.5A1.5 1.5 0 0 1 4.5 3H11l10 10-7.5 7.5
     <span class="flabel">Избранное</span><span class="fcount" data-fav-count></span>
   </button>
 
+  <div class="fgroup" data-fgroup="drive">
+    <button type="button" class="fgroup-summary" data-fgroup-toggle aria-expanded="false">
+      <span class="flabel">Время в пути</span><span class="fcount" data-fcount></span>
+    </button>
+    <div class="fgroup-menu">
+      {drivePresets.map((p) => (
+        <button
+          type="button"
+          class="chip"
+          data-drive={p.value}
+          aria-pressed={p.value === 240 ? 'true' : 'false'}
+        ><Fragment set:html={CLOCK_ICON} /><span class="chip-lab">{p.label}</span></button>
+      ))}
+    </div>
+  </div>
+
+  <div class="fgroup" data-fgroup="residency">
+    <button type="button" class="fgroup-summary" data-fgroup-toggle aria-expanded="false">
+      <span class="flabel">Вход</span><span class="fcount" data-fcount></span>
+    </button>
+    <div class="fgroup-menu">
+      <button type="button" class="chip" data-residency aria-pressed="false">
+        <Fragment set:html={RESIDENCY_ICON} /><span class="chip-lab">Бесплатно с ВНЖ</span>
+      </button>
+    </div>
+  </div>
+
   <div class="fgroup" data-fgroup="type">
     <button type="button" class="fgroup-summary" data-fgroup-toggle aria-expanded="false">
       <span class="flabel">Тип</span><span class="fcount" data-fcount></span>
@@ -77,11 +107,16 @@ const TAG_FALLBACK = ic('<path d="M3 11V4.5A1.5 1.5 0 0 1 4.5 3H11l10 10-7.5 7.5
       <span class="flabel">Регион</span><span class="fcount" data-fcount></span>
     </button>
     <div class="fgroup-menu">
-      {regions.map((r) => (
-        <button type="button" class="chip" data-region={r} aria-pressed="false">
+      {regions.map((r, i) => (
+        <button type="button" class:list={['chip', { 'chip-extra': i >= SHOWN }]} data-region={r} aria-pressed="false">
           <Fragment set:html={REGION_ICON} /><span class="chip-lab">{r}</span>
         </button>
       ))}
+      {regions.length > SHOWN && (
+        <button type="button" class="fgroup-expand" data-expand aria-expanded="false">
+          <span data-expand-more>Показать все · {regions.length}</span><span data-expand-less hidden>Свернуть</span>
+        </button>
+      )}
     </div>
   </div>
 
@@ -90,27 +125,16 @@ const TAG_FALLBACK = ic('<path d="M3 11V4.5A1.5 1.5 0 0 1 4.5 3H11l10 10-7.5 7.5
       <span class="flabel">Теги</span><span class="fcount" data-fcount></span>
     </button>
     <div class="fgroup-menu">
-      {tags.map((t) => (
-        <button type="button" class="chip" data-tag={t} aria-pressed="false">
+      {tags.map((t, i) => (
+        <button type="button" class:list={['chip', { 'chip-extra': i >= SHOWN }]} data-tag={t} aria-pressed="false">
           <Fragment set:html={TAG_ICONS[t] ?? TAG_FALLBACK} /><span class="chip-lab">{t}</span>
         </button>
       ))}
-    </div>
-  </div>
-
-  <div class="fgroup" data-fgroup="drive">
-    <button type="button" class="fgroup-summary" data-fgroup-toggle aria-expanded="false">
-      <span class="flabel">В пути</span><span class="fcount" data-fcount></span>
-    </button>
-    <div class="fgroup-menu">
-      {drivePresets.map((p) => (
-        <button
-          type="button"
-          class="chip"
-          data-drive={p.value}
-          aria-pressed={p.value === 240 ? 'true' : 'false'}
-        ><Fragment set:html={CLOCK_ICON} /><span class="chip-lab">{p.label}</span></button>
-      ))}
+      {tags.length > SHOWN && (
+        <button type="button" class="fgroup-expand" data-expand aria-expanded="false">
+          <span data-expand-more>Показать все · {tags.length}</span><span data-expand-less hidden>Свернуть</span>
+        </button>
+      )}
     </div>
   </div>
 
@@ -119,9 +143,6 @@ const TAG_FALLBACK = ic('<path d="M3 11V4.5A1.5 1.5 0 0 1 4.5 3H11l10 10-7.5 7.5
       <span class="flabel">Ещё</span><span class="fcount" data-fcount></span>
     </button>
     <div class="fgroup-menu">
-      <button type="button" class="chip" data-residency aria-pressed="false">
-        <Fragment set:html={RESIDENCY_ICON} /><span class="chip-lab">Бесплатно с ВНЖ</span>
-      </button>
       <span class="visited-group" data-ni-filter-control hidden>
         <button type="button" class="chip" data-ni-hide aria-pressed="false">
           <Fragment set:html={NI_ICON} /><span class="chip-lab">Скрыть неинтересные</span>
@@ -222,4 +243,50 @@ const TAG_FALLBACK = ic('<path d="M3 11V4.5A1.5 1.5 0 0 1 4.5 3H11l10 10-7.5 7.5
   .fav-toggle[hidden] {
     display: none;
   }
+  /* «Ещё» holds only signed-in options: hide it while none of them shows. */
+  .fgroup[data-fgroup='more']:not(:has(.fgroup-menu > :not([hidden]):not(.fgroup-done))) {
+    display: none;
+  }
+  /* "Показать все" folds long lists — sidebar only; dropdowns and phone sheets
+     show every option. */
+  .fgroup-expand {
+    display: none;
+  }
+  @media (min-width: 1100px) {
+    :global(.has-sidebar) .fgroup:not(.expanded) .chip-extra:not([aria-pressed='true']) {
+      display: none;
+    }
+    :global(.has-sidebar) .fgroup-expand {
+      display: inline-flex;
+      align-self: flex-start;
+      margin-top: 2px;
+      padding: 6px 0;
+      border: 0;
+      background: none;
+      color: var(--accent);
+      font: inherit;
+      font-size: 13.5px;
+      font-weight: 550;
+      cursor: pointer;
+    }
+    :global(.has-sidebar) .fgroup-expand:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
 </style>
+
+<script>
+  // Sidebar "Показать все / Свернуть" for long option lists.
+  document.querySelectorAll<HTMLButtonElement>('[data-expand]').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const group = btn.closest<HTMLElement>('.fgroup');
+      if (!group) return;
+      const open = group.classList.toggle('expanded');
+      btn.setAttribute('aria-expanded', String(open));
+      btn.querySelector<HTMLElement>('[data-expand-more]')!.hidden = open;
+      btn.querySelector<HTMLElement>('[data-expand-less]')!.hidden = !open;
+    });
+  });
+</script>

@@ -275,11 +275,8 @@ const points = places.map((p) => ({
       setGroupCount(root, 'region', s.regions.length);
       setGroupCount(root, 'tags', s.tags.length);
       setGroupCount(root, 'drive', s.maxDrive !== 240 ? 1 : 0);
-      setGroupCount(
-        root,
-        'more',
-        (s.freeWithResidency ? 1 : 0) + (s.visited !== 'all' ? 1 : 0) + (s.hideNotInterested ? 1 : 0),
-      );
+      setGroupCount(root, 'residency', s.freeWithResidency ? 1 : 0);
+      setGroupCount(root, 'more', (s.visited !== 'all' ? 1 : 0) + (s.hideNotInterested ? 1 : 0));
       resetButtons.forEach((b) => (b.hidden = !anyActive(s)));
       writeUrl(s);
       explorer.rerender();

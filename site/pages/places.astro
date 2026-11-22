@@ -3,8 +3,14 @@ import Base from '../layouts/Base.astro';
 import PlacesExplorer from '../components/PlacesExplorer.astro';
 import { allPlaces, regions, allTags } from '../lib/data.ts';
 const hrefBase = import.meta.env.BASE_URL.replace(/\/$/, '');
+// Filter options most-used first (ties alphabetical): the sidebar shows the top
+// few and folds the rest.
+const byUse = (keys: string[], count: (k: string) => number) =>
+  [...keys].sort((a, b) => count(b) - count(a) || a.localeCompare(b, 'ru'));
+const regionsByUse = byUse(regions, (r) => allPlaces.filter((p) => p.region === r).length);
+const tagsByUse = byUse(allTags, (t) => allPlaces.filter((p) => p.tags.includes(t)).length);
 ---
 <Base title="Места — Португалия" description="Каталог мест Португалии: пляжи, замки, хайкинг, виды." wide>
   <h1 class="sr-only">Места Португалии</h1>
-  <PlacesExplorer places={allPlaces} regions={regions} tags={allTags} hrefBase={hrefBase} />
+  <PlacesExplorer places={allPlaces} regions={regionsByUse} tags={tagsByUse} hrefBase={hrefBase} />
 </Base>
