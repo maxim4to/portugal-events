@@ -688,7 +688,26 @@
         "url": "https://turismo.cm-terrasdebouro.pt/listings/pr1-trilho-da-calcedonia/"
       }
     ],
-    "photos": []
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Calced%C3%B3nia%27s_trail_statue_rocks.jpg/1280px-Calced%C3%B3nia%27s_trail_statue_rocks.jpg",
+        "author": "Itspumato",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Calced%C3%B3nia%27s_trail_statue_rocks.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Calced%C3%B3nia%27s_trail.jpg/1280px-Calced%C3%B3nia%27s_trail.jpg",
+        "author": "Itspumato",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Calced%C3%B3nia%27s_trail.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Serra_do_Ger%C3%AAs_%286881678443%29.jpg/1280px-Serra_do_Ger%C3%AAs_%286881678443%29.jpg",
+        "author": "Rui Reis from Porto, Portugal",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Serra_do_Ger%C3%AAs_(6881678443).jpg"
+      }
+    ]
   },
   {
     "id": "trilho-castrejo-castro-laboreiro",

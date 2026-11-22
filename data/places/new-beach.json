@@ -1200,7 +1200,14 @@
       "фото"
     ],
     "links": [],
-    "photos": []
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Alvoco_das_V%C3%A1rzeas_-_Portugal_%287449396644%29.jpg/1280px-Alvoco_das_V%C3%A1rzeas_-_Portugal_%287449396644%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alvoco_das_V%C3%A1rzeas_-_Portugal_(7449396644).jpg"
+      }
+    ]
   },
   {
     "id": "praia-fluvial-de-avo",

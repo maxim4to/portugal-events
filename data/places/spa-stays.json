@@ -427,7 +427,20 @@
         "url": "https://termasdesaovicente.pt/aqua-center/"
       }
     ],
-    "photos": []
+    "photos": [
+      {
+        "url": "place-photos/termas-de-sao-vicente-penafiel-1.webp",
+        "author": "termasdesaovicente.pt",
+        "license": "© Termas de São Vicente",
+        "sourceUrl": "https://termasdesaovicente.pt/"
+      },
+      {
+        "url": "place-photos/termas-de-sao-vicente-penafiel-2.webp",
+        "author": "termasdesaovicente.pt",
+        "license": "© Termas de São Vicente",
+        "sourceUrl": "https://termasdesaovicente.pt/"
+      }
+    ]
   },
   {
     "id": "termas-de-melgaco",
@@ -491,6 +504,25 @@
         "url": "https://www.cm-amarante.pt/locais/termas-de-amarante/"
       }
     ],
-    "photos": []
+    "photos": [
+      {
+        "url": "place-photos/termas-de-amarante-1.webp",
+        "author": "cm-amarante.pt",
+        "license": "© Câmara Municipal de Amarante",
+        "sourceUrl": "https://www.cm-amarante.pt/locais/termas-de-amarante/"
+      },
+      {
+        "url": "place-photos/termas-de-amarante-2.webp",
+        "author": "cm-amarante.pt",
+        "license": "© Câmara Municipal de Amarante",
+        "sourceUrl": "https://www.cm-amarante.pt/locais/termas-de-amarante/"
+      },
+      {
+        "url": "place-photos/termas-de-amarante-3.webp",
+        "author": "cm-amarante.pt",
+        "license": "© Câmara Municipal de Amarante",
+        "sourceUrl": "https://www.cm-amarante.pt/locais/termas-de-amarante/"
+      }
+    ]
   }
 ]

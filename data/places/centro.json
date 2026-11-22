@@ -816,7 +816,26 @@
       "фото"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/miradouro-do-zebro-1.webp",
+        "author": "aldeiasdoxisto.pt",
+        "license": "© Aldeias do Xisto",
+        "sourceUrl": "https://www.aldeiasdoxisto.pt/en/xistopedia/miradouro-do-zebro"
+      },
+      {
+        "url": "place-photos/miradouro-do-zebro-2.webp",
+        "author": "aldeiasdoxisto.pt",
+        "license": "© Aldeias do Xisto",
+        "sourceUrl": "https://www.aldeiasdoxisto.pt/en/xistopedia/miradouro-do-zebro"
+      },
+      {
+        "url": "place-photos/miradouro-do-zebro-3.webp",
+        "author": "aldeiasdoxisto.pt",
+        "license": "© Aldeias do Xisto",
+        "sourceUrl": "https://www.aldeiasdoxisto.pt/en/xistopedia/miradouro-do-zebro"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/reel/DYFR0acs1xB/"
     ],
@@ -876,6 +895,18 @@
         "author": "Berthold Werner",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coimbra_BW_2018-10-06_10-17-45_stitch.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Coimbra%2C_Portugal_%2852958277672%29.jpg/1280px-Coimbra%2C_Portugal_%2852958277672%29.jpg",
+        "author": "thirdsphoto",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coimbra,_Portugal_(52958277672).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/20200203_CoimbraUni_5697_%2849655424006%29.jpg/1280px-20200203_CoimbraUni_5697_%2849655424006%29.jpg",
+        "author": "Ray Swi-hymn from Sijhih-Taipei, Taiwan",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:20200203_CoimbraUni_5697_(49655424006).jpg"
       }
     ],
     "collections": []
@@ -904,6 +935,18 @@
         "author": "Pedro",
         "license": "CC BY 2.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_barbarians_have_left_the_city_(1414840422).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Conimbriga_%2813248943995%29.jpg/1280px-Conimbriga_%2813248943995%29.jpg",
+        "author": "Carole Raddato from FRANKFURT, Germany",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Conimbriga_(13248943995).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Condeixa-a-Nova_Conimbriga_080.jpg/1280px-Condeixa-a-Nova_Conimbriga_080.jpg",
+        "author": "GFreihalter",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Condeixa-a-Nova_Conimbriga_080.jpg"
       }
     ],
     "collections": [],

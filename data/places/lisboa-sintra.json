@@ -1260,6 +1260,18 @@
         "author": "Diego Delso",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Torre_de_Bel%C3%A9m,_Lisboa,_Portugal,_2012-05-12,_DD_12.JPG"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Bel%C3%A9m_Tower_%2834296618123%29.jpg/1280px-Bel%C3%A9m_Tower_%2834296618123%29.jpg",
+        "author": "Susanne Nilsson",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bel%C3%A9m_Tower_(34296618123).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/33101-Lisbon_%2834930598314%29.jpg/1280px-33101-Lisbon_%2834930598314%29.jpg",
+        "author": "xiquinhosilva from Cacau",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:33101-Lisbon_(34930598314).jpg"
       }
     ],
     "collections": [],
@@ -1292,6 +1304,18 @@
         "author": "Jean-Christophe BENOIST",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Palais_royal_de_Queluz_-_Vue_g%C3%A9n%C3%A9rale.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Jardim_P%C3%AAnsil%2C_Pal%C3%A1cio_Nacional_de_Queluz_06.jpg/1280px-Jardim_P%C3%AAnsil%2C_Pal%C3%A1cio_Nacional_de_Queluz_06.jpg",
+        "author": "Kent Wang",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jardim_P%C3%AAnsil,_Pal%C3%A1cio_Nacional_de_Queluz_06.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Exterior_of_Pal%C3%A1cio_Nacional_de_Queluz_93.jpg/1280px-Exterior_of_Pal%C3%A1cio_Nacional_de_Queluz_93.jpg",
+        "author": "Kent Wang",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Exterior_of_Pal%C3%A1cio_Nacional_de_Queluz_93.jpg"
       }
     ],
     "collections": [],
@@ -1351,7 +1375,26 @@
       "фото"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Fojo_da_Adraga_-_Portugal_%2853275036232%29.jpg/1280px-Fojo_da_Adraga_-_Portugal_%2853275036232%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fojo_da_Adraga_-_Portugal_(53275036232).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Overlooking_Praia_Grande_%2832967579411%29.jpg",
+        "author": "chiron3636",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Overlooking_Praia_Grande_(32967579411).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/As_pegadas_de_Dinossauro_em_Colares%2C_Sintra.jpg/1280px-As_pegadas_de_Dinossauro_em_Colares%2C_Sintra.jpg",
+        "author": "JPTrindade",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:As_pegadas_de_Dinossauro_em_Colares,_Sintra.jpg"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/reel/DbOrLmktWm5/",
       "https://www.instagram.com/reel/DdjuZKBO1sg/",
@@ -1378,7 +1421,32 @@
       "фото"
     ],
     "links": [],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Aldeia_da_Mata_Pequena_-_Portugal_%2844479417605%29.jpg/1280px-Aldeia_da_Mata_Pequena_-_Portugal_%2844479417605%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aldeia_da_Mata_Pequena_-_Portugal_(44479417605).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Aldeia_da_Mata_Pequena_-_Portugal_%2831518387538%29.jpg/1280px-Aldeia_da_Mata_Pequena_-_Portugal_%2831518387538%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aldeia_da_Mata_Pequena_-_Portugal_(31518387538).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Aldeia_da_Mata_Pequena_-_Portugal_%2832105466718%29.jpg/1280px-Aldeia_da_Mata_Pequena_-_Portugal_%2832105466718%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aldeia_da_Mata_Pequena_-_Portugal_(32105466718).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Aldeia_da_Mata_Pequena_-_Portugal_%2845542514254%29.jpg/1280px-Aldeia_da_Mata_Pequena_-_Portugal_%2845542514254%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aldeia_da_Mata_Pequena_-_Portugal_(45542514254).jpg"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/reel/DXpGDNbjAWD/",
       "https://www.instagram.com/reel/DfaZOZgvPW2/"

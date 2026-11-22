@@ -589,7 +589,15 @@
       "виды",
       "бесплатно"
     ],
-    "links": []
+    "links": [],
+    "photos": [
+      {
+        "url": "place-photos/ferraria-de-sao-joao-1.webp",
+        "author": "aldeiasdoxisto.pt (фото: Foge Comigo / ADXTUR)",
+        "license": "© Aldeias do Xisto",
+        "sourceUrl": "https://aldeiasdoxisto.pt/en/villages/lousa/ferraria-de-sao-joao"
+      }
+    ]
   },
   {
     "id": "ponte-de-lima",
