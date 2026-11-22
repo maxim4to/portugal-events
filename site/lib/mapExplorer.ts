@@ -3,11 +3,11 @@ import L from 'leaflet';
 import { gameIcon } from './mapIcons';
 import PT_MAINLAND from '../assets/pt-mainland.json';
 
-/** How far the explorer map may pan: mainland Portugal (36.7–42.2°N,
- *  9.8–6.2°W) plus a margin, so the coast isn't pinned to the pane edge.
- *  Outside it there's nothing to show. On the phone the list sheet covers the
- *  lower half of the map, so the frame reaches much further south: the whole
- *  country (and the Algarve on its own) must still fit above the sheet. */
+import { HALF_AT, initSheet, type SheetSnap } from './mobileSheet';
+import { distanceKm, formatDistance, pluralRu } from './geo';
+import { getFix, onFix, type Fix } from './geolocate';
+import { addLocateControl } from './mapLocate';
+
 /** The type dot that precedes a type label on cards, repeated in popups and
  *  previews so the label looks the same everywhere. Event types have no tint
  *  token, so they fall back to a muted dot. */
@@ -16,14 +16,13 @@ function typeDot(p: { type?: string }): string {
   return `<span class="type-dot" style="background:var(--type-${t}-text, var(--text-muted))" aria-hidden="true"></span>`;
 }
 
+/** How far the explorer map may pan: mainland Portugal (36.7–42.2°N,
+ *  9.8–6.2°W) plus a margin, so the coast isn't pinned to the pane edge.
+ *  Outside it there's nothing to show. On the phone the frame is stretched by
+ *  the pixels the filter row and the list sheet cover (see `frame()`). */
 const PT_VIEW_BOUNDS = L.latLngBounds([34.6, -12.4], [43.6, -3.6]);
-const PT_VIEW_BOUNDS_PHONE = L.latLngBounds([22.0, -12.4], [43.6, -3.6]);
 /** Mainland Portugal's own bounding box (from pt-mainland.json). */
 const PT_BOX = L.latLngBounds([36.7, -9.85], [42.16, -6.18]);
-import { HALF_AT, initSheet, type SheetSnap } from './mobileSheet';
-import { distanceKm, formatDistance, pluralRu } from './geo';
-import { getFix, onFix, type Fix } from './geolocate';
-import { addLocateControl } from './mapLocate';
 
 export interface MapPoint {
   id: string;
@@ -59,7 +58,10 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     kind === 'events' ? ['событие', 'события', 'событий'] : ['место', 'места', 'мест'];
   const mobileMq = window.matchMedia('(max-width: 760px)');
   const isMobile = () => mobileMq.matches;
-  const viewBounds = () => (isMobile() ? PT_VIEW_BOUNDS_PHONE : PT_VIEW_BOUNDS);
+  // Re-applies the pan frame + min zoom; set once the map exists.
+  let syncFrame: (() => void) | null = null;
+  // Height the open pin preview covers at the bottom of the phone map.
+  let previewCover: number | null = null;
 
   const emptyEl = root.querySelector<HTMLElement>('[data-empty]')!;
   const countEl = root.querySelector<HTMLElement>('[data-sheet-count]');
@@ -404,6 +406,8 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     document.dispatchEvent(new CustomEvent('explorer:preview', { detail: { id: p.id } }));
     const cover = previewEl.offsetHeight + 12;
     sheet.setAway(true, cover);
+    previewCover = cover;
+    syncFrame?.();
     // Keep the chosen pin clear of the card and the filter row.
     const pt = map.latLngToContainerPoint([p.lat, p.lon]);
     const size = map.getSize();
@@ -425,6 +429,8 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   function closePreview() {
     if (!previewEl || previewEl.hidden) return;
     previewEl.hidden = true;
+    previewCover = null;
+    syncFrame?.();
     previewEl.innerHTML = '';
     if (selectedId) highlightMarker(selectedId, false);
     selectedId = null;
@@ -449,26 +455,44 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
       wheelPxPerZoomLevel: 320,
       wheelDebounceTime: 25,
       // The site only covers mainland Portugal: keep the view on it.
-      maxBounds: viewBounds(),
+      maxBounds: PT_VIEW_BOUNDS,
       maxBoundsViscosity: 1,
     }).setView([39.5, -8.0], 6);
-    // Never zoom out past the frame: at minZoom the whole frame just fits the
-    // pane, so there's no "fly off to the rest of the world". Recomputed when
-    // the pane resizes (window resize, phone rotation, list/map toggle).
-    // The floor is "all of mainland Portugal fits in the visible part of the
-    // map" (minus whatever the phone sheet covers), one quarter-step out.
-    const syncMinZoom = () => {
+    // The pan frame. On the phone the top of the map sits under the filter
+    // row and the bottom under the list sheet, so the frame is stretched by
+    // exactly those pixels at the current zoom: Portugal can be lifted into the
+    // uncovered strip, but the strip itself never shows more than the frame.
+    const frame = (): L.LatLngBounds => {
+      if (!isMobile()) return PT_VIEW_BOUNDS;
+      const m = map!;
+      const z = m.getZoom();
+      const { top } = mapInsets();
+      // With a pin preview open the sheet is tucked away: only the card covers.
+      const bottom = previewCover ?? fitInsets().bottom;
+      const sw = m.project(PT_VIEW_BOUNDS.getSouthWest(), z).add([0, Math.max(0, bottom)]);
+      const ne = m.project(PT_VIEW_BOUNDS.getNorthEast(), z).subtract([0, Math.max(0, top)]);
+      return L.latLngBounds(m.unproject(sw, z), m.unproject(ne, z));
+    };
+    // Never zoom out past the point where all of mainland Portugal fits the
+    // visible part of the map (minus whatever the phone sheet covers), one
+    // quarter-step out — no "fly off to the rest of the world".
+    syncFrame = () => {
       if (!map) return;
-      map.setMaxBounds(viewBounds());
       const { top, bottom } = fitInsets();
       const pad = isMobile() ? 16 : 32;
-      const fit = map.getBoundsZoom(PT_BOX, false, L.point(2 * pad, top + bottom + 2 * pad));
-      const z = Math.floor(fit * 4) / 4 - 0.25;
-      map.setMinZoom(z);
-      if (map.getZoom() < z) map.setZoom(z, { animate: false });
+      const visibleH = map.getSize().y - top - bottom;
+      if (visibleH > 2 * pad) {
+        const fit = map.getBoundsZoom(PT_BOX, false, L.point(2 * pad, top + bottom + 2 * pad));
+        if (Number.isFinite(fit)) {
+          const z = Math.floor(fit * 4) / 4 - 0.25;
+          map.setMinZoom(z);
+          if (map.getZoom() < z) map.setZoom(z, { animate: false });
+        }
+      }
+      map.setMaxBounds(frame());
     };
-    syncMinZoom();
-    map.on('resize', syncMinZoom);
+    syncFrame();
+    map.on('resize zoomend', () => syncFrame?.());
     // Drop Leaflet's own attribution prefix (which carries a 🇺🇦 flag); keep the
     // OpenStreetMap tile credit added below.
     map.attributionControl.setPrefix(false);
@@ -623,6 +647,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     initial: restored?.snap ?? 'half',
     enabled: isMobile,
     onChange: (state) => {
+      syncFrame?.();
       if (autoFit && state !== 'full' && map) fitAll();
       saveView();
     },
