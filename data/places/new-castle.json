@@ -1,0 +1,1124 @@
+[
+  {
+    "id": "castelo-de-sao-jorge",
+    "name": "Замок Святого Георгия (Лиссабон)",
+    "type": "castle",
+    "region": "Лиссабон и Синтра",
+    "coords": {
+      "lat": 38.7139,
+      "lon": -9.1333
+    },
+    "description": "Бывшая королевская алькасова на самом высоком холме исторического центра Лиссабона: стены и башни над Алфамой с одним из лучших видов на город и устье Тежу. Нынешний «средневековый» облик во многом результат большой реконструкции 1940-х, но прогулка по стенам и тенистым дворам с павлинами того стоит. Вход платный; на машине в Алфаму лучше не ехать — поднимайтесь на трамвае 28 или пешком.",
+    "driveMinutesFromLisbon": 15,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "виды",
+      "закат",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Castelo_de_São_Jorge"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/011499_-_Lisboa_%2821691724913%29.jpg/1280px-011499_-_Lisboa_%2821691724913%29.jpg",
+        "author": "M.Peinado from Alcalá de Henares, España",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:011499_-_Lisboa_(21691724913).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/2019-05-16_12-22-39_PT_Lisbon_JHe_K70_%2854144955867%29.jpg/1280px-2019-05-16_12-22-39_PT_Lisbon_JHe_K70_%2854144955867%29.jpg",
+        "author": "Jan Helebrant",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2019-05-16_12-22-39_PT_Lisbon_JHe_K70_(54144955867).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/2019-05-16_13-15-59_PT_Lisbon_JHe_K70_%2854146773714%29.jpg/1280px-2019-05-16_13-15-59_PT_Lisbon_JHe_K70_%2854146773714%29.jpg",
+        "author": "Jan Helebrant",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2019-05-16_13-15-59_PT_Lisbon_JHe_K70_(54146773714).jpg"
+      }
+    ]
+  },
+  {
+    "id": "castelo-de-sesimbra",
+    "name": "Замок Сезимбры",
+    "type": "castle",
+    "region": "Сетубал и Аррабида",
+    "coords": {
+      "lat": 38.4528,
+      "lon": -9.1067
+    },
+    "description": "Мавританский по происхождению замок на краю обрыва высоко над Сезимброй — с его стен видно всю бухту, рыбацкий город и побережье до мыса Эшпишел. Внутри стен — старая церковь Санта-Мария-ду-Каштелу. Подъезжайте на машине по дороге наверх, а потом спускайтесь в город на обед из свежей рыбы.",
+    "driveMinutesFromLisbon": 45,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "виды",
+      "закат",
+      "бесплатно"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Castelo_de_Sesimbra"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Castelo_de_Sesimbra_-_Portugal_%287257860544%29.jpg/1280px-Castelo_de_Sesimbra_-_Portugal_%287257860544%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Sesimbra_-_Portugal_(7257860544).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Castelo_de_Sesimbra_by_Juntas_10.jpg/1280px-Castelo_de_Sesimbra_by_Juntas_10.jpg",
+        "author": "Juntas",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Sesimbra_by_Juntas_10.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Castelo_de_Sesimbra_-_Portugal_%282396163325%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Sesimbra_-_Portugal_(2396163325).jpg"
+      }
+    ]
+  },
+  {
+    "id": "forte-de-sao-filipe-setubal",
+    "name": "Форт Сан-Филипе (Сетубал)",
+    "type": "castle",
+    "region": "Сетубал и Аррабида",
+    "coords": {
+      "lat": 38.5177,
+      "lon": -8.9092
+    },
+    "description": "Звездообразная крепость XVI века на холме у западной окраины Сетубала, построенная для защиты устья реки Саду. С бастионов открывается панорама на город, эстуарий, полуостров Троя и склоны Аррабиды. Хорошо сочетается с поездкой в Аррабиду или на паром до Трои; приезжайте под закат.",
+    "driveMinutesFromLisbon": 45,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "виды",
+      "закат",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Forte_de_São_Filipe_(Setúbal)"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Castillo_de_San_Felipe%2C_Set%C3%BAbal%2C_Portugal%2C_2021-09-12%2C_DD_01.jpg/1280px-Castillo_de_San_Felipe%2C_Set%C3%BAbal%2C_Portugal%2C_2021-09-12%2C_DD_01.jpg",
+        "author": "Diego Delso",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castillo_de_San_Felipe,_Set%C3%BAbal,_Portugal,_2021-09-12,_DD_01.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Castelo_de_S%C3%A3o_Filipe_1.jpg/1280px-Castelo_de_S%C3%A3o_Filipe_1.jpg",
+        "author": "Sanjorgepinho",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_S%C3%A3o_Filipe_1.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Castelo_de_S%C3%A3o_Filipe-12.jpg/1280px-Castelo_de_S%C3%A3o_Filipe-12.jpg",
+        "author": "rodrigum",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_S%C3%A3o_Filipe-12.jpg"
+      }
+    ]
+  },
+  {
+    "id": "castelo-de-torres-vedras",
+    "name": "Замок Торреш-Ведраш",
+    "type": "castle",
+    "region": "Оэште",
+    "coords": {
+      "lat": 39.0947,
+      "lon": -9.2611
+    },
+    "description": "Средневековый замок на крутом холме над Торреш-Ведрашем, отвоёванный у мавров в 1148 году; позже здесь был узел знаменитых Линий Торреш-Ведраш против армии Наполеона. Со стен видно город и холмы Оэште с ветряками. Удобная короткая остановка по дороге на пляжи Санта-Круш или в Перише.",
+    "driveMinutesFromLisbon": 45,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "виды",
+      "бесплатно"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Castelo_de_Torres_Vedras"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/be/TorresVedras-CCBY.jpg",
+        "author": "Portuguese eyes",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:TorresVedras-CCBY.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Castelo_de_Torres_Vedras_%2848178058037%29.jpg/1280px-Castelo_de_Torres_Vedras_%2848178058037%29.jpg",
+        "author": "pedrik",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Torres_Vedras_(48178058037).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Castelo_de_Torres_Vedras_-_Portugal_%28240835043%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Torres_Vedras_-_Portugal_(240835043).jpg"
+      }
+    ]
+  },
+  {
+    "id": "castelo-de-leiria",
+    "name": "Замок Лейрии",
+    "type": "castle",
+    "region": "Эштремадура",
+    "coords": {
+      "lat": 39.747,
+      "lon": -8.81
+    },
+    "description": "Один из самых эффектных замков Португалии высоко над Лейрией и рекой Лиш, считающийся лучшим примером превращения крепости в королевскую резиденцию: внутри — готическая лоджия-галерея с видом на город и руины церкви Носса-Сеньора-да-Пена. Вход платный. Легко совмещается с монастырём Баталья в 15 минутах езды.",
+    "driveMinutesFromLisbon": 85,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "виды",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Castelo_de_Leiria"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/CASTELO_DE_LEIRIA.jpg",
+        "author": "JMFH4778",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:CASTELO_DE_LEIRIA.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Castelo_de_Leiria_-_panoramio.jpg/1280px-Castelo_de_Leiria_-_panoramio.jpg",
+        "author": "tiago186703274",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Leiria_-_panoramio.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Castelo_de_Leiria_-_Portugal_%28267265752%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Leiria_-_Portugal_(267265752).jpg"
+      }
+    ]
+  },
+  {
+    "id": "castelo-de-porto-de-mos",
+    "name": "Замок Порту-де-Мош",
+    "type": "castle",
+    "region": "Эштремадура",
+    "coords": {
+      "lat": 39.6033,
+      "lon": -8.8186
+    },
+    "description": "Сказочный замок с двумя зелёными коническими крышами башен на холме над городком Порту-де-Мош; его связывают с легендарным рыцарем Фуашем Рупинью. Небольшой, но очень фотогеничный и удобен для детей. Хорошая остановка по пути в природный парк Серраш-де-Айре-и-Кандейруш и пещеры Мира-де-Айре.",
+    "driveMinutesFromLisbon": 85,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "фото",
+      "с детьми"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Castelo_de_Porto_de_Mós"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Castelo_de_Porto_de_M%C3%B3s_27.jpg/1280px-Castelo_de_Porto_de_M%C3%B3s_27.jpg",
+        "author": "Celia Ascenso",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Porto_de_M%C3%B3s_27.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/2026-07-25_Castelo_de_Porto_de_M%C3%B3s_1.jpg/1280px-2026-07-25_Castelo_de_Porto_de_M%C3%B3s_1.jpg",
+        "author": "Alexkom000",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026-07-25_Castelo_de_Porto_de_M%C3%B3s_1.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Castelo_de_Porto_de_M%C3%B3s_%28Portugal%29_%283106312939%29.jpg/1280px-Castelo_de_Porto_de_M%C3%B3s_%28Portugal%29_%283106312939%29.jpg",
+        "author": "amaianos from Galicia",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Porto_de_M%C3%B3s_(Portugal)_(3106312939).jpg"
+      }
+    ]
+  },
+  {
+    "id": "castelo-de-ourem",
+    "name": "Замок Орена",
+    "type": "castle",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 39.6412,
+      "lon": -8.592
+    },
+    "description": "Замок и дворец графов Орена XV века на вершине холма над средневековой деревней — считается одним из самых красивых замков страны. Сохранились мощные башни, необычная готическая кирпичная отделка и широкие виды на окрестности. Машину оставьте у нижнего края старой деревни и пройдитесь по её улочкам; рядом Фатима.",
+    "driveMinutesFromLisbon": 90,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "виды",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Castelo_de_Ourém"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Ourem-CCBYSA.jpg",
+        "author": "pfig",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ourem-CCBYSA.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Acesso_ao_Castelo_de_Our%C3%A9m.jpg/1280px-Acesso_ao_Castelo_de_Our%C3%A9m.jpg",
+        "author": "Duca696",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Acesso_ao_Castelo_de_Our%C3%A9m.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Castelo_de_Our%C3%A9m_%2814%29.jpg/1280px-Castelo_de_Our%C3%A9m_%2814%29.jpg",
+        "author": "Duca696",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Our%C3%A9m_(14).jpg"
+      }
+    ]
+  },
+  {
+    "id": "castelo-de-torres-novas",
+    "name": "Замок Торреш-Новаш",
+    "type": "castle",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 39.48,
+      "lon": -8.5406
+    },
+    "description": "Средневековый замок, входивший в оборонительную «Линию Тежу», с зубчатыми стенами и башнями над центром Торреш-Новаша и рекой Алмонда. Внутри стен — сад, со стен виден весь город. Короткая остановка по дороге в Томар или к замку Алмоурол.",
+    "driveMinutesFromLisbon": 75,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "виды",
+      "бесплатно"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Castelo_de_Torres_Novas"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Castelo_Torres_Novas_II.jpg/1280px-Castelo_Torres_Novas_II.jpg",
+        "author": "Inês Leonardo",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_Torres_Novas_II.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Castelo_de_Torres_Novas_-_Portugal_%28307702173%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Torres_Novas_-_Portugal_(307702173).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Castelo_de_Torres_Novas_04.jpg/1280px-Castelo_de_Torres_Novas_04.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Torres_Novas_04.jpg"
+      }
+    ]
+  },
+  {
+    "id": "castelo-de-abrantes",
+    "name": "Крепость Абрантеш",
+    "type": "castle",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 39.4645,
+      "lon": -8.1948
+    },
+    "description": "Крепость на холме над правым берегом Тежу, звено средневековой «Линии Тежу»; с главной башни открывается один из самых широких видов на долину реки. На территории — церковь Санта-Мария-ду-Каштелу с гробницами графов Абрантеш. Удобно совместить с замком Алмоурол в 20 минутах.",
+    "driveMinutesFromLisbon": 100,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "виды",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Castelo_de_Abrantes"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Castelo_de_Abrantes_%28vista_geral%29.jpg/1280px-Castelo_de_Abrantes_%28vista_geral%29.jpg",
+        "author": "Juntas",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Abrantes_(vista_geral).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Abrantes-chateau_01_082006.JPG/1280px-Abrantes-chateau_01_082006.JPG",
+        "author": "Patrick Clenet",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abrantes-chateau_01_082006.JPG"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Castelo_de_Abrantes_-_Portugal_%284525563778%29.jpg/1280px-Castelo_de_Abrantes_-_Portugal_%284525563778%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Abrantes_-_Portugal_(4525563778).jpg"
+      }
+    ]
+  },
+  {
+    "id": "castelo-de-belver",
+    "name": "Замок Белвер",
+    "type": "castle",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 39.4939,
+      "lon": -7.9609
+    },
+    "description": "Один из самых цельных средневековых замков Португалии: построенный орденом госпитальеров в конце XII века, он одиноко стоит на гранитной вершине над Тежу. Вид со стен на реку и деревню Белвер — классика открыток. Внизу у реки есть речной пляж Белвер, так что летом поездку легко совместить с купанием.",
+    "driveMinutesFromLisbon": 135,
+    "visitDurationHours": 1.5,
+    "bestSeason": "март–ноябрь",
+    "tags": [
+      "история",
+      "виды",
+      "природа",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Castelo_de_Belver"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Belver_-_Castle_of_Belver_-_20200818134811.jpg/1280px-Belver_-_Castle_of_Belver_-_20200818134811.jpg",
+        "author": "FenandoLBMaria",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Belver_-_Castle_of_Belver_-_20200818134811.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Belver%2C_Castelo_de_Belver_01.jpg/1280px-Belver%2C_Castelo_de_Belver_01.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Belver,_Castelo_de_Belver_01.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Castelo_de_Belver_-_Portugal_%285953931863%29.jpg/1280px-Castelo_de_Belver_-_Portugal_%285953931863%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Belver_-_Portugal_(5953931863).jpg"
+      }
+    ]
+  },
+  {
+    "id": "castelo-de-amieira-do-tejo",
+    "name": "Замок Амиейра-ду-Тежу",
+    "type": "castle",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 39.508,
+      "lon": -7.8162
+    },
+    "description": "Квадратный готический замок XIV века госпитальеров в тихой алентежанской деревне Амиейра-ду-Тежу — компактный, с четырьмя угловыми башнями и барбаканом. Мало туристов и подлинная атмосфера. Логично объединять с замком Белвер на другом берегу Тежу.",
+    "driveMinutesFromLisbon": 150,
+    "visitDurationHours": 1,
+    "bestSeason": "март–ноябрь",
+    "tags": [
+      "история",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Castelo_de_Amieira"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Castelo_de_Amieira_do_Tejo_-_Portugal_%287205725220%29.jpg/1280px-Castelo_de_Amieira_do_Tejo_-_Portugal_%287205725220%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Amieira_do_Tejo_-_Portugal_(7205725220).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Barbac%C3%A3_do_castelo_de_Amieira.jpg/1280px-Barbac%C3%A3_do_castelo_de_Amieira.jpg",
+        "author": "Adriao",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Barbac%C3%A3_do_castelo_de_Amieira.jpg"
+      }
+    ]
+  },
+  {
+    "id": "castelo-de-pombal",
+    "name": "Замок Помбал",
+    "type": "castle",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 39.9139,
+      "lon": -8.6247
+    },
+    "description": "Тамплиерский замок XII века на скалистом холме над рекой Арунка и городом Помбал, связанный с магистром ордена Гуалдином Пайшем. Небольшой, с сохранившейся главной башней и видом на город. Хорошая остановка прямо у трассы A1 по дороге в Коимбру.",
+    "driveMinutesFromLisbon": 105,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "виды",
+      "бесплатно"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Castelo_de_Pombal"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Pombal1.jpg/1280px-Pombal1.jpg",
+        "author": "MarioM",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pombal1.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Castelo_de_Pombal_%2848759584456%29.jpg/1280px-Castelo_de_Pombal_%2848759584456%29.jpg",
+        "author": "Halley Oliveira from Guimarães, Portugal",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Pombal_(48759584456).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Castelo_de_Pombal_-_Portugal_%28341377034%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Pombal_-_Portugal_(341377034).jpg"
+      }
+    ]
+  },
+  {
+    "id": "castelo-de-penela",
+    "name": "Замок Пенела",
+    "type": "castle",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.0312,
+      "lon": -8.3905
+    },
+    "description": "Замок на известняковой скале, когда-то передовой пост обороны Коимбры: стены буквально вырастают из камня. Со стен видно черепичные крыши Пенелы, а на востоке — Серра-да-Лоуза. Совмещается с римской Конимбригой и сланцевыми деревнями Лоузы.",
+    "driveMinutesFromLisbon": 115,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "виды",
+      "бесплатно"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Castelo_de_Penela"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Castelo_de_Penela_-_vista_geral.JPG/1280px-Castelo_de_Penela_-_vista_geral.JPG",
+        "author": "Adriao",
+        "license": "CC BY 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Penela_-_vista_geral.JPG"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Castelo_de_penela_%2801%29.JPG/1280px-Castelo_de_penela_%2801%29.JPG",
+        "author": "Carlos Luis M C da Cruz",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_penela_(01).JPG"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Castelo_de_Penela_%281%29.jpg/1280px-Castelo_de_Penela_%281%29.jpg",
+        "author": "Hugo Ferreira",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Penela_(1).jpg"
+      }
+    ]
+  },
+  {
+    "id": "castelo-da-lousa",
+    "name": "Замок Лоуза (Аруси)",
+    "type": "castle",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.1004,
+      "lon": -8.2354
+    },
+    "description": "Маленький замок XI века в лесистом ущелье реки Аруси в Серра-да-Лоуза, в паре километров от городка Лоуза. Рядом — святилище Сеньора-да-Пьедаде и речной пляж с естественными бассейнами. Отсюда начинаются тропы к сланцевым деревням вроде Таласнала.",
+    "driveMinutesFromLisbon": 135,
+    "visitDurationHours": 2,
+    "bestSeason": "апрель–октябрь",
+    "tags": [
+      "история",
+      "природа",
+      "купание",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Castelo_da_Lousã"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Castelo_da_Lous%C3%A3_ou_de_Arouce_-_Portugal_%2828681915441%29.jpg/1280px-Castelo_da_Lous%C3%A3_ou_de_Arouce_-_Portugal_%2828681915441%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_da_Lous%C3%A3_ou_de_Arouce_-_Portugal_(28681915441).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Castelo_da_Lous%C3%A3_%2852223203237%29.jpg/1280px-Castelo_da_Lous%C3%A3_%2852223203237%29.jpg",
+        "author": "Pedro from Maia (Porto), Portugal",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_da_Lous%C3%A3_(52223203237).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Castelo_da_lous%C3%A3.jpg/1280px-Castelo_da_lous%C3%A3.jpg",
+        "author": "Nekkas",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_da_lous%C3%A3.jpg"
+      }
+    ]
+  },
+  {
+    "id": "castelo-do-sabugal",
+    "name": "Замок Сабугал",
+    "type": "castle",
+    "region": "Центр (Серра-да-Эштрела)",
+    "coords": {
+      "lat": 40.3514,
+      "lon": -7.0942
+    },
+    "description": "Пограничный замок над рекой Коа с необычной пятиугольной главной башней — за это его зовут «замком пяти углов». Один из ключевых замков Раи, португало-испанского приграничья. Удобно совмещать с соседней деревней-крепостью Сортелья.",
+    "driveMinutesFromLisbon": 225,
+    "visitDurationHours": 1.5,
+    "bestSeason": "апрель–октябрь",
+    "tags": [
+      "история",
+      "виды",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Castelo_do_Sabugal"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Nt-castelo-sabugal-4.jpg/1280px-Nt-castelo-sabugal-4.jpg",
+        "author": "Nuno Tavares",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nt-castelo-sabugal-4.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Castelo_de_Sabugal_%281%29.jpg/1280px-Castelo_de_Sabugal_%281%29.jpg",
+        "author": "Concierge.2C",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Sabugal_(1).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Castelo_de_Sabugal_%282%29.jpg/1280px-Castelo_de_Sabugal_%282%29.jpg",
+        "author": "Concierge.2C",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Sabugal_(2).jpg"
+      }
+    ]
+  },
+  {
+    "id": "castelo-de-santa-maria-da-feira",
+    "name": "Замок Санта-Мария-да-Фейра",
+    "type": "castle",
+    "region": "Север",
+    "coords": {
+      "lat": 40.921,
+      "lon": -8.5428
+    },
+    "description": "Один из самых полных образцов средневековой военной архитектуры в Португалии — с главной башней, увенчанной коническими башенками, и стенами в парковом лесу. Каждое лето здесь проходит большой средневековый фестиваль Viagem Medieval. Удобная остановка по пути в Порту.",
+    "driveMinutesFromLisbon": 170,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "с детьми",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Castelo_de_Santa_Maria_da_Feira"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Castelo_da_Feira_ou_Castelo_de_Santa_Maria_da_Feira_%281%29.jpg/1280px-Castelo_da_Feira_ou_Castelo_de_Santa_Maria_da_Feira_%281%29.jpg",
+        "author": "António Amen",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_da_Feira_ou_Castelo_de_Santa_Maria_da_Feira_(1).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/4520_Santa_Maria_da_Feira%2C_Portugal_-_panoramio_-_cipriwarrior_%281%29.jpg/1280px-4520_Santa_Maria_da_Feira%2C_Portugal_-_panoramio_-_cipriwarrior_%281%29.jpg",
+        "author": "cipriwarrior",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:4520_Santa_Maria_da_Feira,_Portugal_-_panoramio_-_cipriwarrior_(1).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/4520_Santa_Maria_da_Feira%2C_Portugal_-_panoramio_-_cipriwarrior_%2814%29.jpg/1280px-4520_Santa_Maria_da_Feira%2C_Portugal_-_panoramio_-_cipriwarrior_%2814%29.jpg",
+        "author": "cipriwarrior",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:4520_Santa_Maria_da_Feira,_Portugal_-_panoramio_-_cipriwarrior_(14).jpg"
+      }
+    ]
+  },
+  {
+    "id": "castelo-de-guimaraes",
+    "name": "Замок Гимарайнш",
+    "type": "castle",
+    "region": "Север",
+    "coords": {
+      "lat": 41.4478,
+      "lon": -8.2903
+    },
+    "description": "Символ «колыбели Португалии»: замок связан с основанием графства Портукале и первым королём Афонсу Энрикешем, а в 2007 году вошёл в «Семь чудес Португалии». Рядом — Дворец герцогов Браганса и холм с церковью Сан-Мигел. Совмещайте с прогулкой по историческому центру Гимарайнша (ЮНЕСКО).",
+    "driveMinutesFromLisbon": 210,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "фото",
+      "с детьми"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Castelo_de_Guimarães"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Castelo_de_Guimaraes_%289%29.jpg/1280px-Castelo_de_Guimaraes_%289%29.jpg",
+        "author": "Krzysztof Golik",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Guimaraes_(9).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/20200201_Guimar%C3%A3esCastle_4404_%2849653512003%29.jpg/1280px-20200201_Guimar%C3%A3esCastle_4404_%2849653512003%29.jpg",
+        "author": "Ray Swi-hymn from Sijhih-Taipei, Taiwan",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:20200201_Guimar%C3%A3esCastle_4404_(49653512003).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/20200201_Guimar%C3%A3esCastle_4405_%2849654049051%29.jpg/1280px-20200201_Guimar%C3%A3esCastle_4405_%2849654049051%29.jpg",
+        "author": "Ray Swi-hymn from Sijhih-Taipei, Taiwan",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:20200201_Guimar%C3%A3esCastle_4405_(49654049051).jpg"
+      }
+    ]
+  },
+  {
+    "id": "castelo-de-evoramonte",
+    "name": "Замок Эворамонте",
+    "type": "castle",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 38.7719,
+      "lon": -7.7158
+    },
+    "description": "Необычный ренессансный донжон с круглыми угловыми башнями на одной из высших точек Серра-д’Осса, внутри крошечной деревни в стенах. С вершины видно весь Алентежу до замка Эштремоша. Совмещайте с Эштремошем и Эворой — оба в получасе езды.",
+    "driveMinutesFromLisbon": 100,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "виды",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Castelo_de_Évora_Monte"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/70670-Castelo_Medieval_de_%C3%89voramonte.jpg/1280px-70670-Castelo_Medieval_de_%C3%89voramonte.jpg",
+        "author": "José Barreiro",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:70670-Castelo_Medieval_de_%C3%89voramonte.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Castelo_de_Evoramonte_-_Portugal_%2810358987743%29.jpg/1280px-Castelo_de_Evoramonte_-_Portugal_%2810358987743%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Evoramonte_-_Portugal_(10358987743).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Castelo_de_Evoramonte_-_Portugal_%286264978982%29.jpg/1280px-Castelo_de_Evoramonte_-_Portugal_%286264978982%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Evoramonte_-_Portugal_(6264978982).jpg"
+      }
+    ]
+  },
+  {
+    "id": "forte-da-graca-elvas",
+    "name": "Форт Носса-Сеньора-да-Граса (Элваш)",
+    "type": "castle",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 38.8946,
+      "lon": -7.1642
+    },
+    "description": "Огромный бастионный форт XVIII века на холме к северу от Элваша, часть фортификаций, внесённых в список ЮНЕСКО в 2012 году. Многоуровневые стены, рвы и дом губернатора в центре — впечатляющий пример военной инженерии эпохи. Вход платный; летом здесь очень жарко, приезжайте утром.",
+    "driveMinutesFromLisbon": 135,
+    "visitDurationHours": 1.5,
+    "bestSeason": "октябрь–май",
+    "tags": [
+      "история",
+      "виды",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Forte_de_Nossa_Senhora_da_Graça"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Elvas_-_Forte_de_Nossa_Senhora_da_Gra%C3%A7a.jpg/1280px-Elvas_-_Forte_de_Nossa_Senhora_da_Gra%C3%A7a.jpg",
+        "author": "Concierge.2C",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elvas_-_Forte_de_Nossa_Senhora_da_Gra%C3%A7a.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Elvas_-_Forte_da_Gra%C3%A7a.jpg/1280px-Elvas_-_Forte_da_Gra%C3%A7a.jpg",
+        "author": "Scalabis",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elvas_-_Forte_da_Gra%C3%A7a.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Elvas_-_Forte_de_Nossa_senhora_da_Gra%C3%A7a.jpg/1280px-Elvas_-_Forte_de_Nossa_senhora_da_Gra%C3%A7a.jpg",
+        "author": "michael clarke stuff",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elvas_-_Forte_de_Nossa_senhora_da_Gra%C3%A7a.jpg"
+      }
+    ]
+  },
+  {
+    "id": "castelo-de-vila-vicosa",
+    "name": "Замок Вила-Висоза",
+    "type": "castle",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 38.78,
+      "lon": -7.415
+    },
+    "description": "Замок с артиллерийскими бастионами XVI века над мраморным городком Вила-Висоза; внутри — музеи охоты и археологии фонда Дома Браганса. В двух шагах — Герцогский дворец Браганса. Отличная пара с Эштремошем и мраморными карьерами вокруг.",
+    "driveMinutesFromLisbon": 125,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Castelo_de_Vila_Viçosa"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Castelo_de_Vila_Vi%C3%A7osa_-_Portugal_%2811311206044%29.jpg/1280px-Castelo_de_Vila_Vi%C3%A7osa_-_Portugal_%2811311206044%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Vila_Vi%C3%A7osa_-_Portugal_(11311206044).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Castelo_de_Vila_Vi%C3%A7osa_-_Portugal_%288596569053%29.jpg/1280px-Castelo_de_Vila_Vi%C3%A7osa_-_Portugal_%288596569053%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Vila_Vi%C3%A7osa_-_Portugal_(8596569053).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Castelo_de_Vila_Vi%C3%A7osa%2C_Vila_Vi%C3%A7osa_05.jpg/1280px-Castelo_de_Vila_Vi%C3%A7osa%2C_Vila_Vi%C3%A7osa_05.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Vila_Vi%C3%A7osa,_Vila_Vi%C3%A7osa_05.jpg"
+      }
+    ]
+  },
+  {
+    "id": "castelo-de-viana-do-alentejo",
+    "name": "Замок Виана-ду-Алентежу",
+    "type": "castle",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 38.3321,
+      "lon": -8.0016
+    },
+    "description": "Пятиугольный замок позднеготической эпохи с круглыми башнями и белёной мануэлинской церковью внутри стен — вместе с замком Алвиту считается одним из лучших ансамблей своего времени. Небольшой и спокойный, почти без туристов. Удобная остановка между Эворой и Бежей.",
+    "driveMinutesFromLisbon": 110,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "фото",
+      "бесплатно"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Castelo_de_Viana_do_Alentejo"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Castelo_de_Viana_do_Alentejo_-_Portugal_%285623413009%29.jpg/1280px-Castelo_de_Viana_do_Alentejo_-_Portugal_%285623413009%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Viana_do_Alentejo_-_Portugal_(5623413009).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Castelo_de_Viana_do_Alentejo_-_Portugal_%286280108299%29.jpg/1280px-Castelo_de_Viana_do_Alentejo_-_Portugal_%286280108299%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Viana_do_Alentejo_-_Portugal_(6280108299).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Castelo_de_Viana_do_Alentejo_01.jpg/1280px-Castelo_de_Viana_do_Alentejo_01.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Viana_do_Alentejo_01.jpg"
+      }
+    ]
+  },
+  {
+    "id": "castelo-de-beja",
+    "name": "Замок Бежи",
+    "type": "castle",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 38.0175,
+      "lon": -7.8656
+    },
+    "description": "Главная достопримечательность Бежи — высокая главная башня, один из самых высоких донжонов Португалии, с панорамой бескрайних равнин Байшу-Алентежу. Город стоит на месте римского Пакс-Юлия. Подниматься на башню стоит утром или вечером, когда не так жарко.",
+    "driveMinutesFromLisbon": 120,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "виды"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Castelo_de_Beja"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Castelo_de_Beja_Arco_iris.jpg/1280px-Castelo_de_Beja_Arco_iris.jpg",
+        "author": "Costajosemanuel.foto",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Beja_Arco_iris.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/3958Castelobeja_jmc.jpg/1280px-3958Castelobeja_jmc.jpg",
+        "author": "Costajosemanuel",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:3958Castelobeja_jmc.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Beja.castle02.jpg",
+        "author": "Georges Jansoone",
+        "license": "CC BY 2.5",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beja.castle02.jpg"
+      }
+    ]
+  },
+  {
+    "id": "castelo-de-silves",
+    "name": "Замок Силвеш",
+    "type": "castle",
+    "region": "Алгарве",
+    "coords": {
+      "lat": 37.191,
+      "lon": -8.4379
+    },
+    "description": "Самая крупная крепость Алгарве и лучший в стране образец исламской военной архитектуры — красные стены из песчаника над бывшей столицей мавританского Алгарве. Внутри — цистерны и раскопки дворца. Совмещайте с готическим собором рядом и обедом на набережной реки Арада.",
+    "driveMinutesFromLisbon": 160,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "виды",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Castelo_de_Silves"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Silves_-_Portugal_%2852157551779%29.jpg/1280px-Silves_-_Portugal_%2852157551779%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Silves_-_Portugal_(52157551779).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Castelo_de_Silves_%2852859628915%29.jpg/1280px-Castelo_de_Silves_%2852859628915%29.jpg",
+        "author": "Marty B",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Silves_(52859628915).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/CASTELO_DE_SILVES_1.jpg/1280px-CASTELO_DE_SILVES_1.jpg",
+        "author": "Lídia Maria Faria",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:CASTELO_DE_SILVES_1.jpg"
+      }
+    ]
+  },
+  {
+    "id": "fortaleza-de-sagres",
+    "name": "Крепость Сагреш",
+    "type": "castle",
+    "region": "Алгарве",
+    "coords": {
+      "lat": 37.0009,
+      "lon": -8.9484
+    },
+    "description": "Крепость на скалистом мысе Сагреш, связанная с принцем Энрике Мореплавателем и эпохой Великих открытий: внутри огромная каменная «роза ветров» и маленькая церковь XV века. Тропа по периметру мыса идёт над отвесными обрывами с видом на Атлантику. Берите ветровку — здесь всегда ветрено; на закат езжайте к мысу Сан-Висенте.",
+    "driveMinutesFromLisbon": 195,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "виды",
+      "закат",
+      "природа"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Fortaleza_de_Sagres"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Cliffs_and_fortress_wall_at_Sagres_-_Portugal_-_2015-08-03.jpg/1280px-Cliffs_and_fortress_wall_at_Sagres_-_Portugal_-_2015-08-03.jpg",
+        "author": "Norbert Nagel",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cliffs_and_fortress_wall_at_Sagres_-_Portugal_-_2015-08-03.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Cabo_de_Sagres_-_Portugal_%2848665340697%29.jpg/1280px-Cabo_de_Sagres_-_Portugal_%2848665340697%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cabo_de_Sagres_-_Portugal_(48665340697).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Buildings_and_constructions_of_Fortaleza.jpg/1280px-Buildings_and_constructions_of_Fortaleza.jpg",
+        "author": "Threeohsix",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Buildings_and_constructions_of_Fortaleza.jpg"
+      }
+    ]
+  },
+  {
+    "id": "castelo-de-castro-marim",
+    "name": "Замок Каштру-Марин",
+    "type": "castle",
+    "region": "Алгарве",
+    "coords": {
+      "lat": 37.2185,
+      "lon": -7.4419
+    },
+    "description": "Пограничный замок над устьем Гвадианы, напротив испанского Аямонте; со стен видны река, солончаки и заповедник Сапал-де-Каштру-Марин. Каждое лето здесь проходят Средневековые дни. Рядом — солеварни, где часто кормятся фламинго.",
+    "driveMinutesFromLisbon": 180,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "виды",
+      "природа"
+    ],
+    "links": [
+      {
+        "title": "Википедия (pt)",
+        "url": "https://pt.wikipedia.org/wiki/Castelo_de_Castro_Marim"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Castelo_de_Castro_Marim_%282%29.jpg/1280px-Castelo_de_Castro_Marim_%282%29.jpg",
+        "author": "Steven Fruitsmaak",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Castro_Marim_(2).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Castelo_de_Castro_Marim_-_Portugal_%2819632447373%29.jpg/1280px-Castelo_de_Castro_Marim_-_Portugal_%2819632447373%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Castro_Marim_-_Portugal_(19632447373).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Castelo_de_Castro_Marim_-_Torre%C3%A3o.jpg/1280px-Castelo_de_Castro_Marim_-_Torre%C3%A3o.jpg",
+        "author": "Concierge.2C",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castelo_de_Castro_Marim_-_Torre%C3%A3o.jpg"
+      }
+    ]
+  }
+]
