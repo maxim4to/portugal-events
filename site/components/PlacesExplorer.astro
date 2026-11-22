@@ -14,11 +14,10 @@ import { formatDriveMinutes, isInLisbon } from '../lib/format.ts';
 
 interface Props {
   places: Place[];
-  regions: string[];
   tags: string[];
   hrefBase: string;
 }
-const { places, regions, tags, hrefBase } = Astro.props;
+const { places, tags, hrefBase } = Astro.props;
 
 const points = places.map((p) => ({
   id: p.id,
@@ -38,7 +37,7 @@ const points = places.map((p) => ({
 }));
 ---
 <MapShell kind="places" detailPrefix="/places/" hrefBase={hrefBase} mapId="places-map" points={points} awaitUser sidebar>
-  <FilterBar slot="filters" regions={regions} tags={tags} />
+  <FilterBar slot="filters" tags={tags} />
 
   <div class="grid-cards" slot="list">
     <div class="visited-sep" data-visited-sep hidden aria-hidden="true">

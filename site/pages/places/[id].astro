@@ -56,7 +56,7 @@ if (road && road.length > 1) {
       <header class="head">
         <div class="kicker-row">
           <TypeBadge type={place.type} />
-          <a class="region" href={href('/places/?region=' + encodeURIComponent(place.region))}>{place.region}</a>
+          <span class="region">{place.region}</span>
         </div>
         <h1>{place.name}</h1>
       </header>
@@ -300,10 +300,6 @@ if (road && road.length > 1) {
     color: var(--text-secondary);
     font-size: 13.5px;
     font-weight: 500;
-  }
-  .region:hover {
-    color: var(--accent);
-    text-decoration: none;
   }
   .head h1 {
     margin: 0;

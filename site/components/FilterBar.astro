@@ -6,10 +6,9 @@ import { typeDiscHtml } from '../lib/typeIcons.ts';
 import Icon from './Icon.astro';
 
 interface Props {
-  regions: string[];
   tags: string[];
 }
-const { regions, tags } = Astro.props;
+const { tags } = Astro.props;
 const typeEntries = Object.entries(TYPE_LABELS);
 // Region and tag lists come most-used first; the sidebar shows this many and
 // folds the rest behind "Показать все" (selected ones always stay visible).
@@ -27,7 +26,6 @@ const drivePresets = [
 const ic = (body: string) =>
   `<span class="chip-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${body}</svg></span>`;
 
-const REGION_ICON = ic('<circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/>');
 const CLOCK_ICON = ic('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>');
 const RESIDENCY_ICON = ic('<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="11" r="2"/><path d="M5.5 16c.6-1.4 1.7-2.1 3-2.1s2.4.7 3 2.1M14 10h5M14 14h4"/>');
 const NI_ICON = ic('<path d="M4 4l16 16"/><path d="M10.6 5.2A10 10 0 0 1 12 5c6 0 9.5 7 9.5 7a17 17 0 0 1-3.2 3.9M6.6 6.6A16.5 16.5 0 0 0 2.5 12s3.5 7 9.5 7c1.4 0 2.7-.4 4-1"/>');
@@ -83,24 +81,6 @@ const UNVISITED_ICON = ic('<circle cx="12" cy="12" r="9" stroke-dasharray="3.2 3
           <Fragment set:html={typeDiscHtml(key)} /><span class="chip-lab">{label}</span>
         </button>
       ))}
-    </div>
-  </div>
-
-  <div class="fgroup" data-fgroup="region">
-    <button type="button" class="fgroup-summary" data-fgroup-toggle aria-expanded="false">
-      <span class="flabel">Регион</span><span class="fcount" data-fcount></span>
-    </button>
-    <div class="fgroup-menu">
-      {regions.map((r, i) => (
-        <button type="button" class:list={['chip', { 'chip-extra': i >= SHOWN }]} data-region={r} aria-pressed="false">
-          <Fragment set:html={REGION_ICON} /><span class="chip-lab">{r}</span>
-        </button>
-      ))}
-      {regions.length > SHOWN && (
-        <button type="button" class="fgroup-expand" data-expand aria-expanded="false">
-          <span data-expand-more>Показать все · {regions.length}</span><span data-expand-less hidden>Свернуть</span>
-        </button>
-      )}
     </div>
   </div>
 
