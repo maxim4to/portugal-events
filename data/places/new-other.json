@@ -1,0 +1,874 @@
+[
+  {
+    "id": "aqueduto-das-aguas-livres",
+    "name": "Акведук Агуаш-Ливреш",
+    "type": "other",
+    "region": "Лиссабон и Синтра",
+    "coords": {
+      "lat": 38.7289,
+      "lon": -9.1692
+    },
+    "description": "Акведук XVIII века, построенный при Жуане V: его арки над долиной Алкантара поднимаются почти на 65 метров, и он пережил землетрясение 1755 года. Пройти поверху по старой галерее можно со входа на Калсада-да-Кинтинья — это часть Музея воды (EPAL), вход платный. Сверьте часы работы на сайте музея: прогулка по акведуку открыта не каждый день.",
+    "driveMinutesFromLisbon": 20,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "виды",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Wikipedia",
+        "url": "https://pt.wikipedia.org/wiki/Aqueduto_das_%C3%81guas_Livres"
+      },
+      {
+        "title": "Музей воды (EPAL)",
+        "url": "https://www.epal.pt/EPAL/menu/museu-da-%C3%A1gua"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Aqueduto_das_%C3%81guas_Livres2.JPG/1280px-Aqueduto_das_%C3%81guas_Livres2.JPG",
+        "author": "Lijealso",
+        "license": "CC BY 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aqueduto_das_%C3%81guas_Livres2.JPG"
+      }
+    ]
+  },
+  {
+    "id": "aqueduto-dos-pegoes",
+    "name": "Акведук Пегойнш (Томар)",
+    "type": "other",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 39.6085,
+      "lon": -8.4408
+    },
+    "description": "Шестикилометровый акведук рубежа XVI–XVII веков, который нёс воду в монастырь Христа; в долине Пегойнш он стоит на двухъярусных арках высотой до 30 метров. Вход свободный, по верху акведука можно пройтись — смелым с хорошей обувью, ограждений нет. Удобно совместить с монастырём Христа в Томаре.",
+    "driveMinutesFromLisbon": 95,
+    "visitDurationHours": 0.75,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "бесплатно",
+      "виды",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Wikipedia",
+        "url": "https://pt.wikipedia.org/wiki/Aqueduto_do_Convento_de_Cristo"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Tomar_December_2008-4.jpg/1280px-Tomar_December_2008-4.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tomar_December_2008-4.jpg"
+      }
+    ]
+  },
+  {
+    "id": "ruinas-romanas-de-troia",
+    "name": "Римские руины Трои",
+    "type": "other",
+    "region": "Сетубал и Аррабида",
+    "coords": {
+      "lat": 38.4863,
+      "lon": -8.885
+    },
+    "description": "Остатки одного из крупнейших в Римской империи центров засолки рыбы и производства гарума (I–VI века) прямо на берегу устья Саду, напротив Сетубала. Хорошо видны ванны для засолки, термы и некрополь, а вокруг — вода и дюны. Руины открыты в основном с весны до осени, расписание стоит проверить заранее; добраться можно на пароме из Сетубала или машиной через Компорту.",
+    "driveMinutesFromLisbon": 90,
+    "visitDurationHours": 1.5,
+    "bestSeason": "апрель–октябрь",
+    "tags": [
+      "история",
+      "виды",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Wikipedia",
+        "url": "https://pt.wikipedia.org/wiki/Ru%C3%ADnas_romanas_de_Troia"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Tr%C3%B3ia_March_2015-1.jpg/1280px-Tr%C3%B3ia_March_2015-1.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tr%C3%B3ia_March_2015-1.jpg"
+      }
+    ]
+  },
+  {
+    "id": "ruinas-de-mirobriga",
+    "name": "Миробрига (римский город)",
+    "type": "other",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 38.0097,
+      "lon": -8.6838
+    },
+    "description": "Римский город на холме у Сантьягу-ду-Касена: форум с храмами, хорошо сохранившиеся термы и единственный полностью раскопанный римский ипподром в Португалии. Туристов здесь мало, поэтому можно спокойно бродить среди камней и пробковых дубов. Территория холмистая — нужна удобная обувь; хорошо совмещается с пляжами побережья Алентежу.",
+    "driveMinutesFromLisbon": 105,
+    "visitDurationHours": 1.5,
+    "bestSeason": "весна, осень",
+    "tags": [
+      "история",
+      "природа",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Wikipedia",
+        "url": "https://pt.wikipedia.org/wiki/Mir%C3%B3briga"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Mir%C3%B3briga_%2820%29.jpg/1280px-Mir%C3%B3briga_%2820%29.jpg",
+        "author": "Sqjaques",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mir%C3%B3briga_(20).jpg"
+      }
+    ]
+  },
+  {
+    "id": "villa-romana-de-sao-cucufate",
+    "name": "Римская вилла Сан-Кукуфате",
+    "type": "other",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 38.2234,
+      "lon": -7.8452
+    },
+    "description": "Руины богатой римской виллы IV века у Вила-де-Фрадеш (Видигейра): сохранился двухэтажный фасад с арками, редкий для Пиренейского полуострова, а позднее здесь стоял монастырь с часовней. Вокруг — виноградники одного из самых известных винных районов Алентежу. В понедельник объект обычно закрыт, часы работы лучше уточнить перед поездкой.",
+    "driveMinutesFromLisbon": 135,
+    "visitDurationHours": 1,
+    "bestSeason": "весна, осень",
+    "tags": [
+      "история",
+      "вино",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Wikipedia",
+        "url": "https://pt.wikipedia.org/wiki/Villa_romana_de_S%C3%A3o_Cucufate"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/The_Roman_ruins_of_S%C3%A3o_Cucufate%2C_with_the_principal_elevation_of_the_villa_%C3%81ulica%2C_Portugal_%2816613984770%29.jpg/1280px-The_Roman_ruins_of_S%C3%A3o_Cucufate%2C_with_the_principal_elevation_of_the_villa_%C3%81ulica%2C_Portugal_%2816613984770%29.jpg",
+        "author": "Carole Raddato from Frankfurt, Germany",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Roman_ruins_of_S%C3%A3o_Cucufate,_with_the_principal_elevation_of_the_villa_%C3%81ulica,_Portugal_(16613984770).jpg"
+      }
+    ]
+  },
+  {
+    "id": "cidade-romana-de-ammaia",
+    "name": "Римский город Аммайя",
+    "type": "other",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 39.3693,
+      "lon": -7.3864
+    },
+    "description": "Раскопки римского города I века в долине у подножия Марвана: подиум храма на форуме, остатки южных городских ворот и небольшой музей с находками. Место тихое и зелёное, хороший короткий заезд по дороге в Марван или Каштелу-де-Виде. Билет покупают в музее на территории.",
+    "driveMinutesFromLisbon": 200,
+    "visitDurationHours": 1,
+    "bestSeason": "весна, осень",
+    "tags": [
+      "история",
+      "природа"
+    ],
+    "links": [
+      {
+        "title": "Wikipedia",
+        "url": "https://pt.wikipedia.org/wiki/Ammaia"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Cidade_Romana_de_Ammaia_-_Portugal_%2846030914642%29.jpg/1280px-Cidade_Romana_de_Ammaia_-_Portugal_%2846030914642%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cidade_Romana_de_Ammaia_-_Portugal_(46030914642).jpg"
+      }
+    ]
+  },
+  {
+    "id": "villa-romana-do-rabacal",
+    "name": "Римская вилла Рабасал",
+    "type": "other",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.0384,
+      "lon": -8.4577
+    },
+    "description": "Руины позднеримской виллы IV века у Пенелы с красивыми многоцветными мозаиками — тихая альтернатива многолюдной Конимбриге. Находки и мозаики показывают в небольшом музейном центре в деревне Рабасал. До Конимбриги отсюда около 15 км, так что обе площадки легко объединить в один день.",
+    "driveMinutesFromLisbon": 115,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Roman_villa_of_Raba%C3%A7al"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Roman_Villa_of_Raba%C3%A7al%2C_Lusitania%2C_Portugal_%2813248754313%29.jpg/1280px-Roman_Villa_of_Raba%C3%A7al%2C_Lusitania%2C_Portugal_%2813248754313%29.jpg",
+        "author": "Carole Raddato from Frankfurt, Germany",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Roman_Villa_of_Raba%C3%A7al,_Lusitania,_Portugal_(13248754313).jpg"
+      }
+    ]
+  },
+  {
+    "id": "cromeleque-do-xerez",
+    "name": "Кромлех Шереш",
+    "type": "other",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 38.4534,
+      "lon": -7.371
+    },
+    "description": "Мегалитический комплекс из нескольких десятков менгиров, выстроенных квадратом вокруг центрального камня высотой около 4 метров. Его перенесли сюда, к подножию Монсараша, из зоны затопления водохранилища Алкева. Вход свободный; лучше приезжать на закате, а потом подняться в Монсараш.",
+    "driveMinutesFromLisbon": 150,
+    "visitDurationHours": 0.5,
+    "bestSeason": "круглый год, кроме летнего зноя",
+    "tags": [
+      "история",
+      "бесплатно",
+      "закат",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Xerez_Cromlech"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Cromeleque_do_Xerez_-_Monsaraz_-_Portugal_%2852505947741%29.jpg/1280px-Cromeleque_do_Xerez_-_Monsaraz_-_Portugal_%2852505947741%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cromeleque_do_Xerez_-_Monsaraz_-_Portugal_(52505947741).jpg"
+      }
+    ]
+  },
+  {
+    "id": "menir-da-meada",
+    "name": "Менгир Меада",
+    "type": "other",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 39.496,
+      "lon": -7.4457
+    },
+    "description": "Самый высокий менгир Пиренейского полуострова — гранитный столб высотой около 7 метров среди пастбищ у Каштелу-де-Виде, символ плодородия эпохи неолита. Вход свободный, последние километры — по грунтовой дороге. Хорошо сочетается с прогулкой по Каштелу-де-Виде и Марвану.",
+    "driveMinutesFromLisbon": 215,
+    "visitDurationHours": 0.5,
+    "bestSeason": "весна, осень",
+    "tags": [
+      "история",
+      "бесплатно",
+      "природа"
+    ],
+    "links": [
+      {
+        "title": "Wikipedia",
+        "url": "https://pt.wikipedia.org/wiki/Menir_da_Meada"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/MenhirofMeada.jpg/1280px-MenhirofMeada.jpg",
+        "author": "Roundtheworld",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:MenhirofMeada.jpg"
+      }
+    ]
+  },
+  {
+    "id": "ponte-romana-de-vila-formosa",
+    "name": "Римский мост Вила-Формоза",
+    "type": "other",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 39.2161,
+      "lon": -7.7849
+    },
+    "description": "Один из лучше всего сохранившихся римских мостов Португалии: шесть арок над Рибейра-де-Седа на древней дороге из Олисипо (Лиссабона) в Эмериту (Мериду). Стоит прямо у трассы между Понте-де-Сор и Алтер-ду-Шан, так что это удобная остановка на пути на север Алентежу. Вход свободный.",
+    "driveMinutesFromLisbon": 130,
+    "visitDurationHours": 0.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "бесплатно",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Wikipedia",
+        "url": "https://pt.wikipedia.org/wiki/Ponte_de_Vila_Formosa"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Ponte_de_Vila_Formosa.jpg/1280px-Ponte_de_Vila_Formosa.jpg",
+        "author": "Lrocha",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ponte_de_Vila_Formosa.jpg"
+      }
+    ]
+  },
+  {
+    "id": "jardim-botanico-tropical",
+    "name": "Тропический ботанический сад (Белен)",
+    "type": "garden",
+    "region": "Лиссабон и Синтра",
+    "coords": {
+      "lat": 38.6982,
+      "lon": -9.2027
+    },
+    "description": "Сад начала XX века рядом с монастырём Жеронимуш: высокие пальмы, экзотические деревья из бывших колоний, пруд с утками и павлины, гуляющие по дорожкам. Тихое место в двух шагах от толп Белена. Вход платный и недорогой — хорошая пауза между монастырём и пастейш-де-Белен.",
+    "driveMinutesFromLisbon": 20,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "природа",
+      "с детьми",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Wikipedia",
+        "url": "https://pt.wikipedia.org/wiki/Jardim_Bot%C3%A2nico_Tropical"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Palm_Trees_-_Jardim_do_Ultramar_%28Botanical_Gardens%29_-_Belem_District_-_Lisbon%2C_Portugal_%284633068205%29.jpg/1280px-Palm_Trees_-_Jardim_do_Ultramar_%28Botanical_Gardens%29_-_Belem_District_-_Lisbon%2C_Portugal_%284633068205%29.jpg",
+        "author": "Adam Jones from Kelowna, BC, Canada",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Palm_Trees_-_Jardim_do_Ultramar_(Botanical_Gardens)_-_Belem_District_-_Lisbon,_Portugal_(4633068205).jpg"
+      }
+    ]
+  },
+  {
+    "id": "tapada-das-necessidades",
+    "name": "Тапада-даш-Нессесидадеш",
+    "type": "garden",
+    "region": "Лиссабон и Синтра",
+    "coords": {
+      "lat": 38.7085,
+      "lon": -9.17
+    },
+    "description": "Бывший королевский парк при дворце Нессесидадеш: тенистые аллеи, сад кактусов, старинные павильоны и ощущение заброшенного романтического поместья посреди города. Вход свободный, но инфраструктура изношена (туалеты закрыты) — до 2028 года запланирована реконструкция. Парк закрывается вечером, зимой около 18:00.",
+    "driveMinutesFromLisbon": 15,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": [
+      "бесплатно",
+      "природа",
+      "история"
+    ],
+    "links": [
+      {
+        "title": "Wikipedia",
+        "url": "https://pt.wikipedia.org/wiki/Tapada_das_Necessidades"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Tapada_das_Necessidades_-_Lisboa_-_Portugal_%2823002230779%29.jpg/1280px-Tapada_das_Necessidades_-_Lisboa_-_Portugal_%2823002230779%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tapada_das_Necessidades_-_Lisboa_-_Portugal_(23002230779).jpg"
+      }
+    ]
+  },
+  {
+    "id": "bacalhoa-buddha-eden",
+    "name": "Сад Будды Bacalhôa Buddha Eden",
+    "type": "garden",
+    "region": "Оэште",
+    "coords": {
+      "lat": 39.2899,
+      "lon": -9.1306
+    },
+    "description": "Огромный восточный сад у Бомбарала, созданный Жозе Берардо после разрушения Бамианских статуй: золотые Будды, пагоды, сотни терракотовых воинов и озёра с карпами. Территория большая — по ней ходит туристический паровозик, а на выходе есть винный магазин хозяйства Bacalhôa. Приезжайте с утра, чтобы спокойно погулять до наплыва групп.",
+    "driveMinutesFromLisbon": 60,
+    "visitDurationHours": 2.5,
+    "bestSeason": "весна–осень",
+    "tags": [
+      "с детьми",
+      "фото",
+      "вино"
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт",
+        "url": "https://www.bacalhoa.pt/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Staircase_of_the_Golden_Buddhas_%28Buddha_Eden%29_05.jpg/1280px-Staircase_of_the_Golden_Buddhas_%28Buddha_Eden%29_05.jpg",
+        "author": "Kent Wang",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Staircase_of_the_Golden_Buddhas_(Buddha_Eden)_05.jpg"
+      }
+    ]
+  },
+  {
+    "id": "palacio-da-bacalhoa",
+    "name": "Дворец и кинта Бакальоа",
+    "type": "other",
+    "region": "Сетубал и Аррабида",
+    "coords": {
+      "lat": 38.5256,
+      "lon": -8.9925
+    },
+    "description": "Ренессансная усадьба XV–XVI веков в Вила-Фреска-де-Азейтан с садом-лабиринтом, большим водоёмом и одними из старейших датированных азулежу Португалии. Сегодня это поместье винного дома Bacalhôa, и попасть внутрь можно только на экскурсию с дегустацией. Бронируйте визит заранее на сайте винодельни.",
+    "driveMinutesFromLisbon": 40,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "вино",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Wikipedia",
+        "url": "https://pt.wikipedia.org/wiki/Quinta_da_Bacalhoa"
+      },
+      {
+        "title": "Bacalhôa",
+        "url": "https://www.bacalhoa.pt/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Quinta_da_Bacalh%C3%B4a_%2811199645583%29.jpg",
+        "author": "Theo França from São Paulo, Brasil",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Quinta_da_Bacalh%C3%B4a_(11199645583).jpg"
+      }
+    ]
+  },
+  {
+    "id": "jose-maria-da-fonseca-azeitao",
+    "name": "Винодельня José Maria da Fonseca",
+    "type": "other",
+    "region": "Сетубал и Аррабида",
+    "coords": {
+      "lat": 38.518,
+      "lon": -9.015
+    },
+    "description": "Старейший производитель столовых вин и мускателя в Португалии (основан в 1834 году): дом-музей в Вила-Ногейра-де-Азейтан, сад и погреба с бочками многолетнего мускателя, родина марки Periquita. Экскурсии заканчиваются дегустацией. Совмещается с поездкой в горы Аррабида и с овечьим сыром Азейтана.",
+    "driveMinutesFromLisbon": 35,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "вино",
+      "история"
+    ],
+    "links": [
+      {
+        "title": "Wikipedia",
+        "url": "https://pt.wikipedia.org/wiki/Jos%C3%A9_Maria_da_Fonseca"
+      },
+      {
+        "title": "Официальный сайт",
+        "url": "https://www.jmf.pt/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Adega_Jos%C3%A9_Maria_da_Fonseca_-_Azeit%C3%A3o_-_Portugal_%2846843927915%29.jpg/1280px-Adega_Jos%C3%A9_Maria_da_Fonseca_-_Azeit%C3%A3o_-_Portugal_%2846843927915%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Adega_Jos%C3%A9_Maria_da_Fonseca_-_Azeit%C3%A3o_-_Portugal_(46843927915).jpg"
+      }
+    ]
+  },
+  {
+    "id": "herdade-do-esporao",
+    "name": "Эрдаде-ду-Эшпоран",
+    "type": "other",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 38.3907,
+      "lon": -7.5514
+    },
+    "description": "Одно из самых известных винных хозяйств Алентежу у Регенгуш-де-Монсараш и один из первых энотуристических проектов страны: экскурсии по погребам, виноградникам и маслобойне, винный бар и ресторан. На территории стоит средневековая башня Эшпоран. Визиты и ресторан лучше бронировать заранее; удобно совмещать с Монсарашем.",
+    "driveMinutesFromLisbon": 130,
+    "visitDurationHours": 3,
+    "bestSeason": "весна, осень (сбор урожая — сентябрь)",
+    "tags": [
+      "вино",
+      "ресторан",
+      "история"
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт",
+        "url": "https://www.esporao.com/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Herdade_do_Espor%C3%A3o_-_Portugal_%2852723399056%29.jpg/1280px-Herdade_do_Espor%C3%A3o_-_Portugal_%2852723399056%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Herdade_do_Espor%C3%A3o_-_Portugal_(52723399056).jpg"
+      }
+    ]
+  },
+  {
+    "id": "miradouro-da-senhora-do-monte",
+    "name": "Мирадору Сеньора-ду-Монте",
+    "type": "viewpoint",
+    "region": "Лиссабон и Синтра",
+    "coords": {
+      "lat": 38.7189,
+      "lon": -9.1328
+    },
+    "description": "Самая высокая смотровая площадка Лиссабона над районом Граса: под ногами весь центр, замок Святого Георгия, Байша и мост 25 Апреля. Здесь меньше людей, чем на соседней Мирадору-да-Граса. Лучшее время — закат; подниматься пешком круто, проще доехать на такси или трамвае 28 до Граса.",
+    "driveMinutesFromLisbon": 15,
+    "visitDurationHours": 0.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "закат",
+      "бесплатно",
+      "виды",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Wikipedia",
+        "url": "https://pt.wikipedia.org/wiki/Miradouro_da_Senhora_do_Monte"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Miradouro_Nossa_Senhora_do_Monte_II.jpg/1280px-Miradouro_Nossa_Senhora_do_Monte_II.jpg",
+        "author": "Filipe Rocha,user:sacavem (pt) http://pt.wikipedia.org/wiki/Usu%C3%A1rio:Sacavem",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Miradouro_Nossa_Senhora_do_Monte_II.jpg"
+      }
+    ]
+  },
+  {
+    "id": "miradouro-de-santa-luzia",
+    "name": "Мирадору-де-Санта-Лузия",
+    "type": "viewpoint",
+    "region": "Лиссабон и Синтра",
+    "coords": {
+      "lat": 38.7116,
+      "lon": -9.1303
+    },
+    "description": "Терраса в Алфаме с панно азулежу, перголой в бугенвиллеях и видом на черепичные крыши, церкви и Тежу. Мимо проходит трамвай 28, а рядом — смотровая Порташ-ду-Сол. Чтобы застать площадку без толпы, приходите рано утром.",
+    "driveMinutesFromLisbon": 15,
+    "visitDurationHours": 0.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "бесплатно",
+      "виды",
+      "фото",
+      "история"
+    ],
+    "links": [
+      {
+        "title": "Wikipedia",
+        "url": "https://pt.wikipedia.org/wiki/Miradouro_de_Santa_Luzia"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Lissabon_-_Santa_Luzia_-_Alfama_-_2.jpg/1280px-Lissabon_-_Santa_Luzia_-_Alfama_-_2.jpg",
+        "author": "Ingo Mehling",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lissabon_-_Santa_Luzia_-_Alfama_-_2.jpg"
+      }
+    ]
+  },
+  {
+    "id": "miradouro-de-sao-pedro-de-alcantara",
+    "name": "Мирадору Сан-Педру-де-Алкантара",
+    "type": "viewpoint",
+    "region": "Лиссабон и Синтра",
+    "coords": {
+      "lat": 38.7153,
+      "lon": -9.1444
+    },
+    "description": "Двухъярусный сад-терраса в Байру-Алту с видом через долину на замок Святого Георгия, Алфаму и Байшу. Исторический фуникулёр Глория после аварии 2025 года не работает, так что подниматься от Рестаурадореш придётся пешком. Вечером здесь работают киоски с напитками — классическое место встретить закат перед ужином в Байру-Алту.",
+    "driveMinutesFromLisbon": 10,
+    "visitDurationHours": 0.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "закат",
+      "бесплатно",
+      "виды"
+    ],
+    "links": [
+      {
+        "title": "Wikipedia",
+        "url": "https://pt.wikipedia.org/wiki/Jardim_de_S%C3%A3o_Pedro_de_Alc%C3%A2ntara"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/JardimSPedroAlcantara.JPG/1280px-JardimSPedroAlcantara.JPG",
+        "author": "CorreiaPM",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:JardimSPedroAlcantara.JPG"
+      }
+    ]
+  },
+  {
+    "id": "ascensor-da-nazare",
+    "name": "Фуникулёр Назаре",
+    "type": "other",
+    "region": "Оэште",
+    "coords": {
+      "lat": 39.605,
+      "lon": -9.0744
+    },
+    "description": "Фуникулёр, работающий с конца XIX века: за пару минут поднимает с пляжной набережной Назаре на скалу Ситиу — к церкви Носса-Сеньора-да-Назаре и смотровым над океаном. Поездка недорогая, вагончики ходят часто, но иногда фуникулёр останавливают на техобслуживание — тогда наверх ведёт крутая лестница. Удобнее всего оставить машину внизу и подняться на фуникулёре, а уже с Ситиу дойти пешком до маяка.",
+    "driveMinutesFromLisbon": 90,
+    "visitDurationHours": 0.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "виды",
+      "с детьми",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Nazar%C3%A9_Funicular"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Ascensor_da_Nazar%C3%A9_-_Portugal_%2851355246824%29.jpg/1280px-Ascensor_da_Nazar%C3%A9_-_Portugal_%2851355246824%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ascensor_da_Nazar%C3%A9_-_Portugal_(51355246824).jpg"
+      }
+    ]
+  },
+  {
+    "id": "convento-de-jesus-setubal",
+    "name": "Монастырь Жезуш (Сетубал)",
+    "type": "other",
+    "region": "Сетубал и Аррабида",
+    "coords": {
+      "lat": 38.5261,
+      "lon": -8.8948
+    },
+    "description": "Церковь конца XV века работы Диогу Бойтаки — одно из первых зданий в стиле мануэлину, с витыми, как канаты, колоннами. В монастыре размещается Музей Сетубала, в 2024 году заново открытый после реставрации, со знаменитой коллекцией португальской живописи XVI века. Часы работы музея лучше уточнить заранее.",
+    "driveMinutesFromLisbon": 45,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Wikipedia",
+        "url": "https://pt.wikipedia.org/wiki/Convento_de_Jesus_(Set%C3%BAbal)"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Convento_de_Jes%C3%BAs%2C_Set%C3%BAbal%2C_Portugal%2C_2021-09-09%2C_DD_75-77_HDR.jpg/1280px-Convento_de_Jes%C3%BAs%2C_Set%C3%BAbal%2C_Portugal%2C_2021-09-09%2C_DD_75-77_HDR.jpg",
+        "author": "Diego Delso",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Convento_de_Jes%C3%BAs,_Set%C3%BAbal,_Portugal,_2021-09-09,_DD_75-77_HDR.jpg"
+      }
+    ]
+  },
+  {
+    "id": "mosteiro-de-santa-clara-a-velha",
+    "name": "Монастырь Санта-Клара-а-Велья (Коимбра)",
+    "type": "other",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.2028,
+      "lon": -8.4334
+    },
+    "description": "Готический монастырь XIV века, основанный королевой Изабеллой Святой, на столетия ушёл под воду и ил разливов Мондегу. После масштабных раскопок руины открыли для посетителей, рядом работает интерпретационный центр с находками. Лучше всего видно с утра; отсюда пешком до парка Португал-душ-Пекенитуш.",
+    "driveMinutesFromLisbon": 120,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Wikipedia",
+        "url": "https://pt.wikipedia.org/wiki/Mosteiro_de_Santa_Clara-a-Velha"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Coimbra_December_2011-7.jpg/1280px-Coimbra_December_2011-7.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coimbra_December_2011-7.jpg"
+      }
+    ]
+  },
+  {
+    "id": "igreja-de-sao-roque",
+    "name": "Церковь Сан-Роке",
+    "type": "other",
+    "region": "Лиссабон и Синтра",
+    "coords": {
+      "lat": 38.7136,
+      "lon": -9.1436
+    },
+    "description": "Иезуитская церковь XVI века в Байру-Алту: скромный фасад скрывает роскошный интерьер из резного золочёного дерева и азулежу. Главное сокровище — капелла Иоанна Крестителя из мрамора, лазурита и агата, изготовленная в Риме и привезённая в Лиссабон по частям. Вход в церковь бесплатный, музей при ней — платный.",
+    "driveMinutesFromLisbon": 10,
+    "visitDurationHours": 0.75,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "бесплатно",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Wikipedia",
+        "url": "https://pt.wikipedia.org/wiki/Igreja_de_S%C3%A3o_Roque_(Lisboa)"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Interior_Igreja_de_S%C3%A3o_Roque_%28Lisboa%29_01.jpg/1280px-Interior_Igreja_de_S%C3%A3o_Roque_%28Lisboa%29_01.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Interior_Igreja_de_S%C3%A3o_Roque_(Lisboa)_01.jpg"
+      }
+    ]
+  },
+  {
+    "id": "lx-factory",
+    "name": "LX Factory",
+    "type": "other",
+    "region": "Лиссабон и Синтра",
+    "coords": {
+      "lat": 38.7036,
+      "lon": -9.1786
+    },
+    "description": "Бывший промышленный комплекс XIX века под мостом 25 Апреля в Алкантаре, превращённый в квартал кафе, ресторанов, дизайнерских магазинов и стрит-арта. Среди главных точек — книжный магазин Ler Devagar в старой типографии. Вход свободный; оживлённее всего вечером и в выходные.",
+    "driveMinutesFromLisbon": 15,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": [
+      "ресторан",
+      "фото",
+      "бесплатно"
+    ],
+    "links": [
+      {
+        "title": "Wikipedia",
+        "url": "https://pt.wikipedia.org/wiki/LXFactory"
+      },
+      {
+        "title": "Официальный сайт",
+        "url": "https://lxfactory.com/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/LX_Factory_%2822379332901%29.jpg/1280px-LX_Factory_%2822379332901%29.jpg",
+        "author": "Bex Walton from London, England",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:LX_Factory_(22379332901).jpg"
+      }
+    ]
+  },
+  {
+    "id": "chalet-da-condessa-d-edla",
+    "name": "Шале графини д’Эдла",
+    "type": "other",
+    "region": "Лиссабон и Синтра",
+    "coords": {
+      "lat": 38.7851,
+      "lon": -9.3991
+    },
+    "description": "Романтическое шале в «альпийском» стиле, построенное в 1860-х королём Фернанду II и певицей Элизой Хенслер в парке Пена; стены и интерьеры украшены пробкой. После пожара 1999 года шале восстановили. Вход по билету Parques de Sintra в парк Пена — сюда лучше идти лесом, вдали от очереди во дворец.",
+    "driveMinutesFromLisbon": 35,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "природа",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Parques de Sintra",
+        "url": "https://www.parquesdesintra.pt/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Chalet_da_Condessa_de_Edla_0474.jpg/1280px-Chalet_da_Condessa_de_Edla_0474.jpg",
+        "author": "Kent Wang",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chalet_da_Condessa_de_Edla_0474.jpg"
+      }
+    ]
+  },
+  {
+    "id": "igreja-de-santa-maria-do-olival",
+    "name": "Церковь Санта-Мария-ду-Оливал (Томар)",
+    "type": "other",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 39.6015,
+      "lon": -8.4073
+    },
+    "description": "Готическая церковь XIII века, служившая пантеоном тамплиеров: здесь похоронены магистры ордена, в том числе основатель Томара Гуалдин Паиш. Её считали «матерью» церквей Ордена Христа за морем. Вход свободный, но открыта она не всегда — заезжайте по пути к монастырю Христа.",
+    "driveMinutesFromLisbon": 95,
+    "visitDurationHours": 0.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "бесплатно"
+    ],
+    "links": [
+      {
+        "title": "Wikipedia",
+        "url": "https://pt.wikipedia.org/wiki/Igreja_de_Santa_Maria_dos_Olivais"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Igreja_Santa_Maria_do_Olival_em_Tomar_1.jpg/1280px-Igreja_Santa_Maria_do_Olival_em_Tomar_1.jpg",
+        "author": "Sanrafae",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Igreja_Santa_Maria_do_Olival_em_Tomar_1.jpg"
+      }
+    ]
+  }
+]
