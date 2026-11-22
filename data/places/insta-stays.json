@@ -27,7 +27,26 @@
         "url": "https://www.instagram.com/cabanasdolago/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/cabanas-do-lago-1.webp",
+        "author": "airbnb.com",
+        "license": "© Cabanas do Lago (объявление Airbnb)",
+        "sourceUrl": "https://www.airbnb.com/rooms/39267375"
+      },
+      {
+        "url": "place-photos/cabanas-do-lago-2.webp",
+        "author": "airbnb.com",
+        "license": "© Cabanas do Lago (объявление Airbnb)",
+        "sourceUrl": "https://www.airbnb.com/rooms/39267375"
+      },
+      {
+        "url": "place-photos/cabanas-do-lago-3.webp",
+        "author": "airbnb.com",
+        "license": "© Cabanas do Lago (объявление Airbnb)",
+        "sourceUrl": "https://www.airbnb.com/rooms/39267375"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/reel/Dfh5Ip0Amsz/",
       "https://www.instagram.com/p/DfVKrMKjQUR/"
@@ -62,7 +81,26 @@
         "url": "https://www.instagram.com/pa.te.os/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/pateos-melides-1.webp",
+        "author": "pateos.pt",
+        "license": "© Pa.te.os",
+        "sourceUrl": "https://pateos.pt/"
+      },
+      {
+        "url": "place-photos/pateos-melides-2.webp",
+        "author": "pateos.pt",
+        "license": "© Pa.te.os",
+        "sourceUrl": "https://pateos.pt/"
+      },
+      {
+        "url": "place-photos/pateos-melides-3.webp",
+        "author": "pateos.pt",
+        "license": "© Pa.te.os",
+        "sourceUrl": "https://pateos.pt/"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/reel/Df2XcjLt_py/",
       "https://www.instagram.com/p/DfPN6vhDZh-/"
@@ -96,7 +134,20 @@
         "url": "https://www.instagram.com/az.zagal/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/casa-az-zagal-1.webp",
+        "author": "az-zagal.pt",
+        "license": "© Casa Az-Zagal",
+        "sourceUrl": "https://az-zagal.pt/"
+      },
+      {
+        "url": "place-photos/casa-az-zagal-2.webp",
+        "author": "az-zagal.pt",
+        "license": "© Casa Az-Zagal",
+        "sourceUrl": "https://az-zagal.pt/"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/reel/DfFRmBYotfk/"
     ]
@@ -129,7 +180,26 @@
         "url": "https://www.instagram.com/silent__living/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/casas-na-areia-1.webp",
+        "author": "silentliving.pt",
+        "license": "© Silent Living",
+        "sourceUrl": "https://www.silentliving.pt/houses/casas-na-areia/"
+      },
+      {
+        "url": "place-photos/casas-na-areia-2.webp",
+        "author": "silentliving.pt",
+        "license": "© Silent Living",
+        "sourceUrl": "https://www.silentliving.pt/houses/casas-na-areia/"
+      },
+      {
+        "url": "place-photos/casas-na-areia-3.webp",
+        "author": "silentliving.pt",
+        "license": "© Silent Living",
+        "sourceUrl": "https://www.silentliving.pt/houses/casas-na-areia/"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/p/DaPWdKzDAeM/"
     ]
@@ -162,7 +232,26 @@
         "url": "https://www.instagram.com/silent__living/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/cabanas-no-rio-1.webp",
+        "author": "silentliving.pt",
+        "license": "© Silent Living",
+        "sourceUrl": "https://www.silentliving.pt/houses/cabanas-no-rio/"
+      },
+      {
+        "url": "place-photos/cabanas-no-rio-2.webp",
+        "author": "silentliving.pt",
+        "license": "© Silent Living",
+        "sourceUrl": "https://www.silentliving.pt/houses/cabanas-no-rio/"
+      },
+      {
+        "url": "place-photos/cabanas-no-rio-3.webp",
+        "author": "silentliving.pt",
+        "license": "© Silent Living",
+        "sourceUrl": "https://www.silentliving.pt/houses/cabanas-no-rio/"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/p/DRNkMkfEgsN/",
       "https://www.instagram.com/p/DVEj03tCLEV/"
@@ -196,7 +285,20 @@
         "url": "https://www.instagram.com/silent__living/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/casa-na-terra-monsaraz-1.webp",
+        "author": "silentliving.pt",
+        "license": "© Silent Living",
+        "sourceUrl": "https://www.silentliving.pt/houses/casa-na-terra/"
+      },
+      {
+        "url": "place-photos/casa-na-terra-monsaraz-2.webp",
+        "author": "silentliving.pt",
+        "license": "© Silent Living",
+        "sourceUrl": "https://www.silentliving.pt/houses/casa-na-terra/"
+      }
+    ],
     "reels": []
   },
   {
@@ -227,7 +329,20 @@
         "url": "https://www.instagram.com/silent__living/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/casa-no-tempo-1.webp",
+        "author": "silentliving.pt",
+        "license": "© Silent Living",
+        "sourceUrl": "https://www.silentliving.pt/houses/casa-no-tempo/"
+      },
+      {
+        "url": "place-photos/casa-no-tempo-2.webp",
+        "author": "silentliving.pt",
+        "license": "© Silent Living",
+        "sourceUrl": "https://www.silentliving.pt/houses/casa-no-tempo/"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/reel/DdjX7pgIVe5/"
     ]
@@ -302,7 +417,26 @@
         "url": "https://www.instagram.com/dalicencaestremoz/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/da-licenca-estremoz-1.webp",
+        "author": "dalicenca.pt",
+        "license": "© Dá Licença",
+        "sourceUrl": "https://dalicenca.pt/"
+      },
+      {
+        "url": "place-photos/da-licenca-estremoz-2.webp",
+        "author": "dalicenca.pt",
+        "license": "© Dá Licença",
+        "sourceUrl": "https://dalicenca.pt/"
+      },
+      {
+        "url": "place-photos/da-licenca-estremoz-3.webp",
+        "author": "dalicenca.pt",
+        "license": "© Dá Licença",
+        "sourceUrl": "https://dalicenca.pt/"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/reel/DPW3G8TjVs3/",
       "https://www.instagram.com/p/DfEwec6AE_X/"
@@ -337,7 +471,14 @@
         "url": "https://www.instagram.com/malhadinhanova/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/herdade-da-malhadinha-nova-1.webp",
+        "author": "malhadinhanova.pt",
+        "license": "© Herdade da Malhadinha Nova",
+        "sourceUrl": "https://www.malhadinhanova.pt/"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/reel/Df2T5QKy1Hu/"
     ]
@@ -370,7 +511,26 @@
         "url": "https://www.instagram.com/herdadedamatinha/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/herdade-da-matinha-1.webp",
+        "author": "herdadedamatinha.com",
+        "license": "© Herdade da Matinha",
+        "sourceUrl": "https://www.herdadedamatinha.com/"
+      },
+      {
+        "url": "place-photos/herdade-da-matinha-2.webp",
+        "author": "herdadedamatinha.com",
+        "license": "© Herdade da Matinha",
+        "sourceUrl": "https://www.herdadedamatinha.com/"
+      },
+      {
+        "url": "place-photos/herdade-da-matinha-3.webp",
+        "author": "herdadedamatinha.com",
+        "license": "© Herdade da Matinha",
+        "sourceUrl": "https://www.herdadedamatinha.com/"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/reel/DfqD1rcNAnK/"
     ]
@@ -485,7 +645,26 @@
         "url": "https://www.instagram.com/sobreiras_hotel/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/sobreiras-alentejo-country-hotel-1.webp",
+        "author": "sobreiras.pt",
+        "license": "© Sobreiras Alentejo Country Hotel",
+        "sourceUrl": "https://sobreiras.pt/"
+      },
+      {
+        "url": "place-photos/sobreiras-alentejo-country-hotel-2.webp",
+        "author": "sobreiras.pt",
+        "license": "© Sobreiras Alentejo Country Hotel",
+        "sourceUrl": "https://sobreiras.pt/"
+      },
+      {
+        "url": "place-photos/sobreiras-alentejo-country-hotel-3.webp",
+        "author": "sobreiras.pt",
+        "license": "© Sobreiras Alentejo Country Hotel",
+        "sourceUrl": "https://sobreiras.pt/"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/reel/DfkN0NaIWyB/",
       "https://www.instagram.com/p/Dc_dpqHDeSJ/"
@@ -519,7 +698,20 @@
         "url": "https://www.instagram.com/mountainwhispergondramaz/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/mountain-whisper-gondramaz-1.webp",
+        "author": "mountainwhisper.pt",
+        "license": "© Mountain Whisper",
+        "sourceUrl": "https://www.mountainwhisper.pt/hotel-rooms.html"
+      },
+      {
+        "url": "place-photos/mountain-whisper-gondramaz-2.webp",
+        "author": "mountainwhisper.pt",
+        "license": "© Mountain Whisper",
+        "sourceUrl": "https://www.mountainwhisper.pt/hotel-rooms.html"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/reel/Dfpel4MN5rz/",
       "https://www.instagram.com/p/Dc_dpqHDeSJ/"
@@ -553,7 +745,20 @@
         "url": "https://www.instagram.com/peso_village/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/peso-village-amarante-1.webp",
+        "author": "pesovillage.pt",
+        "license": "© Peso Village",
+        "sourceUrl": "https://www.pesovillage.pt/"
+      },
+      {
+        "url": "place-photos/peso-village-amarante-2.webp",
+        "author": "pesovillage.pt",
+        "license": "© Peso Village",
+        "sourceUrl": "https://www.pesovillage.pt/"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/reel/DgARtg7IUWh/",
       "https://www.instagram.com/p/DdofAGnjQPf/"
@@ -587,7 +792,20 @@
         "url": "https://www.instagram.com/cucumbi_farm/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/cucumbi-farm-1.webp",
+        "author": "cucumbi.com",
+        "license": "© Cucumbi",
+        "sourceUrl": "https://www.cucumbi.com/"
+      },
+      {
+        "url": "place-photos/cucumbi-farm-2.webp",
+        "author": "cucumbi.com",
+        "license": "© Cucumbi",
+        "sourceUrl": "https://www.cucumbi.com/"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/reel/DUqRIOUAjcW/",
       "https://www.instagram.com/p/DfEwec6AE_X/"
@@ -661,7 +879,26 @@
         "url": "https://www.instagram.com/casasdaougueira/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/casas-da-ougueira-lamego-1.webp",
+        "author": "casasdaougueira.pt",
+        "license": "© Casas da Ougueira",
+        "sourceUrl": "https://casasdaougueira.pt/"
+      },
+      {
+        "url": "place-photos/casas-da-ougueira-lamego-2.webp",
+        "author": "casasdaougueira.pt",
+        "license": "© Casas da Ougueira",
+        "sourceUrl": "https://casasdaougueira.pt/"
+      },
+      {
+        "url": "place-photos/casas-da-ougueira-lamego-3.webp",
+        "author": "casasdaougueira.pt",
+        "license": "© Casas da Ougueira",
+        "sourceUrl": "https://casasdaougueira.pt/"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/reel/Df2x9RDO0wF/"
     ]
@@ -694,7 +931,26 @@
         "url": "https://www.instagram.com/paraisodouro/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/paraiso-douro-1.webp",
+        "author": "paraisodouro.pt",
+        "license": "© Paraíso Douro",
+        "sourceUrl": "https://paraisodouro.pt/"
+      },
+      {
+        "url": "place-photos/paraiso-douro-2.webp",
+        "author": "paraisodouro.pt",
+        "license": "© Paraíso Douro",
+        "sourceUrl": "https://paraisodouro.pt/"
+      },
+      {
+        "url": "place-photos/paraiso-douro-3.webp",
+        "author": "paraisodouro.pt",
+        "license": "© Paraíso Douro",
+        "sourceUrl": "https://paraisodouro.pt/"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/p/DUGpH12CGpl/",
       "https://www.instagram.com/reel/Df2XE9huKbK/"
@@ -762,7 +1018,26 @@
         "url": "https://www.instagram.com/theredcabinmelides/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/red-cabin-melides-1.webp",
+        "author": "hiidecabins.com",
+        "license": "© Hiide Cabins",
+        "sourceUrl": "https://www.hiidecabins.com/red-cabin"
+      },
+      {
+        "url": "place-photos/red-cabin-melides-2.webp",
+        "author": "hiidecabins.com",
+        "license": "© Hiide Cabins",
+        "sourceUrl": "https://www.hiidecabins.com/red-cabin"
+      },
+      {
+        "url": "place-photos/red-cabin-melides-3.webp",
+        "author": "hiidecabins.com",
+        "license": "© Hiide Cabins",
+        "sourceUrl": "https://www.hiidecabins.com/red-cabin"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/p/Dcyihv6DJQJ/",
       "https://www.instagram.com/reel/Df-B4htqrjm/"
@@ -796,7 +1071,26 @@
         "url": "https://www.instagram.com/quinta_dos_corgos/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/quinta-dos-corgos-glamping-1.webp",
+        "author": "quintadoscorgos.com",
+        "license": "© Quinta dos Corgos",
+        "sourceUrl": "https://quintadoscorgos.com/"
+      },
+      {
+        "url": "place-photos/quinta-dos-corgos-glamping-2.webp",
+        "author": "quintadoscorgos.com",
+        "license": "© Quinta dos Corgos",
+        "sourceUrl": "https://quintadoscorgos.com/"
+      },
+      {
+        "url": "place-photos/quinta-dos-corgos-glamping-3.webp",
+        "author": "quintadoscorgos.com",
+        "license": "© Quinta dos Corgos",
+        "sourceUrl": "https://quintadoscorgos.com/"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/reel/C_dlYo4stgX/",
       "https://www.instagram.com/p/Dewxjw_ln8t/"
@@ -829,7 +1123,14 @@
         "url": "https://www.instagram.com/umbra_domes/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/umbra-domes-1.webp",
+        "author": "umbradomes.com",
+        "license": "© Umbra Domes",
+        "sourceUrl": "https://umbradomes.com/"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/reel/DgDXjpMI-co/",
       "https://www.instagram.com/p/Da-nikzDDEM/"
@@ -862,7 +1163,20 @@
         "url": "https://www.instagram.com/bruval.eco.retreat/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/bruval-eco-retreat-1.webp",
+        "author": "bruval.pt",
+        "license": "© Bruval Eco Retreat",
+        "sourceUrl": "https://bruval.pt/"
+      },
+      {
+        "url": "place-photos/bruval-eco-retreat-2.webp",
+        "author": "bruval.pt",
+        "license": "© Bruval Eco Retreat",
+        "sourceUrl": "https://bruval.pt/"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/reel/DfXqRlguJbb/",
       "https://www.instagram.com/p/DYQE3hrDu3L/"
@@ -938,7 +1252,20 @@
         "url": "https://www.instagram.com/dreamguinchohotel/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/dream-guincho-1.webp",
+        "author": "dreamguincho.pt",
+        "license": "© Dream Guincho",
+        "sourceUrl": "https://dreamguincho.pt/"
+      },
+      {
+        "url": "place-photos/dream-guincho-2.webp",
+        "author": "dreamguincho.pt",
+        "license": "© Dream Guincho",
+        "sourceUrl": "https://dreamguincho.pt/"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/p/DKKeEsco9_P/",
       "https://www.instagram.com/reel/Df-EOw0IX8t/"
@@ -972,7 +1299,26 @@
         "url": "https://www.instagram.com/casa_do_campinho_alentejo/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/casa-do-campinho-1.webp",
+        "author": "casadocampinho.com",
+        "license": "© Casa do Campinho",
+        "sourceUrl": "https://www.casadocampinho.com/en"
+      },
+      {
+        "url": "place-photos/casa-do-campinho-2.webp",
+        "author": "casadocampinho.com",
+        "license": "© Casa do Campinho",
+        "sourceUrl": "https://www.casadocampinho.com/en"
+      },
+      {
+        "url": "place-photos/casa-do-campinho-3.webp",
+        "author": "casadocampinho.com",
+        "license": "© Casa do Campinho",
+        "sourceUrl": "https://www.casadocampinho.com/en"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/p/Df9hfIwss2p/"
     ]
@@ -1006,7 +1352,14 @@
         "url": "https://www.instagram.com/craveiral/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/craveiral-farmhouse-1.webp",
+        "author": "craveiral.pt",
+        "license": "© Craveiral Farmhouse",
+        "sourceUrl": "https://www.craveiral.pt/"
+      }
+    ],
     "reels": [
       "https://www.instagram.com/p/DexAPcIl2N6/",
       "https://www.instagram.com/reel/C2PimXyMWE4/"

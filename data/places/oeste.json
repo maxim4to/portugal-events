@@ -265,6 +265,18 @@
         "author": "Alvesgaspar",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:SMP_May_2008-7.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Ru%C3%ADnas_da_Alf%C3%A2ndega_de_Salir_do_Porto_%28Portugal%292.jpg/1280px-Ru%C3%ADnas_da_Alf%C3%A2ndega_de_Salir_do_Porto_%28Portugal%292.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ru%C3%ADnas_da_Alf%C3%A2ndega_de_Salir_do_Porto_(Portugal)2.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/S._Martinho_Porto_June_2026-7.jpg/1280px-S._Martinho_Porto_June_2026-7.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:S._Martinho_Porto_June_2026-7.jpg"
       }
     ],
     "collections": []
@@ -293,7 +305,14 @@
         "url": "https://www.instagram.com/nomadecomidasustentavel/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "place-photos/nomade-slow-pizza-paredes-1.webp",
+        "author": "bellaciao.pt",
+        "license": "© Bella Ciao",
+        "sourceUrl": "https://bellaciao.pt/restaurante/nomade-comida-sustentavel/"
+      }
+    ],
     "collections": [],
     "reels": [
       "https://www.instagram.com/reel/DabX3IKM5W0/"
