@@ -214,6 +214,21 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
       display: none;
     }
   }
+  /* Laptop widths (1100–1399): a narrower sidebar and a wider list so the
+     list keeps two card columns instead of one oversized column. */
+  @media (min-width: 1100px) and (max-width: 1399px) {
+    .explorer-root.has-sidebar {
+      grid-template-columns: 224px minmax(0, 1fr);
+      column-gap: var(--space-5);
+    }
+    .has-sidebar .map-explorer {
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    }
+    .has-sidebar .list-scroll :global(.grid-cards) {
+      grid-template-columns: repeat(auto-fill, minmax(196px, 1fr));
+      column-gap: var(--space-4);
+    }
+  }
 
   /* Locate control + the visitor's blue dot (fixed iOS blue, so it reads on
      the always-light tiles in either theme). */
@@ -333,6 +348,56 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
       overflow: hidden;
       border: 1px solid var(--border);
       background: var(--surface-1);
+    }
+    /* List header: the live result count (the phone sheet's count element,
+       painted by mapExplorer at every width). Grabber and rail stay phone-only. */
+    .sheet-head {
+      display: block;
+      flex: none;
+      padding: 0 var(--space-1) var(--space-3);
+    }
+    .sheet-grabber,
+    .peek-rail {
+      display: none;
+    }
+    .sheet-title-row {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      min-height: 24px;
+    }
+    .sheet-count {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      font-variant-numeric: tabular-nums;
+    }
+    .sheet-showall {
+      height: 28px;
+      padding: 0 var(--space-3);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-pill);
+      background: var(--surface-2);
+      color: var(--text-primary);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 550;
+      cursor: pointer;
+    }
+    .sheet-showall[hidden] {
+      display: none;
+    }
+    /* Empty state centred in the list pane's height. */
+    .list-scroll {
+      display: flex;
+      flex-direction: column;
+    }
+    .list-scroll > :global(*) {
+      flex: none;
+    }
+    .list-scroll > .empty:not([hidden]) {
+      flex: 1;
+      min-height: 0;
     }
   }
   .empty {
@@ -691,9 +756,13 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
     left: var(--space-2);
   }
   :global(.leaflet-container .leaflet-control-attribution) {
-    background: color-mix(in srgb, var(--surface-2) 80%, transparent);
+    margin: 0 var(--space-2) var(--space-2) 0;
+    padding: 1px 6px;
+    border-radius: var(--radius-sm);
+    background: color-mix(in srgb, var(--surface-2) 72%, transparent);
     color: var(--text-muted);
-    border-top-left-radius: var(--radius-sm);
+    font-size: 11px;
+    backdrop-filter: blur(4px);
   }
   :global(.leaflet-control-attribution a) {
     color: var(--accent);

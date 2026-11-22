@@ -3,6 +3,7 @@ import type { Place } from '../../schema/index.ts';
 import { TYPE_LABELS } from '../lib/labels.ts';
 import Icon from './Icon.astro';
 import PhotoGallery from './PhotoGallery.astro';
+import { formatDriveMinutes } from '../lib/format.ts';
 
 interface Props {
   place: Place;
@@ -27,9 +28,9 @@ const typeLabel = TYPE_LABELS[place.type] ?? place.type;
     )}
     <div class="meta-row">
       <span class="dist" data-dist hidden></span>
-      <span><Icon name="clock" size={12} /> {place.driveMinutesFromLisbon} мин</span>
+      <span><Icon name="clock" size={12} /> {formatDriveMinutes(place.driveMinutesFromLisbon)}</span>
       <span><Icon name="hourglass" size={12} /> ~{place.visitDurationHours} ч</span>
-      <span><Icon name="calendar" size={12} /> {place.bestSeason}</span>
+      <span class="season"><Icon name="calendar" size={12} /> {place.bestSeason}</span>
     </div>
   </div>
 </a>
@@ -59,6 +60,12 @@ const typeLabel = TYPE_LABELS[place.type] ?? place.type;
     isolation: isolate;
     transition: box-shadow var(--dur) var(--ease-out);
   }
+  /* Desktop: 4:3 covers, the same shape as event cards (DESIGN.md). */
+  @media (min-width: 761px) {
+    .cover :global(.gallery-card) {
+      aspect-ratio: 4 / 3;
+    }
+  }
   @media (hover: hover) {
     .place-card:hover .cover {
       box-shadow: var(--shadow-md);
@@ -76,6 +83,14 @@ const typeLabel = TYPE_LABELS[place.type] ?? place.type;
     flex: 1;
     min-width: 0;
     padding: 0 2px;
+    container-type: inline-size;
+  }
+  /* Too narrow for the season to say anything useful ("се…"): drop it — the
+     detail page shows it in full. */
+  @container (max-width: 250px) {
+    .body .meta-row > span.season.season {
+      display: none;
+    }
   }
   .type-kicker {
     display: inline-flex;
