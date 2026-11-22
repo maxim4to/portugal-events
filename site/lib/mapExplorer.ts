@@ -478,18 +478,27 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     // quarter-step out — no "fly off to the rest of the world".
     syncFrame = () => {
       if (!map) return;
-      const { top, bottom } = fitInsets();
+      // Phone list fully open: the map is hidden — leave its view alone, or the
+      // smaller inset would zoom/pan it and the list would come back filtered
+      // to "N из M · в этой области".
+      if (isMobile() && sheet.state === 'full') return;
+      // The zoom floor always assumes the half-open sheet (the most covered
+      // state the map is shown in), so it doesn't jump as the sheet moves.
+      const top = isMobile() ? sheet.barHeight() : 0;
+      const bottom = isMobile() ? root.clientHeight - Math.round(root.clientHeight * HALF_AT) : 0;
       const pad = isMobile() ? 16 : 32;
       const visibleH = map.getSize().y - top - bottom;
-      if (visibleH > 2 * pad) {
-        const fit = map.getBoundsZoom(PT_BOX, false, L.point(2 * pad, top + bottom + 2 * pad));
-        if (Number.isFinite(fit)) {
-          const z = Math.floor(fit * 4) / 4 - 0.25;
-          map.setMinZoom(z);
-          if (map.getZoom() < z) map.setZoom(z, { animate: false });
+      progCall(() => {
+        if (visibleH > 2 * pad) {
+          const fit = map!.getBoundsZoom(PT_BOX, false, L.point(2 * pad, top + bottom + 2 * pad));
+          if (Number.isFinite(fit)) {
+            const z = Math.floor(fit * 4) / 4 - 0.25;
+            map!.setMinZoom(z);
+            if (map!.getZoom() < z) map!.setZoom(z, { animate: false });
+          }
         }
-      }
-      map.setMaxBounds(frame());
+        map!.setMaxBounds(frame());
+      });
     };
     syncFrame();
     map.on('resize zoomend', () => syncFrame?.());
