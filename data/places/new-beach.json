@@ -1,0 +1,1291 @@
+[
+  {
+    "id": "praia-de-odeceixe",
+    "name": "Прайя-де-Одесейше",
+    "type": "beach",
+    "region": "Юго-запад (Кошта-Висентина)",
+    "coords": {
+      "lat": 37.4422,
+      "lon": -8.7978
+    },
+    "description": "Пляж в устье реки Сейше на самой границе Алентежу и Алгарве: с одной стороны океан, с другой — тёплая спокойная речная лагуна, где удобно купаться с детьми. Сверху, с дороги над пляжем, открывается один из самых известных видов Кошта-Висентина. Летом парковка у воды быстро заполняется — приезжайте до 10 утра или оставляйте машину в деревне Одесейше-Мар.",
+    "driveMinutesFromLisbon": 190,
+    "visitDurationHours": 3,
+    "bestSeason": "май–сентябрь",
+    "tags": [
+      "купание",
+      "с детьми",
+      "виды"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Praia_de_Odeceixe_Mar_11_November_2013_%282%29.JPG/1280px-Praia_de_Odeceixe_Mar_11_November_2013_%282%29.JPG",
+        "author": "Beeston",
+        "license": "CC BY 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_de_Odeceixe_Mar_11_November_2013_(2).JPG"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Praia_de_Odeceixe_-_Portugal_%2825266134708%29.jpg/1280px-Praia_de_Odeceixe_-_Portugal_%2825266134708%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_de_Odeceixe_-_Portugal_(25266134708).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Praia_de_Odeceixe_-_Portugal_%2826246222899%29.jpg/1280px-Praia_de_Odeceixe_-_Portugal_%2826246222899%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_de_Odeceixe_-_Portugal_(26246222899).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Praia_de_Odeceixe_-_Portugal_%2837968748376%29.jpg/1280px-Praia_de_Odeceixe_-_Portugal_%2837968748376%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_de_Odeceixe_-_Portugal_(37968748376).jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-da-amoreira",
+    "name": "Прайя-да-Амурейра",
+    "type": "beach",
+    "region": "Юго-запад (Кошта-Висентина)",
+    "coords": {
+      "lat": 37.3514,
+      "lon": -8.8444
+    },
+    "description": "Дикий пляж к северу от Алжезура, где ручей Амурейра впадает в океан между дюнами и тёмными скалами. В отлив в устье остаются мелкие заводи, вода в которых прогревается выше 20 °C, а на океанской стороне катаются сёрферы. Кафе одно, тени нет — возьмите с собой воду и зонт.",
+    "driveMinutesFromLisbon": 180,
+    "visitDurationHours": 3,
+    "bestSeason": "май–сентябрь",
+    "tags": [
+      "природа",
+      "сёрфинг",
+      "виды"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Amoreira_-_Norte.jpg/1280px-Amoreira_-_Norte.jpg",
+        "author": "Pedro Dias B",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Amoreira_-_Norte.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Amoreira_-_Sul.jpg/1280px-Amoreira_-_Sul.jpg",
+        "author": "Pedro Dias B",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Amoreira_-_Sul.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Praia_da_Amoreira_-_I.jpg/1280px-Praia_da_Amoreira_-_I.jpg",
+        "author": "Filipe Rocha",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Amoreira_-_I.jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-de-monte-clerigo",
+    "name": "Прайя-де-Монте-Клеригу",
+    "type": "beach",
+    "region": "Юго-запад (Кошта-Висентина)",
+    "coords": {
+      "lat": 37.3408,
+      "lon": -8.8531
+    },
+    "description": "Широкий песчаный пляж у маленькой деревни с белыми домиками прямо над водой, в нескольких минутах от Алжезура. В отлив у скал на севере остаются приливные бассейны — детям есть что рассматривать. Здесь пара рыбных ресторанов, и это хорошее место встретить закат после дня на побережье.",
+    "driveMinutesFromLisbon": 180,
+    "visitDurationHours": 3,
+    "bestSeason": "май–сентябрь",
+    "tags": [
+      "купание",
+      "закат",
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Praia_Monte_Cl%C3%A9rigo_%286151936171%29.jpg/1280px-Praia_Monte_Cl%C3%A9rigo_%286151936171%29.jpg",
+        "author": "Geerd-Olaf Freyer",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_Monte_Cl%C3%A9rigo_(6151936171).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Praia_de_Monte_Cl%C3%A9rigo.jpg/1280px-Praia_de_Monte_Cl%C3%A9rigo.jpg",
+        "author": "Rui Glória",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_de_Monte_Cl%C3%A9rigo.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Praia_de_Monte_Cl%C3%A9rigo_-_Portugal_%2835380411361%29.jpg/1280px-Praia_de_Monte_Cl%C3%A9rigo_-_Portugal_%2835380411361%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_de_Monte_Cl%C3%A9rigo_-_Portugal_(35380411361).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Praia_de_Monte_Cl%C3%A9rigo_-_Portugal_%2837968750546%29.jpg/1280px-Praia_de_Monte_Cl%C3%A9rigo_-_Portugal_%2837968750546%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_de_Monte_Cl%C3%A9rigo_-_Portugal_(37968750546).jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-do-amado",
+    "name": "Прайя-ду-Амаду",
+    "type": "beach",
+    "region": "Юго-запад (Кошта-Висентина)",
+    "coords": {
+      "lat": 37.1665,
+      "lon": -8.9046
+    },
+    "description": "Один из главных сёрф-спотов Португалии у деревни Карапатейра: широкая бухта между скалами, где волна есть почти всегда, а в сезон работают несколько сёрф-школ. Сверху над пляжем идёт грунтовка с видовыми площадками на обрывы. Течения сильные — купаться стоит только в охраняемой зоне.",
+    "driveMinutesFromLisbon": 195,
+    "visitDurationHours": 3,
+    "bestSeason": "круглый год",
+    "tags": [
+      "сёрфинг",
+      "природа",
+      "виды"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Praia_de_Amado%2C_Portugal.jpg/1280px-Praia_de_Amado%2C_Portugal.jpg",
+        "author": "Kyle Taylor",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_de_Amado,_Portugal.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Praia_do_Amado_%2850672447017%29.jpg/1280px-Praia_do_Amado_%2850672447017%29.jpg",
+        "author": "Tiago J. G. Fernandes",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Amado_(50672447017).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Praia_de_Amado_%282%29.jpg/1280px-Praia_de_Amado_%282%29.jpg",
+        "author": "Kyle Taylor",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_de_Amado_(2).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Praia_do_Amado_-_I.jpg/1280px-Praia_do_Amado_-_I.jpg",
+        "author": "Filipe Rocha",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Amado_-_I.jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-da-bordeira",
+    "name": "Прайя-да-Бордейра",
+    "type": "beach",
+    "region": "Юго-запад (Кошта-Висентина)",
+    "coords": {
+      "lat": 37.1974,
+      "lon": -8.9031
+    },
+    "description": "Огромный пляж у Карапатейры, к которому идут через дюны по деревянным мосткам вдоль речки Бордейра. Песка здесь так много, что даже в августе легко найти уединённое место, а с обзорной тропы по скалам на север видно всю бухту. Ветер дует почти всегда — возьмите ветровку.",
+    "driveMinutesFromLisbon": 195,
+    "visitDurationHours": 3,
+    "bestSeason": "май–октябрь",
+    "tags": [
+      "природа",
+      "виды",
+      "сёрфинг"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Praia_da_Bordeira_%2814304624069%29.jpg/1280px-Praia_da_Bordeira_%2814304624069%29.jpg",
+        "author": "Paulo Valdivieso",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Bordeira_(14304624069).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Praia_da_Bordeira_%289521322603%29.jpg/1280px-Praia_da_Bordeira_%289521322603%29.jpg",
+        "author": "Paulo Valdivieso",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Bordeira_(9521322603).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Praia_da_Bordeira_-_distant_dunes_%2813468683435%29.jpg/1280px-Praia_da_Bordeira_-_distant_dunes_%2813468683435%29.jpg",
+        "author": "muffinn",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Bordeira_-_distant_dunes_(13468683435).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Praia_da_Bordeira_-_lagoon_%2813468724535%29.jpg/1280px-Praia_da_Bordeira_-_lagoon_%2813468724535%29.jpg",
+        "author": "muffinn",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Bordeira_-_lagoon_(13468724535).jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-do-beliche",
+    "name": "Прайя-ду-Белише",
+    "type": "beach",
+    "region": "Алгарве",
+    "coords": {
+      "lat": 37.0259,
+      "lon": -8.9639
+    },
+    "description": "Песчаная бухта под высокими обрывами между Сагришем и мысом Сан-Висенти, защищённая скалами от северного ветра; сёрферы ценят её за «трубчатую» правую волну. К воде спускается длинная лестница по обрыву. Отсюда рукой подать до мыса Сан-Висенти, так что пляж удобно совместить с закатом на маяке.",
+    "driveMinutesFromLisbon": 200,
+    "visitDurationHours": 2.5,
+    "bestSeason": "май–сентябрь",
+    "tags": [
+      "закат",
+      "купание",
+      "виды"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Praia_do_Beliche_-_Portugal_%2850616820658%29.jpg/1280px-Praia_do_Beliche_-_Portugal_%2850616820658%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Beliche_-_Portugal_(50616820658).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Praia_do_Beliche_%2852652773726%29.jpg/1280px-Praia_do_Beliche_%2852652773726%29.jpg",
+        "author": "Michael Gaylard",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Beliche_(52652773726).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Praia_do_Beliche_%2852653214275%29.jpg/1280px-Praia_do_Beliche_%2852653214275%29.jpg",
+        "author": "Michael Gaylard",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Beliche_(52653214275).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Praia_do_Beliche_%2850599439823%29.jpg/1280px-Praia_do_Beliche_%2850599439823%29.jpg",
+        "author": "Ana Rey",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Beliche_(50599439823).jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-do-martinhal",
+    "name": "Прайя-ду-Мартиньял",
+    "type": "beach",
+    "region": "Алгарве",
+    "coords": {
+      "lat": 37.0191,
+      "lon": -8.9267
+    },
+    "description": "Широкий пляж к востоку от Сагриша в укрытой бухте Балейра: в отличие от западных пляжей здесь обычно ровная вода, за что его любят виндсёрферы. В километре от берега видны скалистые островки Мартиньял. Хороший вариант для семей, когда на западном побережье слишком штормит.",
+    "driveMinutesFromLisbon": 195,
+    "visitDurationHours": 3,
+    "bestSeason": "май–октябрь",
+    "tags": [
+      "купание",
+      "с детьми",
+      "виды"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Praia_do_Martinhal_-_Portugal_%2851090633579%29.jpg/1280px-Praia_do_Martinhal_-_Portugal_%2851090633579%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Martinhal_-_Portugal_(51090633579).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Praia_do_Martinhal_-_Portugal_%2851091101883%29.jpg/1280px-Praia_do_Martinhal_-_Portugal_%2851091101883%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Martinhal_-_Portugal_(51091101883).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Praia_do_Martinhal_em_Sagres_Portugal_Patricia_Laraia.jpg/1280px-Praia_do_Martinhal_em_Sagres_Portugal_Patricia_Laraia.jpg",
+        "author": "Patricialaraia",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Martinhal_em_Sagres_Portugal_Patricia_Laraia.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Praia_do_Martinhal_-_Portugal_%2851200991706%29.jpg/1280px-Praia_do_Martinhal_-_Portugal_%2851200991706%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Martinhal_-_Portugal_(51200991706).jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-dona-ana",
+    "name": "Прайя-Дона-Ана",
+    "type": "beach",
+    "region": "Алгарве",
+    "coords": {
+      "lat": 37.0921,
+      "lon": -8.6688
+    },
+    "description": "Знаменитая бухта Лагоша с охристыми скалами, отдельно стоящими утёсами и прозрачной водой — одна из самых фотографируемых в Алгарве. Отсюда удобно пройти пешком по обрывам к Понта-да-Пьедаде. Летом пляж маленький и людный: приходите утром и учитывайте прилив, который заметно съедает песок.",
+    "driveMinutesFromLisbon": 175,
+    "visitDurationHours": 2.5,
+    "bestSeason": "май–октябрь",
+    "tags": [
+      "купание",
+      "фото",
+      "виды"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Praia_da_Dona_Ana.jpg/1280px-Praia_da_Dona_Ana.jpg",
+        "author": "Felix Koenig",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Dona_Ana.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Praia_de_Dona_Ana_-_Portugal_%289068382051%29.jpg/1280px-Praia_de_Dona_Ana_-_Portugal_%289068382051%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_de_Dona_Ana_-_Portugal_(9068382051).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Praia_de_dona_ana_Lagos_%282456550565%29.jpg/1280px-Praia_de_dona_ana_Lagos_%282456550565%29.jpg",
+        "author": "Hendrik Dacquin",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_de_dona_ana_Lagos_(2456550565).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Beach_Praia_do_Ana_Lagos_%2827712030935%29.jpg/1280px-Beach_Praia_do_Ana_Lagos_%2827712030935%29.jpg",
+        "author": "Dronepicr",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beach_Praia_do_Ana_Lagos_(27712030935).jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-dos-tres-irmaos",
+    "name": "Прайя-душ-Треш-Ирманш",
+    "type": "beach",
+    "region": "Алгарве",
+    "coords": {
+      "lat": 37.1194,
+      "lon": -8.5807
+    },
+    "description": "Пляж в Алворе, названный по трём скалам у воды: цепочка маленьких бухт со скалами-столбами, гротами и пещерами. В отлив между бухтами можно пройти вдоль берега пешком. Приезжайте к отливу — в прилив песка остаётся совсем мало.",
+    "driveMinutesFromLisbon": 165,
+    "visitDurationHours": 3,
+    "bestSeason": "май–октябрь",
+    "tags": [
+      "купание",
+      "фото",
+      "виды"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Praia_dos_Tr%C3%AAs_Irm%C3%A3os%2C_Portim%C3%A3o_%282%29.jpg/1280px-Praia_dos_Tr%C3%AAs_Irm%C3%A3os%2C_Portim%C3%A3o_%282%29.jpg",
+        "author": "Jose A.",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_dos_Tr%C3%AAs_Irm%C3%A3os,_Portim%C3%A3o_(2).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Praia_dos_Tr%C3%AAs_Irm%C3%A3os%2C_Portim%C3%A3o_%285%29.jpg/1280px-Praia_dos_Tr%C3%AAs_Irm%C3%A3os%2C_Portim%C3%A3o_%285%29.jpg",
+        "author": "Jose A.",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_dos_Tr%C3%AAs_Irm%C3%A3os,_Portim%C3%A3o_(5).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Praia_dos_Tr%C3%AAs_Irm%C3%A3os_%2852859238346%29.jpg/1280px-Praia_dos_Tr%C3%AAs_Irm%C3%A3os_%2852859238346%29.jpg",
+        "author": "Marty B",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_dos_Tr%C3%AAs_Irm%C3%A3os_(52859238346).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Praia_dos_3_irmaos-Alvor_%2829993570668%29.jpg/1280px-Praia_dos_3_irmaos-Alvor_%2829993570668%29.jpg",
+        "author": "Monica_Loirinha",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_dos_3_irmaos-Alvor_(29993570668).jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-fluvial-do-pego-fundo",
+    "name": "Речной пляж Пегу-Фунду (Алкотин)",
+    "type": "beach",
+    "region": "Алгарве",
+    "coords": {
+      "lat": 37.472,
+      "lon": -7.477
+    },
+    "description": "Речной пляж на ручье Кадаваиш в 500 метрах от центра Алкотина — тихого городка на Гвадиане у границы с Испанией. Вода тёплая и спокойная, а вокруг — холмы восточного Алгарве. Совместите с прогулкой по Алкотину и видом на испанский Санлукар-де-Гвадиана через реку.",
+    "driveMinutesFromLisbon": 185,
+    "visitDurationHours": 2.5,
+    "bestSeason": "июнь–сентябрь",
+    "tags": [
+      "купание",
+      "с детьми",
+      "природа"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Praia_Fluvial_do_Pego_Fundo_-_Alcoutim_-_Portugal_%2830753766927%29.jpg/1280px-Praia_Fluvial_do_Pego_Fundo_-_Alcoutim_-_Portugal_%2830753766927%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_Fluvial_do_Pego_Fundo_-_Alcoutim_-_Portugal_(30753766927).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Praia_Fluvial_do_Pego_Fundo_-_Alcoutim_-_Portugal_%2831380559538%29.jpg/1280px-Praia_Fluvial_do_Pego_Fundo_-_Alcoutim_-_Portugal_%2831380559538%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_Fluvial_do_Pego_Fundo_-_Alcoutim_-_Portugal_(31380559538).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Praia_Fluvial_do_Pego_Fundo_-_Alcoutim_-_Portugal_%2844969587934%29.jpg/1280px-Praia_Fluvial_do_Pego_Fundo_-_Alcoutim_-_Portugal_%2844969587934%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_Fluvial_do_Pego_Fundo_-_Alcoutim_-_Portugal_(44969587934).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Praia_Fluvial_do_Pego_Fundo_-_Alcoutim_-_Portugal_%2845929560531%29.jpg/1280px-Praia_Fluvial_do_Pego_Fundo_-_Alcoutim_-_Portugal_%2845929560531%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_Fluvial_do_Pego_Fundo_-_Alcoutim_-_Portugal_(45929560531).jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-de-almograve",
+    "name": "Прайя-де-Алмограве",
+    "type": "beach",
+    "region": "Юго-запад (Кошта-Висентина)",
+    "coords": {
+      "lat": 37.654,
+      "lon": -8.8019
+    },
+    "description": "Пляж у рыбацкой деревни Алмограве с тёмными сланцевыми скалами, в которых в отлив остаются природные бассейны. Рядом проходит «Тропа рыбаков» — Rota Vicentina, и короткий участок по обрывам отсюда отлично подходит для прогулки на закате. Океан здесь холодный и бывает сильный прибой — плавайте только при флаге.",
+    "driveMinutesFromLisbon": 185,
+    "visitDurationHours": 3,
+    "bestSeason": "май–сентябрь",
+    "tags": [
+      "купание",
+      "природа",
+      "виды"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Praia_do_Almograve_-_Portugal_%2834098553224%29.jpg/1280px-Praia_do_Almograve_-_Portugal_%2834098553224%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Almograve_-_Portugal_(34098553224).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Praia_do_Almograve_-_Portugal_%2834131048763%29.jpg/1280px-Praia_do_Almograve_-_Portugal_%2834131048763%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Almograve_-_Portugal_(34131048763).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Praia_do_Almograve_-_Portugal_%2834475982244%29.jpg/1280px-Praia_do_Almograve_-_Portugal_%2834475982244%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Almograve_-_Portugal_(34475982244).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Praia_do_Almograve_-_Portugal_%2835189474521%29.jpg/1280px-Praia_do_Almograve_-_Portugal_%2835189474521%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Almograve_-_Portugal_(35189474521).jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-do-malhao",
+    "name": "Прайя-ду-Мальян",
+    "type": "beach",
+    "region": "Юго-запад (Кошта-Висентина)",
+    "coords": {
+      "lat": 37.78,
+      "lon": -8.8025
+    },
+    "description": "Длинный дикий пляж севернее Вила-Нова-де-Милфонтеш, за которым тянутся дюны природного парка юго-западного Алентежу. Застройки нет совсем, людей мало даже в августе; северная часть пляжа официально натуристская. Тени нет — возьмите зонт и воду.",
+    "driveMinutesFromLisbon": 175,
+    "visitDurationHours": 3,
+    "bestSeason": "май–сентябрь",
+    "tags": [
+      "природа",
+      "бесплатно",
+      "виды"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Praia_do_Malh%C3%A3o_-_Portugal_%2829253342682%29.jpg/1280px-Praia_do_Malh%C3%A3o_-_Portugal_%2829253342682%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Malh%C3%A3o_-_Portugal_(29253342682).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Praia_do_Malh%C3%A3o_-_Portugal_%2829356881675%29.jpg/1280px-Praia_do_Malh%C3%A3o_-_Portugal_%2829356881675%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Malh%C3%A3o_-_Portugal_(29356881675).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Praia_do_Malh%C3%A3o_-_Portugal_%2844732297515%29.jpg/1280px-Praia_do_Malh%C3%A3o_-_Portugal_%2844732297515%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Malh%C3%A3o_-_Portugal_(44732297515).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Praia_do_Malh%C3%A3o_-_Portugal_%2829299418241%29.jpg/1280px-Praia_do_Malh%C3%A3o_-_Portugal_%2829299418241%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Malh%C3%A3o_-_Portugal_(29299418241).jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-da-ilha-do-pessegueiro",
+    "name": "Прайя-да-Илья-ду-Песегейру",
+    "type": "beach",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 37.83,
+      "lon": -8.7915
+    },
+    "description": "Пляж к югу от Порту-Кову напротив острова Песегейру, на котором стоят руины форта XVI–XVII веков; ещё один форт стоит на берегу у самого пляжа. Вокруг — каменистые бухточки и кафе с морепродуктами. Красивее всего здесь на закате, когда солнце садится за остров.",
+    "driveMinutesFromLisbon": 155,
+    "visitDurationHours": 2.5,
+    "bestSeason": "май–сентябрь",
+    "tags": [
+      "история",
+      "купание",
+      "закат"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Ilha_do_Pessegueiro_e_praia.JPG/1280px-Ilha_do_Pessegueiro_e_praia.JPG",
+        "author": "Luís Cardoso",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ilha_do_Pessegueiro_e_praia.JPG"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Praia_da_Ilha_do_Pessegueiro_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_%2854805515871%29.jpg/1280px-Praia_da_Ilha_do_Pessegueiro_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_%2854805515871%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Ilha_do_Pessegueiro_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_(54805515871).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Praia_da_Ilha_do_Pessegueiro_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_%2854805766393%29.jpg/1280px-Praia_da_Ilha_do_Pessegueiro_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_%2854805766393%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Ilha_do_Pessegueiro_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_(54805766393).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Forte_de_Nossa_Senhora_da_Queimada_-_Praia_da_Ilha_do_Pessegueiro_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_%2854598110991%29.jpg/1280px-Forte_de_Nossa_Senhora_da_Queimada_-_Praia_da_Ilha_do_Pessegueiro_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_%2854598110991%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Forte_de_Nossa_Senhora_da_Queimada_-_Praia_da_Ilha_do_Pessegueiro_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_(54598110991).jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-da-gale-fontainhas",
+    "name": "Прайя-да-Гале-Фонтаиньяш",
+    "type": "beach",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 38.2054,
+      "lon": -8.7758
+    },
+    "description": "Пляж под ярко-оранжевыми ископаемыми скалами возрастом около 5 млн лет к северу от Мелидеш — самый необычный пейзаж на длинном песчаном побережье Грандолы. Пляж охраняемый, но почти не застроен. Не подходите вплотную к обрывам: рыхлые скалы осыпаются.",
+    "driveMinutesFromLisbon": 110,
+    "visitDurationHours": 2.5,
+    "bestSeason": "май–октябрь",
+    "tags": [
+      "природа",
+      "фото",
+      "закат"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Praia_da_Gal%C3%A9-Fontainhas_-_Portugal_%2850092818858%29.jpg/1280px-Praia_da_Gal%C3%A9-Fontainhas_-_Portugal_%2850092818858%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Gal%C3%A9-Fontainhas_-_Portugal_(50092818858).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Praia_da_Gal%C3%A9-Fontainhas_-_Portugal_%2850093632592%29.jpg/1280px-Praia_da_Gal%C3%A9-Fontainhas_-_Portugal_%2850093632592%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Gal%C3%A9-Fontainhas_-_Portugal_(50093632592).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Praia_da_Gal%C3%A9-Fontainhas_-_Portugal_%2850551332413%29.jpg/1280px-Praia_da_Gal%C3%A9-Fontainhas_-_Portugal_%2850551332413%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Gal%C3%A9-Fontainhas_-_Portugal_(50551332413).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Praia_da_Gal%C3%A9-Fontainhas_-_Portugal_%2850669303927%29.jpg/1280px-Praia_da_Gal%C3%A9-Fontainhas_-_Portugal_%2850669303927%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Gal%C3%A9-Fontainhas_-_Portugal_(50669303927).jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-do-carvalhal-comporta",
+    "name": "Прайя-ду-Карвальял (Компорта)",
+    "type": "beach",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 38.3061,
+      "lon": -8.7805
+    },
+    "description": "Пляж в зоне Компорты с дюнами, сосновым лесом и бесконечной полосой песка, но заметно спокойнее самой Компорты. У воды работают пляжные рестораны. Летом приезжайте пораньше: в выходные к обеду парковка заполняется.",
+    "driveMinutesFromLisbon": 95,
+    "visitDurationHours": 4,
+    "bestSeason": "июнь–сентябрь",
+    "tags": [
+      "купание",
+      "ресторан",
+      "природа"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Praia_do_Carvalhal_-_Portugal_%2850669303517%29.jpg/1280px-Praia_do_Carvalhal_-_Portugal_%2850669303517%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Carvalhal_-_Portugal_(50669303517).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Praia_do_Carvalhal_-_Portugal_%2850928564546%29.jpg/1280px-Praia_do_Carvalhal_-_Portugal_%2850928564546%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Carvalhal_-_Portugal_(50928564546).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Praia_do_Carvalhal_-_Portugal_%2850668478048%29.jpg/1280px-Praia_do_Carvalhal_-_Portugal_%2850668478048%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Carvalhal_-_Portugal_(50668478048).jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-de-carcavelos",
+    "name": "Прайя-де-Каркавелуш",
+    "type": "beach",
+    "region": "Лиссабон и Синтра",
+    "coords": {
+      "lat": 38.6784,
+      "lon": -9.3342
+    },
+    "description": "Самый большой пляж линии Кашкайш, куда из Лиссабона легко добраться и на электричке с Каиш-ду-Содре. Здесь стабильная небольшая волна и много сёрф-школ — лучшее место у столицы, чтобы встать на доску впервые. На восточном краю, за мысом, стоит крепость Сан-Жулиан-да-Барра XVI века.",
+    "driveMinutesFromLisbon": 25,
+    "visitDurationHours": 3,
+    "bestSeason": "круглый год",
+    "tags": [
+      "сёрфинг",
+      "с детьми",
+      "купание"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Praia_de_Carcavelos.jpg/1280px-Praia_de_Carcavelos.jpg",
+        "author": "ceiling",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_de_Carcavelos.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Sunset_on_Praia_de_Carcavelos_%E2%80%A2_Carcavelos_beach_%2850662756717%29.jpg/1280px-Sunset_on_Praia_de_Carcavelos_%E2%80%A2_Carcavelos_beach_%2850662756717%29.jpg",
+        "author": "Sonse",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sunset_on_Praia_de_Carcavelos_%E2%80%A2_Carcavelos_beach_(50662756717).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Sunset_on_Praia_de_Carcavelos_%E2%80%A2_Carcavelos_beach_%2850662667286%29.jpg/1280px-Sunset_on_Praia_de_Carcavelos_%E2%80%A2_Carcavelos_beach_%2850662667286%29.jpg",
+        "author": "Sonse",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sunset_on_Praia_de_Carcavelos_%E2%80%A2_Carcavelos_beach_(50662667286).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Praia_de_Carcavelos._10-23.jpg/1280px-Praia_de_Carcavelos._10-23.jpg",
+        "author": "Rúdisicyon",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_de_Carcavelos._10-23.jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-de-ribeira-d-ilhas",
+    "name": "Прайя-де-Рибейра-д’Ильяш",
+    "type": "beach",
+    "region": "Лиссабон и Синтра",
+    "coords": {
+      "lat": 38.9868,
+      "lon": -9.4182
+    },
+    "description": "Легендарный сёрф-пляж в нескольких километрах к северу от Эрисейры — части первого в Европе Всемирного сёрф-резервата. Здесь проходят этапы чемпионата мира, а даже без доски приятно сидеть на склоне над бухтой и смотреть на сёрферов. Вода холодная, дно местами каменистое.",
+    "driveMinutesFromLisbon": 50,
+    "visitDurationHours": 2.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "сёрфинг",
+      "виды",
+      "закат"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/2025-09-17_Praia_de_Ribeira_d%27Ilhas.jpg/1280px-2025-09-17_Praia_de_Ribeira_d%27Ilhas.jpg",
+        "author": "Alexkom000",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2025-09-17_Praia_de_Ribeira_d'Ilhas.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Praia_de_Ribeira_d%27Ilhas_01.jpg/1280px-Praia_de_Ribeira_d%27Ilhas_01.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_de_Ribeira_d'Ilhas_01.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Praia_de_Ribeira_d%27Ilhas_-_Portugal_%2850534321003%29.jpg/1280px-Praia_de_Ribeira_d%27Ilhas_-_Portugal_%2850534321003%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_de_Ribeira_d'Ilhas_-_Portugal_(50534321003).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Ericeira-04-Ribeira_d%27Ilhas-2011-gje.jpg/1280px-Ericeira-04-Ribeira_d%27Ilhas-2011-gje.jpg",
+        "author": "Gerd Eichmann",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ericeira-04-Ribeira_d'Ilhas-2011-gje.jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-de-santa-cruz",
+    "name": "Прайя-де-Санта-Круш",
+    "type": "beach",
+    "region": "Оэште",
+    "coords": {
+      "lat": 39.1325,
+      "lon": -9.3858
+    },
+    "description": "Курортная деревня Торриш-Ведраша с длинной полосой пляжей под скалами и 30-метровым утёсом Пенеду-ду-Гинчу у южного края. Хорошее место для сёрфинга и прогулки по набережной над океаном. Купаться стоит у спасателей — течения здесь сильные.",
+    "driveMinutesFromLisbon": 60,
+    "visitDurationHours": 3,
+    "bestSeason": "май–сентябрь",
+    "tags": [
+      "сёрфинг",
+      "виды",
+      "закат"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/2025-12-14_Praia_de_Santa_Cruz%2C_Torres_Vedras.jpg/1280px-2025-12-14_Praia_de_Santa_Cruz%2C_Torres_Vedras.jpg",
+        "author": "Alexkom000",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2025-12-14_Praia_de_Santa_Cruz,_Torres_Vedras.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Torre_e_Praia_em_Santa_Cruz_%28Torres_Vedras%29.jpg/1280px-Torre_e_Praia_em_Santa_Cruz_%28Torres_Vedras%29.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Torre_e_Praia_em_Santa_Cruz_(Torres_Vedras).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Praia_Rochedo_Santa_Cruz_%28Torres_Vedras%29.jpg/1280px-Praia_Rochedo_Santa_Cruz_%28Torres_Vedras%29.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_Rochedo_Santa_Cruz_(Torres_Vedras).jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-da-areia-branca",
+    "name": "Прайя-да-Арейя-Бранка",
+    "type": "beach",
+    "region": "Оэште",
+    "coords": {
+      "lat": 39.2668,
+      "lon": -9.3361
+    },
+    "description": "Широкий пляж Лоуриньи с белым песком в устье небольшой речки, окружённый невысокими скалами. Популярен у семей и сёрферов, рядом кафе и набережная. Совместите поездку с Динопарком Лоуриньи — он в 15 минутах.",
+    "driveMinutesFromLisbon": 65,
+    "visitDurationHours": 3,
+    "bestSeason": "июнь–сентябрь",
+    "tags": [
+      "купание",
+      "с детьми",
+      "сёрфинг"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/2025-10-11_Praia_da_Areia_Branca%2C_Lourinh%C3%A3_1.jpg/1280px-2025-10-11_Praia_da_Areia_Branca%2C_Lourinh%C3%A3_1.jpg",
+        "author": "Alexkom000",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2025-10-11_Praia_da_Areia_Branca,_Lourinh%C3%A3_1.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/2025-10-11_Praia_da_Areia_Branca%2C_Lourinh%C3%A3_2.jpg/1280px-2025-10-11_Praia_da_Areia_Branca%2C_Lourinh%C3%A3_2.jpg",
+        "author": "Alexkom000",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2025-10-11_Praia_da_Areia_Branca,_Lourinh%C3%A3_2.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/20210222_Praia_da_Areia_Branca_02.jpg/1280px-20210222_Praia_da_Areia_Branca_02.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:20210222_Praia_da_Areia_Branca_02.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Praia_da_Areia_Branca_-_Portugal_%2852642151110%29.jpg/1280px-Praia_da_Areia_Branca_-_Portugal_%2852642151110%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_da_Areia_Branca_-_Portugal_(52642151110).jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-do-baleal",
+    "name": "Прайя-ду-Балеал",
+    "type": "beach",
+    "region": "Оэште",
+    "coords": {
+      "lat": 39.3732,
+      "lon": -9.3364
+    },
+    "description": "Песчаная коса, соединяющая с материком бывший остров Балеал у Пенише: с двух сторон пляжа обычно разные условия, так что почти всегда есть и спокойная вода, и волна для сёрфинга. Вокруг — множество сёрф-школ и кафе. На закате пройдитесь по скалам самого Балеала.",
+    "driveMinutesFromLisbon": 75,
+    "visitDurationHours": 3,
+    "bestSeason": "май–октябрь",
+    "tags": [
+      "сёрфинг",
+      "купание",
+      "закат"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/2025-09-29_Praia_do_Baleal_%28Sul%29_1.jpg/1280px-2025-09-29_Praia_do_Baleal_%28Sul%29_1.jpg",
+        "author": "Alexkom000",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2025-09-29_Praia_do_Baleal_(Sul)_1.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/2026-01-25_Praia_do_Baleal_Norte_in_January.jpg/1280px-2026-01-25_Praia_do_Baleal_Norte_in_January.jpg",
+        "author": "Alexkom000",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026-01-25_Praia_do_Baleal_Norte_in_January.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/2026-04-27_Praia_Baleal_Norte_in_sunset_light.jpg/1280px-2026-04-27_Praia_Baleal_Norte_in_sunset_light.jpg",
+        "author": "Alexkom000",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026-04-27_Praia_Baleal_Norte_in_sunset_light.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Praia_do_Baleal_-_Portugal_%28249265350%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Baleal_-_Portugal_(249265350).jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-de-supertubos",
+    "name": "Прайя-душ-Супертубуш",
+    "type": "beach",
+    "region": "Оэште",
+    "coords": {
+      "lat": 39.3448,
+      "lon": -9.3624
+    },
+    "description": "Пляж в Пенише с одной из самых мощных «трубчатых» волн Европы — за это его называют «европейским Пайплайном», а осенью здесь проходит этап мирового тура по сёрфингу. Для зрителя это отличное место посмотреть на профи с берега. Купаться при сильной волне опасно.",
+    "driveMinutesFromLisbon": 75,
+    "visitDurationHours": 2,
+    "bestSeason": "сентябрь–ноябрь (волны), июнь–сентябрь (пляж)",
+    "tags": [
+      "сёрфинг",
+      "виды",
+      "закат"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Praia_do_Med%C3%A3o-Supertubos_%28_Portugal_%29.jpg/1280px-Praia_do_Med%C3%A3o-Supertubos_%28_Portugal_%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Med%C3%A3o-Supertubos_%28_Portugal_%29.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Praia_do_Med%C3%A3o-Supertubos_-_Portugal_%282823874323%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_do_Med%C3%A3o-Supertubos_-_Portugal_%282823874323%29.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Praia_dos_Supertubos_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_%2853788095651%29.jpg/1280px-Praia_dos_Supertubos_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_%2853788095651%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_dos_Supertubos_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_%2853788095651%29.jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-de-sao-pedro-de-moel",
+    "name": "Прайя-де-Сан-Педру-ди-Моэл",
+    "type": "beach",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 39.7566,
+      "lon": -9.0326
+    },
+    "description": "Маленький курорт с маяком у Марина-Гранде, окружённый сосновым бором Пинал-ду-Рей, который сильно пострадал от пожара 2017 года. Пляж у устья ручья Моэл популярен у сёрферов и бодибордистов, а вдоль леса тянутся дикие пляжи. Хорошо совместить с поездкой в Назаре или Лейрию.",
+    "driveMinutesFromLisbon": 100,
+    "visitDurationHours": 3,
+    "bestSeason": "июнь–сентябрь",
+    "tags": [
+      "купание",
+      "природа",
+      "виды"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Praia_de_S%C3%A3o_Pedro_de_Moel_-_Portugal_%284824789048%29.jpg/1280px-Praia_de_S%C3%A3o_Pedro_de_Moel_-_Portugal_%284824789048%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_de_S%C3%A3o_Pedro_de_Moel_-_Portugal_%284824789048%29.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/S%C3%A3o_Pedro_de_Moel_Praia_560.jpg/1280px-S%C3%A3o_Pedro_de_Moel_Praia_560.jpg",
+        "author": "GFreihalter",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:S%C3%A3o_Pedro_de_Moel_Praia_560.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/S%C3%A3o_Pedro_de_Moel_Praia_566.jpg/1280px-S%C3%A3o_Pedro_de_Moel_Praia_566.jpg",
+        "author": "GFreihalter",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:S%C3%A3o_Pedro_de_Moel_Praia_566.jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-de-mira",
+    "name": "Прайя-де-Мира",
+    "type": "beach",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.4551,
+      "lon": -8.8042
+    },
+    "description": "Длинный пляж с дюнами на Серебряном берегу — бывшая рыбацкая деревня Палейруш-да-Кошта-де-Мира, известная деревянными домиками-«палейрос». На песке до сих пор стоят лодки рыбаков, тянущих сети с берега по старой технике «арте-шавега». Вода холодная, но пляж охраняемый и удобный для семей.",
+    "driveMinutesFromLisbon": 140,
+    "visitDurationHours": 3,
+    "bestSeason": "июнь–сентябрь",
+    "tags": [
+      "купание",
+      "с детьми",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Praia_de_Mira_-_Portugal_%2853427714119%29.jpg/1280px-Praia_de_Mira_-_Portugal_%2853427714119%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_de_Mira_-_Portugal_%2853427714119%29.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Pesca_na_praia_de_mira_-_panoramio.jpg/1280px-Pesca_na_praia_de_mira_-_panoramio.jpg",
+        "author": "starrkirch-wil",
+        "license": "CC BY 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pesca_na_praia_de_mira_-_panoramio.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Praia_de_Mira_-_Portugal_%2853313280041%29.jpg/1280px-Praia_de_Mira_-_Portugal_%2853313280041%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_de_Mira_-_Portugal_%2853313280041%29.jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-do-cabedelo-viana",
+    "name": "Прайя-ду-Кабеделу (Виана-ду-Каштелу)",
+    "type": "beach",
+    "region": "Норте",
+    "coords": {
+      "lat": 41.6788,
+      "lon": -8.8326
+    },
+    "description": "Пляж с дюнами и сосновым лесом на левом берегу устья Лимы напротив Виана-ду-Каштелу — полностью открытый северному ветру, он считается одним из лучших мест в Португалии для кайт- и виндсёрфинга. С пляжа виден город и базилика Санта-Лузия на горе. Летом из центра Вианы ходит паром через реку.",
+    "driveMinutesFromLisbon": 225,
+    "visitDurationHours": 3,
+    "bestSeason": "май–сентябрь",
+    "tags": [
+      "сёрфинг",
+      "природа",
+      "виды"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/PraiaCabedelo.jpg",
+        "author": "Ycomet",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:PraiaCabedelo.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Coast_and_beaches_%286086079846%29.jpg",
+        "author": "Jos Dielis",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coast_and_beaches_%286086079846%29.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Viana_do_Castelo_%2831199326483%29.jpg/1280px-Viana_do_Castelo_%2831199326483%29.jpg",
+        "author": "Sergei Gussev",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Viana_do_Castelo_%2831199326483%29.jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-de-ofir",
+    "name": "Прайя-де-Офир",
+    "type": "beach",
+    "region": "Норте",
+    "coords": {
+      "lat": 41.5201,
+      "lon": -8.7897
+    },
+    "description": "Пляж с дюнами и сосновым лесом у Эшпозенде, у устья реки Каваду. В отлив у берега виднеются «Лошади Фан» — гряда тёмных скал, о которой ходят местные легенды. Вода холодная, как везде на севере, зато пляж просторный.",
+    "driveMinutesFromLisbon": 210,
+    "visitDurationHours": 3,
+    "bestSeason": "июнь–сентябрь",
+    "tags": [
+      "купание",
+      "природа",
+      "закат"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Praia_de_Ofir_%2836059861384%29.jpg/1280px-Praia_de_Ofir_%2836059861384%29.jpg",
+        "author": "Francisco Restivo",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_de_Ofir_%2836059861384%29.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Praia_de_Ofir_-_Portugal_%2898218389%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_de_Ofir_-_Portugal_%2898218389%29.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Ofir_2017_%281%29.jpg/1280px-Ofir_2017_%281%29.jpg",
+        "author": "Joseolgon",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ofir_2017_%281%29.jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-de-moledo",
+    "name": "Прайя-де-Моледу",
+    "type": "beach",
+    "region": "Норте",
+    "coords": {
+      "lat": 41.8479,
+      "lon": -8.8671
+    },
+    "description": "Один из самых северных пляжей Португалии у устья Минью: напротив — островок с фортом Инсуа, на другом берегу реки — Испания и гора Санта-Тегра. Здесь почти всегда ветрено, поэтому пляж любят винд- и кайтсёрферы. Вода здесь очень холодная даже в августе.",
+    "driveMinutesFromLisbon": 240,
+    "visitDurationHours": 3,
+    "bestSeason": "июль–сентябрь",
+    "tags": [
+      "виды",
+      "сёрфинг",
+      "природа"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Praia_de_Moledo_01.jpg/1280px-Praia_de_Moledo_01.jpg",
+        "author": "Krzysztof Golik",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_de_Moledo_01.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Praia_de_Moledo_04.jpg/1280px-Praia_de_Moledo_04.jpg",
+        "author": "Krzysztof Golik",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_de_Moledo_04.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Playa_Praia_de_Moledo_Caminha.jpg",
+        "author": "TurismoenPortugal",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Playa_Praia_de_Moledo_Caminha.jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-fluvial-de-valhelhas",
+    "name": "Речной пляж Валельяш",
+    "type": "beach",
+    "region": "Центр (Серра-да-Эштрела)",
+    "coords": {
+      "lat": 40.4026,
+      "lon": -7.4035
+    },
+    "description": "Речной пляж на Зезере в деревне Валельяш у подножия Серра-да-Эштрела: купальня в русле реки, подпёртая низкой каменной запрудой, с газоном и тенистыми деревьями. Пляж с «Голубым флагом», однажды признанный лучшим речным пляжем года. Хорошо совместить с поездкой в Мантейгаш и ледниковую долину Зезере.",
+    "driveMinutesFromLisbon": 185,
+    "visitDurationHours": 3,
+    "bestSeason": "июль–сентябрь",
+    "tags": [
+      "купание",
+      "с детьми",
+      "природа"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Praia_Valhelhas.jpg",
+        "author": "Sararg04",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_Valhelhas.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Praia_fluvial_Valhelhas.jpg",
+        "author": "Sararg04",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_fluvial_Valhelhas.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Praia_fluvial_de_Valhelhas.jpg/1280px-Praia_fluvial_de_Valhelhas.jpg",
+        "author": "Sararg04",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_fluvial_de_Valhelhas.jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-fluvial-de-alvoco-das-varzeas",
+    "name": "Речной пляж Алвоку-даш-Варзеаш",
+    "type": "beach",
+    "region": "Центр (Серра-да-Эштрела)",
+    "coords": {
+      "lat": 40.3042,
+      "lon": -7.8326
+    },
+    "description": "Купальня на реке Алвоку, стекающей с Серра-да-Эштрела, у средневекового моста маленькой горной деревни. Вода кристально чистая, летом работают спасатели, бар и зона для пикника. Вода прохладная даже в разгар лета.",
+    "driveMinutesFromLisbon": 180,
+    "visitDurationHours": 3,
+    "bestSeason": "июль–сентябрь",
+    "tags": [
+      "купание",
+      "природа",
+      "фото"
+    ],
+    "links": [],
+    "photos": []
+  },
+  {
+    "id": "praia-fluvial-de-avo",
+    "name": "Речной пляж Аво",
+    "type": "beach",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.2943,
+      "lon": -7.906
+    },
+    "description": "Речной пляж на Алве у исторической деревни Аво — вокруг островка Пикоту, к которому ведёт мостик, с двумя небольшими запрудами и детским бассейном с речной водой. Над деревней стоят руины средневекового замка. После купания пройдитесь по старым улочкам.",
+    "driveMinutesFromLisbon": 175,
+    "visitDurationHours": 3,
+    "bestSeason": "июль–сентябрь",
+    "tags": [
+      "купание",
+      "история",
+      "виды"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Av%C3%B4_-_Portugal_%2811292842146%29.jpg/1280px-Av%C3%B4_-_Portugal_%2811292842146%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Av%C3%B4_-_Portugal_%2811292842146%29.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Av%C3%B4_-_Portugal_%282665915616%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Av%C3%B4_-_Portugal_%282665915616%29.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Av%C3%B4_-_Portugal_%282702375672%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Av%C3%B4_-_Portugal_%282702375672%29.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Praia_Fluvial_de_Av%C3%B4_-_Portugal_%2810358095443%29.jpg/1280px-Praia_Fluvial_de_Av%C3%B4_-_Portugal_%2810358095443%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_Fluvial_de_Av%C3%B4_-_Portugal_%2810358095443%29.jpg"
+      }
+    ]
+  },
+  {
+    "id": "praia-fluvial-de-coja",
+    "name": "Речной пляж Кожа",
+    "type": "beach",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.2678,
+      "lon": -7.9955
+    },
+    "description": "Речной пляж на Алве в посёлке Кожа, у впадения ручья Мата: запруда на реке образует широкую заводь для купания. Сезон со спасателями — июль и август. Отсюда удобно продолжить поездку по сланцевым деревням Серра-ду-Асор.",
+    "driveMinutesFromLisbon": 165,
+    "visitDurationHours": 3,
+    "bestSeason": "июль–сентябрь",
+    "tags": [
+      "купание",
+      "с детьми",
+      "природа"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Praia_Fluvial_de_C%C3%B4ja_-_Portugal_%282918364454%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_Fluvial_de_C%C3%B4ja_-_Portugal_%282918364454%29.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Praia_Fluvial_de_C%C3%B4ja_-_Portugal_%282664445589%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_Fluvial_de_C%C3%B4ja_-_Portugal_%282664445589%29.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Praia_Fluvial_de_C%C3%B4ja_-_Portugal_%282699176127%29.jpg",
+        "author": "Vitor Oliveira",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praia_Fluvial_de_C%C3%B4ja_-_Portugal_%282699176127%29.jpg"
+      }
+    ]
+  }
+]
