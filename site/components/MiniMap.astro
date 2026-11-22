@@ -37,6 +37,14 @@ const { lat, lon, name, path } = Astro.props;
     background: var(--surface-1);
     font: inherit;
   }
+  /* Tiles and overlays fade in together once the first tiles are loaded. */
+  .minimap :global(.leaflet-map-pane) {
+    opacity: 0;
+    transition: opacity 360ms var(--ease-out);
+  }
+  .minimap:global(.is-ready) :global(.leaflet-map-pane) {
+    opacity: 1;
+  }
   /* Same basemap grading as the explorer (MapShell): warm parchment in
      light, inverted dark map in dark. Only the tile pane is filtered, so the
      route, pins and labels keep their own colors on top. */
@@ -223,7 +231,9 @@ const { lat, lon, name, path } = Astro.props;
       zoomSnap: 0.25,
       maxBounds: PT_VIEW_BOUNDS,
       maxBoundsViscosity: 1,
-    }).setView([lat, lon], 12);
+      // Placeholder view so layers can be added; replaced (without animation,
+      // while the pane is still hidden) by the real framing below.
+    }).setView([lat, lon], 8);
     // Min zoom: where mainland Portugal fits the box, a quarter-step out.
     const syncMinZoom = () => {
       const fit = map.getBoundsZoom(PT_BOX, false, L.point(32, 32));
@@ -231,7 +241,6 @@ const { lat, lon, name, path } = Astro.props;
       map.setMinZoom(z);
       if (map.getZoom() < z) map.setZoom(z, { animate: false });
     };
-    syncMinZoom();
     map.on('resize', syncMinZoom);
     // Drop Leaflet's own attribution prefix (which carries a 🇺🇦 flag); keep the
     // OpenStreetMap tile credit added below.
@@ -241,7 +250,7 @@ const { lat, lon, name, path } = Astro.props;
       // reach Leaflet (which preventDefaults them) so pinch/pan work.
       el.style.touchAction = 'pan-y';
     }
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors',
       maxZoom: 19,
     }).addTo(map);
@@ -315,7 +324,50 @@ const { lat, lon, name, path } = Astro.props;
       paddingTopLeft: [side, top] as L.PointTuple,
       paddingBottomRight: [side, bottom] as L.PointTuple,
     };
-    map.fitBounds(bothBounds, FIT);
+    // First paint at the final framing — no zoom-in from a default view. The
+    // box is padded a little so the real route (usually a bit wider than the
+    // straight line) lands inside it and the camera never has to move.
+    const initial = bothBounds.pad(0.12);
+    map.fitBounds(initial, { ...FIT, animate: false });
+    syncMinZoom();
+
+    // Reveal the map once its first tiles are in, instead of a grey box that
+    // pops tile by tile (CSS fades .is-ready in).
+    let revealed = false;
+    const reveal = () => {
+      if (revealed) return;
+      revealed = true;
+      el.classList.add('is-ready');
+    };
+    tiles.once('load', reveal);
+    window.setTimeout(reveal, 1500);
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Draw a polyline on like a pen stroke (SVG dash offset). Starts from the
+    // Lisbon end because the geometry runs Lisbon → destination.
+    const drawOn = (layer: L.Path | L.GeoJSON, ms: number, delay = 0) => {
+      if (reduced) return;
+      const paths: SVGPathElement[] = [];
+      const collect = (l: L.Layer) => {
+        const e = (l as L.Path).getElement?.() as SVGPathElement | undefined;
+        if (e) paths.push(e);
+      };
+      if ('eachLayer' in layer) (layer as L.GeoJSON).eachLayer(collect);
+      else collect(layer);
+      for (const path of paths) {
+        const len = path.getTotalLength();
+        path.animate(
+          [{ strokeDasharray: `${len}`, strokeDashoffset: `${len}` }, { strokeDasharray: `${len}`, strokeDashoffset: '0' }],
+          { duration: ms, delay, easing: 'cubic-bezier(0.65, 0, 0.35, 1)', fill: 'backwards' },
+        );
+      }
+    };
+    // Only move the camera if the route really doesn't fit — and then glide.
+    const ensureVisible = (b: L.LatLngBounds) => {
+      if (map.getBounds().contains(b)) return;
+      if (reduced) map.fitBounds(b.extend(bothBounds), { ...FIT, animate: false });
+      else map.flyToBounds(b.extend(bothBounds), { ...FIT, duration: 0.6, easeLinearity: 0.35 });
+    };
 
     // Try to draw the actual driving route (OSRM demo). If anything fails, the
     // straight-line framing above already shows the point relative to Lisbon.
@@ -334,13 +386,15 @@ const { lat, lon, name, path } = Astro.props;
         if (!geo || geo.type !== 'LineString') throw new Error('no route geometry');
         // White casing first, then the coloured route on top, so the line
         // stays legible over any map tiles.
-        L.geoJSON(geo, {
+        const casing = L.geoJSON(geo, {
           style: { weight: 8, opacity: 1, className: 'route-casing' },
         }).addTo(map);
         const line = L.geoJSON(geo, {
           style: { weight: 4, opacity: 1, className: 'route-line' },
         }).addTo(map);
-        map.fitBounds(line.getBounds().extend(bothBounds), { ...FIT, animate: false });
+        ensureVisible(line.getBounds());
+        drawOn(casing, 900);
+        drawOn(line, 900, 40);
       })
       .catch(() => {
         // Fallback: a faint straight connector so the direction is still legible.
@@ -351,7 +405,7 @@ const { lat, lon, name, path } = Astro.props;
           ],
           { weight: 3, dashArray: '6 7', className: 'route-line route-line--dashed' },
         ).addTo(map);
-        map.fitBounds(bothBounds, { ...FIT, animate: false });
+        ensureVisible(bothBounds);
       });
   }
 </script>
