@@ -1,0 +1,496 @@
+[
+  {
+    "id": "termas-da-piedade-alcobaca",
+    "name": "Термы Пьедаде (Алкобаса)",
+    "type": "thermal",
+    "region": "Эштремадура",
+    "coords": {
+      "lat": 39.5696,
+      "lon": -9.0024
+    },
+    "description": "Термальный источник в 5 км от монастыря Алкобаса, на котором работает Your Hotel & Spa: его термальный спа с гидромассажным бассейном и джакузи открыт для всех посетителей старше 16 лет, а не только для гостей отеля. Поездку удобно совместить с монастырём Алкобаса или Назаре. Сеанс нужно бронировать заранее; часовой гидротермальный круг стоит около 23 €.",
+    "driveMinutesFromLisbon": 80,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "природа"
+    ],
+    "links": [
+      {
+        "title": "Термальный спа (официальный сайт)",
+        "url": "https://www.yourhotelspa.com/en/spa/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Fachada_principal_das_Termas_da_Piedade.jpg/1280px-Fachada_principal_das_Termas_da_Piedade.jpg",
+        "author": "Threeohsix",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fachada_principal_das_Termas_da_Piedade.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Termas_da_Piedade_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_%2854620201122%29.jpg/1280px-Termas_da_Piedade_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_%2854620201122%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Termas_da_Piedade_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_(54620201122).jpg"
+      }
+    ]
+  },
+  {
+    "id": "termas-da-curia",
+    "name": "Термы Курия",
+    "type": "thermal",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.4264,
+      "lon": -8.4647
+    },
+    "description": "Курорт в винном регионе Байрада с историческим термальным парком на 14 гектарах и старинным павильоном-бюветом. Помимо лечебных курсов у терм есть отдельный прайс оздоровительных процедур — например, 20 минут в термальном бассейне стоят около 15 €. После купания стоит заказать запечённого молочного поросёнка с местным игристым в соседней Меальяде.",
+    "driveMinutesFromLisbon": 130,
+    "visitDurationHours": 3,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "вино",
+      "ресторан"
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт",
+        "url": "https://www.termasdacuria.com/termas-da-curia"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Buvete_da_Curia.JPG/1280px-Buvete_da_Curia.JPG",
+        "author": "Vitor Oliveira",
+        "license": "CC BY 2.5",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Buvete_da_Curia.JPG"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Parque_das_Termas_da_Curia_%28Portugal%29_%2859952401%29.jpg/960px-Parque_das_Termas_da_Curia_%28Portugal%29_%2859952401%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parque_das_Termas_da_Curia_(Portugal)_(59952401).jpg"
+      }
+    ]
+  },
+  {
+    "id": "termas-aquadome-unhais-da-serra",
+    "name": "Акводом — термы Уньяйш-да-Серра",
+    "type": "thermal",
+    "region": "Центр (Серра-да-Эштрела)",
+    "coords": {
+      "lat": 40.2654,
+      "lon": -7.6243
+    },
+    "description": "Горный спа-комплекс при отеле H2otel на высоте около 750 м в Серра-да-Эштрела: крытые и открытые бассейны с тёплой водой, джакузи, хаммам и сауны с видом на склоны. Билет в зону Aqualudic продаётся и без проживания — от 22 € за 4 часа в будни; по выходным и в августе дороже, детям 6–10 лет скидка 50 %. Бронируйте заранее, особенно на зимние выходные, когда сюда едут погреться после снега на Торре.",
+    "driveMinutesFromLisbon": 170,
+    "visitDurationHours": 4,
+    "bestSeason": "круглый год, особенно зимой",
+    "tags": [
+      "виды",
+      "природа",
+      "с детьми"
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт",
+        "url": "https://www.aquadome.pt/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Unhais_da_Serra_Hotel_das_termas_b.jpg/500px-Unhais_da_Serra_Hotel_das_termas_b.jpg",
+        "author": "Rosino",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Unhais_da_Serra_Hotel_das_termas_b.jpg"
+      }
+    ]
+  },
+  {
+    "id": "termas-de-sao-jorge-feira",
+    "name": "Термы Калдаш-ди-Сан-Жорже",
+    "type": "thermal",
+    "region": "Север",
+    "coords": {
+      "lat": 40.9687,
+      "lon": -8.5
+    },
+    "description": "Небольшие муниципальные термы под Санта-Марией-да-Фейрой со щелочной сернистой водой, которую поднимают из скважины глубиной 90 м. Программы «Spabado Termal» (термальный бассейн и массаж, от 55 €) продают без медицинской консультации, в отличие от лечебных курсов. По воскресеньям термы закрыты; поездку удобно совместить с замком Санта-Мария-да-Фейра.",
+    "driveMinutesFromLisbon": 165,
+    "visitDurationHours": 2,
+    "bestSeason": "конец февраля – середина декабря",
+    "tags": [
+      "история",
+      "природа"
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт",
+        "url": "https://www.termas-sjorge.com/spabado-termal/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Termas_das_Caldas_de_S%C3%A3o_Jorge.jpg/1280px-Termas_das_Caldas_de_S%C3%A3o_Jorge.jpg",
+        "author": "Rui T. Pinto",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Termas_das_Caldas_de_S%C3%A3o_Jorge.jpg"
+      }
+    ]
+  },
+  {
+    "id": "termas-de-alcafache",
+    "name": "Термы Алкафаше",
+    "type": "thermal",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.6056,
+      "lon": -7.8692
+    },
+    "description": "Одни из самых горячих источников Португалии — сернистая вода выходит при температуре около 50 °C — в долине реки Дан между Визеу и Мангуалди; бальнеарий работает с 1962 года. Короткие спа-программы (термальный круг от 44 €, индивидуальная джакузи с термальной водой 25 €) доступны без консультации врача. Сезон — с конца апреля до конца ноября, зимой термы закрыты.",
+    "driveMinutesFromLisbon": 175,
+    "visitDurationHours": 2,
+    "bestSeason": "конец апреля – ноябрь",
+    "tags": [
+      "природа",
+      "вино"
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт",
+        "url": "https://termasdealcafache.pt/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Termas_de_Alcafache_-_Portugal_%2890725373%29.jpg/960px-Termas_de_Alcafache_-_Portugal_%2890725373%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Termas_de_Alcafache_-_Portugal_(90725373).jpg"
+      }
+    ]
+  },
+  {
+    "id": "termas-da-sulfurea-cabeco-de-vide",
+    "name": "Термы Сульфуреа (Кабесу-ди-Виде)",
+    "type": "thermal",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 39.1338,
+      "lon": -7.5796
+    },
+    "description": "Термы в долине у деревни Кабесу-ди-Виде с уникальной для страны гиперщелочной сернистой водой (pH около 11,5); рядом сохранились остатки римских бань. Кроме лечебных курсов здесь продают программы «Bem-Estar» без назначения врача — от 35 € за две процедуры, в программу «Estimulante» входит бассейн. Сезон примерно с середины марта до середины ноября, перед поездкой лучше позвонить.",
+    "driveMinutesFromLisbon": 140,
+    "visitDurationHours": 2,
+    "bestSeason": "середина марта – середина ноября",
+    "tags": [
+      "история",
+      "природа"
+    ],
+    "links": [
+      {
+        "title": "Официальная страница",
+        "url": "https://www.jfcabecodevide.pt/freguesia/1-termas-da-sulfurea/0"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Termas_de_Cabe%C3%A7o_de_Vide_-_Portugal_%283901378634%29.jpg/1280px-Termas_de_Cabe%C3%A7o_de_Vide_-_Portugal_%283901378634%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Termas_de_Cabe%C3%A7o_de_Vide_-_Portugal_(3901378634).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Termas_de_Cabe%C3%A7o_de_Vide_-_Portugal_%284513942431%29.jpg/1280px-Termas_de_Cabe%C3%A7o_de_Vide_-_Portugal_%284513942431%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Termas_de_Cabe%C3%A7o_de_Vide_-_Portugal_(4513942431).jpg"
+      }
+    ]
+  },
+  {
+    "id": "termas-da-fadagosa-de-nisa",
+    "name": "Термы Фадагоза (Низа)",
+    "type": "thermal",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 39.4517,
+      "lon": -7.6965
+    },
+    "description": "Муниципальные термы в нескольких километрах от городка Низа, снова открывшиеся в апреле 2026 года: сернистая вода, бассейн, сауна, джакузи и душ Виши. Цены одни из самых демократичных в стране — час в бассейне около 2,40 €, оздоровительные программы от 14 до 80 €. Работают с апреля по ноябрь с перерывом на обед, по воскресеньям закрыты.",
+    "driveMinutesFromLisbon": 140,
+    "visitDurationHours": 2,
+    "bestSeason": "апрель – ноябрь",
+    "tags": [
+      "природа",
+      "история"
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт",
+        "url": "https://termasdenisa.cm-nisa.pt/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Termas_da_Fadagosa_de_Nisa_-_Portugal_%288113991937%29.jpg/1280px-Termas_da_Fadagosa_de_Nisa_-_Portugal_%288113991937%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Termas_da_Fadagosa_de_Nisa_-_Portugal_(8113991937).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Termas_da_Fadagosa_de_Nisa_-_Portugal_%288438175287%29.jpg/1280px-Termas_da_Fadagosa_de_Nisa_-_Portugal_%288438175287%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Termas_da_Fadagosa_de_Nisa_-_Portugal_(8438175287).jpg"
+      }
+    ]
+  },
+  {
+    "id": "termas-do-geres",
+    "name": "Термы Жереш",
+    "type": "thermal",
+    "region": "Север",
+    "coords": {
+      "lat": 41.7292,
+      "lon": -8.1615
+    },
+    "description": "Термы в посёлке Жереш прямо внутри национального парка Пенеда-Жереш: при отеле Águas do Gerês работают термальный бассейн, хаммам и спа, открытые и для приезжих. Круг «Termas & Spa» стоит 26 € за 90 минут (30 € на весь день), только бассейн — 17 € за 30 минут. Термы работают с мая по октябрь — удобно совместить с водопадами и прогулками по парку.",
+    "driveMinutesFromLisbon": 240,
+    "visitDurationHours": 2,
+    "bestSeason": "май–октябрь",
+    "tags": [
+      "природа",
+      "виды",
+      "с детьми"
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт",
+        "url": "https://www.aguasdogeres.pt/termas"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Termas_do_Geres_1.jpg/1280px-Termas_do_Geres_1.jpg",
+        "author": "Joseolgon",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Termas_do_Geres_1.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Termas_do_ger%C3%AAs.jpg/500px-Termas_do_ger%C3%AAs.jpg",
+        "author": "Município de Terras de Bouro",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Termas_do_ger%C3%AAs.jpg"
+      }
+    ]
+  },
+  {
+    "id": "termas-de-vizela",
+    "name": "Термы Визела",
+    "type": "thermal",
+    "region": "Север",
+    "coords": {
+      "lat": 41.3738,
+      "lon": -8.309
+    },
+    "description": "Один из старейших термальных курортов страны: горячую воду здешних источников использовали ещё римляне, а бальнеарий существует с 1785 года. В центре Tesal продают термальный круг с динамическим бассейном — 15 € за 45 минут в будни, детям 8,50 €; все процедуры по предварительной записи. Город рядом с Гимарайншем, так что термы легко добавить к поездке туда.",
+    "driveMinutesFromLisbon": 200,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "с детьми"
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт",
+        "url": "https://www.termasdevizela.com/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Termas_de_Caldas_de_Vizela_-_Portugal_%2834000992245%29.jpg/1280px-Termas_de_Caldas_de_Vizela_-_Portugal_%2834000992245%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Termas_de_Caldas_de_Vizela_-_Portugal_(34000992245).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Parque_das_Termas_de_Vizela_-_Caldas_de_Vizela_-_Portugal_%2826000391268%29.jpg/1280px-Parque_das_Termas_de_Vizela_-_Caldas_de_Vizela_-_Portugal_%2826000391268%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parque_das_Termas_de_Vizela_-_Caldas_de_Vizela_-_Portugal_(26000391268).jpg"
+      }
+    ]
+  },
+  {
+    "id": "termas-pedras-salgadas",
+    "name": "Термальный парк Педраш-Салгадаш",
+    "type": "thermal",
+    "region": "Север",
+    "coords": {
+      "lat": 41.5462,
+      "lon": -7.6062
+    },
+    "description": "Тихий лесной парк с источниками газированной минеральной воды и историческим бальнеарием, который отреставрировал архитектор Алвару Сиза Виейра. Спа-круг Relax (бассейн, сауна, хаммам) стоит около 22,50 € за 2 часа; дети до 16 лет допускаются только с 10:00 до 16:00, сеанс лучше бронировать заранее. По парку приятно погулять и без спа: попробуйте воду прямо из бюветов и посмотрите на эко-домики на деревьях.",
+    "driveMinutesFromLisbon": 235,
+    "visitDurationHours": 3,
+    "bestSeason": "круглый год",
+    "tags": [
+      "природа",
+      "история",
+      "с детьми"
+    ],
+    "links": [
+      {
+        "title": "Спа (официальный сайт)",
+        "url": "https://www.pedrassalgadaspark.com/spa/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Nascente_Pedras_Salgadas.JPG/1280px-Nascente_Pedras_Salgadas.JPG",
+        "author": "Maricelper at Portuguese Wikipedia",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nascente_Pedras_Salgadas.JPG"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Pedras_Salgadas_DSC_2705_%285690995327%29.jpg/1280px-Pedras_Salgadas_DSC_2705_%285690995327%29.jpg",
+        "author": "dorfun from Ferrol, Galiza",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pedras_Salgadas_DSC_2705_(5690995327).jpg"
+      }
+    ]
+  },
+  {
+    "id": "termas-vidago-palace",
+    "name": "Термальный спа Видагу-Палас",
+    "type": "thermal",
+    "region": "Север",
+    "coords": {
+      "lat": 41.6329,
+      "lon": -7.5757
+    },
+    "description": "Роскошный отель Vidago Palace 1910 года посреди парка с минеральными источниками; его термальный спа в белом мраморе спроектировал Алвару Сиза Виейра. Внешним посетителям продают доступ в спа: 35 € за 2 часа, 50 € за полдня, вход с 16 лет. Даже без спа стоит прогуляться по парку и заглянуть в старинные бюветы.",
+    "driveMinutesFromLisbon": 245,
+    "visitDurationHours": 2.5,
+    "bestSeason": "весна–осень (зимой уточняйте часы работы)",
+    "tags": [
+      "история",
+      "фото",
+      "природа"
+    ],
+    "links": [
+      {
+        "title": "Термальный спа (официальный сайт)",
+        "url": "https://vidagopalace.com/termal-spa/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Vidago_Palace_Hotel_-_Portugal_%2829536366680%29.jpg/1280px-Vidago_Palace_Hotel_-_Portugal_%2829536366680%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vidago_Palace_Hotel_-_Portugal_(29536366680).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Parque_de_Vidago%2C_Vidago.jpg/1280px-Parque_de_Vidago%2C_Vidago.jpg",
+        "author": "Marta.i.sousa~ptwikiquote",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parque_de_Vidago,_Vidago.jpg"
+      }
+    ]
+  },
+  {
+    "id": "termas-de-sao-vicente-penafiel",
+    "name": "Термы Сан-Висенте (Пенафиел)",
+    "type": "thermal",
+    "region": "Север",
+    "coords": {
+      "lat": 41.1175,
+      "lon": -8.2944
+    },
+    "description": "Термальный курорт под Пенафиелом с водой, которую здесь называют самой сернистой в Португалии; при отеле Palace Hotel & Spa работает Aqua Center. Без проживания можно купить 45 минут в динамическом термальном бассейне за 17 € (детям 3–7 лет — 10 €) или круг с сауной и хаммамом за 31 €. Пускают при наличии мест, так что лучше позвонить заранее.",
+    "driveMinutesFromLisbon": 200,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": [
+      "с детьми",
+      "природа"
+    ],
+    "links": [
+      {
+        "title": "Aqua Center (официальный сайт)",
+        "url": "https://termasdesaovicente.pt/aqua-center/"
+      }
+    ],
+    "photos": []
+  },
+  {
+    "id": "termas-de-melgaco",
+    "name": "Термы Мелгасу",
+    "type": "thermal",
+    "region": "Север",
+    "coords": {
+      "lat": 42.1059,
+      "lon": -8.2818
+    },
+    "description": "Термы в самом северном муниципалитете Португалии, в лесистом парке Пезу у Мелгасу: источник зарегистрирован в 1884 году, в парке стоит монументальный бювет. Термальный круг с сауной и хаммамом стоит 22 € за час, только бассейн — 12 €, дети до 6 лет бесплатно. Мелгасу — столица вина алваринью, так что после терм стоит заглянуть на дегустацию.",
+    "driveMinutesFromLisbon": 270,
+    "visitDurationHours": 2,
+    "bestSeason": "весна–осень (зимой уточняйте часы работы)",
+    "tags": [
+      "природа",
+      "вино",
+      "история"
+    ],
+    "links": [
+      {
+        "title": "Термальный круг (официальный сайт)",
+        "url": "https://www.xn--termasdemelgao-sjb.pt/circuito-termal/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Balne%C3%A1rio_Termas_de_Melga%C3%A7o_%281%29.jpg/1280px-Balne%C3%A1rio_Termas_de_Melga%C3%A7o_%281%29.jpg",
+        "author": "Joseolgon",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Balne%C3%A1rio_Termas_de_Melga%C3%A7o_(1).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Parque_Termal_de_Melga%C3%A7o_%281%29.jpg/1280px-Parque_Termal_de_Melga%C3%A7o_%281%29.jpg",
+        "author": "Joseolgon",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parque_Termal_de_Melga%C3%A7o_(1).jpg"
+      }
+    ]
+  },
+  {
+    "id": "termas-de-amarante",
+    "name": "Термы Амаранте",
+    "type": "thermal",
+    "region": "Север",
+    "coords": {
+      "lat": 41.2715,
+      "lon": -8.0746
+    },
+    "description": "Муниципальные термы AmarantePure на правом берегу реки Тамега, в нескольких минутах ходьбы от центра Амаранте. Щелочная вода (pH 9,6) питает бассейн «Circuito Tâmega» — около 17,40 € за первый час в будни. Работают с понедельника по субботу только до 14:00, так что приезжайте с утра, а потом гуляйте по старому городу у моста Сан-Гонсалу.",
+    "driveMinutesFromLisbon": 200,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год",
+    "tags": [
+      "история",
+      "фото"
+    ],
+    "links": [
+      {
+        "title": "Термы на сайте муниципалитета",
+        "url": "https://www.cm-amarante.pt/locais/termas-de-amarante/"
+      }
+    ],
+    "photos": []
+  }
+]
