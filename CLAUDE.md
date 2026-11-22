@@ -19,7 +19,12 @@ npm run preview    # serve the production build
 npm run validate   # zod-validate everything under data/ (pipeline/validate.ts)
 npm test           # vitest run (all *.test.ts)
 npx vitest run site/lib/dates.test.ts   # single test file
+node qa/shoot.mjs qa/out/<run> http://localhost:4321/portugal-events [filter]
+                   # visual QA: every page/state × 8 widths × light/dark + defect report
 ```
+
+`qa/shoot.mjs` uses Playwright's Chromium (`npx playwright install chromium` once,
+or point `CHROME_PATH` at a Chrome binary). Output goes to the git-ignored `qa/out/`.
 
 CI (`.github/workflows/deploy.yml`) runs `validate` → `test` → `build` on every push to
 `main` and deploys `dist/` to GitHub Pages. A red `validate` or `test` blocks the deploy,
@@ -55,6 +60,11 @@ places with web-sourced descriptions and Wikimedia Commons photos (only
 free-licensed, `upload.wikimedia.org` URLs), which appear on the site as soon as
 they land in `data/`. `ingest-events` reads `sources.json`, gathers events, dedupes,
 and must pass `npm run validate && npm test` before committing.
+
+**Visual design follows [DESIGN.md](DESIGN.md)** — tokens in `site/styles/tokens.css`,
+shared primitives in `site/styles/base.css`. Every UI change uses the tokens (no hardcoded
+colors/radii/shadows), sentence-case labels, and gets checked with `qa/shoot.mjs` at desktop
+and phone widths in both themes before merging.
 
 **Frontend is Astro with vanilla-TS islands, no UI framework.** Pages are `.astro`
 files; interactivity is plain `<script>` blocks operating on `data-*` attributes (see
