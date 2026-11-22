@@ -419,6 +419,85 @@ img {
   display: none;
 }
 
+/* ---- Facet sidebar (wide desktop, places explorer) -----------------------
+   Inside .has-sidebar (set by MapShell) the same filter controls restyle from
+   dropdown pills into an always-open vertical facet panel: group summaries
+   become quiet section headings (not clickable — nothing to expand), menus
+   render inline as wrapped chip rows, and "Сбросить" docks next to the panel
+   title. No JS changes: the buttons and their data-attributes are untouched. */
+@media (min-width: 1100px) {
+  .has-sidebar .filter-bar {
+    position: relative;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-4);
+    padding-top: var(--space-1);
+  }
+  .has-sidebar .fb-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    min-height: 22px;
+  }
+  .has-sidebar .fb-title {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+  }
+  .has-sidebar .reset-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 24px;
+    padding: 0;
+  }
+  .has-sidebar .fgroup {
+    display: block;
+  }
+  .has-sidebar .fgroup-summary {
+    pointer-events: none;
+    width: 100%;
+    height: auto;
+    justify-content: flex-start;
+    padding: 0 0 var(--space-2);
+    margin-bottom: var(--space-2);
+    border: 0;
+    border-bottom: 0.5px solid var(--border);
+    border-radius: 0;
+    background: none;
+    color: var(--text-secondary);
+    letter-spacing: 0.12em;
+  }
+  .has-sidebar .fgroup-summary::after {
+    display: none;
+  }
+  /* Activity shows through the count badge alone; the heading stays quiet. */
+  .has-sidebar .fgroup.active .fgroup-summary {
+    border-color: var(--border);
+    background: none;
+    color: var(--text-secondary);
+  }
+  .has-sidebar .fgroup-menu {
+    display: flex;
+    position: static;
+    width: auto;
+    max-width: none;
+    max-height: none;
+    overflow: visible;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+  }
+  .has-sidebar .fav-toggle {
+    justify-content: center;
+  }
+}
+
 /* Self-dismissing sign-in toast (see lib/signinPrompt.ts). Compact single-row
    popover in the editorial popover language, with a fade/slide entrance. */
 .signin-toast {
