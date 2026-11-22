@@ -22,7 +22,14 @@
         "url": "https://www.museudeetnologia.pt/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Lisbon%2C_the_Museu_Nacional_de_Etnologia.JPG/1280px-Lisbon%2C_the_Museu_Nacional_de_Etnologia.JPG",
+        "author": "Dguendel",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lisbon,_the_Museu_Nacional_de_Etnologia.JPG"
+      }
+    ],
     "freeWithResidency": true
   },
   {
@@ -48,7 +55,14 @@
         "url": "https://museusemonumentos.pt/pt/museus-e-monumentos/casa-museu-dr-anastacio-goncalves"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Casa-Museu_Dr._Anast%C3%A1cio_Gon%C3%A7alves_-_Casa_de_Malhoa.JPG/1280px-Casa-Museu_Dr._Anast%C3%A1cio_Gon%C3%A7alves_-_Casa_de_Malhoa.JPG",
+        "author": "Juntas",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Casa-Museu_Dr._Anast%C3%A1cio_Gon%C3%A7alves_-_Casa_de_Malhoa.JPG"
+      }
+    ],
     "freeWithResidency": true
   },
   {
@@ -74,7 +88,14 @@
         "url": "https://www.ccb.pt/macccb/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Berardo_Collection_Museum.png/1280px-Berardo_Collection_Museum.png",
+        "author": "Dilum2444",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Berardo_Collection_Museum.png"
+      }
+    ],
     "freeWithResidency": false
   },
   {
@@ -100,7 +121,14 @@
         "url": "https://www.museudelisboa.pt/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Exterior_of_Pal%C3%A1cio_Pimenta_78.jpg/1280px-Exterior_of_Pal%C3%A1cio_Pimenta_78.jpg",
+        "author": "Kent Wang",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Exterior_of_Pal%C3%A1cio_Pimenta_78.jpg"
+      }
+    ],
     "freeWithResidency": false
   },
   {
@@ -126,7 +154,14 @@
         "url": "https://museubordalopinheiro.pt/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Museu_Bordalo_Pinheiro.jpg/1280px-Museu_Bordalo_Pinheiro.jpg",
+        "author": "Hipersyl",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Museu_Bordalo_Pinheiro.jpg"
+      }
+    ],
     "freeWithResidency": false
   },
   {
@@ -152,7 +187,14 @@
         "url": "https://www.museudoaljube.pt/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Museu_do_Aljube.jpg/1280px-Museu_do_Aljube.jpg",
+        "author": "Hipersyl",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Museu_do_Aljube.jpg"
+      }
+    ],
     "freeWithResidency": false
   },
   {
@@ -179,7 +221,14 @@
         "url": "https://www.museus.ulisboa.pt/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Museu_Nacional_de_Historia_Natural_e_da_Ciencia_-_Universidade_de_Lisboa_-_panoramio.jpg/1280px-Museu_Nacional_de_Historia_Natural_e_da_Ciencia_-_Universidade_de_Lisboa_-_panoramio.jpg",
+        "author": "Mister No",
+        "license": "CC BY 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Museu_Nacional_de_Historia_Natural_e_da_Ciencia_-_Universidade_de_Lisboa_-_panoramio.jpg"
+      }
+    ],
     "freeWithResidency": false
   },
   {
@@ -206,7 +255,14 @@
         "url": "https://www.museudodinheiro.pt/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Exterior_of_the_Museu_do_Dinheiro_20.jpg/1280px-Exterior_of_the_Museu_do_Dinheiro_20.jpg",
+        "author": "Kent Wang",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Exterior_of_the_Museu_do_Dinheiro_20.jpg"
+      }
+    ],
     "freeWithResidency": false
   },
   {
@@ -232,7 +288,14 @@
         "url": "https://www.museumedeirosealmeida.pt/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Exterior_of_Museu_Ant%C3%B3nio_Medeiros_e_Almeida_03.jpg/1280px-Exterior_of_Museu_Ant%C3%B3nio_Medeiros_e_Almeida_03.jpg",
+        "author": "Kent Wang",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Exterior_of_Museu_Ant%C3%B3nio_Medeiros_e_Almeida_03.jpg"
+      }
+    ],
     "freeWithResidency": false
   },
   {
@@ -259,7 +322,14 @@
         "url": "https://www.fmnf.pt/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Entroncamento_Rotunda.jpg/1280px-Entroncamento_Rotunda.jpg",
+        "author": "Andreas Nagel, München",
+        "license": "CC BY 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Entroncamento_Rotunda.jpg"
+      }
+    ],
     "freeWithResidency": false
   },
   {
@@ -285,7 +355,14 @@
         "url": "https://pt.wikipedia.org/wiki/Museu_Jos%C3%A9_Malhoa"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Museu_Jos%C3%A9_Malhoa%2C_Entrada_Principal.jpg/1280px-Museu_Jos%C3%A9_Malhoa%2C_Entrada_Principal.jpg",
+        "author": "Museu José Malhoa",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Museu_Jos%C3%A9_Malhoa,_Entrada_Principal.jpg"
+      }
+    ],
     "freeWithResidency": true
   },
   {
@@ -311,7 +388,14 @@
         "url": "https://www.mnresistencialiberdade.gov.pt/pt/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Entrada_no_Forte_de_Peniche%2C_vista_do_lado_do_t%C3%BAnel.jpg/1280px-Entrada_no_Forte_de_Peniche%2C_vista_do_lado_do_t%C3%BAnel.jpg",
+        "author": "Fernando Barão",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Entrada_no_Forte_de_Peniche,_vista_do_lado_do_t%C3%BAnel.jpg"
+      }
+    ],
     "freeWithResidency": true
   },
   {
@@ -328,7 +412,8 @@
     "visitDurationHours": 0.5,
     "bestSeason": "круглый год",
     "tags": [
-      "история"
+      "история",
+      "фото"
     ],
     "links": [
       {
@@ -336,7 +421,14 @@
         "url": "https://www.cm-tomar.pt/visitar/o-que-visitar/sinagoga"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Sinagoga_de_Tomar_IMG_9389.jpg/1280px-Sinagoga_de_Tomar_IMG_9389.jpg",
+        "author": "Manuelvbotelho",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sinagoga_de_Tomar_IMG_9389.jpg"
+      }
+    ],
     "freeWithResidency": false
   },
   {
@@ -362,7 +454,14 @@
         "url": "https://museulourinha.org/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Museu_da_Lourinh%C3%A3.JPG/1280px-Museu_da_Lourinh%C3%A3.JPG",
+        "author": "Cancelos",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Museu_da_Lourinh%C3%A3.JPG"
+      }
+    ],
     "freeWithResidency": false
   },
   {
@@ -388,7 +487,14 @@
         "url": "https://www.museudoneorealismo.pt/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Museu_do_Neo-Realismo%2C_Vila_Franca_de_Xira_01.jpg/1280px-Museu_do_Neo-Realismo%2C_Vila_Franca_de_Xira_01.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Museu_do_Neo-Realismo,_Vila_Franca_de_Xira_01.jpg"
+      }
+    ],
     "freeWithResidency": false
   },
   {
@@ -415,7 +521,14 @@
         "url": "https://www.cm-leiria.pt/pages/264"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Entrada_para_MiMo_Leiria_em_2023.jpg/1280px-Entrada_para_MiMo_Leiria_em_2023.jpg",
+        "author": "Threeohsix",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Entrada_para_MiMo_Leiria_em_2023.jpg"
+      }
+    ],
     "freeWithResidency": false
   },
   {
@@ -441,7 +554,14 @@
         "url": "https://visit.uc.pt/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Laboratorio_Chimico_-_University_of_Coimbra_-_Coimbra%2C_Portugal_-_DSC09055.jpg/1280px-Laboratorio_Chimico_-_University_of_Coimbra_-_Coimbra%2C_Portugal_-_DSC09055.jpg",
+        "author": "Daderot",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Laboratorio_Chimico_-_University_of_Coimbra_-_Coimbra,_Portugal_-_DSC09055.jpg"
+      }
+    ],
     "freeWithResidency": false
   },
   {
@@ -467,7 +587,14 @@
         "url": "https://casadospatudos.pt/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Casa-patudos_foto-pan.jpg/1280px-Casa-patudos_foto-pan.jpg",
+        "author": "Luisjmatias",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Casa-patudos_foto-pan.jpg"
+      }
+    ],
     "freeWithResidency": false
   },
   {
@@ -493,7 +620,14 @@
         "url": "https://www.fcbraganca.pt/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Vila_Vi%C3%A7osa_September_2013-5a.jpg/1280px-Vila_Vi%C3%A7osa_September_2013-5a.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vila_Vi%C3%A7osa_September_2013-5a.jpg"
+      }
+    ],
     "freeWithResidency": false
   },
   {
@@ -520,7 +654,14 @@
         "url": "https://cpf.pt/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Centro_Portugu%C3%A9s_de_Fotograf%C3%ADa%2C_Oporto%2C_Portugal%2C_2012-05-09%2C_DD_01.JPG/1280px-Centro_Portugu%C3%A9s_de_Fotograf%C3%ADa%2C_Oporto%2C_Portugal%2C_2012-05-09%2C_DD_01.JPG",
+        "author": "Diego Delso",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Centro_Portugu%C3%A9s_de_Fotograf%C3%ADa,_Oporto,_Portugal,_2012-05-09,_DD_01.JPG"
+      }
+    ],
     "freeWithResidency": false
   },
   {
@@ -537,7 +678,8 @@
     "visitDurationHours": 1,
     "bestSeason": "круглый год",
     "tags": [
-      "история"
+      "история",
+      "фото"
     ],
     "links": [
       {
@@ -545,7 +687,14 @@
         "url": "https://museudoporto.pt/en/estacao/casa-do-infante/"
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Casa_do_Infante_%28Porto%29.JPG",
+        "author": "Manuel de Sousa",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Casa_do_Infante_(Porto).JPG"
+      }
+    ],
     "freeWithResidency": false
   }
 ]
