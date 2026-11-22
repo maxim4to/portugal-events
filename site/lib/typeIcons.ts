@@ -70,7 +70,32 @@ export const GLYPHS: Record<string, string> = {
     `<path fill="#fff" d="M8 3.5h8V5h3v2.5A4.5 4.5 0 0 1 15 11.8 4 4 0 0 1 13 13v3h3l.6 4.5H7.4L8 16h3v-3a4 4 0 0 1-2-1.2A4.5 4.5 0 0 1 5 7.5V5h3Z"/>`,
 };
 
-export const favoriteGlyph = `<path fill="#fff" d="M12 20S4 14.7 4 9.6C4 6.9 6 5 8.4 5c1.6 0 2.9.9 3.6 1.9C12.7 5.9 14 5 15.6 5 18 5 20 6.9 20 9.6 20 14.7 12 20 12 20Z"/>`;
+// Optical centring: each glyph's drawn bounds (measured with getBBox) are
+// nudged so the shape sits in the middle of its disc — several were drawn
+// low (castle by 2.5 of 24 units). Applied once, so pins and filter rows
+// both get centred glyphs.
+const CENTER_NUDGE: Record<string, [number, number]> = {
+  beach: [0, -0.5],
+  hike: [0, -1.25],
+  castle: [0, -2.5],
+  town: [0, -0.5],
+  museum: [0, -0.5],
+  park: [0, -0.5],
+  garden: [0, -1.3],
+  cablecar: [0, 0.75],
+  route: [0, -0.5],
+  stay: [0, -1],
+  other: [0, 0.95],
+  concert: [-0.5, 0.4],
+  festival: [0, -0.25],
+  exhibition: [0, -0.75],
+  market: [0, 0.5],
+};
+for (const [k, [dx, dy]] of Object.entries(CENTER_NUDGE)) {
+  if (GLYPHS[k]) GLYPHS[k] = `<g transform="translate(${dx} ${dy})">${GLYPHS[k]}</g>`;
+}
+
+export const favoriteGlyph = `<g transform="translate(0 -0.5)"><path fill="#fff" d="M12 20S4 14.7 4 9.6C4 6.9 6 5 8.4 5c1.6 0 2.9.9 3.6 1.9C12.7 5.9 14 5 15.6 5 18 5 20 6.9 20 9.6 20 14.7 12 20 12 20Z"/></g>`;
 export const FAVORITE_COLOR = '#d6305f';
 
 /** A small colored-disc icon for a place/event type (filter rows, legends). */

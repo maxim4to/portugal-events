@@ -74,6 +74,23 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
       })();
     </script>
     <script is:inline>
+      // The phone's own screen-corner radius, for bottom cards that sit near
+      // the screen edge (their radius = this − their gap, so the curves are
+      // concentric). No web API exposes it, so iPhones are recognised by
+      // their point size; only in the installed app, where the page really
+      // reaches the corners. Values are Apple's display corner radii.
+      (function () {
+        try {
+          var standalone = navigator.standalone || matchMedia('(display-mode: standalone)').matches;
+          if (!standalone || !/iPhone/.test(navigator.userAgent)) return;
+          var w = Math.min(screen.width, screen.height), h = Math.max(screen.width, screen.height);
+          var R = { '375x812': 41, '414x896': 40, '390x844': 47.33, '428x926': 53.33, '393x852': 55, '430x932': 55, '402x874': 62, '440x956': 62, '420x912': 62 };
+          var r = R[w + 'x' + h] || (h >= 812 ? 47 : 0);
+          if (r) document.documentElement.style.setProperty('--display-r', r + 'px');
+        } catch (e) {}
+      })();
+    </script>
+    <script is:inline>
       // Embedded as the desktop detail panel (lib/detailOverlay.ts): drop the
       // site chrome, open links in the top window, relay Esc to the parent.
       (function () {
@@ -152,6 +169,8 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
     <script>
       import { trackPage } from '../lib/navStack.ts';
       import '../lib/microInteractions.ts';
+      import { initHaptics } from '../lib/haptics.ts';
+      initHaptics();
       trackPage();
       // Restored from the back/forward cache: scripts don't re-run, so note
       // which entry we're on again.

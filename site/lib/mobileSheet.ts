@@ -1,3 +1,4 @@
+import { haptic } from './haptics';
 // Phone (≤760px) bottom sheet for the explorer: the list rides over a
 // full-screen map and snaps between three heights — `peek` (just the header,
 // map mode), `half`, and `full` (list mode). Dragging the header always moves
@@ -236,6 +237,7 @@ export function initSheet(root: HTMLElement, opts: Options): SheetController {
       const i = ORDER.indexOf(state) + (v > 0 ? 1 : -1);
       best = ORDER[Math.max(0, Math.min(ORDER.length - 1, i))];
     }
+    if (best !== state) haptic();
     snap(best);
   }
   sheet.addEventListener('touchend', endDrag);

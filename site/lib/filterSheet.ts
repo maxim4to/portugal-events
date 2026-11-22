@@ -1,3 +1,4 @@
+import { haptic } from './haptics';
 // Phone filter sheet: every filter group in one bottom sheet, opened from a
 // single «Фильтры» button in the top bar. Filters apply live (the list and
 // map update underneath); the footer — in thumb reach — resets or closes
@@ -134,8 +135,10 @@ export function initFilterSheet(root: HTMLElement): void {
     dragging = false;
     sheet.classList.remove('dragging');
     const v = dy / Math.max(1, performance.now() - startT);
-    if (dy > 90 || v > 0.6) close();
-    else panel.style.transform = '';
+    if (dy > 90 || v > 0.6) {
+      haptic();
+      close();
+    } else panel.style.transform = '';
   };
   handle?.addEventListener('pointerup', end);
   handle?.addEventListener('pointercancel', end);
@@ -183,8 +186,12 @@ export function initFilterSheet(root: HTMLElement): void {
     tMode = 'idle';
     sheet.classList.remove('dragging');
     const v = tDy / Math.max(1, performance.now() - tStartT);
-    if (tDy > 90 || v > 0.6) close();
-    else panel.style.transform = '';
+    if (tDy > 90 || v > 0.6) {
+      haptic();
+      close();
+      return;
+    }
+    panel.style.transform = '';
   };
   body.addEventListener('touchend', tEnd);
   body.addEventListener('touchcancel', tEnd);

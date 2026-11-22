@@ -1,4 +1,5 @@
 import { initFilterSheet } from './filterSheet';
+import { haptic } from './haptics';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { gameIcon } from './mapIcons';
@@ -492,18 +493,60 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   // ---- Phone pin preview ---------------------------------------------------
 
 
+  // Phone pin preview: a richer card built from the place's own list card —
+  // a swipeable strip of its photos, type + region, name, description, the
+  // drive/duration/season row and two actions (details, route).
+  const thumb500 = (url: string) => {
+    const m = url.match(/^(https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\/)(thumb\/)?([0-9a-f]\/[0-9a-f]{2}\/)([^/]+)(\/\d+px-[^/]+)?$/);
+    if (!m || /\.(svg|tiff?)$/i.test(m[4])) return url;
+    return `${m[1]}thumb/${m[3]}${m[4]}/500px-${m[4]}`;
+  };
+  function previewPhotos(p: MapPoint, card: HTMLElement | undefined): string[] {
+    const out: string[] = [];
+    const g = card?.querySelector<HTMLElement>('[data-gallery]');
+    const first = g?.querySelector<HTMLImageElement>('img.layer[data-photo-index="0"]');
+    if (first) out.push(first.dataset.full || first.getAttribute('src') || '');
+    if (g?.dataset.photos) out.push(...g.dataset.photos.split('|'));
+    if (!out.length) {
+      const cover = card?.querySelector<HTMLImageElement>('.cover img');
+      if (cover?.src) out.push(cover.src);
+      else if (p.image) out.push(p.image);
+    }
+    return out.filter(Boolean).slice(0, 8);
+  }
   function previewHtml(p: MapPoint): string {
-    const media = p.image
-      ? `<span class="pp-media">${imgTag(p.image, "this.parentNode.style.visibility='hidden'")}</span>`
+    const card = cardById.get(p.id);
+    const photos = previewPhotos(p, card);
+    const strip = photos.length
+      ? `<div class="pp-strip${photos.length === 1 ? ' is-single' : ''}">` +
+        photos
+          .map(
+            (u) =>
+              `<span class="pp-shot"><img src="${esc(thumb500(u))}" data-full="${esc(u)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" ` +
+              `onerror="if(this.src!==this.dataset.full){this.src=this.dataset.full}else{this.parentNode.remove()}"></span>`,
+          )
+          .join('') +
+        `</div>`
       : '';
+    const desc = card?.querySelector('.desc')?.textContent?.trim();
+    const metaRow = card?.querySelector('.meta-row');
+    const meta = metaRow ? metaRow.innerHTML : p.meta ? `<span>${esc(p.meta)}</span>` : '';
+    const region = card?.dataset.region;
+    const route = `https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lon}&travelmode=driving`;
     return (
-      `<a class="pp-card" href="${detailUrl(p.id)}">${media}` +
-      `<span class="pp-body">` +
-      (p.kicker ? `<span class="pp-kicker">${typeDot(p)}${esc(p.kicker)}</span>` : '') +
+      `<div class="pp-card">${strip}` +
+      `<a class="pp-main" href="${detailUrl(p.id)}">` +
+      `<span class="pp-kicker">${p.kicker ? `${typeDot(p)}${esc(p.kicker)}` : ''}${region ? `<span class="pp-region">${esc(region)}</span>` : ''}</span>` +
       `<span class="pp-title">${esc(p.name)}</span>` +
-      (p.meta ? `<span class="pp-meta">${esc(p.meta)}</span>` : '') +
+      (desc ? `<span class="pp-desc">${esc(desc)}</span>` : '') +
+      (meta ? `<span class="pp-meta">${meta}</span>` : '') +
       `<span class="pp-dist" data-pp-dist></span>` +
-      `<span class="pp-more">Подробнее →</span></span></a>` +
+      `</a>` +
+      `<div class="pp-actions">` +
+      `<a class="pp-btn pp-btn--primary" href="${detailUrl(p.id)}">Подробнее</a>` +
+      `<a class="pp-btn" href="${route}" target="_blank" rel="noopener">` +
+      `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 3.5 3.8 10.4c-.7.3-.6 1.3.1 1.5l6.6 1.6 1.6 6.6c.2.7 1.2.8 1.5.1z"/></svg>Маршрут</a>` +
+      `</div></div>` +
       `<button type="button" class="pp-close" data-pp-close aria-label="Закрыть">` +
       `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>`
     );
@@ -511,6 +554,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
 
   function openPreview(p: MapPoint) {
     if (!previewEl || !map) return;
+    haptic();
     const prev = selectedId;
     selectedId = p.id;
     if (prev && prev !== p.id) highlightMarker(prev, false);
