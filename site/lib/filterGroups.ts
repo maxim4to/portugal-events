@@ -93,6 +93,8 @@ export function initFilterGroups(root: HTMLElement): void {
 
     const btn = g.querySelector<HTMLButtonElement>('[data-fgroup-toggle]');
     btn?.addEventListener('click', () => {
+      // Sidebar layout: the pill is a static (sticky) section heading.
+      if (root.classList.contains('has-sidebar') && window.matchMedia('(min-width: 1100px)').matches) return;
       const willOpen = !g.classList.contains('open');
       closeAll();
       if (!willOpen) return;
