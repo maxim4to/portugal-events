@@ -10,11 +10,13 @@ interface Props {
   description?: string;
   /** Wide layout for the map explorer pages (drops the reading-width cap). */
   wide?: boolean;
+  /** Detail pages: a wider reading container for content + sticky aside. */
+  detail?: boolean;
   /** Phone bottom tab bar. Detail pages turn it off in favour of their own
       floating back/actions bar. */
   tabbar?: boolean;
 }
-const { title, description, wide, tabbar = true } = Astro.props;
+const { title, description, wide, detail, tabbar = true } = Astro.props;
 const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
 ---
 <html lang="ru">
@@ -76,7 +78,7 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
     <IconSprite />
     <div class="statusbar-scrim" aria-hidden="true"></div>
     <Header />
-    <main class:list={['main', { wide }]}>
+    <main class:list={['main', { wide, detail }]}>
       <slot />
     </main>
     {tabbar && <TabBar />}
@@ -97,6 +99,9 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
     max-width: 1100px;
     margin: 0 auto;
     padding: var(--space-6) var(--gutter) var(--space-8);
+  }
+  .main.detail {
+    max-width: calc(1200px + 2 * var(--gutter));
   }
 
   /* Explorer pages: lock the app to the viewport so only the list scrolls —

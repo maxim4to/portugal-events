@@ -44,7 +44,7 @@ if (road && road.length > 1) {
 }
 
 ---
-<Base title={place.name} description={place.description.slice(0, 150)} tabbar={false}>
+<Base title={place.name} description={place.description.slice(0, 150)} tabbar={false} detail>
   <article class="detail">
     <div class="d-head">
       <a class="back" href={href('/places/')}>
@@ -168,12 +168,6 @@ if (road && road.length > 1) {
 </Base>
 
 <style>
-  /* Detail pages get a wider page container than Base's 1100px default so the
-     two-column layout (content + aside) has room. */
-  :global(main.main:has(> .detail)) {
-    max-width: calc(1200px + 2 * var(--gutter));
-  }
-
   /* ---- Single column (default, < 1100px) ----
      .d-main / .d-aside dissolve so their parts can be ordered: the facts panel
      follows the photo, the minimap closes the page. */

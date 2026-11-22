@@ -31,7 +31,7 @@ const paragraphs = event.description.split(/\n\n+/).map((s) => s.trim()).filter(
 const glyph = GLYPHS[event.type]?.replaceAll('#fff', 'currentColor') ?? null;
 const price = event.price || null;
 ---
-<Base title={event.title} description={event.description.slice(0, 150)} tabbar={false}>
+<Base title={event.title} description={event.description.slice(0, 150)} tabbar={false} detail>
   <article class="detail">
     <div class="d-head">
       <a class="back" href={href('/events/')}>
@@ -134,12 +134,6 @@ const price = event.price || null;
 </Base>
 
 <style>
-  /* Detail pages get a wider page container than Base's 1100px default so the
-     two-column layout (content + aside) has room. */
-  :global(main.main:has(> .detail)) {
-    max-width: calc(1200px + 2 * var(--gutter));
-  }
-
   /* ---- Single column (default, < 1100px) ----
      .d-main / .d-aside dissolve so their parts can be ordered: the facts panel
      follows the photo, the minimap closes the page. */
