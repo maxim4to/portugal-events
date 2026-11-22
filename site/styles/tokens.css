@@ -70,6 +70,19 @@
   --type-other: #e9e7e1;        /* soft gray */
   --type-other-text: #61605a;
 
+  /* Event types reuse place tints (aliases, so dark mode follows). Keep in
+     sync with the TINT table in EventCard.astro. */
+  --type-concert: var(--type-museum);
+  --type-concert-text: var(--type-museum-text);
+  --type-festival: var(--type-park);
+  --type-festival-text: var(--type-park-text);
+  --type-exhibition: var(--type-castle);
+  --type-exhibition-text: var(--type-castle-text);
+  --type-market: var(--type-viewpoint);
+  --type-market-text: var(--type-viewpoint-text);
+  --type-sport: var(--type-hike);
+  --type-sport-text: var(--type-hike-text);
+
   /* Radii */
   --radius-sm: 8px;
   --radius: 12px;

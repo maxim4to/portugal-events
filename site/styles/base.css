@@ -294,6 +294,10 @@ img {
     display: none;
   }
 }
+/* The sign-in prompt answers the click; the hover hint would sit on top of it. */
+body:has(.signin-toast.show) .icon-tip::after {
+  opacity: 0;
+}
 
 /* Visually hidden but available to screen readers. */
 .sr-only {
