@@ -253,6 +253,44 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro
     overflow-y: auto;
     padding: var(--space-3);
   }
+
+  /* Desktop two-pane: the list fills its block edge-to-edge — no inner
+     padding, no gaps; cards become flat tiles separated by hairlines instead
+     of floating rounded cards. (The phone sheet below keeps its own padding.) */
+  @media (min-width: 761px) {
+    .list-scroll {
+      padding: 0;
+    }
+    .list-scroll :global(.grid-cards),
+    .list-scroll :global(.month) {
+      gap: 0;
+    }
+    .list-scroll :global(.card) {
+      height: 100%;
+      border: 0;
+      border-radius: 0;
+    }
+    /* Hairline grid: each cell draws its right + bottom edge. */
+    .list-scroll :global([data-item-card]) {
+      box-shadow: inset -0.5px -0.5px 0 var(--border);
+    }
+    /* No lift/shadow in the flat list (it would clip at the pane edges):
+       hover reads as a surface tint + the accent title the card already has. */
+    .explorer-root .list-scroll :global(.card:hover) {
+      transform: none;
+      box-shadow: none;
+      background: color-mix(in srgb, var(--surface-2) 55%, var(--surface-1));
+    }
+    /* Section dividers and group headings get back the breathing room the
+       pane padding used to provide. */
+    .list-scroll :global(.visited-sep),
+    .list-scroll :global(.ni-sep) {
+      padding: var(--space-2) var(--space-3) 0;
+    }
+    .list-scroll :global([data-group-label]) {
+      padding: 0 var(--space-3);
+    }
+  }
   .empty {
     display: flex;
     flex-direction: column;
@@ -294,6 +332,17 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro
   :global(.explorer-root [data-item-card].is-active .card) {
     border-color: var(--accent);
     box-shadow: 0 0 0 2px var(--accent);
+  }
+  /* Flat desktop list: an inset ring, so it isn't clipped between the
+     edge-to-edge cells. Only the wrapper draws it (the inner card would
+     double it up). */
+  @media (min-width: 761px) {
+    :global(.explorer-root [data-item-card].is-active) {
+      box-shadow: inset 0 0 0 2px var(--accent);
+    }
+    :global(.explorer-root [data-item-card].is-active .card) {
+      box-shadow: none;
+    }
   }
   /* Game-map pins: a colored disc (inline background from mapIcons.ts) with a
      white per-type glyph, centered on the spot like a map blip. Scale/active
@@ -346,7 +395,14 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro
     opacity: 1;
   }
 
-  /* Dark theme: a dark basemap (inverted OSM tiles, hues restored), so the
+  /* Game-map grading: warm the OSM tiles into a slightly desaturated
+     parchment tone (matching the site's cream palette), so the basemap reads
+     like a game world under the colored type blips, not a data map. */
+  .pane-map :global(.leaflet-tile-pane) {
+    filter: sepia(0.18) saturate(0.95) hue-rotate(-5deg) brightness(1.03) contrast(0.95);
+  }
+
+  /* Dark theme: a dark basemap (inverted tiles, hues restored), so the
      map matches the UI instead of glaring. */
   :global(:root[data-theme='dark']) .pane-map :global(.leaflet-tile-pane) {
     filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.88) saturate(0.7);
