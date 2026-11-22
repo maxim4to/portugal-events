@@ -538,12 +538,15 @@ body:has(.signin-toast.show) .icon-tip::after {
     text-transform: none;
     color: var(--text-primary);
   }
+  /* Docked beside the "Фильтры" title, on its baseline (title 17px/24px line
+     starting at the bar's 4px top padding; button text is 13.5px). */
   .has-sidebar .reset-btn {
     position: absolute;
-    top: 0;
+    top: 6px;
     right: 0;
     height: 24px;
     padding: 0;
+    line-height: 24px;
   }
   .has-sidebar .fgroup {
     display: block;

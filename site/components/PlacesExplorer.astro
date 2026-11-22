@@ -30,7 +30,8 @@ const points = places.map((p) => ({
   // can't fetch them), so use the direct URL for the popup cover too.
   image: p.photos[0]?.url,
   kicker: TYPE_LABELS[p.type] ?? p.type,
-  meta: `${p.region} · ${formatDriveMinutes(p.driveMinutesFromLisbon)} от Лиссабона`,
+  // NBSP: the drive phrase wraps as one unit, never "… от / Лиссабона".
+  meta: `${p.region} · ${formatDriveMinutes(p.driveMinutesFromLisbon)}\u00a0от\u00a0Лиссабона`,
 }));
 ---
 <MapShell kind="places" detailPrefix="/places/" hrefBase={hrefBase} mapId="places-map" points={points} awaitUser sidebar>

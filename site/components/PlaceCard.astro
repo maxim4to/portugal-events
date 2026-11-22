@@ -3,7 +3,7 @@ import type { Place } from '../../schema/index.ts';
 import { TYPE_LABELS } from '../lib/labels.ts';
 import Icon from './Icon.astro';
 import PhotoGallery from './PhotoGallery.astro';
-import { formatDriveMinutes } from '../lib/format.ts';
+import { formatDriveMinutes, shortSeason } from '../lib/format.ts';
 
 interface Props {
   place: Place;
@@ -30,7 +30,7 @@ const typeLabel = TYPE_LABELS[place.type] ?? place.type;
       <span class="dist" data-dist hidden></span>
       <span><Icon name="clock" size={12} /> {formatDriveMinutes(place.driveMinutesFromLisbon)}</span>
       <span><Icon name="hourglass" size={12} /> ~{place.visitDurationHours} ч</span>
-      <span class="season"><Icon name="calendar" size={12} /> {place.bestSeason}</span>
+      <span class="season" title={place.bestSeason}><Icon name="calendar" size={12} /> {shortSeason(place.bestSeason)}</span>
     </div>
   </div>
 </a>
@@ -87,7 +87,7 @@ const typeLabel = TYPE_LABELS[place.type] ?? place.type;
   }
   /* Too narrow for the season to say anything useful ("се…"): drop it — the
      detail page shows it in full. */
-  @container (max-width: 250px) {
+  @container (max-width: 205px) {
     .body .meta-row > span.season.season {
       display: none;
     }

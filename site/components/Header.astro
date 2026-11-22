@@ -307,6 +307,10 @@ const isActive = (p: string) => {
     white-space: nowrap;
     max-width: 220px;
   }
+  /* No name/email yet (profile still loading): no empty header + divider. */
+  .auth-menu-head:has(.auth-menu-name:empty):has(.auth-menu-email:empty) {
+    display: none;
+  }
   .auth-menu-item {
     display: block;
     width: 100%;

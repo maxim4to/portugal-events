@@ -183,7 +183,7 @@ const { lat, lon, name, path } = Astro.props;
   const LISBON = { lat: 38.7223, lon: -9.1393 };
   // Portugal-only site: keep the map on mainland Portugal plus a margin (same
   // frame as the explorer map, see PT_VIEW_BOUNDS in mapExplorer.ts).
-  const PT_VIEW_BOUNDS = L.latLngBounds([34.6, -12.4], [43.6, -3.6]);
+  const PT_VIEW_BOUNDS = L.latLngBounds([35.7, -11.6], [43.3, -4.6]);
   const PT_BOX = L.latLngBounds([36.7, -9.85], [42.16, -6.18]);
 
   const el = document.querySelector<HTMLElement>('.minimap');

@@ -354,7 +354,7 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
     .sheet-head {
       display: block;
       flex: none;
-      padding: 0 var(--space-1) var(--space-3);
+      padding: 0 0 var(--space-3);
     }
     .sheet-grabber,
     .peek-rail {
@@ -755,7 +755,7 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
     top: var(--space-2);
     left: var(--space-2);
   }
-  :global(.leaflet-container .leaflet-control-attribution) {
+  :global(.leaflet-container .leaflet-control-container .leaflet-control-attribution) {
     margin: 0 var(--space-2) var(--space-2) 0;
     padding: 1px 6px;
     border-radius: var(--radius-sm);

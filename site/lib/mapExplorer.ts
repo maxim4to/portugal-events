@@ -20,7 +20,7 @@ function typeDot(p: { type?: string }): string {
  *  9.8–6.2°W) plus a margin, so the coast isn't pinned to the pane edge.
  *  Outside it there's nothing to show. On the phone the frame is stretched by
  *  the pixels the filter row and the list sheet cover (see `frame()`). */
-const PT_VIEW_BOUNDS = L.latLngBounds([34.6, -12.4], [43.6, -3.6]);
+const PT_VIEW_BOUNDS = L.latLngBounds([35.7, -11.6], [43.3, -4.6]);
 /** Mainland Portugal's own bounding box (from pt-mainland.json). */
 const PT_BOX = L.latLngBounds([36.7, -9.85], [42.16, -6.18]);
 
