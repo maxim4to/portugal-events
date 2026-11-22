@@ -1,7 +1,8 @@
 ---
 import type { Event } from '../../schema/index.ts';
 import { EVENT_TYPE_LABELS } from '../lib/labels.ts';
-import { formatDateRu } from '../lib/dates.ts';
+import { formatDateRangeRu } from '../lib/dates.ts';
+import { formatDriveMinutes } from '../lib/format.ts';
 import { imageThumb } from '../lib/imgProxy.ts';
 import { driveTimeFromLisbon, type buildCityIndex } from '../lib/eventGeo.ts';
 import Icon from './Icon.astro';
@@ -14,13 +15,20 @@ interface Props {
 const { event, href, cityIndex } = Astro.props;
 
 const typeLabel = EVENT_TYPE_LABELS[event.type] ?? 'Событие';
-const dateLabel =
-  event.dateStart === event.dateEnd
-    ? formatDateRu(event.dateStart)
-    : `${formatDateRu(event.dateStart)} – ${formatDateRu(event.dateEnd)}`;
-// "~1 ч 20 мин от Лиссабона" → "~1 ч 20 мин": the clock icon carries the
-// meaning, matching the places cards' meta row.
-const driveTime = driveTimeFromLisbon(event, cityIndex)?.replace(/\s+от Лиссабона$/, '');
+const dateLabel = formatDateRangeRu(event.dateStart, event.dateEnd);
+// eventGeo only returns a phrase ("~1 ч 20 мин от Лиссабона"); read the
+// minutes back out and format them with the site-wide formatter. The value is
+// a straight-line estimate, so it keeps its "~"; the clock icon carries
+// "from Lisbon", matching the places cards' meta row.
+function driveMinutes(phrase: string | null): number | null {
+  if (!phrase) return null;
+  const h = phrase.match(/(\d+)\s*ч/)?.[1];
+  const m = phrase.match(/(\d+)\s*мин/)?.[1];
+  if (!h && !m) return null;
+  return Number(h ?? 0) * 60 + Number(m ?? 0);
+}
+const minutes = driveMinutes(driveTimeFromLisbon(event, cityIndex));
+const driveTime = minutes === null ? null : `~${formatDriveMinutes(minutes)}`;
 
 // Event types have no tint tokens of their own; borrow the place-type tints
 // so placeholders and type dots stay inside the token palette.
@@ -39,8 +47,7 @@ const GLYPHS: Record<string, string> = {
   concert: '<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',
   festival:
     '<path d="M12 3.5l2.47 5.01 5.53.8-4 3.9.94 5.5L12 16.1l-4.94 2.6.94-5.5-4-3.9 5.53-.8z"/>',
-  exhibition:
-    '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/>',
+  exhibition: '<path d="M3 21h18M5 18V10M9.5 18V10M14.5 18V10M19 18V10M4 18h16"/><path d="M2.5 10h19L12 4z"/>',
   market: '<path d="M4 9l1.5-5h13L20 9"/><path d="M4 9v11h16V9"/><path d="M3 9h18"/><path d="M10 20v-5h4v5"/>',
   sport:
     '<path d="M8 21h8M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/>',
@@ -91,7 +98,7 @@ const glyph = GLYPHS[event.type] ?? GLYPHS.other;
     <div class="meta-row">
       <span class="dist" data-dist hidden></span>
       {driveTime && (
-        <span title="Дорога от Лиссабона"><Icon name="clock" size={12} /> {driveTime}</span>
+        <span title="Примерно на машине от Лиссабона"><Icon name="clock" size={12} /> {driveTime}</span>
       )}
       {event.price && (
         <span class="price">

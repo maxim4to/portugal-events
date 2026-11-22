@@ -4,7 +4,7 @@ import EventsExplorer from '../components/EventsExplorer.astro';
 import { upcomingEvents, cities } from '../lib/data.ts';
 import { buildCityIndex, eventLatLon } from '../lib/eventGeo.ts';
 import { EVENT_TYPE_LABELS } from '../lib/labels.ts';
-import { formatDateRu } from '../lib/dates.ts';
+import { formatDateRangeRu } from '../lib/dates.ts';
 import { imageThumb } from '../lib/imgProxy.ts';
 import type { MapPoint } from '../lib/mapExplorer.ts';
 
@@ -15,10 +15,7 @@ const points: MapPoint[] = [];
 for (const e of upcomingEvents) {
   const ll = eventLatLon(e, cityIndex);
   if (!ll) continue;
-  const date =
-    e.dateStart === e.dateEnd
-      ? formatDateRu(e.dateStart)
-      : `${formatDateRu(e.dateStart)} – ${formatDateRu(e.dateEnd)}`;
+  const date = formatDateRangeRu(e.dateStart, e.dateEnd);
   points.push({
     id: e.id,
     name: e.title,

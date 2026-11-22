@@ -128,6 +128,14 @@ const presentCities = [...new Set(events.map((e) => e.city))].sort((a, b) =>
     line-height: 1.25;
     letter-spacing: -0.01em;
   }
+  /* Events are few and their covers carry the date pill, so keep cards at
+     least 250px: the capped list column (≤ ~790px at --page-max) then stays at
+     two roomy columns instead of three thumbnails with an orphan row. */
+  @media (min-width: 761px) {
+    .event-list .month .grid-cards {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  }
   .no-events {
     margin: 0;
     color: var(--text-secondary);

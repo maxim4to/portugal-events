@@ -6,7 +6,7 @@ import MobileDetailBar from '../../components/MobileDetailBar.astro';
 import { upcomingEvents, cities } from '../../lib/data.ts';
 import { buildCityIndex, eventLatLon, driveTimeFromLisbon } from '../../lib/eventGeo.ts';
 import { EVENT_TYPE_LABELS } from '../../lib/labels.ts';
-import { formatDateRu } from '../../lib/dates.ts';
+import { formatDateRangeRu } from '../../lib/dates.ts';
 import { imageThumb } from '../../lib/imgProxy.ts';
 import { GLYPHS } from '../../lib/typeIcons.ts';
 import type { Event } from '../../../schema/index.ts';
@@ -17,10 +17,8 @@ export function getStaticPaths() {
 const { event } = Astro.props as { event: Event };
 const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
 
-const oneDay = event.dateStart === event.dateEnd;
-const dateLabel = oneDay
-  ? formatDateRu(event.dateStart)
-  : `${formatDateRu(event.dateStart)} – ${formatDateRu(event.dateEnd)}`;
+// Shows the year on both ends when the range crosses a year boundary.
+const dateLabel = formatDateRangeRu(event.dateStart, event.dateEnd);
 
 const cityIndex = buildCityIndex(cities);
 const coords = eventLatLon(event, cityIndex);
@@ -83,7 +81,7 @@ const price = event.price || null;
         <dl class="facts">
           <div class="fact">
             <Icon name="calendar" size={20} class="fact-ico" />
-            <dt>{oneDay ? 'Дата' : 'Даты'}</dt>
+            <dt>{event.dateStart === event.dateEnd ? 'Дата' : 'Даты'}</dt>
             <dd>{dateLabel}</dd>
           </div>
           <div class="fact">
