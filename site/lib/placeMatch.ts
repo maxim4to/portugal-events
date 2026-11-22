@@ -10,6 +10,8 @@ export interface PlaceCardData {
   favorite?: boolean;
   /** Whether entry is free for residency-permit holders. */
   freeWithResidency?: boolean;
+  /** Shared "not interested" mark; undefined when the feature is unconfigured. */
+  notInterested?: boolean;
 }
 
 /** Tri-state visited filter: any place / only visited / only not visited. */
@@ -24,6 +26,8 @@ export interface ExplorerFilterState {
   /** When true, keep only favorited places. */
   onlyFavorites?: boolean;
   freeWithResidency?: boolean;
+  /** When true, drop places marked "not interested" from the list entirely. */
+  hideNotInterested?: boolean;
 }
 
 /**
@@ -40,5 +44,6 @@ export function matchesFilter(place: PlaceCardData, state: ExplorerFilterState):
   if (state.visited === 'unvisited' && place.visited) return false;
   if (state.onlyFavorites && !place.favorite) return false;
   if (state.freeWithResidency && !place.freeWithResidency) return false;
+  if (state.hideNotInterested && place.notInterested) return false;
   return true;
 }
