@@ -249,13 +249,87 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
 
   // ---- Markers -------------------------------------------------------------
 
+  let selectedId: string | null = null;
+
+  // Hover lights a card/pin pair; the *selected* place (open popup on
+  // desktop, docked preview on phones) stays lit until it's dismissed, so a
+  // hover ending elsewhere never switches it off.
   function highlightCard(id: string, on: boolean) {
+    if (!on && id === selectedId) return;
     cardById.get(id)?.classList.toggle('is-active', on);
   }
 
   function highlightMarker(id: string, on: boolean) {
-    const el = markerById.get(id)?.getElement();
+    if (!on && id === selectedId) return;
+    const m = markerById.get(id);
+    const el = m?.getElement();
     if (el) el.classList.toggle('pin-active', on);
+    // Lit pin on top of its neighbours. Leaflet writes z-index inline per
+    // marker, so this has to go through its API, not CSS.
+    m?.setZIndexOffset(on ? 10000 : 0);
+  }
+
+  // Bring a card fully into the list's view — outline included — quickly.
+  // Cards off screen are laid out at a placeholder height (content-visibility),
+  // so the target moves as they render: re-measure every frame and close a
+  // fraction of the remaining gap (a critically-damped chase) instead of
+  // animating to a distance computed once. Far targets jump most of the way.
+  let revealRaf = 0;
+  function revealCard(card: HTMLElement) {
+    if (!listScroll) return;
+    const MARGIN = 16;
+    const gap = () => {
+      const box = listScroll.getBoundingClientRect();
+      const c = card.getBoundingClientRect();
+      if (c.top < box.top + MARGIN) return c.top - box.top - MARGIN;
+      if (c.bottom > box.bottom - MARGIN) {
+        return Math.min(c.bottom - box.bottom + MARGIN, c.top - box.top - MARGIN);
+      }
+      return 0;
+    };
+    cancelAnimationFrame(revealRaf);
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let d = gap();
+    if (!d) return;
+    const far = listScroll.clientHeight;
+    if (reduce || Math.abs(d) > far) {
+      // Jump to just short of it (or all the way, with reduced motion).
+      for (let i = 0; i < 4 && Math.abs(d) > (reduce ? 0.5 : far); i++) {
+        listScroll.scrollTop += reduce ? d : d - Math.sign(d) * far * 0.6;
+        d = gap();
+      }
+      if (reduce) return;
+    }
+    const t0 = performance.now();
+    const step = (now: number) => {
+      const rem = gap();
+      if (Math.abs(rem) < 1 || now - t0 > 700) {
+        listScroll.scrollTop += rem;
+        return;
+      }
+      listScroll.scrollTop += rem * 0.22 + Math.sign(rem) * 0.5;
+      revealRaf = requestAnimationFrame(step);
+    };
+    revealRaf = requestAnimationFrame(step);
+  }
+
+  // The user's own scroll wins over an in-flight reveal.
+  listScroll?.addEventListener('wheel', () => cancelAnimationFrame(revealRaf), { passive: true });
+
+  // Desktop: the place whose popup is open is the selected one.
+  function selectDesktop(id: string | null) {
+    const prev = selectedId;
+    selectedId = id;
+    if (prev && prev !== id) {
+      highlightMarker(prev, false);
+      highlightCard(prev, false);
+    }
+    if (id) {
+      highlightMarker(id, true);
+      highlightCard(id, true);
+      const card = cardById.get(id);
+      if (card && !card.hidden) revealCard(card);
+    }
   }
 
   function refreshMarkers(fit: boolean) {
@@ -293,11 +367,17 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
           minWidth: 240,
           offset: [0, 4],
         });
-        marker.on('mouseover', () => highlightCard(p.id, true));
-        marker.on('mouseout', () => highlightCard(p.id, false));
-        marker.on('click', () => {
-          const card = cardById.get(p.id);
-          if (card) card.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        marker.on('mouseover', () => {
+          highlightCard(p.id, true);
+          highlightMarker(p.id, true);
+        });
+        marker.on('mouseout', () => {
+          highlightCard(p.id, false);
+          highlightMarker(p.id, false);
+        });
+        marker.on('popupopen', () => selectDesktop(p.id));
+        marker.on('popupclose', () => {
+          if (selectedId === p.id) selectDesktop(null);
         });
       }
       markerById.set(p.id, marker);
@@ -374,7 +454,6 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
 
   // ---- Phone pin preview ---------------------------------------------------
 
-  let selectedId: string | null = null;
 
   function previewHtml(p: MapPoint): string {
     const media = p.image
@@ -395,8 +474,9 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
 
   function openPreview(p: MapPoint) {
     if (!previewEl || !map) return;
-    if (selectedId) highlightMarker(selectedId, false);
+    const prev = selectedId;
     selectedId = p.id;
+    if (prev && prev !== p.id) highlightMarker(prev, false);
     highlightMarker(p.id, true);
     previewEl.innerHTML = previewHtml(p);
     previewEl.hidden = false;
@@ -431,8 +511,9 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     previewCover = null;
     syncFrame?.();
     previewEl.innerHTML = '';
-    if (selectedId) highlightMarker(selectedId, false);
+    const prev = selectedId;
     selectedId = null;
+    if (prev) highlightMarker(prev, false);
     sheet.setAway(false);
   }
 

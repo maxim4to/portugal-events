@@ -542,9 +542,7 @@ img {
     pointer-events: auto;
     cursor: default;
     position: sticky;
-    /* The sidebar scroller has a 4px top padding; cover it so rows never
-       peek above a stuck heading. */
-    top: calc(-1 * var(--space-1));
+    top: 0;
     z-index: 3;
     /* Rows bleed 8px past the column on each side (their hover fill), so the
        stuck heading does too — nothing peeks out or stays clickable beside
@@ -553,8 +551,6 @@ img {
     padding-inline: var(--space-2);
     width: calc(100% + 2 * var(--space-2));
     background: var(--surface-0);
-    box-shadow: 0 calc(-1 * var(--space-2)) 0 var(--surface-0);
-    background-clip: padding-box;
   }
   /* Activity shows through the count badge alone; the heading stays quiet. */
   .has-sidebar .fgroup.active .fgroup-summary {

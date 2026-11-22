@@ -15,6 +15,7 @@ import MobileDetailBar from '../../components/MobileDetailBar.astro';
 import { allPlaces } from '../../lib/data.ts';
 import { formatDriveMinutes, capitalize } from '../../lib/format.ts';
 import { ICON_ROUTE, ICON_PIN } from '../../lib/actionIcons.ts';
+import { TAG_GLYPHS, TAG_FALLBACK_GLYPH } from '../../lib/tagIcons.ts';
 import type { Place } from '../../../schema/index.ts';
 
 export function getStaticPaths() {
@@ -79,7 +80,10 @@ if (road && road.length > 1) {
         {place.tags.length > 0 && (
           <div class="tags" aria-label="Теги">
             {place.tags.map((tag) => (
-              <a class="chip tag" href={href('/places/?tag=' + encodeURIComponent(tag))}>{capitalize(tag)}</a>
+              <a class="chip tag" href={href('/places/?tag=' + encodeURIComponent(tag))}>
+                <svg class="tag-ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={TAG_GLYPHS[tag] ?? TAG_FALLBACK_GLYPH} />
+                {capitalize(tag)}
+              </a>
             ))}
           </div>
         )}
@@ -319,6 +323,13 @@ if (road && road.length > 1) {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-2);
+  }
+  .tag {
+    gap: 6px;
+  }
+  .tag-ico {
+    flex: none;
+    color: var(--text-secondary);
   }
   .tag:hover {
     text-decoration: none;

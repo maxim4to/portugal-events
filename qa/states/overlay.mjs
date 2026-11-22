@@ -31,7 +31,7 @@ for (const theme of ['light', 'dark']) {
     await card.scrollIntoViewIfNeeded();
     await settle(p, 200);
     const scrollBefore = await p.locator('[data-list-scroll]').evaluate((el) => el.scrollTop);
-    await card.click();
+    await card.locator('h3').click();
     await settle(p, 120);
     await p.screenshot({ path: `${out}/opening--${vp}--${theme}.png` });
     await settle(p, 1400);
@@ -58,7 +58,7 @@ for (const theme of ['light', 'dark']) {
       ok(pressed === 1, `${tag}: filter still pressed`);
 
       // Backdrop click closes; Forward reopens; Back closes.
-      await card.click();
+      await card.locator('h3').click();
       await settle(p, 900);
       await p.mouse.click(8, h / 2);
       await settle(p);
@@ -71,7 +71,7 @@ for (const theme of ['light', 'dark']) {
       ok(!(await isOpen(p)) && p.url() === listUrl, `${tag}: Back closes`);
 
       // × button closes.
-      await card.click();
+      await card.locator('h3').click();
       await settle(p, 900);
       await p.locator('[data-do-close]').click();
       await settle(p);
@@ -90,13 +90,13 @@ for (const theme of ['light', 'dark']) {
       }
 
       // Cmd-click: new tab, no overlay.
-      const [popup] = await Promise.all([ctx.waitForEvent('page', { timeout: 3000 }).catch(() => null), card.click({ modifiers: ['Meta'] })]);
+      const [popup] = await Promise.all([ctx.waitForEvent('page', { timeout: 3000 }).catch(() => null), card.locator('h3').click({ modifiers: ['Meta'] })]);
       await settle(p, 400);
       ok(!(await isOpen(p)) && popup, `${tag}: cmd-click opens a tab, not the overlay`);
       await popup?.close();
 
       // Reload while open = full page.
-      await card.click();
+      await card.locator('h3').click();
       await settle(p, 900);
       await p.reload({ waitUntil: 'networkidle' });
       await hideBar(p);
