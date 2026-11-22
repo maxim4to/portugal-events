@@ -115,20 +115,34 @@ const points = places.map((p) => ({
   .ni-sep::after {
     content: '';
     flex: 1;
-    height: 0.5px;
+    height: 1px;
     background: var(--border);
   }
   .card-actions {
     position: absolute;
-    top: var(--space-2);
-    right: var(--space-2);
+    top: var(--space-3);
+    right: var(--space-3);
     z-index: 5;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: var(--space-1);
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 6px;
   }
-
+  /* Pointer devices: only the heart rests on the photo; visited / not
+     interested reveal on hover or keyboard focus (and stay while pressed).
+     Touch keeps all three visible — there is no hover to reveal them. */
+  @media (hover: hover) and (min-width: 761px) {
+    .card-actions > :global(:not(.favorite-btn):not([aria-pressed='true'])) {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity var(--dur-fast) ease, transform var(--dur) var(--ease-out);
+    }
+    .card-wrap:hover .card-actions > :global(*),
+    .card-wrap:focus-within .card-actions > :global(*) {
+      opacity: 1;
+      transform: none;
+    }
+  }
 </style>
 
 <script>

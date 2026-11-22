@@ -1,42 +1,41 @@
-/* Design tokens — editorial "travel journal" language.
-   Warm paper surfaces, azulejo cobalt as the interactive accent, terracotta as
-   the editorial voice (kickers, section marks, rules). Light defaults on :root,
-   dark overrides below. Explicit [data-theme] always wins; system preference
-   applies when unset. */
+/* Design tokens — see DESIGN.md. Warm off-white surfaces, azulejo cobalt as
+   the single interactive accent. Light defaults on :root, dark overrides below.
+   Explicit [data-theme] always wins; system preference applies when unset. */
 
 :root {
-  /* Surfaces — warm paper stack */
-  --surface-0: #f2ece0;   /* page — aged cream */
-  --surface-1: #e8e0d1;   /* recessed */
-  --surface-2: #fcf9f3;   /* cards / raised sheet */
+  /* Surfaces — warm off-white page, white raised sheets */
+  --surface-0: #f6f4f0;   /* page */
+  --surface-1: #ece9e3;   /* subtle fills: hover, chips, segmented track */
+  --surface-2: #ffffff;   /* cards, popovers, header */
 
   /* Ink */
-  --text-primary: #211d17;
-  --text-secondary: #6a6357;
-  --text-muted: #98907f;
+  --text-primary: #1c1a17;
+  --text-secondary: #5c574f;
+  --text-muted: #8a857b;
 
-  /* Hairlines — warm ink, crisp enough to read as editorial rules */
-  --border: rgba(33, 29, 23, 0.16);
-  --border-strong: rgba(33, 29, 23, 0.32);
+  /* Hairlines */
+  --border: rgba(28, 26, 23, 0.10);
+  --border-strong: rgba(28, 26, 23, 0.20);
 
-  /* Accent — azulejo cobalt (interactive: links, pins, focus, active filters) */
-  --accent: #1c4f96;
-  --accent-bg: #e3ebf4;
-  --accent-text: #163d73;
+  /* Accent — azulejo cobalt (interactive, selected) */
+  --accent: #1f56b8;
+  --accent-hover: #194a9f;
+  --accent-bg: #e8effb;
+  --accent-text: #1a4797;
+  --on-accent: #ffffff;
 
-  /* Editorial accent — terracotta (kickers, section numerals, decorative rules) */
-  --editorial: #b8461f;
-  --editorial-bg: #f4e2d8;
-  --editorial-text: #973514;
+  /* Editorial terracotta — brand mark only */
+  --editorial: #c0532a;
+  --editorial-bg: #f7e6dd;
+  --editorial-text: #9a3f1c;
 
-  /* Danger (favorite heart) */
-  --danger: #c8443a;
+  --danger: #e0434f;
+  --visited: #23875a;
 
-  /* Visited (eye-with-check toggle + map pins) — a clear "seen" green */
-  --visited: #2f8f5f;
-
-  /* Not interested (hidden toggle) — a de-emphasised muted grey */
-  --not-interested: #8a8275;
+  /* Depth */
+  --shadow-sm: 0 1px 2px rgba(28, 26, 23, 0.08), 0 1px 1px rgba(28, 26, 23, 0.04);
+  --shadow-md: 0 4px 14px rgba(28, 26, 23, 0.10), 0 1px 3px rgba(28, 26, 23, 0.06);
+  --shadow-lg: 0 16px 40px rgba(28, 26, 23, 0.16), 0 2px 8px rgba(28, 26, 23, 0.06);
 
   /* Place-type cover tints (soft bg + darker same-hue on-tint text) */
   --type-beach: #dcebf6;        /* soft blue */
@@ -70,49 +69,74 @@
   --type-other: #e9e7e1;        /* soft gray */
   --type-other-text: #61605a;
 
-  /* Radii — crisp, print-like */
-  --radius: 3px;
-  --radius-lg: 6px;
-  --radius-pill: 100px;
+  /* Radii */
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
 
-  /* Spacing scale */
+  /* Spacing scale (4-pt) */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
   --space-4: 16px;
   --space-5: 24px;
   --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* Layout grid */
+  --page-max: 1600px;
+  --gutter: 24px;
+  --header-h: 64px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --dur-fast: 150ms;
+  --dur: 200ms;
 
   /* Type families */
   --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
-  /* Back-compat alias — existing rules reference --font. */
   --font: var(--font-sans);
+}
+
+@media (max-width: 760px) {
+  :root {
+    --gutter: 16px;
+  }
 }
 
 /* Dark values, shared by explicit dark theme and system-preference dark. */
 :root[data-theme="dark"] {
-  --surface-0: #17140f;
-  --surface-1: #211d16;
-  --surface-2: #2a251d;
+  --surface-0: #121212;
+  --surface-1: #1f1f1f;
+  --surface-2: #1a1a1a;
 
-  --text-primary: #f3ede0;
-  --text-secondary: #b6ac99;
-  --text-muted: #857c6c;
+  --text-primary: #f2f0ec;
+  --text-secondary: #b3aea6;
+  --text-muted: #85807a;
 
-  --border: rgba(243, 237, 224, 0.14);
-  --border-strong: rgba(243, 237, 224, 0.26);
+  --border: rgba(242, 240, 236, 0.10);
+  --border-strong: rgba(242, 240, 236, 0.20);
 
-  --accent: #7fb0e8;
-  --accent-bg: #12294a;
-  --accent-text: #b6d3f4;
+  --accent: #6d9cf0;
+  --accent-hover: #8ab0f4;
+  --accent-bg: #1a2a47;
+  --accent-text: #b8cff8;
+  --on-accent: #0d1626;
 
-  --editorial: #e08a63;
+  --editorial: #e48b62;
   --editorial-bg: #3a2013;
   --editorial-text: #f0b394;
 
-  --danger: #f09595;
-  --visited: #74c99a;
+  --danger: #ff6b76;
+  --visited: #5cc08f;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.45), 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 18px 44px rgba(0, 0, 0, 0.55), 0 2px 8px rgba(0, 0, 0, 0.3);
   --not-interested: #9a9280;
 
   /* Muted deep versions of the same hues with a light same-hue text color */
@@ -150,27 +174,33 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --surface-0: #17140f;
-    --surface-1: #211d16;
-    --surface-2: #2a251d;
+    --surface-0: #121212;
+  --surface-1: #1f1f1f;
+  --surface-2: #1a1a1a;
 
-    --text-primary: #f3ede0;
-    --text-secondary: #b6ac99;
-    --text-muted: #857c6c;
+  --text-primary: #f2f0ec;
+  --text-secondary: #b3aea6;
+  --text-muted: #85807a;
 
-    --border: rgba(243, 237, 224, 0.14);
-    --border-strong: rgba(243, 237, 224, 0.26);
+  --border: rgba(242, 240, 236, 0.10);
+  --border-strong: rgba(242, 240, 236, 0.20);
 
-    --accent: #7fb0e8;
-    --accent-bg: #12294a;
-    --accent-text: #b6d3f4;
+  --accent: #6d9cf0;
+  --accent-hover: #8ab0f4;
+  --accent-bg: #1a2a47;
+  --accent-text: #b8cff8;
+  --on-accent: #0d1626;
 
-    --editorial: #e08a63;
-    --editorial-bg: #3a2013;
-    --editorial-text: #f0b394;
+  --editorial: #e48b62;
+  --editorial-bg: #3a2013;
+  --editorial-text: #f0b394;
 
-    --danger: #f09595;
-    --visited: #74c99a;
+  --danger: #ff6b76;
+  --visited: #5cc08f;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.45), 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 18px 44px rgba(0, 0, 0, 0.55), 0 2px 8px rgba(0, 0, 0, 0.3);
     --not-interested: #9a9280;
 
     --type-beach: #1c3247;

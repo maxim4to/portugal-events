@@ -27,11 +27,14 @@ const { placeId, variant = 'detail' } = Astro.props;
     align-items: center;
     gap: var(--space-2);
     padding: var(--space-2) var(--space-3);
-    border: 0.5px solid var(--border-strong);
+    min-height: 40px;
+    border: 1px solid var(--border-strong);
     border-radius: var(--radius);
     background: var(--surface-2);
     color: var(--text-secondary);
     font: inherit;
+    font-size: 14px;
+    font-weight: 550;
     cursor: pointer;
     transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
   }
@@ -39,7 +42,7 @@ const { placeId, variant = 'detail' } = Astro.props;
     border-color: var(--text-secondary);
   }
   .favorite-btn:active {
-    transform: scale(0.9);
+    transform: scale(0.94);
   }
   .favorite-btn:focus-visible {
     outline: none;
@@ -71,11 +74,12 @@ const { placeId, variant = 'detail' } = Astro.props;
     padding: 0;
     justify-content: center;
     border-radius: var(--radius-pill);
-    border: 0.5px solid var(--border);
+    min-height: 0;
+    border: 0;
     color: var(--text-primary);
     background: color-mix(in srgb, var(--surface-2) 85%, transparent);
-    backdrop-filter: blur(3px);
-    box-shadow: 0 1px 4px rgba(33, 29, 23, 0.22);
+    backdrop-filter: blur(6px);
+    box-shadow: var(--shadow-md);
   }
   .favorite-btn--card .favorite-label {
     display: none;

@@ -37,7 +37,7 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Inter:wght@400..600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..650&family=Inter:wght@400..700&display=swap"
     />
     <script is:inline>
       (function () {
@@ -96,7 +96,7 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
   .main {
     max-width: 1100px;
     margin: 0 auto;
-    padding: var(--space-5) var(--space-4) var(--space-6);
+    padding: var(--space-6) var(--gutter) var(--space-8);
   }
 
   /* Explorer pages: lock the app to the viewport so only the list scrolls —
@@ -112,13 +112,13 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
        stretches to the viewport. Without it, `margin:0 auto` disables stretch
        and the width becomes content-driven (differs per page). */
     width: 100%;
-    max-width: 1400px;
+    max-width: var(--page-max);
     flex: 1;
     min-height: 0;
     display: flex;
     flex-direction: column;
-    padding-top: var(--space-4);
-    padding-bottom: var(--space-4);
+    padding-top: var(--space-5);
+    padding-bottom: var(--space-5);
   }
 
   /* Phones: the explorer is a fixed full-screen app surface (map + sheet,

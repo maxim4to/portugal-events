@@ -85,16 +85,20 @@ const isActive = (p: string) => {
     position: sticky;
     top: 0;
     z-index: 30;
-    background: color-mix(in srgb, var(--surface-2) 88%, transparent);
-    backdrop-filter: saturate(1.1) blur(8px);
-    border-bottom: 1px solid var(--border-strong);
+    background: color-mix(in srgb, var(--surface-2) 86%, transparent);
+    backdrop-filter: saturate(1.4) blur(12px);
+    -webkit-backdrop-filter: saturate(1.4) blur(12px);
+    border-bottom: 1px solid var(--border);
   }
   .inner {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     gap: var(--space-4);
-    padding: var(--space-3) var(--space-5);
+    max-width: var(--page-max);
+    height: var(--header-h);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
   }
   .brand {
     display: inline-flex;
@@ -108,7 +112,17 @@ const isActive = (p: string) => {
   }
   .brand-mark {
     display: inline-flex;
-    margin-top: 2px;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: var(--editorial);
+    color: #fff;
+  }
+  .brand-mark svg {
+    width: 18px;
+    height: 18px;
   }
   .brand-text {
     display: inline-flex;
@@ -118,33 +132,35 @@ const isActive = (p: string) => {
   .brand-name {
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: 20px;
-    letter-spacing: -0.01em;
+    font-size: 21px;
+    letter-spacing: -0.015em;
     color: var(--text-primary);
   }
   .brand-kicker {
-    margin-top: 6px;
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--text-muted);
+    display: none;
   }
 
   /* Centered editorial tabs — serif, with a terracotta underline on the active. */
   .nav {
     display: inline-flex;
     align-items: center;
-    gap: var(--space-5);
+    gap: 2px;
     justify-self: center;
+    padding: 3px;
+    border-radius: var(--radius-pill);
+    background: var(--surface-1);
   }
   .nav-link {
     display: inline-grid;
     position: relative;
-    padding: var(--space-2) 0;
-    font-family: var(--font-display);
-    font-size: 17px;
+    padding: 7px 18px;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-sans);
+    font-size: 14.5px;
+    font-weight: 500;
+    line-height: 1.3;
     color: var(--text-secondary);
+    transition: color var(--dur-fast) ease, background-color var(--dur-fast) ease, box-shadow var(--dur-fast) ease;
   }
   /* Reserve the bold (active) width so toggling weight never shifts neighbours. */
   .nav-link::after {
@@ -165,15 +181,8 @@ const isActive = (p: string) => {
   .nav-link.active {
     color: var(--text-primary);
     font-weight: 600;
-  }
-  .nav-link.active::before {
-    content: '';
-    position: absolute;
-    left: -2px;
-    right: -2px;
-    bottom: 0;
-    height: 2px;
-    background: var(--editorial);
+    background: var(--surface-2);
+    box-shadow: var(--shadow-sm);
   }
 
   .actions {
@@ -197,26 +206,30 @@ const isActive = (p: string) => {
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
-    height: 38px;
+    height: 40px;
     padding: 0 var(--space-4);
-    border: 0.5px solid var(--border-strong);
-    border-radius: var(--radius);
-    background: transparent;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-pill);
+    background: var(--surface-2);
     color: var(--text-primary);
     font-family: var(--font-sans);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 550;
+    letter-spacing: 0;
+    text-transform: none;
     cursor: pointer;
-    transition: box-shadow 0.15s ease, border-color 0.15s ease;
+    transition: box-shadow var(--dur-fast) ease, border-color var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out);
   }
   .auth-signin[hidden] {
     display: none;
   }
   .auth-signin:hover {
-    border-color: var(--text-secondary);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    box-shadow: var(--shadow-md);
+  }
+  .auth-signin:active,
+  .icon-btn:active,
+  .auth-avatar-btn:active {
+    transform: scale(0.97);
   }
   .auth-signin-icon {
     color: var(--text-secondary);
@@ -234,18 +247,17 @@ const isActive = (p: string) => {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     padding: 3px;
-    border: 0.5px solid var(--border-strong);
-    border-radius: var(--radius);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-pill);
     background: transparent;
     cursor: pointer;
     transition: box-shadow 0.15s ease, border-color 0.15s ease;
   }
   .auth-avatar-btn:hover {
-    border-color: var(--text-secondary);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    box-shadow: var(--shadow-md);
   }
   .auth-avatar {
     width: 32px;
@@ -264,10 +276,10 @@ const isActive = (p: string) => {
     z-index: 1000;
     min-width: 200px;
     padding: var(--space-2);
-    border: 0.5px solid var(--border);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
     background: var(--surface-2);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+    box-shadow: var(--shadow-lg);
   }
   .auth-menu[hidden] {
     display: none;
@@ -277,7 +289,7 @@ const isActive = (p: string) => {
     flex-direction: column;
     gap: 2px;
     padding: var(--space-2) var(--space-3);
-    border-bottom: 0.5px solid var(--border);
+    border-bottom: 1px solid var(--border);
     margin-bottom: var(--space-1);
   }
   .auth-menu-name {
@@ -316,20 +328,19 @@ const isActive = (p: string) => {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     padding: 0;
-    border: 0.5px solid var(--border-strong);
-    border-radius: var(--radius);
-    background: transparent;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-pill);
+    background: var(--surface-2);
     color: var(--text-primary);
     cursor: pointer;
     line-height: 0;
-    transition: box-shadow 0.15s ease, border-color 0.15s ease;
+    transition: box-shadow var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out);
   }
   .icon-btn:hover {
-    border-color: var(--text-secondary);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    box-shadow: var(--shadow-md);
   }
 
   /* Show moon in light mode (offer switch to dark), sun in dark mode. */

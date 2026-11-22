@@ -191,9 +191,9 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
   @media (min-width: 1100px) {
     .explorer-root.has-sidebar {
       display: grid;
-      grid-template-columns: 250px minmax(0, 1fr);
+      grid-template-columns: 256px minmax(0, 1fr);
       grid-template-rows: minmax(0, 1fr);
-      column-gap: var(--space-4);
+      column-gap: var(--space-6);
     }
     .has-sidebar .filter-bar-top {
       grid-column: 1;
@@ -202,7 +202,10 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
       overflow-y: auto;
       overscroll-behavior: contain;
       scrollbar-width: thin;
-      padding: 0 var(--space-2) var(--space-4) 0;
+      /* Left padding leaves room for the rows' hover fill; the negative margin
+         keeps the text itself on the header's left edge. */
+      margin-left: calc(-1 * var(--space-2));
+      padding: var(--space-1) var(--space-3) var(--space-6) var(--space-2);
     }
     .has-sidebar .map-explorer {
       grid-column: 2;
@@ -215,9 +218,9 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
   /* Locate control + the visitor's blue dot (fixed iOS blue, so it reads on
      the always-light tiles in either theme). */
   :global(.locate-ctl.leaflet-bar) {
-    border: 0.5px solid var(--border) !important;
+    border: 1px solid var(--border) !important;
     border-radius: 50%;
-    box-shadow: 0 2px 10px rgba(33, 29, 23, 0.25);
+    box-shadow: var(--shadow-md);
     overflow: hidden;
   }
   :global(.locate-btn) {
@@ -280,11 +283,8 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
     flex: 1;
     min-height: 0;
     display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
     grid-template-rows: minmax(0, 1fr);
-    border: 1px solid var(--border-strong);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
   }
   .pane {
     min-width: 0;
@@ -293,7 +293,6 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
   .pane-list {
     display: flex;
     flex-direction: column;
-    border-right: 1px solid var(--border-strong);
   }
   .list-scroll {
     flex: 1;
@@ -301,60 +300,68 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
     padding: var(--space-3);
   }
 
-  /* Desktop two-pane: the list fills its block edge-to-edge — no inner
-     padding, no gaps; cards become flat tiles separated by hairlines instead
-     of floating rounded cards. (The phone sheet below keeps its own padding.) */
+  /* Desktop two-pane (DESIGN.md): the list is open space with floating,
+     photo-first cards; the map is its own rounded panel beside it. */
   @media (min-width: 761px) {
+    .map-explorer {
+      column-gap: var(--space-5);
+    }
     .list-scroll {
-      padding: 0;
+      /* Room for focus rings and the card hover shadow; the right padding
+         keeps the scrollbar off the cards. */
+      /* Left padding leaves room for the rows' hover fill; the negative margin
+         keeps the text itself on the header's left edge. */
+      margin-left: calc(-1 * var(--space-2));
+      padding: var(--space-1) var(--space-3) var(--space-6) var(--space-2);
+      scrollbar-width: thin;
+      scrollbar-color: var(--border-strong) transparent;
     }
-    .list-scroll :global(.grid-cards),
+    .list-scroll :global(.grid-cards) {
+      column-gap: var(--space-5);
+      row-gap: var(--space-6);
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    }
     .list-scroll :global(.month) {
-      gap: 0;
+      gap: var(--space-5);
     }
-    .list-scroll :global(.card) {
-      height: 100%;
-      border: 0;
-      border-radius: 0;
-    }
-    /* Hairline grid: each cell draws its right + bottom edge. */
-    .list-scroll :global([data-item-card]) {
-      box-shadow: inset -0.5px -0.5px 0 var(--border);
-    }
-    /* No lift/shadow in the flat list (it would clip at the pane edges):
-       hover reads as a surface tint + the accent title the card already has. */
-    .explorer-root .list-scroll :global(.card:hover) {
-      transform: none;
-      box-shadow: none;
-      background: color-mix(in srgb, var(--surface-2) 55%, var(--surface-1));
-    }
-    /* Section dividers and group headings get back the breathing room the
-       pane padding used to provide. */
     .list-scroll :global(.visited-sep),
     .list-scroll :global(.ni-sep) {
-      padding: var(--space-2) var(--space-3) 0;
+      padding: var(--space-2) 0 0;
     }
-    .list-scroll :global([data-group-label]) {
-      padding: 0 var(--space-3);
+    .pane-map {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface-1);
     }
   }
   .empty {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: var(--space-2);
-    padding: var(--space-6) var(--space-4);
+    min-height: 60%;
+    padding: var(--space-7) var(--space-4);
     text-align: center;
-    color: var(--text-muted);
+    color: var(--text-secondary);
+  }
+  .empty::before {
+    content: '';
+    width: 48px;
+    height: 48px;
+    margin-bottom: var(--space-2);
+    border-radius: 50%;
+    background: var(--surface-1) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a857b' stroke-width='1.8' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='6.5'/%3E%3Cpath d='m20 20-4.2-4.2'/%3E%3C/svg%3E") center / 22px no-repeat;
   }
   .empty[hidden] {
     display: none;
   }
   .empty-title {
     margin: 0;
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--text-secondary);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text-primary);
   }
   .empty-hint {
     margin: 0;
@@ -389,21 +396,23 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
     gap: var(--space-2);
     height: 36px;
     padding: 0 var(--space-4);
-    border: 0.5px solid var(--border-strong);
+    border: 1px solid var(--border);
     border-radius: var(--radius-pill);
     background: var(--surface-2);
     color: var(--text-primary);
     font-family: var(--font-sans);
-    font-size: 13px;
+    font-size: 13.5px;
     font-weight: 600;
-    box-shadow: 0 4px 16px rgba(33, 29, 23, 0.22);
+    box-shadow: var(--shadow-md);
     cursor: pointer;
     pointer-events: auto;
     transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
   }
   .area-btn:hover {
-    border-color: var(--text-secondary);
-    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
+  }
+  .area-btn:active {
+    transform: scale(0.97);
   }
   .area-btn svg {
     color: var(--accent);
@@ -424,11 +433,11 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
      surface tone at ~half strength, so the country reads as the "playable
      area" while the surroundings recede. */
   .pane-map :global(.pt-mask) {
-    fill: #f3ede0;
+    fill: var(--surface-0);
     fill-opacity: 0.55;
   }
   :global(:root[data-theme='dark']) .pane-map :global(.pt-mask) {
-    fill: #17140f;
+    fill: var(--surface-0);
     fill-opacity: 0.6;
   }
   @media (prefers-color-scheme: dark) {
@@ -446,15 +455,17 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
     border-color: var(--accent);
     box-shadow: 0 0 0 2px var(--accent);
   }
-  /* Flat desktop list: an inset ring, so it isn't clipped between the
-     edge-to-edge cells. Only the wrapper draws it (the inner card would
-     double it up). */
+  /* Desktop: the open list has room around each card, so the highlight is an
+     outline that follows the card's rounded shape. */
   @media (min-width: 761px) {
-    :global(.explorer-root [data-item-card].is-active) {
-      box-shadow: inset 0 0 0 2px var(--accent);
-    }
+    :global(.explorer-root [data-item-card].is-active),
     :global(.explorer-root [data-item-card].is-active .card) {
       box-shadow: none;
+    }
+    :global(.explorer-root [data-item-card].is-active) {
+      outline: 2px solid var(--accent);
+      outline-offset: 6px;
+      border-radius: var(--radius-lg);
     }
   }
   /* Game-map pins: a colored disc (inline background from mapIcons.ts) with a
