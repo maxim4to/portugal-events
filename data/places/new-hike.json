@@ -944,5 +944,57 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Frecha_da_Mizarela_-_Serra_da_Freita_-_Portugal_(51492577382).jpg"
       }
     ]
+  },
+  {
+    "id": "trilhos-serra-de-montejunto",
+    "name": "Тропы Серра-де-Монтежунту и Королевская ледяная фабрика",
+    "type": "hike",
+    "region": "Оэште",
+    "coords": {
+      "lat": 39.17994,
+      "lon": -9.04959
+    },
+    "description": "Монтежунту (около 666 м) — самая высокая гора в окрестностях Лиссабона, с 1999 года охраняемый ландшафт. От Центра экологической интерпретации на вершине расходятся тропы: короткая, около 2 км, к скалам Пенья-ду-Мейу-Диа и кольца примерно по 12 км по склонам; по воскресеньям центр часто водит бесплатные групповые прогулки по записи. Рядом — Королевская ледяная фабрика XVIII века (национальный памятник): зимой здесь замораживали воду в 44 неглубоких бассейнах, а лёд везли на ослах и повозках к Тежу и дальше на «снежных лодках» в Лиссабон. Часы работы фабрики проверьте заранее — её закрывали на ремонт.",
+    "driveMinutesFromLisbon": 60,
+    "visitDurationHours": 3,
+    "bestSeason": "круглый год (лучше осень–весна)",
+    "tags": [
+      "природа",
+      "виды",
+      "история",
+      "бесплатно"
+    ],
+    "links": [
+      {
+        "title": "Real Fábrica do Gelo — Turismo do Centro",
+        "url": "https://outdoor.turismodocentro.pt/pt/poi/monumento-industrial/real-fabrica-do-gelo/806272519/"
+      }
+    ],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/2025-11-30_Hiking_trail_in_the_Serra_de_Montejunto_1.jpg/1280px-2025-11-30_Hiking_trail_in_the_Serra_de_Montejunto_1.jpg",
+        "author": "Alexkom000",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2025-11-30_Hiking_trail_in_the_Serra_de_Montejunto_1.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/2026-07-11_Serra_de_Montejunto_6.jpg/1280px-2026-07-11_Serra_de_Montejunto_6.jpg",
+        "author": "Alexkom000",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026-07-11_Serra_de_Montejunto_6.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Real_F%C3%A1brica_de_Gelo_da_Serra_de_Montejunto_06.jpg/1280px-Real_F%C3%A1brica_de_Gelo_da_Serra_de_Montejunto_06.jpg",
+        "author": "Ricardo Martins from Gent, Belgium",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Real_F%C3%A1brica_de_Gelo_da_Serra_de_Montejunto_06.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Real_F%C3%A1brica_do_Gelo_-_Tanques_de_Congelamento.jpg/1280px-Real_F%C3%A1brica_do_Gelo_-_Tanques_de_Congelamento.jpg",
+        "author": "Blackmirror",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Real_F%C3%A1brica_do_Gelo_-_Tanques_de_Congelamento.jpg"
+      }
+    ]
   }
 ]
