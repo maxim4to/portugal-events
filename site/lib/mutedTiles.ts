@@ -72,9 +72,11 @@ const MutedTileLayer = L.TileLayer.extend({
 });
 
 // Esri "Light Gray Canvas": a pale, low-detail basemap (land, water, major
-// roads) plus a separate transparent layer with only town and road labels.
+// roads) under a faint hillshade, plus a transparent layer with only town and
+// road labels.
 // Unlike the busy standard OSM render it has no landuse, buildings or POIs.
-const ESRI = 'https://services.arcgisonline.com/ArcGIS/rest/services/Canvas';
+const ESRI_ROOT = 'https://services.arcgisonline.com/ArcGIS/rest/services';
+const ESRI = `${ESRI_ROOT}/Canvas`;
 const ATTRIBUTION = '© Esri, HERE, Garmin, © OpenStreetMap contributors';
 
 export function mutedTileLayer(url: string, options: L.TileLayerOptions): L.TileLayer {
@@ -87,6 +89,14 @@ export function addBasemap(map: L.Map): L.TileLayer {
     maxZoom: 19,
     maxNativeZoom: 16,
   }).addTo(map);
+  // Multiply so the relief only darkens slopes and leaves flat land as pale as
+  // the base (plain opacity would grey the whole map).
+  const relief = mutedTileLayer(`${ESRI_ROOT}/Elevation/World_Hillshade/MapServer/tile/{z}/{y}/{x}`, {
+    opacity: 0.35,
+    maxZoom: 19,
+    maxNativeZoom: 16,
+  }).addTo(map);
+  relief.getContainer()!.style.mixBlendMode = 'multiply';
   mutedTileLayer(`${ESRI}/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}`, {
     maxZoom: 19,
     maxNativeZoom: 16,
