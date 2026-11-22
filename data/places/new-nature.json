@@ -1,0 +1,915 @@
+[
+  {
+    "id": "portas-de-rodao",
+    "name": "Порташ-де-Родан",
+    "type": "nature",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 39.6399,
+      "lon": -7.6847
+    },
+    "description": "Природный памятник на Тежу: река прорезает кварцитовый хребет, образуя узкие «ворота» с отвесными скалами, где гнездится крупная колония белоголовых сипов. Лучший вид — от развалин башни Каштелу-ду-Рей-Вамба над ущельем, а снизу ворота можно увидеть с прогулочного катера из Вила-Велья-де-Родан. Приезжайте ближе к вечеру, когда грифы кружат над скалами.",
+    "driveMinutesFromLisbon": 140,
+    "visitDurationHours": 2.5,
+    "bestSeason": "март–июнь, сентябрь–октябрь",
+    "tags": [
+      "природа",
+      "виды",
+      "фото",
+      "закат"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Upstream_Tagus_river_seen_from_Portas_de_Rod%C3%A3o_viewpoint%2C_Vila_Velha_de_Rod%C3%A3o%2C_Portugal_julesvernex2.jpg/1280px-Upstream_Tagus_river_seen_from_Portas_de_Rod%C3%A3o_viewpoint%2C_Vila_Velha_de_Rod%C3%A3o%2C_Portugal_julesvernex2.jpg",
+        "author": "Jules Verne Times Two",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Upstream_Tagus_river_seen_from_Portas_de_Rod%C3%A3o_viewpoint,_Vila_Velha_de_Rod%C3%A3o,_Portugal_julesvernex2.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Portas_de_R%C3%B3d%C3%A3o_e_Linha_da_Beira_Baixa.jpg/1280px-Portas_de_R%C3%B3d%C3%A3o_e_Linha_da_Beira_Baixa.jpg",
+        "author": "Carla Valongo",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portas_de_R%C3%B3d%C3%A3o_e_Linha_da_Beira_Baixa.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Portas_de_R%C3%B3d%C3%A3o_vista_da_Ponte.jpg/1280px-Portas_de_R%C3%B3d%C3%A3o_vista_da_Ponte.jpg",
+        "author": "AMMO1979",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portas_de_R%C3%B3d%C3%A3o_vista_da_Ponte.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "portas-do-almourao",
+    "name": "Порташ-ду-Алмоуран",
+    "type": "nature",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 39.7381,
+      "lon": -7.7561
+    },
+    "description": "Ущелье реки Окреза в геопарке Натуртежу: река пробивает кварцитовый гребень, оставляя отвесные скальные стены. Смотровые площадки стоят над ущельем у сланцевой деревни Фож-ду-Кобран, откуда же начинаются тропы вниз к воде. Удобно совместить с Порташ-де-Родан — до них около получаса езды.",
+    "driveMinutesFromLisbon": 150,
+    "visitDurationHours": 1.5,
+    "bestSeason": "март–июнь, сентябрь–ноябрь",
+    "tags": [
+      "природа",
+      "виды",
+      "фото",
+      "бесплатно"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Portas_do_Almour%C3%A3o.jpg/1280px-Portas_do_Almour%C3%A3o.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portas_do_Almour%C3%A3o.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Portas_de_Almour%C3%A3o_-_Portugal_%2821058618962%29.jpg/1280px-Portas_de_Almour%C3%A3o_-_Portugal_%2821058618962%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portas_de_Almour%C3%A3o_-_Portugal_(21058618962).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Miradouro_do_Almour%C3%A3o%2C_Rio_Ocreza%2C_03.jpg/1280px-Miradouro_do_Almour%C3%A3o%2C_Rio_Ocreza%2C_03.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Miradouro_do_Almour%C3%A3o,_Rio_Ocreza,_03.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "grutas-de-alvados",
+    "name": "Пещеры Алвадуш",
+    "type": "nature",
+    "region": "Эштремадура",
+    "coords": {
+      "lat": 39.5402,
+      "lon": -8.7527
+    },
+    "description": "Оборудованная карстовая пещера в парке Серраш-де-Айре-и-Кандеейруш, открытая в 1964 году: маршрут через залы с красноватыми сталактитами, сталагмитами и небольшими озёрами. Экскурсия идёт с гидом и занимает около часа. Вне летнего сезона визит организуют через соседние пещеры Санту-Антониу, есть совместный билет на обе.",
+    "driveMinutesFromLisbon": 95,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": [
+      "природа",
+      "с детьми",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Grutas_de_Alvados_01.jpg/1280px-Grutas_de_Alvados_01.jpg",
+        "author": "Filipemigu",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grutas_de_Alvados_01.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Grutas_de_Alvados_02.jpg/1280px-Grutas_de_Alvados_02.jpg",
+        "author": "Filipemigu",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grutas_de_Alvados_02.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "grutas-de-santo-antonio",
+    "name": "Пещеры Санту-Антониу",
+    "type": "nature",
+    "region": "Эштремадура",
+    "coords": {
+      "lat": 39.537,
+      "lon": -8.7429
+    },
+    "description": "Пещеры в известняках Серра-де-Айре, открытые в 1955 году: несколько просторных залов с богатыми натёчными формами. Внутри круглый год около 16–18 °C, так что это хороший вариант в жару или дождь. Есть совместный билет с пещерами Алвадуш в километре отсюда.",
+    "driveMinutesFromLisbon": 95,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": [
+      "природа",
+      "с детьми",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Grutas_de_Santo_Ant%C3%B3nio%2C_Alvados%2C_Alvados_e_Alcaria%2C_Porto_de_Mos%2C_Portugal_23.jpg/960px-Grutas_de_Santo_Ant%C3%B3nio%2C_Alvados%2C_Alvados_e_Alcaria%2C_Porto_de_Mos%2C_Portugal_23.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grutas_de_Santo_Ant%C3%B3nio,_Alvados,_Alvados_e_Alcaria,_Porto_de_Mos,_Portugal_23.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Grutas_de_Santo_Ant%C3%B3nio%2C_Alvados%2C_Alvados_e_Alcaria%2C_Porto_de_Mos%2C_Portugal_47.jpg/960px-Grutas_de_Santo_Ant%C3%B3nio%2C_Alvados%2C_Alvados_e_Alcaria%2C_Porto_de_Mos%2C_Portugal_47.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grutas_de_Santo_Ant%C3%B3nio,_Alvados,_Alvados_e_Alcaria,_Porto_de_Mos,_Portugal_47.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Grutas_de_Santo_Ant%C3%B3nio%2C_Alvados%2C_Alvados_e_Alcaria%2C_Porto_de_Mos%2C_Portugal_49.jpg/960px-Grutas_de_Santo_Ant%C3%B3nio%2C_Alvados%2C_Alvados_e_Alcaria%2C_Porto_de_Mos%2C_Portugal_49.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grutas_de_Santo_Ant%C3%B3nio,_Alvados,_Alvados_e_Alcaria,_Porto_de_Mos,_Portugal_49.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "grutas-da-moeda",
+    "name": "Пещеры Моэда",
+    "type": "nature",
+    "region": "Эштремадура",
+    "coords": {
+      "lat": 39.6244,
+      "lon": -8.705
+    },
+    "description": "Пещеры у Фатимы, которые в 1971 году случайно нашли двое охотников, преследуя лису. Маршрут на 45 минут проходит через залы с подсвеченными сталактитами и сталагмитами, а у выхода есть маленький центр по геологии и палеонтологии. Легко совместить с Фатимой или следами динозавров на Серра-де-Айре.",
+    "driveMinutesFromLisbon": 90,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": [
+      "природа",
+      "с детьми",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Grutas_da_Moeda.jpg/1280px-Grutas_da_Moeda.jpg",
+        "author": "Pierre Phaneuf from Montréal, Canada",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grutas_da_Moeda.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/2026-07-25_Grutas_da_Moeda_07.jpg/1280px-2026-07-25_Grutas_da_Moeda_07.jpg",
+        "author": "Alexkom000",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026-07-25_Grutas_da_Moeda_07.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/2026-07-25_Grutas_da_Moeda_05.jpg/1280px-2026-07-25_Grutas_da_Moeda_05.jpg",
+        "author": "Alexkom000",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026-07-25_Grutas_da_Moeda_05.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "pegadas-dinossaurio-serra-de-aire",
+    "name": "Следы динозавров Серра-де-Айре",
+    "type": "nature",
+    "region": "Эштремадура",
+    "coords": {
+      "lat": 39.5727,
+      "lon": -8.5889
+    },
+    "description": "Бывший карьер Педрейра-ду-Галинья у деревни Байру, где на склоне сохранились дорожки следов зауроподов возрастом около 175 млн лет — одни из самых длинных известных цепочек, длиной больше 140 м. По следам можно пройти вдоль всей плиты, рядом проложена короткая тематическая тропа. Лучше всего видно утром или вечером при боковом свете; детям очень нравится.",
+    "driveMinutesFromLisbon": 90,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год (весной и осенью приятнее)",
+    "tags": [
+      "природа",
+      "с детьми",
+      "история"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Pegadas_de_Dinoss%C3%A1urios_da_Serra_de_Aire_Natural_Monument_Panorama.jpg/1280px-Pegadas_de_Dinoss%C3%A1urios_da_Serra_de_Aire_Natural_Monument_Panorama.jpg",
+        "author": "Britoca",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pegadas_de_Dinoss%C3%A1urios_da_Serra_de_Aire_Natural_Monument_Panorama.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Img_8737_Pegadas_de_Dinoss%C3%A1urios_da_Serra_de_Aire.jpg/1280px-Img_8737_Pegadas_de_Dinoss%C3%A1urios_da_Serra_de_Aire.jpg",
+        "author": "Manuelvbotelho",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Img_8737_Pegadas_de_Dinoss%C3%A1urios_da_Serra_de_Aire.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "cabo-mondego",
+    "name": "Мыс Мондегу",
+    "type": "nature",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.1866,
+      "lon": -8.9088
+    },
+    "description": "Природный памятник к северу от Фигейра-да-Фош: скалистый мыс с маяком, где в обрывах выходят на поверхность юрские слои с аммонитами — здесь находится международный эталонный разрез байосского яруса. С мыса открывается вид на длинный пляж Буаркуш и океан. Хорошо совместить с подъёмом на смотровую Серра-да-Боа-Виажень.",
+    "driveMinutesFromLisbon": 125,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "природа",
+      "виды",
+      "закат",
+      "бесплатно"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Para%C3%ADso_do_Cabo_Mondego.jpg/1280px-Para%C3%ADso_do_Cabo_Mondego.jpg",
+        "author": "Luís A. Rodrigues Carlos",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Para%C3%ADso_do_Cabo_Mondego.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Cabo_Mondego_Cliffs.jpg/1280px-Cabo_Mondego_Cliffs.jpg",
+        "author": "Luis Afonso",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cabo_Mondego_Cliffs.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Mondego_Lighthouse_June_2015-1.jpg/1280px-Mondego_Lighthouse_June_2015-1.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mondego_Lighthouse_June_2015-1.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "cabo-carvoeiro",
+    "name": "Мыс Карвоейру (Пенише)",
+    "type": "nature",
+    "region": "Оэште",
+    "coords": {
+      "lat": 39.3593,
+      "lon": -9.4088
+    },
+    "description": "Западная оконечность полуострова Пенише: изъеденные волнами известняковые плато, маяк и знаменитая скала-останец Нау-душ-Корвуш («корабль воронов»), а на горизонте — острова Берленга. Вдоль берега тянется смотровая дорога с несколькими площадками, включая полуостровок Папоа. В шторм волны бьют о скалы особенно эффектно, но к краю не подходите.",
+    "driveMinutesFromLisbon": 75,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "виды",
+      "закат",
+      "фото",
+      "бесплатно"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Cabo_Carvoeiro_-_Peniche_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_%2854999027181%29.jpg/1280px-Cabo_Carvoeiro_-_Peniche_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_%2854999027181%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cabo_Carvoeiro_-_Peniche_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_(54999027181).jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "dunas-de-sao-jacinto",
+    "name": "Заповедник дюн Сан-Жасинту",
+    "type": "nature",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.6875,
+      "lon": -8.7343
+    },
+    "description": "Заповедник на узкой косе между океаном и лагуной Риа-де-Авейру: высокие дюны, сосновый лес и пруды с наблюдательными укрытиями для птиц. Кольцевая тропа около 7 км проходит через все зоны, вход через центр посетителей. Из Авейру удобнее всего доехать до Форте-да-Барра и переправиться паромом, на машине в объезд — около часа.",
+    "driveMinutesFromLisbon": 170,
+    "visitDurationHours": 3,
+    "bestSeason": "март–июнь, сентябрь–ноябрь",
+    "tags": [
+      "природа",
+      "виды",
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Dunas_de_S%C3%A3o_Jacinto.J.jpg/1280px-Dunas_de_S%C3%A3o_Jacinto.J.jpg",
+        "author": "Joseolgon",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dunas_de_S%C3%A3o_Jacinto.J.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Dunas_de_S%C3%A3o_Jacinto%2C_Nature_Reserve_%288089851445%29.jpg/1280px-Dunas_de_S%C3%A3o_Jacinto%2C_Nature_Reserve_%288089851445%29.jpg",
+        "author": "ines saraiva from Belgium / Portugal",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dunas_de_S%C3%A3o_Jacinto,_Nature_Reserve_(8089851445).jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "duna-da-cresmina",
+    "name": "Дюна Кресмина",
+    "type": "nature",
+    "region": "Лиссабон и Синтра",
+    "coords": {
+      "lat": 38.7282,
+      "lon": -9.4745
+    },
+    "description": "Подвижная дюнная система между Гинчу и Кашкайшем, через которую проложены деревянные мостки с видом на океан и Серра-де-Синтру. Небольшой центр интерпретации рассказывает о растениях и животных дюн, прогулка по мосткам займёт около часа. Здесь почти всегда сильный ветер — возьмите куртку и солнцезащитные очки от песка.",
+    "driveMinutesFromLisbon": 35,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": [
+      "природа",
+      "закат",
+      "бесплатно",
+      "с детьми"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/CresminaDunes1.jpg/1280px-CresminaDunes1.jpg",
+        "author": "Roundtheworld",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:CresminaDunes1.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Duna_da_Cresmina_%2837518968402%29.jpg/960px-Duna_da_Cresmina_%2837518968402%29.jpg",
+        "author": "Patrick Nouhailler from Genève, Suisse",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Duna_da_Cresmina_(37518968402).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Duna_da_Cresmina_%2837311453230%29.jpg/960px-Duna_da_Cresmina_%2837311453230%29.jpg",
+        "author": "Patrick Nouhailler from Genève, Suisse",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Duna_da_Cresmina_(37311453230).jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "evoa-estuario-do-tejo",
+    "name": "EVOA — птицы эстуария Тежу",
+    "type": "nature",
+    "region": "Лиссабон и Синтра",
+    "coords": {
+      "lat": 38.8436,
+      "lon": -8.9742
+    },
+    "description": "Центр наблюдения за птицами на лезирии у Вила-Франка-де-Шира, на краю заповедника эстуария Тежу: пресноводные лагуны с укрытиями, где зимой собираются фламинго, колпицы, утки и кулики. Есть короткие маршруты пешком и экскурсии с гидом на электромобиле. Возьмите бинокль; часы работы меняются по сезонам, а летом центр бывает закрыт — проверьте на evoa.pt перед поездкой.",
+    "driveMinutesFromLisbon": 35,
+    "visitDurationHours": 2.5,
+    "bestSeason": "октябрь–апрель",
+    "tags": [
+      "природа",
+      "с детьми",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/EVOA_%E2%80%93_Espa%C3%A7o_de_Visita%C3%A7%C3%A3o_e_Observa%C3%A7%C3%A3o_de_Aves%2C_Vila_Franca_de_Xira_11.jpg/1280px-EVOA_%E2%80%93_Espa%C3%A7o_de_Visita%C3%A7%C3%A3o_e_Observa%C3%A7%C3%A3o_de_Aves%2C_Vila_Franca_de_Xira_11.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:EVOA_%E2%80%93_Espa%C3%A7o_de_Visita%C3%A7%C3%A3o_e_Observa%C3%A7%C3%A3o_de_Aves,_Vila_Franca_de_Xira_11.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/EVOA_%E2%80%93_Espa%C3%A7o_de_Visita%C3%A7%C3%A3o_e_Observa%C3%A7%C3%A3o_de_Aves%2C_Vila_Franca_de_Xira_05.jpg/1280px-EVOA_%E2%80%93_Espa%C3%A7o_de_Visita%C3%A7%C3%A3o_e_Observa%C3%A7%C3%A3o_de_Aves%2C_Vila_Franca_de_Xira_05.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:EVOA_%E2%80%93_Espa%C3%A7o_de_Visita%C3%A7%C3%A3o_e_Observa%C3%A7%C3%A3o_de_Aves,_Vila_Franca_de_Xira_05.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/EVOA_%E2%80%93_Espa%C3%A7o_de_Visita%C3%A7%C3%A3o_e_Observa%C3%A7%C3%A3o_de_Aves%2C_Vila_Franca_de_Xira_16.jpg/1280px-EVOA_%E2%80%93_Espa%C3%A7o_de_Visita%C3%A7%C3%A3o_e_Observa%C3%A7%C3%A3o_de_Aves%2C_Vila_Franca_de_Xira_16.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:EVOA_%E2%80%93_Espa%C3%A7o_de_Visita%C3%A7%C3%A3o_e_Observa%C3%A7%C3%A3o_de_Aves,_Vila_Franca_de_Xira_16.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "paul-do-boquilobo",
+    "name": "Заповедник Пол-ду-Бокилобу",
+    "type": "nature",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 39.3878,
+      "lon": -8.5339
+    },
+    "description": "Пойменное болото у Голеган, первый в Португалии биосферный резерват ЮНЕСКО: ивовые заросли и разливы, где гнездится одна из крупнейших на Пиренеях колоний цапель. Короткие тропы с укрытиями для наблюдения начинаются у центра посетителей. Лучше всего весной, в сезон гнездования; зимой часть троп может быть подтоплена.",
+    "driveMinutesFromLisbon": 75,
+    "visitDurationHours": 2,
+    "bestSeason": "февраль–июнь",
+    "tags": [
+      "природа",
+      "бесплатно",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Paul_do_Boquilobo.jpg/1280px-Paul_do_Boquilobo.jpg",
+        "author": "Luis Afonso",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paul_do_Boquilobo.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Paul_do_Boquilobo_Nature_Reserve_01.jpg/1280px-Paul_do_Boquilobo_Nature_Reserve_01.jpg",
+        "author": "dsbp",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paul_do_Boquilobo_Nature_Reserve_01.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Boat_in_Paul_do_Boquilobo.jpg/1280px-Boat_in_Paul_do_Boquilobo.jpg",
+        "author": "Luis Afonso",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Boat_in_Paul_do_Boquilobo.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "fraga-da-pena-mata-da-margaraca",
+    "name": "Водопад Фрага-да-Пена и лес Маргараса",
+    "type": "nature",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.2184,
+      "lon": -7.935
+    },
+    "description": "Водопад высотой около 20 м на склоне Серра-ду-Асор, падающий по сланцевой скале в лесу, с каменными купальнями внизу. Рядом — Мата-да-Маргараса, один из последних реликтовых лесов из каштана, дуба и земляничника в центре Португалии, через который идёт короткая тропа. Летом вода холодная, но купаться можно; весной поток самый мощный.",
+    "driveMinutesFromLisbon": 165,
+    "visitDurationHours": 2.5,
+    "bestSeason": "апрель–октябрь",
+    "tags": [
+      "природа",
+      "купание",
+      "фото",
+      "бесплатно"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Cascata_da_Fraga_da_Pena%2C_Mata_da_Margara%C3%A7a%2C_Serra_do_A%C3%A7or.jpg/1280px-Cascata_da_Fraga_da_Pena%2C_Mata_da_Margara%C3%A7a%2C_Serra_do_A%C3%A7or.jpg",
+        "author": "Carla Marques da Silva",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cascata_da_Fraga_da_Pena,_Mata_da_Margara%C3%A7a,_Serra_do_A%C3%A7or.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Fraga_da_Pena.jpg/1280px-Fraga_da_Pena.jpg",
+        "author": "Filipemigu",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fraga_da_Pena.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Mata_da_Margara%C3%A7a%2C_Serra_do_A%C3%A7or.jpg/1280px-Mata_da_Margara%C3%A7a%2C_Serra_do_A%C3%A7or.jpg",
+        "author": "Carla Marques da Silva",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mata_da_Margara%C3%A7a,_Serra_do_A%C3%A7or.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "frecha-da-mizarela",
+    "name": "Водопад Фреша-да-Мизарела",
+    "type": "nature",
+    "region": "Север",
+    "coords": {
+      "lat": 40.863,
+      "lon": -8.2827
+    },
+    "description": "Один из самых высоких водопадов континентальной Португалии: река Кайма срывается с гранитного плато Серра-да-Фрейта примерно на 75 м. Со смотровой площадки у дороги его видно сразу, а крутая тропа ведёт вниз к подножию. Сильнее всего водопад зимой и весной; летом он может почти иссякнуть.",
+    "driveMinutesFromLisbon": 185,
+    "visitDurationHours": 1.5,
+    "bestSeason": "ноябрь–май",
+    "tags": [
+      "природа",
+      "виды",
+      "фото",
+      "бесплатно"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Frecha_da_Mizarela_-_Serra_da_Freira_-_Portugal_%2851621506684%29.jpg/1280px-Frecha_da_Mizarela_-_Serra_da_Freira_-_Portugal_%2851621506684%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Frecha_da_Mizarela_-_Serra_da_Freira_-_Portugal_(51621506684).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Frecha_da_Mizarela_-_Serra_da_Freita_-_Portugal_%2851493597388%29.jpg/1280px-Frecha_da_Mizarela_-_Serra_da_Freita_-_Portugal_%2851493597388%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Frecha_da_Mizarela_-_Serra_da_Freita_-_Portugal_(51493597388).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Frecha_da_Mizarela_waterfall.JPG/1280px-Frecha_da_Mizarela_waterfall.JPG",
+        "author": "Muaddib2015",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Frecha_da_Mizarela_waterfall.JPG"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "pedras-parideiras",
+    "name": "Педраш-Паридейраш («рожающие камни»)",
+    "type": "nature",
+    "region": "Север",
+    "coords": {
+      "lat": 40.8503,
+      "lon": -8.2832
+    },
+    "description": "Геологическая редкость в геопарке Арока у деревни Кастаньейра: гранит, из которого под действием выветривания «выпадают» чёрные слюдяные желваки, будто камень рожает камни. В небольшом центре интерпретации объясняют это явление и показывают выход породы. Удобно совместить с водопадом Фреша-да-Мизарела в нескольких минутах езды.",
+    "driveMinutesFromLisbon": 185,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год",
+    "tags": [
+      "природа",
+      "с детьми",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Pedras_Parideiras_-_Castanheira_-_Portugal_%2851497724951%29.jpg/1280px-Pedras_Parideiras_-_Castanheira_-_Portugal_%2851497724951%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pedras_Parideiras_-_Castanheira_-_Portugal_(51497724951).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Pedras_Parideiras_da_Serra_da_Freita_5.jpg/1280px-Pedras_Parideiras_da_Serra_da_Freita_5.jpg",
+        "author": "Cssantos",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pedras_Parideiras_da_Serra_da_Freita_5.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Pedras_Parideiras_-_Castanheira_-_Portugal_%2851624728383%29.jpg/1280px-Pedras_Parideiras_-_Castanheira_-_Portugal_%2851624728383%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pedras_Parideiras_-_Castanheira_-_Portugal_(51624728383).jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "buracas-do-casmilo",
+    "name": "Буракаш-ду-Касмилу",
+    "type": "nature",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.0459,
+      "lon": -8.4958
+    },
+    "description": "Каньон в известняковом массиве Сико у Кондейши, на стенах которого зияют десятки огромных пещер-ниш, похожих на соты. Небольшая тропа проходит по дну долины прямо под ними, в некоторые ниши можно заглянуть. Место малолюдное и без инфраструктуры — возьмите воду и удобную обувь.",
+    "driveMinutesFromLisbon": 115,
+    "visitDurationHours": 2,
+    "bestSeason": "октябрь–июнь",
+    "tags": [
+      "природа",
+      "фото",
+      "бесплатно"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Vale_das_buracas_do_Casmilo.jpg/1280px-Vale_das_buracas_do_Casmilo.jpg",
+        "author": "Filipemigu",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vale_das_buracas_do_Casmilo.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "olhos-de-agua-do-alviela",
+    "name": "Олюш-де-Агуа-ду-Алвиела",
+    "type": "nature",
+    "region": "Эштремадура",
+    "coords": {
+      "lat": 39.4455,
+      "lon": -8.7121
+    },
+    "description": "Крупнейший карстовый источник Португалии: река Алвиела выходит из-под известняков Серра-де-Айре прямо у подножия скалы, а в пещерах над ним живёт колония летучих мышей. Рядом центр «Ciência Viva» с интерактивной экспозицией о карсте (Carsoscópio) и обустроенный речной пляж. Хорошая поездка с детьми — летом можно ещё и искупаться.",
+    "driveMinutesFromLisbon": 75,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год (купание — июнь–сентябрь)",
+    "tags": [
+      "природа",
+      "с детьми",
+      "купание"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Olhos_de_%C3%81gua_do_Alviela%2C_Louriceira%2C_Alcanena_02.jpg/1280px-Olhos_de_%C3%81gua_do_Alviela%2C_Louriceira%2C_Alcanena_02.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Olhos_de_%C3%81gua_do_Alviela,_Louriceira,_Alcanena_02.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Olhos_de_%C3%81gua_do_Alviela%2C_Louriceira%2C_Alcanena_01.jpg/960px-Olhos_de_%C3%81gua_do_Alviela%2C_Louriceira%2C_Alcanena_01.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Olhos_de_%C3%81gua_do_Alviela,_Louriceira,_Alcanena_01.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Olhos_de_%C3%81gua_do_Alviela%2C_Louriceira%2C_Alcanena_08.jpg/1280px-Olhos_de_%C3%81gua_do_Alviela%2C_Louriceira%2C_Alcanena_08.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Olhos_de_%C3%81gua_do_Alviela,_Louriceira,_Alcanena_08.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "arriba-fossil-costa-da-caparica",
+    "name": "Ископаемый клиф Кошта-да-Капарики",
+    "type": "nature",
+    "region": "Сетубал и Аррабида",
+    "coords": {
+      "lat": 38.6344,
+      "lon": -9.2147
+    },
+    "description": "Охраняемый ландшафт вдоль пляжей Капарики: обрыв высотой до 100 м из слоёв песчаника и глины, в которых видны раковины и окаменелости миоценового моря. Лучший вид на клиф и океан — сверху, от монастыря Капушуш, а снизу его удобно рассматривать с пляжа Фонте-да-Телья. Особенно красиво на закате, когда обрыв светится оранжевым.",
+    "driveMinutesFromLisbon": 30,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год",
+    "tags": [
+      "природа",
+      "виды",
+      "закат",
+      "бесплатно"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Arriba_F%C3%B3ssil_da_Costa_de_Caparica.jpg/1280px-Arriba_F%C3%B3ssil_da_Costa_de_Caparica.jpg",
+        "author": "Plexique",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arriba_F%C3%B3ssil_da_Costa_de_Caparica.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Arriba_F%C3%B3ssil_da_Costa_da_Caparica_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_%2853849666684%29.jpg/1280px-Arriba_F%C3%B3ssil_da_Costa_da_Caparica_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_%2853849666684%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arriba_F%C3%B3ssil_da_Costa_da_Caparica_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_(53849666684).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Paisagem_Protegida_da_Arriba_F%C3%B3ssil_da_Costa_de_Caparica_Gaivotas.jpg/1280px-Paisagem_Protegida_da_Arriba_F%C3%B3ssil_da_Costa_de_Caparica_Gaivotas.jpg",
+        "author": "PAULO TATO MARINHO",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paisagem_Protegida_da_Arriba_F%C3%B3ssil_da_Costa_de_Caparica_Gaivotas.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "tapada-nacional-de-mafra",
+    "name": "Тапада-де-Мафра",
+    "type": "nature",
+    "region": "Лиссабон и Синтра",
+    "coords": {
+      "lat": 38.9642,
+      "lon": -9.3032
+    },
+    "description": "Огороженный королевский охотничий лес XVIII века площадью около 800 га рядом с дворцом Мафры: дубы, сосны и свободно гуляющие олени, лани и кабаны. Есть пешеходные маршруты разной длины, экскурсии на электропоезде и центр хищных птиц. Вход платный через ворота Портан-ду-Кодесал; лучшее время увидеть оленей — утро.",
+    "driveMinutesFromLisbon": 40,
+    "visitDurationHours": 3,
+    "bestSeason": "круглый год (сентябрь–октябрь — гон оленей)",
+    "tags": [
+      "природа",
+      "с детьми",
+      "фото"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Tapada_Nacional_de_Mafra.jpg/1280px-Tapada_Nacional_de_Mafra.jpg",
+        "author": "Marta Catarina Santos Marques",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tapada_Nacional_de_Mafra.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Tapada_de_Mafra_01.jpg/1280px-Tapada_de_Mafra_01.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tapada_de_Mafra_01.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Tapada_de_Mafra_Entrada_do_Code%C3%A7al.jpg/1280px-Tapada_de_Mafra_Entrada_do_Code%C3%A7al.jpg",
+        "author": "GualdimG",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tapada_de_Mafra_Entrada_do_Code%C3%A7al.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "serra-de-montejunto",
+    "name": "Серра-де-Монтежунту",
+    "type": "nature",
+    "region": "Оэште",
+    "coords": {
+      "lat": 39.1921,
+      "lon": -9.0381
+    },
+    "description": "Отдельно стоящий известняковый хребет высотой 666 м — самая высокая точка Оэште, с круговым видом от океана до долины Тежу. На вершине сохранилась Королевская ледяная фабрика XVIII века, где делали лёд для лиссабонского двора, а склоны покрыты дубами и орхидеями. На вершину ведёт асфальтовая дорога; закатный свет здесь особенно хорош.",
+    "driveMinutesFromLisbon": 60,
+    "visitDurationHours": 2,
+    "bestSeason": "круглый год (весной цветут орхидеи)",
+    "tags": [
+      "природа",
+      "виды",
+      "закат",
+      "бесплатно"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/2025-11-30_Serra_de_Montejunto_2.jpg/1280px-2025-11-30_Serra_de_Montejunto_2.jpg",
+        "author": "Alexkom000",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2025-11-30_Serra_de_Montejunto_2.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/2026-07-11_Serra_de_Montejunto_6.jpg/1280px-2026-07-11_Serra_de_Montejunto_6.jpg",
+        "author": "Alexkom000",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026-07-11_Serra_de_Montejunto_6.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/2026-07-11_Serra_de_Montejunto_5.jpg/1280px-2026-07-11_Serra_de_Montejunto_5.jpg",
+        "author": "Alexkom000",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026-07-11_Serra_de_Montejunto_5.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "lapa-de-santa-margarida",
+    "name": "Грот Лапа-де-Санта-Маргарида",
+    "type": "nature",
+    "region": "Сетубал и Аррабида",
+    "coords": {
+      "lat": 38.47,
+      "lon": -8.9868
+    },
+    "description": "Морская пещера у подножия Серра-да-Аррабида, внутри которой устроена крошечная часовня, украшенная свечами и подношениями. Вниз от дороги ведут более 200 неровных каменных ступеней, обратно — тот же подъём. Не лучший вариант с маленькими детьми; летом идите утром, пока не жарко.",
+    "driveMinutesFromLisbon": 50,
+    "visitDurationHours": 1,
+    "bestSeason": "сентябрь–июнь",
+    "tags": [
+      "природа",
+      "виды",
+      "история",
+      "бесплатно"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Lapa_de_Santa_Margarida_-_Serra_da_Arr%C3%A1bida_-_Portugal_%2851597978760%29.jpg/1280px-Lapa_de_Santa_Margarida_-_Serra_da_Arr%C3%A1bida_-_Portugal_%2851597978760%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lapa_de_Santa_Margarida_-_Serra_da_Arr%C3%A1bida_-_Portugal_(51597978760).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Lapa_santa_margarida.jpg/1280px-Lapa_santa_margarida.jpg",
+        "author": "André Veríssimo",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lapa_santa_margarida.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Altar_de_Santa_Margarida_%284718141553%29.jpg/960px-Altar_de_Santa_Margarida_%284718141553%29.jpg",
+        "author": "Tiago Lima from Lisboa, Portugal",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Altar_de_Santa_Margarida_(4718141553).jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "pulo-do-lobo",
+    "name": "Водопад Пулу-ду-Лобу",
+    "type": "nature",
+    "region": "Алентежу",
+    "coords": {
+      "lat": 37.8045,
+      "lon": -7.6332
+    },
+    "description": "Самый эффектный участок Гвадианы в природном парке Вале-ду-Гвадиана: река сжимается в узкую скальную щель и падает каскадом в глубокий каньон — по легенде, его мог перепрыгнуть волк. Подъезд по грунтовке со стороны Серпы или Мертолы, дальше короткая прогулка по скалам. Сильнее всего поток зимой и весной; летом жарко, тени нет.",
+    "driveMinutesFromLisbon": 170,
+    "visitDurationHours": 2,
+    "bestSeason": "ноябрь–май",
+    "tags": [
+      "природа",
+      "виды",
+      "фото",
+      "бесплатно"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Pulo_do_Lobo_waterfall_01.jpg/1280px-Pulo_do_Lobo_waterfall_01.jpg",
+        "author": "PePeEfe",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pulo_do_Lobo_waterfall_01.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Cascade_%22Pulo_do_Lobo%22_%2812215286704%29.jpg/1280px-Cascade_%22Pulo_do_Lobo%22_%2812215286704%29.jpg",
+        "author": "Joao Bento",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cascade_%22Pulo_do_Lobo%22_(12215286704).jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Pulo_do_Lobo_waterfall_02.jpg/1280px-Pulo_do_Lobo_waterfall_02.jpg",
+        "author": "PePeEfe",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pulo_do_Lobo_waterfall_02.jpg"
+      }
+    ],
+    "collections": []
+  },
+  {
+    "id": "cascata-da-cabreia",
+    "name": "Водопад Кабрея",
+    "type": "nature",
+    "region": "Центр (Коимбра, Томар)",
+    "coords": {
+      "lat": 40.7534,
+      "lon": -8.3897
+    },
+    "description": "Водопад высотой около 25 м на реке Мау в Север-ду-Вога, падающий по гранитным уступам в лесистой долине. От парковки к нему ведёт короткая дорожка мимо места для пикника, внизу есть заводи. Вода самая обильная зимой и весной; камни у водопада скользкие.",
+    "driveMinutesFromLisbon": 175,
+    "visitDurationHours": 1.5,
+    "bestSeason": "ноябрь–июнь",
+    "tags": [
+      "природа",
+      "с детьми",
+      "фото",
+      "бесплатно"
+    ],
+    "links": [],
+    "photos": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Cabreia%2C_Cascata.jpg/1280px-Cabreia%2C_Cascata.jpg",
+        "author": "Henriquehsantos",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cabreia,_Cascata.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Cascata_da_Cabreia_Portugal.jpg/1280px-Cascata_da_Cabreia_Portugal.jpg",
+        "author": "fbat",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cascata_da_Cabreia_Portugal.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Cascata_da_Cabreia_-_Portugal_%283171814324%29.jpg/1280px-Cascata_da_Cabreia_-_Portugal_%283171814324%29.jpg",
+        "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cascata_da_Cabreia_-_Portugal_(3171814324).jpg"
+      }
+    ],
+    "collections": []
+  }
+]
