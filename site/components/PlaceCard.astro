@@ -3,7 +3,7 @@ import type { Place } from '../../schema/index.ts';
 import { TYPE_LABELS } from '../lib/labels.ts';
 import Icon from './Icon.astro';
 import PhotoGallery from './PhotoGallery.astro';
-import { formatDriveMinutes, shortSeason } from '../lib/format.ts';
+import { formatDriveMinutes, shortSeason, isInLisbon } from '../lib/format.ts';
 
 interface Props {
   place: Place;
@@ -28,7 +28,11 @@ const typeLabel = TYPE_LABELS[place.type] ?? place.type;
     )}
     <div class="meta-row">
       <span class="dist" data-dist hidden></span>
-      <span><Icon name="clock" size={12} /> {formatDriveMinutes(place.driveMinutesFromLisbon)}</span>
+      {isInLisbon(place) ? (
+        <span class="in-city"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z" /><circle cx="12" cy="10" r="2.4" /></svg> В Лиссабоне</span>
+      ) : (
+        <span><Icon name="clock" size={12} /> {formatDriveMinutes(place.driveMinutesFromLisbon)}</span>
+      )}
       <span><Icon name="hourglass" size={12} /> ~{place.visitDurationHours} ч</span>
       <span class="season" title={place.bestSeason}><Icon name="calendar" size={12} /> {shortSeason(place.bestSeason)}</span>
     </div>

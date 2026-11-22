@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { formatDriveMinutes, shortSeason, capitalize } from './format.ts';
+import { formatDriveMinutes, shortSeason, capitalize, isInLisbon } from './format.ts';
 
 const sp = (s: string) => s.replace(/ /g, ' ');
 
@@ -43,5 +43,17 @@ describe('capitalize', () => {
     expect(capitalize('с детьми')).toBe('С детьми');
     expect(capitalize('ёлки')).toBe('Ёлки');
     expect(capitalize('')).toBe('');
+  });
+});
+
+describe('isInLisbon', () => {
+  const at = (region: string, lat: number, lon: number) => ({ region, coords: { lat, lon } });
+  it('is true for central Lisbon places', () => {
+    expect(isInLisbon(at('Лиссабон и Синтра', 38.7139, -9.1335))).toBe(true); // São Jorge
+    expect(isInLisbon(at('Лиссабон и Синтра', 38.6916, -9.2160))).toBe(true); // Belém
+  });
+  it('is false across the river or outside the city', () => {
+    expect(isInLisbon(at('Сетубал и Аррабида', 38.6786, -9.1711))).toBe(false); // Cristo Rei
+    expect(isInLisbon(at('Лиссабон и Синтра', 38.7876, -9.3906))).toBe(false); // Sintra
   });
 });

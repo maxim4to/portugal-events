@@ -10,7 +10,7 @@ import NotInterestedButton from './NotInterestedButton.astro';
 import NotInterestedController from './NotInterestedController.astro';
 import MapShell from './MapShell.astro';
 import { TYPE_LABELS } from '../lib/labels.ts';
-import { formatDriveMinutes } from '../lib/format.ts';
+import { formatDriveMinutes, isInLisbon } from '../lib/format.ts';
 
 interface Props {
   places: Place[];
@@ -32,7 +32,9 @@ const points = places.map((p) => ({
   kicker: TYPE_LABELS[p.type] ?? p.type,
   // Comma, not "·": a dot left dangling at a line end breaks DESIGN.md; NBSPs
   // keep the drive phrase whole ("… от / Лиссабона" never happens).
-  meta: `${p.region}, ${formatDriveMinutes(p.driveMinutesFromLisbon)}\u00a0от\u00a0Лиссабона`,
+  meta: isInLisbon(p)
+    ? 'В Лиссабоне'
+    : `${p.region}, ${formatDriveMinutes(p.driveMinutesFromLisbon)}\u00a0от\u00a0Лиссабона`,
 }));
 ---
 <MapShell kind="places" detailPrefix="/places/" hrefBase={hrefBase} mapId="places-map" points={points} awaitUser sidebar>

@@ -46,3 +46,14 @@ export function shortSeason(season: string): string {
 export function capitalize(s: string): string {
   return s ? s.charAt(0).toLocaleUpperCase('ru') + s.slice(1) : s;
 }
+
+/** A place inside Lisbon itself, where "drive time from Lisbon" (10–20 min of
+ *  city traffic) says nothing useful: shown as «В Лиссабоне» instead. Region +
+ *  distance from the centre, so Almada (Cristo Rei) or Odivelas stay out. */
+const LISBON = { lat: 38.7223, lon: -9.1393 };
+export function isInLisbon(p: { region: string; coords: { lat: number; lon: number } }): boolean {
+  if (!p.region.startsWith('Лиссабон')) return false;
+  const kmLat = (p.coords.lat - LISBON.lat) * 111;
+  const kmLon = (p.coords.lon - LISBON.lon) * 111 * Math.cos((LISBON.lat * Math.PI) / 180);
+  return Math.hypot(kmLat, kmLon) < 9;
+}
