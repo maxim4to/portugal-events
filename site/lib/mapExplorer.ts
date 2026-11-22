@@ -1,6 +1,7 @@
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { gameIcon } from './mapIcons';
+import PT_MAINLAND from '../assets/pt-mainland.json';
 import { HALF_AT, initSheet, type SheetSnap } from './mobileSheet';
 import { distanceKm, formatDistance, pluralRu } from './geo';
 import { getFix, onFix, type Fix } from './geolocate';
@@ -94,10 +95,16 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
       `<span class="map-pop-more">Подробнее →</span></span></a>`
     );
   }
-  // The list is always filtered to the map's viewport. Guard on a laid-out map:
-  // on mobile it is created inside a display:none pane (size 0), whose bounds
+  // Phone: the list always follows the map's viewport (the sheet UX depends on
+  // it). Desktop: the list stays put while the map moves — an Airbnb-style
+  // "search this area" button applies the current view as a one-shot area
+  // filter (areaBounds), and "show all" clears it. Guard on a laid-out map: on
+  // mobile it is created inside a display:none pane (size 0), whose bounds
   // would otherwise hide everything.
   const boundsMode = () => Boolean(map && map.getSize().x > 0);
+  let areaBounds: L.LatLngBounds | null = null;
+  const areaSearchBtn = root.querySelector<HTMLElement>('[data-area-search]');
+  const areaClearBtn = root.querySelector<HTMLElement>('[data-area-clear]');
 
   // On the phone the map is full-screen but its top is under the floating
   // filter row and its bottom under the sheet's header, so "what's on the map"
@@ -128,8 +135,8 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   // ---- List visibility (filters ∩ optional viewport) -----------------------
 
   function updateListVisibility() {
-    const useBounds = boundsMode();
-    const bounds = useBounds ? visibleBounds() : null;
+    const useBounds = isMobile() ? boundsMode() : areaBounds !== null;
+    const bounds = !useBounds ? null : isMobile() ? visibleBounds() : areaBounds;
     let visible = 0;
     let matching = 0;
     for (const el of cards) {
@@ -286,21 +293,52 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   // While the map shows the automatic framing (nobody has panned/zoomed it by
   // hand), it re-frames itself whenever the sheet changes height.
   let autoFit = true;
+  // Moves the code starts (fits, preview pans) must not offer "search this
+  // area" — only the user's own pan/zoom does. A programmatic call arms
+  // `progMove`; the movestart it triggers consumes it into `moveWasProg`. Any
+  // pointer/wheel interaction with the map clears a stale armed flag (left by
+  // a no-op call that never fired movestart) so the user's own move counts.
+  // Starts true: every move before the first interaction is ours.
+  let progMove = false;
+  let moveWasProg = true;
+  function progCall(fn: () => void) {
+    progMove = true;
+    fn();
+  }
+
+  function showAreaSearch(on: boolean) {
+    if (areaSearchBtn) areaSearchBtn.hidden = !on;
+  }
+  function setAreaMode(b: L.LatLngBounds | null) {
+    areaBounds = b;
+    if (areaClearBtn) areaClearBtn.hidden = !b;
+    showAreaSearch(false);
+    updateListVisibility();
+  }
+  areaSearchBtn?.addEventListener('click', () => {
+    if (map) setAreaMode(visibleBounds());
+  });
+  areaClearBtn?.addEventListener('click', () => {
+    setAreaMode(null);
+    fitAll();
+  });
 
   function fitTo(pts: L.LatLngExpression[]) {
     if (!map) return;
     autoFit = true;
     const { top, bottom } = fitInsets();
     const pad = isMobile() ? 20 : 40;
-    if (pts.length) {
-      map.fitBounds(L.latLngBounds(pts), {
-        paddingTopLeft: [pad, top + pad],
-        paddingBottomRight: [pad, bottom + pad],
-        maxZoom: 12,
-      });
-    } else {
-      map.setView([39.5, -8.0], 6);
-    }
+    progCall(() => {
+      if (pts.length) {
+        map!.fitBounds(L.latLngBounds(pts), {
+          paddingTopLeft: [pad, top + pad],
+          paddingBottomRight: [pad, bottom + pad],
+          maxZoom: 12,
+        });
+      } else {
+        map!.setView([39.5, -8.0], 6);
+      }
+    });
   }
 
   /** Frame every pin that passes the current filters. */
@@ -354,7 +392,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     const bottom = size.y - cover - 40;
     if (pt.y > bottom || pt.y < top || pt.x < 24 || pt.x > size.x - 24) {
       const target = L.point(size.x / 2, (top + bottom) / 2);
-      map.panBy(pt.subtract(target), { animate: true });
+      progCall(() => map!.panBy(pt.subtract(target), { animate: true }));
     }
   }
 
@@ -401,8 +439,32 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
       attribution: '© OpenStreetMap contributors',
       maxZoom: 19,
     }).addTo(map);
+    // Dim everything outside mainland Portugal (a world polygon with a
+    // Portugal-shaped hole), so the country reads like the playable area of a
+    // game map. Fill color/opacity are theme-aware via .pt-mask in CSS.
+    L.polygon(
+      [
+        [
+          [85, -180],
+          [85, 180],
+          [-85, 180],
+          [-85, -180],
+        ],
+        PT_MAINLAND as [number, number][],
+      ],
+      { className: 'pt-mask', stroke: false, interactive: false },
+    ).addTo(map);
+    map.on('movestart', () => {
+      moveWasProg = progMove;
+      progMove = false;
+    });
     map.on('moveend', () => {
-      if (boundsMode()) updateListVisibility();
+      if (isMobile()) {
+        if (boundsMode()) updateListVisibility();
+      } else if (!moveWasProg) {
+        // The user moved the map themselves: offer to sync the list to it.
+        showAreaSearch(true);
+      }
       saveView();
     });
     // Country zoom: shrink the game pins so a dense coastline stays readable
@@ -420,6 +482,11 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
       },
       { passive: true },
     );
+    // The user touching the map (drag, zoom buttons, locate) claims the next
+    // move as theirs, clearing any stale programmatic flag.
+    const userIntent = () => (progMove = false);
+    mapEl.addEventListener('pointerdown', userIntent, { capture: true, passive: true });
+    mapEl.addEventListener('wheel', userIntent, { capture: true, passive: true });
     locate = addLocateControl(map, {
       insets: fitInsets,
       onModeChange: (m) => {
@@ -443,7 +510,9 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   /** Full re-render after a filter change: rebuild pins, refit, re-filter list. */
   function rerender() {
     closePreview();
-    refreshMarkers(true);
+    // While a desktop area filter is applied, filter changes must not refit
+    // the map away from the chosen area.
+    refreshMarkers(isMobile() || !areaBounds);
     updateListVisibility();
   }
 
@@ -629,13 +698,17 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   // On resize just let Leaflet re-measure and re-run viewport filtering.
   window.addEventListener('resize', () => {
     sheet.relayout();
-    map?.invalidateSize();
+    // invalidateSize pans internally — not a user move.
+    if (map) progCall(() => map!.invalidateSize());
     updateListVisibility();
   });
   // Crossing the phone breakpoint swaps pin popups for the preview card.
   mobileMq.addEventListener('change', () => {
     closePreview();
     map?.closePopup();
+    // The area filter is a desktop concept; crossing the breakpoint resets it
+    // (mobile re-filters by viewport live anyway).
+    setAreaMode(null);
     refreshMarkers(false);
   });
 
@@ -667,8 +740,10 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   } catch {}
   updateListVisibility();
   // The container height settles after first layout; let Leaflet re-measure so
-  // tiles render into the correct size.
-  requestAnimationFrame(() => map?.invalidateSize());
+  // tiles render into the correct size (it pans internally — not a user move).
+  requestAnimationFrame(() => {
+    if (map) progCall(() => map!.invalidateSize());
+  });
 
   // Restore list scroll position when returning from a detail page. Real
   // navigations aren't always served from bfcache, so `.list-scroll`'s
