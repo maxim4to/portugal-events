@@ -1,4 +1,5 @@
 ---
+import { ICON_ROUTE } from '../../lib/actionIcons.ts';
 import Base from '../../layouts/Base.astro';
 import MiniMap from '../../components/MiniMap.astro';
 import Icon from '../../components/Icon.astro';
@@ -108,7 +109,7 @@ const price = event.price || null;
         <div class="actions">
           <a class="btn btn-primary act-main" href={event.url} target="_blank" rel="noopener">Подробнее на сайте</a>
           {coords && (
-            <a class="btn act-secondary" href={directions} target="_blank" rel="noopener">Маршрут в Google Maps</a>
+            <a class="btn act-secondary" href={directions} target="_blank" rel="noopener"><Fragment set:html={ICON_ROUTE} />Маршрут в Google Maps</a>
           )}
         </div>
       </div>

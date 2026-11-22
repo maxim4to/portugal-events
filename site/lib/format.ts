@@ -40,3 +40,9 @@ export function shortSeason(season: string): string {
     .replace(/\s{2,}/g, ' ')
     .trim();
 }
+
+/** Display form of a lowercase data label (tags): first letter upper-cased.
+ *  The data and URLs keep the original lowercase value. */
+export function capitalize(s: string): string {
+  return s ? s.charAt(0).toLocaleUpperCase('ru') + s.slice(1) : s;
+}

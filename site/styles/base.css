@@ -254,60 +254,12 @@ img {
   color: var(--text-muted);
 }
 
-/* Card action buttons (favorite / visited / not interested): an icon-only
-   glass circle at rest. On hover or keyboard focus the button's own label
-   unfurls to the left of the icon and the capsule grows with it, pushing its
-   neighbours aside like a dock — the meaning is told by the control itself,
-   not by a tooltip laid over the photo. The label already tracks the state
-   («В избранное» → «В избранном»), so a click confirms in place. Touch never
-   shows labels (no hover); phones get a toast instead. */
+/* Card action buttons (favorite / visited / not interested) are icon-only
+   circles; their meaning is shown by one shared caption beside the row
+   (.ca-label, lib/cardActions.ts) — never by resizing the buttons, so a
+   target never moves under the cursor. */
 .icon-tip > [class$='-label'] {
-  order: -1;
-  max-width: 0;
-  overflow: hidden;
-  opacity: 0;
-  white-space: nowrap;
-  font-size: 13px;
-  font-weight: 550;
-  line-height: 1;
-  letter-spacing: -0.005em;
-  transition:
-    max-width 220ms var(--ease-out),
-    margin 220ms var(--ease-out),
-    opacity 120ms ease;
-}
-@media (hover: hover) and (min-width: 761px) {
-  .icon-tip {
-    transition:
-      background-color var(--dur-fast) ease,
-      color var(--dur-fast) ease,
-      transform var(--dur-fast) var(--ease-out),
-      opacity var(--dur-fast) ease;
-  }
-  .icon-tip.icon-tip:hover,
-  .icon-tip.icon-tip:focus-visible {
-    background: var(--surface-2);
-  }
-  /* A short intent delay so sweeping the cursor across the row doesn't make
-     every capsule flicker open; closing is immediate. */
-  .icon-tip:hover > [class$='-label'],
-  .icon-tip:focus-visible > [class$='-label'] {
-    max-width: 180px;
-    margin: 0 6px 0 4px;
-    opacity: 1;
-    transition-delay: 80ms, 80ms, 140ms;
-  }
-  /* The sign-in prompt answers the click; keep the capsule closed under it. */
-  body:has(.signin-toast.show) .icon-tip > [class$='-label'] {
-    max-width: 0;
-    margin: 0;
-    opacity: 0;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .icon-tip > [class$='-label'] {
-    transition: opacity 120ms ease;
-  }
+  display: none;
 }
 
 /* Visually hidden but available to screen readers. */
@@ -581,10 +533,21 @@ img {
   .has-sidebar .fgroup-summary::after {
     display: none;
   }
+  /* Section headings stick to the top of the sidebar's scroll while their
+     section is in view; the next section's heading pushes them off (each
+     heading is sticky only within its own .fgroup). */
+  .has-sidebar .fgroup-summary {
+    position: sticky;
+    /* The sidebar scroller has a 4px top padding; cover it so rows never
+       peek above a stuck heading. */
+    top: calc(-1 * var(--space-1));
+    z-index: 2;
+    background: var(--surface-0);
+  }
   /* Activity shows through the count badge alone; the heading stays quiet. */
   .has-sidebar .fgroup.active .fgroup-summary {
     border-color: var(--border);
-    background: none;
+    background: var(--surface-0);
     color: var(--text-primary);
   }
   .has-sidebar .fgroup-menu {

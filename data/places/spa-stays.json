@@ -2,7 +2,7 @@
   {
     "id": "termas-da-piedade-alcobaca",
     "name": "Термы Пьедаде (Алкобаса)",
-    "type": "thermal",
+    "type": "stay",
     "region": "Эштремадура",
     "coords": {
       "lat": 39.5696,
@@ -40,7 +40,7 @@
   {
     "id": "termas-da-curia",
     "name": "Термы Курия",
-    "type": "thermal",
+    "type": "stay",
     "region": "Центр (Коимбра, Томар)",
     "coords": {
       "lat": 40.4264,
@@ -79,7 +79,7 @@
   {
     "id": "termas-aquadome-unhais-da-serra",
     "name": "Акводом — термы Уньяйш-да-Серра",
-    "type": "thermal",
+    "type": "stay",
     "region": "Центр (Серра-да-Эштрела)",
     "coords": {
       "lat": 40.2654,
@@ -112,7 +112,7 @@
   {
     "id": "termas-de-sao-jorge-feira",
     "name": "Термы Калдаш-ди-Сан-Жорже",
-    "type": "thermal",
+    "type": "stay",
     "region": "Север",
     "coords": {
       "lat": 40.9687,
@@ -144,7 +144,7 @@
   {
     "id": "termas-de-alcafache",
     "name": "Термы Алкафаше",
-    "type": "thermal",
+    "type": "stay",
     "region": "Центр (Коимбра, Томар)",
     "coords": {
       "lat": 40.6056,
@@ -176,7 +176,7 @@
   {
     "id": "termas-da-sulfurea-cabeco-de-vide",
     "name": "Термы Сульфуреа (Кабесу-ди-Виде)",
-    "type": "thermal",
+    "type": "stay",
     "region": "Алентежу",
     "coords": {
       "lat": 39.1338,
@@ -214,7 +214,7 @@
   {
     "id": "termas-da-fadagosa-de-nisa",
     "name": "Термы Фадагоза (Низа)",
-    "type": "thermal",
+    "type": "stay",
     "region": "Алентежу",
     "coords": {
       "lat": 39.4517,
@@ -252,7 +252,7 @@
   {
     "id": "termas-do-geres",
     "name": "Термы Жереш",
-    "type": "thermal",
+    "type": "stay",
     "region": "Север",
     "coords": {
       "lat": 41.7292,
@@ -291,7 +291,7 @@
   {
     "id": "termas-de-vizela",
     "name": "Термы Визела",
-    "type": "thermal",
+    "type": "stay",
     "region": "Север",
     "coords": {
       "lat": 41.3738,
@@ -329,7 +329,7 @@
   {
     "id": "termas-pedras-salgadas",
     "name": "Термальный парк Педраш-Салгадаш",
-    "type": "thermal",
+    "type": "stay",
     "region": "Север",
     "coords": {
       "lat": 41.5462,
@@ -368,7 +368,7 @@
   {
     "id": "termas-vidago-palace",
     "name": "Термальный спа Видагу-Палас",
-    "type": "thermal",
+    "type": "stay",
     "region": "Север",
     "coords": {
       "lat": 41.6329,
@@ -407,7 +407,7 @@
   {
     "id": "termas-de-sao-vicente-penafiel",
     "name": "Термы Сан-Висенте (Пенафиел)",
-    "type": "thermal",
+    "type": "stay",
     "region": "Север",
     "coords": {
       "lat": 41.1175,
@@ -432,7 +432,7 @@
   {
     "id": "termas-de-melgaco",
     "name": "Термы Мелгасу",
-    "type": "thermal",
+    "type": "stay",
     "region": "Север",
     "coords": {
       "lat": 42.1059,
@@ -471,7 +471,7 @@
   {
     "id": "termas-de-amarante",
     "name": "Термы Амаранте",
-    "type": "thermal",
+    "type": "stay",
     "region": "Север",
     "coords": {
       "lat": 41.2715,

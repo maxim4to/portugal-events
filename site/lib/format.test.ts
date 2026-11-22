@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { formatDriveMinutes, shortSeason } from './format.ts';
+import { formatDriveMinutes, shortSeason, capitalize } from './format.ts';
 
 const sp = (s: string) => s.replace(/ /g, ' ');
 
@@ -35,5 +35,13 @@ describe('shortSeason', () => {
   it('handles compound seasons', () => {
     expect(shortSeason('март-май, сентябрь-ноябрь')).toBe('мар–май, сен–ноя');
     expect(shortSeason('сентябрь–октябрь (сбор винограда) и весна')).toBe('сен–окт и весна');
+  });
+});
+
+describe('capitalize', () => {
+  it('upper-cases the first letter only', () => {
+    expect(capitalize('с детьми')).toBe('С детьми');
+    expect(capitalize('ёлки')).toBe('Ёлки');
+    expect(capitalize('')).toBe('');
   });
 });

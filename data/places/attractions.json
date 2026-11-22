@@ -361,7 +361,7 @@
   {
     "id": "termas-sao-pedro-do-sul",
     "name": "Термы Сан-Педру-ду-Сул",
-    "type": "thermal",
+    "type": "stay",
     "region": "Центр (Коимбра, Томар)",
     "coords": {
       "lat": 40.7408,
@@ -393,7 +393,7 @@
   {
     "id": "termas-de-monfortinho",
     "name": "Термы Монфортинью",
-    "type": "thermal",
+    "type": "stay",
     "region": "Центр (Коимбра, Томар)",
     "coords": {
       "lat": 39.9772,
@@ -425,7 +425,7 @@
   {
     "id": "termas-de-chaves",
     "name": "Термы Шавеша",
-    "type": "thermal",
+    "type": "stay",
     "region": "Норте",
     "coords": {
       "lat": 41.7367,
@@ -457,7 +457,7 @@
   {
     "id": "termas-do-luso",
     "name": "Термы Лузу",
-    "type": "thermal",
+    "type": "stay",
     "region": "Центр (Коимбра, Томар)",
     "coords": {
       "lat": 40.3839,

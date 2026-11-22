@@ -62,6 +62,7 @@ const points = places.map((p) => ({
           <FavoriteButton placeId={p.id} variant="card" />
           <VisitedButton placeId={p.id} variant="card" />
           <NotInterestedButton placeId={p.id} variant="card" />
+          <span class="ca-label" aria-hidden="true"><span class="ca-text"></span></span>
         </div>
         <PlaceCard place={p} href={`${hrefBase}/places/${p.id}/`} />
       </div>
@@ -74,6 +75,65 @@ const points = places.map((p) => ({
 <NotInterestedController />
 
 <style>
+  /* Shared caption for the card actions: a glass capsule to the left of the
+     row that names whichever button is hovered. The buttons keep fixed
+     positions; only this caption changes width and text (lib/cardActions.ts). */
+  .ca-label {
+    display: none;
+  }
+  @media (hover: hover) and (min-width: 761px) {
+    .ca-label {
+      display: block;
+      height: 32px;
+      margin-right: 2px;
+      overflow: hidden;
+      border-radius: var(--radius-pill);
+      background: color-mix(in srgb, var(--surface-2) 90%, transparent);
+      backdrop-filter: blur(6px);
+      box-shadow: var(--shadow-md);
+      color: var(--text-primary);
+      font-size: 13px;
+      font-weight: 550;
+      line-height: 32px;
+      white-space: nowrap;
+      width: 0;
+      opacity: 0;
+      transform: translateX(6px) scale(0.96);
+      transform-origin: right center;
+      pointer-events: none;
+      transition:
+        width 220ms var(--ease-out),
+        opacity 140ms ease,
+        transform 220ms var(--ease-out);
+    }
+    .ca-label.is-on {
+      opacity: 1;
+      transform: none;
+    }
+    .ca-text {
+      display: inline-block;
+      padding: 0 12px;
+    }
+    /* Text swap while moving between buttons: a quick blur cross-fade. */
+    .ca-text.swap {
+      animation: ca-swap 180ms var(--ease-out);
+    }
+    @keyframes ca-swap {
+      from {
+        opacity: 0;
+        filter: blur(3px);
+      }
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ca-label {
+      transition: opacity 120ms ease;
+      transform: none;
+    }
+    .ca-text.swap {
+      animation: none;
+    }
+  }
   .card-wrap {
     position: relative;
     /* 200+ cards: let the browser skip layout/paint of the ones off screen. */
@@ -135,7 +195,7 @@ const points = places.map((p) => ({
      it's on (a saved heart, a visited eye); all three reveal on hover or
      keyboard focus. Touch keeps all three visible — there is no hover. */
   @media (hover: hover) and (min-width: 761px) {
-    .card-actions > :global(:not([aria-pressed='true'])) {
+    .card-actions > :global(button:not([aria-pressed='true'])) {
       opacity: 0;
       transform: scale(0.9);
       transition: opacity var(--dur-fast) ease, transform var(--dur) var(--ease-out);
@@ -150,6 +210,7 @@ const points = places.map((p) => ({
 
 <script>
   import { initMapExplorer } from '../lib/mapExplorer.ts';
+  import { initCardActionLabels } from '../lib/cardActions.ts';
   import { awaitUserData } from '../lib/catalogReady.ts';
   import { initFilterGroups, setGroupCount } from '../lib/filterGroups.ts';
   import {
@@ -215,6 +276,7 @@ const points = places.map((p) => ({
 
     const matches = (el: HTMLElement) => matchesFilter(cardData(el), readState());
     const explorer = initMapExplorer(root, { matches });
+    initCardActionLabels(root);
 
     // Show each section divider only when at least one card that belongs to it
     // is currently visible (CSS `order` already floats those cards below it). A

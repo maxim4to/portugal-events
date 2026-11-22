@@ -15,7 +15,6 @@ export const COLORS: Record<string, string> = {
   garden: '#3fa05f',
   karting: '#e0761f',
   cablecar: '#5f7389',
-  thermal: '#2aa7b8',
   route: '#8f6f3f',
   stay: '#c74a6a',
   other: '#8a8275',
@@ -52,8 +51,6 @@ export const GLYPHS: Record<string, string> = {
     `<circle ${S} cx="12" cy="12" r="8"/><circle fill="#fff" cx="12" cy="12" r="2.2"/><path ${S} d="M4.5 10.5c3-1.4 12-1.4 15 0M12 14.5V20"/>`,
   cablecar:
     `<path ${S} d="M2 6.5 22 4M12 5.8V10"/><rect ${S} x="6.5" y="10" width="11" height="8.5" rx="1.8"/><path ${S} d="M6.5 14.5h11"/>`,
-  thermal:
-    `<path ${S} d="M8 3.5c-1.4 1.8-1.4 3.2 0 5s1.4 3.2 0 5M12 3.5c-1.4 1.8-1.4 3.2 0 5s1.4 3.2 0 5M16 3.5c-1.4 1.8-1.4 3.2 0 5s1.4 3.2 0 5"/><path ${S} d="M4.5 17a15 15 0 0 0 15 0"/>`,
   route:
     `<path fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" d="M6 21c7-3-1-7.5 3-11 2.6-2.3 7-2 9-6"/><path fill="none" stroke-width="1.6" stroke="currentColor" stroke-linecap="round" stroke-dasharray="2.4 3" d="M6 21c7-3-1-7.5 3-11 2.6-2.3 7-2 9-6"/>`,
   stay:

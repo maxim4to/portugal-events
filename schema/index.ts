@@ -16,7 +16,6 @@ export const PLACE_TYPES = [
   'garden',
   'karting',
   'cablecar',
-  'thermal',
   'route',
   'stay',
   'other',
