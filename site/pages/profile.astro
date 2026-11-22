@@ -454,7 +454,11 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
   };
   themeBtns.forEach((b) =>
     b.addEventListener('click', () => {
-      (window as unknown as { __setTheme?: (t: string) => void }).__setTheme?.(b.dataset.themeOpt!);
+      const r = b.getBoundingClientRect();
+      (window as unknown as { __setTheme?: (t: string, o?: { x: number; y: number }) => void }).__setTheme?.(
+        b.dataset.themeOpt!,
+        { x: r.left + r.width / 2, y: r.top + r.height / 2 },
+      );
       paintTheme();
     }),
   );

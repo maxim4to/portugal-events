@@ -42,6 +42,38 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..650&family=Inter:wght@400..700&display=swap"
     />
     <script is:inline>
+      // Card photo ⇄ detail hero morph for cross-page view transitions (phones
+      // and tablets; ≥1100px opens details in a panel instead). The old page
+      // names its element in pageswap, the new one in pagereveal.
+      (function () {
+        var NAME = 'hero';
+        var isList = function (p) { return /\/(places|events)\/$/.test(p); };
+        var cover = function (path) {
+          var a = document.querySelector('a[href="' + path + '"] .cover');
+          return a;
+        };
+        var hero = function () { return document.querySelector('.detail .hero'); };
+        var tag = function (el, vt) {
+          if (!el) return;
+          el.style.viewTransitionName = NAME;
+          vt.finished.finally(function () { el.style.viewTransitionName = ''; });
+        };
+        window.addEventListener('pageswap', function (e) {
+          if (!e.viewTransition || !e.activation || !e.activation.entry) return;
+          var to = new URL(e.activation.entry.url).pathname;
+          if (isList(location.pathname)) tag(cover(to), e.viewTransition);
+          else if (isList(to)) tag(hero(), e.viewTransition);
+        });
+        window.addEventListener('pagereveal', function (e) {
+          var act = window.navigation && navigation.activation;
+          if (!e.viewTransition || !act || !act.from) return;
+          var from = new URL(act.from.url).pathname;
+          if (isList(location.pathname)) tag(cover(from), e.viewTransition);
+          else if (isList(from)) tag(hero(), e.viewTransition);
+        });
+      })();
+    </script>
+    <script is:inline>
       // Embedded as the desktop detail panel (lib/detailOverlay.ts): drop the
       // site chrome, open links in the top window, relay Esc to the parent.
       (function () {
@@ -75,7 +107,24 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
           if (m) m.setAttribute('content', isDark ? '#17140f' : '#f2ece0');
         }
         // 'light' | 'dark' pin a theme; anything else follows the system.
-        window.__setTheme = function (next) {
+        // `origin` ({x, y} in viewport px): reveal the new theme as a circle
+        // growing from that point (View Transitions), e.g. the toggle button.
+        window.__setTheme = function (next, origin) {
+          var apply = function () { window.__applyTheme(next); };
+          var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (!origin || still || !document.startViewTransition) return apply();
+          root.classList.add('theme-vt');
+          var vt = document.startViewTransition(apply);
+          vt.ready.then(function () {
+            var r = Math.hypot(Math.max(origin.x, innerWidth - origin.x), Math.max(origin.y, innerHeight - origin.y));
+            root.animate(
+              { clipPath: ['circle(0px at ' + origin.x + 'px ' + origin.y + 'px)', 'circle(' + r + 'px at ' + origin.x + 'px ' + origin.y + 'px)'] },
+              { duration: 520, easing: 'cubic-bezier(0.77, 0, 0.175, 1)', pseudoElement: '::view-transition-new(root)' }
+            );
+          });
+          vt.finished.finally(function () { root.classList.remove('theme-vt'); });
+        };
+        window.__applyTheme = function (next) {
           try {
             if (next === 'dark' || next === 'light') {
               root.dataset.theme = next;
@@ -102,6 +151,7 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
     {tabbar && <TabBar />}
     <script>
       import { trackPage } from '../lib/navStack.ts';
+      import '../lib/microInteractions.ts';
       trackPage();
       // Restored from the back/forward cache: scripts don't re-run, so note
       // which entry we're on again.

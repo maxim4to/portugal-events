@@ -40,6 +40,7 @@ const isActive = (p: string) => {
           data-label={l.label}
           aria-current={isActive(l.path) ? 'page' : undefined}
         >
+          {isActive(l.path) && <span class="nav-thumb" aria-hidden="true"></span>}
           <span class="nav-link-text">{l.label}</span>
         </a>
       ))}
@@ -181,8 +182,20 @@ const isActive = (p: string) => {
   .nav-link.active {
     color: var(--text-primary);
     font-weight: 600;
+  }
+  /* The active "thumb" is its own element so a cross-page view transition
+     can slide it from one tab to the other (base.css, nav-thumb). */
+  .nav-link {
+    isolation: isolate;
+  }
+  .nav-thumb {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: var(--radius-pill);
     background: var(--surface-raised);
     box-shadow: var(--shadow-sm);
+    view-transition-name: nav-thumb;
   }
 
   .actions {
@@ -348,6 +361,18 @@ const isActive = (p: string) => {
   }
 
   /* Show moon in light mode (offer switch to dark), sun in dark mode. */
+  /* Theme icon swaps with a small turn instead of a hard cut. */
+  .icon-sun,
+  .icon-moon {
+    transition: transform 280ms var(--ease-out), opacity 200ms ease;
+  }
+  @starting-style {
+    .icon-sun,
+    .icon-moon {
+      opacity: 0;
+      transform: rotate(-70deg) scale(0.6);
+    }
+  }
   .icon-moon {
     display: inline-flex;
   }
@@ -415,7 +440,8 @@ const isActive = (p: string) => {
         var isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         current = isDark ? 'dark' : 'light';
       }
-      window.__setTheme(current === 'dark' ? 'light' : 'dark');
+      var b = btn.getBoundingClientRect();
+      window.__setTheme(current === 'dark' ? 'light' : 'dark', { x: b.left + b.width / 2, y: b.top + b.height / 2 });
     });
   })();
 </script>
