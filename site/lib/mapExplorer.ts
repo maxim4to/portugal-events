@@ -2,7 +2,7 @@ import { initFilterSheet } from './filterSheet';
 import { haptic } from './haptics';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import { mutedTileLayer } from './mutedTiles.ts';
+import { addBasemap } from './mutedTiles.ts';
 import { gameIcon } from './mapIcons';
 import PT_MAINLAND from '../assets/pt-mainland.json';
 
@@ -665,14 +665,9 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     syncFrame();
     map.on('resize zoomend', () => syncFrame?.());
     // Drop Leaflet's own attribution prefix (which carries a 🇺🇦 flag); keep the
-    // OpenStreetMap tile credit added below.
+    // basemap credit added below.
     map.attributionControl.setPrefix(false);
-    // Standard OSM tiles, regraded in CSS (see MapShell) into a warm, slightly
-    // desaturated "game world" tone under the colored type blips.
-    mutedTileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap contributors',
-      maxZoom: 19,
-    }).addTo(map);
+    addBasemap(map);
     // Dim everything outside mainland Portugal (a world polygon with a
     // Portugal-shaped hole), so the country reads like the playable area of a
     // game map. Fill color/opacity are theme-aware via .pt-mask in CSS.

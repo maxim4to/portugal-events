@@ -71,6 +71,25 @@ const MutedTileLayer = L.TileLayer.extend({
   },
 });
 
+// Esri "Light Gray Canvas": a pale, low-detail basemap (land, water, major
+// roads) plus a separate transparent layer with only town and road labels.
+// Unlike the busy standard OSM render it has no landuse, buildings or POIs.
+const ESRI = 'https://services.arcgisonline.com/ArcGIS/rest/services/Canvas';
+const ATTRIBUTION = '© Esri, HERE, Garmin, © OpenStreetMap contributors';
+
 export function mutedTileLayer(url: string, options: L.TileLayerOptions): L.TileLayer {
   return new (MutedTileLayer as unknown as new (u: string, o: L.TileLayerOptions) => L.TileLayer)(url, options);
+}
+
+export function addBasemap(map: L.Map): L.TileLayer {
+  const base = mutedTileLayer(`${ESRI}/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}`, {
+    attribution: ATTRIBUTION,
+    maxZoom: 19,
+    maxNativeZoom: 16,
+  }).addTo(map);
+  mutedTileLayer(`${ESRI}/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}`, {
+    maxZoom: 19,
+    maxNativeZoom: 16,
+  }).addTo(map);
+  return base;
 }

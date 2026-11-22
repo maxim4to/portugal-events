@@ -186,7 +186,7 @@ const { lat, lon, name, path } = Astro.props;
 <script>
   import 'leaflet/dist/leaflet.css';
   import L from 'leaflet';
-  import { mutedTileLayer } from '../lib/mutedTiles.ts';
+  import { addBasemap } from '../lib/mutedTiles.ts';
 
   // Central Lisbon — the trips all start here (see project design doc).
   const LISBON = { lat: 38.7223, lon: -9.1393 };
@@ -244,17 +244,14 @@ const { lat, lon, name, path } = Astro.props;
     };
     map.on('resize', syncMinZoom);
     // Drop Leaflet's own attribution prefix (which carries a 🇺🇦 flag); keep the
-    // OpenStreetMap tile credit added below.
+    // basemap credit added below.
     map.attributionControl.setPrefix(false);
     if (coarse) {
       // Let the browser own vertical scroll gestures; two-finger gestures still
       // reach Leaflet (which preventDefaults them) so pinch/pan work.
       el.style.touchAction = 'pan-y';
     }
-    const tiles = mutedTileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap contributors',
-      maxZoom: 19,
-    }).addTo(map);
+    const tiles = addBasemap(map);
 
     // The destination pin (the only real pin on the map), labelled like the
     // Lisbon anchor so the point of interest is named on the map.
