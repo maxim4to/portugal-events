@@ -73,7 +73,7 @@
         .querySelectorAll<HTMLElement>('[data-place-card]')
         .forEach((wrap) => {
           const id = wrap.dataset.id!;
-          if (wrap.dataset.visited === undefined || wrap.querySelector('.visited-btn')) {
+          { // every card: catalog cards share one menu, so most have no button
             wrap.dataset.visited = ids.has(id) ? 'true' : 'false';
           }
         });

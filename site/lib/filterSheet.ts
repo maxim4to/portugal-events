@@ -50,6 +50,9 @@ export function initFilterSheet(root: HTMLElement): void {
   function open() {
     if (isOpen || !window.matchMedia(PHONE).matches) return;
     isOpen = true;
+    // Taps only flip chips and recount while the sheet is up; the list and
+    // map re-render once on close (mapExplorer 'explorer:flush').
+    root.dataset.deferRender = '1';
     filters.before(home);
     body!.append(filters);
     body!.scrollTop = 0;
@@ -63,6 +66,7 @@ export function initFilterSheet(root: HTMLElement): void {
   function close() {
     if (!isOpen) return;
     isOpen = false;
+    delete root.dataset.deferRender;
     sheet!.classList.remove('open');
     panel!.style.transform = '';
     openBtn!.setAttribute('aria-expanded', 'false');
@@ -71,6 +75,8 @@ export function initFilterSheet(root: HTMLElement): void {
       sheet!.hidden = true;
       document.documentElement.classList.remove('fsheet-open');
       home.replaceWith(filters);
+      // After the slide-out, so the heavy re-render never shares its frames.
+      root.dispatchEvent(new CustomEvent('explorer:flush'));
     };
     let fired = false;
     panel!.addEventListener(
@@ -133,4 +139,53 @@ export function initFilterSheet(root: HTMLElement): void {
   };
   handle?.addEventListener('pointerup', end);
   handle?.addEventListener('pointercancel', end);
+
+  // Swipe down on the content too, once it's scrolled to its top — like a
+  // native sheet: the scroll hands over to the sheet itself.
+  let tStartY = 0;
+  let tStartT = 0;
+  let tDy = 0;
+  let tMode: 'idle' | 'pending' | 'drag' | 'scroll' = 'idle';
+  body.addEventListener(
+    'touchstart',
+    (e) => {
+      if (e.touches.length !== 1) return;
+      tStartY = e.touches[0].clientY;
+      tStartT = performance.now();
+      tDy = 0;
+      tMode = 'pending';
+    },
+    { passive: true },
+  );
+  body.addEventListener(
+    'touchmove',
+    (e) => {
+      if (tMode === 'idle' || tMode === 'scroll') return;
+      const dy = e.touches[0].clientY - tStartY;
+      if (tMode === 'pending') {
+        if (Math.abs(dy) < 6) return;
+        tMode = dy > 0 && body.scrollTop <= 0 ? 'drag' : 'scroll';
+        if (tMode === 'scroll') return;
+        sheet.classList.add('dragging');
+        tStartY = e.touches[0].clientY;
+      }
+      e.preventDefault();
+      tDy = Math.max(0, e.touches[0].clientY - tStartY);
+      panel.style.transform = `translate3d(0, ${tDy}px, 0)`;
+    },
+    { passive: false },
+  );
+  const tEnd = () => {
+    if (tMode !== 'drag') {
+      tMode = 'idle';
+      return;
+    }
+    tMode = 'idle';
+    sheet.classList.remove('dragging');
+    const v = tDy / Math.max(1, performance.now() - tStartT);
+    if (tDy > 90 || v > 0.6) close();
+    else panel.style.transform = '';
+  };
+  body.addEventListener('touchend', tEnd);
+  body.addEventListener('touchcancel', tEnd);
 }

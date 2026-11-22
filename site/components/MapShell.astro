@@ -1014,8 +1014,9 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
     .pane-list :global(.dots) {
       background: rgb(0 0 0 / 0.38);
     }
-    .pane-list :global(.cstat) {
-      background: rgb(0 0 0 / 0.62);
+    .pane-list :global(.card-status::before),
+    .pane-list :global(.card-status::after) {
+      background: var(--cstat-ico) 7px 50% / 14px no-repeat, rgb(0 0 0 / 0.62);
     }
 
     /* The sheet. */
@@ -1060,10 +1061,13 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
       min-height: 28px;
       margin-top: var(--space-2);
     }
+    /* No result count on phones either; the row only carries «Все» after
+       an area search. */
     .sheet-count {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--text-primary);
+      display: none;
+    }
+    .sheet-title-row:not(:has(.sheet-showall:not([hidden]))) {
+      display: none;
     }
     /* Rail of compact cards, only in the collapsed (map) state. Its height is
        fixed — mobileSheet.ts sizes the collapsed sheet with RAIL_BLOCK. */
@@ -1169,15 +1173,18 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
     .sheet-showall[hidden] {
       display: none;
     }
+    /* Always a scroller: flipping overflow at the full snap re-laid out the
+       whole list (hundreds of cards) right as the sheet arrived — the lag on
+       half → full. Below full, touch-action (set inline by mobileSheet.ts)
+       hands every touch to the sheet drag instead of native scrolling. */
     .list-scroll {
-      overflow: hidden;
-      overscroll-behavior: contain;
-      /* The sheet hangs --bar-h below the screen while fully open. */
-      padding: 0 var(--space-3) calc(var(--bar-h, 56px) + 96px);
-    }
-    .explorer-root.sheet-full .list-scroll {
+      overflow-x: hidden;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+      touch-action: none;
+      /* The sheet hangs --bar-h below the screen while fully open. */
+      padding: 0 var(--space-3) calc(var(--bar-h, 56px) + 96px);
     }
     /* Shorter card photos, so a half-open sheet already shows a place name. */
     .list-scroll :global(.gallery-card),

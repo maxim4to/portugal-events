@@ -4,6 +4,35 @@
 
 export function initCardMenus(root: HTMLElement): void {
   let open: HTMLElement | null = null;
+  // Catalog: one shared menu (data-shared-menu) is moved into whichever card
+  // opens it and re-pointed at that card's place.
+  const shared = root.querySelector<HTMLElement>('[data-shared-menu]');
+  const syncEmpty = () => {
+    if (!shared) return;
+    const any = shared.querySelector('button:not([hidden])');
+    if (any) delete root.dataset.noMenu;
+    else root.dataset.noMenu = '';
+  };
+  syncEmpty();
+  // The visited / not-interested controllers unhide their buttons once set up.
+  if (shared) new MutationObserver(syncEmpty).observe(shared, { attributes: true, subtree: true, attributeFilter: ['hidden'] });
+
+  function attachShared(m: HTMLElement) {
+    if (!shared) return;
+    const wrap = m.closest<HTMLElement>('[data-place-card]');
+    if (!wrap) return;
+    const id = wrap.dataset.id ?? '';
+    shared.querySelectorAll<HTMLElement>('[data-visited-id]').forEach((b) => {
+      b.dataset.visitedId = id;
+      b.setAttribute('aria-pressed', wrap.dataset.visited === 'true' ? 'true' : 'false');
+    });
+    shared.querySelectorAll<HTMLElement>('[data-ni-id]').forEach((b) => {
+      b.dataset.niId = id;
+      b.setAttribute('aria-pressed', wrap.dataset.notinterested === 'true' ? 'true' : 'false');
+    });
+    shared.hidden = false;
+    m.append(shared);
+  }
 
   const close = (focusTrigger = false) => {
     if (!open) return;
@@ -28,6 +57,7 @@ export function initCardMenus(root: HTMLElement): void {
         const wasOpen = m === open;
         close();
         if (!wasOpen) {
+          if (m.classList.contains('card-more--shared')) attachShared(m);
           m.classList.add('open');
           toggle.setAttribute('aria-expanded', 'true');
           open = m;

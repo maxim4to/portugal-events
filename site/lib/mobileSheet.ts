@@ -101,6 +101,9 @@ export function initSheet(root: HTMLElement, opts: Options): SheetController {
     root.classList.toggle('sheet-full', state === 'full' && !away);
     root.classList.toggle('sheet-away', away);
     root.dataset.sheet = away ? 'away' : state;
+    // Native list scrolling only when fully open (one inline style, no
+    // layout change — see .list-scroll in MapShell).
+    scroll.style.touchAction = opts.enabled() && (state !== 'full' || away) ? 'none' : 'pan-y';
     const barH = bar.offsetHeight;
     if (barH !== lastBarH) {
       lastBarH = barH;

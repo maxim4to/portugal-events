@@ -691,8 +691,22 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     }
   }
 
-  /** Full re-render after a filter change: rebuild pins, refit, re-filter list. */
+  /** Full re-render after a filter change: rebuild pins, refit, re-filter list.
+   *  While the phone filter sheet is open (root[data-defer-render]) only the
+   *  result count is recomputed — a tap must answer instantly; the list and
+   *  pins catch up once, when the sheet closes ('explorer:flush'). */
+  let renderPending = false;
   function rerender() {
+    if (root.dataset.deferRender) {
+      renderPending = true;
+      let matching = 0;
+      for (const el of cards) if (matches(el)) matching++;
+      const label = `${matching} ${pluralRu(matching, NOUN)}`;
+      root.dataset.countLabel = label;
+      root.dispatchEvent(new CustomEvent('explorer:count', { detail: { label } }));
+      return;
+    }
+    renderPending = false;
     closePreview();
     // While a desktop area filter is applied, filter changes must not refit
     // the map away from the chosen area.
@@ -776,6 +790,9 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
 
   root.querySelector('[data-to-map]')?.addEventListener('click', () => sheet.snap('peek'));
   initFilterSheet(root);
+  root.addEventListener('explorer:flush', () => {
+    if (renderPending) rerender();
+  });
   showAllBtns.forEach((b) =>
     b.addEventListener('click', (e) => {
       e.stopPropagation();

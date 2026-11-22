@@ -27,6 +27,18 @@ const thumbUrl = (url: string) => {
   return `${m[1]}thumb/${m[3]}${m[4]}/250px-${m[4]}`;
 };
 const thumbs = variant === 'detail' && multi;
+// Catalog cards: Wikimedia's pre-rendered 500/960px copies instead of the
+// stored 1280px file (the list shows hundreds of cards; big files were slow
+// and got rate-limited). Local files and anything unparseable stay as is.
+const sized = (url: string, w: number) => {
+  const m = url.match(/^(https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\/)(thumb\/)?([0-9a-f]\/[0-9a-f]{2}\/)([^/]+)(\/\d+px-[^/]+)?$/);
+  if (!m || /\.(svg|tiff?)$/i.test(m[4])) return null;
+  return `${m[1]}thumb/${m[3]}${m[4]}/${w}px-${m[4]}`;
+};
+const cardImg = (url: string) => ({ src: sized(url, 960) ?? url, full: url });
+// Cards render only the first photo; the rest (original URLs, '|'-joined)
+// are created on demand by the gallery script with the same sizing.
+const cardRest = variant === 'card' ? photos.slice(1).map((p) => p.url).join('|') : undefined;
 const attribData = photos.map((p) => ({
   author: p.author,
   license: p.license,
@@ -37,23 +49,42 @@ const attribData = photos.map((p) => ({
   class:list={['gallery', `gallery-${variant}`]}
   data-gallery
   data-count={photos.length}
+  data-photos={multi ? cardRest : undefined}
   style={hasPhotos ? undefined : `background: var(--type-${type}); color: var(--type-${type}-text);`}
 >
   {glyph && (
     <svg class="placeholder-glyph" viewBox="0 0 24 24" aria-hidden="true" set:html={glyph} />
   )}
-  {photos.map((photo, i) => (
-    <img
-      class="layer"
-      data-photo-index={i}
-      src={i === 0 ? photo.url : undefined}
-      data-src={i === 0 ? undefined : photo.url}
-      alt={alt}
-      loading="lazy"
-      draggable="false"
-      style={i === 0 ? 'opacity:1' : 'opacity:0'}
-    />
-  ))}
+  {variant === 'card'
+    ? hasPhotos && (() => {
+        const f = cardImg(photos[0].url);
+        return (
+          <img
+            class="layer"
+            data-photo-index={0}
+            src={f.src}
+            data-full={f.full !== f.src ? f.full : undefined}
+            onerror="if(this.dataset.full&&this.src!==this.dataset.full)this.src=this.dataset.full"
+            alt={alt}
+            loading="lazy"
+            decoding="async"
+            draggable="false"
+            style="opacity:1"
+          />
+        );
+      })()
+    : photos.map((photo, i) => (
+        <img
+          class="layer"
+          data-photo-index={i}
+          src={i === 0 ? photo.url : undefined}
+          data-src={i === 0 ? undefined : photo.url}
+          alt={alt}
+          loading="lazy"
+          draggable="false"
+          style={i === 0 ? 'opacity:1' : 'opacity:0'}
+        />
+      ))}
 
   {variant === 'detail' && multi && (
     <>
@@ -343,8 +374,8 @@ const attribData = photos.map((p) => ({
 </style>
 
 <script>
-  import PhotoSwipe from 'photoswipe';
-  import 'photoswipe/style.css';
+  // The lightbox (PhotoSwipe) loads only when a photo is first opened: it is
+  // most of this script's weight and every card page would pay for it.
 
   // Fullscreen viewer. We don't store photo dimensions in the data, so measure
   // each image (browser cache makes this instant for already-loaded ones) and
@@ -360,7 +391,11 @@ const attribData = photos.map((p) => ({
   }
 
   async function openLightbox(urls: string[], index: number) {
-    const dataSource = await Promise.all(urls.map(measurePhoto));
+    const [{ default: PhotoSwipe }, dataSource] = await Promise.all([
+      import('photoswipe'),
+      Promise.all(urls.map(measurePhoto)),
+      import('photoswipe/style.css'),
+    ]);
     const pswp = new PhotoSwipe({
       dataSource,
       index: Math.max(0, Math.min(index, dataSource.length - 1)),
@@ -419,6 +454,36 @@ const attribData = photos.map((p) => ({
         const layers = Array.from(
           root.querySelectorAll<HTMLImageElement>('[data-photo-index]'),
         );
+        // Cards ship only their first photo; the rest come from data-photos.
+        const sized = (url: string) => {
+          const m = url.match(/^(https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\/)(thumb\/)?([0-9a-f]\/[0-9a-f]{2}\/)([^/]+)(\/\d+px-[^/]+)?$/);
+          if (!m || /\.(svg|tiff?)$/i.test(m[4])) return url;
+          return `${m[1]}thumb/${m[3]}${m[4]}/960px-${m[4]}`;
+        };
+        let rest: Array<{ src: string; full: string }> | null = null;
+        const ensureLayer = (i: number) => {
+          if (layers[i] || !root.dataset.photos) return;
+          rest ??= root.dataset.photos.split('|').map((u) => ({ src: sized(u), full: u }));
+          const first = layers[0];
+          for (let k = layers.length; k <= i && k - 1 < rest.length; k++) {
+            const d = rest[k - 1];
+            const img = document.createElement('img');
+            img.className = first?.className ?? 'layer';
+            // Carry the component's scoped-style attribute over.
+            for (const a of Array.from(first?.attributes ?? [])) if (a.name.startsWith('data-astro-cid')) img.setAttribute(a.name, '');
+            img.dataset.photoIndex = String(k);
+            img.alt = first?.alt ?? '';
+            img.decoding = 'async';
+            img.draggable = false;
+            img.style.opacity = '0';
+            img.onerror = () => {
+              if (img.src !== d.full) img.src = d.full;
+            };
+            img.src = d.src;
+            (first ?? root).after?.call(layers[layers.length - 1] ?? first, img);
+            layers.push(img);
+          }
+        };
         const dots = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-dot]'));
         const sib = root.nextElementSibling as HTMLElement | null;
         const strip = sib?.matches('[data-gallery-thumbs]') ? sib : null;
@@ -477,6 +542,7 @@ const attribData = photos.map((p) => ({
           const i = ((index % count) + count) % count;
           if (i === current && layers[i] && layers[i].getAttribute('src')) return;
           current = i;
+          ensureLayer(i);
           layers.forEach((layer, li) => {
             layer.style.opacity = li === i ? '1' : '0';
           });

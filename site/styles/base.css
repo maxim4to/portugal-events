@@ -982,6 +982,14 @@ html {
 @view-transition {
   navigation: auto;
 }
+/* Phones: plain, instant page changes. Snapshotting a long catalog for the
+   cross-page transition made every tap on a card and every "back" feel slow
+   in iOS Safari. */
+@media (max-width: 760px) {
+  @view-transition {
+    navigation: none;
+  }
+}
 .site-header {
   view-transition-name: site-header;
 }
@@ -1158,7 +1166,8 @@ a.event-card:active .cover {
 .card-more {
   position: relative;
 }
-.card-more:not(:has(.more-menu > button:not([hidden])))  {
+.card-more:not(.card-more--shared):not(:has(.more-menu > button:not([hidden]))),
+[data-no-menu] .card-more--shared {
   display: none;
 }
 .more-btn {
