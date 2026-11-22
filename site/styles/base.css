@@ -533,6 +533,22 @@ img {
   .has-sidebar .fgroup-summary::after {
     display: none;
   }
+  /* Each section is spaced by exactly the sidebar's top fade (--edge), and
+     its heading carries an opaque band of that height above itself. At rest
+     the band sits in that empty gap; once the heading sticks below the fade,
+     the band blanks the fade strip so rows scrolled past never show through. */
+  .has-sidebar .fgroup {
+    margin-top: var(--edge, 0px);
+  }
+  .has-sidebar .fgroup-summary::before {
+    content: '';
+    position: absolute;
+    /* Above the heading's 1px divider, not over it. */
+    inset: auto 0 calc(100% + 1px) 0;
+    height: var(--edge, 0px);
+    background: var(--surface-0);
+    pointer-events: none;
+  }
   /* Section headings stick to the top of the sidebar's scroll while their
      section is in view; the next section's heading pushes them off (each
      heading is sticky only within its own .fgroup). */
@@ -542,6 +558,8 @@ img {
     pointer-events: auto;
     cursor: default;
     position: sticky;
+    /* Sticks just below the sidebar's top fade: sticky offsets are measured
+       from the scroller's padding edge, and its top padding is the fade. */
     top: 0;
     z-index: 3;
     /* Rows bleed 8px past the column on each side (their hover fill), so the
@@ -551,6 +569,8 @@ img {
     padding-inline: var(--space-2);
     width: calc(100% + 2 * var(--space-2));
     background: var(--surface-0);
+    /* Rows sliding under a stuck heading fade out instead of being sliced. */
+    box-shadow: 0 6px 6px -2px var(--surface-0);
   }
   /* Activity shows through the count badge alone; the heading stays quiet. */
   .has-sidebar .fgroup.active .fgroup-summary {

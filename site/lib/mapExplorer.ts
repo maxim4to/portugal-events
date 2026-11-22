@@ -313,6 +313,32 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     revealRaf = requestAnimationFrame(step);
   }
 
+  // "Back to top": appears once the list is scrolled well down (desktop;
+  // phones have the tab bar / status-bar tap). Long jumps cover most of the
+  // way instantly, then glide the last screen.
+  const toTop = root.querySelector<HTMLButtonElement>('[data-to-top]');
+  if (listScroll && toTop) {
+    let shown = false;
+    listScroll.addEventListener(
+      'scroll',
+      () => {
+        const want = !isMobile() && listScroll.scrollTop > listScroll.clientHeight * 1.2;
+        if (want !== shown) {
+          shown = want;
+          toTop.hidden = !want;
+        }
+      },
+      { passive: true },
+    );
+    toTop.addEventListener('click', () => {
+      cancelAnimationFrame(revealRaf);
+      const screen = listScroll.clientHeight;
+      if (listScroll.scrollTop > screen * 2) listScroll.scrollTop = screen;
+      listScroll.scrollTo({ top: 0, behavior: 'smooth' });
+      listScroll.focus?.({ preventScroll: true });
+    });
+  }
+
   // The user's own scroll wins over an in-flight reveal.
   listScroll?.addEventListener('wheel', () => cancelAnimationFrame(revealRaf), { passive: true });
 

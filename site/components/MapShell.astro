@@ -51,6 +51,9 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
         {/* Collapsed sheet: a swipeable rail of what's in view (mapExplorer). */}
         <div class="peek-rail" data-peek-rail></div>
       </div>
+      <button type="button" class="to-top" data-to-top aria-label="Наверх к началу списка" hidden>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5" /></svg>
+      </button>
       <div class="list-scroll" data-list-scroll>
         <slot name="list" />
         <div class="empty" data-empty hidden>
@@ -208,7 +211,14 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
       /* Left padding leaves room for the rows' hover fill; the negative margin
          keeps the text itself on the header's left edge. */
       margin-left: calc(-1 * var(--space-2));
-      padding: 0 var(--space-3) var(--space-6) var(--space-2);
+      /* A tighter fade than the list's: section gaps equal it (base.css). */
+      --edge: var(--space-4);
+      --edge-fade: linear-gradient(to bottom, transparent, #000 var(--edge), #000 calc(100% - var(--edge)), transparent);
+      /* Sticky offsets count from the padding edge: top padding = the fade,
+         so a stuck heading sits right under it (base.css). */
+      padding: var(--edge) var(--space-3) calc(var(--space-6) + var(--edge)) var(--space-2);
+      -webkit-mask-image: var(--edge-fade);
+      mask-image: var(--edge-fade);
     }
     .has-sidebar .map-explorer {
       grid-column: 2;
@@ -321,8 +331,60 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
   /* Desktop two-pane (DESIGN.md): the list is open space with floating,
      photo-first cards; the map is its own rounded panel beside it. */
   @media (min-width: 761px) {
+    .explorer-root {
+      /* Scrolling columns run from the header to the window's bottom edge and
+         fade out over the inset the page used to cut them at. */
+      --edge: var(--space-5);
+      --edge-fade: linear-gradient(to bottom, transparent, #000 var(--edge), #000 calc(100% - var(--edge)), transparent);
+    }
     .map-explorer {
       column-gap: var(--space-5);
+    }
+    .filter-bar-top {
+      padding-top: calc(var(--space-2) + var(--edge));
+    }
+    .pane-map {
+      margin-block: var(--edge);
+    }
+    .pane-list {
+      position: relative;
+    }
+    /* Back to the top of a long list: a small floating button. */
+    .to-top {
+      position: absolute;
+      left: 50%;
+      bottom: calc(var(--edge) + var(--space-2));
+      z-index: 6;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      background: color-mix(in srgb, var(--surface-2) 92%, transparent);
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow-md);
+      color: var(--text-primary);
+      cursor: pointer;
+      transform: translateX(-50%);
+      transition:
+        opacity 180ms ease,
+        transform 220ms var(--ease-out),
+        background-color var(--dur-fast) ease;
+    }
+    .to-top[hidden] {
+      display: inline-flex;
+      opacity: 0;
+      transform: translateX(-50%) translateY(8px) scale(0.92);
+      pointer-events: none;
+    }
+    .to-top:hover {
+      background: var(--surface-2);
+    }
+    .to-top:active {
+      transform: translateX(-50%) scale(0.92);
     }
     .list-scroll {
       /* Room for focus rings and the card hover shadow; the right padding
@@ -330,7 +392,9 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
       /* Left padding leaves room for the rows' hover fill; the negative margin
          keeps the text itself on the header's left edge. */
       margin-left: calc(-1 * var(--space-2));
-      padding: var(--space-1) var(--space-3) var(--space-6) var(--space-2);
+      padding: calc(var(--space-1) + var(--edge)) var(--space-3) calc(var(--space-6) + var(--edge)) var(--space-2);
+      -webkit-mask-image: var(--edge-fade);
+      mask-image: var(--edge-fade);
       scrollbar-width: thin;
       scrollbar-color: var(--border-strong) transparent;
     }
