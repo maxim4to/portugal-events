@@ -77,6 +77,9 @@ if (road && road.length > 1) {
           {paragraphs.map((p) => <p>{p}</p>)}
         </div>
 
+        {/* Right under the description: how the place was shown on Instagram. */}
+        {place.reels.length > 0 && <ReelEmbed reels={place.reels} name={place.name} />}
+
         {place.tags.length > 0 && (
           <div class="tags" aria-label="Теги">
             {place.tags.map((tag) => (
@@ -104,7 +107,6 @@ if (road && road.length > 1) {
           </section>
         )}
 
-        {place.reels.length > 0 && <ReelEmbed reels={place.reels} name={place.name} />}
       </div>
     </div>
 
@@ -149,6 +151,12 @@ if (road && road.length > 1) {
             {driveRoad ? 'Проехать дорогу в Google Maps' : 'Маршрут в Google Maps'}
           </a>
           <a class="btn act-secondary" href={gmapsPlace} target="_blank" rel="noopener"><Fragment set:html={ICON_PIN} />Открыть место в Google Maps</a>
+          {place.reels.length > 0 && (
+            <a class="btn act-reels" href={place.reels[0]} target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" /><path d="m10 8.5 5 3.5-5 3.5z" fill="currentColor" stroke="none" /></svg>
+              {place.reels.length > 1 ? `Reels в Instagram · ${place.reels.length}` : 'Reels в Instagram'}
+            </a>
+          )}
           <div class="toggles">
             <FavoriteButton placeId={place.id} variant="detail" />
             <VisitedButton placeId={place.id} variant="detail" />
@@ -437,6 +445,11 @@ if (road && road.length > 1) {
   }
   .actions .btn :global(svg) {
     flex: none;
+  }
+  /* Instagram's own gradient on the icon only; the button stays a quiet
+     secondary so the route remains the primary action. */
+  .act-reels svg {
+    color: #d62976;
   }
   .toggles {
     display: flex;

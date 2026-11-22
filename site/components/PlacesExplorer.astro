@@ -86,6 +86,14 @@ const points = places.map((p) => ({
             </div>
           </div>
         </div>
+        {/* A place shown on Instagram: one tap to the Reel (always visible,
+            it's information as much as an action). */}
+        {p.reels.length > 0 && (
+          <a class="reel-pill" href={p.reels[0]} target="_blank" rel="noopener" aria-label={`Reels про ${p.name} в Instagram`}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z" /></svg>
+            Reels
+          </a>
+        )}
         <PlaceCard place={p} href={`${hrefBase}/places/${p.id}/`} />
       </div>
     ))}
@@ -169,6 +177,55 @@ const points = places.map((p) => ({
     .card-more.open {
       opacity: 1;
       transform: none;
+    }
+  }
+
+  /* Bottom-left corner of the photo. The photo's height is the card's width
+     times its aspect (4:3 desktop, 16:9 in the phone sheet), so the pill is
+     placed with container units instead of measuring. */
+  .card-wrap {
+    container-type: inline-size;
+    --photo-ratio: 0.75;
+  }
+  .reel-pill {
+    position: absolute;
+    left: var(--space-3);
+    top: calc(100cqw * var(--photo-ratio) - var(--space-3) - 32px);
+    z-index: 4;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    height: 32px;
+    padding: 0 12px 0 10px;
+    border-radius: var(--radius-pill);
+    background: rgb(0 0 0 / 0.55);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform var(--dur-fast) var(--ease-out), background-color var(--dur-fast) ease;
+  }
+  .reel-pill:hover {
+    background: rgb(0 0 0 / 0.72);
+    text-decoration: none;
+  }
+  .reel-pill:active {
+    transform: scale(0.95);
+  }
+  .reel-pill svg {
+    color: #ff4f8b;
+  }
+  @media (max-width: 760px) {
+    .card-wrap {
+      --photo-ratio: 0.5625;
+    }
+    .reel-pill {
+      top: calc(100cqw * var(--photo-ratio) - var(--space-3) - 36px);
+      height: 36px;
+      padding: 0 14px 0 12px;
+      font-size: 14px;
     }
   }
 
