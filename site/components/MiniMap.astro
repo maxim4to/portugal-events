@@ -37,6 +37,20 @@ const { lat, lon, name, path } = Astro.props;
     background: var(--surface-1);
     font: inherit;
   }
+  /* Same basemap grading as the explorer (MapShell): warm parchment in
+     light, inverted dark map in dark. Only the tile pane is filtered, so the
+     route, pins and labels keep their own colors on top. */
+  .minimap :global(.leaflet-tile-pane) {
+    filter: sepia(0.18) saturate(0.95) hue-rotate(-5deg) brightness(1.03) contrast(0.95);
+  }
+  :global(:root[data-theme='dark']) .minimap :global(.leaflet-tile-pane) {
+    filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.88) saturate(0.7);
+  }
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme='light'])) .minimap :global(.leaflet-tile-pane) {
+      filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.88) saturate(0.7);
+    }
+  }
   /* Zoom buttons: one rounded card, per DESIGN.md. leaflet.css is imported
      from JS and loads after this, so overrides carry .leaflet-container to win. */
   .minimap:global(.leaflet-container) :global(.leaflet-bar) {
@@ -115,14 +129,13 @@ const { lat, lon, name, path } = Astro.props;
   .minimap :global(.place-tip::before) {
     display: none;
   }
-  /* Place names can be long, so let this label wrap (Lisbon is a single word). */
+  /* Long names stay on one line (ellipsis) so the label never covers the
+     route; the full name is the page title right above. */
   .minimap :global(.place-tip) {
-    /* Tooltips sit in a zero-size pane, so without an explicit width they
-       shrink to one word per line. */
-    width: max-content;
-    max-width: 168px;
-    white-space: normal;
-    text-align: center;
+    max-width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   /* Route + connector colours via CSS (CSS stroke/fill resolve tokens and win
      over Leaflet's presentation attributes). */
@@ -295,8 +308,8 @@ const { lat, lon, name, path } = Astro.props;
     // Scale the padding with the box (aside ≈ 360×225, wide ≈ 760×430) so a
     // small map doesn't zoom out to fit room reserved for a big one.
     const side = Math.round(Math.min(90, el.clientWidth * 0.2));
-    // The destination label sits above its pin and can run to three lines.
-    const top = Math.round(Math.min(100, el.clientHeight * 0.42));
+    // The destination label sits above its pin (one line).
+    const top = Math.round(Math.min(64, el.clientHeight * 0.3));
     const bottom = Math.round(Math.min(28, el.clientHeight * 0.1));
     const FIT = {
       paddingTopLeft: [side, top] as L.PointTuple,

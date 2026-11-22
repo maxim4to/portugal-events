@@ -75,7 +75,7 @@ const { placeId, variant = 'detail' } = Astro.props;
     justify-content: center;
     gap: var(--space-1);
     min-height: 64px;
-    padding: var(--space-2) var(--space-1);
+    padding: var(--space-2);
     border: 1px solid var(--border-strong);
     border-radius: var(--radius);
     background: var(--surface-2);
@@ -84,7 +84,7 @@ const { placeId, variant = 'detail' } = Astro.props;
     font-weight: 550;
     line-height: 1.25;
     text-align: center;
-    white-space: nowrap;
+    text-wrap: balance;
     transition: border-color var(--dur-fast) ease, background-color var(--dur-fast) ease, color var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out);
   }
   .favorite-btn--detail[hidden] {
@@ -110,8 +110,6 @@ const { placeId, variant = 'detail' } = Astro.props;
   }
   .favorite-btn--detail .favorite-label {
     max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   /* Compact circular overlay for catalog cards. Shares an identical shell with

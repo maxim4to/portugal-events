@@ -50,7 +50,8 @@ const { fallback, title } = Astro.props;
     .mbar > * {
       pointer-events: auto;
     }
-    /* Soft fade behind the controls so they never sit on busy text. */
+    /* Backdrop behind the controls so page content never shows between
+       them: solid page color up to the bar's top edge, then a 24px fade. */
     .mbar::before {
       content: '';
       position: fixed;
@@ -58,8 +59,8 @@ const { fallback, title } = Astro.props;
       right: 0;
       bottom: 0;
       z-index: -1;
-      height: calc(110px + env(safe-area-inset-bottom, 0px));
-      background: linear-gradient(to top, var(--surface-0) 15%, transparent);
+      height: calc(52px + 2 * var(--space-4) + 24px + env(safe-area-inset-bottom, 0px));
+      background: linear-gradient(to top, var(--surface-0) calc(100% - 24px), transparent);
       pointer-events: none;
     }
     .mbar-back {

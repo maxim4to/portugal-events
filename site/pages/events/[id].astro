@@ -31,7 +31,7 @@ const directions = coords
   : '';
 const paragraphs = event.description.split(/\n\n+/).map((s) => s.trim()).filter(Boolean);
 const glyph = GLYPHS[event.type]?.replaceAll('#fff', 'currentColor') ?? null;
-const price = event.price ? event.price.charAt(0).toUpperCase() + event.price.slice(1) : null;
+const price = event.price || null;
 ---
 <Base title={event.title} description={event.description.slice(0, 150)} tabbar={false}>
   <article class="detail">
@@ -117,7 +117,7 @@ const price = event.price ? event.price.charAt(0).toUpperCase() + event.price.sl
 
       {coords && (
         <div class="map-wrap">
-          <MiniMap lat={coords.lat} lon={coords.lon} name={event.title} />
+          <MiniMap lat={coords.lat} lon={coords.lon} name={event.venue} />
         </div>
       )}
     </aside>
@@ -149,8 +149,6 @@ const price = event.price ? event.price.charAt(0).toUpperCase() + event.price.sl
     display: flex;
     flex-direction: column;
     gap: var(--space-5);
-    max-width: 760px;
-    margin: 0 auto;
   }
   .d-head,
   .d-main,
@@ -169,7 +167,7 @@ const price = event.price ? event.price.charAt(0).toUpperCase() + event.price.sl
   @media (min-width: 1100px) {
     .detail {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 368px;
+      grid-template-columns: minmax(0, 1fr) 384px;
       grid-template-areas:
         'head head'
         'main aside';
@@ -390,10 +388,15 @@ const price = event.price ? event.price.charAt(0).toUpperCase() + event.price.sl
 
   /* ---- Tablet (761–1099): facts read across, actions in a row ---- */
   @media (min-width: 761px) and (max-width: 1099px) {
+    /* Three facts read across; four make a 2×2 (no orphan). */
     .facts {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: start;
       gap: var(--space-4) var(--space-5);
+    }
+    .facts:has(> :nth-child(4)) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .actions {
       display: grid;
@@ -407,7 +410,8 @@ const price = event.price ? event.price.charAt(0).toUpperCase() + event.price.sl
   @media (max-width: 760px) {
     .detail {
       gap: var(--space-5);
-      padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+      /* Clear the floating bar: 52px controls + 16px inset + 24px fade. */
+      padding-bottom: calc(52px + var(--space-4) + 24px + var(--space-4) + env(safe-area-inset-bottom, 0px));
     }
     .back {
       display: none;

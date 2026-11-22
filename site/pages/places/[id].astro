@@ -13,6 +13,7 @@ import PhotoGallery from '../../components/PhotoGallery.astro';
 import ReelEmbed from '../../components/ReelEmbed.astro';
 import MobileDetailBar from '../../components/MobileDetailBar.astro';
 import { allPlaces } from '../../lib/data.ts';
+import { formatDriveMinutes } from '../../lib/format.ts';
 import type { Place } from '../../../schema/index.ts';
 
 export function getStaticPaths() {
@@ -42,14 +43,6 @@ if (road && road.length > 1) {
     `&waypoints=${encodeURIComponent(vias.join('|'))}`;
 }
 
-// "65" -> "1 ч 5 мин": easier to read at a glance than raw minutes.
-const fmtMinutes = (min: number) => {
-  const h = Math.floor(min / 60);
-  const m = Math.round(min % 60);
-  if (h === 0) return `${m} мин`;
-  return m === 0 ? `${h} ч` : `${h} ч ${m} мин`;
-};
-const season = place.bestSeason.charAt(0).toUpperCase() + place.bestSeason.slice(1);
 ---
 <Base title={place.name} description={place.description.slice(0, 150)} tabbar={false}>
   <article class="detail">
@@ -116,23 +109,23 @@ const season = place.bestSeason.charAt(0).toUpperCase() + place.bestSeason.slice
           <div class="fact">
             <svg class="fact-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 16V11.5l1.6-4.3A2 2 0 0 1 8.5 6h7a2 2 0 0 1 1.9 1.2l1.6 4.3V16" /><path d="M4 16h16v2.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5V18H7v.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5Z" /><path d="M5 11.5h14" /><circle cx="8" cy="14" r=".6" fill="currentColor" /><circle cx="16" cy="14" r=".6" fill="currentColor" /></svg>
             <dt>Дорога из Лиссабона</dt>
-            <dd>{fmtMinutes(place.driveMinutesFromLisbon)}</dd>
+            <dd>{formatDriveMinutes(place.driveMinutesFromLisbon)}</dd>
           </div>
           <div class="fact">
             <Icon name="hourglass" size={20} class="fact-ico" />
             <dt>Время на месте</dt>
-            <dd>≈ {place.visitDurationHours} ч</dd>
+            <dd>~{place.visitDurationHours} ч</dd>
           </div>
           <div class="fact">
             <Icon name="calendar" size={20} class="fact-ico" />
             <dt>Лучший сезон</dt>
-            <dd>{season}</dd>
+            <dd>{place.bestSeason}</dd>
           </div>
           {place.freeWithResidency === true && (
             <div class="fact">
               <svg class="fact-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8a2 2 0 0 0 2-2h12a2 2 0 0 0 2 2v8a2 2 0 0 0-2 2H6a2 2 0 0 0-2-2Z" /><path d="M10 6v12" stroke-dasharray="2 2" /></svg>
               <dt>Вход</dt>
-              <dd>Бесплатно с ВНЖ</dd>
+              <dd>бесплатно с ВНЖ</dd>
             </div>
           )}
         </dl>
@@ -188,8 +181,6 @@ const season = place.bestSeason.charAt(0).toUpperCase() + place.bestSeason.slice
     display: flex;
     flex-direction: column;
     gap: var(--space-5);
-    max-width: 760px;
-    margin: 0 auto;
   }
   .d-head,
   .d-main,
@@ -208,7 +199,7 @@ const season = place.bestSeason.charAt(0).toUpperCase() + place.bestSeason.slice
   @media (min-width: 1100px) {
     .detail {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 368px;
+      grid-template-columns: minmax(0, 1fr) 384px;
       grid-template-areas:
         'head head'
         'main aside';
@@ -435,10 +426,15 @@ const season = place.bestSeason.charAt(0).toUpperCase() + place.bestSeason.slice
 
   /* ---- Tablet (761–1099): facts read across, actions in a row ---- */
   @media (min-width: 761px) and (max-width: 1099px) {
+    /* Three facts read across; four make a 2×2 (no orphan). */
     .facts {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: start;
       gap: var(--space-4) var(--space-5);
+    }
+    .facts:has(> :nth-child(4)) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .actions {
       display: grid;
@@ -455,7 +451,8 @@ const season = place.bestSeason.charAt(0).toUpperCase() + place.bestSeason.slice
   @media (max-width: 760px) {
     .detail {
       gap: var(--space-5);
-      padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+      /* Clear the floating bar: 52px controls + 16px inset + 24px fade. */
+      padding-bottom: calc(52px + var(--space-4) + 24px + var(--space-4) + env(safe-area-inset-bottom, 0px));
     }
     .back {
       display: none;
