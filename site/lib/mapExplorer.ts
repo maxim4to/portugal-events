@@ -1,7 +1,6 @@
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import 'leaflet.markercluster';
-import 'leaflet.markercluster/dist/MarkerCluster.css';
+import { gameIcon } from './mapIcons';
 import { HALF_AT, initSheet, type SheetSnap } from './mobileSheet';
 import { distanceKm, formatDistance, pluralRu } from './geo';
 import { getFix, onFix, type Fix } from './geolocate';
@@ -23,13 +22,6 @@ export interface MapExplorerOptions {
   /** Page-specific filter predicate over a card element. Defaults to always-true. */
   matches?: (card: HTMLElement) => boolean;
 }
-
-const PIN_HTML =
-  '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 7 11.6 7.3 11.9a1 1 0 0 0 1.4 0C13 21.6 20 15.4 20 10c0-4.4-3.6-8-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>';
-
-// Favorite places drop as a heart (its bottom tip is the anchor, like a pin).
-const HEART_HTML =
-  '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 21S3 14.6 3 8.9C3 5.8 5.3 3.6 8.1 3.6c1.8 0 3.2 1 3.9 2.1.7-1.1 2.1-2.1 3.9-2.1 2.8 0 5.1 2.2 5.1 5.3C21 14.6 12 21 12 21Z"/></svg>';
 
 /**
  * Wires the two-pane (list + map) explorer: marker/list synchronisation,
@@ -64,43 +56,19 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   const pointById = new Map(points.map((p) => [p.id, p]));
   const cardById = new Map(cards.map((c) => [c.dataset.id!, c]));
 
-  const pinIcon = L.divIcon({
-    className: 'place-pin',
-    html: PIN_HTML,
-    iconSize: [24, 24],
-    iconAnchor: [12, 22],
-    popupAnchor: [0, -20],
-  });
-  // Visited places: same pin, dimmed (styled via .place-pin--visited).
-  const pinVisitedIcon = L.divIcon({
-    className: 'place-pin place-pin--visited',
-    html: PIN_HTML,
-    iconSize: [24, 24],
-    iconAnchor: [12, 22],
-    popupAnchor: [0, -20],
-  });
-  // Favorites: a heart instead of the teardrop pin.
-  const pinFavoriteIcon = L.divIcon({
-    className: 'place-pin place-pin--favorite',
-    html: HEART_HTML,
-    iconSize: [24, 24],
-    iconAnchor: [12, 22],
-    popupAnchor: [0, -20],
-  });
-
-  // Favorite wins over visited (a saved place stays a heart); both fall back to
-  // the plain pin. Reads the live state the controllers reflect onto the card.
+  // Game-map pins: a colored disc with a per-type glyph (see mapIcons.ts).
+  // Favorite swaps the glyph for a heart badge; visited dims the disc. Reads
+  // the live state the controllers reflect onto the card.
   const iconFor = (el: HTMLElement) =>
-    el.dataset.favorite === 'true'
-      ? pinFavoriteIcon
-      : el.dataset.visited === 'true'
-        ? pinVisitedIcon
-        : pinIcon;
+    gameIcon(pointById.get(el.dataset.id!)?.type, {
+      favorite: el.dataset.favorite === 'true',
+      visited: el.dataset.visited === 'true',
+    });
 
   const listScroll = root.querySelector<HTMLElement>('[data-list-scroll]');
   let map: L.Map | null = null;
   let locate: ReturnType<typeof addLocateControl> | null = null;
-  let markerLayer: L.MarkerClusterGroup | null = null;
+  let markerLayer: L.LayerGroup | null = null;
   const markerById = new Map<string, L.Marker>();
 
   const detailUrl = (id: string) => `${hrefBase}${detailPrefix}${id}/`;
@@ -265,24 +233,10 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   function refreshMarkers(fit: boolean) {
     if (!map) return;
     if (!markerLayer) {
-      // Nearby pins merge into a counted bubble until zoomed in — at country
-      // zoom 200+ pins are otherwise an untappable blob.
-      markerLayer = L.markerClusterGroup({
-        maxClusterRadius: 40,
-        disableClusteringAtZoom: 12,
-        showCoverageOnHover: false,
-        spiderfyOnMaxZoom: false,
-        chunkedLoading: true,
-        iconCreateFunction: (cluster) => {
-          const n = cluster.getChildCount();
-          const size = n < 10 ? 34 : n < 50 ? 40 : 46;
-          return L.divIcon({
-            className: 'pin-cluster',
-            html: `<span>${n}</span>`,
-            iconSize: [size, size],
-          });
-        },
-      }).addTo(map);
+      // No clustering: every pin is its own icon (game-map style), so a
+      // hovered card can always light its pin up. At country zoom the pins
+      // shrink instead (see the zoomend handler) to stay readable.
+      markerLayer = L.layerGroup().addTo(map);
     }
     markerLayer.clearLayers();
     markerById.clear();
@@ -320,7 +274,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
       }
       markerById.set(p.id, marker);
     }
-    markerLayer.addLayers(batch);
+    for (const m of batch) markerLayer.addLayer(m);
     if (selectedId) highlightMarker(selectedId, true);
     if (fit && (skipNextFit || holdRestored)) {
       skipNextFit = false;
@@ -426,12 +380,17 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     // pans. The map lives in a fixed pane, so wheel-zoom no longer fights the
     // page scroll. wheelPxPerZoomLevel softens the otherwise jumpy trackpad zoom.
     map = L.map(mapEl, {
-      // Phone: fractional zoom so the country fills the screen instead of
-      // jumping a whole level too far out.
-      zoomSnap: isMobile() ? 0.25 : 1,
+      // Fractional zoom everywhere: on the phone the country fills the screen
+      // instead of jumping a whole level too far out, and on desktop a wheel /
+      // trackpad swipe moves in quarter-steps instead of whole-level leaps.
+      zoomSnap: 0.25,
+      zoomDelta: 0.25,
       scrollWheelZoom: true,
-      wheelPxPerZoomLevel: 120,
-      wheelDebounceTime: 30,
+      // A light two-finger trackpad swipe fires a burst of wheel events; with
+      // the default 60px-per-level it used to jump several levels at once.
+      // Demand far more scroll per level so zooming is gentle and controllable.
+      wheelPxPerZoomLevel: 320,
+      wheelDebounceTime: 25,
     }).setView([39.5, -8.0], 6);
     // Drop Leaflet's own attribution prefix (which carries a 🇺🇦 flag); keep the
     // OpenStreetMap tile credit added below.
@@ -444,6 +403,11 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
       if (boundsMode()) updateListVisibility();
       saveView();
     });
+    // Country zoom: shrink the game pins so a dense coastline stays readable
+    // (replaces clustering). CSS keys off the class, no marker rebuild needed.
+    const sizePins = () => mapEl.classList.toggle('map-far', map!.getZoom() < 8.5);
+    map.on('zoomend', sizePins);
+    sizePins();
     map.on('click', closePreview);
     map.on('dragstart', () => (autoFit = false));
     mapEl.addEventListener('wheel', () => (autoFit = false), { passive: true });

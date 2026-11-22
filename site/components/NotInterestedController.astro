@@ -30,6 +30,10 @@
   } else {
     // Buttons are available regardless of sign-in — a click prompts login.
     buttons.forEach((btn) => (btn.hidden = false));
+    // The "hide not interested" filter chip only makes sense with the feature.
+    document
+      .querySelectorAll<HTMLElement>('[data-ni-filter-control]')
+      .forEach((el) => (el.hidden = false));
 
     let loggedIn = false;
     // A toggle attempted while signed out, replayed once sign-in succeeds.

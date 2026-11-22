@@ -295,77 +295,55 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false } = Astro
     border-color: var(--accent);
     box-shadow: 0 0 0 2px var(--accent);
   }
-  :global(.place-pin) {
-    color: var(--accent);
+  /* Game-map pins: a colored disc (inline background from mapIcons.ts) with a
+     white per-type glyph, centered on the spot like a map blip. Scale/active
+     effects live on the inner .gpin — Leaflet owns the marker element's own
+     transform for positioning, so a transform there would be ignored. */
+  :global(.place-pin .gpin) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    transition: transform 0.12s ease, width 0.15s ease, height 0.15s ease;
   }
-  :global(.place-pin svg) {
+  :global(.place-pin .gpin svg) {
     display: block;
-    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
-    transition: transform 0.12s ease;
-    transform-origin: bottom center;
+    width: 17px;
+    height: 17px;
   }
-  /* Highlight: scale the inner <svg>, not .place-pin itself — Leaflet owns the
-     pin element's transform for positioning, so a transform there is ignored. */
+  /* Country zoom (no clustering any more): smaller blips, glyph still legible. */
+  :global(.map-far .place-pin .gpin) {
+    width: 19px;
+    height: 19px;
+    border-width: 1.5px;
+  }
+  :global(.map-far .place-pin .gpin svg) {
+    width: 11px;
+    height: 11px;
+  }
+  /* Hovered/selected: the pin turns red and pops above its neighbours — the
+     card↔map link the list hover relies on. !important beats the inline
+     per-type background. */
   :global(.place-pin.pin-active) {
-    color: var(--danger);
     z-index: 1000 !important;
   }
-  :global(.place-pin.pin-active svg) {
-    transform: scale(1.5);
+  :global(.place-pin.pin-active .gpin) {
+    background: #d1341f !important;
+    transform: scale(1.45);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
   }
 
-  /* Cluster bubble: count of the pins merged under it. */
-  :global(.pin-cluster) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: color-mix(in srgb, var(--accent) 22%, transparent);
-  }
-  :global(.pin-cluster span) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: calc(100% - 8px);
-    height: calc(100% - 8px);
-    border-radius: 50%;
-    background: var(--accent);
-    color: #fff;
-    border: 2px solid #fff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    font-family: var(--font-sans);
-    font-size: 13px;
-    font-weight: 700;
-  }
-  :global(:root[data-theme='dark']) :global(.pin-cluster span) {
-    color: #0f1d33;
-    border-color: #0f1d33;
-  }
-  @media (prefers-color-scheme: dark) {
-    :global(:root:not([data-theme='light'])) :global(.pin-cluster span) {
-      color: #0f1d33;
-      border-color: #0f1d33;
-    }
-  }
-
-  /* Visited places: a dimmer pin so they recede behind unseen ones. Full
+  /* Visited places: a dimmer blip so they recede behind unseen ones. Full
      opacity again while highlighted (hovered/selected). */
   :global(.place-pin--visited) {
-    opacity: 0.4;
+    opacity: 0.45;
   }
   :global(.place-pin--visited.pin-active) {
     opacity: 1;
-  }
-
-  /* Favorites: a heart, always in the danger red (the pin-active red then just
-     scales it). Highlighted state scales a touch more with a stronger shadow so
-     a selected favorite stands out on the map. */
-  :global(.place-pin--favorite) {
-    color: var(--danger);
-  }
-  :global(.place-pin--favorite.pin-active svg) {
-    transform: scale(1.5);
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.45));
   }
 
   /* Dark theme: a dark basemap (inverted OSM tiles, hues restored), so the

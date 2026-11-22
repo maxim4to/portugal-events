@@ -80,6 +80,15 @@ describe('matchesFilter', () => {
     expect(matchesFilter(base, { ...emptyState, freeWithResidency: true })).toBe(false);
   });
 
+  it('drops not-interested places only when hideNotInterested is on', () => {
+    const ni = { ...base, notInterested: true };
+    // Off: not-interested places still match (they sink in the list instead).
+    expect(matchesFilter(ni, emptyState)).toBe(true);
+    // On: they are excluded; others are unaffected.
+    expect(matchesFilter(ni, { ...emptyState, hideNotInterested: true })).toBe(false);
+    expect(matchesFilter(base, { ...emptyState, hideNotInterested: true })).toBe(true);
+  });
+
   it('combines filters with AND', () => {
     expect(matchesFilter(base, { ...emptyState, types: ['beach'], maxDrive: 30 })).toBe(false);
     expect(matchesFilter(base, { ...emptyState, types: ['beach'], maxDrive: 90 })).toBe(true);
