@@ -800,6 +800,22 @@ html {
   .reset-btn {
     color: var(--accent);
   }
+  /* Pills look 36px but take taps across 44px (the row's padding leaves room
+     above and below). */
+  .fgroup-summary,
+  .fav-toggle,
+  .reset-btn,
+  .near-pill {
+    position: relative;
+  }
+  .fgroup-summary::before,
+  .fav-toggle::before,
+  .reset-btn::before,
+  .near-pill::before {
+    content: '';
+    position: absolute;
+    inset: -5px -1px;
+  }
   .sheet-full .fgroup-summary,
   .sheet-full .fav-toggle,
   .sheet-full .reset-btn,

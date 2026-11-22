@@ -133,18 +133,6 @@ const presentCities = [...new Set(events.map((e) => e.city))].sort((a, b) =>
     color: var(--text-secondary);
   }
   @media (max-width: 760px) {
-    /* The floating pills stay 36px to look like the places row, but their
-       hit area grows to 44px (the row's padding has room above and below). */
-    .event-filters :global(.fgroup-summary),
-    .event-filters :global(.reset-btn) {
-      position: relative;
-    }
-    .event-filters :global(.fgroup-summary)::before,
-    .event-filters :global(.reset-btn)::before {
-      content: '';
-      position: absolute;
-      inset: -5px -1px; /* from the padding box: 34 + 2×5 = 44px */
-    }
     .month {
       gap: var(--space-3);
     }
