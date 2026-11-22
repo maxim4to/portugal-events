@@ -95,6 +95,8 @@ export function initFilterGroups(root: HTMLElement): void {
     btn?.addEventListener('click', () => {
       // Sidebar layout: the pill is a static (sticky) section heading.
       if (root.classList.contains('has-sidebar') && window.matchMedia('(min-width: 1100px)').matches) return;
+      // Inside the phone filter sheet the pill is a static section heading.
+      if (btn.closest('.fsheet')) return;
       const willOpen = !g.classList.contains('open');
       closeAll();
       if (!willOpen) return;

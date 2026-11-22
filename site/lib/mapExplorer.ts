@@ -1,3 +1,4 @@
+import { initFilterSheet } from './filterSheet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { gameIcon } from './mapIcons';
@@ -156,8 +157,10 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   // ---- List visibility (filters ∩ optional viewport) -----------------------
 
   function updateListVisibility() {
-    const useBounds = isMobile() ? boundsMode() : areaBounds !== null;
-    const bounds = !useBounds ? null : isMobile() ? visibleBounds() : areaBounds;
+    // Phones and desktop alike: the list follows the map only through an
+    // explicit "search this area" (areaBounds). Re-filtering hundreds of
+    // cards on every pan made the phone map and sheet stutter.
+    const bounds = areaBounds;
     let visible = 0;
     let matching = 0;
     for (const el of cards) {
@@ -196,11 +199,15 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
 
   function renderRail(force = false) {
     if (!railEl || !isMobile()) return;
+    // The rail is what's on the map right now (cheap: it stops at RAIL_MAX),
+    // even though the list itself only follows the map on demand.
+    const view = boundsMode() ? visibleBounds() : null;
     const items: MapPoint[] = [];
-    for (const el of root.querySelectorAll<HTMLElement>('[data-item-card]')) {
+    for (const el of cards) {
       if (el.hidden || el.dataset.notinterested === 'true') continue;
       const p = pointById.get(el.dataset.id!);
-      if (p) items.push(p);
+      if (!p || (view && !view.contains([p.lat, p.lon]))) continue;
+      items.push(p);
       if (items.length >= RAIL_MAX) break;
     }
     const key = items.map((p) => p.id).join('|') + (distFix ? `@${distFix.at}` : '');
@@ -245,6 +252,10 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
         : `${visible} ${pluralRu(visible, NOUN)}`;
     }
     showAllBtns.forEach((b) => (b.hidden = !limited));
+    // The phone filter sheet's «Показать N мест» (lib/filterSheet.ts).
+    const label = `${matching} ${pluralRu(matching, NOUN)}`;
+    root.dataset.countLabel = label;
+    root.dispatchEvent(new CustomEvent('explorer:count', { detail: { label } }));
   }
 
   // ---- Markers -------------------------------------------------------------
@@ -633,9 +644,8 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
       { className: 'pt-mask', stroke: false, interactive: false },
     ).addTo(map);
     map.on('moveend', () => {
-      if (isMobile()) {
-        if (boundsMode()) updateListVisibility();
-      } else if (lastUserAt > lastProgAt) {
+      if (isMobile()) renderRail();
+      if (lastUserAt > lastProgAt) {
         // The user moved the map themselves: offer to sync the list to it.
         showAreaSearch(true);
       }
@@ -765,9 +775,11 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   });
 
   root.querySelector('[data-to-map]')?.addEventListener('click', () => sheet.snap('peek'));
+  initFilterSheet(root);
   showAllBtns.forEach((b) =>
     b.addEventListener('click', (e) => {
       e.stopPropagation();
+      setAreaMode(null);
       fitAll();
     }),
   );

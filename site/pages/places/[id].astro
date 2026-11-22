@@ -164,9 +164,19 @@ if (road && road.length > 1) {
   </article>
 
   <MobileDetailBar fallback={href('/places/')} title={place.name}>
+    {/* Same pattern as the catalog cards: the heart needs no words; the rest
+        sit in a ⋯ menu whose rows say what they do (lib/cardMenu.ts). */}
     <div class="mbar-group">
       <FavoriteButton placeId={place.id} variant="card" />
-      <VisitedButton placeId={place.id} variant="card" />
+      <div class="card-more mbar-more" data-card-more>
+        <button type="button" class="more-btn" data-more-toggle aria-haspopup="true" aria-expanded="false" aria-label="Ещё действия">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5.5" cy="12" r="1.8" /><circle cx="12" cy="12" r="1.8" /><circle cx="18.5" cy="12" r="1.8" /></svg>
+        </button>
+        <div class="more-menu" role="group" aria-label="Действия с местом">
+          <VisitedButton placeId={place.id} variant="menu" />
+          <NotInterestedButton placeId={place.id} variant="menu" />
+        </div>
+      </div>
     </div>
     <a class="mbar-pill" href={directions} target="_blank" rel="noopener">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round" aria-hidden="true">
@@ -180,6 +190,11 @@ if (road && road.length > 1) {
   <FavoriteController />
   <NotInterestedController />
 </Base>
+
+<script>
+  import { initCardMenus } from '../../lib/cardMenu.ts';
+  initCardMenus(document.body);
+</script>
 
 <style>
   /* ---- Single column (default, < 1100px) ----
@@ -505,23 +520,30 @@ if (road && road.length > 1) {
     .facts {
       gap: var(--space-3);
     }
+    /* The bottom bar carries the route, the heart and the ⋯ menu. */
     .act-main[data-dup-mbar],
-    .toggles :global(.favorite-btn),
-    .toggles :global(.visited-btn) {
+    .toggles {
       display: none;
     }
     .actions .btn {
       min-height: 48px;
       font-size: 15px;
     }
-    .toggles {
-      margin-top: 0;
+    /* ⋯ in the bar's capsule, its menu opening upwards. */
+    :global(.mbar-more .more-btn) {
+      width: 44px;
+      height: 44px;
+      background: transparent;
+      box-shadow: -1px 0 0 var(--border);
+      border-radius: 0 var(--radius-pill) var(--radius-pill) 0;
+      backdrop-filter: none;
     }
-    /* Only "not interested" is left: a full-width row like the other buttons. */
-    .toggles :global(.ni-btn--detail) {
-      flex-direction: row;
-      min-height: 48px;
-      font-size: 15px;
+    :global(.mbar-more .more-menu) {
+      top: auto;
+      bottom: calc(100% + 10px);
+      left: 0;
+      right: auto;
+      transform-origin: bottom left;
     }
     .tag {
       min-height: 36px;

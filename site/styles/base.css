@@ -744,8 +744,9 @@ img {
 /* --- Phone app shell --- */
 
 :root {
-  /* Bottom tab bar (TabBar.astro), including the home-indicator inset. */
-  --tabbar-h: calc(52px + env(safe-area-inset-bottom, 0px));
+  /* Bottom inset the phone layout keeps clear. The tab bar became a top-right
+     menu (TabBar.astro), so only the home indicator remains. */
+  --tabbar-h: env(safe-area-inset-bottom, 0px);
 }
 
 html {
@@ -1148,5 +1149,95 @@ a.event-card:active .cover {
   .just-on svg,
   .just-on::before {
     animation: none;
+  }
+}
+
+/* ---- "⋯" action menus (catalog cards, phone detail bar; lib/cardMenu.ts) */
+/* "⋯" trigger: the same glass circle as the heart. Hidden when the menu
+   would be empty (visited / not-interested not configured). */
+.card-more {
+  position: relative;
+}
+.card-more:not(:has(.more-menu > button:not([hidden])))  {
+  display: none;
+}
+.more-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--surface-2) 85%, transparent);
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow-md);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: transform var(--dur-fast) var(--ease-out), background-color var(--dur-fast) ease;
+}
+.more-btn:hover,
+.card-more.open .more-btn {
+  background: var(--surface-2);
+}
+.more-btn:active {
+  transform: scale(0.92);
+}
+.more-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* The menu drops from the trigger (origin top-right) and stays inside the
+   card's box — cards use content-visibility, which clips overflow. */
+.more-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 200px;
+  padding: var(--space-1);
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  box-shadow: var(--shadow-lg);
+  transform-origin: top right;
+  opacity: 0;
+  transform: scale(0.96) translateY(-4px);
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 120ms ease,
+    transform 120ms var(--ease-out),
+    visibility 0s linear 120ms;
+}
+.card-more.open .more-menu {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+  pointer-events: auto;
+  transition:
+    opacity 160ms ease,
+    transform 180ms var(--ease-out),
+    visibility 0s;
+}
+
+@media (max-width: 760px) {
+  .more-btn {
+    width: 44px;
+    height: 44px;
+  }
+  .more-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .more-menu,
+  .card-more.open .more-menu {
+    transform: none;
   }
 }

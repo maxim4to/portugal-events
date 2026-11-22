@@ -1,6 +1,6 @@
 ---
-// Phone-only bottom navigation (≤760px), replacing the desktop header there:
-// Места / Афиша / Профиль. Each tab remembers its last URL (filters included)
+// Phone-only section menu (≤760px), replacing the desktop header there: a
+// round button in the top-right corner opening Места / Афиша / Профиль. Each tab remembers its last URL (filters included)
 // for the session, so switching tabs returns to where you left off — like
 // native tab bars. Tapping the already-active tab dispatches `tabbar:reselect`.
 const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
@@ -18,150 +18,191 @@ const isActive = (p: string) => {
 };
 const isRoot = (p: string) => current === href(p).replace(/\/$/, '');
 ---
-<nav class="tabbar" aria-label="Разделы" data-tabbar>
-  {tabs.map((t) => (
-    <a
-      href={href(t.path)}
-      class:list={['tab', { active: isActive(t.path) }]}
-      data-tab={t.path}
-      data-tab-root={isRoot(t.path) ? '' : undefined}
-      aria-current={isActive(t.path) ? 'page' : undefined}
-    >
-      <span class="tab-icon" aria-hidden="true">
-        {t.icon === 'pin' && (
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 21.5s-7-6.1-7-11.5a7 7 0 0 1 14 0c0 5.4-7 11.5-7 11.5z" />
-            <circle cx="12" cy="10" r="2.6" />
-          </svg>
-        )}
-        {t.icon === 'person' && (
-          <>
-            <svg class="tab-person" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+<div class="tabbar navmenu" data-tabbar>
+  <button type="button" class="nav-trigger" data-nav-toggle aria-haspopup="true" aria-expanded="false" aria-label="Разделы">
+    <svg class="nav-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16" />
+    </svg>
+    <img class="tab-avatar" data-tab-avatar alt="" width="30" height="30" referrerpolicy="no-referrer" hidden />
+  </button>
+  <nav class="nav-pop" aria-label="Разделы">
+    {tabs.map((t) => (
+      <a
+        href={href(t.path)}
+        class:list={['tab', { active: isActive(t.path) }]}
+        data-tab={t.path}
+        data-tab-root={isRoot(t.path) ? '' : undefined}
+        aria-current={isActive(t.path) ? 'page' : undefined}
+      >
+        <span class="tab-icon" aria-hidden="true">
+          {t.icon === 'pin' && (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 21.5s-7-6.1-7-11.5a7 7 0 0 1 14 0c0 5.4-7 11.5-7 11.5z" />
+              <circle cx="12" cy="10" r="2.6" />
+            </svg>
+          )}
+          {t.icon === 'person' && (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="8" r="4" />
               <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" />
             </svg>
-            <img class="tab-avatar" data-tab-avatar alt="" width="26" height="26" referrerpolicy="no-referrer" hidden />
-          </>
+          )}
+          {t.icon === 'ticket' && (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4.5" width="18" height="16" rx="2.5" />
+              <path d="M3 9.5h18M8 2.5v4M16 2.5v4" />
+              <path d="M7.5 14h3M7.5 17h6" />
+            </svg>
+          )}
+        </span>
+        <span class="tab-label">{t.label}</span>
+        {isActive(t.path) && (
+          <svg class="tab-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
         )}
-        {t.icon === 'ticket' && (
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="4.5" width="18" height="16" rx="2.5" />
-            <path d="M3 9.5h18M8 2.5v4M16 2.5v4" />
-            <path d="M7.5 14h3M7.5 17h6" />
-          </svg>
-        )}
-      </span>
-      <span class="tab-label">{t.label}</span>
-    </a>
-  ))}
-</nav>
+      </a>
+    ))}
+  </nav>
+</div>
 
 <style>
   .tabbar {
     display: none;
   }
 
+  /* Phones: sections live behind one round button in the top-right corner
+     (the catalog is what the app is for; Афиша / Профиль don't need a
+     permanent bar). Tap opens a small menu anchored to the button. */
   @media (max-width: 760px) {
-    /* Floats over content: translucent surface-2 + blur, hairline on top.
-       Height is --tabbar-h (52px + home-indicator inset); the sheet geometry
-       reads the same token. */
-    .tabbar {
+    .navmenu {
       position: fixed;
-      left: 0;
+      top: calc(env(safe-area-inset-top, 0px) + var(--space-2));
+      right: max(var(--space-3), env(safe-area-inset-right, 0px));
+      z-index: 70;
+      display: block;
+    }
+    /* Out of the way while the filter sheet is up. */
+    :global(html.fsheet-open) .navmenu {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .nav-trigger {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      background: color-mix(in srgb, var(--surface-2) 90%, transparent);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-md);
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: transform var(--dur-fast) var(--ease-out);
+    }
+    /* 44px tap area around the 40px button. */
+    .nav-trigger::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+    }
+    .nav-trigger:active {
+      transform: scale(0.92);
+    }
+    .tab-avatar {
+      position: absolute;
+      inset: 4px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .tab-avatar[hidden] {
+      display: none;
+    }
+    .nav-trigger:has(.tab-avatar:not([hidden])) .nav-ico {
+      visibility: hidden;
+    }
+
+    .nav-pop {
+      position: absolute;
+      top: calc(100% + 8px);
       right: 0;
-      bottom: 0;
-      z-index: 60;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      height: var(--tabbar-h);
-      padding: 0 env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
-      background: color-mix(in srgb, var(--surface-2) 86%, transparent);
-      backdrop-filter: saturate(1.6) blur(20px);
-      -webkit-backdrop-filter: saturate(1.6) blur(20px);
-      border-top: 1px solid var(--border);
-      view-transition-name: tabbar;
+      min-width: 196px;
+      padding: var(--space-1);
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--surface-2);
+      box-shadow: var(--shadow-lg);
+      transform-origin: top right;
+      opacity: 0;
+      transform: scale(0.94) translateY(-4px);
+      visibility: hidden;
+      transition:
+        opacity 140ms ease,
+        transform 160ms var(--ease-out),
+        visibility 0s linear 160ms;
+    }
+    .navmenu.open .nav-pop {
+      opacity: 1;
+      transform: none;
+      visibility: visible;
+      transition:
+        opacity 160ms ease,
+        transform 220ms var(--ease-out),
+        visibility 0s;
     }
     .tab {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 3px;
-      min-height: 44px;
-      padding: 0;
-      border: 0;
-      background: none;
-      color: var(--text-muted);
+      gap: 12px;
+      min-height: 46px;
+      padding: 0 12px;
+      border-radius: var(--radius);
+      color: var(--text-primary);
       font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 500;
       text-decoration: none;
-      cursor: pointer;
-      transition: color var(--dur-fast) ease;
       -webkit-user-select: none;
       user-select: none;
     }
     .tab:hover {
       text-decoration: none;
     }
+    .tab:active {
+      background: var(--surface-1);
+    }
     .tab:focus-visible {
-      outline: none;
-    }
-    .tab:focus-visible .tab-icon {
-      border-radius: var(--radius-sm);
-      box-shadow: 0 0 0 2px var(--accent);
-    }
-    .tab:active .tab-icon {
-      transform: scale(0.9);
-    }
-    .tab.active {
-      color: var(--accent);
+      outline: 2px solid var(--accent);
+      outline-offset: -2px;
     }
     .tab-icon {
-      position: relative;
       display: inline-flex;
-      width: 26px;
-      height: 26px;
-      align-items: center;
-      justify-content: center;
-      transition: transform var(--dur-fast) var(--ease-out);
+      color: var(--text-secondary);
     }
-    .tab.active .tab-icon svg {
-      stroke-width: 2.1;
-    }
-    .tab.active .tab-icon svg path:first-child {
-      fill: color-mix(in srgb, currentColor 16%, transparent);
-    }
-    .tab-label {
-      font-size: 11px;
-      font-weight: 500;
-      line-height: 1;
-    }
-    .tab.active .tab-label {
+    .tab.active {
       font-weight: 600;
     }
-    .tab-avatar {
-      position: absolute;
-      inset: 0;
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 0 0 1.5px var(--surface-2), 0 0 0 2.5px var(--border-strong);
+    .tab.active .tab-icon {
+      color: var(--accent);
     }
-    .tab.active .tab-avatar {
-      box-shadow: 0 0 0 1.5px var(--surface-2), 0 0 0 3px var(--accent);
-    }
-    .tab-avatar[hidden] {
-      display: none;
-    }
-    .tab:has(.tab-avatar:not([hidden])) .tab-person {
-      visibility: hidden;
+    .tab-check {
+      margin-left: auto;
+      color: var(--accent);
     }
   }
 
   @media (max-width: 760px) and (prefers-reduced-motion: reduce) {
-    .tab,
-    .tab-icon {
-      transition: none;
+    .nav-pop,
+    .navmenu.open .nav-pop {
+      transform: none;
     }
   }
 </style>
@@ -173,6 +214,24 @@ const isRoot = (p: string) => current === href(p).replace(/\/$/, '');
   const bar = document.querySelector<HTMLElement>('[data-tabbar]');
 
   if (bar) {
+    const toggle = bar.querySelector<HTMLButtonElement>('[data-nav-toggle]');
+    const setOpen = (on: boolean) => {
+      bar.classList.toggle('open', on);
+      toggle?.setAttribute('aria-expanded', on ? 'true' : 'false');
+    };
+    toggle?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setOpen(!bar.classList.contains('open'));
+    });
+    document.addEventListener('click', (e) => {
+      if (!bar.contains(e.target as Node)) setOpen(false);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') setOpen(false);
+    });
+    // Back from the bfcache with the menu left open.
+    addEventListener('pageshow', () => setOpen(false));
+
     const key = (path: string) => `tab-url:${path}`;
     const rootTab = bar.querySelector<HTMLAnchorElement>('[data-tab-root]');
 
@@ -191,6 +250,7 @@ const isRoot = (p: string) => current === href(p).replace(/\/$/, '');
 
     bar.querySelectorAll<HTMLAnchorElement>('a[data-tab]').forEach((a) => {
       a.addEventListener('click', (e) => {
+        setOpen(false);
         if (a.hasAttribute('data-tab-root')) {
           e.preventDefault();
           document.dispatchEvent(new CustomEvent('tabbar:reselect'));
