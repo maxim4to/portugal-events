@@ -2,6 +2,7 @@ import { initFilterSheet } from './filterSheet';
 import { haptic } from './haptics';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+import { mutedTileLayer } from './mutedTiles.ts';
 import { gameIcon } from './mapIcons';
 import PT_MAINLAND from '../assets/pt-mainland.json';
 
@@ -668,7 +669,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     map.attributionControl.setPrefix(false);
     // Standard OSM tiles, regraded in CSS (see MapShell) into a warm, slightly
     // desaturated "game world" tone under the colored type blips.
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    mutedTileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors',
       maxZoom: 19,
     }).addTo(map);

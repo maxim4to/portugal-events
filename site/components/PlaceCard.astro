@@ -33,7 +33,6 @@ const typeLabel = TYPE_LABELS[place.type] ?? place.type;
       ) : (
         <span><Icon name="clock" size={12} /> {formatDriveMinutes(place.driveMinutesFromLisbon)}</span>
       )}
-      <span><Icon name="hourglass" size={12} /> ~{place.visitDurationHours} ч</span>
       <span class="season" title={place.bestSeason}><Icon name="calendar" size={12} /> {shortSeason(place.bestSeason)}</span>
     </div>
   </div>

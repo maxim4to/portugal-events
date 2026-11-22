@@ -721,10 +721,10 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
      `mix-blend-mode: plus-lighter`, but inside our graded (filtered) tile pane
      over a light container it sums the anti-aliased edges into *white* lines.
      Turn the blend off and overlap neighbours by 1px instead. */
-  .pane-map :global(.leaflet-container img.leaflet-tile) {
+  .pane-map :global(.leaflet-container .leaflet-tile) {
     mix-blend-mode: normal;
   }
-  .pane-map :global(.leaflet-tile-container img.leaflet-tile) {
+  .pane-map :global(.leaflet-tile-container .leaflet-tile) {
     width: 257px !important;
     height: 257px !important;
   }

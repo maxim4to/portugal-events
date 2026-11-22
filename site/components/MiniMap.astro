@@ -86,10 +86,10 @@ const { lat, lon, name, path } = Astro.props;
   }
   /* No hairline seams between tiles: leaflet.css blends tiles with
      plus-lighter, which whitens their edges at fractional zoom. */
-  .minimap:global(.leaflet-container) :global(img.leaflet-tile) {
+  .minimap:global(.leaflet-container) :global(.leaflet-tile) {
     mix-blend-mode: normal;
   }
-  .minimap :global(.leaflet-tile-container img.leaflet-tile) {
+  .minimap :global(.leaflet-tile-container .leaflet-tile) {
     width: 257px !important;
     height: 257px !important;
   }
@@ -186,6 +186,7 @@ const { lat, lon, name, path } = Astro.props;
 <script>
   import 'leaflet/dist/leaflet.css';
   import L from 'leaflet';
+  import { mutedTileLayer } from '../lib/mutedTiles.ts';
 
   // Central Lisbon — the trips all start here (see project design doc).
   const LISBON = { lat: 38.7223, lon: -9.1393 };
@@ -250,7 +251,7 @@ const { lat, lon, name, path } = Astro.props;
       // reach Leaflet (which preventDefaults them) so pinch/pan work.
       el.style.touchAction = 'pan-y';
     }
-    const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    const tiles = mutedTileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors',
       maxZoom: 19,
     }).addTo(map);
