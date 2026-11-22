@@ -1404,33 +1404,6 @@
     "collections": []
   },
   {
-    "id": "kartodromo-pombal",
-    "name": "Картодром Помбал",
-    "type": "karting",
-    "region": "Центр (Коимбра, Томар)",
-    "coords": {
-      "lat": 39.916,
-      "lon": -8.628
-    },
-    "description": "Картинг-трасса (Картодром Помбал) — прокат картов и заезды для любителей скорости, подойдёт компаниям и семьям.",
-    "driveMinutesFromLisbon": 140,
-    "visitDurationHours": 1.5,
-    "bestSeason": "круглый год",
-    "tags": [
-      "с детьми"
-    ],
-    "links": [],
-    "photos": [
-      {
-        "url": "place-photos/kartodromo-pombal.jpg",
-        "author": "All About Portugal / InfoPortugal",
-        "license": "© InfoPortugal",
-        "sourceUrl": "https://www.allaboutportugal.pt/en/pombal/sports/kartodromo-de-carnide"
-      }
-    ],
-    "collections": []
-  },
-  {
     "id": "kartodromo-portalegre",
     "name": "Картодром Порталегре",
     "type": "karting",
@@ -1588,80 +1561,6 @@
         "author": "Kart-Map",
         "license": "© Kart-Map",
         "sourceUrl": "https://www.kart-map.com/en/circuits/kartodromo-vila-real"
-      }
-    ],
-    "collections": []
-  },
-  {
-    "id": "cascais-indoor-karting",
-    "name": "Cascais Indoor Karting",
-    "type": "karting",
-    "region": "Лиссабон и Синтра",
-    "coords": {
-      "lat": 38.698,
-      "lon": -9.421
-    },
-    "description": "Крытый картинг-центр (Cascais Indoor Karting) — активный отдых в любую погоду, прокат картов и заезды для компаний и семей.",
-    "driveMinutesFromLisbon": 30,
-    "visitDurationHours": 1.5,
-    "bestSeason": "круглый год",
-    "tags": [
-      "с детьми"
-    ],
-    "links": [],
-    "photos": [],
-    "collections": []
-  },
-  {
-    "id": "indoor-karting-espinho",
-    "name": "Крытый картинг Эшпинью",
-    "type": "karting",
-    "region": "Норте",
-    "coords": {
-      "lat": 41.007,
-      "lon": -8.641
-    },
-    "description": "Крытый картинг-центр (Крытый картинг Эшпинью) — активный отдых в любую погоду, прокат картов и заезды для компаний и семей.",
-    "driveMinutesFromLisbon": 300,
-    "visitDurationHours": 1.5,
-    "bestSeason": "круглый год",
-    "tags": [
-      "с детьми"
-    ],
-    "links": [],
-    "photos": [
-      {
-        "url": "place-photos/indoor-karting-espinho.jpg",
-        "author": "Visit Porto (Porto Digital)",
-        "license": "© Visit Porto",
-        "sourceUrl": "https://visitporto.travel/pt-PT/poi/5cd04b54f979e000012c9a1e"
-      }
-    ],
-    "collections": []
-  },
-  {
-    "id": "maia-indoor-karting",
-    "name": "Maia Indoor Karting",
-    "type": "karting",
-    "region": "Норте",
-    "coords": {
-      "lat": 41.235,
-      "lon": -8.62
-    },
-    "description": "Крытый картинг-центр (Maia Indoor Karting) — активный отдых в любую погоду, прокат картов и заезды для компаний и семей.",
-    "driveMinutesFromLisbon": 310,
-    "visitDurationHours": 1.5,
-    "bestSeason": "круглый год",
-    "tags": [
-      "с детьми"
-    ],
-    "links": [],
-    "photos": [
-      {
-        "url": "place-photos/maia-indoor-karting.jpg",
-        "author": "Câmara Municipal da Maia",
-        "license": "© CM Maia",
-        "sourceUrl": "https://www.cm-maia.pt/institucional/noticias/noticia/karts-no-aerodromo-municipal-da-maia"
       }
     ],
     "collections": []
