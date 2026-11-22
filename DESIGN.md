@@ -39,8 +39,10 @@ Numerals in meta use `font-variant-numeric: tabular-nums`.
 
 ## Color (light / dark in tokens.css)
 
-- `--surface-0` page, `--surface-1` subtle fills (hover, chips), `--surface-2`
-  raised (cards, popovers, header).
+- `--surface-0` page, `--surface-1` subtle fills (hover, chips, segmented
+  tracks), `--surface-2` raised sheets (cards, popovers, header),
+  `--surface-raised` the thumb / active pill on a `--surface-1` track (in dark
+  mode surface-2 is darker than surface-1, so never use surface-2 for thumbs).
 - `--text-primary / -secondary / -muted`; never pure black/white text.
 - `--border` hairlines (1px), `--border-strong` for inputs/controls.
 - `--accent`, `--accent-bg` (selected fill), `--accent-text` (text on accent-bg),

@@ -1,19 +1,34 @@
 ---
 // "Профиль" tab: account, shortcuts into the user's own lists, appearance.
-// Built for the phone tab bar, but works as a plain page on any screen.
+// Built for the phone tab bar, but works as a settings page on any screen.
+// Three states: placeholder Firebase config (only "Оформление"), signed out
+// (sign-in card), signed in (account card + "Мои места").
 import Base from '../layouts/Base.astro';
 
 const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
 ---
 <Base title="Профиль — Португалия" description="Аккаунт и настройки">
   <div class="profile">
-    <h1 class="large-title">Профиль</h1>
+    <header class="page-head">
+      <h1>Профиль</h1>
+      <p class="page-sub">Аккаунт и настройки сайта</p>
+    </header>
 
-    <section class="group" data-p-auth hidden>
-      <div class="account" data-p-out hidden>
-        <p class="acc-title">Войдите в аккаунт</p>
-        <p class="acc-hint">Чтобы отмечать избранное и посещённые места — на всех устройствах.</p>
-        <button type="button" class="google-btn" data-p-signin>
+    <section class="section" data-p-auth hidden aria-labelledby="p-account-h">
+      <h2 class="section-title" id="p-account-h">Аккаунт</h2>
+
+      <div class="panel signin" data-p-out hidden>
+        <span class="signin-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" />
+          </svg>
+        </span>
+        <div class="signin-copy">
+          <p class="signin-title">Войдите в аккаунт</p>
+          <p class="signin-hint">Чтобы отмечать избранное и посещённые места — на всех устройствах.</p>
+        </div>
+        <button type="button" class="btn google-btn" data-p-signin>
           <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
             <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z" />
             <path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z" />
@@ -23,51 +38,57 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
           Войти через Google
         </button>
       </div>
-      <div class="account account-in" data-p-in hidden>
-        <img class="avatar" data-p-avatar alt="" width="56" height="56" referrerpolicy="no-referrer" />
+
+      <div class="panel account" data-p-in hidden>
+        <span class="avatar-wrap">
+          <svg class="avatar-fallback" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" />
+          </svg>
+          <img class="avatar" data-p-avatar alt="" width="56" height="56" referrerpolicy="no-referrer" hidden />
+        </span>
         <div class="who">
           <span class="name" data-p-name></span>
           <span class="email" data-p-email></span>
         </div>
+        <button type="button" class="btn signout" data-p-signout>Выйти</button>
       </div>
     </section>
 
-    <section class="group-wrap" data-p-lists hidden>
-      <p class="group-label">Мои места</p>
-      <div class="group">
+    <section class="section" data-p-lists hidden aria-labelledby="p-lists-h">
+      <h2 class="section-title" id="p-lists-h">Мои места</h2>
+      <div class="panel list">
         <a class="row" href={href('/places/?fav=1')}>
           <span class="row-icon row-icon--fav" aria-hidden="true">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 20s-7-4.6-9.3-9A4.9 4.9 0 0 1 12 6a4.9 4.9 0 0 1 9.3 5C19 15.4 12 20 12 20z" /></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 20s-7-4.6-9.3-9A4.9 4.9 0 0 1 12 6a4.9 4.9 0 0 1 9.3 5C19 15.4 12 20 12 20z" /></svg>
           </span>
           <span class="row-label">Избранное</span>
           <span class="row-value" data-p-count="favorites"></span>
-          <span class="chev" aria-hidden="true"></span>
+          <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6" /></svg>
         </a>
         <a class="row" href={href('/places/?visited=visited')}>
           <span class="row-icon row-icon--visited" aria-hidden="true">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.2 4.2L19 7" /></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.2 4.2L19 7" /></svg>
           </span>
           <span class="row-label">Посещённые</span>
           <span class="row-value" data-p-count="visited"></span>
-          <span class="chev" aria-hidden="true"></span>
+          <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6" /></svg>
         </a>
       </div>
     </section>
 
-    <section class="group-wrap">
-      <p class="group-label">Оформление</p>
-      <div class="group group-pad">
-        <div class="segmented" role="radiogroup" aria-label="Тема">
+    <section class="section" aria-labelledby="p-look-h">
+      <h2 class="section-title" id="p-look-h">Оформление</h2>
+      <div class="panel setting">
+        <div class="setting-copy">
+          <p class="setting-title" id="p-theme-label">Тема</p>
+          <p class="setting-hint">«Авто» следует настройкам устройства</p>
+        </div>
+        <div class="segmented" role="radiogroup" aria-labelledby="p-theme-label">
           <button type="button" role="radio" data-theme-opt="system">Авто</button>
           <button type="button" role="radio" data-theme-opt="light">Светлая</button>
           <button type="button" role="radio" data-theme-opt="dark">Тёмная</button>
         </div>
-      </div>
-    </section>
-
-    <section class="group-wrap" data-p-signout-wrap hidden>
-      <div class="group">
-        <button type="button" class="row row-danger" data-p-signout>Выйти</button>
       </div>
     </section>
   </div>
@@ -77,194 +98,337 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
   .profile {
     display: flex;
     flex-direction: column;
-    gap: var(--space-5);
-    max-width: 560px;
+    gap: var(--space-6);
+    max-width: 680px;
     margin: 0 auto;
-    padding-bottom: calc(var(--tabbar-h) + var(--space-5));
   }
-  .large-title {
-    margin: var(--space-2) 0 0;
-    font-size: 34px;
-  }
-  .group {
-    border-radius: 14px;
-    background: var(--surface-2);
-    border: 0.5px solid var(--border);
-    overflow: hidden;
-  }
-  .group[hidden],
-  .group-wrap[hidden],
-  .account[hidden] {
+  .section[hidden],
+  .panel[hidden] {
     display: none;
   }
-  .group-pad {
-    padding: var(--space-3);
+
+  /* Page title */
+  .page-head h1 {
+    margin: 0 0 var(--space-2);
   }
-  .group-label {
-    margin: 0 0 var(--space-2) var(--space-4);
-    font-size: 12px;
+  .page-sub {
+    margin: 0;
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+
+  /* Section heading sits flush with the panel's left edge. */
+  .section-title {
+    margin: 0 0 var(--space-3);
+    font-size: 17px;
     font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text-muted);
+    line-height: 1.3;
+    letter-spacing: -0.005em;
   }
-  .account {
-    padding: var(--space-4);
+
+  .panel {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
   }
-  .acc-title {
-    margin: 0 0 var(--space-1);
-    font-family: var(--font-display);
-    font-size: 21px;
-    font-weight: 550;
+
+  /* --- Signed out --- */
+  .signin {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-5);
   }
-  .acc-hint {
-    margin: 0 0 var(--space-4);
+  .signin-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--accent-bg);
+    color: var(--accent-text);
+  }
+  .signin-title {
+    margin: 0 0 2px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .signin-hint {
+    margin: 0;
     font-size: 14px;
     line-height: 1.45;
     color: var(--text-secondary);
   }
   .google-btn {
+    min-height: 44px;
+    gap: 10px;
+    padding: 0 var(--space-5);
+    font-size: 14.5px;
+  }
+  .google-btn svg {
+    flex: none;
+  }
+
+  /* --- Signed in --- */
+  .account {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-5);
+  }
+  .avatar-wrap {
+    position: relative;
+    flex: none;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: var(--space-3);
-    width: 100%;
-    height: 48px;
-    border: 1px solid #dadce0;
-    border-radius: 12px;
-    background: #fff;
-    color: #1f1f1f;
-    font: inherit;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-  }
-  .google-btn:active {
-    background: #f3f3f3;
-  }
-  .account-in {
-    display: flex;
-    align-items: center;
-    gap: var(--space-3);
-  }
-  .avatar {
-    flex: none;
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    object-fit: cover;
     background: var(--surface-1);
+    color: var(--text-muted);
+    overflow: hidden;
+  }
+  .avatar {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .avatar[hidden] {
+    display: none;
   }
   .who {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    gap: 2px;
     min-width: 0;
   }
   .name {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 600;
+    line-height: 1.3;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
   .email {
     font-size: 14px;
-    color: var(--text-muted);
+    line-height: 1.4;
+    color: var(--text-secondary);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+  .signout {
+    flex: none;
+  }
+  @media (hover: hover) {
+    .signout:hover {
+      border-color: var(--danger);
+      color: var(--danger);
+    }
+  }
+
+  /* --- List rows --- */
+  .list {
+    overflow: hidden;
   }
   .row {
     display: flex;
     align-items: center;
     gap: var(--space-3);
-    width: 100%;
-    min-height: 52px;
-    padding: 0 var(--space-4);
-    border: 0;
-    background: none;
+    min-height: 56px;
+    padding: 0 var(--space-4) 0 var(--space-5);
     color: var(--text-primary);
-    font: inherit;
-    font-size: 16px;
-    text-align: left;
+    font-size: 15px;
+    font-weight: 500;
     text-decoration: none;
-    cursor: pointer;
+    transition: background-color var(--dur-fast) ease;
   }
   .row + .row {
-    box-shadow: inset 0 0.5px 0 var(--border);
+    border-top: 1px solid var(--border);
   }
   .row:hover {
     text-decoration: none;
   }
+  @media (hover: hover) {
+    .row:hover {
+      background: var(--surface-1);
+    }
+  }
   .row:active {
     background: var(--surface-1);
+  }
+  .row:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+  }
+  .list .row:first-child:focus-visible {
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+  .list .row:last-child:focus-visible {
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
   }
   .row-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex: none;
-    width: 30px;
-    height: 30px;
-    border-radius: 8px;
-    color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
   }
   .row-icon--fav {
-    background: var(--danger);
+    background: color-mix(in srgb, var(--danger) 14%, transparent);
+    color: var(--danger);
   }
   .row-icon--visited {
-    background: var(--visited);
+    background: color-mix(in srgb, var(--visited) 14%, transparent);
+    color: var(--visited);
   }
   .row-label {
     flex: 1;
+    min-width: 0;
   }
   .row-value {
-    color: var(--text-muted);
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-variant-numeric: tabular-nums;
   }
   .chev {
-    width: 8px;
-    height: 8px;
-    border-right: 2px solid var(--text-muted);
-    border-top: 2px solid var(--text-muted);
-    transform: rotate(45deg);
-    opacity: 0.7;
+    flex: none;
+    color: var(--text-muted);
   }
-  .row-danger {
-    justify-content: center;
-    color: var(--danger);
-    font-weight: 600;
+
+  /* --- Theme setting --- */
+  .setting {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-4) var(--space-4) var(--space-4) var(--space-5);
   }
+  .setting-title {
+    margin: 0 0 2px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  .setting-hint {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--text-secondary);
+  }
+
+  /* Segmented control — the header nav pill, as a radio group. */
   .segmented {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    flex: none;
+    display: inline-grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    gap: 2px;
     padding: 3px;
-    border-radius: 10px;
+    border-radius: var(--radius-pill);
     background: var(--surface-1);
   }
   .segmented button {
-    height: 36px;
+    min-height: 36px;
+    padding: 0 18px;
     border: 0;
-    border-radius: 8px;
+    border-radius: var(--radius-pill);
     background: transparent;
     color: var(--text-secondary);
-    font: inherit;
+    font-family: var(--font-sans);
     font-size: 14px;
     font-weight: 500;
+    line-height: 1.3;
     cursor: pointer;
+    transition: color var(--dur-fast) ease, background-color var(--dur-fast) ease, box-shadow var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out);
   }
+  @media (hover: hover) {
+    .segmented button:hover {
+      color: var(--text-primary);
+    }
+  }
+  .segmented button:active {
+    transform: scale(0.97);
+  }
+  .segmented button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+  /* Same recipe as the header nav: surface-1 track, surface-raised thumb
+     (a dedicated token, since dark surface-2 sits below surface-1). */
   .segmented button[aria-checked='true'] {
-    background: var(--surface-2);
+    background: var(--surface-raised);
     color: var(--text-primary);
     font-weight: 600;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.14);
+    box-shadow: var(--shadow-sm);
   }
-  /* Dark: the raised segment needs more lift than the surface step gives. */
-  :global(:root[data-theme='dark']) .segmented button[aria-checked='true'] {
-    background: color-mix(in srgb, var(--text-primary) 14%, var(--surface-2));
+
+  @media (prefers-reduced-motion: reduce) {
+    .row,
+    .segmented button {
+      transition: none;
+    }
   }
-  @media (prefers-color-scheme: dark) {
-    :global(:root:not([data-theme='light'])) .segmented button[aria-checked='true'] {
-      background: color-mix(in srgb, var(--text-primary) 14%, var(--surface-2));
+
+  /* --- Phones --- */
+  @media (max-width: 760px) {
+    .profile {
+      gap: var(--space-5);
+      padding-bottom: calc(var(--tabbar-h) + var(--space-4));
+    }
+    .page-sub {
+      font-size: 14px;
+    }
+    .section-title {
+      margin-bottom: var(--space-2);
+      font-size: 15px;
+    }
+    .signin {
+      grid-template-columns: auto 1fr;
+      gap: var(--space-3) var(--space-4);
+      padding: var(--space-4);
+    }
+    .signin-icon {
+      width: 44px;
+      height: 44px;
+      align-self: start;
+    }
+    .google-btn {
+      grid-column: 1 / -1;
+      width: 100%;
+      min-height: 48px;
+    }
+    .account {
+      flex-wrap: wrap;
+      gap: var(--space-3) var(--space-4);
+      padding: var(--space-4);
+    }
+    .signout {
+      flex: 1 1 100%;
+      min-height: 44px;
+    }
+    .row {
+      padding-left: var(--space-4);
+    }
+    .setting {
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--space-3);
+      padding: var(--space-4);
+    }
+    .segmented button {
+      min-height: 40px;
+      padding: 0 var(--space-2);
     }
   }
 </style>
@@ -300,7 +464,6 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
     const out = $('[data-p-out]');
     const inBox = $('[data-p-in]');
     const lists = $('[data-p-lists]');
-    const signoutWrap = $('[data-p-signout-wrap]');
     const avatar = $<HTMLImageElement>('[data-p-avatar]');
     $('[data-p-auth]').hidden = false;
 
@@ -310,12 +473,18 @@ const href = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
       out.hidden = !!user;
       inBox.hidden = !user;
       lists.hidden = !user;
-      signoutWrap.hidden = !user;
-      $('[data-p-name]').textContent = user?.displayName ?? '';
-      $('[data-p-email]').textContent = user?.email ?? '';
-      if (user?.photoURL) avatar.src = user.photoURL;
-      else avatar.removeAttribute('src');
+      $('[data-p-name]').textContent = user?.displayName || user?.email || '';
+      $('[data-p-email]').textContent = user?.displayName ? (user?.email ?? '') : '';
+      if (user?.photoURL) {
+        avatar.src = user.photoURL;
+        avatar.hidden = false;
+      } else {
+        avatar.removeAttribute('src');
+        avatar.hidden = true;
+      }
     };
+    // A broken photo URL falls back to the person glyph behind it.
+    avatar.addEventListener('error', () => (avatar.hidden = true));
     const cached = getCachedUser();
     if (cached) paint(cached);
     onAuthChange(paint);

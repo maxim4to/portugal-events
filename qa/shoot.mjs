@@ -116,6 +116,8 @@ for (const [vpName, w, h] of viewports) {
             for (let p = el.parentElement; p && p !== document.body; p = p.parentElement) {
               const pcs = getComputedStyle(p);
               if (pcs.textOverflow === 'ellipsis' || /\d/.test(pcs.webkitLineClamp || '')) break;
+              // A horizontal scroller (pill rows): off-edge content is reachable.
+              if (pcs.overflowX === 'auto' || pcs.overflowX === 'scroll') break;
               if (pcs.overflowX === 'hidden' || pcs.overflowX === 'clip') {
                 const pr = p.getBoundingClientRect();
                 if (r.right > pr.right + 1 || r.left < pr.left - 1) cut = true;

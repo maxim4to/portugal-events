@@ -7,6 +7,7 @@
   --surface-0: #f6f4f0;   /* page */
   --surface-1: #ece9e3;   /* subtle fills: hover, chips, segmented track */
   --surface-2: #ffffff;   /* cards, popovers, header */
+  --surface-raised: #ffffff; /* thumbs/active pills sitting on a surface-1 track */
 
   /* Ink */
   --text-primary: #1c1a17;
@@ -113,6 +114,7 @@
   --surface-0: #121212;
   --surface-1: #1f1f1f;
   --surface-2: #1a1a1a;
+  --surface-raised: #333333;
 
   --text-primary: #f2f0ec;
   --text-secondary: #b3aea6;
@@ -177,6 +179,7 @@
     --surface-0: #121212;
   --surface-1: #1f1f1f;
   --surface-2: #1a1a1a;
+  --surface-raised: #333333;
 
   --text-primary: #f2f0ec;
   --text-secondary: #b3aea6;
