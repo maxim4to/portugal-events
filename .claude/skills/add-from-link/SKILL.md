@@ -83,6 +83,11 @@ under a different slug.
     draws the road on the MiniMap in its own colour and shows a
     «Проехать дорогу в Google Maps» start→end directions button automatically.
     Description must say where the road goes, how long it is and why to drive it.
+  - **Stays are places too** (type `stay`, badge «Жильё»): boutique cottages,
+    unique guesthouses and other one-off recommended overnight stays from reels. Store
+    coords of the village/property, booking links (Airbnb/site/Instagram), the
+    price level in the description, and the source reel. `visitDurationHours`
+    is 24 (a night).
 - **Events** → invoke the `ingest-events` skill and write into
   `data/events/<YYYY-MM>.json`.
 
