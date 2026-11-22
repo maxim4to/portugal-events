@@ -757,48 +757,6 @@
     "collections": []
   },
   {
-    "id": "serra-de-montejunto",
-    "name": "Серра-де-Монтежунту",
-    "type": "nature",
-    "region": "Оэште",
-    "coords": {
-      "lat": 39.1921,
-      "lon": -9.0381
-    },
-    "description": "Отдельно стоящий известняковый хребет высотой 666 м — самая высокая точка Оэште, с круговым видом от океана до долины Тежу. На вершине сохранилась Королевская ледяная фабрика XVIII века, где делали лёд для лиссабонского двора, а склоны покрыты дубами и орхидеями. На вершину ведёт асфальтовая дорога; закатный свет здесь особенно хорош.",
-    "driveMinutesFromLisbon": 60,
-    "visitDurationHours": 2,
-    "bestSeason": "круглый год (весной цветут орхидеи)",
-    "tags": [
-      "природа",
-      "виды",
-      "закат",
-      "бесплатно"
-    ],
-    "links": [],
-    "photos": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/2025-11-30_Serra_de_Montejunto_2.jpg/1280px-2025-11-30_Serra_de_Montejunto_2.jpg",
-        "author": "Alexkom000",
-        "license": "CC BY 4.0",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2025-11-30_Serra_de_Montejunto_2.jpg"
-      },
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/2026-07-11_Serra_de_Montejunto_6.jpg/1280px-2026-07-11_Serra_de_Montejunto_6.jpg",
-        "author": "Alexkom000",
-        "license": "CC BY 4.0",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026-07-11_Serra_de_Montejunto_6.jpg"
-      },
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/2026-07-11_Serra_de_Montejunto_5.jpg/1280px-2026-07-11_Serra_de_Montejunto_5.jpg",
-        "author": "Alexkom000",
-        "license": "CC BY 4.0",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026-07-11_Serra_de_Montejunto_5.jpg"
-      }
-    ],
-    "collections": []
-  },
-  {
     "id": "lapa-de-santa-margarida",
     "name": "Грот Лапа-де-Санта-Маргарида",
     "type": "nature",
