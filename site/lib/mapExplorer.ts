@@ -2,6 +2,16 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { gameIcon } from './mapIcons';
 import PT_MAINLAND from '../assets/pt-mainland.json';
+
+/** How far the explorer map may pan: mainland Portugal (36.7–42.2°N,
+ *  9.8–6.2°W) plus a margin, so the coast isn't pinned to the pane edge.
+ *  Outside it there's nothing to show. On the phone the list sheet covers the
+ *  lower half of the map, so the frame reaches much further south: the whole
+ *  country (and the Algarve on its own) must still fit above the sheet. */
+const PT_VIEW_BOUNDS = L.latLngBounds([34.6, -12.4], [43.6, -3.6]);
+const PT_VIEW_BOUNDS_PHONE = L.latLngBounds([22.0, -12.4], [43.6, -3.6]);
+/** Mainland Portugal's own bounding box (from pt-mainland.json). */
+const PT_BOX = L.latLngBounds([36.7, -9.85], [42.16, -6.18]);
 import { HALF_AT, initSheet, type SheetSnap } from './mobileSheet';
 import { distanceKm, formatDistance, pluralRu } from './geo';
 import { getFix, onFix, type Fix } from './geolocate';
@@ -41,6 +51,7 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
     kind === 'events' ? ['событие', 'события', 'событий'] : ['место', 'места', 'мест'];
   const mobileMq = window.matchMedia('(max-width: 760px)');
   const isMobile = () => mobileMq.matches;
+  const viewBounds = () => (isMobile() ? PT_VIEW_BOUNDS_PHONE : PT_VIEW_BOUNDS);
 
   const emptyEl = root.querySelector<HTMLElement>('[data-empty]')!;
   const countEl = root.querySelector<HTMLElement>('[data-sheet-count]');
@@ -429,7 +440,27 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
       // Demand far more scroll per level so zooming is gentle and controllable.
       wheelPxPerZoomLevel: 320,
       wheelDebounceTime: 25,
+      // The site only covers mainland Portugal: keep the view on it.
+      maxBounds: viewBounds(),
+      maxBoundsViscosity: 1,
     }).setView([39.5, -8.0], 6);
+    // Never zoom out past the frame: at minZoom the whole frame just fits the
+    // pane, so there's no "fly off to the rest of the world". Recomputed when
+    // the pane resizes (window resize, phone rotation, list/map toggle).
+    // The floor is "all of mainland Portugal fits in the visible part of the
+    // map" (minus whatever the phone sheet covers), one quarter-step out.
+    const syncMinZoom = () => {
+      if (!map) return;
+      map.setMaxBounds(viewBounds());
+      const { top, bottom } = fitInsets();
+      const pad = isMobile() ? 16 : 32;
+      const fit = map.getBoundsZoom(PT_BOX, false, L.point(2 * pad, top + bottom + 2 * pad));
+      const z = Math.floor(fit * 4) / 4 - 0.25;
+      map.setMinZoom(z);
+      if (map.getZoom() < z) map.setZoom(z, { animate: false });
+    };
+    syncMinZoom();
+    map.on('resize', syncMinZoom);
     // Drop Leaflet's own attribution prefix (which carries a 🇺🇦 flag); keep the
     // OpenStreetMap tile credit added below.
     map.attributionControl.setPrefix(false);
