@@ -465,18 +465,26 @@ export function initMapExplorer(root: HTMLElement, options: MapExplorerOptions =
   function fitTo(pts: L.LatLngExpression[]) {
     if (!map) return;
     autoFit = true;
+    const m = map;
     const { top, bottom } = fitInsets();
     const pad = isMobile() ? 20 : 40;
     progCall(() => {
-      if (pts.length) {
-        map!.fitBounds(L.latLngBounds(pts), {
-          paddingTopLeft: [pad, top + pad],
-          paddingBottomRight: [pad, bottom + pad],
-          maxZoom: 12,
-        });
-      } else {
-        map!.setView([39.5, -8.0], 6);
+      if (!pts.length) {
+        m.setView([39.5, -8.0], 6);
+        return;
       }
+      // The zoom always fits the half-open sheet (like the zoom floor), so
+      // moving the sheet between half and peek only slides the map along with
+      // it instead of re-zooming (which reloads every tile and jolts the pins).
+      const zoomBottom = isMobile()
+        ? Math.max(bottom, root.clientHeight - Math.round(root.clientHeight * HALF_AT))
+        : bottom;
+      const b = L.latLngBounds(pts);
+      const z = Math.min(12, m.getBoundsZoom(b, false, L.point(2 * pad, top + zoomBottom + 2 * pad)));
+      const mid = m.project(b.getSouthWest(), z).add(m.project(b.getNorthEast(), z)).divideBy(2);
+      const center = m.unproject(mid.add([0, (bottom - top) / 2]), z);
+      // Same duration and ease-out as the sheet's own transition (MapShell).
+      m.setView(center, z, { animate: true, pan: { duration: 0.34, easeLinearity: 0.25 } } as L.ZoomPanOptions);
     });
   }
 
