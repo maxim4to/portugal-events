@@ -1034,8 +1034,10 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
       transform: translate3d(0, 50%, 0);
       will-change: transform;
     }
+    /* The sheet's position is animated from JS (a spring that carries the
+       swipe's velocity, see mobileSheet.ts) — only the corners ease here. */
     .explorer-root.sheet-anim .pane-list {
-      transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1), border-radius 0.2s ease;
+      transition: border-radius 0.2s ease;
     }
     .explorer-root.sheet-full .pane-list {
       border-radius: 0;
@@ -1195,11 +1197,9 @@ const { kind, detailPrefix, hrefBase, mapId, points, awaitUser = false, sidebar 
       box-shadow: none;
     }
 
-    /* Leaflet controls ride just above whatever covers the map's bottom edge,
-       and just below the floating filter row at the top. */
-    .pane-map :global(.leaflet-bottom) {
-      transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1);
-    }
+    /* Leaflet controls ride just above whatever covers the map's bottom edge
+       (moved from JS along with the sheet), and just below the floating filter
+       row at the top. */
     .pane-map :global(.leaflet-top) {
       top: var(--bar-h, 56px);
     }

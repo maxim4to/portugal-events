@@ -21,6 +21,15 @@ export const HALF_AT = 0.44;
 /** Height + top margin of the collapsed sheet's card rail (see MapShell CSS). */
 const RAIL_BLOCK = 94;
 
+// Snap animation: a damped spring (times in ms, distances in px) that starts
+// with the finger's velocity, so a flick keeps going at the speed it was
+// thrown and eases into place instead of restarting from zero.
+const SPRING_RESPONSE = 380; // period of the undamped oscillation
+const SPRING_DAMPING = 0.9; // < 1 lets a hard flick overshoot a hair
+const OMEGA = (2 * Math.PI) / SPRING_RESPONSE;
+const STIFFNESS = OMEGA * OMEGA;
+const FRICTION = 2 * SPRING_DAMPING * OMEGA;
+
 export interface SheetController {
   readonly state: SheetSnap;
   snap(to: SheetSnap, animate?: boolean): void;
@@ -79,6 +88,9 @@ export function initSheet(root: HTMLElement, opts: Options): SheetController {
   };
   let lastCover = -1;
   let lastBarH = -1;
+  let anim = 0;
+  /** Finger velocity (px/ms) handed from a drag release to the next snap. */
+  let releaseV = 0;
 
   function paint(nextY: number, height = H()) {
     y = nextY;
@@ -97,6 +109,37 @@ export function initSheet(root: HTMLElement, opts: Options): SheetController {
     }
   }
 
+  function stopAnim() {
+    if (anim) cancelAnimationFrame(anim);
+    anim = 0;
+  }
+
+  function animateTo(target: number, v0: number) {
+    stopAnim();
+    const height = H();
+    let x = y;
+    let v = v0;
+    let last = performance.now();
+    const step = (now: number) => {
+      let dt = Math.min(now - last, 34);
+      last = now;
+      while (dt > 0) {
+        const h = Math.min(dt, 4);
+        v += (-STIFFNESS * (x - target) - FRICTION * v) * h;
+        x += v * h;
+        dt -= h;
+      }
+      if (Math.abs(x - target) < 0.5 && Math.abs(v) < 0.02) {
+        anim = 0;
+        paint(target, height);
+        return;
+      }
+      paint(x, height);
+      anim = requestAnimationFrame(step);
+    };
+    anim = requestAnimationFrame(step);
+  }
+
   function apply(animate: boolean) {
     root.classList.toggle('sheet-anim', animate);
     root.classList.toggle('sheet-full', state === 'full' && !away);
@@ -111,7 +154,15 @@ export function initSheet(root: HTMLElement, opts: Options): SheetController {
       root.style.setProperty('--bar-h', `${barH}px`);
     }
     if (state !== 'full') root.classList.remove('hide-filter-bar');
-    paint(away ? H() + 24 : posOf(state));
+    const target = away ? H() + 24 : posOf(state);
+    const v0 = releaseV;
+    releaseV = 0;
+    if (animate && opts.enabled()) {
+      animateTo(target, v0);
+    } else {
+      stopAnim();
+      paint(target);
+    }
   }
 
   function snap(to: SheetSnap, animate = true) {
@@ -159,6 +210,8 @@ export function initSheet(root: HTMLElement, opts: Options): SheetController {
     'touchstart',
     (e) => {
       if (away || e.touches.length !== 1 || !opts.enabled()) return;
+      // Catch the sheet mid-flight: it stops where it is and follows the finger.
+      stopAnim();
       startX = e.touches[0].clientX;
       startY = e.touches[0].clientY;
       startSheetY = y;
@@ -192,9 +245,6 @@ export function initSheet(root: HTMLElement, opts: Options): SheetController {
         dragMin = posOf('full');
         dragMax = dragH - headH();
         fullClass = root.classList.contains('sheet-full');
-        // Follow the finger 1:1 — inline, so no class flips on the root.
-        sheet.style.transition = 'none';
-        mapCorners().forEach((el) => (el.style.transition = 'none'));
       }
       e.preventDefault();
       let next = startSheetY + dy;
@@ -204,7 +254,7 @@ export function initSheet(root: HTMLElement, opts: Options): SheetController {
       pendingY = next;
       if (!frame) frame = requestAnimationFrame(flush);
       samples.push({ t: e.timeStamp, y: cy });
-      if (samples.length > 5) samples.shift();
+      if (samples.length > 8) samples.shift();
     },
     { passive: false },
   );
@@ -217,10 +267,10 @@ export function initSheet(root: HTMLElement, opts: Options): SheetController {
     mode = 'idle';
     if (frame) cancelAnimationFrame(frame);
     flush();
-    sheet.style.transition = '';
-    mapCorners().forEach((el) => (el.style.transition = ''));
-    const a = samples[0];
+    // Velocity over the last ~100ms of the gesture, not its whole tail: a
+    // drag that slows down before release should land gently.
     const b = samples[samples.length - 1];
+    const a = samples.find((p) => b.t - p.t <= 100) ?? samples[0];
     const v = b && a && b.t > a.t ? (b.y - a.y) / (b.t - a.t) : 0; // px/ms
     const projected = y + v * 180;
     let best: SheetSnap = state;
@@ -238,6 +288,8 @@ export function initSheet(root: HTMLElement, opts: Options): SheetController {
       best = ORDER[Math.max(0, Math.min(ORDER.length - 1, i))];
     }
     if (best !== state) haptic();
+    // Rubber-banded past an end, the finger's speed overstates the sheet's.
+    releaseV = y < posOf('full') || y > posOf('peek') ? 0 : v;
     snap(best);
   }
   sheet.addEventListener('touchend', endDrag);
