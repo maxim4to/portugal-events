@@ -1647,5 +1647,36 @@
     "reels": [
       "https://www.instagram.com/reel/DgBTLFVsDUO/"
     ]
+  },
+  {
+    "id": "taberna-cheburek-trofa",
+    "name": "Таберна Чебурек (Трофа)",
+    "type": "other",
+    "region": "Север",
+    "coords": {
+      "lat": 41.33417,
+      "lon": -8.56216
+    },
+    "description": "Небольшое украинское кафе в Трофе, в получасе к северу от Порту: чебуреки, домашняя кухня, большие порции и очень бюджетные цены. Место давно известно среди русско- и украиноязычных жителей севера, его советуют как «где поесть» по пути через район.\n\nАдрес: Rua Dom Pedro V, 1146, Bougado (Santiago), 4785-308 Trofa. Работает со вторника по воскресенье с 12:00 до 20:00, в понедельник выходной. Удобно совместить с поездкой по магазинам тканей и текстиля в округе.",
+    "driveMinutesFromLisbon": 195,
+    "visitDurationHours": 1,
+    "bestSeason": "круглый год (пн — выходной)",
+    "tags": [
+      "ресторан"
+    ],
+    "links": [
+      {
+        "title": "Taberna Cheburek на RestaurantGuru",
+        "url": "https://es.restaurantguru.com/Trofa"
+      },
+      {
+        "title": "Открыть адрес в Google Maps",
+        "url": "https://www.google.com/maps/search/?api=1&query=Taberna+Cheburek+Rua+Dom+Pedro+V+1146+Trofa"
+      }
+    ],
+    "photos": [],
+    "reels": [
+      "https://www.instagram.com/reel/DezLr2yKCfV/"
+    ]
   }
 ]
