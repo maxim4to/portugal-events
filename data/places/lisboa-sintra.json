@@ -1528,5 +1528,40 @@
       "https://www.instagram.com/reel/DcQhNevNxEZ/"
     ],
     "collections": []
+  },
+  {
+    "id": "kau-barbecue-malveira",
+    "name": "KAU Barbecue (Малвейра)",
+    "type": "other",
+    "region": "Лиссабон и Синтра",
+    "coords": {
+      "lat": 38.93422,
+      "lon": -9.25831
+    },
+    "description": "Настоящий техасский BBQ в Малвейре, полчаса от Лиссабона: основатель учился копчению в Техасе, и мясо (брискет, рёбра, пастрами) часами томится в больших смокерах прямо во дворе. Проект начинался с поп-апов и фестиваля NOS Alive, а его сэндвич с пастрами разошёлся по Instagram. Многие называют это лучшим копчёным мясом в Португалии.\n\nАдрес: R. Dr. José Eduardo Esteves, 2665-248 Malveira. По данным Time Out, работают с четверга по воскресенье, обед 12:00–15:00 и ужин 19:00–22:00, бронь онлайн обязательна, места разбирают быстро. Удобно совместить с дворцом Мафры и Тападой.",
+    "driveMinutesFromLisbon": 30,
+    "visitDurationHours": 1.5,
+    "bestSeason": "круглый год (чт–вс, по брони)",
+    "tags": [
+      "ресторан"
+    ],
+    "links": [
+      {
+        "title": "Time Out: KAU Barbecue",
+        "url": "https://www.timeout.pt/lisboa/pt/restaurantes/kau-barbecue"
+      },
+      {
+        "title": "NiT: KAU в Мата-да-Малвейра",
+        "url": "https://www.nit.pt/comida/restaurantes/kau-leva-a-carne-defumada-para-a-mata-da-malveira-com-passagem-pelo-nos-alive"
+      },
+      {
+        "title": "Instagram @kau_barbecue",
+        "url": "https://www.instagram.com/kau_barbecue/"
+      }
+    ],
+    "photos": [],
+    "reels": [
+      "https://www.instagram.com/reel/DehT0ACs1xC/"
+    ]
   }
 ]
